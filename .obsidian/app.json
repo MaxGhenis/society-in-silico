@@ -1,0 +1,10 @@
+{
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "research/concepts",
+  "attachmentFolderPath": "assets/images",
+  "showLineNumber": true,
+  "spellcheck": true,
+  "readableLineLength": true,
+  "strictLineBreaks": false
+}

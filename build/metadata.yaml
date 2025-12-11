@@ -1,0 +1,20 @@
+---
+title: "Society in Silico"
+subtitle: "Economic Simulation, Policy Technology, and the Age of AI"
+author: "Max Ghenis"
+date: 2025
+lang: en-US
+
+# PDF settings
+documentclass: book
+papersize: letter
+fontsize: 11pt
+geometry:
+  - margin=1in
+
+# EPUB settings
+cover-image: ../assets/images/cover.png
+
+# Common settings
+toc-title: "Contents"
+---
