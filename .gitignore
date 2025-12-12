@@ -1,5 +1,7 @@
 # Build output
 output/
+_build/
+.myst/
 
 # Obsidian
 .obsidian/workspace.json

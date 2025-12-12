@@ -1,0 +1,50 @@
+version: 1
+project:
+  title: Society in Silico
+  subtitle: Simulation as Infrastructure for Collective Reasoning
+  authors:
+    - name: Max Ghenis
+      email: max@policyengine.org
+  description: >
+    Can simulation help society realize its goals? A book about microsimulation,
+    open policy tools, and the future of AI alignment.
+  keywords:
+    - microsimulation
+    - policy analysis
+    - AI alignment
+    - PolicyEngine
+    - Cosilico
+  license: CC-BY-4.0
+  toc:
+    - file: manuscript/front-matter/00-thesis.md
+      title: Thesis
+    - file: manuscript/front-matter/00-preface.md
+      title: Preface
+    - file: manuscript/front-matter/01-introduction.md
+      title: Introduction
+    - title: "Part I: Origins"
+      children:
+        - file: manuscript/part-1-origins/01-birth-of-microsimulation.md
+          title: The Birth of Microsimulation
+    - title: "Part II: Building"
+      children: []
+    - title: "Part III: Future"
+      children: []
+    - title: Research Notes
+      children:
+        - file: research/concepts/microsimulation-definition.md
+          title: Microsimulation Definition
+        - file: research/concepts/policyengine.md
+          title: PolicyEngine
+        - file: research/concepts/cosilico.md
+          title: Cosilico
+        - file: research/concepts/value-forecasting-alignment.md
+          title: Value Forecasting Alignment
+        - file: research/concepts/max-ai-portfolio.md
+          title: AI Portfolio
+    - file: manuscript/00-outline.md
+      title: Chapter Outline
+
+site:
+  title: Society in Silico
+  template: book-theme
