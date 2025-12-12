@@ -1,0 +1,10 @@
+{
+  "name": "society-in-silico",
+  "version": "0.1.0",
+  "description": "Book writing plugin for Society in Silico - factchecking, style editing, and manuscript management",
+  "author": {
+    "name": "Max Ghenis",
+    "email": "max@policyengine.org"
+  },
+  "keywords": ["book", "writing", "editing", "factcheck", "nonfiction"]
+}
