@@ -236,6 +236,32 @@ Multiple projects use or study prediction markets:
 
 **The connection**: HiveSight is essentially a "prediction market for opinions" where AI personas vote instead of bettors.
 
+### 8. Value Forecasting for AI Alignment (The Synthesis)
+
+The unpublished EA Forum draft proposes the most ambitious integration: **AI alignment as value forecasting**.
+
+**The idea**: Train base LLMs on historical data up to a cutoff, have them predict how values would evolve, validate against actual survey data (GSS, Gallup, World Values Survey).
+
+**Why this matters**:
+- If AI can predict value evolution, it can reason about "reflectively stable" values
+- Alignment becomes empirically testable (did it predict the trajectory?)
+- Moral uncertainty becomes quantifiable (distributions, not point estimates)
+
+**How it integrates everything**:
+```
+Historical Data → Base LLM → Value Forecasts → Validate → Project to "long reflection"
+                                    ↓
+                    HiveSight (opinion sim) + Democrasim (voter sim)
+                                    ↓
+                    PolicyEngine (what policies does this society enact?)
+                                    ↓
+                    Cosilico (AI agents reasoning about those policies)
+```
+
+This is the apex of the portfolio: not just simulating households, policies, voters, and opinions—but simulating the *evolution of values themselves*.
+
+See: [[value-forecasting-alignment]]
+
 ## For "Society in Silico"
 
 ### Chapter Possibilities
