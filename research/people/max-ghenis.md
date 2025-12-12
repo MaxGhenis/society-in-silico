@@ -13,8 +13,9 @@ A thread runs through the entire career: simulation as a way to understand compl
 ### Berkeley IEOR (2008)
 - B.A. in Operations Research and Management Science
 - Minors: Industrial Engineering & Operations Research, Music
-- **Transformative course**: IEOR simulation class
+- **Transformative course**: INDENG 131 (Simulations)
 - Learned to model systems as interacting components, run scenarios, understand emergent behavior
+- Discrete-event simulation, Monte Carlo methods
 
 ### Google People Analytics (2010-2015)
 - Co-founded People Analytics Data Science team
