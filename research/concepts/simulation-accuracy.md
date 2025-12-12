@@ -81,32 +81,29 @@ Financial sector disruptions particularly challenging to anticipate.
 
 **Source:** [CBO call for research](https://www.cbo.gov/publication/61824)
 
-## Case Studies: When Simulation Informed Policy
+## Case Studies: When Simulation Was Validated
 
-### EITC and CTC Expansions
+### EITC and CTC 2021 Expansions
 
-Microsimulation models (TRIM3, ITEP, Tax-Calculator, TPC) were used to:
-- Estimate poverty reduction from 2021 expansions
-- Target credits to maximize impact per dollar
+**Before:** Microsimulation models (TRIM3, Tax-Calculator, TPC, Columbia's Center on Poverty) estimated the expanded CTC would lift millions of children out of poverty.
 
-**Results validated:**
+**After:** Census Bureau confirmed:
 > "Together, the child tax credit and the EITC (both expanded in 2021) and the Child and Dependent Care Tax Credit lifted 9.6 million people out of poverty in 2021."
-> — Census Bureau
 
-**The models were right** about directional impact and approximate magnitude.
+**The models were right** about directional impact and approximate magnitude. This is a genuine prediction → outcome validation.
 
 **Source:** [National Academies report](https://www.nationalacademies.org/news/federal-tax-credits-in-2021-lifted-more-than-2-million-children-out-of-poverty-says-new-report)
 
-### State CTC Analysis
+### CBO Baseline Accuracy (General)
 
-ITEP microsimulation modeled state-level child tax credits to:
-- Estimate poverty reduction by state
-- Identify credit levels needed for 25% and 50% poverty reduction targets
-- Compare cost-effectiveness vs. state EITC expansions
+CBO's own retrospective analysis shows:
+- Budget-year revenue projections: average error of 1.2%
+- Two-year economic forecasts: roughly as accurate as professional consensus
+- Deficit projections 1984-2023: generally centered (no systematic bias)
 
-Conclusion: Refundable CTCs more progressive and targeted than state EITC expansions.
+This isn't glamorous, but it's important: **most of the time, baselines are close enough** for policy analysis to be useful.
 
-**Source:** [ITEP 50-state analysis](https://itep.org/state-child-tax-credits-and-child-poverty-50-state-analysis/)
+**Source:** [CBO Evaluation of Projections 1984-2023](https://www.cbo.gov/publication/61067)
 
 ## Why Simulations Fail
 
