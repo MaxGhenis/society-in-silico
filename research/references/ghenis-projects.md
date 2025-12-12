@@ -158,3 +158,80 @@
 **SubPOP (2025)**: Fine-tuning LLMs on GSS
 - 69% accuracy on individual response prediction
 - Dataset includes 3,229 ATP questions + 133 GSS questions
+- https://arxiv.org/html/2502.16761v1
+
+**AI-Augmented Surveys (2023)**: Leveraging LLMs for Opinion Prediction
+- Framework for simulating public opinion
+- https://arxiv.org/html/2305.09620v3
+
+**Simulating Public Opinion (2024)**: PMC study comparing LLMs vs Random Forests
+- https://pmc.ncbi.nlm.nih.gov/articles/PMC12468613/
+
+### AI Alignment & Values
+
+**WEF AI Value Alignment (2024)**: "Guiding AI Towards Shared Human Goals"
+- October 2024 white paper
+- https://www3.weforum.org/docs/WEF_AI_Value_Alignment_2024.pdf
+
+**"What are human values, and how do we align AI to them?" (2024)**
+- arXiv paper on alignment targets
+- https://arxiv.org/abs/2404.10636
+
+### Survey Data Sources
+
+**General Social Survey (GSS)**
+- 1972-2021, 68,846 individuals, 3,110 questions
+- Key source for value change validation
+- https://gss.norc.org/
+
+**Gallup Historical Trends - Moral Issues**
+- Long-running time series on moral attitudes
+- https://news.gallup.com/poll/1681/moral-issues.aspx
+
+**World Values Survey (WVS)**
+- Cross-national value surveys since 1981
+- https://www.worldvaluessurvey.org/
+
+**American National Election Studies (ANES)**
+- Used for backstory construction in LLM persona research
+- https://electionstudies.org/
+
+### AI Economics & Growth
+
+**Davidson (2021)**: "Could Advanced AI Drive Explosive Economic Growth?"
+- Open Philanthropy research
+- https://www.openphilanthropy.org/research/could-advanced-ai-drive-explosive-economic-growth/
+
+**Trammell & Korinek (2023)**: "Economic Growth Under Transformative AI"
+- https://philiptrammell.com/static/egtai_old.pdf
+
+**Korinek & Stiglitz (2021)**: "AI and Its Implications for Income Distribution"
+- NBER Working Paper 28453
+- https://www.nber.org/papers/w28453
+
+**Acemoglu (2025)**: "The Simple Macroeconomics of AI"
+- Economic Policy journal
+- https://academic.oup.com/economicpolicy/article/40/121/13/7728473
+
+### Longtermism Critiques
+
+**Lundgren & Kudlek (2024)**: "Ten Arguments Against Longtermism"
+- Journal of Applied Philosophy
+- Important counterarguments to value forecasting approach
+
+### EA Forum Discussions
+
+**"Predicting what future people value" (2023)**
+- EA Forum introduction to axiological futurism
+- https://forum.effectivealtruism.org/posts/FCkchmXcSCQtJ9PZA/
+
+**"Is the Far Future Irrelevant for Moral Decision-Making?" (2024)**
+- EA Forum critique
+- Argues difficulty of predicting far-future impacts
+
+### Podcast Sources
+
+**80,000 Hours Podcast**
+- MacAskill on moral uncertainty and AI alignment (2022, 2023)
+- Dafoe on cooperative AI and technological determinism (2023)
+- Key source for quotes in EA Forum draft
