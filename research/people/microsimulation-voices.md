@@ -156,10 +156,15 @@ Part of a team "aimed at creating a new settlement of the same scale and sustain
 
 ## Potential Interviews
 
-Living figures who might provide quotes:
+### Max's Personal Connections
+- **George Sadowsky** - Treasury pioneer (1962-65), introduced computerized revenue estimation
+- **Howard Reed** - Landman Economics, IFS TAXBEN veteran, UK inequality focus
+- **John Sabelhaus** - Former CBO chief of Long-Term Modeling (built CBOLT), now Fed (Survey of Consumer Finances)
+- **Malcolm Torry** - Citizen's Basic Income Trust, extensive EUROMOD microsimulation on UBI
+
+### Other Living Figures
 - Matt Jensen (AEI/OSPC)
-- Howard Reed (Landman Economics)
-- Holly Sutherland (Essex, retired)
+- Holly Sutherland (Essex, EUROMOD founder)
 - Cathal O'Donoghue (Galway)
 - Mike Brewer (Essex, UKMOD)
 - Martin Holmer (PSL/Tax-Calculator)
