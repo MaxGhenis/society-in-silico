@@ -26,11 +26,11 @@ end with the democratic alternative vision.
 
 ## Draft Opening
 
-In Season 3 of Westworld, we meet Engerraund Serac—a French trillionaire who watched Paris destroyed by nuclear fire, then spent decades building an AI called Rehoboam to ensure it never happened again. His system predicted individual human lives: when you'd get sick, lose your job, take your own life. It assigned people to "paths" and quietly manipulated society to make those predictions come true.
+In the 2020 third season of Westworld, we meet Engerraund Serac—a French trillionaire who watched a thermonuclear incident destroy Paris, then spent decades building an AI called Rehoboam to ensure it never happened again. His system predicted individual human lives: when you'd get sick, lose your job, take your own life. It assigned people to "paths" and manipulated society to make those predictions come true.
 
-Serac's philosophy was chilling in its logic: "I don't predict the future. I create it."
+Serac's philosophy: "I don't predict the future. I create it."
 
-When I first watched this, I felt a complicated recognition. I've spent years building systems that model society computationally—tools that predict how policies affect households, that simulate economies with millions of synthetic people. The Westworld writers had taken the same premise and followed it to its darkest conclusion.
+When I first watched this, I recognized the premise. Since 2018, I've built microsimulation systems that model society computationally—tools that predict how policies affect households, that simulate economies with millions of synthetic people. The Westworld writers had taken the same premise and followed it to its darkest conclusion.
 
 But they'd also revealed a fork in the road.
 
@@ -44,9 +44,9 @@ That's what this book is about.
 
 We don't have Rehoboam. But we're not starting from zero either.
 
-Governments already use predictive models to allocate benefits, assess fraud risk, set policy. Insurance companies price your premiums based on algorithms you can't inspect. Banks decide your creditworthiness with models they won't explain. AI assistants confidently give tax advice that's wrong a third of the time—GPT-4 achieves only 67% accuracy on basic tax questions.
+Governments use predictive models to allocate benefits, assess fraud risk, set policy. Insurance companies price your premiums based on algorithms you can't inspect. Banks decide your creditworthiness with models they won't explain. AI assistants confidently give tax advice that's wrong a third of the time—GPT-4 achieves only 67% accuracy on basic tax questions.[^gpt4-tax]
 
-The question isn't whether we'll have computational models of society. We already do. The question is:
+The question isn't whether we'll have computational models of society. We do. The question is:
 
 - **Who builds them?** Closed institutions or open communities?
 - **Who can access them?** Only the powerful or everyone?
@@ -54,14 +54,14 @@ The question isn't whether we'll have computational models of society. We alread
 
 ## The Alternative
 
-This book traces a different path—from Guy Orcutt's 1957 vision of simulating individual households, through decades of institutional models locked inside government agencies, to the open-source movement that's making these tools public infrastructure.
+This book traces a different path—from [[guy-orcutt|Guy Orcutt]]'s 1957 vision of simulating individual households, through six decades of institutional models locked inside government agencies, to the open source movement that's making these tools public infrastructure.
 
-I'll tell the story through my own journey: from Google data scientist to MIT economist to founder of PolicyEngine and Cosilico. But it's not really my story. It's the story of a technology that's been waiting for its democratic moment.
+I'll trace the story through my own journey: from Google data scientist to MIT economist to founder of [[policyengine|PolicyEngine]] and [[cosilico|Cosilico]]. But it's not my story. It's the story of a technology that's been waiting for its democratic moment.
 
-The thesis is simple: **Society needs a shared model to reason against.** Congress debates with napkin math. Voters can't see how policies affect their own families. AI halluccinates eligibility rules. We can do better.
+**Society needs a shared model to reason against.** Congress debates with napkin math. Voters can't see how policies affect their own families. AI hallucinates eligibility rules. We can do better.
 
 What if everyone could:
-- See exactly how a proposed tax change would affect their household?
+- See how a proposed tax change would affect their household?
 - Understand who gains and loses from a policy reform?
 - Test their assumptions about how society works?
 - Contribute to making the model more accurate?
@@ -84,11 +84,11 @@ That's not Rehoboam. That's the opposite of Rehoboam.
 
 ## What's Ahead
 
-**Part I: Origins** traces the intellectual history—from Orcutt's frustration with aggregate models in 1957, through DYNASIM's mainframe ambitions, to the IFS and NBER models that shaped policy for decades.
+**Part I: Origins** traces the intellectual history—from [[guy-orcutt|Orcutt]]'s frustration with aggregate models in 1957, through [[dynasim|DYNASIM]]'s mainframe ambitions, to the [[ifs-taxben|IFS]] and [[taxsim|NBER]] models that shaped policy for decades.
 
-**Part II: Building** follows the open-source turn—OpenFisca in France, PolicyEngine spanning US and UK, the messy reality of encoding law as code.
+**Part II: Building** follows the open source turn—[[openfisca|OpenFisca]] in France, [[policyengine|PolicyEngine]] spanning US and UK, the reality of encoding law as [[rules-as-code|code]].
 
-**Part III: Future** confronts the AI moment—what changes when language models can help write rules, when agents need reliable tools, when "society in silico" becomes technically feasible at scale.
+**Part III: Future** confronts the AI moment—what changes when language models can help write rules, when agents need reliable tools, when "society in silico" becomes feasible at scale.
 
 The book ends where we started: at the fork in the road. Serac's path or the open one. The choice is being made now, in code and policy and institutional design. This is my case for the democratic alternative.
 
@@ -101,3 +101,10 @@ The book ends where we started: at the fork in the road. Serac's path or the ope
 - [[microsimulation-definition]]
 - [[guy-orcutt]]
 - [[policyengine]]
+- [[dynasim]]
+- [[ifs-taxben]]
+- [[taxsim]]
+- [[openfisca]]
+- [[rules-as-code]]
+
+[^gpt4-tax]: Blair-Stanek et al. (2023), "Can GPT-4 Really Do Tax?" Researchers posed 276 true/false tax cases to GPT-4 with the full Internal Revenue Code provided. GPT-4 got 186 correct (67%). None of the errors were mathematical—all involved misreading the statutes. arXiv:2309.09992
