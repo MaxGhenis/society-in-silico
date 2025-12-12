@@ -33,7 +33,9 @@ project:
         - file: manuscript/part-1-origins/03-open-source-revolution.md
           title: The Open Source Revolution
     - title: "Part II: Building"
-      children: []
+      children:
+        - file: manuscript/part-2-building/04-policyengine-proof-of-concept.md
+          title: "PolicyEngine: Proof of Concept"
     - title: "Part III: Future"
       children: []
     - title: Research Notes
