@@ -2,7 +2,7 @@
 
 In 1983, a small think tank in London did something that would reshape policy analysis for decades: they built a tax-benefit model and used it to critique the government's budget.
 
-The Institute for Fiscal Studies had existed since 1969, founded by four financial professionals frustrated by the opacity of UK tax policy. But TAXBEN—their microsimulation model of British taxes and benefits—gave them something new: the ability to run the numbers themselves. When the Chancellor announced a budget, IFS could simulate its effects on different household types within hours. Their "Green Budget" analyses became essential reading for journalists, politicians, and civil servants alike.
+The Institute for Fiscal Studies had existed since 1969, founded by four financial professionals frustrated by the opacity of UK tax policy {cite}`ifs2024history`. But TAXBEN—their microsimulation model of British taxes and benefits—gave them something new: the ability to run the numbers themselves. When the Chancellor announced a budget, IFS could simulate its effects on different household types within hours. Their "Green Budget" analyses became essential reading for journalists, politicians, and civil servants alike.
 
 This was a small revolution. For the first time, an independent organization could challenge official government estimates with its own calculations. The asymmetry of information that had always favored those in power was beginning to crack.
 
@@ -14,11 +14,11 @@ But only beginning. Four decades later, that asymmetry persists—and understand
 
 While IFS was building TAXBEN in London, American government agencies were constructing their own microsimulation apparatus—but behind closed doors.
 
-The Joint Committee on Taxation, created in 1926, had long been Congress's official scorekeeper for tax legislation. By the 1970s, JCT was developing sophisticated microsimulation models: an Individual Model, a Corporate Model, an International Cross Border Model, an Estate and Gift Model. When a member of Congress proposed a tax change, JCT's models would estimate its cost. These estimates carried legal weight—the Budget Act of 1974 made JCT the official source of revenue estimates for Congress.
+The Joint Committee on Taxation, created in 1926, had long been Congress's official scorekeeper for tax legislation {cite}`jct2024history`. By the 1970s, JCT was developing sophisticated microsimulation models: an Individual Model, a Corporate Model, an International Cross Border Model, an Estate and Gift Model {cite}`jct2024revenue`. When a member of Congress proposed a tax change, JCT's models would estimate its cost. These estimates carried legal weight—the Budget Act of 1974 made JCT the official source of revenue estimates for Congress.
 
-The Treasury's Office of Tax Analysis built parallel capabilities for the executive branch. George Sadowsky's work in the early 1960s had demonstrated what was possible; by the 1980s, Treasury maintained the Individual Income Tax Model (ITM), regularly updated with fresh data from IRS tax returns.
+The Treasury's Office of Tax Analysis built parallel capabilities for the executive branch. George Sadowsky's work in the early 1960s had demonstrated what was possible {cite}`sadowsky1991computing`; by the 1980s, Treasury maintained the Individual Income Tax Model (ITM), regularly updated with fresh data from IRS tax returns.
 
-The Congressional Budget Office, created in 1974 to give Congress independent analytical capacity, developed its own microsimulation models. For short-term tax analysis, CBO built models similar to JCT's. For long-term projections—especially Social Security—they developed CBOLT, the Congressional Budget Office Long-Term model, under the leadership of economists like John Sabelhaus.
+The Congressional Budget Office, created in 1974 to give Congress independent analytical capacity, developed its own microsimulation models. For short-term tax analysis, CBO built models similar to JCT's. For long-term projections—especially Social Security—they developed CBOLT, the Congressional Budget Office Long-Term model {cite}`cbo2018overview`.
 
 Three major institutions, three sets of models, billions of dollars in policy decisions riding on their outputs. And almost none of it was visible to the public.
 
@@ -38,7 +38,7 @@ This created several problems.
 
 **Democratic deficit.** Citizens and advocacy groups who wanted to understand how policies affected people like them had to take official estimates on faith. The asymmetry between governors and governed extended to the very tools used to evaluate policy.
 
-Some academics pushed back. At the National Bureau of Economic Research, Daniel Feenberg had been building TAXSIM since the 1960s—an open, internet-accessible tax calculator. TAXSIM let researchers simulate federal and state taxes for survey respondents, enabling academic research that would otherwise be impossible. But TAXSIM was a research tool, not a policy analysis platform. It calculated taxes for individual records; it didn't produce the aggregate estimates and distributional tables that drove policy debates.
+Some academics pushed back. At the National Bureau of Economic Research, Daniel Feenberg had been building TAXSIM since the 1960s—an open, internet-accessible tax calculator {cite}`feenberg1993taxsim`. TAXSIM let researchers simulate federal and state taxes for survey respondents, enabling academic research that would otherwise be impossible. But TAXSIM was a research tool, not a policy analysis platform. It calculated taxes for individual records; it didn't produce the aggregate estimates and distributional tables that drove policy debates.
 
 ---
 
@@ -50,13 +50,13 @@ The IFS had shown that independent analysis was possible. But TAXBEN remained pr
 
 The real breakthrough came from an unlikely source: the European Union.
 
-In 1996, researchers led by Holly Sutherland began building EUROMOD—a tax-benefit microsimulation model that would eventually cover all EU member states. The ambition was staggering: harmonize the wildly different tax and benefit systems of dozens of countries into a single analytical framework, enabling cross-national comparisons that had never before been possible.
+In 1996, researchers led by Holly Sutherland began building EUROMOD—a tax-benefit microsimulation model that would eventually cover all EU member states {cite}`sutherland2013euromod`. The ambition was staggering: harmonize the wildly different tax and benefit systems of dozens of countries into a single analytical framework, enabling cross-national comparisons that had never before been possible.
 
 EUROMOD was developed at the University of Essex, funded by European Commission research grants. And crucially, it was designed for broad access. Researchers could apply for access to the model, learn its methodology, and conduct their own analyses. The code wasn't fully open source, but the ethos was one of sharing rather than hoarding.
 
-By 2018, EUROMOD had grown so successful that the European Commission took over its maintenance, transferring responsibility to the Joint Research Centre. The university-based project had become official EU infrastructure.
+By 2021, EUROMOD had grown so successful that the European Commission took over its maintenance, transferring responsibility to the Joint Research Centre. The university-based project had become official EU infrastructure.
 
-But Essex wasn't done. In 2018, with funding from the Nuffield Foundation, a team led by Mike Brewer spun off the UK component of EUROMOD into a new model: UKMOD. This time, they went further. UKMOD would be fully open source, freely available to anyone who wanted to use it.
+But Essex wasn't done. In 2018, with funding from the Nuffield Foundation, a team led by Mike Brewer spun off the UK component of EUROMOD into a new model: UKMOD {cite}`ukmod2020`. This time, they went further. UKMOD would be fully open source, freely available to anyone who wanted to use it.
 
 "We wanted to democratize access to tax-benefit analysis," Brewer explained. The Scottish Parliament's research service started using UKMOD. So did NHS Health Scotland and the Welsh Government. For the first time, subnational governments in the UK had access to the same analytical tools as Westminster.
 
@@ -66,13 +66,13 @@ But Essex wasn't done. In 2018, with funding from the Nuffield Foundation, a tea
 
 Behind these institutional developments were individuals who devoted careers to building analytical infrastructure. Their stories reveal what it takes to create tools that outlast their creators.
 
-**Karen Smith** spent thirty years at the Urban Institute developing microsimulation models for Social Security, pensions, taxation, and welfare reform. She played lead roles in both MINT (the Social Security Administration's retirement income model) and DYNASIM (Urban's flagship dynamic microsimulation). By the 2010s, she was one of the most experienced microsimulation practitioners in America—a bridge between the era of mainframes and the era of open source.
+**Karen Smith** spent thirty years at the Urban Institute developing microsimulation models for Social Security, pensions, taxation, and welfare reform {cite}`urban2024karensmith`. She played lead roles in both MINT (the Social Security Administration's retirement income model) and DYNASIM (Urban's flagship dynamic microsimulation). By the 2010s, she was one of the most experienced microsimulation practitioners in America—a bridge between the era of mainframes and the era of open source.
 
-**Howard Reed** traced a path through Britain's major policy institutions. He ran TAXBEN at the IFS from 2000 to 2004, learning the craft of institutional model maintenance. At IPPR, he served as Chief Economist, seeing how think tanks used microsimulation to shape debates. Then in 2008, he founded Landman Economics and built his own Tax-Transfer Model, which he used to analyze Universal Basic Income, welfare reform, and the cumulative impact of austerity. Reed described his goal as creating "a new settlement of the same scale and sustainability as the Beveridge-inspired reforms of 1945."
+**Howard Reed** traced a path through Britain's major policy institutions {cite}`northumbria2024reed`. He ran TAXBEN at the IFS from 2000 to 2004, learning the craft of institutional model maintenance. At IPPR, he served as Chief Economist, seeing how think tanks used microsimulation to shape debates. Then in 2008, he founded Landman Economics and built his own Tax-Transfer Model, which he used to analyze Universal Basic Income, welfare reform, and the cumulative impact of austerity. Reed described his goal as creating "a new settlement of the same scale and sustainability as the Beveridge-inspired reforms of 1945."
 
 **Dan Feenberg** maintained NBER's TAXSIM for his entire career—a quiet, essential contribution that enabled generations of tax research. When researchers needed to calculate tax liabilities for survey respondents, TAXSIM was there. Feenberg's work demonstrated that useful tools could be built outside government, even if they couldn't fully replicate official infrastructure.
 
-**Malcolm Torry**, directing the Citizen's Basic Income Trust, showed what civil society could do with open microsimulation tools. Using EUROMOD, he conducted nearly a decade of research on basic income schemes, producing detailed analyses of costs, distributional effects, and implementation options. His work demonstrated that advocacy groups could be rigorous analysts—if they had access to the right tools.
+**Malcolm Torry**, directing the Citizen's Basic Income Trust, showed what civil society could do with open microsimulation tools {cite}`torry2019ubi`. Using EUROMOD, he conducted nearly a decade of research on basic income schemes, producing detailed analyses of costs, distributional effects, and implementation options. His work demonstrated that advocacy groups could be rigorous analysts—if they had access to the right tools.
 
 ---
 
@@ -80,9 +80,9 @@ Behind these institutional developments were individuals who devoted careers to 
 
 The 2010s brought a new possibility: fully open-source tax microsimulation.
 
-In 2014, Matt Jensen founded the Open Source Policy Center at the American Enterprise Institute. His diagnosis was blunt: "The closed-source approach to estimating the costs and economic impact of policies raises challenges, as there is limited accessibility and transparency in the process, leaving the public and many policymakers in the dark."
+In 2014, Matt Jensen founded the Open Source Policy Center at the American Enterprise Institute {cite}`aei2015taxbrain`. His diagnosis was blunt: "The closed-source approach to estimating the costs and economic impact of policies raises challenges, as there is limited accessibility and transparency in the process, leaving the public and many policymakers in the dark."
 
-Jensen's solution was Tax-Calculator, an open-source microsimulation model of US federal income and payroll taxes. The lead developer, Martin Holmer, brought decades of microsimulation experience and a PhD from MIT. Holmer built Tax-Calculator in Python, making it accessible to a new generation of analysts comfortable with modern programming languages.
+Jensen's solution was Tax-Calculator, an open-source microsimulation model of US federal income and payroll taxes. The lead developer, Martin Holmer, brought decades of microsimulation experience and a PhD from MIT {cite}`holmer2024profile`. Holmer built Tax-Calculator in Python, making it accessible to a new generation of analysts comfortable with modern programming languages.
 
 Tax-Calculator joined a growing ecosystem: Tax-Data for preparing input files, Behavioral-Response for modeling how taxpayers react to policy changes, TaxBrain for web-based access. The whole suite was released under open-source licenses, with code on GitHub for anyone to inspect, use, or improve.
 
@@ -98,7 +98,7 @@ By the 2020s, tax microsimulation had stratified into distinct tiers.
 
 **Government models** remained the most authoritative for official purposes. JCT scores still determined what Congress believed policies would cost. Treasury estimates still informed Administration proposals. CBO projections still anchored long-term fiscal debates. These models had the best data—actual tax returns, confidential and comprehensive—and the institutional authority that came from decades of use.
 
-**Established think tanks** operated the next tier. The Tax Policy Center (a joint venture of Urban Institute and Brookings) maintained a microsimulation model that could challenge government estimates. IFS continued to shape UK budget debates. These institutions had the credibility to be taken seriously, even when their numbers differed from official scores.
+**Established think tanks** operated the next tier. The Tax Policy Center (a joint venture of Urban Institute and Brookings) maintained a microsimulation model that could challenge government estimates {cite}`tpc2024model`. IFS continued to shape UK budget debates. These institutions had the credibility to be taken seriously, even when their numbers differed from official scores.
 
 **Open-source projects** represented the newest tier. Tax-Calculator and UKMOD made it possible for anyone with technical skills to run tax simulations. They couldn't match government models' data quality, but they offered something government models couldn't: transparency, accessibility, and the ability to be adapted for new purposes.
 
