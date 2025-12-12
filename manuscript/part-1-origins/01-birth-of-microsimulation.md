@@ -8,6 +8,16 @@ This is the story of how one frustrated economist imagined simulating society fr
 
 ---
 
+## The Engineer Who Became an Economist
+
+Guy Orcutt came to economics through an unusual path. Trained as an electrical engineer and physicist, he viewed the world as a system to be understood and improved. In his autobiographical reflections, he described "my early fascination with science, my transition from engineering to economics."
+
+Inspired by the econometric work of Jan Tinbergen, the young Orcutt harbored what he called his "Tinbergen dream"—building a model that could capture an entire national economy. Early in his career, he even built an analogue electrical-mechanical "regression analyzer" to calculate statistical estimates. He thought like an engineer: if you want to understand a system, you build a model of it.
+
+But as he worked with macroeconomic models through the 1940s and early 1950s, frustration mounted. The models could predict aggregates—GDP, inflation, unemployment. What they couldn't do was tell you what would happen to actual people.
+
+---
+
 ## The Problem with Averages
 
 To understand what Orcutt was reacting against, you need to understand how economists thought about the economy in the 1950s.
@@ -220,7 +230,9 @@ And perhaps most fundamentally: microsimulation tells you what a policy would do
 
 Guy Orcutt died in 2006, having seen his vision transform from impractical dream to standard methodology. Every modern tax calculator, every CBO budget score, every analysis of "who wins and who loses" uses tools that trace back to his 1957 paper.
 
-But the deeper legacy isn't any particular model. It's a way of thinking.
+But the deeper legacy isn't any particular model. It's a way of thinking—and, for Orcutt, a way of *acting*.
+
+Recent scholarship has emphasized that Orcutt saw microsimulation not just as a tool for understanding society but for improving it {cite}`cheng2020orcutt`. As historian Hsiang-Ke Cheng put it, microsimulation was "an engine designed for not only scrutinizing the system but reengineering the society." The engineer who became an economist never lost his engineer's conviction that systems could be made to work better.
 
 Before Orcutt, economists thought about the economy in terms of aggregates. After Orcutt, it became possible to think about the economy as a collection of individuals, each with their own circumstances, each affected differently by the same policy.
 
