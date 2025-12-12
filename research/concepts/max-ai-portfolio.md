@@ -105,6 +105,48 @@ Stack: React + FastAPI + PolicyEngine-US + NumPy
 
 Repository: `/Users/maxghenis/manifold-stock-bot/`
 
+### 12. NYC Mayor AI Analysis (Substack)
+**What**: AI models predicting housing production under different mayoral candidates
+**AI Role**: 6 frontier models (GPT o3-pro, Claude 4 Opus, Gemini 2.5 Pro) as forecasters
+**Key Insight**: Conditional prediction markets + AI forecasts = testable policy claims
+
+URL: https://maxghenis.substack.com/p/ai-models-favor-cuomo-over-mamdani
+
+Method:
+1. Create conditional prediction markets on Manifold ("housing units in 2029 if Cuomo wins" vs "if Mamdani wins")
+2. Query AI models for probability distributions
+3. Compare model predictions
+
+Finding: All 6 models predicted ~55K more homes under Cuomo (34% more growth)
+
+### 13. AI & Distributional Policy Research
+**What**: Microsite on AI economic shocks → policy interventions → distributional outcomes
+**AI Role**: Research framework, not AI-powered tool
+**Key Insight**: How do policies mediate AI's impact on inequality, poverty, work incentives?
+
+Repository: `/Users/maxghenis/PolicyEngine/ai-growth-research/`
+Live: https://policyengine.github.io/ai-growth-research/
+
+Research questions:
+- How would UBI vs expanded safety nets shape outcomes under AI displacement?
+- What are inequality effects of capital taxation vs labor subsidies?
+
+### 14. Squigglepy
+**What**: Python implementation of Squiggle probabilistic estimation language
+**AI Role**: None (probabilistic programming)
+**Key Insight**: Fermi estimation with uncertainty propagation
+
+Repository: `/Users/maxghenis/squigglepy/`
+
+Used by: Democrasim for modeling uncertainty in voter behavior simulations
+
+### 15. MicroCalibrate
+**What**: Survey weight calibration with L0 regularization
+**AI Role**: None (optimization)
+**Key Insight**: Sparse weights reduce dataset size while maintaining accuracy
+
+Repository: `/Users/maxghenis/PolicyEngine/microcalibrate/`
+
 ## Emerging Themes
 
 ### 1. The Diversity Problem
@@ -162,6 +204,37 @@ A consistent preference for numbers over vibes:
 - OptiqAL: QALYs, not "this might be healthy"
 - EggNest: Probability distributions, not "you'll probably be fine"
 - HiveSight: Statistical aggregates, not "people would like this"
+
+### 6. The Uncertainty Gap in Microsimulation
+A major unsolved problem: microsimulation models produce point estimates without uncertainty quantification.
+
+**The problem**:
+- PolicyEngine says "this reform costs $50B" but doesn't say "±$5B with 90% confidence"
+- CBO projections have uncertainty bands, but most microsim doesn't
+- Users can't distinguish "we know this precisely" from "this is a rough guess"
+
+**Partial solutions in the portfolio**:
+- **Squigglepy**: Fermi estimation with uncertainty propagation
+- **EggNest**: Monte Carlo simulation with probability distributions
+- **Fred Forecaster**: Bayesian structural time series
+- **MicroCalibrate**: Robustness evaluation for weight calibration
+- **Democrasim**: Probabilistic modeling via squigglepy
+
+**What's missing**: Uncertainty propagation through the full PolicyEngine stack
+
+### 7. Prediction Markets as Infrastructure
+Multiple projects use or study prediction markets:
+
+| Project | Role of Prediction Markets |
+|---------|---------------------------|
+| NYC Mayor Analysis | Conditional markets as experimental apparatus |
+| Manifold Stock Bot | Automated trading on prediction market prices |
+| Farness | Calibration tracking mirrors market scoring |
+| LLM Presidential | AI forecasts as pseudo-market |
+
+**The thesis**: Prediction markets aggregate information; AI models can participate in or synthesize market-like forecasts.
+
+**The connection**: HiveSight is essentially a "prediction market for opinions" where AI personas vote instead of bettors.
 
 ## For "Society in Silico"
 
