@@ -101,6 +101,14 @@
 **URL**: https://maxghenis.substack.com/p/elon-musks-ai-predicts-americans
 **Type**: Blog Post
 
+### AI Alignment as Value Forecasting (Unpublished)
+
+**Citation**: Ghenis, M. (2024). AI Alignment as Value Forecasting: A Quantitative Approach. Unpublished EA Forum draft.
+**File**: `/Users/maxghenis/Downloads/ea-forum-post.md`
+**Type**: Research Proposal (unpublished)
+
+**Key thesis**: Align AI to the probability distribution over heterogeneous values that would emerge from extended reflection, with uncertainty quantification, validated empirically against historical survey data.
+
 ---
 
 ## Key External References
@@ -126,3 +134,27 @@
 
 **Polymarket**: https://polymarket.com
 - Referenced in NYC mayor analysis context
+
+### Axiological Futurism & Value Change
+
+**Danaher, J. (2021)**: "Axiological Futurism: The Systematic Study of the Future of Values"
+- Futures Journal, https://doi.org/10.1016/j.futures.2021.102780
+- Theoretical foundation for studying future values
+
+**MacAskill, W. (2014)**: "Normative Uncertainty" (PhD Thesis)
+- Decision-making under moral uncertainty
+- "Moral parliament" approach
+
+**Gabriel, I. (2020)**: "Artificial Intelligence, Values, and Alignment"
+- Minds and Machines, https://doi.org/10.1007/s11023-020-09539-2
+- Fair principles for alignment
+
+### LLM Survey Prediction
+
+**Hewitt et al. (2024)**: "Predicting Results of Social Science Experiments Using LLMs"
+- GPT-4 achieves r=0.85 correlation with experimental treatment effects
+- 70 pre-registered experiments, 476 treatment effects
+
+**SubPOP (2025)**: Fine-tuning LLMs on GSS
+- 69% accuracy on individual response prediction
+- Dataset includes 3,229 ATP questions + 133 GSS questions
