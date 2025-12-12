@@ -1,6 +1,17 @@
 # Tax Microsimulation Models: Key Players and History
 
-Research note for Chapter 2: "The Tax Model Wars"
+Chapter 2 index - links to atomic concept files where applicable.
+
+See also:
+- [[taxsim]] - NBER, Daniel Feenberg
+- [[psl-tax-calculator]] - AEI/OSPC, Matt Jensen (open source US)
+- [[ifs-taxben]] - UK foundational model
+- [[ukmod]] - UK open-source model
+- [[landman-economics]] - Howard Reed
+- [[euromod]] - EU-wide model
+- [[spsdm]] - Canada
+- [[lotte]] - Norway (50 years!)
+- [[microsimulation-community]] - IMA, IJM, conferences
 
 ## US Federal Models
 
