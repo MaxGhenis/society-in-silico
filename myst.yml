@@ -5,6 +5,8 @@ project:
   authors:
     - name: Max Ghenis
       email: max@policyengine.org
+  bibliography:
+    - references.bib
   description: >
     Can simulation help society realize its goals? A book about microsimulation,
     open policy tools, and the future of AI alignment.
