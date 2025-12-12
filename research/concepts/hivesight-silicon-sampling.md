@@ -13,13 +13,30 @@ Repository: `/Users/maxghenis/hivesight/hivesight/`
 
 1. User enters a survey question
 2. Selects demographic filters (age, income, state)
-3. HiveSight generates personas matching those demographics
+3. HiveSight generates personas from PolicyEngine/Cosilico microdata
 4. GPT-4o/Mini answers as each persona
 5. Results aggregated with statistics and visualizations
 
 ```
-Question + Demographics → Generated Personas → LLM as Each Persona → Aggregated Results
+Question + Demographics → Representative Microdata Personas → LLM as Each Persona → Aggregated Results
 ```
+
+## The Diversity Problem (Key Insight)
+
+**The fundamental LLM limitation**: LLMs predict the "most likely" response based on training data + RLHF. They don't naturally produce the diversity of human opinion.
+
+**Temperature is not the answer**: The temperature parameter adds random noise, but that's fundamentally different from structured human variation. Real people's opinions vary in ways that correlate with their demographics, experiences, and circumstances—not randomly.
+
+**The microdata solution**: HiveSight uses PolicyEngine/Cosilico microdata to construct representative demographic profiles. This grounds diversity in actual population distributions rather than LLM temperature noise.
+
+Compare:
+| Approach | How variation is generated | Problem |
+|----------|---------------------------|---------|
+| Raw LLM | Predicts modal response | No diversity |
+| Temperature | Adds random noise | Unstructured, unrealistic |
+| **Microdata personas** | Sample from actual population | Reflects real demographic variation |
+
+**Analogy to microimpute**: This mirrors how quantile regression forests in microimpute work—modeling not just the mean but the full conditional distribution. HiveSight does the same for opinions: instead of asking "what would the average person say?", it asks "what would person with characteristics X, Y, Z say?" across a representative sample of actual demographic profiles.
 
 ## The Science
 

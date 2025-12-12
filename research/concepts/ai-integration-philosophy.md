@@ -86,6 +86,23 @@ Even if LLMs improve to 99% accuracy, you'd still want:
 
 The case for deterministic tools doesn't depend on AI being bad. It depends on policy domains requiring these properties.
 
+## The Diversity Problem (HiveSight Insight)
+
+LLMs have a fundamental limitation for simulating human populations: they predict the "most likely" response, not the distribution of responses.
+
+**Temperature is not the answer**: Adding random noise via temperature creates unstructured variation. But real human diversity is structured—opinions correlate with demographics, experiences, circumstances.
+
+**Microdata is the answer**: HiveSight uses PolicyEngine/Cosilico microdata to construct representative demographic profiles. This grounds LLM-generated opinions in actual population distributions.
+
+This is analogous to quantile regression forests in microimpute: modeling not just the mean but the full conditional distribution. The microdata provides the "shape" of human variation that LLMs can't learn from RLHF.
+
+**The integration pattern**:
+```
+Representative Microdata (deterministic) → Persona Conditioning → LLM Response → Aggregated Distribution
+```
+
+Without the microdata layer, you're just getting the LLM's modal prediction N times with noise. With it, you're sampling from a distribution that reflects actual human heterogeneity.
+
 ## Sources
 
 - PolicyEngine blog posts (policyengine-app-v2/app/src/data/posts/articles/)
