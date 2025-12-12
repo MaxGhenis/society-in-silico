@@ -38,6 +38,8 @@ project:
           title: "PolicyEngine: Proof of Concept"
         - file: manuscript/part-2-building/05-the-household-view.md
           title: The Household View
+        - file: manuscript/part-2-building/06-the-society-view.md
+          title: The Society View
     - title: "Part III: Future"
       children: []
     - title: Research Notes
