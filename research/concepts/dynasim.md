@@ -1,89 +1,66 @@
 # DYNASIM
 
-**Institution**: Urban Institute
-**Director**: Guy Orcutt
-**Development**: 1969-1975 (first version)
-**Language**: FORTRAN (MASH system on DEC-10)
+Dynamic Simulation of Income Model - the pioneering dynamic microsimulation model.
 
-## What It Was
+## Institution
 
-DYNASIM (Dynamic Simulation of Income Model) was the first large-scale implementation of [[guy-orcutt]]'s microsimulation vision. A longitudinal model that simulated life events for individuals over time.
+Urban Institute, Washington D.C.
 
-## Technical Specifications
+## Creator
 
-- **Sample**: 10,000 person dataset
-- **Type**: Longitudinal closed model
-- **Software**: Microanalytic Simulation of Households (MASH) system
-- **Platform**: DEC system-10
+**Guy Orcutt** - initiated DYNASIM in 1969, first version completed 1975
 
-## Modules
+## History
 
-### Demographic Module
-- Leaving home
-- Births
-- Deaths
-- Partnership formation and dissolution
-- Disability
-- Education
-- Location
+- **1969**: Work began under Orcutt's direction
+- **1975**: DYNASIM version 1 complete (18 years after Orcutt's 1957 paper)
+- **1980s**: Major revision
+- **2000**: Complete overhaul → DYNASIM3
+- **Current**: DYNASIM4
 
-### Labor Market Module
-- Labor force participation
-- Hours worked
-- Unemployment
-- Labor income
+## Purpose
 
-### Tax-Transfer and Wealth Module
-- Capital income
-- Main tax and transfer instruments
-- Simple macroeconomic model
-- Feedback loops
+Analyze long-run distributional consequences of retirement and aging issues:
+- Social Security reform effects
+- Pension policy changes
+- Medicare implications
+- Long-term care financing
 
-## Timeline
+## What It Simulates
 
-- **1957**: Orcutt publishes conceptual paper
-- **1961**: Prototype microsimulation model developed
-- **1969**: Work begins on DYNASIM at Urban Institute
-- **1975**: First version completed
+Year-by-year simulation of:
+- Demographic events (marriage, divorce, death)
+- Health status changes
+- Employment transitions
+- Earnings accumulation
+- Benefit claiming
 
-## Legacy
+## Projection Horizon
 
-DYNASIM spawned:
-- **CORSIM**: Direct descendant
-- **CANSIM**: Canadian adaptation
-- **SVERIGE**: Swedish adaptation
+75 years forward
 
-> "While the field of microsimulation has progressed greatly in many aspects since the original paper of Orcutt, the rate of progress in dynamic microsimulation is arguably slow given that we still share the same model design and face similar problems as early DYNASIM modellers did nearly 40 years ago."
+## Key Applications
 
-## The Ambition
+- Social Security trust fund depletion analysis
+- Baby bonds and racial wealth disparity
+- Effects of reforms across income/wealth distributions
 
-DYNASIM attempted to simulate "all major demographic and economic life events":
-- Birth, death
-- Marriage, remarriage
-- Unemployment, migration
+## Descendants
 
-This comprehensive ambition—modeling whole lives—required enormous computing resources for the era.
+DYNASIM methodology influenced:
+- [[corsim]] - Cornell (Steven Caldwell)
+- DYNACAN - Canada
+- [[mint]] - Social Security Administration
+- SVERIGE - Sweden
 
-## State of the Art (1975)
+## Related Models at Urban
 
-The MASH software was considered cutting-edge:
-- Interactive operation
-- Extensive command language
-- Researcher collaboration features
-
-## Book Narrative Notes
-
-DYNASIM is the "big bang" of microsimulation implementation. The gap between Orcutt's 1957 paper and the 1975 working model shows how far ahead of technology the vision was.
-
-The continuity from DYNASIM to modern models (similar design, similar problems) is both remarkable and sobering—we're still working on the same fundamental challenges.
+- [[trim]] - Transfer Income Model (benefits)
+- [[hipsm]] - Health insurance
+- [[tax-policy-center]] - Taxes
 
 ## Sources
 
+- [DYNASIM Overview](https://www.urban.org/research/data-methods/data-analysis/quantitative-data-analysis/microsimulation/dynamic-simulation-income-model-dynasim)
+- [DYNASIM4](https://www.urban.org/research-methods/dynamic-simulation-income-model-4-dynasim4)
 - [SOA DYNASIM Chapter](https://www.soa.org/493824/globalassets/assets/files/research/projects/chapter_3.pdf)
-- [Survey of dynamic microsimulation](https://microsimulation.pub/articles/00082)
-- [National Academies report](https://nap.nationalacademies.org/read/1835/chapter/9)
-
-## Links
-
-- [[guy-orcutt]]
-- [[microsimulation-definition]]
