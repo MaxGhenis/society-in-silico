@@ -30,6 +30,8 @@ project:
           title: The Birth of Microsimulation
         - file: manuscript/part-1-origins/02-tax-model-wars.md
           title: The Tax Model Wars
+        - file: manuscript/part-1-origins/03-open-source-revolution.md
+          title: The Open Source Revolution
     - title: "Part II: Building"
       children: []
     - title: "Part III: Future"
