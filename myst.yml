@@ -36,6 +36,8 @@ project:
       children:
         - file: manuscript/part-2-building/04-policyengine-proof-of-concept.md
           title: "PolicyEngine: Proof of Concept"
+        - file: manuscript/part-2-building/05-the-household-view.md
+          title: The Household View
     - title: "Part III: Future"
       children: []
     - title: Research Notes
