@@ -50,6 +50,12 @@ project:
           title: The Uncertainty Gap
         - file: manuscript/part-3-future/11-simulating-opinion.md
           title: Simulating Opinion
+        - file: manuscript/part-3-future/12-simulating-democracy.md
+          title: Simulating Democracy
+        - file: manuscript/part-3-future/13-simulating-values.md
+          title: Simulating Values
+        - file: manuscript/part-3-future/14-society-in-silico.md
+          title: Society in Silico
     - title: Research Notes
       children:
         - file: research/concepts/microsimulation-definition.md
