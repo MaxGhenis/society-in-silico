@@ -99,7 +99,27 @@ Provide a summary table:
 
 ## Save Results
 
-Save the review results to `reviews/synthetic-review-YYYY-MM-DD.md` for tracking over time.
+1. Save the review results to `reviews/synthetic-review-YYYY-MM-DD.md` for tracking over time.
+
+2. **IMPORTANT**: Also save a JSON file for the dashboard at `dashboard-app/public/reviews.json` with this format:
+
+```json
+[
+  {
+    "persona": "Policy Researcher",
+    "rating": 4.2,
+    "summary": "One sentence summary of their overall impression",
+    "strengths": ["Strength 1", "Strength 2"],
+    "weaknesses": ["Area for improvement 1", "Area for improvement 2"],
+    "generated_at": "2025-12-12T18:00:00.000000"
+  }
+]
+```
+
+3. After saving the JSON, regenerate the dashboard data:
+```bash
+cd dashboard-app && bun run generate-data
+```
 
 ---
 

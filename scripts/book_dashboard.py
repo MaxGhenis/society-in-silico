@@ -204,6 +204,15 @@ def generate_dashboard_data() -> dict:
     # Calculate progress
     progress = calculate_progress(chapters)
 
+    # Load reviews if they exist
+    reviews_file = REPO_ROOT / "dashboard-app" / "public" / "reviews.json"
+    reviews = []
+    if reviews_file.exists():
+        try:
+            reviews = json.loads(reviews_file.read_text())
+        except (json.JSONDecodeError, IOError):
+            reviews = []
+
     return {
         "generated_at": datetime.now().isoformat(),
         "chapters": chapters,
@@ -221,6 +230,7 @@ def generate_dashboard_data() -> dict:
         "graph": graph,
         "progress": progress,
         "targets": TARGETS,
+        "reviews": reviews,
     }
 
 

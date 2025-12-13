@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-12T18:03:39.582933",
+  "generated_at": "2025-12-12T18:26:30.685505",
   "chapters": [
     {
       "path": "manuscript/front-matter/01-introduction.md",
@@ -197,10 +197,10 @@
     "total_in_bib": 48,
     "used_in_manuscript": 43,
     "unused": [
-      "spielauer2011modgen",
-      "harding1996microsimulation",
       "caldwell1996microsimulation",
       "odonoghue2001dynamic",
+      "spielauer2011modgen",
+      "harding1996microsimulation",
       "orcutt1976dynasim"
     ]
   },
@@ -261,22 +261,34 @@
         "words": 1387
       },
       {
-        "id": "cosilico",
+        "id": "policyengine",
         "type": "note",
-        "label": "Cosilico",
-        "words": 652
+        "label": "PolicyEngine",
+        "words": 501
+      },
+      {
+        "id": "guy-orcutt",
+        "type": "note",
+        "label": "Guy Orcutt",
+        "words": 374
+      },
+      {
+        "id": "dynasim",
+        "type": "note",
+        "label": "DYNASIM",
+        "words": 206
+      },
+      {
+        "id": "ifs-taxben",
+        "type": "note",
+        "label": "IFS TAXBEN",
+        "words": 123
       },
       {
         "id": "microsimulation-definition",
         "type": "note",
         "label": "Microsimulation",
         "words": 235
-      },
-      {
-        "id": "policyengine",
-        "type": "note",
-        "label": "PolicyEngine",
-        "words": 501
       },
       {
         "id": "rehoboam-contrast",
@@ -291,24 +303,6 @@
         "words": 373
       },
       {
-        "id": "dynasim",
-        "type": "note",
-        "label": "DYNASIM",
-        "words": 206
-      },
-      {
-        "id": "guy-orcutt",
-        "type": "note",
-        "label": "Guy Orcutt",
-        "words": 374
-      },
-      {
-        "id": "ifs-taxben",
-        "type": "note",
-        "label": "IFS TAXBEN",
-        "words": 123
-      },
-      {
         "id": "taxsim",
         "type": "note",
         "label": "NBER TAXSIM",
@@ -319,6 +313,12 @@
         "type": "note",
         "label": "Rules as Code",
         "words": 441
+      },
+      {
+        "id": "cosilico",
+        "type": "note",
+        "label": "Cosilico",
+        "words": 652
       }
     ],
     "edges": [
@@ -394,5 +394,85 @@
     "part_3": 25000,
     "back_matter": 5000,
     "words_per_chapter": 6000
-  }
+  },
+  "reviews": [
+    {
+      "persona": "Policy Wonk",
+      "rating": 4.3,
+      "summary": "A well-researched and practical guide to microsimulation with strong citations and clear policy applications, though could benefit from more international comparisons.",
+      "strengths": [
+        "Extensive citations to primary sources and academic literature",
+        "Clear connection between technical concepts and policy outcomes",
+        "Practical examples using real policy reforms and their impacts"
+      ],
+      "weaknesses": [
+        "Could include more comparative analysis with other countries' approaches",
+        "Some technical sections may lose general policy audience"
+      ],
+      "generated_at": "2025-12-12T18:30:00.000000"
+    },
+    {
+      "persona": "Tech Enthusiast",
+      "rating": 4.5,
+      "summary": "Excellent treatment of the technical architecture and open-source philosophy, with authentic details about real implementation challenges.",
+      "strengths": [
+        "Detailed explanations of OpenFisca framework and vectorized computation",
+        "Genuine engagement with AI/LLM integration and its limitations (67% accuracy)",
+        "Open source philosophy is well-articulated and practiced"
+      ],
+      "weaknesses": [
+        "Could include more code examples and architecture diagrams",
+        "AI chapter could go deeper on prompt engineering specifics"
+      ],
+      "generated_at": "2025-12-12T18:30:00.000000"
+    },
+    {
+      "persona": "General Reader",
+      "rating": 3.9,
+      "summary": "An accessible introduction to an important but obscure field, though the narrative sometimes gets lost in technical details.",
+      "strengths": [
+        "Strong opening hook with Guy Orcutt's story",
+        "Clear 'so what' explanations for non-specialists",
+        "Personal journey adds human interest"
+      ],
+      "weaknesses": [
+        "Some chapters dense with policy terminology",
+        "Could use more human stories and case studies",
+        "Transitions between historical and technical sections feel abrupt"
+      ],
+      "generated_at": "2025-12-12T18:30:00.000000"
+    },
+    {
+      "persona": "Academic Economist",
+      "rating": 4.1,
+      "summary": "A solid intellectual history connecting microsimulation pioneers to modern applications, with appropriate methodological caveats.",
+      "strengths": [
+        "Proper credit to Orcutt, Harding, and other foundational figures",
+        "Good treatment of the aggregation problem and its implications",
+        "Honest about behavioral response limitations"
+      ],
+      "weaknesses": [
+        "Could engage more with recent microsimulation literature",
+        "Missing discussion of calibration and validation methodologies",
+        "Poverty measurement section could reference Sen, Foster more"
+      ],
+      "generated_at": "2025-12-12T18:30:00.000000"
+    },
+    {
+      "persona": "EA/AI Safety Researcher",
+      "rating": 4.0,
+      "summary": "Thoughtful exploration of AI-assisted policy analysis as a potential alignment testbed, with appropriate epistemic humility about current limitations.",
+      "strengths": [
+        "Honest about GPT-4's 67% accuracy on tax questions (SARA benchmark)",
+        "Good framing of deterministic backends + AI frontends as safety pattern",
+        "Connects microsimulation to value alignment questions"
+      ],
+      "weaknesses": [
+        "Could explore failure modes and adversarial robustness more",
+        "Missing discussion of how values get encoded in policy parameters",
+        "Uncertainty quantification needs more attention"
+      ],
+      "generated_at": "2025-12-12T18:30:00.000000"
+    }
+  ]
 }
