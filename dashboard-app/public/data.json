@@ -1,0 +1,398 @@
+{
+  "generated_at": "2025-12-12T18:03:39.582933",
+  "chapters": [
+    {
+      "path": "manuscript/front-matter/01-introduction.md",
+      "name": "01-introduction",
+      "title": "Introduction: The Model and the World",
+      "words": 880,
+      "wiki_links": [
+        "guy-orcutt|Guy Orcutt",
+        "policyengine|PolicyEngine",
+        "cosilico|Cosilico",
+        "guy-orcutt|Orcutt",
+        "dynasim|DYNASIM",
+        "ifs-taxben|IFS",
+        "taxsim|NBER",
+        "openfisca|OpenFisca",
+        "policyengine|PolicyEngine",
+        "rules-as-code|code",
+        "rehoboam-contrast",
+        "cosilico",
+        "microsimulation-definition",
+        "guy-orcutt",
+        "policyengine",
+        "dynasim",
+        "ifs-taxben",
+        "taxsim",
+        "openfisca",
+        "rules-as-code"
+      ],
+      "citations": [],
+      "has_references": false
+    },
+    {
+      "path": "manuscript/part-2-building/04-policyengine-proof-of-concept.md",
+      "name": "04-policyengine-proof-of-concept",
+      "title": "Chapter 4: PolicyEngine - Proof of Concept",
+      "words": 1834,
+      "wiki_links": [],
+      "citations": [
+        "policyengine2021review",
+        "policyengine2021review",
+        "ubicenter2019intro",
+        "policyengine2021review",
+        "openfisca2024about",
+        "policyengine2021review",
+        "ubicenter2021policyengine",
+        "policyengine2021review",
+        "policyengine2021review",
+        "policyengine2022review",
+        "policyengine2022review",
+        "policyengine2024github",
+        "policyengine2022review",
+        "policyengine2022review",
+        "policyengine2022review",
+        "policyengine2022review",
+        "policyengine2023dpg",
+        "policyengine2023enhanced",
+        "policyengine2021review",
+        "policyengine2024ukvalidation",
+        "policyengine2022review"
+      ],
+      "has_references": true
+    },
+    {
+      "path": "manuscript/part-2-building/05-the-household-view.md",
+      "name": "05-the-household-view",
+      "title": "Chapter 5: The Household View",
+      "words": 1687,
+      "wiki_links": [],
+      "citations": [
+        "policyengine2022ssi",
+        "policyengine2022review",
+        "policyengine2023cliffs",
+        "policyengine2023cliffs",
+        "policyengine2022ssi",
+        "policyengine2024ukvalidation"
+      ],
+      "has_references": true
+    },
+    {
+      "path": "manuscript/part-2-building/06-the-society-view.md",
+      "name": "06-the-society-view",
+      "title": "Chapter 6: The Society View",
+      "words": 1878,
+      "wiki_links": [],
+      "citations": [
+        "policyengine2023scoring",
+        "policyengine2022enhanced",
+        "policyengine2022enhanced",
+        "policyengine2022enhanced",
+        "policyengine2023scoring",
+        "policyengine2023sex",
+        "policyengine2023sex",
+        "policyengine2023sex",
+        "policyengine2023scoring",
+        "policyengine2024ukvalidation",
+        "policyengine2022review",
+        "policyengine2022review"
+      ],
+      "has_references": true
+    },
+    {
+      "path": "manuscript/part-2-building/07-ai-enters-the-picture.md",
+      "name": "07-ai-enters-the-picture",
+      "title": "Chapter 7: AI Enters the Picture",
+      "words": 1830,
+      "wiki_links": [],
+      "citations": [
+        "policyengine2024ai",
+        "policyengine2024ai",
+        "policyengine2023gpt",
+        "policyengine2024multiagent",
+        "policyengine2024ai"
+      ],
+      "has_references": true
+    },
+    {
+      "path": "manuscript/part-2-building/08-cosilico-infrastructure-for-the-future.md",
+      "name": "08-cosilico-infrastructure-for-the-future",
+      "title": "Chapter 8: Cosilico - Infrastructure for the Future",
+      "words": 1978,
+      "wiki_links": [],
+      "citations": [
+        "chen2023sara",
+        "columntax2024",
+        "columntax2024",
+        "policyengine2024about",
+        "cosilico2024thesis"
+      ],
+      "has_references": true
+    },
+    {
+      "path": "manuscript/part-1-origins/01-birth-of-microsimulation.md",
+      "name": "01-birth-of-microsimulation",
+      "title": "Chapter 1: The Birth of Microsimulation",
+      "words": 2819,
+      "wiki_links": [],
+      "citations": [
+        "orcutt1957new",
+        "orcutt1961microanalysis",
+        "sadowsky1991computing",
+        "soa1997dynasim",
+        "li2014survey",
+        "cheng2020orcutt"
+      ],
+      "has_references": true
+    },
+    {
+      "path": "manuscript/part-1-origins/02-tax-model-wars.md",
+      "name": "02-tax-model-wars",
+      "title": "Chapter 2: The Tax Model Wars",
+      "words": 1927,
+      "wiki_links": [],
+      "citations": [
+        "ifs2024history",
+        "jct2024history",
+        "jct2024revenue",
+        "sadowsky1991computing",
+        "cbo2018overview",
+        "feenberg1993taxsim",
+        "sutherland2013euromod",
+        "ukmod2020",
+        "urban2024karensmith",
+        "northumbria2024reed",
+        "torry2019ubi",
+        "aei2015taxbrain",
+        "holmer2024profile",
+        "tpc2024model"
+      ],
+      "has_references": true
+    },
+    {
+      "path": "manuscript/part-1-origins/03-open-source-revolution.md",
+      "name": "03-open-source-revolution",
+      "title": "Chapter 3: The Open Source Revolution",
+      "words": 1387,
+      "wiki_links": [],
+      "citations": [
+        "openfisca2024about",
+        "nz2018betterrules",
+        "nz2018betterrules",
+        "oecd2020cracking",
+        "openfisca2024about",
+        "openfisca2024about",
+        "ubicenter2019",
+        "policyengine2024about"
+      ],
+      "has_references": true
+    }
+  ],
+  "notes_summary": {
+    "total": 44,
+    "referenced": 10
+  },
+  "citations": {
+    "total_in_bib": 48,
+    "used_in_manuscript": 43,
+    "unused": [
+      "spielauer2011modgen",
+      "harding1996microsimulation",
+      "caldwell1996microsimulation",
+      "odonoghue2001dynamic",
+      "orcutt1976dynasim"
+    ]
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "01-introduction",
+        "type": "chapter",
+        "label": "Introduction: The Model and th",
+        "words": 880
+      },
+      {
+        "id": "04-policyengine-proof-of-concept",
+        "type": "chapter",
+        "label": "Chapter 4: PolicyEngine - Proo",
+        "words": 1834
+      },
+      {
+        "id": "05-the-household-view",
+        "type": "chapter",
+        "label": "Chapter 5: The Household View",
+        "words": 1687
+      },
+      {
+        "id": "06-the-society-view",
+        "type": "chapter",
+        "label": "Chapter 6: The Society View",
+        "words": 1878
+      },
+      {
+        "id": "07-ai-enters-the-picture",
+        "type": "chapter",
+        "label": "Chapter 7: AI Enters the Pictu",
+        "words": 1830
+      },
+      {
+        "id": "08-cosilico-infrastructure-for-the-future",
+        "type": "chapter",
+        "label": "Chapter 8: Cosilico - Infrastr",
+        "words": 1978
+      },
+      {
+        "id": "01-birth-of-microsimulation",
+        "type": "chapter",
+        "label": "Chapter 1: The Birth of Micros",
+        "words": 2819
+      },
+      {
+        "id": "02-tax-model-wars",
+        "type": "chapter",
+        "label": "Chapter 2: The Tax Model Wars",
+        "words": 1927
+      },
+      {
+        "id": "03-open-source-revolution",
+        "type": "chapter",
+        "label": "Chapter 3: The Open Source Rev",
+        "words": 1387
+      },
+      {
+        "id": "cosilico",
+        "type": "note",
+        "label": "Cosilico",
+        "words": 652
+      },
+      {
+        "id": "microsimulation-definition",
+        "type": "note",
+        "label": "Microsimulation",
+        "words": 235
+      },
+      {
+        "id": "policyengine",
+        "type": "note",
+        "label": "PolicyEngine",
+        "words": 501
+      },
+      {
+        "id": "rehoboam-contrast",
+        "type": "note",
+        "label": "Rehoboam: The Dystopian Mirror",
+        "words": 607
+      },
+      {
+        "id": "openfisca",
+        "type": "note",
+        "label": "OpenFisca",
+        "words": 373
+      },
+      {
+        "id": "dynasim",
+        "type": "note",
+        "label": "DYNASIM",
+        "words": 206
+      },
+      {
+        "id": "guy-orcutt",
+        "type": "note",
+        "label": "Guy Orcutt",
+        "words": 374
+      },
+      {
+        "id": "ifs-taxben",
+        "type": "note",
+        "label": "IFS TAXBEN",
+        "words": 123
+      },
+      {
+        "id": "taxsim",
+        "type": "note",
+        "label": "NBER TAXSIM",
+        "words": 127
+      },
+      {
+        "id": "rules-as-code",
+        "type": "note",
+        "label": "Rules as Code",
+        "words": 441
+      }
+    ],
+    "edges": [
+      {
+        "source": "01-introduction",
+        "target": "rehoboam-contrast"
+      },
+      {
+        "source": "01-introduction",
+        "target": "cosilico"
+      },
+      {
+        "source": "01-introduction",
+        "target": "microsimulation-definition"
+      },
+      {
+        "source": "01-introduction",
+        "target": "guy-orcutt"
+      },
+      {
+        "source": "01-introduction",
+        "target": "policyengine"
+      },
+      {
+        "source": "01-introduction",
+        "target": "dynasim"
+      },
+      {
+        "source": "01-introduction",
+        "target": "ifs-taxben"
+      },
+      {
+        "source": "01-introduction",
+        "target": "taxsim"
+      },
+      {
+        "source": "01-introduction",
+        "target": "openfisca"
+      },
+      {
+        "source": "01-introduction",
+        "target": "rules-as-code"
+      }
+    ]
+  },
+  "progress": {
+    "total": {
+      "words": 16220,
+      "target": 80000,
+      "percent": 20.3
+    },
+    "by_part": {
+      "Front Matter": {
+        "words": 880,
+        "chapters": 1
+      },
+      "Part II: Building": {
+        "words": 9207,
+        "chapters": 5
+      },
+      "Part I: Origins": {
+        "words": 6133,
+        "chapters": 3
+      }
+    },
+    "chapters_complete": 9
+  },
+  "targets": {
+    "total_words": 80000,
+    "front_matter": 5000,
+    "part_1": 20000,
+    "part_2": 25000,
+    "part_3": 25000,
+    "back_matter": 5000,
+    "words_per_chapter": 6000
+  }
+}

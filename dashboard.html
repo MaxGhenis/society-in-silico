@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Society in Silico - Book Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        :root {
+            --bg: #1a1a2e;
+            --card: #16213e;
+            --accent: #0f3460;
+            --text: #e8e8e8;
+            --highlight: #00d9ff;
+            --success: #4ade80;
+            --warning: #fbbf24;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: var(--highlight);
+        }
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        .card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        .card h2 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--highlight);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .progress-bar {
+            background: var(--accent);
+            border-radius: 8px;
+            height: 24px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--highlight), var(--success));
+            border-radius: 8px;
+            transition: width 0.5s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+        .stat {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--accent);
+        }
+        .stat:last-child { border-bottom: none; }
+        .stat-value {
+            font-weight: bold;
+            color: var(--highlight);
+        }
+        .chapter-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .chapter {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chapter-title {
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .chapter-stats {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+        #graph {
+            width: 100%;
+            height: 400px;
+            background: var(--accent);
+            border-radius: 8px;
+        }
+        .node { cursor: pointer; }
+        .node text { font-size: 10px; fill: var(--text); }
+        .link { stroke: var(--highlight); stroke-opacity: 0.4; }
+        .timestamp {
+            text-align: center;
+            opacity: 0.5;
+            font-size: 0.85rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>📚 Society in Silico</h1>
+
+    <div class="dashboard">
+        <div class="card">
+            <h2>📊 Overall Progress</h2>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 20.3%">
+                    20.3%
+                </div>
+            </div>
+            <div class="stat">
+                <span>Words Written</span>
+                <span class="stat-value">16,220</span>
+            </div>
+            <div class="stat">
+                <span>Target</span>
+                <span class="stat-value">80,000</span>
+            </div>
+            <div class="stat">
+                <span>Chapters Complete</span>
+                <span class="stat-value">9</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📖 By Part</h2>
+            
+            <div class="stat">
+                <span>Front Matter</span>
+                <span class="stat-value">880 words (1 ch)</span>
+            </div>
+            
+            <div class="stat">
+                <span>Part II: Building</span>
+                <span class="stat-value">9,207 words (5 ch)</span>
+            </div>
+            
+            <div class="stat">
+                <span>Part I: Origins</span>
+                <span class="stat-value">6,133 words (3 ch)</span>
+            </div>
+            
+        </div>
+
+        <div class="card">
+            <h2>📚 Citations</h2>
+            <div class="stat">
+                <span>BibTeX Entries</span>
+                <span class="stat-value">48</span>
+            </div>
+            <div class="stat">
+                <span>Used in Manuscript</span>
+                <span class="stat-value">43</span>
+            </div>
+            <div class="stat">
+                <span>Coverage</span>
+                <span class="stat-value">90%</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🔬 Research Notes</h2>
+            <div class="stat">
+                <span>Total Notes</span>
+                <span class="stat-value">44</span>
+            </div>
+            <div class="stat">
+                <span>Referenced in Chapters</span>
+                <span class="stat-value">10</span>
+            </div>
+        </div>
+
+        <div class="card" style="grid-column: span 2;">
+            <h2>📝 Chapters</h2>
+            <div class="chapter-list">
+                
+                <div class="chapter">
+                    <span class="chapter-title">📝 Introduction: The Model and the World</span>
+                    <span class="chapter-stats">
+                        <span>880 words</span>
+                        <span>0 cites</span>
+                        <span>20 links</span>
+                    </span>
+                </div>
+                
+                <div class="chapter">
+                    <span class="chapter-title">✅ Chapter 4: PolicyEngine - Proof of Concept</span>
+                    <span class="chapter-stats">
+                        <span>1,834 words</span>
+                        <span>21 cites</span>
+                        <span>0 links</span>
+                    </span>
+                </div>
+                
+                <div class="chapter">
+                    <span class="chapter-title">✅ Chapter 5: The Household View</span>
+                    <span class="chapter-stats">
+                        <span>1,687 words</span>
+                        <span>6 cites</span>
+                        <span>0 links</span>
+                    </span>
+                </div>
+                
+                <div class="chapter">
+                    <span class="chapter-title">✅ Chapter 6: The Society View</span>
+                    <span class="chapter-stats">
+                        <span>1,878 words</span>
+                        <span>12 cites</span>
+                        <span>0 links</span>
+                    </span>
+                </div>
+                
+                <div class="chapter">
+                    <span class="chapter-title">✅ Chapter 7: AI Enters the Picture</span>
+                    <span class="chapter-stats">
+                        <span>1,830 words</span>
+                        <span>5 cites</span>
+                        <span>0 links</span>
+                    </span>
+                </div>
+                
+                <div class="chapter">
+                    <span class="chapter-title">✅ Chapter 8: Cosilico - Infrastructure for the Future</span>
+                    <span class="chapter-stats">
+                        <span>1,978 words</span>
+                        <span>5 cites</span>
+                        <span>0 links</span>
+                    </span>
+                </div>
+                
+                <div class="chapter">
+                    <span class="chapter-title">✅ Chapter 1: The Birth of Microsimulation</span>
+                    <span class="chapter-stats">
+                        <span>2,819 words</span>
+                        <span>6 cites</span>
+                        <span>0 links</span>
+                    </span>
+                </div>
+                
+                <div class="chapter">
+                    <span class="chapter-title">✅ Chapter 2: The Tax Model Wars</span>
+                    <span class="chapter-stats">
+                        <span>1,927 words</span>
+                        <span>14 cites</span>
+                        <span>0 links</span>
+                    </span>
+                </div>
+                
+                <div class="chapter">
+                    <span class="chapter-title">✅ Chapter 3: The Open Source Revolution</span>
+                    <span class="chapter-stats">
+                        <span>1,387 words</span>
+                        <span>8 cites</span>
+                        <span>0 links</span>
+                    </span>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="card" style="grid-column: span 2;">
+            <h2>🕸️ Chapter-Notes Graph</h2>
+            <div id="graph"></div>
+        </div>
+    </div>
+
+    <p class="timestamp">Generated: 2025-12-12T17:56:07</p>
+
+    <script>
+        // Graph data
+        const graphData = {"nodes": [{"id": "01-introduction", "type": "chapter", "label": "Introduction: The Model and th", "words": 880}, {"id": "04-policyengine-proof-of-concept", "type": "chapter", "label": "Chapter 4: PolicyEngine - Proo", "words": 1834}, {"id": "05-the-household-view", "type": "chapter", "label": "Chapter 5: The Household View", "words": 1687}, {"id": "06-the-society-view", "type": "chapter", "label": "Chapter 6: The Society View", "words": 1878}, {"id": "07-ai-enters-the-picture", "type": "chapter", "label": "Chapter 7: AI Enters the Pictu", "words": 1830}, {"id": "08-cosilico-infrastructure-for-the-future", "type": "chapter", "label": "Chapter 8: Cosilico - Infrastr", "words": 1978}, {"id": "01-birth-of-microsimulation", "type": "chapter", "label": "Chapter 1: The Birth of Micros", "words": 2819}, {"id": "02-tax-model-wars", "type": "chapter", "label": "Chapter 2: The Tax Model Wars", "words": 1927}, {"id": "03-open-source-revolution", "type": "chapter", "label": "Chapter 3: The Open Source Rev", "words": 1387}, {"id": "rehoboam-contrast", "type": "note", "label": "Rehoboam: The Dystopian Mirror", "words": 607}, {"id": "guy-orcutt", "type": "note", "label": "Guy Orcutt", "words": 374}, {"id": "ifs-taxben", "type": "note", "label": "IFS TAXBEN", "words": 123}, {"id": "dynasim", "type": "note", "label": "DYNASIM", "words": 206}, {"id": "cosilico", "type": "note", "label": "Cosilico", "words": 652}, {"id": "policyengine", "type": "note", "label": "PolicyEngine", "words": 501}, {"id": "taxsim", "type": "note", "label": "NBER TAXSIM", "words": 127}, {"id": "openfisca", "type": "note", "label": "OpenFisca", "words": 373}, {"id": "rules-as-code", "type": "note", "label": "Rules as Code", "words": 441}, {"id": "microsimulation-definition", "type": "note", "label": "Microsimulation", "words": 235}], "edges": [{"source": "01-introduction", "target": "rehoboam-contrast"}, {"source": "01-introduction", "target": "cosilico"}, {"source": "01-introduction", "target": "microsimulation-definition"}, {"source": "01-introduction", "target": "guy-orcutt"}, {"source": "01-introduction", "target": "policyengine"}, {"source": "01-introduction", "target": "dynasim"}, {"source": "01-introduction", "target": "ifs-taxben"}, {"source": "01-introduction", "target": "taxsim"}, {"source": "01-introduction", "target": "openfisca"}, {"source": "01-introduction", "target": "rules-as-code"}]};
+
+        // Create force-directed graph
+        const width = document.getElementById('graph').clientWidth;
+        const height = 400;
+
+        const svg = d3.select('#graph')
+            .append('svg')
+            .attr('width', width)
+            .attr('height', height);
+
+        const simulation = d3.forceSimulation(graphData.nodes)
+            .force('link', d3.forceLink(graphData.edges).id(d => d.id).distance(100))
+            .force('charge', d3.forceManyBody().strength(-200))
+            .force('center', d3.forceCenter(width / 2, height / 2));
+
+        const link = svg.append('g')
+            .selectAll('line')
+            .data(graphData.edges)
+            .enter().append('line')
+            .attr('class', 'link')
+            .attr('stroke-width', 2);
+
+        const node = svg.append('g')
+            .selectAll('g')
+            .data(graphData.nodes)
+            .enter().append('g')
+            .attr('class', 'node')
+            .call(d3.drag()
+                .on('start', dragstarted)
+                .on('drag', dragged)
+                .on('end', dragended));
+
+        node.append('circle')
+            .attr('r', d => d.type === 'chapter' ? 12 : 8)
+            .attr('fill', d => d.type === 'chapter' ? '#00d9ff' : '#4ade80');
+
+        node.append('text')
+            .attr('dx', 15)
+            .attr('dy', 4)
+            .text(d => d.label);
+
+        simulation.on('tick', () => {
+            link
+                .attr('x1', d => d.source.x)
+                .attr('y1', d => d.source.y)
+                .attr('x2', d => d.target.x)
+                .attr('y2', d => d.target.y);
+            node.attr('transform', d => `translate(${d.x},${d.y})`);
+        });
+
+        function dragstarted(event, d) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x; d.fy = d.y;
+        }
+        function dragged(event, d) {
+            d.fx = event.x; d.fy = event.y;
+        }
+        function dragended(event, d) {
+            if (!event.active) simulation.alphaTarget(0);
+            d.fx = null; d.fy = null;
+        }
+    </script>
+</body>
+</html>
