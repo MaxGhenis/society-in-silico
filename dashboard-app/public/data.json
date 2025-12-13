@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-12T18:26:30.685505",
+  "generated_at": "2025-12-12T18:31:01.166183",
   "chapters": [
     {
       "path": "manuscript/front-matter/01-introduction.md",
@@ -197,11 +197,11 @@
     "total_in_bib": 48,
     "used_in_manuscript": 43,
     "unused": [
-      "caldwell1996microsimulation",
-      "odonoghue2001dynamic",
       "spielauer2011modgen",
+      "odonoghue2001dynamic",
       "harding1996microsimulation",
-      "orcutt1976dynasim"
+      "orcutt1976dynasim",
+      "caldwell1996microsimulation"
     ]
   },
   "graph": {
@@ -261,22 +261,10 @@
         "words": 1387
       },
       {
-        "id": "policyengine",
+        "id": "rehoboam-contrast",
         "type": "note",
-        "label": "PolicyEngine",
-        "words": 501
-      },
-      {
-        "id": "guy-orcutt",
-        "type": "note",
-        "label": "Guy Orcutt",
-        "words": 374
-      },
-      {
-        "id": "dynasim",
-        "type": "note",
-        "label": "DYNASIM",
-        "words": 206
+        "label": "Rehoboam: The Dystopian Mirror",
+        "words": 607
       },
       {
         "id": "ifs-taxben",
@@ -285,22 +273,16 @@
         "words": 123
       },
       {
+        "id": "policyengine",
+        "type": "note",
+        "label": "PolicyEngine",
+        "words": 501
+      },
+      {
         "id": "microsimulation-definition",
         "type": "note",
         "label": "Microsimulation",
         "words": 235
-      },
-      {
-        "id": "rehoboam-contrast",
-        "type": "note",
-        "label": "Rehoboam: The Dystopian Mirror",
-        "words": 607
-      },
-      {
-        "id": "openfisca",
-        "type": "note",
-        "label": "OpenFisca",
-        "words": 373
       },
       {
         "id": "taxsim",
@@ -319,6 +301,24 @@
         "type": "note",
         "label": "Cosilico",
         "words": 652
+      },
+      {
+        "id": "guy-orcutt",
+        "type": "note",
+        "label": "Guy Orcutt",
+        "words": 374
+      },
+      {
+        "id": "dynasim",
+        "type": "note",
+        "label": "DYNASIM",
+        "words": 206
+      },
+      {
+        "id": "openfisca",
+        "type": "note",
+        "label": "OpenFisca",
+        "words": 373
       }
     ],
     "edges": [
@@ -473,6 +473,23 @@
         "Uncertainty quantification needs more attention"
       ],
       "generated_at": "2025-12-12T18:30:00.000000"
+    },
+    {
+      "persona": "Max (Author)",
+      "rating": 3.5,
+      "summary": "The foundation is there but it's still rough\u2014Part III is unwritten, the personal narrative needs more vulnerability, and I haven't yet nailed the 'why this matters now' urgency.",
+      "strengths": [
+        "Historical chapters (Orcutt, IFS) feel solid and well-researched",
+        "PolicyEngine chapters draw on real experience and cite actual work",
+        "The Cosilico vision chapter articulates something I've been trying to say for years"
+      ],
+      "weaknesses": [
+        "Part III (Future) is completely unwritten\u2014the most important part!",
+        "Too much 'we did X, then Y' and not enough 'here's what I learned'",
+        "Need more failure stories\u2014the pivot moments, the things that didn't work",
+        "Introduction promises a bigger vision than the chapters currently deliver"
+      ],
+      "generated_at": "2025-12-12T18:45:00.000000"
     }
   ]
 }
