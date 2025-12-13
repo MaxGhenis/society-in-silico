@@ -40,6 +40,8 @@ project:
           title: The Household View
         - file: manuscript/part-2-building/06-the-society-view.md
           title: The Society View
+        - file: manuscript/part-2-building/07-ai-enters-the-picture.md
+          title: AI Enters the Picture
     - title: "Part III: Future"
       children: []
     - title: Research Notes
