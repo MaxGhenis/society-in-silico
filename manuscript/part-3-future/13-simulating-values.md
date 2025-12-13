@@ -1,12 +1,16 @@
 # Chapter 13: Simulating Values
 
+*This chapter is speculative. It describes a research program that hasn't been conducted, proposes experiments that haven't been run, and makes claims that remain untested. I include it because the questions matter—but the reader should understand this is aspiration, not accomplishment.*
+
+---
+
 We've built tools to simulate households, policies, voters, and opinions. But the deepest question isn't "what do people want today?"
 
 It's: *What would they want after reflection?*
 
-This chapter ventures into territory where simulation meets philosophy, where forecasting meets ethics, where the practical tools we've built connect to the most consequential question of our time: How do we align increasingly powerful AI systems with human values?
+This chapter ventures into territory where simulation meets philosophy, where forecasting meets ethics. The practical tools we've built in earlier chapters might connect to a larger question: How do we align increasingly powerful AI systems with human values?
 
-The answer may not be what you expect.
+I don't have the answer. But I have a research direction I find promising—one that builds on the infrastructure described in this book. Whether it's tractable or misguided remains to be seen.
 
 ---
 

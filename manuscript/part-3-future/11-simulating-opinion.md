@@ -38,9 +38,9 @@ Ask a thousand personas, each constructed from actual demographic distributions,
 
 ---
 
-## HiveSight and the Diversity Problem
+## The Diversity Problem
 
-HiveSight is a platform I've built to operationalize this idea. Users enter a survey question, select demographic filters, and receive instant results from hundreds of simulated respondents.
+HiveSight is an experimental prototype I've built to explore this idea—not a production platform, but a proof of concept. The goal: enter a survey question, select demographic filters, receive instant results from hundreds of simulated respondents. Whether it works well enough to be useful is an open question.
 
 The technical architecture matters. Simply asking an LLM the same question many times with high "temperature" (randomness) doesn't produce meaningful variation. Random noise is not the same as structured human diversity.
 

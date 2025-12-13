@@ -35,7 +35,9 @@ The aggregate result: democratic outcomes that only roughly, noisily track what 
 
 ## Modeling the Noise
 
-A tool called Democrasim makes this abstract problem concrete. It simulates the full chain from voter cognition to electoral outcomes to welfare.
+To explore this idea, I've built a toy model called Democrasim. It's not a validated research tool—it's a thought experiment in code, a way to reason about how voter information affects democratic outcomes. The model makes simplifying assumptions that real political scientists would rightly criticize. But it helps clarify the intuition.
+
+Democrasim simulates the full chain from voter cognition to electoral outcomes to welfare.
 
 Each simulated voter has:
 
@@ -128,14 +130,11 @@ Democrasim suggests a research program: connect simulation tools to model the fu
 
 **Step 5**: PolicyEngine calculates welfare outcomes under the winning policy.
 
-This closed loop lets us ask questions like:
-- What level of voter accuracy is needed for democratic outcomes to track welfare?
-- How do different interventions (civics education, better tools, reduced bias) compare in improving democratic function?
-- Does uncertainty systematically favor certain policy types?
+This closed loop lets us ask questions like: What level of voter accuracy is needed for democratic outcomes to track welfare? How do different interventions compare? Does uncertainty systematically favor certain policy types?
 
-Early results from Democrasim simulations suggest that accuracy interventions—making it easier for voters to perceive true policy impacts—have larger effects than turnout interventions. Getting low-information voters to perceive better may matter more than getting non-voters to vote.
+Playing with the model—and I emphasize "playing," not "researching"—suggests an intuition: accuracy interventions might matter more than turnout interventions. If the toy model's logic holds, getting low-information voters to perceive better may matter more than getting non-voters to vote. An uninformed vote adds noise; an informed vote adds signal.
 
-This makes intuitive sense. An uninformed vote adds noise. An informed vote adds signal. More signal improves the aggregate outcome more than more noise does.
+Whether this intuition survives contact with real political science is unknown. The model is too simple to make confident claims. Real voter behavior involves identity, tribal loyalty, strategic considerations, and psychological factors that Democrasim ignores entirely. But as a way to reason about why accurate policy information might have democratic value, it's useful.
 
 ---
 

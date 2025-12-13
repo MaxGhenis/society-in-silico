@@ -101,19 +101,11 @@ This structure mirrors patterns in other successful open-source infrastructure: 
 
 ## The Open-Core Model
 
-Cosilico is structured as open-core: the simulation engine is open source (Apache 2.0 licensed), while hosted services and enterprise features are commercial.
+Cosilico is designed as open-core: the simulation engine would be open source (Apache 2.0 licensed), while hosted services and enterprise features would be commercial.
 
-The tiers:
+The envisioned model follows patterns proven by companies like GitLab, Elastic, and HashiCorp: give away the core technology, charge for convenience and enterprise features. Whether this model will work for policy simulation infrastructure remains to be tested.
 
-| Tier | Pricing | What You Get |
-|------|---------|--------------|
-| **Self-hosted** | Free | Run the engine yourself |
-| **API (usage)** | $0.001-0.01/call | Hosted, managed, fast |
-| **Data enrichment** | $0.10-1.00/record | Predict 200+ attributes per household |
-| **Enterprise** | $100K-1M+/year | SLA, support, custom jurisdictions |
-| **Simulation** | $50K-500K/project | Population-scale policy analysis |
-
-The open-source foundation serves multiple purposes:
+The open-source foundation would serve multiple purposes:
 
 **Trust through transparency.** When a fintech company integrates tax calculations into their product, they can inspect exactly how those calculations work. No black boxes.
 
@@ -125,21 +117,19 @@ The open-source foundation serves multiple purposes:
 
 ---
 
-## The Market Opportunity
+## Why This Might Matter
 
-The infrastructure layer Cosilico builds sits beneath multiple large markets:
+The thesis is that accurate tax and benefit calculations will become essential infrastructure—not a niche academic tool but something every fintech app, government service, and AI assistant needs.
 
-Tax software: $90 billion in 2024, growing 11% annually. Benefits administration: $2.5 billion, growing 10% annually. AI infrastructure: $46 billion, growing 29% annually. Data enrichment: $2.4 billion, growing 10% annually {cite}`cosilico2024thesis`.
+Several trends support this:
 
-Comparable outcomes validate the opportunity. Avalara was acquired for $8.4 billion providing sales tax APIs alone. Plaid reached a $6.1 billion valuation providing financial data APIs. Gusto reached $9.3 billion building payroll and benefits platforms that need exactly the eligibility calculations Cosilico provides.
+**AI tool use is becoming standard.** Function calling shipped in GPT-4 and Claude 3. Anthropic's Model Context Protocol is being adopted broadly. AI assistants need reliable tools to call—hallucinating tax calculations is unacceptable.
 
-The timing is right:
+**AI financial regulation is coming.** The SEC, CFPB, and state regulators are examining AI in financial services. Audit trails and explainability will likely be required. Citation-based approaches are regulation-ready.
 
-**AI tool use is standard.** Function calling shipped in GPT-4 and Claude 3. Anthropic's Model Context Protocol is being adopted by Microsoft. Every AI assistant needs reliable tools to call.
+**The precedent exists.** Avalara built a large business ($8.4 billion acquisition) providing sales tax APIs alone. Someone will build the equivalent for income taxes and benefits. The question is whether it will be open or proprietary.
 
-**AI financial regulation is coming.** The SEC, CFPB, and state regulators are examining AI in financial services. Audit trails and explainability will be required. Citation-based approaches are regulation-ready.
-
-**Fintech infrastructure is consolidating.** Large players are acquiring core infrastructure. Acquirers pay premiums for financial data capabilities.
+This is a bet, not a certainty. Many infrastructure plays fail. The market for policy calculation APIs is unproven. But the underlying need—accurate calculations that AI can call—seems real.
 
 ---
 
@@ -195,17 +185,17 @@ This is the vision of "society in silico" applied practically: simulation as inf
 
 ## The Work Ahead
 
-Cosilico launched in 2024, still in early development. The rules engine is being built. The API is being designed. The commercial model is being tested with design partners.
+As I write this in late 2024, Cosilico exists more as thesis than product. The company is incorporated. The rules engine is being built, drawing on PolicyEngine's foundation. Design partners are testing early versions. But there's no production API, no paying customers, no proof that the market exists.
 
-Success is not guaranteed. Building production infrastructure is hard. Commercializing open source is tricky. The market for policy calculation APIs is unproven. Many startups with compelling theses fail for execution reasons.
+I include this chapter not because Cosilico has succeeded, but because the problem it addresses is real regardless of whether this particular solution works. AI systems need deterministic tools for financial calculations. Someone will build this infrastructure. The question is whether it will be open or proprietary.
 
-But the thesis is clear: AI systems need deterministic tools, tax and benefit calculations are essential, and no one else is building the comprehensive solution. The foundation from PolicyEngine provides a starting point that would take competitors years to replicate. The open-source approach builds trust and community.
+If Cosilico fails—and startups usually fail—the thesis remains: open-source policy simulation infrastructure, production-ready and commercially sustainable, would be valuable. Someone should build it. Maybe we will. Maybe someone else will do it better.
 
-Whether Cosilico specifically succeeds, the need for this infrastructure is real. Someone will build it—because AI systems will increasingly need accurate tools for financial calculations, and hallucinating 33% of tax answers is unacceptable.
+The honest framing is aspiration, not accomplishment. PolicyEngine demonstrated that open policy simulation is possible. Cosilico is an attempt to make it sustainable and scalable. Whether that attempt succeeds is unknown.
 
-The question is whether it will be built openly, accessibly, as shared infrastructure for society—or whether it will be another proprietary black box controlled by whoever wins the race.
+What I can say with confidence: the gap exists. GPT-4 gets tax questions wrong a third of the time. Every fintech company that needs accurate calculations today builds fragmented, partial solutions. The need for shared infrastructure is real, even if the path to building it remains uncertain.
 
-Cosilico is a bet on openness.
+Cosilico is a bet. You're reading this book partly to understand what the bet is on, and why it might matter even if the specific company doesn't survive.
 
 ---
 
