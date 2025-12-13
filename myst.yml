@@ -45,7 +45,11 @@ project:
         - file: manuscript/part-2-building/08-cosilico-infrastructure-for-the-future.md
           title: "Cosilico: Infrastructure for the Future"
     - title: "Part III: Future"
-      children: []
+      children:
+        - file: manuscript/part-3-future/10-the-uncertainty-gap.md
+          title: The Uncertainty Gap
+        - file: manuscript/part-3-future/11-simulating-opinion.md
+          title: Simulating Opinion
     - title: Research Notes
       children:
         - file: research/concepts/microsimulation-definition.md

@@ -1,6 +1,32 @@
 {
-  "generated_at": "2025-12-12T18:31:01.166183",
+  "generated_at": "2025-12-12T18:46:54.141902",
   "chapters": [
+    {
+      "path": "manuscript/part-3-future/10-the-uncertainty-gap.md",
+      "name": "10-the-uncertainty-gap",
+      "title": "Chapter 10: The Uncertainty Gap",
+      "words": 1901,
+      "wiki_links": [],
+      "citations": [
+        "pwbm2024accuracy",
+        "squiggle2024"
+      ],
+      "has_references": false
+    },
+    {
+      "path": "manuscript/part-3-future/11-simulating-opinion.md",
+      "name": "11-simulating-opinion",
+      "title": "Chapter 11: Simulating Opinion",
+      "words": 1957,
+      "wiki_links": [],
+      "citations": [
+        "argyle2023out",
+        "sarstedt2024silicon",
+        "mei2024llms",
+        "sarstedt2024silicon"
+      ],
+      "has_references": false
+    },
     {
       "path": "manuscript/front-matter/01-introduction.md",
       "name": "01-introduction",
@@ -194,18 +220,30 @@
     "referenced": 10
   },
   "citations": {
-    "total_in_bib": 48,
-    "used_in_manuscript": 43,
+    "total_in_bib": 53,
+    "used_in_manuscript": 48,
     "unused": [
-      "spielauer2011modgen",
-      "odonoghue2001dynamic",
       "harding1996microsimulation",
+      "spielauer2011modgen",
       "orcutt1976dynasim",
+      "odonoghue2001dynamic",
       "caldwell1996microsimulation"
     ]
   },
   "graph": {
     "nodes": [
+      {
+        "id": "10-the-uncertainty-gap",
+        "type": "chapter",
+        "label": "Chapter 10: The Uncertainty Ga",
+        "words": 1901
+      },
+      {
+        "id": "11-simulating-opinion",
+        "type": "chapter",
+        "label": "Chapter 11: Simulating Opinion",
+        "words": 1957
+      },
       {
         "id": "01-introduction",
         "type": "chapter",
@@ -261,40 +299,10 @@
         "words": 1387
       },
       {
-        "id": "rehoboam-contrast",
+        "id": "dynasim",
         "type": "note",
-        "label": "Rehoboam: The Dystopian Mirror",
-        "words": 607
-      },
-      {
-        "id": "ifs-taxben",
-        "type": "note",
-        "label": "IFS TAXBEN",
-        "words": 123
-      },
-      {
-        "id": "policyengine",
-        "type": "note",
-        "label": "PolicyEngine",
-        "words": 501
-      },
-      {
-        "id": "microsimulation-definition",
-        "type": "note",
-        "label": "Microsimulation",
-        "words": 235
-      },
-      {
-        "id": "taxsim",
-        "type": "note",
-        "label": "NBER TAXSIM",
-        "words": 127
-      },
-      {
-        "id": "rules-as-code",
-        "type": "note",
-        "label": "Rules as Code",
-        "words": 441
+        "label": "DYNASIM",
+        "words": 206
       },
       {
         "id": "cosilico",
@@ -303,22 +311,52 @@
         "words": 652
       },
       {
-        "id": "guy-orcutt",
+        "id": "rules-as-code",
         "type": "note",
-        "label": "Guy Orcutt",
-        "words": 374
-      },
-      {
-        "id": "dynasim",
-        "type": "note",
-        "label": "DYNASIM",
-        "words": 206
+        "label": "Rules as Code",
+        "words": 441
       },
       {
         "id": "openfisca",
         "type": "note",
         "label": "OpenFisca",
         "words": 373
+      },
+      {
+        "id": "guy-orcutt",
+        "type": "note",
+        "label": "Guy Orcutt",
+        "words": 374
+      },
+      {
+        "id": "ifs-taxben",
+        "type": "note",
+        "label": "IFS TAXBEN",
+        "words": 123
+      },
+      {
+        "id": "microsimulation-definition",
+        "type": "note",
+        "label": "Microsimulation",
+        "words": 235
+      },
+      {
+        "id": "policyengine",
+        "type": "note",
+        "label": "PolicyEngine",
+        "words": 501
+      },
+      {
+        "id": "rehoboam-contrast",
+        "type": "note",
+        "label": "Rehoboam: The Dystopian Mirror",
+        "words": 607
+      },
+      {
+        "id": "taxsim",
+        "type": "note",
+        "label": "NBER TAXSIM",
+        "words": 127
       }
     ],
     "edges": [
@@ -366,11 +404,15 @@
   },
   "progress": {
     "total": {
-      "words": 16220,
+      "words": 20078,
       "target": 80000,
-      "percent": 20.3
+      "percent": 25.1
     },
     "by_part": {
+      "Part III: Future": {
+        "words": 3858,
+        "chapters": 2
+      },
       "Front Matter": {
         "words": 880,
         "chapters": 1
@@ -384,7 +426,7 @@
         "chapters": 3
       }
     },
-    "chapters_complete": 9
+    "chapters_complete": 11
   },
   "targets": {
     "total_words": 80000,
