@@ -39,13 +39,13 @@ function App() {
         <div className="loading-text">
           Error: {error}
           <br />
-          <small>Run: npm run generate-data</small>
+          <small>Run: bun run generate-data</small>
         </div>
       </div>
     )
   }
 
-  const { progress, chapters, citations, notes_summary, targets, generated_at } = data
+  const { progress, chapters, citations, notes_summary, targets, generated_at, reviews } = data
   const formattedDate = new Date(generated_at).toLocaleDateString('en-US', {
     month: 'long',
     day: 'numeric',
@@ -54,18 +54,32 @@ function App() {
     minute: '2-digit'
   })
 
-  // Group chapters by part
-  const chaptersByPart = chapters.reduce((acc, ch) => {
+  // Extract chapter number from filename (e.g., "01-introduction" -> 1)
+  const getChapterNumber = (ch) => {
+    const match = ch.name.match(/^(\d+)/)
+    return match ? parseInt(match[1], 10) : 999
+  }
+
+  // Sort chapters by number
+  const sortedChapters = [...chapters].sort((a, b) => getChapterNumber(a) - getChapterNumber(b))
+
+  // Group sorted chapters by part, maintaining order
+  const partOrder = ['Front Matter', 'Part I: Origins', 'Part II: Building', 'Part III: Future']
+  const chaptersByPart = {}
+
+  for (const ch of sortedChapters) {
     let part = 'Other'
-    if (ch.path.includes('part-1')) part = 'Part I: Origins'
+    if (ch.path.includes('front-matter')) part = 'Front Matter'
+    else if (ch.path.includes('part-1')) part = 'Part I: Origins'
     else if (ch.path.includes('part-2')) part = 'Part II: Building'
     else if (ch.path.includes('part-3')) part = 'Part III: Future'
-    else if (ch.path.includes('front-matter')) part = 'Front Matter'
 
-    if (!acc[part]) acc[part] = []
-    acc[part].push(ch)
-    return acc
-  }, {})
+    if (!chaptersByPart[part]) chaptersByPart[part] = []
+    chaptersByPart[part].push(ch)
+  }
+
+  // Order parts correctly
+  const orderedParts = partOrder.filter(p => chaptersByPart[p])
 
   return (
     <div className="dashboard">
@@ -171,16 +185,16 @@ function App() {
         <div className="card grid-span-6 fade-up delay-4">
           <h3>Chapters ({chapters.length} total)</h3>
           <div className="chapter-list">
-            {Object.entries(chaptersByPart).map(([part, partChapters]) => (
+            {orderedParts.map(part => (
               <React.Fragment key={part}>
-                {partChapters.map((ch, idx) => (
+                <div className="part-header">{part}</div>
+                {chaptersByPart[part].map((ch) => (
                   <div className="chapter-item" key={ch.name}>
                     <div className="chapter-status">
                       {ch.words > 1000 ? '✓' : '◯'}
                     </div>
                     <div className="chapter-info">
                       <div className="chapter-title">{ch.title}</div>
-                      <div className="chapter-part">{part}</div>
                     </div>
                     <div className="chapter-stats">
                       <span className="chapter-stat words">
@@ -222,6 +236,72 @@ function App() {
               <span>Research Note</span>
             </div>
           </div>
+        </div>
+
+        {/* Synthetic Reviews */}
+        <div className="card grid-span-12 fade-up delay-6">
+          <h3>Synthetic Reviews</h3>
+          {reviews && reviews.length > 0 ? (
+            <div className="reviews-section">
+              <div className="reviews-summary">
+                <div className="stat-item">
+                  <div className="value">
+                    {(reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1)}
+                  </div>
+                  <div className="label">Avg Rating</div>
+                </div>
+                <div className="stat-item">
+                  <div className="value">{reviews.length}</div>
+                  <div className="label">Reviews</div>
+                </div>
+              </div>
+              <div className="reviews-list">
+                {reviews.map((review, idx) => (
+                  <div className="review-item" key={idx}>
+                    <div className="review-header">
+                      <span className="review-persona">{review.persona}</span>
+                      <span className="review-rating">
+                        {'★'.repeat(Math.round(review.rating))}
+                        {'☆'.repeat(5 - Math.round(review.rating))}
+                        <span className="rating-value">{review.rating}/5</span>
+                      </span>
+                    </div>
+                    <div className="review-content">
+                      <p className="review-summary">{review.summary}</p>
+                      {review.strengths && (
+                        <div className="review-section">
+                          <strong>Strengths:</strong>
+                          <ul>
+                            {review.strengths.map((s, i) => <li key={i}>{s}</li>)}
+                          </ul>
+                        </div>
+                      )}
+                      {review.weaknesses && (
+                        <div className="review-section">
+                          <strong>Areas for Improvement:</strong>
+                          <ul>
+                            {review.weaknesses.map((w, i) => <li key={i}>{w}</li>)}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                    <div className="review-meta">
+                      {review.generated_at && (
+                        <span>Generated: {new Date(review.generated_at).toLocaleDateString()}</span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="reviews-empty">
+              <p>No synthetic reviews yet.</p>
+              <p className="reviews-hint">
+                Run <code>/review</code> to generate synthetic reader reviews
+              </p>
+            </div>
+          )}
         </div>
       </div>
 
