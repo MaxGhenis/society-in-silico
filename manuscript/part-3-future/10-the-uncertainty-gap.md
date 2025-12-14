@@ -6,6 +6,10 @@ Not "approximately 23 million." Not "between 18 and 28 million." Just: 23 millio
 
 The number was devastatingly precise—and almost certainly wrong. Not because CBO made an error, but because any forecast a decade out involves enormous uncertainty. Economic conditions might change. Behavioral responses might differ from historical patterns. The labor market might evolve unpredictably. Yet the public discourse treated "23 million" as if it were a measurement, not an estimate.
 
+It's the PreCrime problem from *Minority Report*. In the 2002 film, three "precogs" predict future murders with seemingly perfect accuracy. Authorities arrest people before crimes occur. The predictions look like facts—displayed on screens, precise down to the location and time. No uncertainty, no probability, just destiny.
+
+But the story's twist reveals the system produces *three* different predictions that usually agree but sometimes diverge. The "minority report" is the dissenting prediction, suppressed to maintain the illusion of certainty. When predictions become policy, admitting uncertainty becomes politically impossible.
+
 This is the dirty secret of microsimulation: the models produce point estimates without confidence intervals. And that precision is largely an illusion.
 
 ---
