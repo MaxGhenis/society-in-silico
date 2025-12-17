@@ -252,12 +252,42 @@ GPT-4o predicted continued liberalization (69%) but the actual value dropped 7 p
 
 Both tests show LLMs systematically underestimate the pace of change in one direction, then miss reversals entirely.
 
+### Broader Pattern: Multiple Variables Show Reversals
+
+The HOMOSEX reversal isn't isolated. Analyzing GSS 2024 microdata across multiple variables:
+
+| Variable | Description | 2018 | 2021 | 2022 | 2024 | Pattern |
+|----------|-------------|------|------|------|------|---------|
+| HOMOSEX | Same-sex relations OK | 57% | 62% | 61% | **55%** | ↓ Reversal |
+| PREMARSX | Premarital sex OK | 62% | 66% | 69% | **65%** | ↓ Peaked |
+| NATRACE | More spending on race | 56% | 52% | 56% | **51%** | ↓ Declining |
+| ABANY | Abortion any reason | 50% | 56% | 59% | **60%** | ↑ Still rising |
+| GUNLAW | Favor gun permits | 72% | 67% | 71% | 70% | → Stable |
+| CAPPUN | Oppose death penalty | 37% | 44% | 40% | 40% | → Stable |
+
+**Key insight**: Values don't move in lockstep. While ABANY (abortion) continued rising post-Dobbs, HOMOSEX and NATRACE reversed. An LLM trained on "liberalization" as a general pattern would miss this divergence.
+
+### Why Did HOMOSEX Reverse?
+
+[PRRI's 2023 American Values Atlas](https://prri.org/research/views-on-lgbtq-rights-in-all-50-states/) found similar declines and offered explanations:
+
+1. **Partisan polarization**: Republican support for LGBTQ rights dropped 7 points (66% → 59%) while Democratic support stayed stable. State-level anti-LGBTQ legislation may have "amped up the volume."
+
+2. **Young Republican shift**: Support among Republicans aged 18-29 dropped from two-thirds (2020) to less than half (2023)—a "cratering."
+
+3. **Backlash dynamics**: As LGBTQ people "identify more publicly and assert their rights," [PBS reported](https://www.pbs.org/newshour/show/u-s-support-for-lgbtq-rights-is-declining-after-decades-of-support-heres-why) this may trigger counter-reactions.
+
+4. **Christian nationalism correlation**: PRRI found support for Christian nationalism negatively correlates with LGBTQ support.
+
+**Alignment implication**: Value forecasting models would need to predict not just trends but *backlash dynamics*—when does progress trigger counter-mobilization? This is much harder than extrapolating historical patterns.
+
 ### Caveats
 
-- Small sample size (2 variables, 2 clean forecast points)
-- Both predictions underestimated liberalization (negative bias)
+- Small sample size, though 6 variables now analyzed
+- LLM predictions assumed continued liberalization; reality was more complex
 - Confidence intervals were too narrow (neither covered the actual)
-- We need to test on values that *didn't* liberalize to check for bias
+- Mode effects: GSS shifted to web-based surveys post-COVID, which may affect comparability
+- Selection effects: Different questions asked to different subsamples in 2024
 
 ### Code
 
