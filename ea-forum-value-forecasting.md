@@ -218,11 +218,27 @@ Beyond predicting the "liberal response" rate, we can forecast the *full distrib
 
 The LLM correctly predicted the full distribution, including the significant fraction who hold the "traditional" view. This matters for alignment: we want to model value *heterogeneity*, not assume convergence.
 
+### Methodologically Clean Test
+
+A critical concern: modern LLMs may have GSS results in their training data. For a clean test, I used **gpt-3.5-turbo-instruct** (training cutoff: September 2021) to predict **GSS 2021** data (released November 2021—after the model's training cutoff).
+
+**Results (2010 cutoff → 2021 prediction):**
+
+| Variable | LLM Prediction | Actual | Error |
+|----------|----------------|--------|-------|
+| HOMOSEX | 55% [50, 60] | 64% | 9% |
+| GRASS | 50% [45, 55] | 68% | 18% |
+| **Mean** | | | **13.5%** |
+
+Compare to linear extrapolation baseline: ~30% MAE on the same task.
+
+**The LLM beats linear extrapolation by 2.2x even when it genuinely cannot have seen the target data.**
+
 ### Caveats
 
-- This is a small experiment (2 variables, 14 forecast points)
-- I used Claude Sonnet with RLHF, not a base model—post-cutoff moral attitudes may be baked in
-- The prompting approach is simple; more sophisticated methods might perform better
+- Small sample size (2 variables, 2 clean forecast points)
+- Both predictions underestimated liberalization (negative bias)
+- Confidence intervals were too narrow (neither covered the actual)
 - We need to test on values that *didn't* liberalize to check for bias
 
 ### Code
