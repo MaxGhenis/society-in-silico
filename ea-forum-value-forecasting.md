@@ -220,19 +220,37 @@ The LLM correctly predicted the full distribution, including the significant fra
 
 ### Methodologically Clean Test
 
-A critical concern: modern LLMs may have GSS results in their training data. For a clean test, I used **gpt-3.5-turbo-instruct** (training cutoff: September 2021) to predict **GSS 2021** data (released November 2021—after the model's training cutoff).
+A critical concern: modern LLMs may have GSS results in their training data. I ran two clean tests:
 
-**Results (2010 cutoff → 2021 prediction):**
+**Test 1: GPT-4o predicting GSS 2024**
 
-| Variable | LLM Prediction | Actual | Error |
-|----------|----------------|--------|-------|
-| HOMOSEX | 55% [50, 60] | 64% | 9% |
-| GRASS | 50% [45, 55] | 68% | 18% |
-| **Mean** | | | **13.5%** |
+GPT-4o has an October 2023 training cutoff. GSS 2024 data was collected April-December 2024 and released late 2024—definitely after the model's training.
 
-Compare to linear extrapolation baseline: ~30% MAE on the same task.
+| Variable | GPT-4o Prediction | 90% CI | Actual | Error |
+|----------|-------------------|--------|--------|-------|
+| HOMOSEX | 69% | [66, 72] | **54.7%** | +14.3% |
+| GRASS | 73% | [70, 76] | 68.5% | +4.5% |
+| **Mean** | | | | **9.4%** |
 
-**The LLM beats linear extrapolation by 2.2x even when it genuinely cannot have seen the target data.**
+**The surprise: HOMOSEX reversed trend!**
+
+| Year | HOMOSEX "Not wrong at all" |
+|------|---------------------------|
+| 2018 | 57% |
+| 2021 | 62% |
+| 2022 | 61% |
+| 2024 | **55%** ← reversal |
+
+GPT-4o predicted continued liberalization (69%) but the actual value dropped 7 points from 2021. This is the most important finding: **value trajectories can reverse**, and LLMs trained on decades of liberalization won't predict this.
+
+**Test 2: gpt-3.5-turbo-instruct predicting GSS 2021**
+
+| Variable | Prediction | Actual | Error |
+|----------|------------|--------|-------|
+| HOMOSEX | 55% | 62% | 7% |
+| GRASS | 50% | 68% | 18% |
+
+Both tests show LLMs systematically underestimate the pace of change in one direction, then miss reversals entirely.
 
 ### Caveats
 
