@@ -26,15 +26,19 @@ end with the democratic alternative vision.
 
 ## Draft Opening
 
-In the 2020 third season of Westworld, we meet Engerraund Serac—a French trillionaire who watched a thermonuclear incident destroy Paris, then spent decades building an AI called Rehoboam to ensure it never happened again. His system predicted individual human lives: when you'd get sick, lose your job, take your own life. It assigned people to "paths" and manipulated society to make those predictions come true.
+In the 2020 third season of Westworld—HBO's science fiction series about artificial consciousness and control—we meet Engerraund Serac, a French trillionaire who watched a thermonuclear incident destroy Paris, then spent decades building an AI called Rehoboam to ensure it never happened again. His system predicted individual human lives: when you'd get sick, lose your job, take your own life. It assigned people to "paths" and manipulated society to make those predictions come true. Those who didn't fit the predictions—the "outliers"—were flagged for "reconditioning."
 
 Serac's philosophy: "I don't predict the future. I create it."
 
-When I first watched this, I recognized the premise. Since 2018, I've built microsimulation systems that model society computationally—tools that predict how policies affect households, that simulate economies with millions of synthetic people. The Westworld writers had taken the same premise and followed it to its darkest conclusion.
+The show had explored this territory before. In Season 2, we learned the park's real purpose: data collection. Guests' hats contained sensors recording every choice, every behavior pattern, building predictive models of human decision-making. The AI's conclusion was chilling: "A human is just a brief algorithm. 10,247 lines." People reduced to code without their knowledge or consent, their behavior commodified and controlled.
+
+When I first watched this, I recognized the premise. Since 2018, I've built microsimulation systems that model society computationally—tools that predict how policies affect households, that simulate economies with millions of synthetic people. The Westworld writers had taken the same technology and followed it to its darkest conclusion.
 
 But they'd also revealed a fork in the road.
 
 Serac's system was closed: one man decided what "optimal" meant, and everyone else lived inside his model without knowing it. What if the model were open? What if anyone could query it, challenge its assumptions, propose alternatives? What if simulation were infrastructure for democratic deliberation rather than autocratic control?
+
+Billy Beane faced a similar fork in baseball. When *Moneyball* revealed the Oakland A's data-driven approach, other teams copied it. The A's lost their competitive advantage. But Beane's revolution wasn't about keeping better models secret—it was about challenging the institutional power of scouts who relied on intuition over evidence. The democratization of analysis leveled the playing field.
 
 That's what this book is about.
 
