@@ -281,6 +281,32 @@ The HOMOSEX reversal isn't isolated. Analyzing GSS 2024 microdata across multipl
 
 **Alignment implication**: Value forecasting models would need to predict not just trends but *backlash dynamics*—when does progress trigger counter-mobilization? This is much harder than extrapolating historical patterns.
 
+### Long-Term Forecasts
+
+The core proposal is about forecasting values decades or centuries ahead. Here's what GPT-4o predicts:
+
+**Trajectory forecasts (from 2021 data):**
+
+| Variable | 2030 | 2050 | 2075 | 2100 |
+|----------|------|------|------|------|
+| HOMOSEX | 68% [60,76] | 75% [65,85] | 80% [68,92] | 85% [70,100] |
+| GRASS | 75% [70,80] | 85% [78,92] | 90% [82,98] | 92% [84,100] |
+
+**"Long reflection" scenario** (post-scarcity world with extended deliberation):
+
+| Value | Estimate | 90% CI |
+|-------|----------|--------|
+| Same-sex relationships OK | 95% | [85, 99] |
+| Drugs as personal choice | 85% | [70, 95] |
+| Prioritize environment over growth | 80% | [65, 90] |
+| Support wealth redistribution | 75% | [60, 85] |
+| Individual liberty over collective | 60% | [45, 75] |
+| Belief in objective moral truths | 50% | [35, 65] |
+
+**The problem**: GPT-4o predicts HOMOSEX at 68% for 2030, but we already know 2024 was 55%—a reversal. The long-term forecasts assume continued liberalization that may not materialize.
+
+This illustrates the core challenge: LLMs extrapolate trends but miss inflection points. A 2100 forecast built on "liberalization continues" could be deeply wrong if backlash dynamics dominate the next few decades.
+
 ### Caveats
 
 - Small sample size, though 6 variables now analyzed
@@ -299,7 +325,18 @@ The experiment code is available at [github.com/maxghenis/value-forecasting](htt
 2. **Test with base models** (no RLHF) to avoid post-cutoff contamination
 3. **Improve uncertainty calibration**—current CIs are far too narrow
 4. **Develop better prompting strategies** that more carefully control for temporal knowledge
-5. **Investigate how** projected value distributions could inform reward functions
+5. **Condition on economic scenarios**: GSS 2024 shows a strong income-values gradient:
+
+| Income Quartile | HOMOSEX Accept | Median Income |
+|-----------------|----------------|---------------|
+| Q1 (lowest) | 43% | $7,700 |
+| Q2 | 54% | $31,000 |
+| Q3 | 61% | $56,000 |
+| Q4 (highest) | 67% | $139,000 |
+
+Under AI-driven growth scenarios, rapidly rising GDP/capita could shift values—but the direction isn't certain. Inglehart's "post-materialist values" thesis suggests economic security enables focus on self-expression values, but the causal relationship is debated.
+
+6. **Model backlash dynamics explicitly**: Rather than extrapolating trends, predict when progress triggers counter-mobilization
 
 ## What Success Looks Like
 
