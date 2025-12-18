@@ -1,8 +1,8 @@
 # Chapter 4: The Accuracy Question
 
-In 2017, the Penn Wharton Budget Model made a prediction: the Tax Cuts and Jobs Act would reduce federal revenue by $1.4 trillion over ten years. Congressional Republicans disputed this. Supply-siders predicted the tax cuts would pay for themselves through growth.
+In 2017, the Joint Committee on Taxation estimated the Tax Cuts and Jobs Act would reduce federal revenue by $1.46 trillion over ten years. The Penn Wharton Budget Model projected larger losses—$1.8 to $2.2 trillion on a dynamic basis, accounting for economic effects.[^1] Congressional Republicans disputed both. Supply-siders predicted the tax cuts would pay for themselves through growth.
 
-Five years later, we could check. Federal revenues did decline—roughly in line with Penn Wharton's projection, though the pandemic made precise attribution impossible. The supply-side fantasy didn't materialize. The microsimulation had been... approximately right.
+The supply-side fantasy didn't materialize. The microsimulations had been approximately right about the direction and magnitude.
 
 But "approximately right" is the best we can honestly say.
 
@@ -24,9 +24,9 @@ The honest response isn't "trust us"—it's "here's how we test ourselves."
 
 Microsimulation validation happens at three levels:
 
-**Component validation**: Do the individual calculations match the rules? If the model says a married couple with $100,000 income owes $15,420 in federal taxes, is that right? This is straightforward to check—you can verify against IRS worksheets or tax preparation software.
+**Component validation**: Do the individual calculations match the rules? If the model says a married couple with $100,000 income owes a specific amount in federal taxes, is that right? This is straightforward to check—you can verify against IRS worksheets or tax preparation software.
 
-**Aggregate validation**: When the model sums across the population, does it match administrative totals? If TRIM3 says 42 million households receive SNAP benefits, does that match USDA administrative data? If it says total federal income tax revenue is $1.8 trillion, does that match IRS collections?
+**Aggregate validation**: When the model sums across the population, does it match administrative totals? If a model estimates total SNAP recipients, does that match USDA administrative data? If it estimates total federal income tax revenue, does that match IRS collections?
 
 **Predictive validation**: When the model predicts effects of changes, do those predictions hold up? This is hardest—you rarely get clean experiments. Policy changes come bundled with economic shifts, other reforms, and behavioral responses that weren't anticipated.
 
@@ -34,19 +34,29 @@ Good models pass the first two levels reliably. The third is where humility ente
 
 ---
 
-## The TRIM3 Validation Framework
+## The ACA Test Case
 
-The Urban Institute's TRIM3 model, one of the most widely used U.S. microsimulation systems, publishes detailed validation documentation. Their approach:
+The Affordable Care Act provides one of the best natural experiments for testing microsimulation accuracy.
 
-1. **Calibration to administrative data**: Adjust the simulation so totals match known benchmarks—IRS returns, SSA beneficiary counts, CMS enrollment figures.
+In March 2010, CBO predicted the ACA would reduce the non-elderly uninsured rate from over 18 percent to about 7.6 percent by 2016. This assumed all states would adopt Medicaid expansion.[^2]
 
-2. **Cross-model comparison**: Compare TRIM3 results to CBO, JCT, and PWBM for major reforms. Differences get investigated.
+Then the Supreme Court made Medicaid expansion optional, and 19 states declined. Adjusting for this, CBO's projected uninsured rate for 2016 becomes 9.4 percent. The actual rate, according to CDC data, was 10.4 percent.[^3]
 
-3. **Sensitivity analysis**: Vary key assumptions and report ranges, not point estimates.
+That's remarkably close—within one percentage point—given a six-year forecast horizon and a major legal disruption.
 
-When TRIM3 analyzed the 2021 expanded Child Tax Credit, they compared their estimates to actual IRS data released later. The model predicted roughly 36 million families would receive payments; administrative data showed 35 million. The model was within 3%.
+But the aggregate accuracy masked component errors:
 
-That's good. But it's one reform, one year. The track record across decades is harder to assess because we rarely get such clean comparisons.
+| Coverage Source | CBO 2010 Prediction | Actual 2016 |
+|-----------------|---------------------|-------------|
+| Exchange enrollment | 21-23 million | 10.4 million |
+| Medicaid expansion | 10 million | 14.4 million |
+| Total uninsured | 30 million | 27.9 million |
+
+Source: Commonwealth Fund, FactCheck.org[^4]
+
+CBO overestimated exchange enrollment by more than half. They underestimated Medicaid enrollment by nearly 50%. Yet the total coverage gain was roughly correct because the errors partially canceled.
+
+As one analysis put it: "CBO's mistake was in estimating *where* the uninsured would get covered, not *how many* of them would gain coverage."[^5]
 
 ---
 
@@ -54,55 +64,37 @@ That's good. But it's one reform, one year. The track record across decades is h
 
 The failures are instructive.
 
-**Behavioral responses**: Static models assume people don't change behavior in response to policy. The 1986 Tax Reform Act, which lowered marginal rates, triggered dramatic income-shifting by high earners. Models that assumed static behavior underestimated this.
+**Behavioral responses**: Static models assume people don't change behavior in response to policy. But tax changes trigger income-shifting, benefit changes affect labor supply, and coverage mandates alter insurance choices. Models that assume static behavior systematically miss these effects.
 
-**Take-up rates**: Models often assume people claim benefits they're eligible for. In reality, take-up varies—sometimes 80%, sometimes 40%. Getting take-up wrong cascades through the entire analysis.
+**Take-up rates**: Models often assume people claim benefits they're eligible for. In reality, take-up varies widely—sometimes 80%, sometimes 40%. Getting take-up wrong cascades through the entire analysis.
 
-**Data limitations**: The Current Population Survey underreports income at the top and bottom. Models built on CPS data inherit this bias. Administrative records help, but bring their own issues (coverage, timeliness, linkage).
+**Data limitations**: The Current Population Survey underreports income at the top and bottom. Models built on CPS data inherit this bias. Administrative records help, but bring their own issues: coverage gaps, timeliness, and linkage challenges.
 
-**Structural change**: Models calibrated to past behavior may fail when the structure of the economy shifts. The models that predicted ACA coverage expansion got the direction right but the magnitude varied by millions.
-
----
-
-## The Penn Wharton Track Record
-
-Penn Wharton Budget Model has published systematic comparisons of their predictions to outcomes for several major reforms:
-
-| Reform | PWBM Prediction | Actual Outcome | Verdict |
-|--------|----------------|----------------|---------|
-| TCJA Revenue | -$1.4T | ~-$1-2T | Roughly correct |
-| ACA Coverage | +24M | +20M | Overstated by 20% |
-| Child Tax Credit 2021 | 36M families | 35M families | Within 3% |
-
-The pattern: models get the direction right and usually the order of magnitude. But 10-20% errors are common. 50% errors happen occasionally.
-
-Is this good enough?
-
-Compared to the alternative—flying blind—yes. Compared to the precision the numbers suggest—no. This is why uncertainty quantification matters (Chapter 10).
+**Structural change**: Models calibrated to past behavior may fail when the structure of the economy shifts. The ACA exchange enrollment miss likely reflected unprecedented market dynamics that historical data couldn't predict.
 
 ---
 
-## The Asymmetric Problem
+## The AHCA Counterfactual
 
-Here's the deeper issue: we mostly test models against incremental reforms. A 10% change to a tax rate. A $500 increase in a benefit. For these, historical relationships roughly hold.
+In 2017, CBO estimated that repealing the ACA under the American Health Care Act would cause 23 million people to lose coverage over a decade.[^6]
 
-But the most interesting policy questions involve larger departures. Universal basic income. Wealth taxes. Carbon dividends. For these, we're extrapolating beyond experience.
+We never got to test this prediction—the bill failed. But the analysis forced a conversation that wouldn't have happened otherwise. *Which* 23 million? Low-income? Rural? Elderly? The specificity of microsimulation, even when imperfect, structured the debate.
 
-The models can tell you: "If behavior stays the same, the cost would be X." They're much less reliable at telling you whether behavior *will* stay the same.
-
-A UBI that replaces means-tested programs might have very different labor supply effects than theory suggests. A wealth tax might trigger capital flight—or not. The models illuminate the *mechanical* effects while remaining agnostic about *behavioral* effects we haven't observed.
+This illustrates both the power and limitation of these models. They can't predict with certainty what would happen under policies never implemented. But they can illuminate *who* would be affected and through *what mechanisms*—questions that vaguer analysis cannot answer.
 
 ---
 
-## The CBO Standard
+## The Honest Assessment
 
-The Congressional Budget Office has the most rigorous validation culture in U.S. fiscal modeling. Every major projection comes with retrospective analysis: how did we do on past forecasts?
+Do microsimulation models work?
 
-Their honest assessment: short-term estimates (1-2 years) are reasonably accurate. Medium-term (5-10 years) have substantial error. Long-term (30+ years) are scenarios, not predictions.
+**Yes**: They calculate correctly. They match administrative data reasonably well. They predict incremental changes with useful accuracy. They're vastly better than intuition or partisan assertion.
 
-CBO's 2010 projection of 2020 GDP was off by 15%—before the pandemic. Add the pandemic, and the projection looks quaint. The error wasn't incompetence; it was the irreducible uncertainty of economic forecasting.
+**No**: They can produce false precision. They miss behavioral responses. They struggle with structural change. They're least reliable when stakes are highest—for novel, large-scale reforms.
 
-Microsimulation inherits this. A model that calculates taxes correctly still depends on economic projections that might be wrong. The calculation is precise; the scenario is uncertain.
+**The right frame**: Microsimulation models are like weather forecasts. Tomorrow's forecast is reliable. Next week's is roughly right. Next month's is a best guess.
+
+We don't stop using weather forecasts because they're imperfect. We calibrate our confidence to the forecast horizon. We use them where they're reliable and acknowledge uncertainty where they're not.
 
 ---
 
@@ -117,49 +109,9 @@ Before microsimulation, policy analysis relied on:
 
 Microsimulation forces specificity. Which families? How much help? Through what mechanisms? Even when the answer is approximate, the *question* becomes clearer.
 
-The CBO analysis that estimated 23 million would lose coverage under AHCA repeal might have been wrong by millions. But it forced a conversation about *which* millions: low-income? rural? elderly? That conversation wouldn't have happened with vaguer analysis.
-
----
-
-## The Honest Answer
-
-Do microsimulation models work?
-
-**Yes**: They calculate correctly. They match administrative data reasonably well. They predict incremental changes within 10-20%. They're vastly better than intuition or partisanship.
-
-**No**: They produce false precision. They miss behavioral responses. They struggle with structural change. They're worst when stakes are highest—for novel, large-scale reforms.
-
-**The right frame**: Microsimulation models are like weather forecasts. Tomorrow's forecast is reliable. Next week's is roughly right. Next month's is a best guess. Next year's is a scenario.
-
-We don't stop using weather forecasts because they're imperfect. We calibrate our confidence to the forecast horizon. We use them where they're reliable and acknowledge uncertainty where they're not.
-
-That's the appropriate stance for microsimulation: useful infrastructure, not oracle. Better than nothing, worse than certainty.
-
----
-
-## What Would Make Models Better?
-
-Several improvements are technically feasible:
-
-**Better data**: Linking survey data to administrative records gives ground truth on income, employment, program participation. The Census Bureau's efforts here are promising.
-
-**Behavioral modeling**: Moving beyond "static" assumptions to capture responses. This is hard—behavioral parameters are uncertain—but partial progress helps.
-
-**Uncertainty quantification**: Instead of point estimates, produce probability distributions. This is the subject of Chapter 10.
-
-**Open source**: Public code allows external scrutiny. Errors get found. Methods improve. This is the subject of Chapter 3.
-
-**Validation culture**: Regular retrospectives comparing predictions to outcomes. Honest accounting of failures.
-
-The models we have are the beginning, not the end. They work well enough to be useful, poorly enough to require humility.
-
 ---
 
 ## The Practitioner's Creed
-
-Every microsimulation modeler I know operates with what might be called the practitioner's creed:
-
-*The model is wrong. All models are wrong. This model is less wrong than not modeling. Use it with eyes open.*
 
 George Box's famous line—"all models are wrong, but some are useful"—isn't cynicism. It's epistemic hygiene. The modeler who believes the model captures full truth is more dangerous than the modeler who knows its limits.
 
@@ -170,3 +122,19 @@ That's what evidence-based policy actually looks like. Not certainty. Not faith.
 ---
 
 *Next: Part II begins with PolicyEngine—an attempt to build policy simulation infrastructure that's not just accurate, but open.*
+
+---
+
+## Sources
+
+[^1]: Penn Wharton Budget Model, "The Tax Cuts and Jobs Act, as Reported by Conference Committee (12/15/17)," December 18, 2017. https://budgetmodel.wharton.upenn.edu/issues/2017/12/18/the-tax-cuts-and-jobs-act-reported-by-conference-committee-121517-preliminary-static-and-dynamic-effects-on-the-budget-and-the-economy
+
+[^2]: Congressional Budget Office, March 2010 baseline projections for the Affordable Care Act.
+
+[^3]: Centers for Disease Control and Prevention, National Health Interview Survey, 2016.
+
+[^4]: Sara Collins et al., "The CBO's Crystal Ball: How Well Did It Forecast the Effects of the Affordable Care Act?" Commonwealth Fund, December 2015. https://www.commonwealthfund.org/publications/issue-briefs/2015/dec/cbos-crystal-ball-how-well-did-it-forecast-effects-affordable; Eugene Kiely, "CBO's Obamacare Predictions: How Accurate?" FactCheck.org, March 2017. https://www.factcheck.org/2017/03/cbos-obamacare-predictions-how-accurate/
+
+[^5]: Commonwealth Fund analysis, 2015.
+
+[^6]: Congressional Budget Office, "American Health Care Act," May 2017.
