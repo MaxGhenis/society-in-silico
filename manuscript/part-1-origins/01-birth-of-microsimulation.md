@@ -68,6 +68,10 @@ Instead of aggregate equations, you would have a simulated population. Instead o
 
 This inversion—derive aggregates from individuals, don't impose relationships on aggregates—was the conceptual breakthrough.
 
+Orcutt wasn't the first to imagine modeling society mathematically. Isaac Asimov's *Foundation* trilogy (1951-53) had introduced "psychohistory"—a fictional science that could predict the behavior of large populations using statistical laws. But Asimov built in a crucial limitation: psychohistory worked only for masses, never individuals. "The reactions of one man could be predicted," says his character Hari Seldon in *Foundation*, "but the reactions of a billion is something else again."
+
+Orcutt inverted this too. His microsimulation would model individuals first, then aggregate up. Predict the household, understand the society. Where Asimov's psychohistory was elegant but autocratic—only Seldon knew the plan—Orcutt's vision was granular and potentially democratic. If you could simulate any household, anyone could query how policy would affect families like theirs.
+
 Orcutt called it "microanalytic simulation." Later generations would shorten this to "microsimulation."
 
 ---
