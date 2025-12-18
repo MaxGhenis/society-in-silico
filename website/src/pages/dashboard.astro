@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Book Progress Dashboard — Society in Silico" noIndex={true} dark={true}>
+  <div class="min-h-screen bg-[var(--color-midnight)] text-white relative">
+    <!-- Simulation grid background -->
+    <div class="absolute inset-0 opacity-30">
+      <div class="absolute inset-0 bg-[linear-gradient(rgba(201,85,61,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(201,85,61,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="relative z-10 border-b border-white/5">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 py-6 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-4 group">
+          <div class="font-display text-xl font-semibold text-white group-hover:text-[var(--color-sienna)] transition-colors">
+            Society <span class="italic font-normal">in</span> Silico
+          </div>
+        </a>
+        <span class="font-mono text-[10px] tracking-[0.3em] text-white/40 uppercase">
+          Progress Dashboard
+        </span>
+      </div>
+    </header>
+
+    <main class="relative z-10 px-6 lg:px-12 py-12">
+      <div class="max-w-7xl mx-auto">
+        <!-- Title section -->
+        <div class="mb-12 animate-fade-up">
+          <span class="inline-block font-mono text-[10px] tracking-[0.3em] text-[var(--color-sienna)] uppercase mb-4 border-l-2 border-[var(--color-sienna)] pl-3">
+            Live Metrics
+          </span>
+          <h1 class="font-display text-4xl md:text-5xl font-semibold text-white mb-4">
+            Book Progress
+          </h1>
+          <p class="text-white/50 max-w-xl">
+            Track word counts, citations, chapter status, and synthetic reader feedback for "Society in Silico".
+          </p>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+          <div class="bg-[var(--color-midnight-light)] border border-white/5 p-6 animate-fade-up">
+            <div class="font-mono text-[10px] tracking-widest text-white/40 uppercase mb-3">Complete</div>
+            <div class="font-display text-4xl font-semibold text-white mb-1">~15<span class="text-[var(--color-sienna)]">%</span></div>
+            <div class="w-full h-1 bg-white/10 mt-4">
+              <div class="h-full bg-[var(--color-sienna)] w-[15%]"></div>
+            </div>
+          </div>
+          <div class="bg-[var(--color-midnight-light)] border border-white/5 p-6 animate-fade-up delay-100">
+            <div class="font-mono text-[10px] tracking-widest text-white/40 uppercase mb-3">Words Written</div>
+            <div class="font-display text-4xl font-semibold text-white">~12<span class="text-[var(--color-gold)]">k</span></div>
+          </div>
+          <div class="bg-[var(--color-midnight-light)] border border-white/5 p-6 animate-fade-up delay-200">
+            <div class="font-mono text-[10px] tracking-widest text-white/40 uppercase mb-3">Chapters</div>
+            <div class="font-display text-4xl font-semibold text-white">15</div>
+          </div>
+          <div class="bg-[var(--color-midnight-light)] border border-white/5 p-6 animate-fade-up delay-300">
+            <div class="font-mono text-[10px] tracking-widest text-white/40 uppercase mb-3">Target</div>
+            <div class="font-display text-4xl font-semibold text-white">80<span class="text-white/40">k</span></div>
+          </div>
+        </div>
+
+        <!-- Parts Progress -->
+        <div class="grid lg:grid-cols-2 gap-6 mb-12">
+          <div class="bg-[var(--color-midnight-light)] border border-white/5 p-6 animate-fade-up delay-400">
+            <h3 class="font-mono text-[10px] tracking-widest text-white/40 uppercase mb-6">Progress by Part</h3>
+            <div class="space-y-5">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-display text-sm text-white">Part I: Origins</span>
+                  <span class="font-mono text-xs text-white/40">~8k / 25k</span>
+                </div>
+                <div class="w-full h-2 bg-white/5">
+                  <div class="h-full bg-[var(--color-sienna)]" style="width: 32%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-display text-sm text-white">Part II: Building</span>
+                  <span class="font-mono text-xs text-white/40">~3k / 30k</span>
+                </div>
+                <div class="w-full h-2 bg-white/5">
+                  <div class="h-full bg-[var(--color-sienna)]" style="width: 10%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-display text-sm text-white">Part III: Future</span>
+                  <span class="font-mono text-xs text-white/40">~1k / 20k</span>
+                </div>
+                <div class="w-full h-2 bg-white/5">
+                  <div class="h-full bg-[var(--color-gold)]" style="width: 5%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-[var(--color-midnight-light)] border border-white/5 p-6 animate-fade-up delay-500">
+            <h3 class="font-mono text-[10px] tracking-widest text-white/40 uppercase mb-6">Research & Citations</h3>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <div class="font-display text-3xl font-semibold text-white mb-1">47</div>
+                <div class="font-mono text-[10px] tracking-wider text-white/40 uppercase">BibTeX Entries</div>
+              </div>
+              <div>
+                <div class="font-display text-3xl font-semibold text-white mb-1">23</div>
+                <div class="font-mono text-[10px] tracking-wider text-white/40 uppercase">Citations Used</div>
+              </div>
+              <div>
+                <div class="font-display text-3xl font-semibold text-white mb-1">12</div>
+                <div class="font-mono text-[10px] tracking-wider text-white/40 uppercase">Research Notes</div>
+              </div>
+              <div>
+                <div class="font-display text-3xl font-semibold text-white mb-1">8</div>
+                <div class="font-mono text-[10px] tracking-wider text-white/40 uppercase">Notes Referenced</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapters List -->
+        <div class="bg-[var(--color-midnight-light)] border border-white/5 p-6 mb-12 animate-fade-up delay-600">
+          <h3 class="font-mono text-[10px] tracking-widest text-white/40 uppercase mb-6">Chapters</h3>
+          <div class="space-y-1">
+            <div class="grid grid-cols-12 gap-4 py-2 border-b border-white/5 font-mono text-[10px] tracking-wider text-white/30 uppercase">
+              <div class="col-span-1"></div>
+              <div class="col-span-7">Title</div>
+              <div class="col-span-2 text-right">Words</div>
+              <div class="col-span-2 text-right">Progress</div>
+            </div>
+            {[
+              { num: '01', title: 'Introduction', words: 2847, target: 5000 },
+              { num: '02', title: 'The Orcutt Vision', words: 3421, target: 5000 },
+              { num: '03', title: 'Building DYNASIM', words: 1832, target: 5000 },
+              { num: '04', title: 'The IFS Model', words: 956, target: 5000 },
+              { num: '05', title: 'Going Global', words: 423, target: 5000 },
+            ].map((ch, i) => (
+              <div class={`grid grid-cols-12 gap-4 py-3 border-b border-white/5 ${i < 2 ? 'opacity-100' : 'opacity-50'}`}>
+                <div class="col-span-1 font-mono text-xs text-[var(--color-sienna)]">{ch.num}</div>
+                <div class="col-span-7 font-display text-sm text-white">{ch.title}</div>
+                <div class="col-span-2 text-right font-mono text-xs text-white/60">{ch.words.toLocaleString()}</div>
+                <div class="col-span-2">
+                  <div class="w-full h-1 bg-white/10">
+                    <div class="h-full bg-[var(--color-sienna)]" style={`width: ${Math.min(100, (ch.words / ch.target) * 100)}%`}></div>
+                  </div>
+                </div>
+              </div>
+            ))}
+            <div class="py-3 text-center">
+              <span class="font-mono text-[10px] tracking-wider text-white/30 uppercase">+ 10 more chapters</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Note -->
+        <p class="text-center font-mono text-xs text-white/30">
+          Full interactive dashboard with real-time data available locally via <code class="bg-white/5 px-2 py-1">bun run dev</code> in dashboard-app/
+        </p>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-white/5 mt-12">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 py-8 flex items-center justify-between">
+        <span class="font-mono text-xs text-white/30">© 2024 Max Ghenis</span>
+        <a href="/" class="font-mono text-xs text-white/30 hover:text-[var(--color-sienna)] transition-colors">
+          ← Back to site
+        </a>
+      </div>
+    </footer>
+  </div>
+</Layout>
