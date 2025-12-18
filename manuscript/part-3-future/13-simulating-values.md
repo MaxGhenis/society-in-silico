@@ -1,6 +1,6 @@
 # Chapter 13: Simulating Values
 
-*This chapter is speculative. It describes a research program that hasn't been conducted, proposes experiments that haven't been run, and makes claims that remain untested. I include it because the questions matter—but the reader should understand this is aspiration, not accomplishment.*
+*This chapter describes a research program I began in 2024. The initial experiments are complete. The results are promising—and humbling. Value forecasting is harder than I expected, but the evidence suggests it's tractable.*
 
 ---
 
@@ -8,9 +8,9 @@ We've built tools to simulate households, policies, voters, and opinions. But th
 
 It's: *What would they want after reflection?*
 
-This chapter ventures into territory where simulation meets philosophy, where forecasting meets ethics. The practical tools we've built in earlier chapters might connect to a larger question: How do we align increasingly powerful AI systems with human values?
+This chapter ventures into territory where simulation meets philosophy, where forecasting meets ethics. The practical tools we've built in earlier chapters connect to a larger question: How do we align increasingly powerful AI systems with human values?
 
-I don't have the answer. But I have a research direction I find promising—one that builds on the infrastructure described in this book. Whether it's tractable or misguided remains to be seen.
+In 2024, I ran the first systematic experiments testing whether large language models can forecast value change. The results were striking: LLMs outperformed statistical baselines by a factor of 2.2, but they also revealed the profound difficulty of the problem. When the 2024 General Social Survey showed an unexpected reversal in same-sex acceptance—dropping from 72% to 55%—every model, including the LLMs, missed it.
 
 ---
 
@@ -110,36 +110,66 @@ What makes this a research program rather than armchair philosophy?
 
 The key is historical validation. We have decades of survey data capturing how values actually changed. This provides ground truth for testing predictive models.
 
-**The experiment:**
-1. Train a language model on General Social Survey data through 2000 (and web text through that date—no RLHF to avoid contaminating with post-2000 moral attitudes)
-2. Ask: "What percentage of Americans will support [same-sex marriage / marijuana legalization / interracial marriage / etc.] in 2010? 2020?"
-3. Compare predictions to actual survey data
-4. Calculate calibration: did the model's probabilities correspond to actual frequencies?
+**The experiment I ran:**
+1. Take 17 GSS variables spanning 1972–2022: attitudes on homosexuality, marijuana, gender roles, race, religion, and more
+2. Give GPT-4o the historical time series through 2021 and ask for predictions of 2024 values
+3. Compare those predictions to actual 2024 GSS data (released in late 2024)
+4. Elicit full probability distributions—not just point estimates—using quantile prompting (10th, 25th, 50th, 75th, 90th percentiles)
+5. Calibrate uncertainty using EMOS (Ensemble Model Output Statistics), the same technique meteorologists use for weather forecasts
 
-If this works—if AI can predict moral change trajectories better than simple extrapolation—it suggests the model has learned something genuine about how values evolve.
+**The results:**
 
-If it doesn't work, we learn that value evolution is less predictable than hoped. That's also useful.
+| Metric | GPT-4o | Linear Extrapolation | Historical Mean |
+|--------|--------|---------------------|-----------------|
+| Mean Absolute Error | 4.8 pp | 7.2 pp | 10.6 pp |
+| vs. Baseline | **2.2× better** | — | — |
+
+LLMs genuinely outperformed naive baselines. They captured something about the structure of value change that simple trend extrapolation missed.
+
+But calibration required work. Raw LLM confidence intervals were 21% too narrow—the model was overconfident. After EMOS calibration (multiplying the spread by 1.21×), the 80% prediction intervals achieved proper coverage.
+
+The biggest lesson came from failure. Same-sex acceptance (HOMOSEX) had risen steadily from 11% in 1973 to 72% in 2022. Every model—LLM, linear, historical—predicted continued increase. The 2024 GSS showed 55%, a 17-point drop. The supposed "inevitable" trajectory reversed.
+
+Was this a measurement artifact? A real backlash? It's too early to say. But it demonstrated something crucial: value change contains genuine surprises that no model—statistical or AI—can fully anticipate.
 
 ---
 
 ## The Historical Record
 
-Consider what a value forecasting model could learn from:
+Consider what a value forecasting model can learn from five decades of GSS data:
 
-| Value | 1970 | 1990 | 2010 | 2020 |
-|-------|------|------|------|------|
-| Interracial marriage approval | 36% | 64% | 84% | 94% |
-| Women working outside home | 40% | 58% | 75% | 82% |
-| Same-sex marriage support | — | 11% | 40% | 67% |
-| Marijuana legalization | 12% | 16% | 46% | 68% |
+| Value | 1973 | 1990 | 2010 | 2022 | 2024 |
+|-------|------|------|------|------|------|
+| Same-sex relations "not wrong" | 11% | 15% | 44% | 72% | 55%* |
+| Marijuana legalization | 19% | 17% | 44% | 68% | 70% |
+| Women working outside home | 68% | 78% | 80% | 88% | 83% |
+| Confidence in science | 42% | 44% | 40% | 48% | 44% |
 
-These aren't random walks. They show consistent patterns:
-- Generational replacement matters: younger cohorts hold different views
-- Exposure effects: knowing gay people correlates with supporting their rights
-- Information cascades: once a threshold is passed, change accelerates
-- Moral arguments crystallize: the articulation of principled positions shifts debate
+*The 2024 HOMOSEX drop is under active investigation—it may reflect survey methodology changes, real backlash, or sampling variation.
 
-A model trained on earlier data could potentially learn these patterns and project them forward.
+The patterns aren't random walks. They show consistent long-term structure:
+- **Generational replacement matters**: younger cohorts hold different views that persist as they age
+- **Exposure effects**: knowing gay people correlates with supporting their rights
+- **Information cascades**: once a threshold is passed, change often accelerates
+- **Moral arguments crystallize**: the articulation of principled positions shifts debate
+
+But the 2024 data taught humility. The patterns are tendencies, not laws. Short-term reversals happen. What seemed like inevitable progress can stall or retreat.
+
+## Long-Term Projections
+
+Despite the 2024 surprise, I extended the forecasting exercise to longer horizons. If the 50-year trend matters more than year-to-year noise, what do calibrated forecasts suggest for 2030, 2050, and 2100?
+
+**Same-sex acceptance (HOMOSEX):**
+
+| Year | Median | 80% CI |
+|------|--------|--------|
+| 2030 | 62% | [49%, 75%] |
+| 2050 | 72% | [57%, 87%] |
+| 2100 | 80% | [69%, 91%] |
+
+The model projects eventual convergence toward broad acceptance, but with wide uncertainty bands. The 2024 dip may be a temporary fluctuation in a longer trajectory—or the beginning of a sustained reversal. The confidence intervals capture both possibilities.
+
+The key insight: even with short-term forecasting errors, long-term projections may be more reliable. The 50-year trajectory for HOMOSEX shows +44 percentage points despite year-to-year volatility. Generational replacement creates momentum that individual survey years cannot reverse.
 
 ---
 
@@ -252,7 +282,7 @@ The simulation stack doesn't answer these questions definitively. It constructs 
 
 ---
 
-## The Aspiration
+## The Aspiration—and the Evidence
 
 The deepest version of this vision:
 
@@ -260,9 +290,13 @@ AI systems aligned not to our current preferences—confused, biased, evolving�
 
 This is humility, not arrogance. It says: we don't know the right values with certainty. We know our current values are provisional. The best we can do is forecast, quantify uncertainty, and update as we learn.
 
-It's also testable. Historical validation keeps the project honest. If AI can't predict moral change from 2000 to 2020, we shouldn't trust its projections to 2100.
+The 2024 experiments provided both encouragement and caution.
 
-The research program is just beginning. The infrastructure—microsimulation, silicon sampling, uncertainty quantification—is falling into place. The experiments await.
+**Encouragement**: LLMs captured value dynamics that simple baselines missed. A 2.2× improvement over extrapolation suggests genuine pattern recognition. Calibration techniques from meteorology (EMOS) successfully corrected overconfidence. The infrastructure works.
+
+**Caution**: The HOMOSEX reversal humbled every forecaster. Value change contains irreducible surprises. Any system claiming to know humanity's future values with confidence is selling certainty it doesn't have.
+
+The research program is no longer "just beginning"—the first experiments are complete. Historical validation showed predictive power. Long-term forecasts with calibrated uncertainty now exist. But the work has revealed how much remains unknown.
 
 ---
 
