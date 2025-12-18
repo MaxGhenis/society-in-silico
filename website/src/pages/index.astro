@@ -16,23 +16,10 @@ import Layout from '../layouts/Layout.astro';
       <div class="absolute bottom-[30%] left-[25%] w-1.5 h-1.5 rounded-full bg-[var(--color-gold)] opacity-35 animate-float delay-300"></div>
     </div>
 
-    <!-- Diagonal accent line -->
-    <div class="absolute top-0 right-0 w-[1px] h-[60vh] bg-gradient-to-b from-[var(--color-sienna)] via-[var(--color-sienna)] to-transparent transform rotate-[25deg] origin-top-right translate-x-[-100px]"></div>
 
     <main class="relative z-10">
-      <!-- Header -->
-      <header class="px-6 py-8 md:px-12 lg:px-20">
-        <nav class="flex items-center justify-between max-w-6xl mx-auto animate-fade-in">
-          <div class="font-mono text-xs tracking-widest text-[var(--color-ink-muted)] uppercase">
-            Est. 2024
-          </div>
-          <div class="flex items-center gap-8">
-            <a href="https://policyengine.org" class="font-mono text-xs tracking-wide text-[var(--color-ink-muted)] hover:text-[var(--color-sienna)] transition-colors">
-              PolicyEngine
-            </a>
-          </div>
-        </nav>
-      </header>
+      <!-- Header spacer -->
+      <div class="h-8 md:h-12"></div>
 
       <!-- Hero -->
       <section class="px-6 md:px-12 lg:px-20 pt-12 md:pt-20 pb-16">
@@ -43,7 +30,7 @@ import Layout from '../layouts/Layout.astro';
               <!-- Chapter marker -->
               <div class="animate-fade-up">
                 <span class="inline-block font-mono text-[10px] tracking-[0.3em] text-[var(--color-sienna)] uppercase mb-6 border-l-2 border-[var(--color-sienna)] pl-3">
-                  Forthcoming · 2025
+                  Forthcoming · 2026
                 </span>
               </div>
 
@@ -110,10 +97,6 @@ import Layout from '../layouts/Layout.astro';
                         style={`animation-delay: ${i * 30}ms`}
                       />
                     ))}
-                  </div>
-                  <!-- Label -->
-                  <div class="absolute bottom-3 right-3 font-mono text-[9px] tracking-widest text-[var(--color-ink-muted)] uppercase">
-                    Micro → Macro
                   </div>
                 </div>
               </div>
