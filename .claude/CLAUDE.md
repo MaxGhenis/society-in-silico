@@ -18,6 +18,32 @@
 - Acknowledge uncertainty; don't oversell predictions
 - Balance optimism about tools with honesty about limitations
 
+### Max's Writing Style (from analysis of online writing)
+
+**Core identity**: Data-driven policy communicator bridging technical analysis and public accessibility.
+
+**Structure patterns**:
+1. Hook with a striking claim or question
+2. Ground in specific data
+3. Origin story / methodology transparency
+4. Concrete examples, not abstractions
+5. Forward-looking endings (but not overdramatic)
+
+**Signature moves**:
+- **Quantified claims**: "$200/month child allowance would lift a million mothers out of poverty"
+- **Comparative framing** (when it grounds things): "This costs less than X and reaches more people than Y"
+- **Counterintuitive findings**: Highlight where data challenges conventional assumptions
+  - Example: Low-income parents face 90% marginal tax rates (from benefit phase-outs) vs 37% top federal rate for the wealthy
+  - Example: Reforms designed to help can create new problems in different income ranges
+- **Transparency**: Link to methodology, reproducible analysis
+
+**What to avoid**:
+- Purple prose or emotional appeals
+- Salesy "try it yourself!" callouts
+- Hedging without substance
+- Overdramatic endings
+- Hiding methodology
+
 ## Key Themes
 
 1. **Microsimulation as bridge**: How computational models connect academic research to policy decisions
