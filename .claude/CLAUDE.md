@@ -50,6 +50,43 @@ When drafting chapters:
 3. Include "try it yourself" moments pointing to PolicyEngine
 4. End chapters with forward momentum
 
+## Citations & Bibliography
+
+This project uses **MyST markdown** with BibTeX. The config is in `myst.yml`.
+
+### Citation Format
+```markdown
+{cite}`key`           → inline citation
+{cite:p}`key`         → parenthetical (Author, Year)
+{cite:t}`key`         → textual: Author (Year)
+```
+
+### Adding Sources
+1. Add BibTeX entry to `references.bib`
+2. Use `{cite}`key`` in markdown
+3. MyST auto-generates bibliography
+
+### Example
+```bibtex
+# In references.bib
+@report{cbo2024deficit,
+  author = {{Congressional Budget Office}},
+  title = {An Evaluation of CBO's Projections},
+  year = {2024},
+  url = {https://www.cbo.gov/publication/61067}
+}
+```
+```markdown
+# In chapter
+CBO's accuracy improved 3x from 1989-2001 to 2002-2019 {cite}`cbo2024deficit`.
+```
+
+### Sourcing Standards
+- **NEVER fabricate claims** - verify all factual assertions before writing
+- Every quantitative claim needs a citation
+- Prefer primary sources (CBO, IRS, academic papers) over news articles
+- When uncertain, mark with `[NEEDS CITATION]` for later verification
+
 ## Research Integration
 
 The `research/` folder contains:

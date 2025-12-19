@@ -32,6 +32,8 @@ project:
           title: The Tax Model Wars
         - file: manuscript/part-1-origins/03-open-source-revolution.md
           title: The Open Source Revolution
+        - file: manuscript/part-1-origins/04-the-accuracy-question.md
+          title: The Accuracy Question
     - title: "Part II: Building"
       children:
         - file: manuscript/part-2-building/04-policyengine-proof-of-concept.md
