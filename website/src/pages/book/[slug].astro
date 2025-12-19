@@ -75,15 +75,17 @@ try {
   content = fs.readFileSync(filePath, 'utf-8');
 
   // Process citations: {cite}`key` → superscript with tooltip data
-  content = content.replace(/\{cite\}`([^`]+)`/g, (_, key) => {
+  // Also handle punctuation: move citation after trailing punctuation
+  content = content.replace(/\{cite\}`([^`]+)`([.,;:!?])?/g, (_, key, punct) => {
     const cite = citationData[key];
     if (cite) {
       if (!usedCitations.includes(key)) usedCitations.push(key);
       const num = usedCitations.indexOf(key) + 1;
       const tooltip = `${cite.author}, ${cite.year}`;
-      return `<sup class="cite" data-key="${key}" data-tip="${tooltip}" data-url="${cite.url || ''}">[${num}]</sup>`;
+      const sup = `<sup class="cite" data-key="${key}" data-tip="${tooltip}" data-url="${cite.url || ''}">[${num}]</sup>`;
+      return punct ? `${punct}${sup}` : sup;
     }
-    return '';
+    return punct || '';
   });
 
   // Process wiki-links: [[entity]] → concept with tooltip
