@@ -26,7 +26,13 @@ When PolicyEngine runs a policy simulation, it calculates the impact on each sam
 
 The quality of society-level analysis depends entirely on the quality of the underlying data. PolicyEngine confronts this directly.
 
-The Current Population Survey has known limitations {cite}`policyengine2022enhanced`. Respondents underreport benefit receipt—studies find 40-50% of SNAP recipients don't report their benefits in the CPS {cite}`meyer2015underreporting`. High incomes are top-coded, distorting estimates of policies affecting top earners. The sample is too small for reliable state-level analysis. Asset information is missing, making wealth-based policies unmeasurable.
+The Current Population Survey has known limitations {cite}`policyengine2022enhanced`. Bruce Meyer and colleagues have documented what they call a crisis in household survey data: declining response rates, rising imputation, and systematic underreporting that distorts our picture of poverty and program effectiveness {cite}`meyer2015underreporting`.
+
+The underreporting is severe. Studies find 40-50% of SNAP recipients don't report their benefits in the CPS. Over 60% of TANF and General Assistance goes unreported. Housing assistance is missed by a third of recipients. This means surveys systematically undercount the safety net—making programs appear less effective than they actually are.
+
+The problem runs in both directions. Seniors underreport retirement income, particularly IRA and 401(k) withdrawals that occur irregularly rather than as monthly pension checks. A Census Bureau study found median household income for those 65+ was 30% higher in administrative records than in survey data {cite}`census2017retirement`. The result: CPS-based poverty rates for seniors (9.1%) were 2.2 percentage points higher than rates calculated using validated administrative data (6.9%). Senior poverty is real, but it's not as high as the headline numbers suggest.
+
+High incomes are top-coded, distorting estimates of policies affecting top earners. The sample is too small for reliable state-level analysis. Asset information is missing, making wealth-based policies unmeasurable.
 
 > "These limitations can reduce the accuracy and usefulness of the CPS for policy simulations. For example, CPS-based projections will tend to underestimate the budgetary impacts of reforming SNAP or instituting a tax on top earners."
 
