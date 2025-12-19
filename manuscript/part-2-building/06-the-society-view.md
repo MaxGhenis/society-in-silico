@@ -60,7 +60,7 @@ PolicyEngine shows budget impact as a primary output, but contextualizes it with
 
 Reducing poverty is often the stated goal of tax-benefit reforms. But what does "reducing poverty" actually mean, and how do you measure it?
 
-PolicyEngine uses the Supplemental Poverty Measure (SPM), which the Census Bureau introduced in 2011 as a more comprehensive alternative to the Official Poverty Measure {cite}`policyengine2023sex`. Unlike the older measure, the SPM accounts for taxes, in-kind benefits like SNAP, geographic variation in housing costs, work expenses, and out-of-pocket medical spending.
+PolicyEngine uses the Supplemental Poverty Measure (SPM), which the Census Bureau introduced in 2011 as a more comprehensive alternative to the Official Poverty Measure {cite}`policyengine2023sex`. Unlike the older measure, the SPM accounts for taxes, in-kind benefits like SNAP, geographic variation in housing costs, work expenses, and out-of-pocket medical spending. For a family of four (two adults, two children) renting their home, the 2024 SPM threshold is about $39,000—meaning a family with resources below that level is considered in poverty {cite}`bls2024spm`.
 
 Under current law, PolicyEngine estimates that 9.6% of Americans have resources below their SPM poverty threshold. 3.3% are in deep poverty—below half the threshold. Women face higher poverty rates than men. Children face higher rates than working-age adults, who face higher rates than seniors {cite}`policyengine2023sex`.
 
