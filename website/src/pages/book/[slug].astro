@@ -39,11 +39,30 @@ let wordCount = 0;
 try {
   content = fs.readFileSync(filePath, 'utf-8');
 
-  // Remove MyST-specific syntax (citations, bibliography blocks)
+  // Remove MyST-specific syntax and wiki-links
   content = content
-    .replace(/\{cite\}`[^`]+`/g, '') // Remove {cite}`...`
-    .replace(/```\{bibliography\}[\s\S]*?```/g, '') // Remove bibliography blocks
-    .replace(/## References\s*$/gm, ''); // Remove empty References section
+    // Remove {cite}`key` citations (and any trailing space/punctuation issues)
+    .replace(/\s*\{cite\}`[^`]+`/g, '')
+    // Remove wiki-links [[entity]] - just remove them entirely
+    .replace(/\[\[([^\]]+)\]\]/g, '')
+    // Remove {ref}`...` cross-references
+    .replace(/\{ref\}`[^`]+`/g, '')
+    // Remove {numref}`...` numbered references
+    .replace(/\{numref\}`[^`]+`/g, '')
+    // Remove {figure} blocks
+    .replace(/```\{figure\}[\s\S]*?```/g, '')
+    // Remove {note} admonitions
+    .replace(/```\{note\}[\s\S]*?```/g, '')
+    // Remove {warning} admonitions
+    .replace(/```\{warning\}[\s\S]*?```/g, '')
+    // Remove bibliography blocks
+    .replace(/```\{bibliography\}[\s\S]*?```/g, '')
+    // Remove empty References section
+    .replace(/## References\s*$/gm, '')
+    // Clean up any double spaces left behind
+    .replace(/  +/g, ' ')
+    // Clean up space before punctuation
+    .replace(/ ([.,;:!?])/g, '$1');
 
   // Configure marked for nice typography
   marked.setOptions({
