@@ -10,7 +10,7 @@ This opens a strange new question: Can we simulate not just how policies affect 
 
 ## The Market Research Problem
 
-Every year, companies and governments spend roughly $140 billion on survey research. They want to know what people think—about products, policies, candidates, ideas. The traditional method is straightforward: find a representative sample of humans, ask them questions, aggregate the responses.
+Every year, companies and governments spend roughly $140 billion on survey research {cite}`esomar2024market`. They want to know what people think—about products, policies, candidates, ideas. The traditional method is straightforward: find a representative sample of humans, ask them questions, aggregate the responses.
 
 This works, but it's slow and expensive. A well-designed survey with 1,000 respondents might cost $50,000 and take weeks to field. Want to test a slightly different question wording? That's another $50,000. Want to check if opinions differ across 50 demographic subgroups? The costs multiply.
 

@@ -14,7 +14,7 @@ The household view answers "what would this policy mean for me?" The society vie
 
 The transition seems straightforward: run the household calculation for every household in the country, sum up the results. In principle, that's exactly what happens. In practice, it requires solving some of the hardest problems in policy analysis.
 
-Start with the obvious challenge: you can't actually survey every household. The Current Population Survey samples about 100,000 households—a fraction of a percent of the 130 million households in America {cite}`policyengine2022enhanced`. Each sampled household must represent thousands of similar households in the population.
+Start with the obvious challenge: you can't actually survey every household. The Current Population Survey samples about 60,000 households each month—a tiny fraction of the roughly 130 million households in America {cite}`census2024cps`. Each sampled household must represent thousands of similar households in the population.
 
 This is done through weights. Each household in the survey carries a weight indicating how many households it represents. A household in rural Wyoming might represent 5,000 similar households. A household in Manhattan might represent 500. The Census Bureau calculates these weights carefully, adjusting for sampling design and non-response.
 
@@ -26,7 +26,7 @@ When PolicyEngine runs a policy simulation, it calculates the impact on each sam
 
 The quality of society-level analysis depends entirely on the quality of the underlying data. PolicyEngine confronts this directly.
 
-The Current Population Survey has known limitations {cite}`policyengine2022enhanced`. Respondents underreport benefit receipt—SNAP benefits appear about a third lower in the CPS than in administrative records. High incomes are top-coded at $1 million, distorting estimates of policies affecting top earners. The sample is too small for reliable state-level analysis. Asset information is missing, making wealth-based policies unmeasurable.
+The Current Population Survey has known limitations {cite}`policyengine2022enhanced`. Respondents underreport benefit receipt—studies find 40-50% of SNAP recipients don't report their benefits in the CPS {cite}`meyer2015underreporting`. High incomes are top-coded, distorting estimates of policies affecting top earners. The sample is too small for reliable state-level analysis. Asset information is missing, making wealth-based policies unmeasurable.
 
 > "These limitations can reduce the accuracy and usefulness of the CPS for policy simulations. For example, CPS-based projections will tend to underestimate the budgetary impacts of reforming SNAP or instituting a tax on top earners."
 
