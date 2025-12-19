@@ -540,13 +540,14 @@ if (chapter.partNumber && chapter.chapterNumber) {
     vertical-align: super;
     line-height: 0;
     position: relative;
+    display: inline-block;
   }
 
   .prose-container .cite:hover {
     color: var(--color-sienna-light);
   }
 
-  .prose-container .cite:hover::after {
+  .prose-container .cite::after {
     content: attr(data-tip);
     position: absolute;
     bottom: 100%;
@@ -560,6 +561,14 @@ if (chapter.partNumber && chapter.chapterNumber) {
     white-space: nowrap;
     z-index: 100;
     pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s ease, visibility 0.15s ease;
+  }
+
+  .prose-container .cite:hover::after {
+    opacity: 1;
+    visibility: visible;
   }
 
   /* Concepts */
@@ -567,13 +576,14 @@ if (chapter.partNumber && chapter.chapterNumber) {
     background: linear-gradient(to bottom, transparent 60%, rgba(201, 85, 61, 0.15) 60%);
     cursor: help;
     position: relative;
+    display: inline;
   }
 
   .prose-container .concept:hover {
     background: linear-gradient(to bottom, transparent 60%, rgba(201, 85, 61, 0.3) 60%);
   }
 
-  .prose-container .concept:hover::after {
+  .prose-container .concept::after {
     content: attr(data-tip);
     position: absolute;
     bottom: 100%;
@@ -590,6 +600,14 @@ if (chapter.partNumber && chapter.chapterNumber) {
     pointer-events: none;
     text-align: center;
     line-height: 1.4;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s ease, visibility 0.15s ease;
+  }
+
+  .prose-container .concept:hover::after {
+    opacity: 1;
+    visibility: visible;
   }
 
   /* References section */
