@@ -10,9 +10,9 @@ This is the story of how one frustrated economist imagined simulating society fr
 
 ## The Engineer Who Became an Economist
 
-Guy Orcutt came to economics through an unusual path. Trained as an electrical engineer and physicist, he viewed the world as a system to be understood and improved. In his autobiographical reflections, he described "my early fascination with science, my transition from engineering to economics."
+Guy Orcutt came to economics through an unusual path. He earned a B.S. in Physics from the University of Michigan in 1939 before switching to economics for his M.A. (1940) and Ph.D. (1944) {cite}`watts1991orcutt`. He viewed the world as a system to be understood and improved. In his autobiographical reflections, he described "my early fascination with science, my transition from engineering to economics."
 
-Inspired by the econometric work of Jan Tinbergen, the young Orcutt harbored what he called his "Tinbergen dream"—building a model that could capture an entire national economy. Early in his career, he even built an analogue electrical-mechanical "regression analyzer" to calculate statistical estimates. He thought like an engineer: if you want to understand a system, you build a model of it.
+Inspired by the econometric work of Jan Tinbergen, the young Orcutt harbored what he called his "Tinbergen dream"—building a model that could capture an entire national economy. Early in his career at MIT, he designed and built an analogue electrical-mechanical "regression analyzer" to calculate statistical estimates {cite}`cheng2020orcutt`. He thought like an engineer: if you want to understand a system, you build a model of it.
 
 But as he worked with macroeconomic models through the 1940s and early 1950s, frustration mounted. The models could predict aggregates—GDP, inflation, unemployment. What they couldn't do was tell you what would happen to actual people.
 
@@ -110,7 +110,7 @@ It wasn't until 1969 that Orcutt got the resources to build something at scale.
 
 The Urban Institute, a newly founded think tank in Washington, D.C., hired him to lead a project called DYNASIM—Dynamic Simulation of Income Model. The ambition was comprehensive: simulate all major demographic and economic life events. Births. Deaths. Marriages. Divorces. Education. Employment. Disability. Retirement. Taxes. Benefits.
 
-The technical constraints were still formidable. DYNASIM ran on a DEC system-10 mainframe using a custom software framework called MASH (Microanalytic Simulation of Households). It simulated 10,000 people—a tiny fraction of the U.S. population, but enough to draw statistical inferences.
+The technical constraints were still formidable. DYNASIM ran on a DEC system-10 mainframe using a custom software framework called MASH (Microanalytic Simulation of Households) {cite}`soa1997dynasim`. It simulated 10,000 people—a tiny fraction of the U.S. population, but enough to draw statistical inferences.
 
 The team worked for six years. In 1975, the first version was complete {cite}`soa1997dynasim`. Eighteen years after Orcutt's original paper.
 
@@ -232,7 +232,7 @@ And perhaps most fundamentally: microsimulation tells you what a policy would do
 
 ## The Legacy
 
-Guy Orcutt died in 2006, having seen his vision transform from impractical dream to standard methodology. Every modern tax calculator, every CBO budget score, every analysis of "who wins and who loses" uses tools that trace back to his 1957 paper.
+Guy Orcutt died on March 5, 2006 {cite}`orcutt2024wikipedia`, having seen his vision transform from impractical dream to standard methodology. Every modern tax calculator, every CBO budget score, every analysis of "who wins and who loses" uses tools that trace back to his 1957 paper.
 
 But the deeper legacy isn't any particular model. It's a way of thinking—and, for Orcutt, a way of *acting*.
 
