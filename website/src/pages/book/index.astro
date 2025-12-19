@@ -1,0 +1,185 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { bookStructure } from '../../lib/book';
+---
+
+<Layout title="Read — Society in Silico" description="Read the full book online: The Story of Policy Simulation">
+  <div class="min-h-screen bg-[var(--color-paper)] relative">
+    <!-- Subtle paper texture overlay -->
+    <div class="fixed inset-0 pointer-events-none opacity-[0.015]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E');"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[var(--color-paper)]/95 backdrop-blur-sm border-b border-[var(--color-paper-dark)]">
+      <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="font-display text-lg font-semibold text-[var(--color-ink)] hover:text-[var(--color-sienna)] transition-colors">
+          Society <span class="italic font-normal">in</span> Silico
+        </a>
+        <div class="flex items-center gap-6">
+          <a href="/book/thesis" class="font-mono text-xs tracking-wider text-[var(--color-ink-muted)] hover:text-[var(--color-sienna)] transition-colors uppercase">
+            Start Reading
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="relative z-10 pt-24 pb-20">
+      <!-- Title Section -->
+      <section class="px-6 py-16 md:py-24">
+        <div class="max-w-4xl mx-auto text-center">
+          <!-- Book badge -->
+          <div class="inline-flex items-center gap-2 mb-8 animate-fade-up">
+            <span class="w-8 h-px bg-[var(--color-sienna)]"></span>
+            <span class="font-mono text-[10px] tracking-[0.3em] text-[var(--color-sienna)] uppercase">
+              Full Text
+            </span>
+            <span class="w-8 h-px bg-[var(--color-sienna)]"></span>
+          </div>
+
+          <!-- Title -->
+          <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-semibold leading-[0.9] tracking-tight text-[var(--color-ink)] mb-4 animate-fade-up delay-100">
+            Society<br/>
+            <span class="italic font-normal">in</span> Silico
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="font-display text-xl md:text-2xl text-[var(--color-ink-light)] italic mt-6 mb-8 animate-fade-up delay-200">
+            {bookStructure.subtitle}
+          </p>
+
+          <!-- Author -->
+          <p class="font-mono text-sm tracking-wider text-[var(--color-ink-muted)] uppercase animate-fade-up delay-300">
+            By {bookStructure.author}
+          </p>
+
+          <!-- Decorative divider -->
+          <div class="flex items-center justify-center gap-3 mt-12 animate-fade-up delay-400">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sienna)]"></span>
+            <span class="w-24 h-px bg-[var(--color-paper-dark)]"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-gold)]"></span>
+            <span class="w-24 h-px bg-[var(--color-paper-dark)]"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sienna)]"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Table of Contents -->
+      <section class="px-6 py-12">
+        <div class="max-w-2xl mx-auto">
+          <h2 class="font-display text-2xl font-semibold text-[var(--color-ink)] text-center mb-12 animate-fade-up">
+            Contents
+          </h2>
+
+          <!-- Front Matter -->
+          <div class="mb-12 animate-fade-up delay-100">
+            <ul class="space-y-1">
+              {bookStructure.frontMatter.map((chapter, index) => (
+                <li>
+                  <a
+                    href={`/book/${chapter.slug}`}
+                    class="group flex items-baseline gap-4 py-3 border-b border-transparent hover:border-[var(--color-paper-dark)] transition-all"
+                  >
+                    <span class="font-mono text-xs text-[var(--color-ink-muted)] group-hover:text-[var(--color-sienna)] transition-colors w-8">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <span class="font-display text-lg text-[var(--color-ink)] group-hover:text-[var(--color-sienna)] transition-colors flex-1">
+                      {chapter.title}
+                    </span>
+                    <span class="font-mono text-xs text-[var(--color-ink-muted)] opacity-0 group-hover:opacity-100 transition-opacity">
+                      Read
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Parts -->
+          {bookStructure.parts.map((part, partIndex) => (
+            <div class="mb-12 animate-fade-up" style={`animation-delay: ${200 + partIndex * 100}ms`}>
+              <!-- Part Header -->
+              <div class="flex items-center gap-4 mb-6 pt-8 border-t border-[var(--color-paper-dark)]">
+                <span class="font-mono text-[10px] tracking-[0.2em] text-[var(--color-sienna)] uppercase">
+                  Part {part.number}
+                </span>
+                <span class="flex-1 h-px bg-[var(--color-paper-dark)]"></span>
+                <span class="font-display text-xl font-semibold text-[var(--color-ink)]">
+                  {part.title}
+                </span>
+              </div>
+
+              <!-- Chapters -->
+              <ul class="space-y-1 pl-4">
+                {part.chapters.map((chapter) => (
+                  <li>
+                    <a
+                      href={`/book/${chapter.slug}`}
+                      class="group flex items-baseline gap-4 py-3 border-b border-transparent hover:border-[var(--color-paper-dark)] transition-all"
+                    >
+                      <span class="font-mono text-xs text-[var(--color-ink-muted)] group-hover:text-[var(--color-sienna)] transition-colors w-8">
+                        {String(chapter.chapterNumber).padStart(2, '0')}
+                      </span>
+                      <span class="font-display text-lg text-[var(--color-ink)] group-hover:text-[var(--color-sienna)] transition-colors flex-1">
+                        {chapter.title}
+                      </span>
+                      <span class="font-mono text-xs text-[var(--color-ink-muted)] opacity-0 group-hover:opacity-100 transition-opacity">
+                        Read
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          <!-- Start Reading CTA -->
+          <div class="mt-16 text-center animate-fade-up delay-500">
+            <a
+              href="/book/thesis"
+              class="inline-flex items-center gap-3 px-8 py-4 bg-[var(--color-ink)] text-white font-mono text-sm tracking-wider uppercase hover:bg-[var(--color-sienna)] transition-colors"
+            >
+              <span>Begin Reading</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Book Info Footer -->
+      <section class="px-6 py-12 mt-12 border-t border-[var(--color-paper-dark)]">
+        <div class="max-w-2xl mx-auto text-center">
+          <p class="font-mono text-xs text-[var(--color-ink-muted)] leading-relaxed">
+            This book is a work in progress. New chapters are added regularly.<br/>
+            <a href="/" class="text-[var(--color-sienna)] hover:underline">Subscribe</a> to follow along as it takes shape.
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+</Layout>
+
+<style>
+  /* Custom animations for the book page */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+</style>
