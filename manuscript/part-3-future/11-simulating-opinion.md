@@ -2,7 +2,7 @@
 
 In 2023, a research paper with a provocative title appeared: "Out of One, Many: Using Language Models to Simulate Human Samples" {cite}`argyle2023out`. The researchers had done something that would have seemed like science fiction a decade earlier. They asked GPT-3 to pretend to be different people—a 65-year-old Black woman from Mississippi, a 28-year-old white man from Oregon—and answer survey questions. Then they compared the AI's responses to actual survey data.
 
-The results were striking. When properly conditioned on demographic characteristics, the language model reproduced human voting patterns with 85% accuracy. It captured the partisan divide by education. It predicted regional variation. In many ways, it thought like the population it was pretending to be.
+The results were striking. When properly conditioned on demographic characteristics, the language model showed high correspondence with human voting patterns across the 2012, 2016, and 2020 presidential elections. It captured the partisan divide by education. It predicted regional variation. In many ways, it thought like the population it was pretending to be.
 
 This opens a strange new question: Can we simulate not just how policies affect households, but what households *think* about those policies?
 
