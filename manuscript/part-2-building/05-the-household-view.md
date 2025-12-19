@@ -69,9 +69,11 @@ PolicyEngine quantifies this visibility. Users see an "earnings dead zone"—a s
 
 Economists care about marginal tax rates because they affect behavior. If you keep 90 cents of your next dollar earned, you might work more. If you keep only 20 cents, you might not.
 
-For high earners, marginal tax rates are discussed extensively—the top federal rate, state rates, capital gains rates. But low-income workers often face marginal rates that exceed what any billionaire pays, because benefit phase-outs stack on top of taxes.
+For high earners, marginal tax rates are discussed extensively—the top federal rate of 37%, state rates, capital gains rates. But here's the counterintuitive reality: low-income workers often face marginal rates that exceed what any billionaire pays, because benefit phase-outs stack on top of taxes.
 
-Consider the mechanics. SNAP benefits phase out at roughly 30 cents per dollar of additional net income. The EITC phases out at 21 cents per dollar for families with children. State programs add more. At certain income ranges, a worker faces combined marginal rates of 60%, 80%, even over 100%.
+Consider a single parent earning $30,000 with a child receiving SSI. They face federal and state income taxes, payroll taxes, EITC phase-out, SSI phase-out (50 cents per dollar), and SNAP phase-out (30 cents per dollar). Stack these together and the marginal rate approaches 90%—more than double the top rate a hedge fund manager pays on their last dollar of income.
+
+This isn't an edge case. The mechanics are structural: SNAP benefits phase out at roughly 30 cents per dollar of additional net income. The EITC phases out at 21 cents per dollar for families with children. SSI phases out at 50 cents. State programs add more. At certain income ranges, a worker faces combined marginal rates that would provoke outrage if imposed on the wealthy.
 
 PolicyEngine makes these rates visible. The marginal tax rate chart shows users exactly what happens when they earn more: at $20,000, their marginal rate might be 40%. At $30,000, it might spike to 70%. At $45,000, it might briefly exceed 100% as they hit a cliff.
 
