@@ -232,7 +232,7 @@ And perhaps most fundamentally: microsimulation tells you what a policy would do
 
 ## The Legacy
 
-Guy Orcutt died on March 5, 2006 {cite}`orcutt2024wikipedia`, having seen his vision transform from impractical dream to standard methodology. Every modern tax calculator, every CBO budget score, every analysis of "who wins and who loses" uses tools that trace back to his 1957 paper.
+Guy Orcutt died on March 5, 2006 {cite}`prabook2024orcutt`, having seen his vision transform from impractical dream to standard methodology. Every modern tax calculator, every CBO budget score, every analysis of "who wins and who loses" uses tools that trace back to his 1957 paper.
 
 But the deeper legacy isn't any particular model. It's a way of thinking—and, for Orcutt, a way of *acting*.
 

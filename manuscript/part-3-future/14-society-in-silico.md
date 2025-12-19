@@ -130,7 +130,7 @@ As AI systems become more capable, they'll increasingly be asked questions about
 
 The AI can respond in two ways:
 
-**Option 1: Make stuff up.** Draw on training data, synthesize plausible-sounding text, perhaps hallucinate eligibility rules or invent statistics. This is what happens today. GPT-4 gets tax questions right 67% of the time—worse than a coin flip for true/false.
+**Option 1: Make stuff up.** Draw on training data, synthesize plausible-sounding text, perhaps hallucinate eligibility rules or invent statistics. This is what happens today. GPT-4 gets tax questions right 67% of the time—worse than a coin flip for true/false {cite}`blairstanek2023gpt4tax`.
 
 **Option 2: Call reliable tools.** Use PolicyEngine as a backend. Look up actual parameters from Cosilico's validated rules. Calculate instead of guess. Return auditable results.
 

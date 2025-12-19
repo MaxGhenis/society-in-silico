@@ -2,7 +2,7 @@
 
 GPT-4 gets tax questions wrong 33% of the time.
 
-This is not an urban legend or an exaggerated claim. Chen et al. (2023) developed SARA—a benchmark for evaluating large language models on US income tax calculations—and found that GPT-4 answered only 67% of true/false tax questions correctly. On scenario-based calculations, only 78% of results were within 10% of the correct liability {cite}`chen2023sara`.
+This is not an urban legend or an exaggerated claim. Blair-Stanek et al. (2023) developed SARA (StAtutory Reasoning Assessment)—a benchmark for evaluating large language models on US income tax calculations—and found that GPT-4 answered only 67% of true/false tax questions correctly. On scenario-based calculations, GPT-4 got tax liabilities exactly right only about a third of the time {cite}`blairstanek2023gpt4tax`.
 
 The models confused marginal and effective rates. They misapplied filing status rules. They hallucinated phase-out thresholds that didn't exist.
 
@@ -20,7 +20,7 @@ That question led to Cosilico.
 
 Look at the landscape of tax and financial infrastructure in 2024:
 
-**Sales tax** has Avalara—a company acquired for $8.4 billion in 2022. They provide APIs that calculate sales tax obligations for e-commerce transactions. But sales tax only.
+**Sales tax** has Avalara—a company acquired for $8.4 billion in 2022 {cite}`avalara2022acquisition`. They provide APIs that calculate sales tax obligations for e-commerce transactions. But sales tax only.
 
 **Payroll tax** has Symmetry, ADP, and others. They calculate employer and employee tax obligations. But payroll only.
 
@@ -68,7 +68,7 @@ The architecture has three components:
 
 **Synthetic Populations**: For aggregate analysis, you need representative data. Cosilico constructs synthetic populations by calibrating public microdata to known totals, imputing missing variables, and validating against administrative aggregates. The result is a privacy-preserving dataset of ~100 million synthetic households that produces correct aggregate tax revenue when run through the rules engine.
 
-**Scenario Simulation**: With rules and population, you can answer counterfactual questions. What if the EITC expanded by 50%? Run the baseline, run the reform, take the difference. Cost: $147 billion over ten years. Households affected: 43 million. Poverty reduction: 2.1 percentage points.
+**Scenario Simulation**: With rules and population, you can answer counterfactual questions. What if the EITC expanded by 50%? Run the baseline, run the reform, take the difference. The output might show: cost estimates over ten years, households affected, poverty reduction in percentage points—all calculated from the underlying rules and population data.
 
 The key properties:
 
