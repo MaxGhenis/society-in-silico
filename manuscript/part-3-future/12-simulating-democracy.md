@@ -180,6 +180,54 @@ This last scenario isn't science fiction. As we explored with Cosilico, AI syste
 
 ---
 
+## Futarchy: Vote Values, Bet Beliefs
+
+There's a more radical proposal for connecting information to governance: Robin Hanson's *futarchy* {cite}`hanson2013futarchy`.
+
+The core idea is captured in a slogan: "Vote on values, but bet on beliefs."
+
+Under futarchy, democratic processes still determine *what we care about*—a measure of national welfare, say, or specific metrics like child poverty rates and median income. But *which policies achieve those goals* is determined by prediction markets, not politicians.
+
+Here's how it would work. A legislature proposes a bill. Prediction markets open on national welfare conditional on the bill passing versus failing. If the market says welfare will be higher with the bill than without, it becomes law. If not, it doesn't.
+
+The logic is that markets aggregate information better than deliberation {cite}`hanson2000futarchy`. Traders with relevant knowledge profit by pushing prices toward truth. Ideologues who let conviction override evidence lose money. The market converges on the best available estimate of policy effects.
+
+This sounds extreme. But the underlying mechanism—separating values from facts—clarifies what simulation tools actually do.
+
+PolicyEngine answers factual questions: "What would happen to child poverty if we passed Policy X?" Prediction markets can answer similar questions: "Given Policy X, what do informed bettors expect to happen to child poverty?"
+
+Both separate the *empirical* question (what would happen?) from the *normative* question (is that outcome good?). Democrasim's accuracy-welfare model makes the same distinction: voters have preferences (values), and they perceive policy impacts (facts). Better fact-perception improves the connection between voting and welfare.
+
+### Personal Futarchy
+
+The futarchy framework applies at individual scale too.
+
+I've built a tool called Farness that implements "personal futarchy" for decisions {cite}`ghenis2024farness`. Instead of asking "should I take the new job?" it structures the decision into:
+
+1. **KPIs** (values): What outcomes do I actually care about? Income, satisfaction, work-life balance?
+2. **Options**: What are all the choices, including ones I haven't considered?
+3. **Forecasts** (beliefs): For each option, what's my prediction for each KPI—with confidence intervals?
+
+The discipline of making explicit numeric forecasts—rather than vague intuitions about what "feels right"—mirrors futarchy's bet-on-beliefs principle. The calibration tracking mirrors prediction market scoring: over time, you learn whether your forecasts are systematically biased.
+
+The connection to this chapter is direct. If a voter could run Farness on "how should I vote on Proposition 12?"—defining KPIs (household income, public services, equity), forecasting each candidate's impact on those KPIs—their vote would contain more signal.
+
+### Why Not Full Futarchy?
+
+Despite its elegance, futarchy faces practical objections that explain why no democracy has adopted it:
+
+**Manipulation**: Can wealthy actors move market prices to get their preferred policies passed? Hanson argues proper market design prevents this, but the concern persists.
+
+**Thin markets**: Most policy questions don't attract enough trading volume for reliable price discovery. Polymarket works for presidential elections with billions wagered; it's less clear how it would work for zoning amendments.
+
+**Conditional complexity**: Markets on "welfare if Policy X passes" require defining welfare, measuring it, and handling the counterfactual. These are hard problems.
+
+**Democratic legitimacy**: People accept losing elections because they had a vote. Would they accept losing market-based decisions? The psychology of legitimacy matters.
+
+Still, the futarchy thought experiment illuminates what democratic information infrastructure could do. Even without replacing elections, we can build tools that help voters bet on beliefs more rigorously—and calibrate those beliefs against outcomes.
+
+---
+
 ## Objections and Complications
 
 The accuracy-welfare model simplifies real democratic complexity.

@@ -95,6 +95,32 @@ That's remarkably accurate for a major tax overhaul. The supply-side claims that
 
 ---
 
+## The Prediction Market Benchmark
+
+There's another approach to forecasting that sidesteps models entirely: prediction markets. Instead of building simulations, let people bet money on outcomes. The market price becomes the forecast.
+
+The logic is compelling. Markets aggregate dispersed information. Participants have "skin in the game"—wrong predictions cost money. And unlike experts with reputations to protect, markets can update quickly when new information arrives.
+
+How do prediction markets compare to official forecasts?
+
+**For macroeconomic variables**, an NBER study found that prediction markets were "weakly more accurate than survey forecasts" across GDP, inflation, and employment {cite}`wolfers2012prediction`. The advantage was modest but consistent.
+
+**For elections**, the evidence is striking. In the 2024 presidential race, polls showed a coin flip. Polymarket had Trump at 58% the Monday before Election Day—a prediction that proved far more accurate {cite}`polymarket2024election`. Academic studies found prediction markets outperformed FiveThirtyEight's model in 2018 and 2020 {cite}`crane2020prediction`.
+
+**For Fed decisions**, Good Judgment's "superforecasters"—individuals identified through forecasting tournaments as exceptionally calibrated—beat financial futures markets by 30% in 2024-2025 {cite}`goodjudgment2024`.
+
+Philip Tetlock's research revealed the key insight: most experts forecast little better than chance {cite}`tetlock2005expert`. But a small subset—about 2% in his studies—consistently outperform. These superforecasters share traits: they update frequently, think probabilistically, and avoid ideological commitment to specific predictions {cite}`tetlock2015superforecasting`.
+
+What does this mean for microsimulation?
+
+First, it suggests a validation opportunity. When prediction markets exist for policy-relevant questions—will inflation exceed 3%? will unemployment rise?—microsimulation forecasts can be benchmarked against market prices.
+
+Second, it reveals a limitation. Prediction markets work for questions with clear resolution dates and objective outcomes. They can't easily handle "what would happen under a counterfactual policy that was never implemented?" That's precisely where microsimulation shines.
+
+Third, it points toward synthesis. The best forecasts might combine simulation-based analysis with market-aggregated beliefs. CBO produces structural estimates; prediction markets provide calibration checks; the combination improves on either alone.
+
+---
+
 ## Where Models Fail
 
 The failures are instructive.
