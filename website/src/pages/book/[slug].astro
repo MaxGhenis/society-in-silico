@@ -31,38 +31,81 @@ if (!chapter) {
 const projectRoot = path.resolve(process.cwd(), '..');
 const filePath = path.join(projectRoot, chapter.file);
 
+// Load BibTeX references
+const bibPath = path.join(projectRoot, 'references.bib');
+const citationData: Record<string, { author: string; year: string; title: string; url?: string }> = {};
+try {
+  const bibContent = fs.readFileSync(bibPath, 'utf-8');
+  const entryRegex = /@\w+\s*\{\s*([^,]+)\s*,([^@]*?)(?=\n@|\n*$)/gs;
+  let match;
+  while ((match = entryRegex.exec(bibContent)) !== null) {
+    const key = match[1].trim();
+    const entry = match[2];
+    const getField = (field: string) => {
+      const m = entry.match(new RegExp(`${field}\\s*=\\s*[{"]([^}"]*)[}"]`, 'i'));
+      return m ? m[1].replace(/\{([^}]+)\}/g, '$1').replace(/\s+/g, ' ').trim() : '';
+    };
+    citationData[key] = {
+      author: getField('author').replace(/^\{|\}$/g, '').split(',')[0].split(' and ')[0],
+      year: getField('year'),
+      title: getField('title'),
+      url: getField('url') || (getField('doi') ? `https://doi.org/${getField('doi')}` : undefined),
+    };
+  }
+} catch (e) { /* ignore */ }
+
+// Concept definitions for wiki-links
+const concepts: Record<string, { title: string; desc: string }> = {
+  'guy-orcutt': { title: 'Guy Orcutt', desc: 'Father of microsimulation (1917-2006)' },
+  'policyengine': { title: 'PolicyEngine', desc: 'Open-source tax-benefit microsimulation platform' },
+  'openfisca': { title: 'OpenFisca', desc: 'Open-source platform for modeling tax and benefit systems' },
+  'taxsim': { title: 'TAXSIM', desc: 'NBER tax microsimulation model' },
+  'cosilico': { title: 'Cosilico', desc: 'Infrastructure for simulating society' },
+  'ubi-center': { title: 'UBI Center', desc: 'Think tank for universal basic income research' },
+  'rules-as-code': { title: 'Rules as Code', desc: 'Movement to express legislation in machine-executable form' },
+};
+
 let content = '';
 let htmlContent = '';
 let readingTime = 0;
 let wordCount = 0;
+const usedCitations: string[] = [];
 
 try {
   content = fs.readFileSync(filePath, 'utf-8');
 
-  // Remove MyST-specific syntax and wiki-links
+  // Process citations: {cite}`key` → superscript with tooltip data
+  content = content.replace(/\{cite\}`([^`]+)`/g, (_, key) => {
+    const cite = citationData[key];
+    if (cite) {
+      if (!usedCitations.includes(key)) usedCitations.push(key);
+      const num = usedCitations.indexOf(key) + 1;
+      const tooltip = `${cite.author}, ${cite.year}`;
+      return `<sup class="cite" data-key="${key}" data-tip="${tooltip}" data-url="${cite.url || ''}">[${num}]</sup>`;
+    }
+    return '';
+  });
+
+  // Process wiki-links: [[entity]] → concept with tooltip
+  content = content.replace(/\[\[([^\]]+)\]\]/g, (_, entity) => {
+    const slug = entity.toLowerCase().replace(/\s+/g, '-');
+    const concept = concepts[slug];
+    if (concept) {
+      return `<span class="concept" data-tip="${concept.desc}">${concept.title}</span>`;
+    }
+    return entity.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+  });
+
+  // Remove other MyST-specific syntax
   content = content
-    // Remove {cite}`key` citations (and any trailing space/punctuation issues)
-    .replace(/\s*\{cite\}`[^`]+`/g, '')
-    // Remove wiki-links [[entity]] - just remove them entirely
-    .replace(/\[\[([^\]]+)\]\]/g, '')
-    // Remove {ref}`...` cross-references
     .replace(/\{ref\}`[^`]+`/g, '')
-    // Remove {numref}`...` numbered references
     .replace(/\{numref\}`[^`]+`/g, '')
-    // Remove {figure} blocks
     .replace(/```\{figure\}[\s\S]*?```/g, '')
-    // Remove {note} admonitions
     .replace(/```\{note\}[\s\S]*?```/g, '')
-    // Remove {warning} admonitions
     .replace(/```\{warning\}[\s\S]*?```/g, '')
-    // Remove bibliography blocks
     .replace(/```\{bibliography\}[\s\S]*?```/g, '')
-    // Remove empty References section
     .replace(/## References\s*$/gm, '')
-    // Clean up any double spaces left behind
-    .replace(/  +/g, ' ')
-    // Clean up space before punctuation
-    .replace(/ ([.,;:!?])/g, '$1');
+    .replace(/  +/g, ' ');
 
   // Configure marked for nice typography
   marked.setOptions({
@@ -76,6 +119,20 @@ try {
 } catch (error) {
   console.error(`Error reading chapter file: ${filePath}`, error);
   htmlContent = '<p class="text-[var(--color-ink-muted)]">This chapter is coming soon.</p>';
+}
+
+// Build references section
+let refsHtml = '';
+if (usedCitations.length > 0) {
+  refsHtml = '<div class="refs"><h3>References</h3><ol>';
+  for (const key of usedCitations) {
+    const c = citationData[key];
+    if (c) {
+      const link = c.url ? `<a href="${c.url}" target="_blank">${c.author} (${c.year}). ${c.title}</a>` : `${c.author} (${c.year}). ${c.title}`;
+      refsHtml += `<li>${link}</li>`;
+    }
+  }
+  refsHtml += '</ol></div>';
 }
 
 const { prev, next } = getChapterNavigation(slug);
@@ -186,6 +243,9 @@ if (chapter.partNumber && chapter.chapterNumber) {
       <!-- Article Content -->
       <article class="px-6 py-12 md:py-16" id="article-content">
         <div class="prose-container max-w-2xl mx-auto animate-fade-up delay-300" set:html={htmlContent} />
+        {refsHtml && (
+          <div class="max-w-2xl mx-auto mt-8 pt-8 border-t border-[var(--color-paper-dark)]" set:html={refsHtml} />
+        )}
       </article>
 
       <!-- Chapter Navigation -->
@@ -470,6 +530,106 @@ if (chapter.partNumber && chapter.chapterNumber) {
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+
+  /* Citations */
+  .prose-container .cite {
+    font-family: var(--font-mono);
+    font-size: 0.7em;
+    color: var(--color-sienna);
+    cursor: pointer;
+    vertical-align: super;
+    line-height: 0;
+    position: relative;
+  }
+
+  .prose-container .cite:hover {
+    color: var(--color-sienna-light);
+  }
+
+  .prose-container .cite:hover::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-ink);
+    color: var(--color-paper);
+    padding: 0.4em 0.6em;
+    border-radius: 3px;
+    font-size: 1.3em;
+    white-space: nowrap;
+    z-index: 100;
+    pointer-events: none;
+  }
+
+  /* Concepts */
+  .prose-container .concept {
+    background: linear-gradient(to bottom, transparent 60%, rgba(201, 85, 61, 0.15) 60%);
+    cursor: help;
+    position: relative;
+  }
+
+  .prose-container .concept:hover {
+    background: linear-gradient(to bottom, transparent 60%, rgba(201, 85, 61, 0.3) 60%);
+  }
+
+  .prose-container .concept:hover::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-ink);
+    color: var(--color-paper);
+    padding: 0.5em 0.75em;
+    border-radius: 3px;
+    font-size: 0.85em;
+    max-width: 250px;
+    white-space: normal;
+    z-index: 100;
+    pointer-events: none;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  /* References section */
+  .refs {
+    font-size: 0.9rem;
+    color: var(--color-ink-muted);
+  }
+
+  .refs h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-ink);
+    margin-bottom: 0.75rem;
+  }
+
+  .refs ol {
+    padding-left: 1.25rem;
+    margin: 0;
+  }
+
+  .refs li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+  }
+
+  .refs li::marker {
+    color: var(--color-sienna);
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+  }
+
+  .refs a {
+    color: var(--color-ink-muted);
+    text-decoration: none;
+  }
+
+  .refs a:hover {
+    color: var(--color-sienna);
+  }
 </style>
 
 <script>
@@ -559,4 +719,14 @@ if (chapter.partNumber && chapter.chapterNumber) {
   // Initialize
   window.addEventListener('scroll', updateReadingProgress, { passive: true });
   updateReadingProgress();
+
+  // Citation click to open URL
+  document.querySelectorAll('.cite').forEach((cite) => {
+    cite.addEventListener('click', (e) => {
+      const url = (e.target as HTMLElement).dataset.url;
+      if (url) {
+        window.open(url, '_blank', 'noopener');
+      }
+    });
+  });
 </script>
