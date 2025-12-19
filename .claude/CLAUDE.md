@@ -81,11 +81,39 @@ This project uses **MyST markdown** with BibTeX. The config is in `myst.yml`.
 CBO's accuracy improved 3x from 1989-2001 to 2002-2019 {cite}`cbo2024deficit`.
 ```
 
+### What Requires Citations
+- **Specific numbers**: dollar amounts, percentages, counts, dates
+- **Historical claims**: when events happened, who did what
+- **Research findings**: what studies found, accuracy rates, correlations
+- **Quotes**: always cite source, include page numbers when available
+- **Statistics about programs/populations**: poverty rates, enrollment figures, costs
+
+### What Doesn't Need Citations
+- **Illustrative examples**: make these clearly hypothetical ("suppose a reform costs $50B...", "imagine a family of four...")
+- **How systems work**: general explanations of tax mechanics, model architecture
+- **Author's analysis**: interpretations, opinions, forward-looking statements
+- **Widely known facts**: basic historical context, definitions
+
+### Source Quality Hierarchy
+1. **Primary sources** (strongly preferred): CBO/JCT reports, IRS statistics, Census data, peer-reviewed journals, official government documentation
+2. **Working papers**: NBER, arXiv preprints, institutional working papers
+3. **Reputable coverage**: News articles that cite primary sources (link to primary when possible)
+4. **AVOID**:
+   - Wikipedia (find the primary source Wikipedia cites)
+   - Blog posts without citations
+   - Press releases (find the underlying report)
+
+### Common Pitfalls
+- **Verify author attributions**: Always check paper authorship matches citation (we caught a Chen vs Blair-Stanek error)
+- **Check specific numbers**: Don't assume numbers from summaries match the source (e.g., "85% accuracy" claims)
+- **Distinguish survey vs admin data**: Survey-based statistics may differ significantly from administrative records (see Meyer's work on survey data crisis)
+
 ### Sourcing Standards
 - **NEVER fabricate claims** - verify all factual assertions before writing
 - Every quantitative claim needs a citation
 - Prefer primary sources (CBO, IRS, academic papers) over news articles
 - When uncertain, mark with `[NEEDS CITATION]` for later verification
+- If you cannot verify a specific number, either find the source or soften to qualitative language ("high accuracy" vs "85% accuracy")
 
 ## Research Integration
 
