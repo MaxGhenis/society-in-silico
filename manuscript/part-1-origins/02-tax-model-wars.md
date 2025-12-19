@@ -38,7 +38,7 @@ This created several problems.
 
 **Democratic deficit.** Citizens and advocacy groups who wanted to understand how policies affected people like them had to take official estimates on faith. The asymmetry between governors and governed extended to the very tools used to evaluate policy.
 
-Some academics pushed back. At the National Bureau of Economic Research, Daniel Feenberg had been building TAXSIM since the 1960s—an open, internet-accessible tax calculator {cite}`feenberg1993taxsim`. TAXSIM let researchers simulate federal and state taxes for survey respondents, enabling academic research that would otherwise be impossible. But TAXSIM was a research tool, not a policy analysis platform. It calculated taxes for individual records; it didn't produce the aggregate estimates and distributional tables that drove policy debates.
+Some academics pushed back. At the National Bureau of Economic Research, Daniel Feenberg began building TAXSIM in the early 1980s {cite}`feenberg1993taxsim`. By the 1990s, it had become internet-accessible—one of the first tax calculators available online. TAXSIM let researchers simulate federal and state taxes for survey respondents, enabling academic research that would otherwise be impossible. But TAXSIM was a research tool, not a policy analysis platform. It calculated taxes for individual records; it didn't produce the aggregate estimates and distributional tables that drove policy debates.
 
 ---
 

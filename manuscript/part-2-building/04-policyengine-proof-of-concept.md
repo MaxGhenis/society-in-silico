@@ -54,7 +54,7 @@ Within months of launch, the public policy community had started using the tool.
 
 In March 2022, PolicyEngine expanded to the United States {cite}`policyengine2022review`.
 
-The US model was different—not just in the policies encoded, but in the data challenges and institutional landscape. Where the UK had a single tax system with devolved powers in Scotland, Wales, and Northern Ireland, the US had fifty states with their own income taxes plus a federal system of bewildering complexity.
+The US model was different—not just in the policies encoded, but in the data challenges and institutional landscape. The UK has a single national tax system, though Scotland sets its own income tax rates (Wales and Northern Ireland have more limited fiscal powers). The US, by contrast, has fifty states with entirely separate income tax codes, plus a federal system of bewildering complexity.
 
 The team started with household impacts: enter your circumstances, see your taxes and benefits. Then in July 2022, they added population impacts using the Current Population Survey—the same microdata foundation that official government estimates relied on {cite}`policyengine2022review`.
 
