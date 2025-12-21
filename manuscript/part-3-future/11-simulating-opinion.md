@@ -58,7 +58,7 @@ Does it work?
 
 The honest answer is: sometimes, surprisingly well; other times, not so much.
 
-The Argyle study showed 85%+ accuracy on predicting voting patterns. Research from Mei et al. found that GPT-4 could reproduce human behavior across six classic psychology experiments {cite}`mei2024llms`. Commercial survey firms report that silicon sampling results correlate well with traditional surveys for many question types {cite}`sarstedt2024silicon`.
+The Argyle study showed high correspondence between AI and human voting patterns across the 2012, 2016, and 2020 presidential elections. Research from Mei et al. found that GPT-4 could reproduce human behavior across six canonical psychology experiments {cite}`mei2024llms`. Marketing researchers report that silicon sampling holds promise for pretesting and pilot studies, though with important limitations {cite}`sarstedt2024silicon`.
 
 But there are systematic limitations.
 
