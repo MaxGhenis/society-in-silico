@@ -54,6 +54,26 @@ The gap between OpenFisca's elegant framework and actually usable policy analysi
 
 ---
 
+## The American Ecosystem
+
+While OpenFisca spread globally, a parallel movement was building in the United States.
+
+In 2016, Matt Jensen launched the Open Source Policy Center at the American Enterprise Institute {cite}`aei2016ospc`. His diagnosis was blunt: "The closed-source approach to estimating the costs and economic impact of policies raises challenges, as there is limited accessibility and transparency in the process, leaving the public and many policymakers in the dark."
+
+Jensen recruited Martin Holmer, who had a PhD from MIT and decades of microsimulation experience, to build Tax-Calculator—an open-source model of US federal income and payroll taxes {cite}`holmer2024profile`. Written in Python with over 200 adjustable parameters, Tax-Calculator could simulate an enormous range of reforms. And unlike the black boxes at JCT and Treasury, anyone could inspect the code.
+
+The project grew into the Policy Simulation Library—a community of open-source policy models sharing transparency standards and interoperability criteria. Jason DeBacker and Richard Evans built OG-USA, an overlapping-generations model for dynamic scoring that complemented Tax-Calculator's static analysis. The Tax Foundation contributed its capital cost recovery model. QuantEcon brought computational economics tools.
+
+By 2023, PSL was hosting monthly "Demo Days" where researchers from the Congressional Budget Office, NOAA, Johns Hopkins, and the City of New York presented their work. The community had developed institutional memory and governance—a leadership council, a fiscal sponsor (the PSL Foundation), and a YouTube channel archiving every presentation.
+
+Even the Federal Reserve joined the movement. FRB/US, the Fed's main macroeconomic model—375 equations describing the entire US economy—had been publicly available since the late 1990s, but in 2022 the Fed released a Python implementation, making the model accessible to anyone who could write code {cite}`frbus2024`. The central bank's primary forecasting tool was now open source.
+
+The American ecosystem differed from OpenFisca's approach. Where OpenFisca provided a unified framework that countries could adapt, PSL was a federation of independent projects. Tax-Calculator handled income taxes; OG-USA handled dynamic macroeconomic effects; each model had its own maintainers, its own governance, its own priorities.
+
+This decentralization had benefits—specialization, diversity, resilience—but also costs. The models didn't always talk to each other. Running a comprehensive analysis meant stitching together multiple tools. And no single organization was responsible for the complete picture.
+
+---
+
 ## A Researcher's Frustration
 
 In 2019, a researcher named Max Ghenis founded the UBI Center, an open-source think tank focused on universal basic income policy {cite}`ubicenter2019`. The mission was to produce rigorous research that could inform UBI debates—research that anyone could verify because all code and data would be public.
