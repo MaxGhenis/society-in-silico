@@ -163,7 +163,27 @@ The team was building toward a vision where policy analysis became conversationa
 
 The microsimulation engine provided the analytical foundation—comprehensive, accurate, transparent. AI provided the interface—natural, adaptive, accessible. Together, they pointed toward a future where understanding policy was easier than ever before.
 
-But AI in policy analysis raised deeper questions too. If AI systems could explain policies, could they also help design them? If they could run simulations, could they evaluate tradeoffs? These questions would require not just technical development but philosophical clarity about what humans should delegate and what they should retain.
+But AI in policy analysis raised deeper questions too. If AI systems could explain policies, could they also help design them? If they could run simulations, could they evaluate tradeoffs?
+
+---
+
+## From Explaining to Designing
+
+Some researchers weren't content with AI that merely explained or executed policy analysis. They wanted AI that could *design* better policies.
+
+The AI Economist, developed by Salesforce Research, used two-level deep reinforcement learning to learn optimal tax schedules {cite}`zheng2022aieconomist`. In simulated economies with agents who worked, traded, and responded to incentives, the AI learned tax policies from scratch—no human-designed rules, just objectives to optimize.
+
+The results were striking. The AI-designed tax policy outperformed the Saez optimal tax framework—developed by one of the world's leading public finance economists—by 16% on the tradeoff between equality and productivity. It substantially outperformed adaptations of US federal income tax. And it handled strategic behavior: when simulated agents learned to game the tax system by timing their income, the AI-designed policy remained robust.
+
+By 2025, researchers had extended the approach. TaxAgent combined large language models with economic simulation, allowing the AI to reason about fiscal policy in natural language while testing its proposals in silico {cite}`taxagent2025`. Over simulated 120-month periods, TaxAgent achieved better long-term outcomes than traditional progressive taxation or mathematical optimization frameworks.
+
+These results were preliminary—simulated economies are far simpler than real ones. But they pointed toward a future where AI didn't just implement human-designed policies but proposed alternatives humans hadn't considered.
+
+This possibility raised profound questions. Should tax policy be designed by algorithm? What democratic oversight would such systems require? How would citizens trust policies designed by processes they couldn't understand?
+
+PolicyEngine's approach—deterministic calculations, AI explanations, human judgment on values—represented one answer. The AI Economist represented another: let AI optimize, then evaluate whether humans endorse the results.
+
+These questions would require not just technical development but philosophical clarity about what humans should delegate and what they should retain.
 
 Those questions are the subject of Part III.
 
