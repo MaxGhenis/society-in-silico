@@ -235,6 +235,26 @@ This isn't entirely new. Philosophers have grappled with the question of which v
 
 The innovation isn't the question but the method: empirical validation, probabilistic framing, computational implementation.
 
+### The Reflection Problem
+
+But here's a crucial caveat: temporal change isn't the same as reflection.
+
+That 79% supported same-sex marriage in 2021 versus 32% in 1986 shows *more time passed*, not necessarily *more careful reasoning*. The mechanisms driving value change—generational replacement, media exposure, information cascades, tribal signaling—are sociological, not purely epistemic.
+
+Some value changes clearly involve improved reasoning: the abolition of slavery, the extension of suffrage. Others may reflect preference drift without moral progress. Still others—like the 2024 HOMOSEX reversal—might represent backlash to perceived overreach rather than either progress or regress.
+
+The philosophers who've thought hardest about this offer partial guidance:
+
+**Rawls** distinguished between reasonable and unreasonable comprehensive doctrines—not all value systems deserve equal weight in political deliberation. But operationalizing "reasonable" is difficult.
+
+**Habermas** emphasized ideal speech conditions: undistorted communication, equal participation, no coercion. Temporal extrapolation doesn't guarantee these conditions obtained during the value change.
+
+**Sen and Nussbaum** warned about "adaptive preferences"—values formed under oppression shouldn't guide alignment. A society that normalizes injustice may show stable preferences for injustice. Extrapolating those preferences forward would be perverse.
+
+The honest answer: we don't have a fully satisfying account of when temporal change tracks moral reflection versus mere drift. The empirical validation helps—if temporal extrapolation predicts well, that's evidence for underlying structure—but it doesn't solve the deeper philosophical problem.
+
+This uncertainty is one more reason for humility. Value forecasting provides evidence, not answers. It should inform democratic deliberation, not substitute for it.
+
 ---
 
 ## Objections and Responses
@@ -254,6 +274,32 @@ Fair critique. The experimental design makes assumptions: that GSS captures valu
 **"This could be used for manipulation."**
 
 True. Knowing how values evolve could help those who want to accelerate or prevent certain changes. But the same is true of all social science. Understanding doesn't mandate manipulation.
+
+---
+
+## The Governance Question
+
+If value forecasting works, it becomes a technology of power. Who controls it matters.
+
+Consider the stakes. A government could use value forecasts to justify paternalistic policies: "We're implementing what you'll value in 20 years." A corporation could use them to anticipate and shape consumer preferences. An AI lab could use them to align systems to projected values that serve its interests rather than humanity's.
+
+These aren't hypothetical risks. They're the predictable consequences of forecasting technology in a world of unequal power.
+
+The governance framework must address:
+
+**Who generates forecasts?** Academic researchers? Government agencies? Private companies? Each brings different incentives and accountability structures. Distributed generation with open methodology may be more trustworthy than centralized control.
+
+**What conditioning assumptions are transparent?** A forecast conditioned on "post-scarcity with extended deliberation" differs from one conditioned on "persistent inequality with polarized media." The assumptions encode values themselves. They must be explicit and contestable.
+
+**What role for democratic input?** Forecasts should inform democratic deliberation, not replace it. Citizens should be able to examine, critique, and reject forecast-based justifications. The forecast is evidence, not authority.
+
+**What appeals processes exist?** When forecasts are contested—and they will be—how do disagreements resolve? Peer review, public comment, independent replication?
+
+**How do forecasts interact with current feedback?** If value forecasts suggest future humanity will reject a practice that current humanity endorses, what weight does each get? This is the deepest question, and honest answers remain uncertain.
+
+The HOMOSEX reversal illustrates the stakes. Had forecasters in 2020 projected continued acceptance and used that to justify policies, the 2024 data would have revealed overconfidence. The governance system must accommodate surprise, revision, and humility.
+
+Value forecasting as academic research is one thing. Value forecasting as input to deployed AI systems is another. The institutional arrangements for the latter don't yet exist. Building them—with appropriate checks, transparency, and democratic oversight—is as important as the forecasting methodology itself.
 
 ---
 
