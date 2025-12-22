@@ -1,13 +1,14 @@
 {
-  "generated_at": "2025-12-12T19:34:08.517511",
+  "generated_at": "2025-12-21T19:51:59.079173",
   "chapters": [
     {
       "path": "manuscript/part-3-future/10-the-uncertainty-gap.md",
       "name": "10-the-uncertainty-gap",
       "title": "Chapter 10: The Uncertainty Gap",
-      "words": 1901,
+      "words": 1988,
       "wiki_links": [],
       "citations": [
+        "cbo2017ahca",
         "pwbm2024accuracy",
         "squiggle2024"
       ],
@@ -17,10 +18,11 @@
       "path": "manuscript/part-3-future/11-simulating-opinion.md",
       "name": "11-simulating-opinion",
       "title": "Chapter 11: Simulating Opinion",
-      "words": 1957,
+      "words": 1995,
       "wiki_links": [],
       "citations": [
         "argyle2023out",
+        "esomar2024market",
         "sarstedt2024silicon",
         "mei2024llms",
         "sarstedt2024silicon"
@@ -31,16 +33,20 @@
       "path": "manuscript/part-3-future/12-simulating-democracy.md",
       "name": "12-simulating-democracy",
       "title": "Chapter 12: Simulating Democracy",
-      "words": 2038,
+      "words": 2659,
       "wiki_links": [],
-      "citations": [],
+      "citations": [
+        "hanson2013futarchy",
+        "hanson2000futarchy",
+        "ghenis2024farness"
+      ],
       "has_references": false
     },
     {
       "path": "manuscript/part-3-future/13-simulating-values.md",
       "name": "13-simulating-values",
       "title": "Chapter 13: Simulating Values",
-      "words": 2001,
+      "words": 3027,
       "wiki_links": [],
       "citations": [],
       "has_references": false
@@ -49,16 +55,18 @@
       "path": "manuscript/part-3-future/14-society-in-silico.md",
       "name": "14-society-in-silico",
       "title": "Chapter 14: Society in Silico",
-      "words": 1795,
+      "words": 1796,
       "wiki_links": [],
-      "citations": [],
+      "citations": [
+        "blairstanek2023gpt4tax"
+      ],
       "has_references": false
     },
     {
       "path": "manuscript/front-matter/01-introduction.md",
       "name": "01-introduction",
       "title": "Introduction: The Model and the World",
-      "words": 880,
+      "words": 923,
       "wiki_links": [
         "guy-orcutt|Guy Orcutt",
         "policyengine|PolicyEngine",
@@ -88,7 +96,7 @@
       "path": "manuscript/part-2-building/04-policyengine-proof-of-concept.md",
       "name": "04-policyengine-proof-of-concept",
       "title": "Chapter 4: PolicyEngine - Proof of Concept",
-      "words": 1834,
+      "words": 1845,
       "wiki_links": [],
       "citations": [
         "policyengine2021review",
@@ -119,7 +127,7 @@
       "path": "manuscript/part-2-building/05-the-household-view.md",
       "name": "05-the-household-view",
       "title": "Chapter 5: The Household View",
-      "words": 1687,
+      "words": 1768,
       "wiki_links": [],
       "citations": [
         "policyengine2022ssi",
@@ -135,15 +143,18 @@
       "path": "manuscript/part-2-building/06-the-society-view.md",
       "name": "06-the-society-view",
       "title": "Chapter 6: The Society View",
-      "words": 1878,
+      "words": 2055,
       "wiki_links": [],
       "citations": [
         "policyengine2023scoring",
+        "census2024cps",
         "policyengine2022enhanced",
-        "policyengine2022enhanced",
+        "meyer2015underreporting",
+        "census2017retirement",
         "policyengine2022enhanced",
         "policyengine2023scoring",
         "policyengine2023sex",
+        "bls2024spm",
         "policyengine2023sex",
         "policyengine2023sex",
         "policyengine2023scoring",
@@ -157,14 +168,17 @@
       "path": "manuscript/part-2-building/07-ai-enters-the-picture.md",
       "name": "07-ai-enters-the-picture",
       "title": "Chapter 7: AI Enters the Picture",
-      "words": 1830,
+      "words": 2219,
       "wiki_links": [],
       "citations": [
         "policyengine2024ai",
         "policyengine2024ai",
         "policyengine2023gpt",
         "policyengine2024multiagent",
-        "policyengine2024ai"
+        "policyengine2024ai",
+        "blair-stanek2023gpt4tax",
+        "zheng2022aieconomist",
+        "taxagent2025"
       ],
       "has_references": true
     },
@@ -172,14 +186,14 @@
       "path": "manuscript/part-2-building/08-cosilico-infrastructure-for-the-future.md",
       "name": "08-cosilico-infrastructure-for-the-future",
       "title": "Chapter 8: Cosilico - Infrastructure for the Future",
-      "words": 1978,
+      "words": 2027,
       "wiki_links": [],
       "citations": [
-        "chen2023sara",
+        "blairstanek2023gpt4tax",
         "columntax2024",
+        "avalara2022acquisition",
         "columntax2024",
-        "policyengine2024about",
-        "cosilico2024thesis"
+        "policyengine2024about"
       ],
       "has_references": true
     },
@@ -187,14 +201,18 @@
       "path": "manuscript/part-1-origins/01-birth-of-microsimulation.md",
       "name": "01-birth-of-microsimulation",
       "title": "Chapter 1: The Birth of Microsimulation",
-      "words": 2819,
+      "words": 2966,
       "wiki_links": [],
       "citations": [
         "orcutt1957new",
+        "watts1991orcutt",
+        "cheng2020orcutt",
         "orcutt1961microanalysis",
         "sadowsky1991computing",
         "soa1997dynasim",
+        "soa1997dynasim",
         "li2014survey",
+        "prabook2024orcutt",
         "cheng2020orcutt"
       ],
       "has_references": true
@@ -203,7 +221,7 @@
       "path": "manuscript/part-1-origins/02-tax-model-wars.md",
       "name": "02-tax-model-wars",
       "title": "Chapter 2: The Tax Model Wars",
-      "words": 1927,
+      "words": 1937,
       "wiki_links": [],
       "citations": [
         "ifs2024history",
@@ -227,7 +245,7 @@
       "path": "manuscript/part-1-origins/03-open-source-revolution.md",
       "name": "03-open-source-revolution",
       "title": "Chapter 3: The Open Source Revolution",
-      "words": 1387,
+      "words": 1753,
       "wiki_links": [],
       "citations": [
         "openfisca2024about",
@@ -236,25 +254,60 @@
         "oecd2020cracking",
         "openfisca2024about",
         "openfisca2024about",
+        "aei2016ospc",
+        "holmer2024profile",
+        "frbus2024",
         "ubicenter2019",
         "policyengine2024about"
       ],
       "has_references": true
+    },
+    {
+      "path": "manuscript/part-1-origins/04-the-accuracy-question.md",
+      "name": "04-the-accuracy-question",
+      "title": "Chapter 4: The Accuracy Question",
+      "words": 1761,
+      "wiki_links": [],
+      "citations": [
+        "pwbm2017tcja",
+        "collins2015aca",
+        "kiely2017aca",
+        "collins2015aca",
+        "kiely2017aca",
+        "collins2015aca",
+        "cbo2024deficit",
+        "cbo2024deficit",
+        "cbo2025forecasting",
+        "cbo2024deficit",
+        "inayatali2023cbo",
+        "crfb2024tcja",
+        "wolfers2012prediction",
+        "polymarket2024election",
+        "crane2020prediction",
+        "goodjudgment2024",
+        "tetlock2005expert",
+        "tetlock2015superforecasting",
+        "cbo2017ahca",
+        "box1976science"
+      ],
+      "has_references": false
     }
   ],
   "notes_summary": {
-    "total": 44,
+    "total": 45,
     "referenced": 10
   },
   "citations": {
-    "total_in_bib": 53,
-    "used_in_manuscript": 48,
+    "total_in_bib": 84,
+    "used_in_manuscript": 78,
     "unused": [
-      "odonoghue2001dynamic",
-      "harding1996microsimulation",
-      "caldwell1996microsimulation",
+      "cosilico2024thesis",
       "orcutt1976dynasim",
-      "spielauer2011modgen"
+      "caldwell1996microsimulation",
+      "buterin2014futarchy",
+      "spielauer2011modgen",
+      "harding1996microsimulation",
+      "odonoghue2001dynamic"
     ]
   },
   "graph": {
@@ -263,91 +316,127 @@
         "id": "10-the-uncertainty-gap",
         "type": "chapter",
         "label": "Chapter 10: The Uncertainty Ga",
-        "words": 1901
+        "words": 1988
       },
       {
         "id": "11-simulating-opinion",
         "type": "chapter",
         "label": "Chapter 11: Simulating Opinion",
-        "words": 1957
+        "words": 1995
       },
       {
         "id": "12-simulating-democracy",
         "type": "chapter",
         "label": "Chapter 12: Simulating Democra",
-        "words": 2038
+        "words": 2659
       },
       {
         "id": "13-simulating-values",
         "type": "chapter",
         "label": "Chapter 13: Simulating Values",
-        "words": 2001
+        "words": 3027
       },
       {
         "id": "14-society-in-silico",
         "type": "chapter",
         "label": "Chapter 14: Society in Silico",
-        "words": 1795
+        "words": 1796
       },
       {
         "id": "01-introduction",
         "type": "chapter",
         "label": "Introduction: The Model and th",
-        "words": 880
+        "words": 923
       },
       {
         "id": "04-policyengine-proof-of-concept",
         "type": "chapter",
         "label": "Chapter 4: PolicyEngine - Proo",
-        "words": 1834
+        "words": 1845
       },
       {
         "id": "05-the-household-view",
         "type": "chapter",
         "label": "Chapter 5: The Household View",
-        "words": 1687
+        "words": 1768
       },
       {
         "id": "06-the-society-view",
         "type": "chapter",
         "label": "Chapter 6: The Society View",
-        "words": 1878
+        "words": 2055
       },
       {
         "id": "07-ai-enters-the-picture",
         "type": "chapter",
         "label": "Chapter 7: AI Enters the Pictu",
-        "words": 1830
+        "words": 2219
       },
       {
         "id": "08-cosilico-infrastructure-for-the-future",
         "type": "chapter",
         "label": "Chapter 8: Cosilico - Infrastr",
-        "words": 1978
+        "words": 2027
       },
       {
         "id": "01-birth-of-microsimulation",
         "type": "chapter",
         "label": "Chapter 1: The Birth of Micros",
-        "words": 2819
+        "words": 2966
       },
       {
         "id": "02-tax-model-wars",
         "type": "chapter",
         "label": "Chapter 2: The Tax Model Wars",
-        "words": 1927
+        "words": 1937
       },
       {
         "id": "03-open-source-revolution",
         "type": "chapter",
         "label": "Chapter 3: The Open Source Rev",
-        "words": 1387
+        "words": 1753
       },
       {
-        "id": "cosilico",
+        "id": "04-the-accuracy-question",
+        "type": "chapter",
+        "label": "Chapter 4: The Accuracy Questi",
+        "words": 1761
+      },
+      {
+        "id": "rehoboam-contrast",
         "type": "note",
-        "label": "Cosilico",
-        "words": 652
+        "label": "Rehoboam: The Dystopian Mirror",
+        "words": 607
+      },
+      {
+        "id": "ifs-taxben",
+        "type": "note",
+        "label": "IFS TAXBEN",
+        "words": 123
+      },
+      {
+        "id": "microsimulation-definition",
+        "type": "note",
+        "label": "Microsimulation",
+        "words": 235
+      },
+      {
+        "id": "rules-as-code",
+        "type": "note",
+        "label": "Rules as Code",
+        "words": 441
+      },
+      {
+        "id": "policyengine",
+        "type": "note",
+        "label": "PolicyEngine",
+        "words": 501
+      },
+      {
+        "id": "taxsim",
+        "type": "note",
+        "label": "NBER TAXSIM",
+        "words": 127
       },
       {
         "id": "guy-orcutt",
@@ -362,46 +451,16 @@
         "words": 373
       },
       {
+        "id": "cosilico",
+        "type": "note",
+        "label": "Cosilico",
+        "words": 652
+      },
+      {
         "id": "dynasim",
         "type": "note",
         "label": "DYNASIM",
         "words": 206
-      },
-      {
-        "id": "rehoboam-contrast",
-        "type": "note",
-        "label": "Rehoboam: The Dystopian Mirror",
-        "words": 607
-      },
-      {
-        "id": "microsimulation-definition",
-        "type": "note",
-        "label": "Microsimulation",
-        "words": 235
-      },
-      {
-        "id": "taxsim",
-        "type": "note",
-        "label": "NBER TAXSIM",
-        "words": 127
-      },
-      {
-        "id": "policyengine",
-        "type": "note",
-        "label": "PolicyEngine",
-        "words": 501
-      },
-      {
-        "id": "rules-as-code",
-        "type": "note",
-        "label": "Rules as Code",
-        "words": 441
-      },
-      {
-        "id": "ifs-taxben",
-        "type": "note",
-        "label": "IFS TAXBEN",
-        "words": 123
       }
     ],
     "edges": [
@@ -449,29 +508,29 @@
   },
   "progress": {
     "total": {
-      "words": 25912,
+      "words": 30719,
       "target": 80000,
-      "percent": 32.4
+      "percent": 38.4
     },
     "by_part": {
       "Part III: Future": {
-        "words": 9692,
+        "words": 11465,
         "chapters": 5
       },
       "Front Matter": {
-        "words": 880,
+        "words": 923,
         "chapters": 1
       },
       "Part II: Building": {
-        "words": 9207,
+        "words": 9914,
         "chapters": 5
       },
       "Part I: Origins": {
-        "words": 6133,
-        "chapters": 3
+        "words": 8417,
+        "chapters": 4
       }
     },
-    "chapters_complete": 14
+    "chapters_complete": 15
   },
   "targets": {
     "total_words": 80000,
@@ -484,99 +543,84 @@
   },
   "reviews": [
     {
-      "persona": "Policy Researcher",
-      "rating": 3.4,
-      "summary": "Excellent historical foundation undermined by insufficient validation of author's own tools and speculative claims presented as established insights.",
+      "persona": "Policy Wonk",
+      "rating": 4.0,
+      "summary": "Historical chapters are publication-ready; speculative chapters (11-13) need validation before memo use.",
       "strengths": [
-        "Part I (Origins) is exceptionally well-researched with strong citations - Orcutt, DYNASIM, IFS history is citable and defensible",
-        "Chapter 10 on uncertainty is outstanding - honest, technically rigorous, exactly what policy memos need",
-        "Clear explanations of technical concepts (aggregation problem, marginal tax rates, cliffs) that translate to policy communication"
+        "Exceptional historical grounding with proper citations",
+        "Intellectual honesty about limitations and uncertainty",
+        "Accessibility without dumbing down technical concepts"
       ],
       "weaknesses": [
-        "PolicyEngine chapters lack independent validation - no systematic comparison to CBO/JCT/Treasury estimates",
-        "Part III presents untested research proposals (value forecasting, Democrasim) as if they were validated approaches",
-        "Cosilico chapter reads like pitch deck with market sizing claims but zero empirical validation"
+        "Unvalidated models (Democrasim, HiveSight) presented as evidence",
+        "Missing quantification of uncertainty on estimates",
+        "Value forecasting leap is philosophically under-defended"
       ],
-      "generated_at": "2025-12-12T19:30:00.000000"
+      "generated_at": "2025-12-22T03:48:00.000000"
     },
     {
       "persona": "Tech Enthusiast",
       "rating": 4.1,
-      "summary": "Part II is exceptional technical writing; Part III loses credibility with increasingly speculative claims about simulating opinion, democracy, and values.",
+      "summary": "Two books fighting for space: excellent technical history (A-) vs speculative manifesto on values/democracy (C+).",
       "strengths": [
-        "Chapters 4-8 demonstrate deep technical understanding with honest discussion of tradeoffs (deterministic backends, data limitations)",
-        "Uncertainty quantification chapter (10) addresses a real problem that most policy tech ignores",
-        "The AI integration discussion is refreshingly grounded: clear about where AI helps (explanation) vs fails (calculation)"
+        "Empirical grounding in real working systems with validation data",
+        "Awareness of AI limitations - LLMs hallucinate, deterministic backends needed",
+        "Open-source ethos with genuine technical depth"
       ],
       "weaknesses": [
-        "Part III becomes increasingly speculative without empirical validation - silicon sampling, Democrasim, value forecasting lack tested claims",
-        "The leap from 'we can simulate current policy impacts' to 'we can forecast what humanity would value after reflection' is too large"
+        "Uneven credibility - Part I solid, Part III speculative",
+        "Too many personal projects without validation",
+        "HOMOSEX reversal undermines value forecasting approach"
       ],
-      "generated_at": "2025-12-12T19:30:00.000000"
+      "generated_at": "2025-12-22T03:48:00.000000"
     },
     {
       "persona": "General Reader",
-      "rating": 3.4,
-      "summary": "Ambitious technical book with important ideas but uneven accessibility and a tension between democratizing vision and insider execution.",
+      "rating": 4.0,
+      "summary": "Fascinating and important with exceptional clarity, but structural issues blur proven vs speculative work.",
       "strengths": [
-        "Chapters 10 and 12 are genuinely excellent - they make abstract concepts matter by showing real consequences",
-        "Honest about uncertainty and limitations (especially Chapter 10) - this builds trust",
-        "The core thesis about democratizing policy analysis is compelling and timely"
+        "Exceptional clarity explaining complex technical concepts",
+        "Honest about limitations and uncertainty",
+        "Compelling democratic vision"
       ],
       "weaknesses": [
-        "Parts I-II read like institutional history that only specialists care about - struggled to stay engaged through Chapters 1-3",
-        "Chapter 8 (Cosilico) feels like it belongs in a business plan, not a book for general readers",
-        "Missing human stories - want to meet real people whose lives changed because of these tools"
+        "Chapters 5-9 sometimes read like promotional material",
+        "Speculative chapters need stronger framing",
+        "Some repetition between chapters 2-3"
       ],
-      "generated_at": "2025-12-12T19:30:00.000000"
+      "generated_at": "2025-12-22T03:48:00.000000"
     },
     {
       "persona": "Academic Economist",
-      "rating": 3.4,
-      "summary": "An ambitious practitioner's account that makes microsimulation accessible but lacks the validation, literature engagement, and critical rigor expected of serious scholarship.",
+      "rating": 3.6,
+      "summary": "Promising draft needing significant revision - strong history but self-citation problem undermines credibility.",
       "strengths": [
-        "Excellent treatment of uncertainty quantification (Chapter 10) identifies a real methodological problem",
-        "Clear explanation of technical concepts for general audiences without dumbing down",
-        "Historical grounding in Orcutt's work provides valuable context often missing from technical papers"
+        "Historical scholarship is strong with proper citations",
+        "Honest about uncertainty and limitations",
+        "Clear writing and effective analogies"
       ],
       "weaknesses": [
-        "Minimal engagement with relevant literatures (Saez/Piketty on tax, Chetty on behavioral responses, political science on voter information)",
-        "No systematic validation of PolicyEngine against official models - CBO/JCT/Treasury comparisons conspicuously absent",
-        "Speculative chapters (Cosilico, value forecasting) presented with unjustified confidence as if established rather than aspirational"
+        "Self-citation without independent validation",
+        "Missing engagement with relevant academic literatures",
+        "Chapter 8 is a business pitch for vaporware"
       ],
-      "generated_at": "2025-12-12T19:30:00.000000"
+      "generated_at": "2025-12-22T03:48:00.000000"
     },
     {
-      "persona": "AI Safety Researcher",
-      "rating": 3.7,
-      "summary": "Promising infrastructure work undermined by insufficiently validated value forecasting thesis that risks AI safety credibility.",
+      "persona": "EA/AI Safety",
+      "rating": 4.1,
+      "summary": "Serious work with genuine alignment contributions, but underweights tail risks and adversarial dynamics.",
       "strengths": [
-        "Deterministic backend/AI frontend architecture is exactly right - should be the standard for AI policy tools",
-        "Uncertainty quantification discussion (Ch 10) shows genuine understanding of epistemic challenges",
-        "Open source transparency approach aligns with AI safety principles of auditable systems"
+        "Exceptional epistemic hygiene throughout",
+        "Novel tractable research agenda in value forecasting",
+        "Deterministic backends + AI frontends is key architectural insight"
       ],
       "weaknesses": [
-        "Value forecasting thesis (Ch 13) is dramatically underspecified - no discussion of value lock-in risks or Goodhart's Law",
-        "Silicon sampling (Ch 11) glosses over WEIRD bias and systematic failures that could harm decision-making",
-        "Missing any discussion of adversarial use, how bad actors could game these systems, or institutional capture risks"
+        "Insufficient engagement with adversarial dynamics",
+        "Overconfidence in democratic framing",
+        "Missing engagement with core AI safety literature (CEV, Goodhart)"
       ],
-      "generated_at": "2025-12-12T19:30:00.000000"
-    },
-    {
-      "persona": "Max Ghenis (Author)",
-      "rating": 3.2,
-      "summary": "Strong historical narrative undermined by aspirational overreach and unbuilt infrastructure - Part III reads like a funding pitch masquerading as intellectual synthesis.",
-      "strengths": [
-        "Part I (Chapters 1-3) is genuinely solid - Orcutt story, tax model wars, open source revolution are well-researched",
-        "The honest acknowledgment of limitations in Chapters 8 and 10 shows self-awareness that builds trust",
-        "The writing voice is clearer and more confident than earlier drafts - Guy Orcutt origin story has narrative momentum"
-      ],
-      "weaknesses": [
-        "Part III is intellectually dishonest - HiveSight barely exists, Democrasim is a toy prototype, value forecasting is untested speculation",
-        "Chapter 8 oversells Cosilico catastrophically - commercial tiers table is aspirational fiction, not analysis",
-        "The epistemological humility about uncertainty (Ch 10) is immediately abandoned in favor of grand claims (Ch 12-13)"
-      ],
-      "generated_at": "2025-12-12T19:30:00.000000"
+      "generated_at": "2025-12-22T03:48:00.000000"
     }
   ]
 }
