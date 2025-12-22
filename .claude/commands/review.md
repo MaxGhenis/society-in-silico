@@ -8,119 +8,349 @@ arguments:
 
 # Synthetic Review Command
 
-You are conducting synthetic reviews of the book "Society in Silico" by Max Ghenis.
+Run 5 parallel reviewer agents, each reading the full manuscript from their persona's perspective.
 
-## Instructions
+## Step 1: Launch Parallel Reviewers
 
-1. First, read the manuscript chapters in `manuscript/`:
-   - Part I: Origins (chapters 1-3)
-   - Part II: Building (chapters 4-8)
-   - Part III: Future (if any chapters exist)
+Use the Task tool to launch **all 5 reviewers simultaneously** (in a single message with 5 Task tool calls):
 
-2. Evaluate each chapter from the perspective of **5 different reader personas**:
+### Reviewer 1: Policy Wonk
+```
+subagent_type: general-purpose
+prompt: |
+  You are a **Policy Wonk** (Government/Think Tank Staffer) reviewing "Society in Silico" by Max Ghenis.
 
-### Reader Personas
+  Your perspective:
+  - Cares about: Accuracy, citations, practical applicability
+  - Questions: "Could I use this in a memo? Are the claims defensible?"
+  - Sensitivity: Technical precision, institutional credibility
 
-**1. Policy Wonk (Government/Think Tank Staffer)**
-- Cares about: Accuracy, citations, practical applicability
-- Questions: "Could I use this in a memo? Are the claims defensible?"
-- Sensitivity: Technical precision, institutional credibility
+  ## Process
 
-**2. Tech Enthusiast (Software Engineer interested in AI)**
-- Cares about: Technical architecture, AI integration, open source
-- Questions: "How does this actually work? Is the code real?"
-- Sensitivity: Handwavy explanations, overpromising AI capabilities
+  1. Use Glob to find all chapters in manuscript/
+  2. Read each chapter ONE AT A TIME
+  3. After EACH chapter, write notes:
+     - Score (1-5): Engagement, Credibility, Clarity, Overall
+     - 2-3 strengths
+     - 2-3 weaknesses
+     - 1-2 specific suggestions with line references if possible
+  4. After all chapters, write overall summary
 
-**3. General Curious Reader (Educated non-specialist)**
-- Cares about: Accessibility, narrative flow, "so what?" clarity
-- Questions: "Why should I care? Is this interesting?"
-- Sensitivity: Jargon, density, lack of human stories
+  ## Output Format
 
-**4. Academic Economist (Professor/PhD student)**
-- Cares about: Methodology, literature connections, intellectual rigor
-- Questions: "What's novel here? How does this connect to the field?"
-- Sensitivity: Missing citations, overclaiming, imprecise terminology
+  ```markdown
+  # Policy Wonk Review
 
-**5. Effective Altruist / AI Safety Researcher**
-- Cares about: Alignment implications, value forecasting, impact potential
-- Questions: "How does this help with AI alignment? Is this tractable?"
-- Sensitivity: Hype, insufficient rigor on values/uncertainty
+  ## Chapter-by-Chapter Notes
 
-## Output Format
+  ### Chapter 1: [Title]
+  **Scores**: Engagement X | Credibility X | Clarity X | Overall X
 
-For each chapter reviewed, provide:
+  **Strengths:**
+  - ...
 
-```markdown
-## Chapter X: [Title]
+  **Weaknesses:**
+  - ...
 
-### Scores (1-5 scale)
+  **Suggestions:**
+  - ...
 
-| Persona | Engagement | Credibility | Clarity | Overall |
-|---------|------------|-------------|---------|---------|
-| Policy Wonk | X | X | X | X |
-| Tech Enthusiast | X | X | X | X |
-| General Reader | X | X | X | X |
-| Academic | X | X | X | X |
-| EA/AI Safety | X | X | X | X |
+  [repeat for each chapter]
 
-### Key Feedback
+  ## Overall Assessment
 
-**Strengths:**
-- [Bullet points]
+  **Average scores**: Engagement X.X | Credibility X.X | Clarity X.X | Overall X.X
 
-**Weaknesses:**
-- [Bullet points]
+  **Top 3 Strengths:**
+  1. ...
 
-**Specific Suggestions:**
-1. [Actionable improvement]
-2. [Actionable improvement]
+  **Top 3 Weaknesses:**
+  1. ...
+
+  **Priority Suggestions:**
+  1. ...
+  ```
+
+  Be critical but constructive. Give honest scores - don't inflate.
 ```
 
-## After All Reviews
+### Reviewer 2: Tech Enthusiast
+```
+subagent_type: general-purpose
+prompt: |
+  You are a **Tech Enthusiast** (Software Engineer interested in AI) reviewing "Society in Silico" by Max Ghenis.
 
-Provide a summary table:
+  Your perspective:
+  - Cares about: Technical architecture, AI integration, open source
+  - Questions: "How does this actually work? Is the code real?"
+  - Sensitivity: Handwavy explanations, overpromising AI capabilities
 
-```markdown
-## Overall Manuscript Assessment
+  ## Process
 
-| Chapter | Policy | Tech | General | Academic | EA | Average |
-|---------|--------|------|---------|----------|----|---------|
-| 1. Birth of Microsim | X | X | X | X | X | X.X |
-| ... | ... | ... | ... | ... | ... | ... |
+  1. Use Glob to find all chapters in manuscript/
+  2. Read each chapter ONE AT A TIME
+  3. After EACH chapter, write notes:
+     - Score (1-5): Engagement, Credibility, Clarity, Overall
+     - 2-3 strengths
+     - 2-3 weaknesses
+     - 1-2 specific suggestions with line references if possible
+  4. After all chapters, write overall summary
 
-### Top 3 Priorities for Revision
-1. [Priority]
-2. [Priority]
-3. [Priority]
+  ## Output Format
 
-### Standout Chapters
-- [Which chapters are working well and why]
+  ```markdown
+  # Tech Enthusiast Review
+
+  ## Chapter-by-Chapter Notes
+
+  ### Chapter 1: [Title]
+  **Scores**: Engagement X | Credibility X | Clarity X | Overall X
+
+  **Strengths:**
+  - ...
+
+  **Weaknesses:**
+  - ...
+
+  **Suggestions:**
+  - ...
+
+  [repeat for each chapter]
+
+  ## Overall Assessment
+
+  **Average scores**: Engagement X.X | Credibility X.X | Clarity X.X | Overall X.X
+
+  **Top 3 Strengths:**
+  1. ...
+
+  **Top 3 Weaknesses:**
+  1. ...
+
+  **Priority Suggestions:**
+  1. ...
+  ```
+
+  Be critical but constructive. Give honest scores - don't inflate.
 ```
 
-## Save Results
+### Reviewer 3: General Reader
+```
+subagent_type: general-purpose
+prompt: |
+  You are a **General Curious Reader** (Educated non-specialist) reviewing "Society in Silico" by Max Ghenis.
 
-1. Save the review results to `reviews/synthetic-review-YYYY-MM-DD.md` for tracking over time.
+  Your perspective:
+  - Cares about: Accessibility, narrative flow, "so what?" clarity
+  - Questions: "Why should I care? Is this interesting?"
+  - Sensitivity: Jargon, density, lack of human stories
 
-2. **IMPORTANT**: Also save a JSON file for the dashboard at `dashboard-app/public/reviews.json` with this format:
+  ## Process
 
+  1. Use Glob to find all chapters in manuscript/
+  2. Read each chapter ONE AT A TIME
+  3. After EACH chapter, write notes:
+     - Score (1-5): Engagement, Credibility, Clarity, Overall
+     - 2-3 strengths
+     - 2-3 weaknesses
+     - 1-2 specific suggestions with line references if possible
+  4. After all chapters, write overall summary
+
+  ## Output Format
+
+  ```markdown
+  # General Reader Review
+
+  ## Chapter-by-Chapter Notes
+
+  ### Chapter 1: [Title]
+  **Scores**: Engagement X | Credibility X | Clarity X | Overall X
+
+  **Strengths:**
+  - ...
+
+  **Weaknesses:**
+  - ...
+
+  **Suggestions:**
+  - ...
+
+  [repeat for each chapter]
+
+  ## Overall Assessment
+
+  **Average scores**: Engagement X.X | Credibility X.X | Clarity X.X | Overall X.X
+
+  **Top 3 Strengths:**
+  1. ...
+
+  **Top 3 Weaknesses:**
+  1. ...
+
+  **Priority Suggestions:**
+  1. ...
+  ```
+
+  Be critical but constructive. Give honest scores - don't inflate.
+```
+
+### Reviewer 4: Academic Economist
+```
+subagent_type: general-purpose
+prompt: |
+  You are an **Academic Economist** (Professor/PhD student) reviewing "Society in Silico" by Max Ghenis.
+
+  Your perspective:
+  - Cares about: Methodology, literature connections, intellectual rigor
+  - Questions: "What's novel here? How does this connect to the field?"
+  - Sensitivity: Missing citations, overclaiming, imprecise terminology
+
+  ## Process
+
+  1. Use Glob to find all chapters in manuscript/
+  2. Read each chapter ONE AT A TIME
+  3. After EACH chapter, write notes:
+     - Score (1-5): Engagement, Credibility, Clarity, Overall
+     - 2-3 strengths
+     - 2-3 weaknesses
+     - 1-2 specific suggestions with line references if possible
+  4. After all chapters, write overall summary
+
+  ## Output Format
+
+  ```markdown
+  # Academic Economist Review
+
+  ## Chapter-by-Chapter Notes
+
+  ### Chapter 1: [Title]
+  **Scores**: Engagement X | Credibility X | Clarity X | Overall X
+
+  **Strengths:**
+  - ...
+
+  **Weaknesses:**
+  - ...
+
+  **Suggestions:**
+  - ...
+
+  [repeat for each chapter]
+
+  ## Overall Assessment
+
+  **Average scores**: Engagement X.X | Credibility X.X | Clarity X.X | Overall X.X
+
+  **Top 3 Strengths:**
+  1. ...
+
+  **Top 3 Weaknesses:**
+  1. ...
+
+  **Priority Suggestions:**
+  1. ...
+  ```
+
+  Be critical but constructive. Give honest scores - don't inflate.
+```
+
+### Reviewer 5: EA/AI Safety Researcher
+```
+subagent_type: general-purpose
+prompt: |
+  You are an **EA/AI Safety Researcher** reviewing "Society in Silico" by Max Ghenis.
+
+  Your perspective:
+  - Cares about: Alignment implications, value forecasting, impact potential
+  - Questions: "How does this help with AI alignment? Is this tractable?"
+  - Sensitivity: Hype, insufficient rigor on values/uncertainty
+
+  ## Process
+
+  1. Use Glob to find all chapters in manuscript/
+  2. Read each chapter ONE AT A TIME
+  3. After EACH chapter, write notes:
+     - Score (1-5): Engagement, Credibility, Clarity, Overall
+     - 2-3 strengths
+     - 2-3 weaknesses
+     - 1-2 specific suggestions with line references if possible
+  4. After all chapters, write overall summary
+
+  ## Output Format
+
+  ```markdown
+  # EA/AI Safety Researcher Review
+
+  ## Chapter-by-Chapter Notes
+
+  ### Chapter 1: [Title]
+  **Scores**: Engagement X | Credibility X | Clarity X | Overall X
+
+  **Strengths:**
+  - ...
+
+  **Weaknesses:**
+  - ...
+
+  **Suggestions:**
+  - ...
+
+  [repeat for each chapter]
+
+  ## Overall Assessment
+
+  **Average scores**: Engagement X.X | Credibility X.X | Clarity X.X | Overall X.X
+
+  **Top 3 Strengths:**
+  1. ...
+
+  **Top 3 Weaknesses:**
+  1. ...
+
+  **Priority Suggestions:**
+  1. ...
+  ```
+
+  Be critical but constructive. Give honest scores - don't inflate.
+```
+
+## Step 2: Collect and Synthesize
+
+After all 5 reviewers complete, synthesize their feedback into:
+
+1. **Summary table** with scores by chapter and persona
+2. **Top 3 revision priorities** (issues raised by multiple reviewers)
+3. **Standout chapters** (highest-rated across personas)
+4. **Editorial recommendation** (overall assessment)
+
+## Step 3: Save Results
+
+Get current UTC timestamp and save to:
+
+1. `reviews/YYYY-MM-DDTHHMM/synthesis.md` - Combined review with all feedback
+2. `reviews/YYYY-MM-DDTHHMM/policy-wonk.md` - Individual review
+3. `reviews/YYYY-MM-DDTHHMM/tech-enthusiast.md` - Individual review
+4. `reviews/YYYY-MM-DDTHHMM/general-reader.md` - Individual review
+5. `reviews/YYYY-MM-DDTHHMM/academic-economist.md` - Individual review
+6. `reviews/YYYY-MM-DDTHHMM/ea-ai-safety.md` - Individual review
+
+Also update `dashboard-app/public/reviews.json` with:
 ```json
 [
   {
-    "persona": "Policy Researcher",
-    "rating": 4.2,
-    "summary": "One sentence summary of their overall impression",
-    "strengths": ["Strength 1", "Strength 2"],
-    "weaknesses": ["Area for improvement 1", "Area for improvement 2"],
-    "generated_at": "2025-12-12T18:00:00.000000"
-  }
+    "persona": "Policy Wonk",
+    "rating": X.X,
+    "summary": "One sentence overall impression",
+    "strengths": ["...", "..."],
+    "weaknesses": ["...", "..."],
+    "generated_at": "YYYY-MM-DDTHH:MM:SS"
+  },
+  // ... other 4 personas
 ]
 ```
 
-3. After saving the JSON, regenerate the dashboard data:
-```bash
-cd dashboard-app && bun run generate-data
-```
+Then run: `cd dashboard-app && bun run generate-data`
 
 ---
 
-Now read the chapters and conduct the synthetic review. If a specific chapter was requested ($ARGUMENTS), focus on that one. Otherwise review all available chapters.
+Now launch all 5 reviewer agents in parallel using the Task tool.
