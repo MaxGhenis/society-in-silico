@@ -26,47 +26,50 @@ end with the democratic alternative vision.
 
 ## Draft Opening
 
-In the 2020 third season of Westworld—HBO's science fiction series about artificial consciousness and control—we meet Engerraund Serac, a French trillionaire who watched a thermonuclear incident destroy Paris, then spent decades building an AI called Rehoboam to ensure it never happened again. His system predicted individual human lives: when you'd get sick, lose your job, take your own life. It assigned people to "paths" and manipulated society to make those predictions come true. Those who didn't fit the predictions—the "outliers"—were flagged for "reconditioning."
+"I don't predict the future. I create it."
 
-Serac's philosophy: "I don't predict the future. I create it."
+That line comes from Engerraund Serac, the antagonist of Westworld's third season. After watching a thermonuclear incident destroy Paris, Serac built an AI called Rehoboam that predicted individual human lives—when you'd get sick, lose your job, die. The system didn't just forecast; it manipulated society to make its predictions come true. People who deviated from their predicted paths got flagged for "reconditioning."
 
-The show had explored this territory before: "A human is just a brief algorithm. 10,247 lines." People reduced to code without their knowledge or consent.
+The show's premise: humans are "just a brief algorithm," reducible to code. The horror: one man controlling that algorithm without anyone else knowing.
 
-When I first watched this, I recognized the premise. Since 2018, I've built microsimulation systems that model society computationally—tools that predict how policies affect households, that simulate economies with millions of synthetic people. The Westworld writers had taken the same technology and followed it to its darkest conclusion.
+When I watched this in 2020, I recognized the technology. I'd been building microsimulation systems since 2018—computational models that predict how tax policies affect households, that simulate entire economies with millions of synthetic people. The Westworld writers had taken the same tools and followed them to their darkest conclusion.
 
-But they'd also revealed a fork in the road.
+They'd also revealed a choice we're making right now.
 
-Serac's system was closed: one man decided what "optimal" meant, and everyone else lived inside his model without knowing it. What if the model were open? What if anyone could query it, challenge its assumptions, propose alternatives? What if simulation were infrastructure for democratic deliberation rather than autocratic control?
+Serac's system was closed: he decided what "optimal" meant, and everyone else lived inside his model without consent. But computational models of society don't have to work that way. What if anyone could query the model? Challenge its assumptions? Propose alternatives? What if simulation became public infrastructure for democratic deliberation, not a tool for autocratic control?
 
-That's what this book is about.
+That's the fork in the road. That's what this book is about.
 
 ---
 
 ## The Stakes
 
-We don't have Rehoboam. But we're not starting from zero either.
+We don't have Rehoboam. But we're not starting from zero.
 
-Governments use predictive models to allocate benefits, assess fraud risk, set policy. Insurance companies price your premiums based on algorithms you can't inspect. Banks decide your creditworthiness with models they won't explain. AI assistants confidently give tax advice that's wrong a third of the time—GPT-4 achieves only 67% accuracy on basic tax questions.[^gpt4-tax]
+Governments already use predictive models to allocate benefits, assess fraud risk, shape policy. Insurance companies price your premiums with algorithms you can't inspect. Banks decide your creditworthiness with models they won't explain. And AI assistants—including GPT-4, the most capable language model when I started writing this—get only 67% of basic tax questions right.[^gpt4-tax]
 
-The question isn't whether we'll have computational models of society. We do. The question is:
+These models exist. The question is who controls them.
 
-- **Who builds them?** Closed institutions or open communities?
-- **Who can access them?** Only the powerful or everyone?
-- **What are they for?** Control or understanding?
+**Who builds them?** Closed institutions or open communities?
+
+**Who can access them?** Only the powerful or everyone?
+
+**What are they for?** Optimization or understanding?
 
 ## The Alternative
 
-This book traces a different path—from [[guy-orcutt|Guy Orcutt]]'s 1957 vision of simulating individual households, through six decades of institutional models locked inside government agencies, to the open source movement that's making these tools public infrastructure.
+Society needs a shared model to reason against. Right now, Congress debates tax policy with napkin math. Voters can't calculate how reforms affect their own households. AI confidently hallucinates benefit eligibility rules.
 
-I'll trace the story through my own journey: from Google data scientist to MIT economist to founder of [[policyengine|PolicyEngine]] and [[cosilico|Cosilico]]. But it's not my story. It's the story of a technology that's been waiting for its democratic moment.
+This book traces a different path—from [[guy-orcutt|Guy Orcutt]]'s 1957 vision of simulating individual households, through six decades of institutional models locked inside government agencies, to the open source movement making these tools public infrastructure.
 
-**Society needs a shared model to reason against.** Congress debates with napkin math. Voters can't see how policies affect their own families. AI hallucinates eligibility rules. We can do better.
+The democratic alternative looks like this:
 
-What if everyone could:
-- See how a proposed tax change would affect their household?
-- Understand who gains and loses from a policy reform?
-- Test their assumptions about how society works?
-- Contribute to making the model more accurate?
+- Anyone can see how a proposed policy change affects their household
+- Anyone can understand who gains and loses from a reform
+- Anyone can test their assumptions about how society works
+- Anyone can contribute to making the model more accurate
+
+I'll tell this story through my own path—from Google data scientist to MIT economist to founder of [[policyengine|PolicyEngine]] and [[cosilico|Cosilico]]—but it's not my story. It's the story of a technology that's been waiting sixty years for its democratic moment.
 
 That's not Rehoboam. That's the opposite of Rehoboam.
 
@@ -74,15 +77,15 @@ That's not Rehoboam. That's the opposite of Rehoboam.
 
 ## Key Themes
 
-1. **The gap between policy debates (emotional, tribal) and policy analysis (computational, precise)**—and how to bridge it without technocracy
+**The gap between policy debates and policy analysis.** Political arguments run on emotion and tribal loyalty. Policy analysis runs on computation and precision. Bridging that gap without sliding into technocracy is the central challenge.
 
-2. **Models as translation devices**—turning raw data and dense legislation into comprehensible impact
+**Models as translation devices.** They turn raw administrative data and dense legislation into comprehensible impact. A 300-page tax bill becomes "your family pays $1,200 less next year."
 
-3. **The democratization thesis**—simulation tools are becoming public infrastructure, shifting power from institutions to citizens
+**The democratization thesis.** Simulation tools are becoming public infrastructure. Power is shifting from institutions that guard models to communities that build them in the open.
 
-4. **The AI question**—what LLMs can and can't do, and why deterministic tools matter more than ever
+**The AI question.** What language models can and can't do, and why deterministic tools matter more than ever when AI makes everything else probabilistic.
 
-5. **Open source as philosophy**—transparency as democratic value, not just engineering practice
+**Open source as philosophy.** Transparency is a democratic value, not just an engineering practice.
 
 ## What's Ahead
 
@@ -90,9 +93,9 @@ That's not Rehoboam. That's the opposite of Rehoboam.
 
 **Part II: Building** follows the open source turn—[[openfisca|OpenFisca]] in France, [[policyengine|PolicyEngine]] spanning US and UK, the reality of encoding law as [[rules-as-code|code]].
 
-**Part III: Future** confronts the AI moment—what changes when language models can help write rules, when agents need reliable tools, when "society in silico" becomes feasible at scale.
+**Part III: Future** confronts the AI moment—what changes when language models help write rules, when agents need reliable tools, when simulating society at scale becomes technically feasible.
 
-The book ends where we started: at the fork in the road. Serac's path or the open one. The choice is being made now, in code and policy and institutional design. This is my case for the democratic alternative.
+The book ends where it started: at the fork in the road. The choice between Serac's closed system and the democratic alternative is being made right now, in code and policy and institutional design. This is the case for the open path.
 
 ---
 
