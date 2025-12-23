@@ -1,4 +1,8 @@
-# Chapter 8: Cosilico - Infrastructure for the Future
+# Chapter 8: Infrastructure for the Future
+
+*A note to the reader: This chapter differs from the rest of the book. Earlier chapters described working systems—PolicyEngine, TAXSIM, existing models with validated track records. This chapter describes infrastructure that doesn't yet exist. I include it not as a product review, but as a technical exploration of what would be needed for AI systems to reliably perform tax and benefit calculations. The problems described are real; the solutions are speculative.*
+
+---
 
 GPT-4 gets tax questions wrong 33% of the time.
 
@@ -12,7 +16,7 @@ This finding, from Column Tax's engineering blog in 2024, captures a fundamental
 
 PolicyEngine had demonstrated that deterministic tax-benefit calculations could be encoded as open-source code. The question was whether that approach could become infrastructure—not just for policy analysis, but for every fintech application, government agency, and AI assistant that needed accurate calculations.
 
-That question led to Cosilico.
+That question led me to explore what such infrastructure would require.
 
 ---
 
@@ -28,9 +32,9 @@ Look at the landscape of tax and financial infrastructure in 2024:
 
 **Tax filing** has TurboTax and emerging players like Column Tax. They help individuals file returns. But they're consumer-facing, not API-first infrastructure.
 
-**Policy simulation** has academic models like PolicyEngine, EUROMOD, Tax-Calculator. They're rigorous but not production-ready for commercial applications.
+**Policy simulation** has academic models like PolicyEngine, EUROMOD, Tax-Calculator. They're rigorous but not designed as production-ready commercial infrastructure.
 
-No one provides the full stack: income tax + benefits eligibility + attribute prediction + population simulation in a single, production-ready API.
+No one provides the full stack: income tax + benefits eligibility + attribute prediction + population simulation in a single, production-ready API. This gap is both a problem and an opportunity.
 
 This gap matters because every application that involves money eventually runs into tax and benefit calculations. A lending app needs to estimate after-tax income. A benefits platform needs to determine eligibility across programs. A financial planning tool needs to project tax liability under different scenarios. An AI assistant asked about finances needs to call *something* to get accurate numbers.
 
@@ -58,54 +62,44 @@ The solution isn't better training. It's tools.
 
 ---
 
-## Deterministic + Auditable
+## What Would Be Needed: Deterministic + Auditable
 
-Cosilico's thesis is that AI systems need deterministic, auditable tools for calculations—and that building those tools as open-source infrastructure creates value for everyone.
+The thesis is that AI systems need deterministic, auditable tools for calculations—and that building those tools as open-source infrastructure would create value for everyone.
 
-The architecture has three components:
+Such infrastructure would require three components:
 
 **Rules Engine**: Every tax and benefit formula encoded as deterministic code, traceable to statute. The EITC calculation cites 26 USC § 32. The SNAP calculation cites 7 USC § 2014. Each computation includes a citation and the parameter values used.
 
-**Synthetic Populations**: For aggregate analysis, you need representative data. Cosilico constructs synthetic populations by calibrating public microdata to known totals, imputing missing variables, and validating against administrative aggregates. The result is a privacy-preserving dataset of ~100 million synthetic households that produces correct aggregate tax revenue when run through the rules engine.
+**Synthetic Populations**: For aggregate analysis, you need representative data. This would involve constructing synthetic populations by calibrating public microdata to known totals, imputing missing variables, and validating against administrative aggregates. The result would be a privacy-preserving dataset of synthetic households that produces correct aggregate tax revenue when run through the rules engine.
 
-**Scenario Simulation**: With rules and population, you can answer counterfactual questions. What if the EITC expanded by 50%? Run the baseline, run the reform, take the difference. The output might show: cost estimates over ten years, households affected, poverty reduction in percentage points—all calculated from the underlying rules and population data.
+**Scenario Simulation**: With rules and population, you could answer counterfactual questions. What if the EITC expanded by 50%? Run the baseline, run the reform, take the difference. The output might show: cost estimates over ten years, households affected, poverty reduction in percentage points—all calculated from the underlying rules and population data.
 
-The key properties:
+The key properties such a system would need:
 
 - **Deterministic**: Same inputs → same outputs, always
 - **Auditable**: Every calculation includes legal citation and parameter values
 - **Versioned**: Git history tracks all rule changes
 - **Bi-temporal**: Parameters track both effective date and knowledge date
 
-When an AI agent calls Cosilico to answer a tax question, the calculation is provably correct, legally citable, and traceable. The AI explains; the infrastructure calculates.
+When an AI agent would call such infrastructure to answer a tax question, the calculation would be provably correct, legally citable, and traceable. The AI explains; the infrastructure calculates.
 
 ---
 
-## Building on PolicyEngine
+## The Foundation Exists
 
-Cosilico doesn't start from scratch. It builds on the foundation PolicyEngine established.
+Such infrastructure wouldn't start from scratch. PolicyEngine has demonstrated the core thesis: tax and benefit rules *can* be encoded accurately at scale. Over a million simulations have run on the platform. The UK Treasury has used the UK model for policy costing. US Congressional offices have used the analysis. The codebase covers US federal plus 50 states, the UK, and Canada—with 50+ open-source contributors maintaining and extending it {cite}`policyengine2024about`.
 
-PolicyEngine proved the core thesis: tax and benefit rules *can* be encoded accurately at scale. Over a million simulations have run on the platform. The UK Treasury has used the UK model for policy costing. US Congressional offices have used the analysis. The codebase covers US federal plus 50 states, the UK, and Canada—with 50+ open-source contributors maintaining and extending it {cite}`policyengine2024about`.
+But PolicyEngine was designed as a policy analysis tool—a nonprofit providing free research infrastructure. The gap is commercial infrastructure: production APIs, enterprise support, service-level guarantees.
 
-This is the starting point. But PolicyEngine was designed as a policy analysis tool—a nonprofit providing free research infrastructure. Cosilico is designed as commercial infrastructure—an open-core business providing production APIs.
+One potential path would be an open-core model, mirroring patterns in other successful open-source infrastructure: Linux and Red Hat, Kubernetes and cloud providers, PostgreSQL and managed database services. The simulation engine could remain open source while hosted services and enterprise features would be commercial.
 
-The relationship is complementary:
-
-- **PolicyEngine** continues as a nonprofit doing policy research and public-facing tools
-- **Cosilico** builds on the same rule-encoding approach but serves commercial customers
-- The open-source core is shared; the commercial layers are separate
-
-This structure mirrors patterns in other successful open-source infrastructure: Linux and Red Hat, Kubernetes and cloud providers, PostgreSQL and managed database services.
+Whether this specific approach is the right one remains uncertain. What's clear is that the foundation exists—accurate, open-source policy rules that could be packaged differently to serve different use cases.
 
 ---
 
-## The Open-Core Model
+## Why Open Source Would Matter
 
-Cosilico is designed as open-core: the simulation engine would be open source (Apache 2.0 licensed), while hosted services and enterprise features would be commercial.
-
-The envisioned model follows patterns proven by companies like GitLab, Elastic, and HashiCorp: give away the core technology, charge for convenience and enterprise features. Whether this model will work for policy simulation infrastructure remains to be tested.
-
-The open-source foundation would serve multiple purposes:
+If policy calculation infrastructure were built as open-core—with the simulation engine open source and hosted services commercial—the open-source foundation would serve multiple purposes:
 
 **Trust through transparency.** When a fintech company integrates tax calculations into their product, they can inspect exactly how those calculations work. No black boxes.
 
@@ -117,29 +111,29 @@ The open-source foundation would serve multiple purposes:
 
 ---
 
-## Why This Might Matter
+## Why This Would Matter
 
-The thesis is that accurate tax and benefit calculations will become essential infrastructure—not a niche academic tool but something every fintech app, government service, and AI assistant needs.
+The thesis is that accurate tax and benefit calculations could become essential infrastructure—not a niche academic tool but something every fintech app, government service, and AI assistant needs.
 
-Several trends support this:
+Several trends suggest this need is growing:
 
 **AI tool use is becoming standard.** Function calling shipped in GPT-4 and Claude 3. Anthropic's Model Context Protocol is being adopted broadly. AI assistants need reliable tools to call—hallucinating tax calculations is unacceptable.
 
 **AI financial regulation is coming.** The SEC, CFPB, and state regulators are examining AI in financial services. Audit trails and explainability will likely be required. Citation-based approaches are regulation-ready.
 
-**The precedent exists.** Avalara built a large business ($8.4 billion acquisition) providing sales tax APIs alone. Someone will build the equivalent for income taxes and benefits. The question is whether it will be open or proprietary.
+**The precedent exists.** Avalara built a large business ($8.4 billion acquisition) providing sales tax APIs alone. Someone will likely build the equivalent for income taxes and benefits. The question is whether it will be open or proprietary.
 
-This is a bet, not a certainty. Many infrastructure plays fail. The market for policy calculation APIs is unproven. But the underlying need—accurate calculations that AI can call—seems real.
+The underlying need—accurate calculations that AI can call—appears real. Whether the market is large enough to sustain commercial infrastructure remains unproven.
 
 ---
 
 ## The Shared Substrate Vision
 
-The deepest rationale for Cosilico connects to the book's larger thesis:
+The deepest rationale for such infrastructure connects to the book's larger thesis:
 
-> "Society is hard to optimize because nobody has a shared model to reason against. Congress debates with napkin math. Banks model risk without knowing policy changes. AI agents hallucinate eligibility rules.
->
-> Cosilico is the shared substrate—a simulation everyone can query, so decisions are grounded in the same reality."
+Society is hard to optimize because nobody has a shared model to reason against. Congress debates with napkin math. Banks model risk without knowing policy changes. AI agents hallucinate eligibility rules.
+
+What's needed is a shared substrate—a simulation everyone can query, so decisions are grounded in the same reality.
 
 When policymakers consider reforming the EITC, they should be able to query the same simulation that banks use to assess lending risk, that fintech apps use to estimate tax liability, that AI assistants use to answer questions. The calculations should be the same because the underlying reality is the same.
 
@@ -151,23 +145,21 @@ This is infrastructure for democratic deliberation: transparent, accessible, sha
 
 ---
 
-## From PolicyEngine to Cosilico
+## From Analysis to Infrastructure
 
-The transition represents an evolution in thinking about what policy simulation infrastructure should be.
+This vision represents an evolution in thinking about what policy simulation infrastructure could be.
 
 PolicyEngine asked: "Can we make policy analysis accessible to everyone?" The answer was yes—through open-source models, web interfaces, and free public tools.
 
-Cosilico asks: "Can accurate policy calculations become infrastructure that everything else builds on?" The answer requires commercial sustainability, production-quality engineering, and integration with the broader ecosystem of AI tools and financial applications.
+The next question is: "Can accurate policy calculations become infrastructure that everything else builds on?" The answer would require commercial sustainability, production-quality engineering, and integration with the broader ecosystem of AI tools and financial applications.
 
-PolicyEngine demonstrated the proof of concept. Cosilico is the attempt to scale it.
-
-The nonprofit continues, focused on research and public goods. The company builds the commercial infrastructure layer. The open-source foundation supports both. And the vision—understanding policy through transparent, accurate simulation—remains the same.
+PolicyEngine demonstrated the proof of concept. Scaling it to production infrastructure is the open challenge.
 
 ---
 
-## What Success Looks Like
+## What Success Would Look Like
 
-If Cosilico succeeds, the results would be visible throughout the financial ecosystem:
+If such infrastructure were built successfully, the results would be visible throughout the financial ecosystem:
 
 **AI assistants** that give accurate answers to tax and benefit questions—not because they've been trained better, but because they call reliable tools.
 
@@ -185,17 +177,17 @@ This is the vision of "society in silico" applied practically: simulation as inf
 
 ## The Work Ahead
 
-As I write this in late 2024, Cosilico exists more as thesis than product. The company is incorporated. The rules engine is being built, drawing on PolicyEngine's foundation. Design partners are testing early versions. But there's no production API, no paying customers, no proof that the market exists.
+As I write this in late 2024, I'm exploring whether to build this infrastructure through a venture called Cosilico. The company is incorporated. Early design work has begun. But there's no production API, no paying customers, no proof that the market exists.
 
-I include this chapter not because Cosilico has succeeded, but because the problem it addresses is real regardless of whether this particular solution works. AI systems need deterministic tools for financial calculations. Someone will build this infrastructure. The question is whether it will be open or proprietary.
+I include this chapter not because such infrastructure has been built, but because the problem is real regardless of whether this particular attempt succeeds. AI systems need deterministic tools for financial calculations. Someone will likely build this infrastructure. The question is whether it will be open or proprietary.
 
-If Cosilico fails—and startups usually fail—the thesis remains: open-source policy simulation infrastructure, production-ready and commercially sustainable, would be valuable. Someone should build it. Maybe we will. Maybe someone else will do it better.
+If this specific venture fails—and most startups do—the thesis remains: open-source policy simulation infrastructure, production-ready and commercially sustainable, would be valuable. Someone should build it. Maybe I will. Maybe someone else will do it better. Maybe PolicyEngine itself will evolve to fill this role without a separate commercial layer.
 
-The honest framing is aspiration, not accomplishment. PolicyEngine demonstrated that open policy simulation is possible. Cosilico is an attempt to make it sustainable and scalable. Whether that attempt succeeds is unknown.
+The honest framing is aspiration, not accomplishment. PolicyEngine demonstrated that open policy simulation is possible and valuable. Whether it can be packaged as production infrastructure that AI systems and fintech companies rely on remains unproven.
 
-What I can say with confidence: the gap exists. GPT-4 gets tax questions wrong a third of the time. Every fintech company that needs accurate calculations today builds fragmented, partial solutions. The need for shared infrastructure is real, even if the path to building it remains uncertain.
+What I can say with confidence: the gap exists. GPT-4 gets tax questions wrong a third of the time. Every fintech company that needs accurate calculations today builds fragmented, partial solutions. The need for shared infrastructure appears real, even if the path to building it remains uncertain.
 
-Cosilico is a bet. You're reading this book partly to understand what the bet is on, and why it might matter even if the specific company doesn't survive.
+This chapter describes a problem and a potential solution. Whether that solution materializes—and whether it's commercially viable—is unknown. You're reading this partly to understand what infrastructure would be needed for AI to reliably handle policy calculations, and why it matters whether that infrastructure is open or proprietary.
 
 ---
 

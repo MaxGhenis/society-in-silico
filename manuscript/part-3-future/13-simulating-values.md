@@ -1,6 +1,11 @@
 # Chapter 13: Simulating Values
 
-*This chapter describes a research program I began in 2024. The initial experiments are complete. The results are promising—and humbling. Value forecasting is harder than I expected, but the evidence suggests it's tractable.*
+**Note to readers**: This chapter describes early-stage research, not established methodology. Unlike PolicyEngine (validated by government use and millions of simulations) or even HiveSight (with preliminary empirical validation), value forecasting is at the experiment stage. I ran the first systematic tests in 2024—LLMs outperformed baselines by 2.2×, but also missed an unexpected reversal in the 2024 GSS data. The results suggest this research direction is promising but far from proven. Treat the philosophical framework as speculative and the empirical claims as preliminary findings requiring extensive validation.
+
+**Validation status across the book's tools**:
+- **Proven**: PolicyEngine (government-validated, million+ simulations, production system)
+- **Preliminary**: Cosilico and HiveSight (prototypes with some validation, not production-ready)
+- **Theoretical**: Democrasim and value forecasting (experimental models with limited validation)
 
 ---
 

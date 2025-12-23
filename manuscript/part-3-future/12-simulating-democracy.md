@@ -1,5 +1,9 @@
 # Chapter 12: Simulating Democracy
 
+**Note to readers**: This chapter describes theoretical research, not validated tools. Democrasim is a toy model—a thought experiment in code designed to explore how voter information might affect democratic outcomes. Unlike PolicyEngine (a validated production system) or HiveSight (a preliminary prototype with some empirical validation), Democrasim makes simplifying assumptions that real political scientists would rightly criticize. Use this chapter to understand intuitions about information and democracy, not as established political science.
+
+---
+
 Why do democratic outcomes often diverge from voter welfare?
 
 It's a puzzle that has occupied political scientists for decades. We have mechanisms—elections—designed to translate public preferences into policy. We have representatives whose job is to understand what constituents want. We have a free press, public education, and more access to information than any previous generation.

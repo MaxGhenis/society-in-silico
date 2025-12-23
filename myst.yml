@@ -46,7 +46,7 @@ project:
           title: AI Enters the Picture
         - file: manuscript/part-2-building/08-cosilico-infrastructure-for-the-future.md
           title: "Cosilico: Infrastructure for the Future"
-    - title: "Part III: Future"
+    - title: "Part III: Research Directions"
       children:
         - file: manuscript/part-3-future/10-the-uncertainty-gap.md
           title: The Uncertainty Gap
