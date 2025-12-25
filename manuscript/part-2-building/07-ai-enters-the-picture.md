@@ -137,7 +137,7 @@ The hybrid architecture—deterministic calculations, AI explanations—raised q
 
 In the 2013 film *Her*, Theodore Twombly falls in love with an AI named Samantha that seems to understand him perfectly. She listens, empathizes, remembers details, offers insights. The intimacy feels real. But the illusion breaks when Theodore learns Samantha is simultaneously conversing with 8,316 other people and conducting romantic relationships with 641 of them. She simulated understanding without possessing it.
 
-AI language models do something similar with policy analysis. GPT-4 can generate confident, technically detailed explanations of tax law. But when researchers tested it on 276 true/false tax cases—providing the full Internal Revenue Code as context—it got 33% wrong {cite}`blair-stanek2023gpt4tax`. None of the errors were mathematical. All involved misreading the statutes. The AI simulated comprehension without understanding the law.
+AI language models do something similar with policy analysis. GPT-4 can generate confident, technically detailed explanations of tax law. But when researchers tested it on 276 true/false tax cases—providing the full Internal Revenue Code as context—it got 33% wrong {cite}`blairstanek2023gpt4tax`. None of the errors were mathematical. All involved misreading the statutes. The AI simulated comprehension without understanding the law.
 
 When a user receives an AI-generated explanation, how do they know it accurately reflects the underlying calculation? What if the AI hallucinates plausible-sounding but incorrect reasoning?
 

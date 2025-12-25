@@ -196,15 +196,20 @@ The full stack:
 
 ```
 Value distribution (forecast)
-    ↓
+    |
+    v
 Democratic simulation (Democrasim)
-    ↓
+    |
+    v
 Policy selection (election results)
-    ↓
+    |
+    v
 Policy implementation (PolicyEngine)
-    ↓
+    |
+    v
 Welfare outcomes (measured)
-    ↓
+    |
+    v
 Feedback: do outcomes align with projected values?
 ```
 

@@ -1,3 +1,29 @@
+---
+exports:
+  - format: pdf
+    template: plain_latex_book
+    output: exports/society-in-silico.pdf
+    toc: true
+    articles:
+      - file: 00-thesis.md
+      - file: 00-preface.md
+      - file: 01-introduction.md
+      - file: ../part-1-origins/01-birth-of-microsimulation.md
+      - file: ../part-1-origins/02-tax-model-wars.md
+      - file: ../part-1-origins/03-open-source-revolution.md
+      - file: ../part-1-origins/04-the-accuracy-question.md
+      - file: ../part-2-building/04-policyengine-proof-of-concept.md
+      - file: ../part-2-building/05-the-household-view.md
+      - file: ../part-2-building/06-the-society-view.md
+      - file: ../part-2-building/07-ai-enters-the-picture.md
+      - file: ../part-2-building/08-cosilico-infrastructure-for-the-future.md
+      - file: ../part-3-future/10-the-uncertainty-gap.md
+      - file: ../part-3-future/11-simulating-opinion.md
+      - file: ../part-3-future/12-simulating-democracy.md
+      - file: ../part-3-future/13-simulating-values.md
+      - file: ../part-3-future/14-society-in-silico.md
+---
+
 # The Thesis
 
 ## The Question

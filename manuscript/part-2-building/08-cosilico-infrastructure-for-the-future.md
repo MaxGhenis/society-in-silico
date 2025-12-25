@@ -76,7 +76,7 @@ Such infrastructure would require three components:
 
 The key properties such a system would need:
 
-- **Deterministic**: Same inputs → same outputs, always
+- **Deterministic**: Same inputs produce same outputs, always
 - **Auditable**: Every calculation includes legal citation and parameter values
 - **Versioned**: Git history tracks all rule changes
 - **Bi-temporal**: Parameters track both effective date and knowledge date

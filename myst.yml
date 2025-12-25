@@ -76,3 +76,18 @@ project:
 site:
   title: Society in Silico
   template: book-theme
+
+# Print book configuration
+exports:
+  - format: pdf
+    template: plain_latex_book
+    output: exports/society-in-silico-print.pdf
+    # 6x9 inch trim size (standard trade paperback)
+    options:
+      papersize: 6in,9in
+      margin-top: 0.75in
+      margin-bottom: 0.75in
+      margin-left: 0.875in  # larger for gutter/binding
+      margin-right: 0.625in
+      fontsize: 11pt
+      linestretch: 1.15
