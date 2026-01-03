@@ -74,19 +74,95 @@ This decentralization had benefits—specialization, diversity, resilience—but
 
 ---
 
-## A Researcher's Frustration
+## The Path to PolicyEngine
 
-In 2019, a researcher named Max Ghenis founded the UBI Center, an open-source think tank focused on universal basic income policy {cite}`ubicenter2019`. The mission was to produce rigorous research that could inform UBI debates—research that anyone could verify because all code and data would be public.
+### Simulation as Tool
 
-The challenge was immediate: UBI proposals interacted with the entire tax and benefit system. To model a $1,000-per-month UBI, you needed to account for how it affected income taxes, benefit phase-outs, work incentives. You needed to trace effects across the income distribution. You needed data on real households.
+In 2008, I took a course at UC Berkeley that would shape my career: IEOR 131, Discrete-Event Simulation. The premise was elegant—model complex systems not as equations but as collections of individuals moving through states. Simulate a hospital emergency room by tracking each patient arrival, each nurse assignment, each treatment decision. Change a parameter—add a nurse, reorganize triage—and watch how the whole system responds.
 
-Ghenis discovered the tools that existed: Tax-Calculator for US federal taxes, OpenFisca for the framework. But putting them together into a usable research platform was frustrating. Tax-Calculator focused narrowly on income taxes. OpenFisca-US was nascent. Neither had the web interface that would let non-programmers explore policy options.
+The course used Excel and Visual Basic for Applications. The applications were operational: healthcare facilities, manufacturing lines, service queues. But the conceptual framework stuck: you could understand emergent behavior by simulating individuals rather than modeling aggregates.
 
-And for state-level analysis—crucial for UBI proposals that often targeted states—the tools barely existed at all.
+My first internship put the concept into practice. At Finelite, a lighting fixture manufacturer in Union City, California, I used Matlab to simulate production decisions. Should they pre-cut wire to standard lengths or cut to order? How should assembly lines be sequenced to minimize changeover time? The models were simple, but they worked—computational experiments that revealed non-obvious insights about manufacturing operations.
 
-> "I kept hitting walls. I'd want to model a policy and discover that nobody had encoded the relevant benefit program. Or the model existed but hadn't been updated in years. Or it worked but required expertise I didn't have to run it."
+After two years in consulting, I joined Google's People Analytics team in 2010.
+
+### Project Lorenz
+
+Google's Staffing Analytics group dealt with operational complexity at a scale that dwarfed any factory. Between one and two million job applications arrived each year. Hundreds of recruiters managed thousands of open positions across divisions with different hiring needs. The challenge: project headcount growth relative to targets, accounting for recruiting capacity, candidate pipeline dynamics, internal mobility, and attrition.
+
+The existing tool was a series of spreadsheets—functional but limited. I convinced leadership to let me try something different: a bottoms-up simulation model I called Project Lorenz, after Edward Lorenz's pioneering work in weather modeling that showed how micro-level dynamics could explain macro phenomena.
+
+The approach was microsimulation, though I didn't use that term yet. Model candidates entering the system through different channels. Estimate transition probabilities between hiring stages using survival models—the same statistical tools used in health research to predict disease progression, repurposed to predict how candidates moved through Google's hiring process. Account for recruiter productivity variation, attrition patterns, internal transfers between divisions.
+
+The technical implementation was in R, using survival models for transition probabilities, Monte Carlo methods for uncertainty quantification. The goal was flexibility: rather than a single forecast, produce a distribution of outcomes that captured the inherent uncertainty in hiring dynamics.
+
+Project Lorenz never fully materialized. The complexity proved difficult to manage—many moving parts that looked reasonable individually but produced unstable results when integrated. But the conceptual seed was planted: complex social systems could be understood by simulating individuals and their transitions through states.
+
+### The Personal Motivation
+
+My interest in economic policy became personal through my brother Alex.
+
+In 2005, Alex suffered a spinal cord injury in a mountain biking accident when he was sixteen. I was seventeen. He became a quadriplegic—dependent on attendant care for daily activities from cooking and cleaning to getting in and out of bed.
+
+Like me, Alex went to Berkeley, earning both an undergraduate degree and a Master's in Public Policy. When he entered the workforce, our family confronted how benefit programs would interact with his earnings.
+
+Medicaid covered In-Home Supportive Services—essentially attendant care that would cost tens of thousands of dollars annually without coverage. But Medicaid had income limits. If Alex earned more than about $70,000, he would lose eligibility. His medical expenses would become tax-deductible, but the math was stark: he would need to earn roughly $160,000 for the increased income to offset the lost benefits. The effective marginal tax rate in that range exceeded 100%.
+
+We built spreadsheets to model different scenarios. The complexity was overwhelming—tax brackets, benefit phase-outs, deductions, state versus federal programs. The tools didn't exist to easily understand how policy interacted with individual circumstances.
+
+This was my introduction to what economists call "means-tested benefit cliffs" and "implicit marginal tax rates." For someone navigating the system, it was just a wall of frustration.
+
+### The UBI Thread
+
+Around this time, internal discussions at Google were addressing technological unemployment, AI's labor market implications, and whether society needed new institutions to ensure basic needs were met as automation advanced. Some employees were discussing universal basic income—unconditional cash payments that could provide a floor without the means-testing problems that created cliffs like the one Alex faced.
+
+In 2012, Google.org awarded GiveDirectly a $2.4 million Global Impact Award {cite}`givedirectly2012google`. The organization was providing unconditional cash transfers to extremely poor households in Kenya—people living on roughly a dollar a day received about $1,000 per household. As economists, GiveDirectly's founders ran randomized controlled trials to measure effects. The results were positive: improved earnings, assets, nutrition, educational outcomes.
+
+I volunteered with GiveDirectly, helping them use data more efficiently and hosting talks at Google's campus. The cash transfer model felt like a useful thought experiment: instead of targeting programs with complex eligibility rules and implicit taxes on earning more, just provide cash and fund it through explicit taxes.
+
+The idea wasn't necessarily that UBI was the optimal policy. It was that UBI served as a *benchmark*—a way to think clearly about the tradeoffs between targeting (lower cost, but creates disincentives) and universality (higher cost, but simpler and no cliffs).
+
+### YouTube and the Policy Turn
+
+In 2015, I moved to YouTube's data science team, working on growth models, experiment analysis, and the launch of YouTube Go—a product designed for markets with poor internet connectivity and lower-quality phones, primarily in India and sub-Saharan Africa.
+
+But my attention was increasingly on policy. Proposals for expanding the Child Tax Credit were gaining traction. Senators Michael Bennet and Sherrod Brown had introduced the American Family Act. The question: what would a larger child allowance do to poverty rates? Who would benefit?
+
+I found a tool that could answer the question: Tax-Calculator, an open-source microsimulation model from the American Enterprise Institute. Written in Python, maintained by economists with decades of modeling experience, and crucially: the code was on GitHub. Anyone could see the formulas, run the model, check the results.
+
+I started using Tax-Calculator. Then contributing to it. Then spending evenings and weekends on policy analysis using open-source tools while still working full-time at YouTube.
+
+The realization: public policy analysis—affecting millions of people and billions of dollars—could be done with open-source software, without leaving Google to join a think tank or government agency. This was how policy analysis *should* work.
+
+### The Commitment
+
+In 2018, I took three months off from Google to work on policy full-time. I enrolled in MIT's MicroMasters program in Data, Economics, and Development Policy—graduate-level courses that could ladder into a full master's degree if I decided to pursue it.
+
+The three months were clarifying. I worked with the Open Source Policy Center at AEI, contributed to Tax-Calculator's technical infrastructure, and conducted distributional analysis of tax reforms. The work felt more important than anything else available to me.
+
+I decided not to return to YouTube. Instead, I committed to independent policy research, supported by savings and the growing conviction that open-source policy analysis was infrastructure the world needed.
+
+### Founding the UBI Center
+
+In 2019, I founded the UBI Center {cite}`ubicenter2019`—an explicitly open-source think tank focused on universal basic income policy. The mission: produce rigorous research that could inform UBI debates, with all code and data public so anyone could verify the findings.
+
+The challenge emerged immediately. UBI proposals didn't exist in isolation—they interacted with the entire tax and benefit system. A $1,000-per-month basic income would affect federal income taxes, state income taxes, SNAP eligibility, Medicaid thresholds, housing benefits. To model UBI properly required modeling everything.
+
+Tax-Calculator could handle federal income and payroll taxes, but not benefits like SNAP or Medicaid. OpenFisca provided the framework for encoding rules, but OpenFisca-US was nascent and incomplete. Neither had a web interface that would let non-programmers explore policy options.
+
+For state-level analysis—crucial since many UBI proposals targeted specific states—the tools barely existed at all.
+
+The first researcher I recruited was Nate Golden, a middle school math teacher in Washington, DC, passionate about fighting poverty with evidence-based policy. The second came from an unexpected place: I posted on the Basic Income subreddit looking for researchers. Nikhil Woodruff, a college student in the UK, replied. He turned out to have a rare combination—economic policy interest and software engineering skill.
+
+The UBI Center produced reports analyzing Andrew Yang's Freedom Dividend proposal, carbon dividend designs, child allowances. But every analysis required cobbling together partial tools, writing custom code, working around gaps in the existing infrastructure.
+
+I kept hitting walls. I'd want to model a policy and discover that nobody had encoded the relevant benefit program. Or the model existed but hadn't been updated in years. Or it worked but required expertise I didn't have to run it.
 
 The frustration wasn't unique to UBI research. Anyone trying to analyze cross-cutting policy reforms faced the same barriers. The open-source revolution had produced components, but no one had assembled them into something ordinary researchers—let alone citizens—could use.
+
+And critically: there was no open-source model of the UK tax and benefit system at all. If Nikhil and I wanted to do comparative UBI analysis across the US and UK, we would need to build the UK model from scratch.
+
+So we did.
 
 ---
 

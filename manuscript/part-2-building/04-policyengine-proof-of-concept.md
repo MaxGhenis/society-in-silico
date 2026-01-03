@@ -18,9 +18,11 @@ The problem was immediate: UBI is a deceptively simple policy that interacts wit
 
 In the United States, Tax-Calculator could handle federal income taxes, but not benefits like SNAP or Medicaid. OpenFisca-US was nascent. And for state-level analysis—crucial since many UBI proposals targeted specific states—the tools barely existed at all.
 
-Then Ghenis met Nikhil Woodruff, a young developer based in the UK with a talent for building things quickly {cite}`policyengine2021review`. They wanted to analyze UBI policies across both countries: the US where Ghenis lived, and the UK where Woodruff lived.
+The first researcher Ghenis recruited was Nate Golden, a middle school math teacher in Washington, DC, who was passionate about using evidence to fight poverty. The second came from an unexpected source: Ghenis posted on the basic income subreddit looking for researchers interested in UBI policy analysis.
 
-But there was no open-source model of the UK tax and benefit system.
+Nikhil Woodruff replied. He was a college student in the UK with an unusual combination: deep interest in economic policy and strong software engineering skills. The collaboration started in early 2020, just as the COVID-19 pandemic was beginning {cite}`policyengine2021review`.
+
+They wanted to analyze UBI policies across both countries: the US where Ghenis lived, and the UK where Woodruff lived. But there was no open-source model of the UK tax and benefit system.
 
 So they built one.
 

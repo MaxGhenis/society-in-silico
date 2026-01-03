@@ -18,10 +18,16 @@ A thread runs through the entire career: simulation as a way to understand compl
 - Discrete-event simulation, Monte Carlo methods
 
 ### Google People Analytics (2010-2015)
-- Co-founded People Analytics Data Science team
-- **Built headcount forecast simulation**: Monte Carlo model chaining ARIMA, Cox survival models, and random forests
-- Modeled: candidates in job pipelines → recruiting staff capacity → internal mobility → attrition rates → company growth
-- This is societal simulation at company scale—the same conceptual framework as microsimulation
+- Joined Staffing Analytics team, dealing with 1-2 million job applications annually, hundreds of recruiters, thousands of open positions
+- Co-founded People Analytics Data Science team (founding member)
+- **Project Lorenz**: Bottoms-up headcount forecast simulation (named after Edward Lorenz's weather modeling work)
+  - Built in R using survival models (Cox proportional hazards) for transition probabilities
+  - Monte Carlo methods for uncertainty quantification
+  - Modeled: candidates in job pipelines → recruiting staff capacity → internal mobility → attrition rates → company growth
+  - **Never fully materialized**: complexity proved difficult to manage—components looked reasonable individually but produced unstable results when integrated
+  - But the conceptual seed was planted: complex social systems could be understood by simulating individuals
+- This was microsimulation at company scale—the same conceptual framework, though he didn't use that term yet
+- Data Science team work: NLP for survey analysis, social network analysis across teams
 
 ### YouTube (2015-2018)
 - Product analyst / data scientist
@@ -52,7 +58,8 @@ A thread runs through the entire career: simulation as a way to understand compl
 
 ## The Academic Interlude
 
-### MIT (2020)
+### MIT (2020-2022)
+- Started MicroMasters program January 2020 (while still at YouTube/Google)
 - M.S. in Data, Economics, and Development Policy
 - Saw "amazingly clever causal identification strategies" for understanding policy effects
 - **The Gap**: These insights often weren't incorporated into actual policymaking
@@ -94,8 +101,19 @@ This is why simulation matters:
 
 ## Personal & Values
 
+### Brother Alex
+- Alex Ghenis suffered spinal cord injury in mountain biking accident (2005, Alex was 16, Max was 17)
+- Alex became quadriplegic, dependent on In-Home Supportive Services via Medicaid
+- Like Max, went to Berkeley (BA + MPP)
+- **The policy cliff problem**: If Alex earned more than ~$70,000, he would lose Medicaid eligibility for attendant care
+  - Would need to earn ~$160,000 to offset the lost benefits (effective marginal tax rate >100%)
+  - Built complex spreadsheets to model different income scenarios and benefit interactions
+- This was Max's personal introduction to means-tested benefit cliffs and implicit marginal tax rates
+- Key motivation for interest in UBI as alternative to means-tested programs
+
 ### Effective Altruism
-- First encountered EA in 2012 when Google.org granted to GiveDirectly
+- First encountered EA in 2012 when Google.org granted $2 million to GiveDirectly
+- Volunteered with GiveDirectly: helped them use data more efficiently, hosted talks at Google
 - Took the Giving What We Can (GWWC) pledge
 - Focuses giving on GiveDirectly and GiveWell
 

@@ -69,7 +69,7 @@ The democratic alternative looks like this:
 - Anyone can test their assumptions about how society works
 - Anyone can contribute to making the model more accurate
 
-I'll tell this story through my own path—from Google data scientist to MIT economist to founder of [[policyengine|PolicyEngine]] and [[cosilico|Cosilico]]—but it's not my story. It's the story of a technology that's been waiting sixty years for its democratic moment.
+I'll tell this story through my own path—from learning discrete-event simulation at Berkeley, to building headcount forecasts at Google, to discovering that the same tools could illuminate policy questions that affected my family personally. The thread running through it all: simulation as a way to make complex systems comprehensible. But this isn't my story alone. It's the story of a technology that's been waiting sixty years for its democratic moment.
 
 That's not Rehoboam. That's the opposite of Rehoboam.
 
