@@ -164,6 +164,12 @@ And critically: there was no open-source model of the UK tax and benefit system 
 
 So we did.
 
+By 2020, the UBI Center had grown to ten researchers—our biggest growth year. We weren't just producing reports anymore; we were building infrastructure. We developed microdf for analyzing survey data, openfisca-uk for simulating UK policy. Two of our Python packages were accepted into the Policy Simulation Library catalog. Golden analyzed whether UBI should target adults, children, or both, finding that child allowances were most effective for poverty reduction up to $500 billion in spending. Woodruff built models of the UK Family Resources Survey while I worked on enhancing the US Current Population Survey.
+
+We were producing rigorous research. The Yang analysis showed a 74 percent poverty reduction but honestly noted his economic growth projections were unlikely. The carbon dividend research found that a £100-per-tonne UK carbon tax would cut poverty by 14 percent and deep child poverty by 33 percent. We weren't advocates—we were modelers who showed the tradeoffs.
+
+But the fundamental problem remained: all of this required Python programming skills. The research was open-source in theory, but inaccessible in practice to the journalists, advocates, and policymakers who needed it most. That's what PolicyEngine would solve.
+
 ---
 
 ## What Was Missing
