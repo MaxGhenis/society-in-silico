@@ -1,10 +1,12 @@
 # Chapter 3: The Open Source Revolution
 
-In May 2011, a small team at France Stratégie—the French government's policy analysis agency—released something unusual: the source code for a tax and benefit calculator {cite}`openfisca2024about`.
+Between 2011 and 2016, two projects on opposite sides of the Atlantic launched what would become the open-source policy modeling movement.
 
-They called it OpenFisca. The premise was simple but radical: tax and benefit rules should exist not just as legal text but as executable code. Give the system a person's circumstances—income, family structure, location—and it would calculate their taxes and benefits. Change a parameter—a tax rate, an eligibility threshold—and see the effects immediately.
+In May 2011, a small team at France Stratégie—the French government's policy analysis agency—released something unusual: the source code for a tax and benefit calculator {cite}`openfisca2024about`. They called it OpenFisca. The premise was simple but radical: tax and benefit rules should exist not just as legal text but as executable code. Give the system a person's circumstances—income, family structure, location—and it would calculate their taxes and benefits. Change a parameter—a tax rate, an eligibility threshold—and see the effects immediately.
 
-The code was released under an open-source license. Anyone could use it, modify it, extend it. The French government had decided that the logic of its tax-benefit system should be a public good.
+Meanwhile in the United States, Matt Jensen was building a parallel vision at the American Enterprise Institute. In 2014, he founded the Open Source Policy Center with an equally blunt diagnosis {cite}`aei2015taxbrain`: "The closed-source approach to estimating the costs and economic impact of policies raises challenges, as there is limited accessibility and transparency in the process, leaving the public and many policymakers in the dark." Jensen recruited Martin Holmer—MIT PhD, decades of microsimulation experience—to build Tax-Calculator, an open-source model of US federal income and payroll taxes {cite}`holmer2024profile`.
+
+Both projects bet on the same insight: that policy analysis should be transparent, reproducible, and accessible. Both released their code under open-source licenses. And both were funded by surprising sources—OpenFisca by the French government itself, Tax-Calculator by a conservative think tank. The revolution cut across ideological lines.
 
 This was the beginning of the open source revolution in policy modeling. It would take a decade to spread, and it remains incomplete. But it represents something fundamental: the idea that the rules governing citizens' lives should be not just publicly available but publicly *computable*.
 
@@ -54,23 +56,19 @@ The gap between OpenFisca's elegant framework and actually usable policy analysi
 
 ---
 
-## The American Ecosystem
+## Two Architectures, One Vision
 
-While OpenFisca spread globally, a parallel movement was building in the United States.
+The OpenFisca and Tax-Calculator projects represented different architectural philosophies applied to the same problem.
 
-In 2016, Matt Jensen launched the Open Source Policy Center at the American Enterprise Institute {cite}`aei2016ospc`. His diagnosis was blunt: "The closed-source approach to estimating the costs and economic impact of policies raises challenges, as there is limited accessibility and transparency in the process, leaving the public and many policymakers in the dark."
+**OpenFisca** offered a unified framework. Countries adapted its core architecture to their own tax-benefit systems while sharing the underlying platform. By 2022, OpenFisca had been deployed on four continents {cite}`openfisca2024about`. France used it for Mes Aides, a citizen-facing benefits calculator. New Zealand built a rates rebate application. Tunisia, Senegal, Australia, and Canada adapted it for their systems. The OECD named it an "Innovation of the Year" at the World Government Summit. The European Commission recognized it as the most innovative open-source software in their Joinup program {cite}`openfisca2024about`. A single framework, many national implementations.
 
-Jensen recruited Martin Holmer, who had a PhD from MIT and decades of microsimulation experience, to build Tax-Calculator—an open-source model of US federal income and payroll taxes {cite}`holmer2024profile`. Written in Python with over 200 adjustable parameters, Tax-Calculator could simulate an enormous range of reforms. And unlike the black boxes at JCT and Treasury, anyone could inspect the code.
+**Tax-Calculator** spawned an ecosystem. Holmer built it in Python with over 200 adjustable parameters. The project grew into the Policy Simulation Library—a federation of independent open-source policy models sharing transparency standards and interoperability criteria. Jason DeBacker and Richard Evans built OG-USA for dynamic scoring that complemented Tax-Calculator's static analysis. The Tax Foundation contributed its capital cost recovery model. QuantEcon brought computational economics tools. By 2023, PSL was hosting monthly "Demo Days" where researchers from the Congressional Budget Office, NOAA, Johns Hopkins, and the City of New York presented their work. The community had institutional memory, governance structures, and credibility across the political spectrum.
 
-The project grew into the Policy Simulation Library—a community of open-source policy models sharing transparency standards and interoperability criteria. Jason DeBacker and Richard Evans built OG-USA, an overlapping-generations model for dynamic scoring that complemented Tax-Calculator's static analysis. The Tax Foundation contributed its capital cost recovery model. QuantEcon brought computational economics tools.
+Even the Federal Reserve joined. FRB/US, the Fed's main macroeconomic model—375 equations describing the entire US economy—had been publicly available since the late 1990s, but in 2022 the Fed released a Python implementation {cite}`frbus2024`. The central bank's primary forecasting tool was now open source.
 
-By 2023, PSL was hosting monthly "Demo Days" where researchers from the Congressional Budget Office, NOAA, Johns Hopkins, and the City of New York presented their work. The community had developed institutional memory and governance—a leadership council, a fiscal sponsor (the PSL Foundation), and a YouTube channel archiving every presentation.
+The two approaches had different strengths. OpenFisca's unified framework made deployment simpler and enabled cross-national comparisons. PSL's federation enabled specialization and rapid experimentation. OpenFisca's government backing gave it institutional credibility. Tax-Calculator's independence from government gave it ideological flexibility—analysts across the political spectrum could use it without accusations of bias.
 
-Even the Federal Reserve joined the movement. FRB/US, the Fed's main macroeconomic model—375 equations describing the entire US economy—had been publicly available since the late 1990s, but in 2022 the Fed released a Python implementation, making the model accessible to anyone who could write code {cite}`frbus2024`. The central bank's primary forecasting tool was now open source.
-
-The American ecosystem differed from OpenFisca's approach. Where OpenFisca provided a unified framework that countries could adapt, PSL was a federation of independent projects. Tax-Calculator handled income taxes; OG-USA handled dynamic macroeconomic effects; each model had its own maintainers, its own governance, its own priorities.
-
-This decentralization had benefits—specialization, diversity, resilience—but also costs. The models didn't always talk to each other. Running a comprehensive analysis meant stitching together multiple tools. And no single organization was responsible for the complete picture.
+But both approaches faced the same limitations. And understanding those limitations reveals why the open-source revolution remained incomplete.
 
 ---
 

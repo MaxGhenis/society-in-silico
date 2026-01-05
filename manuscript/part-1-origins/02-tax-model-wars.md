@@ -70,19 +70,13 @@ Malcolm Torry, directing the Citizen's Basic Income Trust, showed what civil soc
 
 ---
 
-## The Open Source Wave
+## The Open Source Emergence
 
 The 2010s brought a new possibility: fully open-source tax microsimulation.
 
-In 2014, Matt Jensen founded the Open Source Policy Center at the American Enterprise Institute {cite}`aei2015taxbrain`. His diagnosis was blunt: "The closed-source approach to estimating the costs and economic impact of policies raises challenges, as there is limited accessibility and transparency in the process, leaving the public and many policymakers in the dark."
+In France, the government itself released OpenFisca—source code for a tax-benefit calculator that anyone could use, modify, and extend {cite}`openfisca2024about`. In the United States, Matt Jensen founded the Open Source Policy Center at the American Enterprise Institute and built Tax-Calculator, an open-source model of federal income and payroll taxes {cite}`aei2015taxbrain`. The revolution was international, cross-ideological, and grounded in the same insight: that policy analysis should be transparent, reproducible, and accessible.
 
-Jensen's solution was Tax-Calculator, an open-source microsimulation model of US federal income and payroll taxes. The lead developer, Martin Holmer, brought decades of microsimulation experience and a PhD from MIT {cite}`holmer2024profile`. Holmer built Tax-Calculator in Python, making it accessible to a new generation of analysts comfortable with modern programming languages.
-
-Tax-Calculator joined a growing ecosystem: Tax-Data for preparing input files, Behavioral-Response for modeling how taxpayers react to policy changes, TaxBrain for web-based access. The whole suite was released under open-source licenses, with code on GitHub for anyone to inspect, use, or improve.
-
-"By adopting an open source approach," Jensen said, "we are able to provide policy makers, journalists and the general public with the information they need to understand policy. We are also able to leverage the knowledge and interest of experts and the general public to improve our models and make government better."
-
-The models found users. Tax-Calculator results informed policy discussions across the political spectrum. When the World Bank wanted to build tax microsimulation capacity in India, they asked Holmer to adapt Tax-Calculator for the Indian tax system—demonstrating that open-source approaches could scale internationally.
+These projects proved the concept—rigorous microsimulation could be done in the open. But they also revealed the challenges. Building the tools was one thing; making them usable by non-experts was another. The code was public, but who could read it? The models were open, but who could trust them? Open source had demonstrated what was possible; it hadn't yet delivered on the promise of democratized policy analysis.
 
 ---
 
