@@ -140,7 +140,7 @@ In 2018, I took three months off from Google to work on policy full-time. I enro
 
 The three months were clarifying. I worked with the Open Source Policy Center at AEI, contributed to Tax-Calculator's technical infrastructure, and conducted distributional analysis of tax reforms. The work felt more important than anything else available to me.
 
-I decided not to return to YouTube. Instead, I committed to independent policy research, supported by savings and the growing conviction that open-source policy analysis was infrastructure the world needed.
+I returned to YouTube briefly, but left Google in July 2018 after eight years. I committed to independent policy research, supported by savings and the growing conviction that open-source policy analysis was infrastructure the world needed.
 
 ### Founding the UBI Center
 
