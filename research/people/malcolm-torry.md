@@ -1,3 +1,9 @@
+---
+chapters: [2]
+primary_chapter: 2
+narrative_role: "Civil society advocate who demonstrated that open microsimulation tools enabled rigorous policy analysis beyond academics and government"
+---
+
 # Malcolm Torry
 
 Director of Citizen's Basic Income Trust. Extensive microsimulation research on UBI.
@@ -35,6 +41,18 @@ Nearly 10 years of microsimulation research on basic income using [[euromod]].
 ## Significance
 
 Demonstrates sustained use of open microsimulation tools (EUROMOD) by civil society advocates, not just academics/government.
+
+## Appears in Manuscript
+
+**Chapter 2 (Tax Model Wars)** - PRIMARY
+- Section: "The UK Alternative" (line 65)
+- Coverage: Example of what civil society organizations could do with open tools
+- Context: Follows UKMOD's launch and Howard Reed's independent analysis
+- Role: Directing Citizen's Basic Income Trust
+- Work: Nearly a decade of research on basic income schemes using EUROMOD
+- Output: Detailed analyses of costs, distributional effects, implementation options
+- Significance: "Demonstrated that advocacy groups could be rigorous analysts—if they had access to the right tools"
+- Narrative purpose: Shows expansion of who could participate in policy debates beyond government and established think tanks
 
 ## Sources
 
