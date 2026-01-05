@@ -1,10 +1,20 @@
 # Chapter 4: PolicyEngine - Proof of Concept
 
-By late 2020, Nikhil Woodruff and I had a working microsimulation model of the UK tax and benefit system. OpenFisca UK could calculate taxes, simulate benefits, estimate the effects of policy reforms. But it lived in Python scripts that only programmers could run.
+## The State of Play, 2019-2021
 
-We'd seen this pattern before—Tax-Calculator, OpenFisca, every academic model. Powerful tools locked behind technical barriers. If you wanted to analyze a UBI proposal, you needed to install Python, learn the API, write code to define the reform, run simulations, interpret results. This worked for researchers comfortable with programming. It didn't work for the journalists, advocates, and policymakers who actually shaped policy debates.
+The years 2019-2021 were transformative for open-source policy modeling, even before PolicyEngine launched.
 
-The solution was obvious but ambitious: build a web application that put the full power of microsimulation in a browser. Anyone could design a reform, see the costs and distributional effects, understand the impact on their own household. No code required.
+In September 2019, UKMOD became the UK's first freely available tax-benefit microsimulation model. The UK had proprietary tools—the Institute for Fiscal Studies' TAXBEN since 1983, HM Treasury's IGOTM, the Department for Work and Pensions' PSM—but UKMOD was different. Built on EUROMOD's UK component and funded by the Nuffield Foundation, it was academic-focused but open to anyone.
+
+Then COVID-19 hit, and suddenly everyone needed rapid policy analysis. The CARES Act, unemployment insurance expansions, recovery rebates—policy changed weekly. NBER released TAXSIM35 in 2020 with CARES Act provisions. Tax-Calculator v3.2.1 followed in August 2021 with pandemic updates. The International Microsimulation Association held a dedicated conference in December 2020 on COVID policy responses.
+
+The most significant shift came in December 2020: EUROMOD went fully open source. What had been "open access" became genuinely open, with the JRC European Commission assuming control in January 2021. After decades of proprietary European policy modeling, the code was finally public.
+
+The Policy Simulation Library expanded. The Capital Cost Recovery model joined. The OG-USA overlapping-generations model joined. Demo Day webinars showcased new applications. The open-source ecosystem was growing, but a critical gap remained: none of these tools were accessible to non-programmers.
+
+By late 2020, Nikhil Woodruff and I had a working microsimulation model of the UK tax and benefit system we'd built at the UBI Center. OpenFisca UK could calculate taxes, simulate benefits, estimate policy reform effects. But it lived in Python scripts that only programmers could run.
+
+We'd seen this pattern everywhere—TAXSIM required batch processing, Tax-Calculator needed Python, UKMOD was academic-focused, TAXBEN was proprietary. Powerful tools locked behind technical barriers. The solution was obvious but ambitious: build a web application that put the full power of microsimulation in a browser. Anyone could design a reform, see the costs and distributional effects, understand the impact on their own household. No code required.
 
 We called it PolicyEngine.
 
@@ -68,11 +78,13 @@ And increasingly, developers built on our API. The Fund for Guaranteed Income in
 
 Open-source meant anyone could inspect our code, but inspection didn't guarantee correctness. We invested heavily in validation, comparing PolicyEngine results to official calculators and published statistics.
 
-The UK model performed well on standard cases. Our Universal Credit calculations matched HMRC's official calculator within pounds for typical households. Our income tax estimates aligned with ONS statistics at the aggregate level. But edge cases revealed gaps—housing benefit interactions with legacy benefits, Scotland-specific tax provisions, transition rules for households moving between programs.
+The results were mixed. Each model had a test suite comparing outputs to official calculations across hundreds of household scenarios. We tracked discrepancies systematically—was the bug in our code, the official calculator, or our interpretation of ambiguous rules?
 
-The US model faced different challenges. With fifty state income tax systems, validation meant comparing against fifty different official sources—when those sources existed. Some states provided online calculators we could test against; others had rules buried in legislative text with no official tool to verify our implementation. Federal programs were better documented, but interactions between federal and state systems created combinatorial complexity.
+For the UK model, HM Treasury eventually conducted their own evaluation. They found 60 percent of National Insurance calculations fell within 0.5 percent of their internal model {cite}`hmt2025policyengine`. But income tax validation proved more challenging—they had difficulty identifying comparable variables between our approaches. Edge cases revealed gaps throughout: housing benefit interactions with legacy benefits, Scotland-specific tax provisions, transition rules for households moving between programs.
 
-We tracked our validation systematically. Each model had a test suite comparing PolicyEngine outputs to official calculations across hundreds of household scenarios. When discrepancies appeared, we investigated—was the bug in our code, the official calculator, or our interpretation of ambiguous rules? Sometimes we fixed our implementation. Sometimes we documented known differences. Occasionally we discovered errors in official tools and reported them.
+The US model faced different validation challenges. With fifty state income tax systems, we needed to compare against fifty different official sources—when those sources existed. Some states provided online calculators we could test against. Others had rules buried in legislative text with no official tool to verify our implementation. Federal programs were better documented, but interactions between federal and state systems created combinatorial complexity.
+
+And we openly acknowledged a fundamental limitation: revenue estimates. PolicyEngine used household survey data; governments used administrative tax records. Survey data consistently under-samples high-income households. The result: our revenue projections ran about one-third lower than official government estimates. This wasn't a bug we could fix—it was a structural constraint of survey-based microsimulation.
 
 The validation work was never finished. Policies changed constantly—tax brackets adjusted for inflation, benefit eligibility thresholds updated, new programs launched. Keeping models current required sustained attention. But validation mattered for credibility. If journalists, researchers, or policymakers were going to cite our numbers, those numbers needed to be defensible.
 
@@ -116,7 +128,7 @@ By late 2025, PolicyEngine had evolved from a research tool to production infras
 
 But honest assessment revealed what we hadn't solved.
 
-**Accuracy varied by use case.** Standard households with typical income sources—our models handled these well, often matching official estimates within percentage points. But unusual situations revealed limitations: households with complex business income, families transitioning between programs, edge cases where multiple policies interact in unexpected ways. We documented these limitations but couldn't eliminate them. Microsimulation is approximation; the question is whether the approximation is good enough for the decision at hand.
+**Accuracy varied by use case.** For aggregate statistics, our enhanced microdata reduced deviations from administrative totals by 97 percent {cite}`policyengine2024ukvalidation`. HM Treasury found 60 percent of National Insurance calculations within 0.5 percent of their model, though income tax validation was more challenging {cite}`hmt2025policyengine`. But unusual household situations revealed limitations: complex business income, families transitioning between programs, edge cases where multiple policies interact unexpectedly. And survey-based revenue estimates consistently ran one-third lower than official projections using administrative data. Microsimulation is approximation; the question is whether the approximation is good enough for the decision at hand.
 
 **Usability challenged non-experts.** The interface was simpler than programming, but modeling a complex reform still required understanding policy terminology, tax concepts, and the tool's limitations. We could explain that increasing the personal allowance reduces revenue, but users needed to know what a personal allowance was. We could show distributional effects across income deciles, but users needed to understand what that meant for actual families. The dream of "everyone a policymaker" remained aspirational—though "many more people than before" was real progress.
 

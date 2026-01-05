@@ -146,13 +146,15 @@ I returned to YouTube briefly, but left Google in July 2018 after eight years. I
 
 In 2019, I founded the UBI Center {cite}`ubicenter2019`—an explicitly open-source think tank focused on universal basic income policy. The mission: produce rigorous research that could inform UBI debates, with all code and data public so anyone could verify the findings.
 
-The challenge emerged immediately. UBI proposals didn't exist in isolation—they interacted with the entire tax and benefit system. A $1,000-per-month basic income would affect federal income taxes, state income taxes, SNAP eligibility, Medicaid thresholds, housing benefits. To model UBI properly required modeling everything.
+The challenge emerged immediately. A $1,000-per-month basic income costs roughly $3 trillion annually. Funding that requires tax increases or benefit reforms. To model UBI properly, you needed to model the entire tax-benefit system—not because UBI directly affected other programs (many proposals specifically avoided counting UBI as income for benefit eligibility), but because you needed to show what tax or benefit changes would finance it.
+
+And UBI served as a baseline—a way to understand the complexity of the existing system. Without a basic income, low-income families faced implicit marginal tax rates exceeding 50 percent from benefit phase-outs. They hit cliffs where earning slightly more meant losing thousands in benefits. UBI made these features visible by providing a comparison point: what if we replaced means-testing with universality?
 
 Tax-Calculator could handle federal income and payroll taxes, but not benefits like SNAP or Medicaid. OpenFisca provided the framework for encoding rules, but OpenFisca-US was nascent and incomplete. Neither had a web interface that would let non-programmers explore policy options.
 
 For state-level analysis—crucial since many UBI proposals targeted specific states—the tools barely existed at all.
 
-The first researcher I recruited was Nate Golden, a middle school math teacher in Washington, DC, passionate about fighting poverty with evidence-based policy. The second came from an unexpected place: I posted on the Basic Income subreddit looking for researchers. Nikhil Woodruff, a college student in the UK, replied. He turned out to have a rare combination—economic policy interest and software engineering skill.
+The first researcher I recruited was Nate Golden, a middle school math teacher in Washington, DC, passionate about fighting poverty with evidence-based policy. Golden would go on to found the Maryland Child Alliance in 2022, using the same open-source tools and rigorous analysis approach to advocate for child poverty policies at the state level. The second researcher came from an unexpected place: I posted on the Basic Income subreddit looking for help. Nikhil Woodruff, a college student in the UK, replied. He turned out to have a rare combination—economic policy interest and software engineering skill.
 
 The UBI Center produced reports analyzing Andrew Yang's Freedom Dividend proposal, carbon dividend designs, child allowances. But every analysis required cobbling together partial tools, writing custom code, working around gaps in the existing infrastructure.
 
