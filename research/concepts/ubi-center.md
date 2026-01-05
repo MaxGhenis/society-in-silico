@@ -36,11 +36,25 @@
 - Workshops for designing customizable UBI policies
 - COVID-19 specific research site
 
+## Team
+
+### Founding Researchers
+- **Nate Golden**: First researcher recruited. Middle school math teacher in Washington, DC. Passionate about using evidence-based policy to fight poverty.
+- **Nikhil Woodruff**: Second researcher. Found via post on basic income subreddit in early 2020. College student in UK with rare combination of economic policy interest and software engineering skill. Would go on to co-found PolicyEngine.
+
 ## Relationship to PolicyEngine
 
 > "The UBI Center originally incubated PolicyEngine, and now it primarily applies PolicyEngine software for its research."
 
 The UBI Center needed analytical tools that didn't exist, so it built them. PolicyEngine is the tool; UBI Center is a primary user.
+
+The path:
+1. UBI Center founded 2019 to do UBI research
+2. Needed comprehensive tax-benefit modeling tools
+3. Met Nikhil Woodruff (early 2020) who could build UK model
+4. Built OpenFisca UK and web interface (2020-2021)
+5. Launched PolicyEngine UK (October 2021)
+6. Spun off PolicyEngine as separate nonprofit with broader mission
 
 ## Why Open Source?
 

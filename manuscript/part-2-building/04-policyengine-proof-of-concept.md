@@ -18,9 +18,11 @@ The problem was immediate: UBI is a deceptively simple policy that interacts wit
 
 In the United States, Tax-Calculator could handle federal income taxes, but not benefits like SNAP or Medicaid. OpenFisca-US was nascent. And for state-level analysis—crucial since many UBI proposals targeted specific states—the tools barely existed at all.
 
-Then Ghenis met Nikhil Woodruff, a young developer based in the UK with a talent for building things quickly {cite}`policyengine2021review`. They wanted to analyze UBI policies across both countries: the US where Ghenis lived, and the UK where Woodruff lived.
+The first researcher Ghenis recruited was Nate Golden, a middle school math teacher in Washington, DC, who was passionate about using evidence to fight poverty. The second came from an unexpected source: Ghenis posted on the basic income subreddit looking for researchers interested in UBI policy analysis.
 
-But there was no open-source model of the UK tax and benefit system.
+Nikhil Woodruff replied. He was a college student in the UK with an unusual combination: deep interest in economic policy and strong software engineering skills. The collaboration started in early 2020, just as the COVID-19 pandemic was beginning {cite}`policyengine2021review`.
+
+They wanted to analyze UBI policies across both countries: the US where Ghenis lived, and the UK where Woodruff lived. But there was no open-source model of the UK tax and benefit system.
 
 So they built one.
 
@@ -126,9 +128,47 @@ The proof of concept had worked. PolicyEngine demonstrated that open-source, acc
 
 ---
 
+## From Tool to Infrastructure
+
+Within three years of launch, PolicyEngine had evolved from a research tool to production infrastructure.
+
+In April 2024, we solved the problem that had frustrated me at the UBI Center: state-level analysis. PolicyEngine launched comprehensive state income tax modeling for all 50 states and DC. Over 100 open-source contributors had encoded the nation's Byzantine patchwork of tax codes. What we couldn't find in 2019, we built by 2024.
+
+The technical sophistication grew in parallel. In August 2025, we launched the Enhanced Current Population Survey, integrating five datasets using machine learning and calibrating to 9,168 administrative totals. The approach combined Quantile Regression Forests for imputation with gradient descent optimization for reweighting—techniques that cut our deviations from official statistics by 97 percent. We built two new open-source packages to do it: microimpute and microcalibrate.
+
+But the real validation came from who started using it.
+
+### Building a Validation Ecosystem
+
+In September 2025, we signed a memorandum of understanding with the National Bureau of Economic Research to build an open-source emulator of TAXSIM, the tax calculator that has powered academic research since the 1970s. Over 1,200 papers had relied on TAXSIM. Brookings used it extensively for tax policy analysis. The Bureau of Labor Statistics used it for the Consumer Expenditure Survey. The Census Bureau evaluated it for the Supplemental Poverty Measure.
+
+Daniel Feenberg, TAXSIM's creator, joined our advisory board and served as external mentor through our NSF grant. We were building the emulator to ensure researchers maintained access to these capabilities—but also to create something larger: a validation framework where multiple independent models could cross-check each other.
+
+A month later, we signed a second MOU with the Federal Reserve Bank of Atlanta. Their Policy Rules Database covered benefits—SNAP, Medicaid, housing vouchers, childcare subsidies—complementing TAXSIM's focus on taxes. The database powered the Atlanta Fed's CLIFF tools, which Colorado's Workforce Development Council and New Mexico's Caregivers Coalition used to help families understand how earning more income would affect their benefits.
+
+The three-way validation approach was deliberate. When independently developed models agree on a calculation, researchers can trust the result. When they diverge, the differences reveal important questions about policy interpretation or implementation details. Having three models—PolicyEngine, TAXSIM, and the Policy Rules Database—helped isolate where discrepancies originated.
+
+We were no longer just another microsimulation model. We had become the integrator, the platform that validated across Python and R, across taxes and benefits, across academic and government implementations.
+
+And then came the UK.
+
+In March 2025, HM Treasury published an Algorithmic Transparency Record revealing they had piloted PolicyEngine UK as a potential supplement to their official Intra-Governmental Tax and Benefit Microsimulation model. The Times reported that the tool "can more accurately predict the outcome of ministers' decisions and is expected to be used mostly in budget periods."
+
+The Treasury highlighted our machine learning approach to fixing survey data errors—combining multiple years of the Family Resources Survey, using random forest models to impute missing income, employing gradient descent to reweight households. The same techniques we'd developed for the Enhanced CPS, now being evaluated by the UK government to supplement their internal models.
+
+From frustrated researcher cobbling together tools in 2019 to government ministries piloting our models in 2025. Six years.
+
+### The API Becomes Infrastructure
+
+The evolution from tool to platform showed up in unexpected ways. In 2025, MyFriendBen—a benefits screening platform—launched in North Carolina, Illinois, Colorado, and New York using PolicyEngine's API to calculate eligibility and benefit amounts. The tool achieved over 90 percent accuracy in six minutes, available in 12 languages. Colorado users discovered they were eligible for benefits averaging $1,500 per month—money they hadn't known they could access.
+
+This was the vision from 2021: not just researchers using PolicyEngine, but PolicyEngine powering tools that helped people navigate the system. The API had become infrastructure for benefit access.
+
+---
+
 ## Toward a Platform
 
-By the end of 2022, the founders were already thinking about what came next.
+By the end of 2022, we were already thinking about what came next.
 
 "We've been exploring opportunities to leverage the recent explosion of artificial intelligence tools to make policy analysis more robust, accessible, and even delightful," they wrote {cite}`policyengine2022review`.
 
