@@ -52,7 +52,9 @@ A thread runs through the entire career: simulation as a way to understand compl
 - Conducted distributional analysis of EITC, CTC, UBI
 - **Was hooked.** Returned to Google briefly, then left entirely.
 
-### Independent Researcher (July 2018 - March 2019)
+### Independent Researcher (July 2018 - 2019)
+- Left Google/YouTube in July 2018 after 8 years total
+- Returned to YouTube briefly after 3-month sabbatical, then committed fully to policy
 - Full commitment to open-source policy analysis
 - Part of the Open Source Policy Center / PSL ecosystem
 - Built foundation for what would become UBI Center
