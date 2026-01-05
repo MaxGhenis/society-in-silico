@@ -23,3 +23,11 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.bak
+
+# Audiobook output (generated, not source)
+audiobook/*.mp3
+audiobook/*.m4b
+
+# Python
+__pycache__/
+*.pyc

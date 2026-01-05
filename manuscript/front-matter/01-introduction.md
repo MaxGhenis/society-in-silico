@@ -77,7 +77,7 @@ That's not Rehoboam. That's the opposite of Rehoboam.
 
 ## Key Themes
 
-**The gap between policy debates and policy analysis.** Political arguments run on emotion and tribal loyalty. Policy analysis runs on computation and precision. Bridging that gap without sliding into technocracy is the central challenge.
+**The gap between policy debates and policy analysis.** Political arguments run on emotion and tribal loyalty. Policy analysis runs on computation and precision. The central challenge isn't avoiding technocracy—it's democratizing it. Everyone becomes a technocrat.
 
 **Models as translation devices.** They turn raw administrative data and dense legislation into comprehensible impact. A 300-page tax bill becomes "your family pays $1,200 less next year."
 
