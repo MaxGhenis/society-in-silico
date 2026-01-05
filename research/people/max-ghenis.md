@@ -19,15 +19,16 @@ A thread runs through the entire career: simulation as a way to understand compl
 
 ### Google People Analytics (2010-2015)
 - Joined Staffing Analytics team, dealing with 1-2 million job applications annually, hundreds of recruiters, thousands of open positions
-- Co-founded People Analytics Data Science team (founding member)
-- **Project Lorenz**: Bottoms-up headcount forecast simulation (named after Edward Lorenz's weather modeling work)
+- **2012**: Co-founded a data science team within People Analytics with a colleague
+  - Team's scope: natural language processing on employee feedback, social network analysis of organizational structure, simulation models for workforce planning
+  - Max's contribution: simulation models
+- **Project Lorenz**: Originated from the data science team; bottoms-up headcount forecast simulation (named after Edward Lorenz's weather modeling work)
   - Built in R using survival models (Cox proportional hazards) for transition probabilities
   - Monte Carlo methods for uncertainty quantification
   - Modeled: candidates in job pipelines → recruiting staff capacity → internal mobility → attrition rates → company growth
   - **Never fully materialized**: complexity proved difficult to manage—components looked reasonable individually but produced unstable results when integrated
   - But the conceptual seed was planted: complex social systems could be understood by simulating individuals
 - This was microsimulation at company scale—the same conceptual framework, though he didn't use that term yet
-- Data Science team work: NLP for survey analysis, social network analysis across teams
 
 ### YouTube (2015-2018)
 - Product analyst / data scientist

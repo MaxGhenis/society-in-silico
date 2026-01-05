@@ -86,13 +86,15 @@ After two years in consulting, I joined Google's People Analytics team in 2010.
 
 ### Project Lorenz
 
-Google's Staffing Analytics group dealt with operational complexity at a scale that dwarfed any factory. Between one and two million job applications arrived each year. Hundreds of recruiters managed thousands of open positions across divisions with different hiring needs. The challenge: project headcount growth relative to targets, accounting for recruiting capacity, candidate pipeline dynamics, internal mobility, and attrition.
+In 2012, a colleague and I co-founded a data science team within People Analytics. We built tools spanning natural language processing on employee feedback, social network analysis of organizational structure, and—my contribution—simulation models for workforce planning.
 
-The existing tool was a series of spreadsheets—functional but limited. I convinced leadership to let me try something different: a bottoms-up simulation model I called Project Lorenz, after Edward Lorenz's pioneering work in weather modeling that showed how micro-level dynamics could explain macro phenomena.
+Google's Staffing Analytics group processed between one and two million job applications each year. Hundreds of recruiters managed thousands of open positions across divisions with different hiring needs. Leadership needed to project headcount growth relative to targets, accounting for recruiting capacity, candidate pipeline dynamics, internal mobility, and attrition.
 
-The approach was microsimulation, though I didn't use that term yet. Model candidates entering the system through different channels. Estimate transition probabilities between hiring stages using survival models—the same statistical tools used in health research to predict disease progression, repurposed to predict how candidates moved through Google's hiring process. Account for recruiter productivity variation, attrition patterns, internal transfers between divisions.
+The existing tool consisted of spreadsheets—functional but limited. I convinced leadership to let me try something different: a bottoms-up simulation model I called Project Lorenz, named after Edward Lorenz's pioneering weather research that showed how micro-level dynamics could explain macro phenomena.
 
-The technical implementation was in R, using survival models for transition probabilities, Monte Carlo methods for uncertainty quantification. The goal was flexibility: rather than a single forecast, produce a distribution of outcomes that captured the inherent uncertainty in hiring dynamics.
+I built the model using microsimulation principles, though I didn't use that term yet. The approach: model candidates entering the system through different channels, estimate transition probabilities between hiring stages using survival models—the same statistical tools used in health research to predict disease progression, repurposed to predict how candidates moved through Google's hiring process—and account for recruiter productivity variation, attrition patterns, and internal transfers between divisions.
+
+I implemented the model in R, using survival models for transition probabilities and Monte Carlo methods for uncertainty quantification. Rather than producing a single forecast, the model generated a distribution of outcomes that captured the inherent uncertainty in hiring dynamics.
 
 Project Lorenz never fully materialized. The complexity proved difficult to manage—many moving parts that looked reasonable individually but produced unstable results when integrated. But the conceptual seed was planted: complex social systems could be understood by simulating individuals and their transitions through states.
 
