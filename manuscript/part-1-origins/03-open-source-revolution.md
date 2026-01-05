@@ -102,7 +102,7 @@ Project Lorenz never fully materialized. The complexity proved difficult to mana
 
 My interest in economic policy became personal through my brother Alex.
 
-In 2005, Alex suffered a spinal cord injury in a mountain biking accident when he was sixteen. I was seventeen. He became a quadriplegic—dependent on attendant care for daily activities from cooking and cleaning to getting in and out of bed.
+In June 2004—a month after my high school graduation, two months before I left our Menlo Park home for UC Berkeley—Alex suffered a spinal cord injury in a mountain biking accident. He was sixteen; I was seventeen. He became a quadriplegic, dependent on attendant care for daily activities from cooking and cleaning to getting in and out of bed.
 
 Like me, Alex went to Berkeley, earning both an undergraduate degree and a Master's in Public Policy. When he entered the workforce, our family confronted how benefit programs would interact with his earnings.
 

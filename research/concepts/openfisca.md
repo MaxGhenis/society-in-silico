@@ -1,3 +1,9 @@
+---
+chapters: [2, 3]
+primary_chapter: 3
+narrative_role: "Government-backed open-source framework for encoding tax-benefit rules as executable code"
+---
+
 # OpenFisca
 
 **Founded**: May 2011
@@ -66,6 +72,23 @@ Countries/regions using OpenFisca:
 - Better microsimulation support
 - Enhanced API
 - Web application layer
+
+## Appears in Manuscript
+
+**Chapter 2 (Tax Model Wars)**
+- Section: "Open Source Emergence" (line 73)
+- Coverage: Brief mention alongside Tax-Calculator as examples of open-source revolution
+- Details: Named as government-released source code for tax-benefit calculator
+
+**Chapter 3 (Open Source Revolution)** - PRIMARY
+- Section: Opening (lines 3-9)
+- Coverage: Founding story (May 2011, France Stratégie), premise, and significance
+- Section: "Two Architectures, One Vision" (lines 59-71)
+- Coverage: Detailed comparison with Tax-Calculator
+  - Architecture: Unified framework approach
+  - Global deployment: France (Mes Aides), New Zealand, Tunisia, Senegal, Australia, Canada
+  - Recognition: OECD Innovation of Year, EU Joinup program
+  - Vs Tax-Calculator: government backing vs independence, unified vs federation
 
 ## Book Narrative Notes
 

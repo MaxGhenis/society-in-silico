@@ -103,7 +103,10 @@ This is why simulation matters:
 ## Personal & Values
 
 ### Brother Alex
-- Alex Ghenis suffered spinal cord injury in mountain biking accident (2005, Alex was 16, Max was 17)
+- **June 2004**: Alex Ghenis suffered spinal cord injury in mountain biking accident
+  - Month after Max's HS graduation
+  - Two months before Max left Menlo Park home for UC Berkeley
+  - Alex was 16, Max was 17
 - Alex became quadriplegic, dependent on In-Home Supportive Services via Medicaid
 - Like Max, went to Berkeley (BA + MPP)
 - **The policy cliff problem**: If Alex earned more than ~$70,000, he would lose Medicaid eligibility for attendant care
