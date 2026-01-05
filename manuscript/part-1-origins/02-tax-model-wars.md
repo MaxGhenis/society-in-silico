@@ -20,7 +20,9 @@ The Treasury's Office of Tax Analysis built parallel capabilities for the execut
 
 The Congressional Budget Office, created in 1974 to give Congress independent analytical capacity, developed its own microsimulation models. For short-term tax analysis, CBO built models similar to JCT's. For long-term projections—especially Social Security—they developed CBOLT, the Congressional Budget Office Long-Term model {cite}`cbo2018overview`.
 
-Three major institutions, three sets of models, billions of dollars in policy decisions riding on their outputs. And almost none of it was visible to the public.
+Outside government, the Urban Institute was building its own analytical infrastructure. Karen Smith joined Urban in the 1980s and would spend three decades developing microsimulation models for Social Security, pensions, taxation, and welfare reform {cite}`urban2024karensmith`. She played lead roles in both MINT (the Social Security Administration's retirement income model) and DYNASIM (Urban's flagship dynamic microsimulation). While Urban's models served government clients rather than challenging official estimates, Smith was building expertise that would bridge the mainframe era into the age of open source.
+
+Three major government institutions, plus Urban's adjacent capacity. Billions of dollars in policy decisions riding on their outputs. And almost none of it was visible to the public.
 
 ---
 
@@ -38,7 +40,9 @@ This created several problems.
 
 **Democratic deficit.** Citizens and advocacy groups who wanted to understand how policies affected people like them had to take official estimates on faith. The asymmetry between governors and governed extended to the very tools used to evaluate policy.
 
-Some academics pushed back. At the National Bureau of Economic Research, Daniel Feenberg began building TAXSIM in the early 1980s {cite}`feenberg1993taxsim`. By the 1990s, it had become internet-accessible—one of the first tax calculators available online. TAXSIM let researchers simulate federal and state taxes for survey respondents, enabling academic research that would otherwise be impossible. But TAXSIM was a research tool, not a policy analysis platform. It calculated taxes for individual records; it didn't produce the aggregate estimates and distributional tables that drove policy debates.
+Some academics pushed back. At the National Bureau of Economic Research, Daniel Feenberg began building TAXSIM in the early 1980s {cite}`feenberg1993taxsim`. By the 1990s, it had become internet-accessible—one of the first tax calculators available online. Feenberg would maintain TAXSIM for his entire career, a quiet but essential contribution that enabled generations of tax research. When researchers needed to calculate tax liabilities for survey respondents, TAXSIM was there—reliable, documented, freely available to academics.
+
+But TAXSIM was a research tool, not a policy analysis platform. It calculated taxes for individual records; it didn't produce the aggregate estimates and distributional tables that drove policy debates. Feenberg had demonstrated that useful tools could be built outside government, even if they couldn't fully replicate official infrastructure. The question was whether anyone could go further.
 
 ---
 
@@ -60,19 +64,9 @@ But Essex wasn't done. In 2018, with funding from the Nuffield Foundation, a tea
 
 "We wanted to democratize access to tax-benefit analysis," Brewer explained. The Scottish Parliament's research service started using UKMOD. So did NHS Health Scotland and the Welsh Government. For the first time, subnational governments in the UK had access to the same analytical tools as Westminster.
 
----
+This openness enabled a new generation of independent analysts. Howard Reed had run TAXBEN at the IFS from 2000 to 2004, learning the craft of institutional model maintenance {cite}`northumbria2024reed`. After stints at IPPR as Chief Economist, he founded Landman Economics in 2008 and built his own Tax-Transfer Model. Reed used it to analyze Universal Basic Income, welfare reform, and the cumulative impact of austerity—producing the kind of detailed distributional analysis that had once been the exclusive domain of government and established think tanks. His goal, he said, was "a new settlement of the same scale and sustainability as the Beveridge-inspired reforms of 1945."
 
-## The Cast of Characters
-
-Behind these institutional developments were individuals who devoted careers to building analytical infrastructure. Their stories reveal what it takes to create tools that outlast their creators.
-
-**Karen Smith** spent thirty years at the Urban Institute developing microsimulation models for Social Security, pensions, taxation, and welfare reform {cite}`urban2024karensmith`. She played lead roles in both MINT (the Social Security Administration's retirement income model) and DYNASIM (Urban's flagship dynamic microsimulation). By the 2010s, she was one of the most experienced microsimulation practitioners in America—a bridge between the era of mainframes and the era of open source.
-
-**Howard Reed** traced a path through Britain's major policy institutions {cite}`northumbria2024reed`. He ran TAXBEN at the IFS from 2000 to 2004, learning the craft of institutional model maintenance. At IPPR, he served as Chief Economist, seeing how think tanks used microsimulation to shape debates. Then in 2008, he founded Landman Economics and built his own Tax-Transfer Model, which he used to analyze Universal Basic Income, welfare reform, and the cumulative impact of austerity. Reed described his goal as creating "a new settlement of the same scale and sustainability as the Beveridge-inspired reforms of 1945."
-
-**Dan Feenberg** maintained NBER's TAXSIM for his entire career—a quiet, essential contribution that enabled generations of tax research. When researchers needed to calculate tax liabilities for survey respondents, TAXSIM was there. Feenberg's work demonstrated that useful tools could be built outside government, even if they couldn't fully replicate official infrastructure.
-
-**Malcolm Torry**, directing the Citizen's Basic Income Trust, showed what civil society could do with open microsimulation tools {cite}`torry2019ubi`. Using EUROMOD, he conducted nearly a decade of research on basic income schemes, producing detailed analyses of costs, distributional effects, and implementation options. His work demonstrated that advocacy groups could be rigorous analysts—if they had access to the right tools.
+Malcolm Torry, directing the Citizen's Basic Income Trust, showed what civil society organizations could do with these tools {cite}`torry2019ubi`. Using EUROMOD, he conducted nearly a decade of research on basic income schemes, producing detailed analyses of costs, distributional effects, and implementation options. Torry's work demonstrated that advocacy groups could be rigorous analysts—if they had access to the right tools.
 
 ---
 
