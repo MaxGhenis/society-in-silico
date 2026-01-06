@@ -8,7 +8,7 @@ Why do democratic outcomes often diverge from voter welfare?
 
 It's a puzzle that has occupied political scientists for decades. We have mechanisms—elections—designed to translate public preferences into policy. We have representatives whose job is to understand what constituents want. We have a free press, public education, and more access to information than any previous generation.
 
-And yet: policies regularly fail to reflect what would actually benefit voters. Tax codes favor the wealthy despite majority support for progressivity. Climate action stalls despite broad concern about warming. Healthcare systems remain inefficient despite universal frustration.
+And yet: policies regularly fail to reflect what would actually benefit voters. Reforms pass that help some constituents while harming others in unexpected ways. Ballot measures with popular support produce unintended consequences. Policies that poll well in the abstract create implementation challenges that reduce their actual impact.
 
 The standard explanations point to special interests, gerrymandering, and media manipulation. These matter. But there's a more fundamental problem hiding in plain sight.
 
