@@ -1,4 +1,4 @@
-# Chapter 11: Simulating Opinion
+# Chapter 12: Simulating Opinion
 
 **Note to readers**: This chapter describes research directions, not validated production tools. Unlike PolicyEngine (which has been used for official government policy costing with validated accuracy), the silicon sampling approaches described here are experimental. HiveSight is a preliminary prototype exploring whether AI can forecast public opinion—the evidence suggests partial success with important limitations. Treat this as hypothesis generation, not established methodology.
 

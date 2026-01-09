@@ -1,4 +1,4 @@
-# Chapter 14: Society in Silico
+# Chapter 15: Society in Silico
 
 We return to where we started: Engerraund Serac standing in his control room, watching Rehoboam's predictions cascade across holographic displays. Individual lives reduced to trajectories. Society optimized according to one man's definition of optimal. "I don't predict the future," he says. "I create it."
 
@@ -54,7 +54,7 @@ Let me be honest about what's incomplete.
 
 **Uncertainty quantification is partial.** PolicyEngine gives point estimates. "This reform costs $50 billion." It should say: "This reform costs $50 billion, 90% CI [$35B, $68B]." We've identified the problem; we haven't solved it everywhere.
 
-**Value forecasting is untested.** Chapter 13 proposed an empirical research program. Train on historical survey data, validate on held-out periods, project to long reflection. The experiment hasn't been run. It might fail.
+**Value forecasting is untested.** Chapter 14 proposed an empirical research program. Train on historical survey data, validate on held-out periods, project to long reflection. The experiment hasn't been run. It might fail.
 
 **Adoption is early.** PolicyEngine has thousands of users, but policy debates still happen mostly without it. The tools exist; the cultural change hasn't fully occurred.
 

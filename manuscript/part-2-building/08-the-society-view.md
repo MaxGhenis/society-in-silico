@@ -1,4 +1,4 @@
-# Chapter 6: The Society View
+# Chapter 8: The Society View
 
 Making the Child Tax Credit fully refundable would cost $2 billion per year. It would benefit households across the income distribution, with the highest proportion affected in the top decile. Poverty would fall by 0.3 percentage points.
 

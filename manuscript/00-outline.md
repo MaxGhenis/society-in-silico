@@ -66,19 +66,28 @@
 - Technical choices: OpenFisca fork, web interface, API
 - What "open" really means: code, data, methodology
 
-### Chapter 6: The Household View
+### Chapter 6: The Three Ingredients of Microsimulation
+**Research:** [[microsimulation-definition]], [[enhanced-cps]], [[tax-data]]
+
+- Rules encoding: GitHub-native vs. spreadsheet-style (EUROMOD/UKMOD)
+- Microdata construction: statistical matching, calibration, imputation, projection
+- Behavioral dynamics: elasticities, structural models, responses to policy
+- The integration challenge: making all three work together
+- Why this framework doesn't appear explicitly in the literature
+
+### Chapter 7: The Household View
 - The calculator: "What do I owe? What do I get?"
 - Why personal relevance matters for policy understanding
 - Marginal tax rates and the complexity people actually face
 - Making the invisible visible
 
-### Chapter 7: The Society View
+### Chapter 8: The Society View
 - From households to populations: microsimulation at scale
 - Distributional analysis: who wins, who loses
 - Budget scoring: what does this cost?
 - The neutrality challenge: analysis without advocacy
 
-### Chapter 8: AI Enters the Picture
+### Chapter 9: AI Enters the Picture
 **Research:** [[ai-integration-philosophy]]
 
 - How PolicyEngine uses AI: explanation, not calculation
@@ -86,7 +95,7 @@
 - Deterministic backends for AI frontends
 - Claude explains, the engine computes
 
-### Chapter 9: Cosilico - Infrastructure for the Future
+### Chapter 10: Cosilico - Infrastructure for the Future
 **Research:** [[cosilico]], PolicyEngine future state
 
 - The next layer: agentic rule encoding
@@ -99,7 +108,7 @@
 ## Part III: Future
 *Where does this lead? The deepest questions.*
 
-### Chapter 10: The Uncertainty Gap
+### Chapter 11: The Uncertainty Gap
 **Research:** [[max-ai-portfolio]] Theme 6
 
 - The dirty secret: microsimulation gives point estimates
@@ -108,7 +117,7 @@
 - Partial solutions: Monte Carlo, Bayesian methods, squigglepy
 - The aspiration: uncertainty-aware policy analysis
 
-### Chapter 11: Simulating Opinion
+### Chapter 12: Simulating Opinion
 **Research:** [[hivesight-silicon-sampling]], diversity problem
 
 - HiveSight and silicon sampling
@@ -116,7 +125,7 @@
 - Microdata as the solution: structured human variation
 - Can we simulate what people think? Should we?
 
-### Chapter 12: Simulating Democracy
+### Chapter 13: Simulating Democracy
 **Research:** [[democrasim-architecture]]
 
 - From opinions to elections to policies
@@ -124,7 +133,7 @@
 - Closing the loop: values → votes → policies → outcomes
 - Democratic simulation as infrastructure
 
-### Chapter 13: Simulating Values
+### Chapter 14: Simulating Values
 **Research:** [[value-forecasting-alignment]] — THE CAPSTONE
 
 - The deepest question: what would humanity want after reflection?
@@ -135,7 +144,7 @@
 - From projection to alignment target
 - The aspiration: AI aligned to our considered values, not our current ones
 
-### Chapter 14: Society in Silico
+### Chapter 15: Society in Silico
 - Returning to Rehoboam: what we're building isn't that
 - Open vs. closed, democratic vs. authoritarian simulation
 - The honest caveat: we're not done, we'll never be done
@@ -174,20 +183,21 @@
 | 3 | openfisca, rules-as-code |
 | 4 | simulation-accuracy |
 | 5 | policyengine, ubi-center |
-| 8 | ai-integration-philosophy |
-| 9 | cosilico |
-| 10 | max-ai-portfolio (uncertainty theme) |
-| 11 | hivesight-silicon-sampling |
-| 12 | democrasim-architecture |
-| 13 | value-forecasting-alignment |
-| 14 | 00-thesis, rehoboam-contrast |
+| 6 | microsimulation-definition, enhanced-cps, tax-data |
+| 9 | ai-integration-philosophy |
+| 10 | cosilico |
+| 11 | max-ai-portfolio (uncertainty theme) |
+| 12 | hivesight-silicon-sampling |
+| 13 | democrasim-architecture |
+| 14 | value-forecasting-alignment |
+| 15 | 00-thesis, rehoboam-contrast |
 
 ## Gaps to Fill
 
 - [ ] Chapter 2: Need more on CBO/JCT institutional history
-- [ ] Chapter 6-7: Need concrete PolicyEngine case studies
-- [ ] Chapter 10: Need technical detail on uncertainty methods
-- [ ] Chapter 13: Need to flesh out experimental design for value forecasting
+- [ ] Chapter 7-8: Need concrete PolicyEngine case studies
+- [ ] Chapter 11: Need technical detail on uncertainty methods
+- [ ] Chapter 14: Need to flesh out experimental design for value forecasting
 - [ ] People: Need profiles for more historical figures (Ann Harding, etc.)
 
 ## Word Count Targets
@@ -196,9 +206,9 @@
 |---------|--------|
 | Front matter | 5,000 |
 | Part I (4 chapters) | 20,000 |
-| Part II (5 chapters) | 25,000 |
+| Part II (6 chapters) | 30,000 |
 | Part III (5 chapters) | 25,000 |
 | Back matter | 5,000 |
-| **Total** | **80,000** |
+| **Total** | **85,000** |
 
-~6,000 words per chapter average
+~5,600 words per chapter average

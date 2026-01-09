@@ -1,4 +1,4 @@
-# Chapter 10: The Uncertainty Gap
+# Chapter 11: The Uncertainty Gap
 
 In 2017, the Congressional Budget Office released its analysis of the American Health Care Act, the Republican plan to repeal and replace Obamacare {cite}`cbo2017ahca`. The headline number: 23 million fewer Americans would have health insurance by 2026.
 

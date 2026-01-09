@@ -1,4 +1,4 @@
-# Chapter 13: Simulating Values
+# Chapter 14: Simulating Values
 
 **Note to readers**: This chapter describes early-stage research, not established methodology. Unlike PolicyEngine (validated by government use and millions of simulations) or even HiveSight (with preliminary empirical validation), value forecasting is at the experiment stage. I ran the first systematic tests in 2024—LLMs outperformed baselines by 2.2×, but also missed an unexpected reversal in the 2024 GSS data. The results suggest this research direction is promising but far from proven. Treat the philosophical framework as speculative and the empirical claims as preliminary findings requiring extensive validation.
 
@@ -105,7 +105,7 @@ Both must be quantified.
 
 Not "humanity will value X" but "P(humanity values X) = 0.3 with 90% CI [0.2, 0.4]"
 
-This is the same uncertainty quantification theme from Chapter 10, applied to values instead of policy costs.
+This is the same uncertainty quantification theme from Chapter 11, applied to values instead of policy costs.
 
 ---
 

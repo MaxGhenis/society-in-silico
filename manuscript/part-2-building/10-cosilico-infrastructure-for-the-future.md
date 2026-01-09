@@ -1,4 +1,4 @@
-# Chapter 8: Infrastructure for the Future
+# Chapter 10: Infrastructure for the Future
 
 *A note to the reader: This chapter differs from the rest of the book. Earlier chapters described working systems—PolicyEngine, TAXSIM, existing models with validated track records. This chapter describes infrastructure that doesn't yet exist. I include it not as a product review, but as a technical exploration of what would be needed for AI systems to reliably perform tax and benefit calculations. The problems described are real; the solutions are speculative.*
 

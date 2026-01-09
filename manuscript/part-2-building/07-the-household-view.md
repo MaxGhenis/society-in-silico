@@ -1,4 +1,4 @@
-# Chapter 5: The Household View
+# Chapter 7: The Household View
 
 Consider a single parent in New York with one child who has a disability. They earn $30,000 per year.
 

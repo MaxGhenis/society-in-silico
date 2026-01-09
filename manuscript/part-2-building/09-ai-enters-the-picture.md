@@ -1,4 +1,4 @@
-# Chapter 7: AI Enters the Picture
+# Chapter 9: AI Enters the Picture
 
 In March 2023, PolicyEngine added a button labeled "Explain with AI." Click it, and the complex calculation that determines your Child Tax Credit or SNAP benefits transforms into a plain-language explanation tailored to your situation {cite}`policyengine2024ai`.
 
