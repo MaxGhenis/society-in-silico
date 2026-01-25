@@ -1,4 +1,12 @@
-.PHONY: serve build pdf clean
+.PHONY: install test serve build pdf clean
+
+# Install Python dependencies with uv
+install:
+	uv sync
+
+# Run tests
+test:
+	uv run pytest
 
 # Start local dev server
 serve:

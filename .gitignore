@@ -31,3 +31,4 @@ audiobook/*.m4b
 # Python
 __pycache__/
 *.pyc
+.venv/
