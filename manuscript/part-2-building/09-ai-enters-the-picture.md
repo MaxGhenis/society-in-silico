@@ -71,7 +71,9 @@ This was the "AI frontend, deterministic backend" pattern in action. The languag
 
 The insight was: AI systems will increasingly mediate between users and computational tools. PolicyEngine needed to be a good tool for AI to call.
 
-By 2025, this pattern was becoming standard across the AI industry. Anthropic introduced tool use for Claude. OpenAI built function calling into GPT-4 and its successors. Google's Gemini supported structured tool invocation. The Model Context Protocol (MCP) emerged as an open standard for connecting AI systems to external tools and data sources. The infrastructure for AI-tool integration was maturing rapidly.
+By 2025, this pattern was becoming standard across the AI industry. Anthropic introduced tool use for Claude. OpenAI built function calling into GPT-4 and its successors. Google's Gemini supported structured tool invocation. In May 2025, the Model Context Protocol (MCP) launched as an open standard supported simultaneously by Anthropic, OpenAI, and Mistral—a rare moment of industry alignment on infrastructure that mattered. MCP provided a standardized way for AI systems to discover and invoke external tools, turning what had been fragmented, custom integrations into a pluggable ecosystem. By December 2025, over 10,000 MCP-compatible tool servers were operational, covering everything from database queries to calendar management to code execution.
+
+For policy simulation, MCP meant that a PolicyEngine API endpoint could be discoverable by any MCP-compatible AI system. An AI assistant that implemented MCP could find PolicyEngine's tools, understand their parameters, invoke them correctly, and present the results—without custom integration work for each AI provider.
 
 For policy analysis, this meant a shift in what mattered. In 2023, the bottleneck was model capability—could AI systems reliably call the right tool with the right parameters? By 2025, the bottleneck had shifted to tool quality—were the tools AI called actually accurate, comprehensive, and well-maintained? An AI system that flawlessly called an inaccurate tax calculator was worse than useless. The quality of the deterministic backend became the binding constraint.
 
@@ -179,6 +181,20 @@ But AI in policy analysis raised deeper questions too. If AI systems could expla
 
 ---
 
+## Government Enters the Picture
+
+PolicyEngine's AI integration was one approach. Governments were developing their own.
+
+In November 2025, the IRS deployed Salesforce's Agentforce AI agents across three offices: the Office of Chief Counsel, Taxpayer Advocate Services, and the Office of Appeals {cite}`irs2025agentforce`. The agents handled case summarization, document search, and policy navigation—the kind of retrieval-heavy tasks where AI excels. Critically, all final decisions remained with human agents; the AI could not disperse funds or make eligibility determinations. The deployment came after a 25 percent workforce reduction that made AI assistance practical necessity rather than innovation experiment.
+
+California took a broader approach. In December 2025, Governor Newsom launched Poppy, an AI digital assistant available to state employees across 50 departments {cite}`california2025poppy`. Built by the California Department of Technology, Poppy used 11 different AI models, ran on state servers rather than external cloud infrastructure, and was grounded on public state data to reduce hallucination risk. Over 2,000 state employees used it during the pilot to navigate California's dense catalog of policies, interpret government-specific terminology, and find answers to complex administrative questions.
+
+Both deployments illustrated the pattern this chapter has traced: AI as interface to existing rules, not replacement for them. The IRS agents didn't calculate tax liability; they helped human analysts find relevant regulations faster. Poppy didn't determine policy; it helped state employees understand the policies already in place. The deterministic backend—the actual rules, statutes, and calculations—remained human-maintained and human-auditable. AI improved access to those rules without claiming to replace them.
+
+The convergence was notable. Open-source tools like PolicyEngine, commercial deployments like the IRS's Agentforce, and government-built systems like Poppy were all arriving at the same architecture: deterministic systems for accuracy, AI systems for accessibility.
+
+---
+
 ## From Explaining to Designing
 
 Some researchers weren't content with AI that merely explained or executed policy analysis. They wanted AI that could *design* better policies.
@@ -195,7 +211,7 @@ This possibility raised profound questions. Should tax policy be designed by alg
 
 PolicyEngine's approach—deterministic calculations, AI explanations, human judgment on values—represented one answer. The AI Economist represented another: let AI optimize, then evaluate whether humans endorse the results.
 
-These questions would require not just technical development but philosophical clarity about what humans should delegate and what they should retain.
+These questions would require not just technical development but philosophical clarity about what humans should delegate and what they should retain. Regulation was already catching up: the EU's General-Purpose AI rules took effect in August 2025, requiring transparency, safety testing, and disclosure of training data for AI models. In the US, 1,208 AI-related bills were introduced across 50 states in 2025, with 145 enacted into law {cite}`ncsl2025ailegislation`. Colorado's AI Act, effective June 2026, would require developers to prevent algorithmic discrimination and establish risk management policies. The regulatory environment increasingly demanded the kind of auditability that deterministic, open-source policy tools provided by default.
 
 Those questions are the subject of Part III.
 
