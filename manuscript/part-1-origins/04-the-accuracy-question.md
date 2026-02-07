@@ -252,3 +252,11 @@ That's what evidence-based policy actually looks like. Not certainty. Not faith.
 ---
 
 *Next: Part II begins with PolicyEngine—an attempt to build policy simulation infrastructure that's not just accurate, but open.*
+
+---
+
+## References
+
+```{bibliography}
+:filter: docname in docnames
+```

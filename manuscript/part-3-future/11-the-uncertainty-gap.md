@@ -175,3 +175,11 @@ The aspiration isn't perfect prediction. It's calibrated uncertainty: knowing wh
 *Actually: this reform probably costs somewhere between $40 billion and $65 billion, the distribution is roughly normal with a slight right skew, and there's maybe a 5% chance our model is missing something fundamental that would change the answer entirely.*
 
 *Which statement serves the public better?*
+
+---
+
+## References
+
+```{bibliography}
+:filter: docname in docnames
+```

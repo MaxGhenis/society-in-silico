@@ -98,13 +98,7 @@ The alternative to open simulation isn't human judgment uncorrupted by models. I
 
 **Power concentrated in those with access to compute and data.** The rich can simulate; the poor guess. Corporations optimize; citizens react. The asymmetry compounds.
 
-Open simulation addresses each failure mode:
-- Auditable code instead of black boxes
-- Reproducible results instead of vibes
-- Value forecasting instead of frozen alignment
-- Public infrastructure instead of private advantage
-
-It's not guaranteed to help. But the counterfactual is worse.
+Open simulation addresses each failure mode: auditable code instead of black boxes, reproducible results instead of vibes, value forecasting instead of frozen alignment, public infrastructure instead of private advantage. It's not guaranteed to help. But the counterfactual is worse.
 
 ---
 
@@ -224,3 +218,10 @@ The work continues. The invitation stands.
 
 Welcome to society in silico.
 
+---
+
+## References
+
+```{bibliography}
+:filter: docname in docnames
+```

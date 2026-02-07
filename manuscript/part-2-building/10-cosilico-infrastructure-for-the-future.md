@@ -40,7 +40,7 @@ Without unified infrastructure, each company builds fragmented, partial solution
 
 ## Why this can't be trained away
 
-As the introduction described, GPT-4 answered only 67% of true/false tax questions correctly on the SARA benchmark {cite}`blairstanek2023gpt4tax`. Two years and several model generations later, the problem hasn't been solved. In July 2025, Column Tax released TaxCalcBench—a benchmark requiring models to compute complete federal tax returns rather than just answer questions. The best-performing model, Gemini 2.5 Pro, got fewer than one in three returns right {cite}`bock2025taxcalcbench`.
+As the introduction described, frontier AI models still get fewer than one in three complete tax returns right {cite}`bock2025taxcalcbench`. The problem hasn't improved despite two years of model advances.
 
 A natural response: "Just train better models." This won't work, for structural reasons:
 
@@ -90,12 +90,7 @@ Such infrastructure would require three components:
 
 **A scenario simulation layer** that answers counterfactual questions. What if the EITC expanded by 50%? Run the baseline, run the reform, take the difference. The output: cost estimates, households affected, poverty impact—all computed from the underlying rules and population data, all auditable.
 
-The key properties:
-
-- **Deterministic**: Same inputs, same outputs, always
-- **Auditable**: Every calculation includes legal citation and parameter values
-- **Versioned**: Git history tracks all rule changes
-- **Bi-temporal**: Parameters track both effective date (when a law takes effect) and knowledge date (when we learned about it)
+Such infrastructure must be deterministic (same inputs, same outputs, always), auditable (every calculation includes legal citation and parameter values), versioned (git history tracks all rule changes), and bi-temporal (parameters track both when a law takes effect and when the system learned about it).
 
 When an AI agent calls such infrastructure to answer a tax question, the calculation is provably correct, legally citable, and traceable. The AI explains; the infrastructure calculates.
 

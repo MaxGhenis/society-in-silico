@@ -63,7 +63,7 @@ This isn't about finding moral truth. It's about forecasting moral change—the 
 
 The idea is simple in concept, ambitious in execution:
 
-**Step 1: Train language models on historical data.** Use surveys from decades past—the General Social Survey back to 1972, Gallup polls, the World Values Survey. Train models to understand what people believed, why, and how those beliefs connected to demographic characteristics.
+**Step 1: Train language models on historical data.** Use surveys from decades past—the General Social Survey back to 1972 {cite}`gss2024`, Gallup polls, the World Values Survey. Train models to understand what people believed, why, and how those beliefs connected to demographic characteristics.
 
 **Step 2: Test predictive accuracy.** If you train a model on data through 1996, can it predict value trajectories through 2021? This is empirically testable. Either the model predicts moral change better than baseline or it doesn't.
 
@@ -397,3 +397,10 @@ The simulation doesn't replace human judgment. It informs it. It makes visible w
 
 That's the aspiration. The work continues.
 
+---
+
+## References
+
+```{bibliography}
+:filter: docname in docnames
+```

@@ -150,7 +150,7 @@ This comprehensive scope came at a cost. DYNASIM was expensive to run, difficult
 
 DYNASIM didn't stay alone for long.
 
-Its success (and limitations) inspired adaptations around the world {cite}`li2014survey`:
+Its success (and limitations) inspired adaptations around the world {cite}`li2013survey`:
 
 - **CORSIM** (United States): A direct descendant, continuing the dynamic microsimulation tradition at Cornell.
 - **CANSIM** (Canada): Adapted DYNASIM's framework for Canadian policy analysis.

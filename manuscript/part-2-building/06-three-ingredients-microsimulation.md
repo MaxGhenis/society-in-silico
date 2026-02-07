@@ -1,6 +1,6 @@
 # Chapter 6: The Three Ingredients of Microsimulation
 
-Every microsimulation model rests on three foundations: rules encoding, microdata construction, and behavioral dynamics. This three-part framework doesn't appear explicitly in the microsimulation literature—textbooks focus on techniques, not architecture—but it captures what any team building these models must solve.
+Every microsimulation model rests on three foundations: rules encoding, microdata construction, and behavioral dynamics. This three-part framework doesn't appear explicitly in the microsimulation literature—textbooks focus on techniques, not architecture {cite}`caldwell1996microsimulation`—but it captures what any team building these models must solve.
 
 Get the rules wrong, and your calculations are incorrect. Get the data wrong, and your estimates are biased. Ignore dynamics, and your projections miss how people respond to policy changes.
 
@@ -22,7 +22,7 @@ Encoding the EITC requires hundreds of parameters and dozens of functions. A sin
 
 The microsimulation world has converged on two main approaches to rules encoding: spreadsheet-style configuration and code-native implementation.
 
-**EUROMOD exemplifies the spreadsheet approach.** Policy rules live in XML files—structured text that looks more like configuration than code. A typical EUROMOD XML file contains policy parameters (rates, thresholds, amounts), policy spine definitions (which calculations run in what order), and switch settings (which policies are active). To view or modify these rules, you download the EUROMOD software and open the project files in its graphical interface. The interface presents policies as expandable trees of parameters, with dialogue boxes for editing values.
+**EUROMOD exemplifies the spreadsheet approach {cite}`sutherland2013euromod`.** Policy rules live in XML files—structured text that looks more like configuration than code. A typical EUROMOD XML file contains policy parameters (rates, thresholds, amounts), policy spine definitions (which calculations run in what order), and switch settings (which policies are active). To view or modify these rules, you download the EUROMOD software and open the project files in its graphical interface. The interface presents policies as expandable trees of parameters, with dialogue boxes for editing values.
 
 This architecture has real advantages. Researchers without programming backgrounds can modify parameters—change a tax rate, adjust a benefit threshold—without writing code. The interface enforces structure, preventing certain classes of errors. And the XML format is technically "open source"—anyone can read the files.
 
@@ -75,7 +75,7 @@ To understand a PolicyEngine policy, you browse GitHub, click on a file, and rea
 
 This isn't about better or worse—it's about different communities. EUROMOD serves researchers who work primarily in its ecosystem, often for years. The investment in learning its tooling pays off through deep capability. PolicyEngine and Tax-Calculator serve researchers who might contribute once, or who work across many projects, or who want to integrate microsimulation into other software. The investment in general Python skills pays off through breadth.
 
-The difference matters for transparency. When HM Treasury evaluated PolicyEngine UK (Chapter 5), they could link directly to the GitHub repository. Anyone curious about how the model works can browse the code without installing anything. That immediate accessibility is impossible with tools requiring specialized software to inspect.
+The difference matters for transparency. When HM Treasury evaluated PolicyEngine UK (Chapter 5), they could link directly to the GitHub repository {cite}`hmt2025policyengine`. Anyone curious about how the model works can browse the code without installing anything. That immediate accessibility is impossible with tools requiring specialized software to inspect.
 
 ---
 
@@ -89,13 +89,13 @@ Where do these records come from?
 
 ### The Survey Foundation
 
-Most microsimulation uses household survey data. In the US, that's typically the Current Population Survey (CPS)—an annual sample of about 100,000 households. In the UK, the Family Resources Survey (FRS). In Europe, the European Union Statistics on Income and Living Conditions (EU-SILC).
+Most microsimulation uses household survey data. In the US, that's typically the Current Population Survey (CPS)—an annual sample of about 100,000 households {cite}`census2024cps`. In the UK, the Family Resources Survey (FRS). In Europe, the European Union Statistics on Income and Living Conditions (EU-SILC).
 
 These surveys exist because governments need population statistics. They're designed for measuring income, employment, poverty—exactly what microsimulation models need. The data already exists. Just use it.
 
 Except it's never that simple.
 
-The CPS captures wages, salaries, and common benefit receipt well. It captures capital income poorly—people underreport dividends and capital gains, and the very wealthy are systematically undersampled. It doesn't capture certain tax-relevant information at all—itemized deductions, retirement contributions, business income details.
+The CPS captures wages, salaries, and common benefit receipt well. It captures capital income poorly—people underreport dividends and capital gains, and the very wealthy are systematically undersampled {cite}`meyer2015underreporting`. It doesn't capture certain tax-relevant information at all—itemized deductions, retirement contributions, business income details.
 
 Every survey has these gaps. The FRS doesn't include council tax details needed for UK local tax modeling. EU-SILC doesn't capture within-year timing that affects benefit calculations. No single survey has everything a comprehensive microsimulation model needs.
 
@@ -109,7 +109,7 @@ The technique requires careful judgment about what "similar" means. Matching on 
 
 Tax-Data, part of the Policy Simulation Library, pioneered this approach for US tax modeling. The package statistically matches CPS records to IRS Public Use Files (PUF), combining survey income data with tax return information. The result captures tax-relevant details—capital gains realizations, itemized deduction patterns—that the CPS alone would miss.
 
-The Enhanced CPS that PolicyEngine launched in August 2025 extended this further. We integrated five datasets: the CPS, Survey of Consumer Finances, Consumer Expenditure Survey, Residential Energy Consumption Survey, and American Time Use Survey. Each contributed different information. The SCF filled in wealth. The CEX added spending patterns relevant for consumption taxes. The RECS added energy consumption for carbon tax modeling. The ATUS added time use for understanding childcare policy.
+The Enhanced CPS that PolicyEngine launched in August 2025 extended this further {cite}`policyengine2022enhanced`. We integrated five datasets: the CPS, Survey of Consumer Finances, Consumer Expenditure Survey, Residential Energy Consumption Survey, and American Time Use Survey. Each contributed different information. The SCF filled in wealth. The CEX added spending patterns relevant for consumption taxes. The RECS added energy consumption for carbon tax modeling. The ATUS added time use for understanding childcare policy.
 
 Statistical matching doesn't create new information—it combines existing information in ways that plausibly represent real households. The validity depends on whether the matching assumptions hold. When they do, you get more comprehensive records. When they don't, you get statistical artifacts that bias your estimates.
 
@@ -145,7 +145,7 @@ Simple projection uses indexes. Multiply all wages by projected wage growth. Mul
 
 Sophisticated projection involves modeling—who dies, who retires, who enters the workforce, how incomes evolve for individuals over time. These dynamic models are more accurate but more complex to build and validate.
 
-PolicyEngine uses projection factors from the Congressional Budget Office and other official forecasts. The CBO already projects future tax revenues, benefit costs, and economic variables. Aligning microdata projection to CBO's assumptions ensures our estimates are comparable to official baselines.
+PolicyEngine uses projection factors from the Congressional Budget Office and other official forecasts {cite}`cbo2025forecasting`. The CBO already projects future tax revenues, benefit costs, and economic variables. Aligning microdata projection to CBO's assumptions ensures our estimates are comparable to official baselines.
 
 ---
 
@@ -165,7 +165,7 @@ But static analysis misses some effects entirely. A carbon tax might raise $100 
 
 ### Labor Supply Responses
 
-The most studied behavioral response is labor supply. How much do people adjust their work when tax rates change?
+The most studied behavioral response is labor supply {cite}`odonoghue2001dynamic`. How much do people adjust their work when tax rates change?
 
 Economists parameterize this as "elasticities"—the percentage change in hours worked for a 1% change in after-tax wages. Decades of research estimates these parameters from natural experiments, tax reforms, and survey data.
 
@@ -211,7 +211,7 @@ This three-part framework organizes how to think about microsimulation models. W
 
 **Dynamics:** What behavioral assumptions does the model make? Are they explicit or hidden? How sensitive are results to different assumptions? Are static and dynamic estimates clearly distinguished?
 
-Different models emphasize different ingredients. TAXSIM's strength is rules accuracy—decades of validation against actual tax returns. Tax-Data's strength is microdata construction—careful statistical matching and calibration. OG-USA's strength is dynamics—a full overlapping-generations model with computed behavioral responses.
+Different models emphasize different ingredients. TAXSIM's strength is rules accuracy—decades of validation against actual tax returns {cite}`feenberg1993taxsim`. Tax-Data's strength is microdata construction—careful statistical matching and calibration. OG-USA's strength is dynamics—a full overlapping-generations model with computed behavioral responses.
 
 PolicyEngine aims to be strong across all three. We invested heavily in rules encoding (comprehensive UK and US tax-benefit systems), microdata construction (the Enhanced CPS with statistical matching and gradient descent calibration), and behavioral options (elasticity-based labor supply responses with transparent parameters).
 

@@ -14,18 +14,9 @@ This is the problem PolicyEngine's household calculator was designed to solve {c
 
 ## The Invisible Labyrinth
 
-Americans interact with a tax-benefit system of staggering complexity. A typical low-income family might simultaneously receive:
+Americans interact with a tax-benefit system of staggering complexity. A typical low-income family might simultaneously receive the federal Earned Income Tax Credit (phased by income and number of children), the Child Tax Credit (partially refundable, phased by income), SNAP benefits (with categorical eligibility plus an income test that varies by state), Supplemental Security Income for a disabled family member, Medicaid, housing assistance through local voucher programs, state child care subsidies, and free school meals. That's eight programs, each with its own definition of income, its own household unit, and its own phase-out schedule.
 
-- Earned Income Tax Credit (federal, refundable, phased by income and children)
-- Child Tax Credit (federal, partially refundable, phased by income)
-- SNAP benefits (federal-state, categorical eligibility plus income test)
-- Supplemental Security Income (federal-state, means-tested, disability-linked)
-- Medicaid (federal-state, categorical plus income test)
-- Housing assistance (federal, local waiting lists, complex income limits)
-- Child care subsidies (state, income-tested, cliff-prone)
-- School meal programs (federal, categorical plus income certification)
-
-Each program was designed independently. Each has its own definition of "income," its own household unit, its own phase-out schedule. The interactions are not coherent—they are accretions of decades of legislation, regulation, and administrative convenience.
+Each was designed independently. Each has its own definition of "income," its own household unit, its own phase-out schedule. The interactions are not coherent—they are accretions of decades of legislation, regulation, and administrative convenience.
 
 The result is a system that no participant fully understands. Caseworkers specialize in one program. Tax preparers specialize in one side of the ledger. Benefits counselors know eligibility rules but not tax implications. No one sees the whole picture.
 
@@ -127,7 +118,7 @@ Universal Credit, the UK's flagship welfare reform, was designed to simplify the
 
 PolicyEngine UK made these interactions visible. When Chancellor Rishi Sunak reduced the UC taper rate from 63% to 55% in the 2021 Autumn Budget, PolicyEngine could show exactly what this meant for specific household types: a single parent working 25 hours per week at minimum wage would keep an additional £1,000 per year. A couple with children where one partner worked full-time would see a smaller gain. The distributional effects varied enormously by household composition—details that aggregate statistics masked.
 
-When Prime Minister Liz Truss announced sweeping tax cuts in September 2022, PolicyEngine produced distributional analysis within hours—the only independent household-level estimates available while the policies were being debated. The tool showed that the cuts disproportionately benefited higher earners, a finding that contributed to the public backlash. Within weeks, most of the cuts were reversed.
+When Prime Minister Liz Truss announced sweeping tax cuts in September 2022, PolicyEngine produced household-level distributional analysis within hours—a rapid response enabled by the infrastructure described in Chapter 8.
 
 As Chapter 5 described, HM Treasury eventually published a formal evaluation of PolicyEngine UK {cite}`hmt2025policyengine`. The household calculator that started as a research prototype had become something government took seriously enough to benchmark against their own internal models.
 
