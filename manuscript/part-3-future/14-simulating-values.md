@@ -124,11 +124,22 @@ What makes this a research program rather than armchair philosophy?
 The key is historical validation. We have decades of survey data capturing how values actually changed. This provides ground truth for testing predictive models.
 
 **The experiment I ran:**
-1. Take 17 GSS variables spanning 1972–2022: attitudes on homosexuality, marijuana, gender roles, race, religion, and more
-2. Give GPT-4o the historical time series through 2021 and ask for predictions of 2024 values
-3. Compare those predictions to actual 2024 GSS data (released in late 2024)
-4. Elicit full probability distributions—not just point estimates—using quantile prompting (10th, 25th, 50th, 75th, 90th percentiles)
-5. Calibrate uncertainty using EMOS (Ensemble Model Output Statistics), the same technique meteorologists use for weather forecasts
+
+The General Social Survey has tracked American attitudes on dozens of questions since 1972, using consistent question wording that enables true time-series analysis. I selected 17 variables covering the major dimensions of value change:
+
+- **Sexual morality**: attitudes toward homosexuality (HOMOSEX), premarital sex (PREMARSX), extramarital sex (XMARSEX)
+- **Drug policy**: marijuana legalization (GRASS)
+- **Gender roles**: women working outside the home (FEWORK), women in politics (FEPOL)
+- **Race**: interracial marriage (RACMAR), racial integration (RACOPEN)
+- **Religion**: confidence in organized religion (CONCLERG), Bible literalism (BIBLE)
+- **Science**: confidence in the scientific community (CONSCI)
+- **Guns**: gun permit requirements (GUNLAW)
+- **Capital punishment**: favor or oppose death penalty (CAPPUN)
+- **Speech freedoms**: multiple variables on tolerance for controversial speakers (SPKATH, SPKRAC, SPKHOMO, SPKCOM)
+
+For each variable, I gave GPT-4o the complete historical time series through 2021 and asked for predictions of the 2024 values. The prompt design mattered: rather than asking for a single point estimate, I used quantile prompting—requesting the 10th, 25th, 50th, 75th, and 90th percentiles of the predicted distribution. This forces the model to express uncertainty rather than defaulting to a confident point prediction.
+
+The comparison baselines were deliberately simple. Linear extrapolation fits a trend line to the historical data and extends it forward. The historical mean simply predicts that the next value will equal the average of all prior values—a "no change" baseline. Any useful forecasting method should beat both.
 
 **The results:**
 
@@ -137,9 +148,9 @@ The key is historical validation. We have decades of survey data capturing how v
 | Mean Absolute Error | 4.8 pp | 7.2 pp | 10.6 pp |
 | vs. Baseline | **2.2× better** | — | — |
 
-LLMs genuinely outperformed naive baselines. They captured something about the structure of value change that simple trend extrapolation missed.
+LLMs genuinely outperformed naive baselines. They captured something about the structure of value change that simple trend extrapolation missed. The advantage was most pronounced for variables where the trend was nonlinear—accelerating acceptance of marijuana, decelerating change in gender attitudes—where linear extrapolation systematically over- or under-predicted.
 
-But calibration required work. Raw LLM confidence intervals were 21% too narrow—the model was overconfident. After EMOS calibration (multiplying the spread by 1.21×), the 80% prediction intervals achieved proper coverage.
+But calibration required work. Raw LLM confidence intervals were 21% too narrow—the model was overconfident, a known property of language models. I corrected this using EMOS (Ensemble Model Output Statistics), the same technique the European Centre for Medium-Range Weather Forecasts uses to calibrate ensemble weather predictions. EMOS applies a simple linear transformation to the raw forecast distribution—stretching the spread by a factor estimated from historical forecast-observation pairs. After calibration (multiplying the spread by 1.21×), the 80% prediction intervals achieved proper coverage: roughly 80% of actual values fell within the predicted 80% range.
 
 The biggest lesson came from failure. Same-sex acceptance (HOMOSEX) had risen steadily from 11% in 1973 to 72% in 2022. Every model—LLM, linear, historical—predicted continued increase. The 2024 GSS showed 55%, a 17-point drop. The supposed "inevitable" trajectory reversed.
 
@@ -375,6 +386,20 @@ The 2024 experiments provided both encouragement and caution.
 **Caution**: The HOMOSEX reversal humbled every forecaster. Value change contains irreducible surprises. Any system claiming to know humanity's future values with confidence is selling certainty it doesn't have.
 
 The research program is no longer "just beginning"—the first experiments are complete. Historical validation showed predictive power. Long-term forecasts with calibrated uncertainty now exist. But the work has revealed how much remains unknown.
+
+**What systematic validation would require:**
+
+The 17-variable experiment was a proof of concept, not a definitive test. A full validation program would need to address several limitations:
+
+*More variables.* The GSS tracks hundreds of attitude items. Seventeen is enough to demonstrate feasibility, not enough to characterize when forecasting works and when it fails. A systematic survey of all recurring GSS variables would reveal which domains (economic attitudes? social tolerance? institutional trust?) are more or less forecastable.
+
+*Cross-national replication.* The World Values Survey covers nearly 100 countries across seven waves since 1981. If value forecasting works for American GSS data, does it generalize to Swedish, Nigerian, or Chinese attitudes? Cultural specificity might limit transferability, or the underlying patterns of generational replacement and economic development might be universal enough for cross-national models.
+
+*Longer forecast horizons.* The 2024 experiment tested three-year predictions (2021 to 2024). The alignment application requires multi-decade projections. Historical backtesting—training on 1972-1990 data and predicting 1990-2024—would test whether the approach works over longer horizons, where the stakes and the difficulty are both higher.
+
+*Alternative models.* GPT-4o was the only LLM tested. Claude, Gemini, and open-source models might perform differently. Ensemble approaches—combining multiple LLM predictions—might outperform any individual model, as they do in weather forecasting.
+
+*Mechanism analysis.* The current experiment shows that LLMs predict better than baselines but doesn't explain *why*. Is the advantage coming from recognizing generational cohort patterns? From implicit modeling of exposure effects? From training data that includes social science research on value change? Understanding the mechanism would indicate whether the advantage is robust or fragile.
 
 ---
 

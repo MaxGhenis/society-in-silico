@@ -178,6 +178,26 @@ The second is **Cosilico**, a commercial venture that would build production API
 
 This structure directly addresses the open-core governance tension described earlier. The rules themselves—the encoding of law—live in a nonprofit foundation with an independent governance structure. No commercial entity controls which statutes get encoded or how. The commercial layer provides infrastructure services on top of the open-source foundation, the same way managed database services build on PostgreSQL without controlling PostgreSQL's development.
 
+### What "encoding law" looks like in practice
+
+The encoding process is more concrete than it might sound. Take the Earned Income Tax Credit's phase-in calculation. The statute (26 USC § 32) defines a credit rate that applies to earned income up to a threshold. RAC encodes this as a formula with explicit parameter references:
+
+- The **credit rate** (7.65% for no children, 34% for one, 40% for two, 45% for three or more) comes from a parameter file that updates when the IRS publishes annual adjustments.
+- The **earned income threshold** ($7,840 for no children in 2024) is a separate parameter.
+- The **phase-out rate and threshold** are further parameters, split by filing status.
+
+Each parameter includes a legal citation, an effective date, and a source URL. When the IRS publishes Revenue Procedure 2025-XX with new inflation-adjusted amounts, the encoding changes parameter values—not formulas. The formula only changes when Congress amends the statute itself.
+
+The Rules Foundation validates each encoding against established calculators—TAXSIM for federal taxes, state tax agencies' online calculators for state-level rules. The validation is automated: test cases run against both the RAC encoding and the reference calculator, and discrepancies flag either encoding errors or ambiguities in the statute that require human judgment.
+
+This encoding-and-validation loop is where AI accelerates the work. AutoRAC uses large language models to draft initial encodings from statute text, which human reviewers then verify against authoritative sources. The AI doesn't replace the legal analysis—it produces a first draft that's faster to review than encoding from scratch. Early results suggest this cuts encoding time roughly in half for well-structured statutes, though complex provisions with cross-references and exceptions still require substantial human effort.
+
+### The MCP connection
+
+Chapter 9 described how the Model Context Protocol is becoming the standard way AI systems discover and invoke external tools. For tax and benefit infrastructure, MCP matters because it defines how an AI assistant would find and call a tax calculation service. A PolicyEngine or Cosilico API endpoint, registered as an MCP-compatible tool server, would be discoverable by any MCP-compatible AI system—Claude, GPT, Gemini, or open-source alternatives. The AI would understand the API's parameters (household income, filing status, state of residence), invoke the correct endpoint, receive a deterministic result, and explain it in natural language.
+
+Without standardized discovery protocols, each AI provider would need custom integration with each calculation service—the same fragmentation problem that plagues the fintech landscape today. MCP doesn't solve the infrastructure gap by itself, but it removes a significant barrier to adoption: the integration cost that prevents AI systems from using specialized tools even when those tools exist.
+
 Both organizations are early. The Rules Foundation has encoded portions of US federal tax law and several state codes. Cosilico has no production API, no paying customers, no proof that the market exists at scale.
 
 I include this chapter not because the infrastructure has been built, but because the problem is real regardless of whether this particular attempt succeeds. AI systems need deterministic tools for financial calculations. Column Tax, April, and others are building pieces of the answer for tax filing. No one is building the full stack that connects taxes, benefits, and population simulation.
