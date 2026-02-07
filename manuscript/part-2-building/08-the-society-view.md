@@ -138,11 +138,19 @@ Society-level estimates carry more uncertainty than household calculations. The 
 
 PolicyEngine approaches validation systematically {cite}`policyengine2024ukvalidation`. Compare model outputs to official statistics. Match aggregate tax revenue to IRS totals. Match benefit expenditure to agency reports. Match poverty rates to Census publications.
 
-When discrepancies appear, investigate. Sometimes the model is wrong—fix it. Sometimes the official statistics are based on different assumptions—document the difference. Sometimes the comparison reveals interesting facts about how programs actually work.
+The results are mixed—and being honest about this matters.
 
-The enhanced microdata process itself is validated. Hold out some administrative targets during reweighting, then check how well the reweighted sample matches those holdout targets. If the sample matches training data but not holdout data, the procedure has overfit and needs adjustment.
+PolicyEngine's aggregate revenue estimates for the current US tax-benefit system fall roughly 33% below official totals. This is a substantial gap, and it has identifiable causes. The underlying data—even after enhancement—undercounts high incomes due to survey top-coding and non-response. Tax return data captures the full income distribution; survey data doesn't. Benefits are underreported, as Chapter 4 described. And PolicyEngine's static model doesn't capture behavioral responses or macroeconomic feedback that affect actual revenue collections.
 
-No microsimulation model perfectly matches reality. But systematic validation makes the model's limitations knowable rather than hidden.
+What does this mean for users? It depends on what they're using the tool for.
+
+**Where PolicyEngine is most reliable:** Household-level calculations—"what would this policy mean for a family with these specific characteristics?"—are highly accurate because they depend on the rules, not the data distribution. Directional analysis—does a reform help low-income families more than high-income ones?—is reliable because distributional *shapes* are more stable than absolute levels. Comparative analysis—"Reform A costs 50% more than Reform B"—is reliable because the data limitations affect both estimates similarly.
+
+**Where caution is warranted:** Absolute budget scores—"this reform costs $50 billion"—should be treated as approximate, not authoritative. PolicyEngine's estimates are useful for order-of-magnitude analysis and for comparing reforms, but for precise revenue estimates, JCT and CBO remain the gold standard because they use confidential tax return data that captures the full income distribution.
+
+The enhanced microdata process itself is validated. Hold out some administrative targets during reweighting, then check how well the reweighted sample matches those holdout targets. If the sample matches training data but not holdout data, the procedure has overfit and needs adjustment. This cross-validation reduced PolicyEngine's deviations from administrative totals by 97%—but even a 97% improvement from a large gap still leaves a meaningful gap.
+
+No microsimulation model perfectly matches reality. The question is whether the model's limitations are *knowable*. Closed models hide their gaps behind institutional authority. Open models expose them—which is uncomfortable but ultimately more honest.
 
 ---
 

@@ -26,7 +26,7 @@ The process was—and remains—remarkably consequential. A senator drafts a tax
 
 The Treasury's Office of Tax Analysis built parallel capabilities for the executive branch. George Sadowsky's work in the early 1960s had demonstrated what was possible {cite}`sadowsky1991computing`; by the 1980s, Treasury maintained the Individual Income Tax Model (ITM), regularly updated with fresh data from IRS tax returns. Treasury's models served the President—providing revenue estimates for Administration proposals—while JCT's served Congress.
 
-Outside government, the Urban Institute was building its own analytical infrastructure. Karen Smith joined Urban in the 1980s and would spend three decades developing microsimulation models for Social Security, pensions, taxation, and welfare reform {cite}`urban2024karensmith`. She played lead roles in both MINT (the Social Security Administration's retirement income model) and DYNASIM (Urban's flagship dynamic microsimulation). While Urban's models served government clients rather than challenging official estimates, Smith was building expertise that would bridge the mainframe era into the age of open source.
+Outside government, the Urban Institute was building its own analytical infrastructure. TRIM3—the Transfer Income Model, Version 3—became Urban's workhorse for simulating the effects of tax and transfer programs on the US population. Updated annually with Current Population Survey data, TRIM3 modeled eligibility and participation for SNAP, Medicaid, TANF, SSI, housing assistance, and other programs that the tax-focused government models didn't cover. Karen Smith joined Urban in the 1980s and would spend three decades developing microsimulation models for Social Security, pensions, taxation, and welfare reform {cite}`urban2024karensmith`. She played lead roles in both MINT (the Social Security Administration's retirement income model) and DYNASIM (Urban's flagship dynamic microsimulation). While Urban's models served government clients rather than challenging official estimates, they filled a critical gap: the interaction between taxes and benefits that neither JCT nor Treasury modeled comprehensively.
 
 Three major government institutions, plus Urban's adjacent capacity. Billions of dollars in policy decisions riding on their outputs. And almost none of it was visible to the public.
 
@@ -35,6 +35,8 @@ Three major government institutions, plus Urban's adjacent capacity. Billions of
 ## The Asymmetry Problem
 
 Here was the situation by the 1990s: if you wanted to know how a tax proposal would affect federal revenue, you had to trust the government's numbers. You couldn't check their work. You couldn't see their code. You couldn't run alternative scenarios. The models were black boxes, and the keys were held by a small priesthood of government economists.
+
+The data asymmetry was structural, not accidental. Section 6103 of the Internal Revenue Code prohibits disclosure of individual tax return information, with narrow exceptions. JCT and Treasury have statutory access to individual returns under Section 6103(l). External researchers don't. This means government models run on the full distribution of actual tax returns—every filer, every dollar—while outside models work with public-use files that are top-coded, sampled, and anonymized. The confidentiality is justified (taxpayers should not have their returns disclosed to the public). But it creates an analytical moat that no amount of open-source software can fully bridge.
 
 This created several problems.
 
@@ -98,7 +100,9 @@ Across the Atlantic, a different model was emerging.
 
 The IFS had shown that independent analysis was possible. But TAXBEN remained proprietary—academics and journalists could read IFS reports, but they couldn't run the model themselves.
 
-The real breakthrough came from an unlikely source: the European Union.
+Australia had already demonstrated what was possible beyond the Anglo-American axis. Ann Harding, working at the National Centre for Social and Economic Modelling (NATSEM) at the University of Canberra from 1993, built a microsimulation infrastructure that influenced policy across the Asia-Pacific region. Her edited volume *Microsimulation and Public Policy* (1996) was for years the standard reference for practitioners worldwide {cite}`harding1996microsimulation`. Harding's contribution wasn't just technical—she championed the idea that microsimulation should be accessible to policymakers, not locked away in academic departments. NATSEM's models were used by Australian government agencies, parliamentary committees, and media organizations to analyze everything from tax reform to childcare policy.
+
+The European breakthrough came from an ambitious cross-national project.
 
 In 1996, researchers led by Holly Sutherland began building EUROMOD—a tax-benefit microsimulation model that would eventually cover all EU member states {cite}`sutherland2013euromod`. The ambition was staggering: harmonize the wildly different tax and benefit systems of dozens of countries into a single analytical framework, enabling cross-national comparisons that had never before been possible.
 

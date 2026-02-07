@@ -100,7 +100,7 @@ The validation work was never finished. Policies changed constantly—tax bracke
 
 By April 2024, we solved the problem that had frustrated me at the UBI Center: state-level analysis. PolicyEngine launched comprehensive income tax modeling for all 50 states and DC. Over 100 open-source contributors had encoded the nation's Byzantine patchwork of tax codes. What we couldn't find in 2019, we built by 2024.
 
-The technical sophistication grew in parallel. In August 2025, we launched the Enhanced Current Population Survey, integrating five datasets using machine learning and calibrating to 9,168 administrative totals. The approach combined Quantile Regression Forests for imputation with gradient descent optimization for reweighting—techniques that cut our deviations from official statistics by 97 percent {cite}`policyengine2023enhanced`. We built two new open-source packages to do it: microimpute and microcalibrate.
+The technical sophistication grew in parallel. In August 2025, we launched the Enhanced Current Population Survey, integrating five datasets using machine learning and calibrating to 9,168 administrative totals. The approach combined Quantile Regression Forests for imputation with gradient descent optimization for reweighting—techniques that cut our deviations from official statistics by 97 percent {cite}`policyengine2022enhanced`. We built two new open-source packages to do it: microimpute and microcalibrate.
 
 But the real validation came from who started using it.
 
