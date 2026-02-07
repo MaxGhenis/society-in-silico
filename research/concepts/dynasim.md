@@ -1,3 +1,9 @@
+---
+chapters: [1, 2]
+primary_chapter: 1
+narrative_role: "Orcutt's pioneering dynamic microsimulation model; proof that his 1957 vision was viable"
+---
+
 # DYNASIM
 
 Dynamic Simulation of Income Model - the pioneering dynamic microsimulation model.

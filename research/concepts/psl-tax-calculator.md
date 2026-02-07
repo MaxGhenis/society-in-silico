@@ -1,5 +1,7 @@
 # Policy Simulation Library / Tax-Calculator
 
+> **NOTE**: This is an older, less detailed version. The canonical research note is [[tax-calculator]].
+
 Open-source tax microsimulation ecosystem based at AEI.
 
 ## Institution

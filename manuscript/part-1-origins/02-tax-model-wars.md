@@ -126,7 +126,7 @@ In the United States, the open source push came from an unexpected source: a con
 
 In 2013, Matt Jensen founded the Open Source Policy Center (OSPC) at the American Enterprise Institute {cite}`aei2015taxbrain`. The premise was counterintuitive—AEI was known for market-oriented policy advocacy, not software development. But Jensen argued that better public policy analysis required transparency, and transparency required open source. "A fundamental reason for adopting open source methods," OSPC stated, "is to let people from all backgrounds contribute to the models that our society uses to assess economic policy."
 
-OSPC built Tax-Calculator, an open-source model of federal income and payroll taxes, along with a web interface called TaxBrain that let users simulate reforms without writing code. They added supporting tools: Tax-Data for processing IRS microdata, Behavioral-Response for modeling labor supply effects, OG-USA for overlapping-generations macroeconomic analysis. The Policy Simulation Library grew to catalog open-source policy models across institutions.
+OSPC built Tax-Calculator and a web interface called TaxBrain, along with supporting tools: Tax-Data for processing IRS microdata, Behavioral-Response for modeling labor supply effects, OG-USA for overlapping-generations macroeconomic analysis. The next chapter tells that story in detail—how these tools proved that rigorous microsimulation could happen in the open.
 
 The ideological irony was productive. A conservative think tank building open-source tools meant the project couldn't be dismissed as a left-wing effort to undermine official estimates. It was a genuine commitment to transparency that attracted contributors across the political spectrum.
 

@@ -40,9 +40,7 @@ Without unified infrastructure, each company builds fragmented, partial solution
 
 ## Why this can't be trained away
 
-GPT-4 gets tax questions wrong 33% of the time.
-
-This is not an urban legend. Blair-Stanek et al. (2023) developed SARA—a benchmark for evaluating large language models on US income tax calculations—and found that GPT-4 answered only 67% of true/false tax questions correctly {cite}`blairstanek2023gpt4tax`. On scenario-based calculations, the accuracy was worse. The models confused marginal and effective rates. They misapplied filing status rules. They hallucinated phase-out thresholds that didn't exist.
+As the introduction described, GPT-4 answered only 67% of true/false tax questions correctly on the SARA benchmark {cite}`blairstanek2023gpt4tax`. Two years and several model generations later, the problem hasn't been solved. In July 2025, Column Tax released TaxCalcBench—a benchmark requiring models to compute complete federal tax returns rather than just answer questions. The best-performing model, Gemini 2.5 Pro, got fewer than one in three returns right {cite}`bock2025taxcalcbench`.
 
 A natural response: "Just train better models." This won't work, for structural reasons:
 
@@ -107,7 +105,7 @@ When an AI agent calls such infrastructure to answer a tax question, the calcula
 
 This infrastructure wouldn't start from scratch.
 
-PolicyEngine has demonstrated the core thesis: tax and benefit rules *can* be encoded accurately at scale. Over a million simulations have run on the platform. The UK's HM Treasury published an algorithmic transparency record describing their evaluation of PolicyEngine as a potential supplement to their internal microsimulation model {cite}`hmt2025policyengine`. US Congressional offices have used the analysis for budget scoring. The codebase covers US federal plus all 50 states, the UK, and Canada—maintained by 50+ open-source contributors {cite}`policyengine2024about`.
+PolicyEngine has demonstrated the core thesis: tax and benefit rules *can* be encoded accurately at scale. Over a million simulations have run on the platform. HM Treasury formally evaluated the UK model (Chapter 5). US Congressional offices have used the analysis for budget scoring. The codebase covers US federal plus all 50 states, the UK, and Canada—maintained by 50+ open-source contributors {cite}`policyengine2024about`.
 
 But PolicyEngine was designed as a policy analysis tool—a nonprofit providing free research infrastructure. The gap is commercial infrastructure: production APIs with millisecond response times, enterprise support with service-level agreements, documentation aimed at developers rather than policy analysts.
 

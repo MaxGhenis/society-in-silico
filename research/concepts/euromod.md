@@ -1,3 +1,9 @@
+---
+chapters: [1, 2, 3, 5, 6, 10]
+primary_chapter: 3
+narrative_role: "Pan-European microsimulation model; demonstrated cross-national policy analysis"
+---
+
 # EUROMOD
 
 Tax-benefit microsimulation model covering all European Union member states.

@@ -109,7 +109,7 @@ How do prediction markets compare to official forecasts?
 
 **For Fed decisions**, Good Judgment's "superforecasters"—individuals identified through forecasting tournaments as exceptionally calibrated—beat financial futures markets by 30% in 2024-2025 {cite}`goodjudgment2024`.
 
-Philip Tetlock's research revealed the key insight: most experts forecast little better than chance {cite}`tetlock2005expert`. But a small subset—about 2% in his studies—consistently outperform. These superforecasters share traits: they update frequently, think probabilistically, and avoid ideological commitment to specific predictions {cite}`tetlock2015superforecasting`.
+Philip Tetlock's research revealed the key insight: most experts forecast little better than chance {cite}`tetlock2005expert`. But a small subset—about 2% of participants in the subsequent Good Judgment Project—consistently outperform. These superforecasters share traits: they update frequently, think probabilistically, and avoid ideological commitment to specific predictions {cite}`tetlock2015superforecasting`.
 
 What does this mean for microsimulation?
 
@@ -147,19 +147,11 @@ The honest assessment: microsimulation models are only as good as their data, an
 
 ## TAXSIM: The Academic Benchmark
 
-While government agencies built their models behind closed doors, one academic tool quietly became the standard for validating tax calculations: TAXSIM.
-
-Daniel Feenberg at the National Bureau of Economic Research began building TAXSIM in the early 1980s. By the 1990s it was internet-accessible—one of the first tax calculators available online. Feenberg maintained it for his entire career, updating it annually as tax law changed, a commitment spanning over four decades {cite}`feenberg1993taxsim`.
-
-TAXSIM calculates federal and state income tax liabilities for individual tax units. Feed it income, deductions, filing status, and state of residence; it returns tax liability, credits, and marginal tax rates. The calculations follow the actual tax code—brackets, phase-outs, AMT, credits—with meticulous attention to legislative detail.
-
-The tool enabled generations of tax research. When economists needed to estimate effective tax rates for households in the Panel Study of Income Dynamics or the Survey of Consumer Finances, TAXSIM was the standard tool. Hundreds of published papers cite it. Its widespread use created an informal validation network: if TAXSIM produced results that conflicted with a researcher's expectations, someone would investigate and report bugs. The model improved through collective scrutiny.
+TAXSIM, the NBER tax calculator introduced in Chapter 2, offers a useful validation benchmark. Because Feenberg maintained it for over four decades and over a thousand published papers cite it {cite}`feenberg1993taxsim`, widespread use created an informal validation network: if TAXSIM produced results that conflicted with a researcher's expectations, someone would investigate and report bugs. The model improved through collective scrutiny.
 
 TAXSIM's accuracy for its core function—calculating federal income tax for a given set of inputs—is high. The rules are deterministic and well-documented. Where discrepancies arise, they typically involve edge cases in state tax codes or interactions with credits that have complex eligibility rules.
 
-But TAXSIM was designed as a research tool, not a policy analysis platform. It calculates taxes for individual records; it doesn't produce the aggregate revenue estimates and distributional tables that drive policy debates. It covers taxes but not benefits. It doesn't simulate SNAP, Medicaid, SSI, or housing assistance—the benefit programs that create the cliffs and interactions described in later chapters.
-
-Still, TAXSIM established an important precedent: an independent, publicly available tool could match or exceed the accuracy of proprietary systems for well-defined calculations. The gap wasn't in capability—it was in scope.
+But TAXSIM covers taxes only—not benefits. It doesn't simulate SNAP, Medicaid, SSI, or housing assistance—the benefit programs that create the cliffs and interactions described in later chapters. And it calculates taxes for individual records; it doesn't produce aggregate revenue estimates or distributional tables. TAXSIM established that independent tools could match proprietary accuracy for well-defined calculations. The gap wasn't capability—it was scope.
 
 ---
 

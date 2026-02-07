@@ -1,3 +1,9 @@
+---
+chapters: [2, 4, 5]
+primary_chapter: 2
+narrative_role: "IFS's proprietary UK model; the establishment benchmark PolicyEngine challenges"
+---
+
 # IFS TAXBEN
 
 The Institute for Fiscal Studies' tax and benefit microsimulation model for the UK.

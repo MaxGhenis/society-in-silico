@@ -70,11 +70,39 @@ When accuracy is high—voters perceive close to true policy impacts—electoral
 
 There appears to be a threshold effect. Below a certain level of voter accuracy, democracy becomes essentially random with respect to policy welfare—electoral outcomes bear no meaningful relationship to what would actually benefit voters. Above that threshold, the relationship strengthens rapidly.
 
-Bias introduces a different distortion. If voters systematically underestimate certain costs or overestimate certain benefits, elections will systematically favor policies that exploit those biases, regardless of actual welfare impact. This echoes Caplan's finding about systematic rather than random voter errors.
+Consider a concrete scenario. Two candidates propose different approaches to family policy. Candidate A would expand the Child Tax Credit by $2,000 per child and fund it by raising the top marginal rate from 37% to 39%. Candidate B would eliminate the state income tax, funded by cutting SNAP benefits by 30%.
+
+For Sarah, the Ohio teacher earning $65,000 with two kids: Candidate A's plan increases her family income by approximately $4,000 through the CTC expansion, while the top-rate increase doesn't affect her at all. Candidate B's plan saves her roughly $2,500 in state taxes, but since she doesn't receive SNAP, the benefit cuts don't directly affect her either. She's $1,500 better off under Candidate A.
+
+But without running the numbers, Sarah might perceive differently. "Eliminating the state income tax" sounds dramatic—surely that's a bigger deal than a credit increase? If her accuracy is low, she might vote for Candidate B, against her own financial interest. If her accuracy is high—perhaps because she used a policy calculator—she'd recognize that $4,000 in CTC expansion outweighs $2,500 in state tax savings for her specific situation.
+
+Now scale this across the electorate. Low-income families are dramatically better off under Candidate A (the CTC expansion helps them, and the SNAP cuts under Candidate B would devastate them). Upper-income families are modestly better off under Candidate B. With high voter accuracy, the election outcome reflects the actual distribution of gains and losses. With low accuracy, the outcome depends on which candidate's framing is more persuasive—and framing has nothing to do with true impact.
+
+Bias introduces a different distortion. If voters systematically underestimate certain costs or overestimate certain benefits, elections will systematically favor policies that exploit those biases, regardless of actual welfare impact. This echoes Caplan's finding about systematic rather than random voter errors. In the model, anti-tax bias—voters perceiving tax cuts as more valuable than equivalent benefit increases—consistently distorts outcomes in favor of tax-cutting candidates, even when the benefit-expanding candidate would improve welfare for the median voter.
 
 I want to be careful about overclaiming. These results come from a model with extreme simplifications. Real voters have identity attachments, party loyalties, and psychological dynamics that Democrasim ignores entirely. The model assumes voters are trying to maximize welfare through policy evaluation—exactly the "folk theory" that Achen and Bartels argue is wrong for most voters.
 
 But the model captures one real dynamic: *to the extent that some portion of voting behavior is influenced by perceived policy impacts, the quality of those perceptions matters.* Even if only 20% of the vote is policy-driven and 80% is identity-driven, improving the signal quality of that 20% still shifts outcomes.
+
+---
+
+## What the real-world evidence shows
+
+Democrasim is a toy model, but the question it poses—does voter information quality affect outcomes?—has been studied empirically.
+
+The evidence is mixed, which is itself informative.
+
+**Information provision experiments** have shown modest but real effects. When researchers in developing countries provided voters with candidate report cards—scorecards showing incumbents' performance on corruption, public spending, or economic outcomes—voting patterns shifted. In Brazil, Ferraz and Finan (2008) found that municipalities where corruption audit results were publicly disclosed before elections saw corrupt incumbents punished at the polls. The effect was concentrated where local media covered the disclosures—information that existed but didn't reach voters had no effect.
+
+**Voter guide experiments** in the United States have shown smaller effects. When nonpartisan voter guides are distributed, they tend to increase political knowledge without dramatically changing vote choices. The reason: in highly partisan environments, most voters have already committed to a party identity, and additional policy information rarely overrides that commitment. This is Achen and Bartels's point: identity dominates evaluation.
+
+**The persuasion asymmetry.** One of the more robust findings in political communication research is that accurate information and strategic misinformation don't compete on equal terms. A carefully crafted misleading claim can travel further and stick longer than a dry factual correction. Democrasim, by assuming unbiased noise, actually understates the real challenge: in practice, the noise isn't random—it's partially engineered by actors with incentives to distort perceptions.
+
+**The Kansas experiment.** In 2012, Kansas Governor Sam Brownback implemented large tax cuts that he described as a "real live experiment" in supply-side economics. The Tax Foundation and other groups projected economic growth that would offset revenue losses. Independent analysis—including models comparable to what PolicyEngine produces—projected large revenue shortfalls. The independent models proved correct: Kansas faced years of budget crises, school funding cuts, and ultimately a bipartisan reversal of the tax cuts in 2017. Voters didn't need a simulation to learn the lesson—they experienced it. But the experience cost the state billions of dollars and years of disrupted public services. Better information infrastructure might have shortened the feedback loop.
+
+The pattern: voter information tools don't fix democracy by themselves. They work best when combined with media coverage, institutional accountability, and genuine voter interest in policy evaluation. They work least in highly polarized environments where identity dominates evaluation. And they face organized opposition from actors who benefit from voter confusion.
+
+Democrasim captures the information channel in isolation. Reality involves that channel operating alongside—and often overwhelmed by—identity, emotion, and strategic communication. The case for better information tools isn't that they're sufficient. It's that they're one of the few levers that can be improved through infrastructure rather than through the much harder work of changing culture.
 
 ---
 

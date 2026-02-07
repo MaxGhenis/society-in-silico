@@ -1,3 +1,9 @@
+---
+chapters: [2, 3, 4, 5, 6, 10, 11]
+primary_chapter: 3
+narrative_role: "AEI's open-source US federal tax model; proof that open-source policy simulation was viable"
+---
+
 # Tax-Calculator
 
 **Institution**: AEI Open Source Policy Center → Policy Simulation Library (PSL)

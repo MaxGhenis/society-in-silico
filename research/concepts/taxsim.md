@@ -1,3 +1,9 @@
+---
+chapters: [2, 4, 5, 6, 10]
+primary_chapter: 2
+narrative_role: "NBER's long-running academic tax calculator; introduced in Ch 2 as independent challenger, used as validation benchmark in Ch 4"
+---
+
 # NBER TAXSIM
 
 Internet-accessible tax calculator maintained by the National Bureau of Economic Research.

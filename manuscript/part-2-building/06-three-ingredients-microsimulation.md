@@ -75,7 +75,7 @@ To understand a PolicyEngine policy, you browse GitHub, click on a file, and rea
 
 This isn't about better or worse—it's about different communities. EUROMOD serves researchers who work primarily in its ecosystem, often for years. The investment in learning its tooling pays off through deep capability. PolicyEngine and Tax-Calculator serve researchers who might contribute once, or who work across many projects, or who want to integrate microsimulation into other software. The investment in general Python skills pays off through breadth.
 
-The difference matters for transparency. When HM Treasury published their Algorithmic Transparency Record about PolicyEngine UK, they could link directly to the GitHub repository. Anyone curious about how the model works can browse the code without installing anything. That immediate accessibility is impossible with tools requiring specialized software to inspect.
+The difference matters for transparency. When HM Treasury evaluated PolicyEngine UK (Chapter 5), they could link directly to the GitHub repository. Anyone curious about how the model works can browse the code without installing anything. That immediate accessibility is impossible with tools requiring specialized software to inspect.
 
 ---
 

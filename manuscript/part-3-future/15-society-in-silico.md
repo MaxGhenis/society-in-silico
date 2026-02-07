@@ -60,7 +60,7 @@ Let me be honest about what's incomplete.
 
 **Uncertainty quantification is partial.** PolicyEngine gives point estimates. "This reform costs $50 billion." It should say: "This reform costs $50 billion, 90% CI [$35B, $68B]." We've identified the problem; we haven't solved it everywhere.
 
-**Value forecasting is untested.** Chapter 14 proposed an empirical research program. Train on historical survey data, validate on held-out periods, project to long reflection. The experiment hasn't been run. It might fail.
+**Value forecasting is preliminary.** Chapter 14 described initial experiments—17 GSS variables, promising but limited results. The full research program—systematic validation across dozens of variables, cross-national replication, longer forecast horizons—remains to be done. The early results might not generalize.
 
 **Adoption is early.** PolicyEngine has thousands of users, but policy debates still happen mostly without it. The tools exist; the cultural change hasn't fully occurred.
 
@@ -136,7 +136,7 @@ As AI systems become more capable, they'll increasingly be asked questions about
 
 The AI can respond in two ways:
 
-**Option 1: Make stuff up.** Draw on training data, synthesize plausible-sounding text, perhaps hallucinate eligibility rules or invent statistics. This is what happens today. GPT-4 gets tax questions right 67% of the time—worse than a coin flip for true/false {cite}`blairstanek2023gpt4tax`.
+**Option 1: Make stuff up.** Draw on training data, synthesize plausible-sounding text, perhaps hallucinate eligibility rules or invent statistics. This is what happens today. Even frontier models get fewer than one in three complete tax returns right {cite}`bock2025taxcalcbench`.
 
 **Option 2: Call reliable tools.** Use PolicyEngine as a backend. Look up actual parameters from Cosilico's validated rules. Calculate instead of guess. Return auditable results.
 

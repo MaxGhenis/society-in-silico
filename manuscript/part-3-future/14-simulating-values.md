@@ -25,15 +25,23 @@ As AI systems become more capable, a question looms: What should they be trying 
 
 The naive answer—"do what humans want"—immediately fractures. Which humans? Their stated preferences or revealed preferences? What they want now or what they'd want with better information? What one culture values or what's universal?
 
-Current approaches to AI alignment take different positions:
+Stuart Russell, the UC Berkeley computer scientist whose textbook *Artificial Intelligence: A Modern Approach* trained a generation of AI researchers, crystallized the problem in *Human Compatible* (2019) {cite}`russell2019human`. His argument: the standard model of AI—optimize a fixed objective function—is fundamentally dangerous. An AI system that pursues a fixed goal with sufficient capability will resist being turned off (that would prevent goal achievement) and acquire resources (more resources means better goal achievement). The problem isn't malice. It's competence applied to the wrong objective.
 
-**RLHF (Reinforcement Learning from Human Feedback)** trains AI on current human preferences. Rate these outputs; the model learns what we approve of. Problem: our current preferences may be biased, inconsistent, or short-sighted.
+Russell's proposed solution has three principles: the machine's purpose is to maximize the realization of human preferences; the machine is initially uncertain about what those preferences are; and the ultimate source of information about human preferences is human behavior. The third principle means the AI should *observe* rather than *assume*—learning preferences from how people act rather than from a fixed specification.
 
-**Constitutional AI** defines principles the AI should follow. Don't be harmful, be helpful, be honest. Problem: who writes the constitution? How do you handle genuine moral disagreement?
+This is elegant but incomplete. Human behavior reveals current preferences, which may be confused, biased, or based on inadequate information. An AI system that learns from observed behavior might learn to optimize for what people impulsively click rather than what they would endorse on reflection. Russell acknowledges this—it's the central tension his framework identifies but doesn't fully resolve.
 
-**Idealized values** asks what fully rational, fully informed humans would want. Problem: this is a philosophical thought experiment, not an empirical research program.
+Current practical approaches to AI alignment take different positions on this tension:
+
+**RLHF (Reinforcement Learning from Human Feedback)** trains AI on current human preferences. Rate these outputs; the model learns what we approve of. Problem: our current preferences may be biased, inconsistent, or short-sighted. The raters are a small, unrepresentative sample—typically English-speaking knowledge workers, not the global population the AI will serve.
+
+**Constitutional AI**, developed by Anthropic, defines principles the AI should follow—be helpful, be harmless, be honest—and trains models to self-evaluate against these principles {cite}`anthropic2023constitutional`. The approach has practical advantages: it scales better than human rating, produces more consistent training signal, and can be updated by revising the principles rather than retraining from scratch. Problem: who writes the constitution? The principles reflect the values of the lab's researchers. When Anthropic's team writes "be harmless," they're encoding a specific interpretation of harm that might not match everyone's. How do you handle genuine moral disagreement—between cultures, between generations, between individuals who disagree about what "harmful" means?
+
+**Idealized values** asks what fully rational, fully informed humans would want. Problem: this is a philosophical thought experiment, not an empirical research program. No one specifies how to compute the answer.
 
 Each approach has merit. None has cracked the fundamental difficulty: values are contested, evolving, and uncertain.
+
+What if there were an empirical route into the problem—not solving it completely, but making progress through data rather than just philosophy?
 
 ---
 
@@ -230,6 +238,20 @@ Several reasons:
 **Scale and cost.** Deep deliberative processes are expensive. Value forecasting offers an approximate, scalable complement.
 
 The answer isn't "don't ask people"—it's "ask people, model the patterns, project the trajectories, and be transparent about uncertainty."
+
+---
+
+## Cross-Cultural Trajectories
+
+The GSS data is American. Are value trajectories universal?
+
+The World Values Survey, conducted across nearly 100 countries since 1981, suggests both convergence and divergence. On some dimensions—acceptance of gender equality, rejection of authoritarian governance—there's a broad trend toward liberal values across most societies, driven primarily by economic development and generational replacement. Ronald Inglehart's "post-materialist" thesis holds that as societies become wealthier and more secure, their values shift from survival priorities (economic security, physical safety) toward self-expression priorities (autonomy, tolerance, environmental protection).
+
+But the convergence is partial. On other dimensions—attitudes toward religion, family structure, sexual norms—cultural zones persist. Confucian-influenced societies show different trajectories than Protestant European societies, which differ from Islamic-majority societies. And recent years have seen "values backlash" in several societies: Hungary, Poland, Russia, parts of the United States—movements that reject cosmopolitan liberal values and assert traditional or nationalist alternatives.
+
+For value forecasting, this means any global projection must model heterogeneity at the civilizational level, not just the individual level. The distribution of post-reflection values for American society might differ fundamentally from the distribution for Chinese or Nigerian society—not because one is "ahead" and the other "behind," but because different historical experiences and cultural starting points produce genuinely different trajectories.
+
+This complicates the AI alignment application. An AI system aligned to the projected values of one civilization would be misaligned for another. The solution is the same pluralistic approach described earlier—forecasting distributions rather than points, maintaining uncertainty about which trajectories are "correct," and designing AI systems that perform well across a range of plausible value distributions rather than optimizing for any single one.
 
 ---
 

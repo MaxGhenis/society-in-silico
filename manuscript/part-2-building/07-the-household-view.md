@@ -129,7 +129,7 @@ PolicyEngine UK made these interactions visible. When Chancellor Rishi Sunak red
 
 When Prime Minister Liz Truss announced sweeping tax cuts in September 2022, PolicyEngine produced distributional analysis within hours—the only independent household-level estimates available while the policies were being debated. The tool showed that the cuts disproportionately benefited higher earners, a finding that contributed to the public backlash. Within weeks, most of the cuts were reversed.
 
-In 2025, HM Treasury published an evaluation of PolicyEngine UK under the Algorithmic Transparency Recording Standard {cite}`hmt2025policyengine`. The fact that a government treasury department was formally evaluating an open-source model as a potential supplement to its own internal tools marked a shift. The walls between government and independent analysis were thinning.
+As Chapter 5 described, HM Treasury eventually published a formal evaluation of PolicyEngine UK {cite}`hmt2025policyengine`. The household calculator that started as a research prototype had become something government took seriously enough to benchmark against their own internal models.
 
 ---
 

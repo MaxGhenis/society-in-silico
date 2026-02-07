@@ -18,21 +18,31 @@ That's the fork in the road. That's what this book is about.
 
 ## The AI can't do your taxes
 
-In 2023, researchers at Georgetown Law posed 276 true/false tax questions to GPT-4, the most capable AI system in the world at the time. They provided the full text of the Internal Revenue Code as context. GPT-4 got 67% right {cite}`blairstanek2023gpt4tax`.
+In July 2025, Column Tax released TaxCalcBench—a benchmark testing whether AI could correctly compute complete federal tax returns {cite}`bock2025taxcalcbench`. They gave frontier models everything they needed: the tax rules, the taxpayer's information, and as much time to think as they wanted. The best-performing model, Gemini 2.5 Pro, got fewer than one in three returns right. Claude Opus 4 managed 27%. These are the most capable AI systems in the world, and they can't reliably do what a $50 copy of TurboTax does without breaking a sweat.
 
-Not 67% on trick questions or obscure edge cases—67% on questions that tax professionals answer routinely. The errors weren't mathematical. GPT-4 could do the arithmetic. It misread the statutes. It confused filing statuses. It hallucinated phase-out thresholds that didn't exist.
+The errors weren't random. Models used percentage-based bracket calculations instead of the IRS tax tables, producing returns that were off by $3-5 each time. They miscalculated credit eligibility. They stumbled on supplementary forms. The pattern was consistent across every model tested.
 
-By 2025, the picture hadn't improved much. Column Tax released TaxCalcBench, a benchmark testing whether AI could correctly compute complete tax returns {cite}`columntax2024`. The best-performing general-purpose model—GPT-5 with web search—got 41.7% of returns fully correct. Claude Opus 4 managed 27.5%. Gemini 2.5 Pro hit 32.4%. Even Filed, a specialized tax AI, reached only 72.5%.
+This wasn't a surprise to researchers who'd been tracking the problem. In 2023, researchers at Johns Hopkins and the University of Maryland found GPT-4 answered only 67% of true/false tax questions correctly—better than chance, but nowhere near reliable enough for financial decisions {cite}`blairstanek2023gpt4tax`. Two years and two model generations later, the fundamental limitation remains.
 
-These aren't acceptable error rates for a system that determines how much you owe the government.
-
-The pattern reveals something important about AI and policy. Language models can generate fluent explanations of tax law. They can summarize complex regulations. They can even write passable tax planning memos. What they can't do is *calculate*—apply specific rules to specific circumstances and produce a number that's guaranteed to be correct.
-
-Tax law changes every year. Fifty states have different rules. Eligibility for benefits depends on dozens of interacting variables. The combinatorial complexity exceeds what pretraining can memorize. As Column Tax's engineers put it: "Today's LLMs cannot 'do taxes' on their own because tax calculations require 100% correctness."
+Language models can generate fluent explanations of tax law. They can summarize complex regulations. What they can't do is *calculate*—apply specific rules to specific circumstances and produce a number that's guaranteed to be correct. Tax law changes every year. Fifty states have different rules. Eligibility for benefits depends on dozens of interacting variables. The combinatorial complexity exceeds what pretraining can memorize.
 
 The solution isn't better training. It's better tools—deterministic, auditable computational tools that AI systems can call when they need exact answers.
 
 This is the central technical insight of the book: AI needs tools, and the tools that matter most for policy questions are microsimulation models.
+
+---
+
+## Why now
+
+Three trends are converging to make this moment different from any previous era of policy analysis.
+
+**AI systems are becoming the primary interface for information.** When someone asks "how much would I get from the Child Tax Credit?" they increasingly ask an AI assistant rather than navigating IRS.gov. If the assistant hallucinates an answer, the person may make financial decisions based on fiction. The infrastructure that AI systems call when they need accurate answers doesn't exist as a unified, production-ready service. Each company building AI assistants has to solve the tax-and-benefits problem from scratch—or get it wrong.
+
+**Policy complexity is accelerating.** The US tax code has roughly doubled in length since 1985. The interaction between federal taxes, state taxes, and means-tested benefit programs creates a combinatorial explosion that no individual can navigate without computational tools. A single parent earning $35,000 in Texas faces a different effective tax rate than the same parent in New York—not by a small amount, but potentially by thousands of dollars. The complexity isn't a bug in the system; it's the accumulated result of decades of legislation, each layer addressing a real problem while creating new interactions with existing programs.
+
+**Open-source infrastructure has matured.** A decade ago, the idea of encoding an entire country's tax-benefit system as publicly inspectable code was aspirational. Today, PolicyEngine covers US federal taxes plus all fifty states, the UK, and Canada—maintained by over fifty open-source contributors. EUROMOD covers twenty-seven EU countries. OpenFisca has been deployed on four continents. The question is no longer whether open policy simulation is possible. It's whether it can become the shared infrastructure that AI systems, governments, and citizens all rely on.
+
+These trends create both opportunity and risk. The opportunity: a world where anyone can understand how policy affects them, where AI assistants give accurate answers about taxes and benefits, where policymakers can model proposals against a shared baseline that everyone trusts because everyone can inspect it. The risk: a world where opaque models make decisions about benefits and creditworthiness, where AI systems confidently give wrong answers about financial matters, where the tools of policy analysis remain locked inside institutions while the public debates with anecdotes.
 
 ---
 
@@ -69,6 +79,12 @@ These models exist. The question is who controls them.
 **What are they for?** Optimization or understanding?
 
 The gap between policy debates and policy analysis is vast. Political arguments run on emotion and tribal loyalty. Policy analysis runs on computation and precision. Bridging that gap without sliding into technocracy is the central challenge.
+
+Consider the stakes concretely. When Congress debated extending the 2017 Tax Cuts and Jobs Act in 2025, the ten-year cost estimates ranged from $4 trillion to $5 trillion depending on the assumptions—a trillion-dollar range that could fund entire new programs or blow a hole in the deficit. The official scorekeepers at the Joint Committee on Taxation used models the public couldn't inspect. Independent groups like the Tax Policy Center, the Penn Wharton Budget Model, and PolicyEngine produced their own estimates, each with different data and methods. Members of Congress voted based on whichever number supported their position.
+
+This isn't how it has to work. Imagine instead that every estimate was produced by open models—inspectable, reproducible, challengeable. That disagreements could be traced to specific assumptions rather than handwaved as "different methodologies." That a citizen could enter their own household circumstances and see, before a vote, exactly what the proposal would mean for them. Not approximately. Not according to a talking head. Precisely, calculated from the same rules that would govern their taxes.
+
+That infrastructure is closer to reality than most people realize. And building it—making it accurate, accessible, and trustworthy—is the project this book describes.
 
 ---
 

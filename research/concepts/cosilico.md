@@ -80,17 +80,34 @@ def eitc(
 
 ## Market Context
 
-The gap in infrastructure:
+### Tax software market
+Global tax software/tax tech market estimated at ~$20-25B (2025), growing 10-13% CAGR to $37-60B by 2030-2034 (Mordor Intelligence, Precedence Research, Fortune Business Insights).
+
+### Existing infrastructure providers
 
 | Capability | Provider | Limitation |
 |------------|----------|------------|
-| Sales tax | Avalara ($8.4B) | Sales tax only |
+| Sales tax | Avalara (acquired by Vista Equity, $8.4B, Oct 2022) | Sales tax only |
+| Sales tax | Vertex Inc (~$750M revenue, ~$3.1B market cap) | Sales tax only |
+| Sales tax SaaS | Anrok ($100M+ funding, Series C $55M Oct 2025) | SaaS sales tax only |
 | Payroll tax | Symmetry, ADP | Payroll only |
+| Tax filing API | Column Tax (acquired by Aiwyn, Nov 2025) | Filing, not calculation |
+| Embedded tax | april ($78M funding, Series B $38M Jul 2025) | Filing, not benefits |
 | Benefits screening | Benefit Kitchen | 7 states, no taxes |
-| Tax filing | TurboTax, Column | No API |
+| Tax prep | Intuit/TurboTax | Consumer, no API |
 | Policy simulation | Academic models | Not production-ready |
 
+### Open-core precedents
+The open-core model in developer infrastructure has produced large outcomes:
+- HashiCorp: acquired by IBM for $6.4B (Feb 2025)
+- Confluent: acquired by IBM for $11B (Dec 2025)
+- MongoDB: $34B market cap, $2B revenue
+- Databricks: $134B valuation, $4.8B+ revenue run-rate
+- Elastic: $7.9B market cap, $1.55B revenue
+
 **The opportunity**: No one provides income tax + benefits + prediction + simulation in a single production API.
+
+**NOTE**: Previous versions of this note incorrectly stated Thomson Reuters acquired Avalara. Thomson Reuters won a bidding war for Pagero (Swedish e-invoicing), not Avalara. Avalara was acquired by Vista Equity Partners.
 
 ## Why Now
 

@@ -42,15 +42,32 @@ Rules as Code (RaC) is the process of encoding legislation, regulations, and pol
 - [[openfisca]] is flagship implementation
 - Government-created, now international
 
-### Australia
-- GovCMS platform integrating RaC
-- Trials offered 2024-2025
+### France: LexImpact
+- 2019: French National Assembly built **LexImpact** on OpenFisca
+- MPs can simulate effects of amendments on income tax, local authorities, social contributions
+- 122 legislative simulations in parliamentary debates by 2021
+- First time parliament had independent analytical capacity (previously relied on Finance Ministry)
+
+### Australia / New South Wales
+- NSW made its **first regulation machine-readable** using OpenFisca
+- Includes Community Gaming Regulation 2020 and Energy Security Safeguard
+- ESS was previously a 120-page policy document
+- NSW Minister: "a game-changer for smart regulation"
+- Code for Australia partnered on Energy Saving Scheme RaC project
+
+### Singapore
+- Singapore Management University received **$15 million** from National Research Foundation
+- Five-year Research Programme in Computational Law
+- Developed **L4**, a domain-specific programming language for expressing laws as code
+- Wong Meng Weng and Alexis Chun (Legalese startup) joined as researchers
+- SMU's Centre for Digital Law collaborated with Jersey Legislative Drafting Office
 
 ### Other Jurisdictions
-- Tunisia
-- Spain
-- Barcelona
-- Senegal
+- Tunisia (OpenFisca package)
+- Senegal (OGP hackathon demo)
+- Barcelona ("Les meves ajudes" benefits tool)
+- Japan (Institute for Poverty Prevention benefit estimator)
+- Côte d'Ivoire, Mali, Uruguay (OpenFisca packages)
 
 ## AI and Rules as Code
 

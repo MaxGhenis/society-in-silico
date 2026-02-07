@@ -103,9 +103,34 @@ Representative Microdata (deterministic) → Persona Conditioning → LLM Respon
 
 Without the microdata layer, you're just getting the LLM's modal prediction N times with noise. With it, you're sampling from a distribution that reflects actual human heterogeneity.
 
+## Updated AI + Tax Developments (2025-2026)
+
+### TaxCalcBench (July 2025)
+Column Tax's benchmark: even the best frontier model (Gemini 2.5 Pro) computes only 32.35% of full tax returns correctly. See [[taxcalcbench]] for details. The accuracy gap hasn't closed with better models.
+
+### Column Tax's Iris Agent
+AI tax development agent that reads tax law and generates code. Custom orchestration: topological sorting of tax form dependencies, embeddings + vector DB over IRS forms, code generation, testing. The computation graph has 100,000+ nodes. Filed 1M+ returns, $1B+ in refunds. Column Tax acquired by Aiwyn Nov 2025.
+
+### IRS AI Adoption
+- Deployed Salesforce Agentforce across Office of Chief Counsel, Taxpayer Advocate, Office of Appeals (document search, case summaries)
+- Replaced Discriminant Analysis System (DAS) with Line Anomaly Recommender (LAR) for corporate audit selection
+- AI now used in both audit selection and execution
+
+### Intuit Agentic AI
+Intuit's agentic platform can pre-prepare up to 80% of simple tax situations for TY2025. Paired with 13,000 human experts.
+
+### AI Financial Regulation
+- SEC "AI washing" enforcement priority — fined Nate Inc ($42M fraud), Presto Automation
+- CFPB requires specific reasons in AI-driven credit denials
+- EU AI Act (fully applicable Aug 2026): AI in credit scoring, insurance, complex tax = "High-Risk"
+- No comprehensive US federal AI governance framework
+
 ## Sources
 
 - PolicyEngine blog posts (policyengine-app-v2/app/src/data/posts/articles/)
 - Cosilico THESIS.md
 - Cosilico AI_ENCODING.md
 - Cosilico agent.py implementation
+- [TaxCalcBench](https://arxiv.org/abs/2507.16126)
+- [Column Tax Iris](https://www.columntax.com/blog/introducing-iris-our-ai-tax-development-agent)
+- [IRS AI adoption](https://www.eisneramper.com/insights/tax/ai-irs-transforming-0126/)

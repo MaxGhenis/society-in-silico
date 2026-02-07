@@ -1,3 +1,9 @@
+---
+chapters: [2, 3, 5, 15]
+primary_chapter: 3
+narrative_role: "UK's first freely available tax-benefit microsimulation model; EUROMOD spin-off"
+---
+
 # UKMOD
 
 Free, open-source tax-benefit microsimulation model for the UK, maintained by the University of Essex.
