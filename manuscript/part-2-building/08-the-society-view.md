@@ -12,7 +12,9 @@ This is the society view: microsimulation scaled from individual households to t
 
 The household view answers "what would this policy mean for me?" The society view answers "what would this policy mean for everyone?"
 
-The transition seems straightforward: run the household calculation for every household in the country, sum up the results. In principle, that's exactly what happens. In practice, it requires solving some of the hardest problems in policy analysis.
+The question has a distinguished history. In 1974, Joseph Pechman and Benjamin Okner at Brookings published *Who Bears the Tax Burden?*, the first comprehensive attempt to allocate all US tax burdens across the income distribution using household-level data {cite}`pechman1974taxburden`. They merged data for 72,000 households and found that the American tax system was essentially proportional for the vast majority of families—a finding that challenged both conservative claims that taxes were too progressive and liberal claims that they were too regressive. The methodology they developed—using micro-data with incidence assumptions to distribute tax burdens across income groups—became the template for every subsequent distributional analysis, from Treasury's Office of Tax Analysis to the JCT to the CBO's annual distribution reports.
+
+The transition from household to society seems straightforward: run the household calculation for every household in the country, sum up the results. In principle, that's exactly what happens. In practice, it requires solving some of the hardest problems in policy analysis.
 
 Start with the obvious challenge: you can't actually survey every household. The Current Population Survey samples about 60,000 households each month—a tiny fraction of the roughly 130 million households in America {cite}`census2024cps`. Each sampled household must represent thousands of similar households in the population.
 
@@ -100,11 +102,13 @@ Each breakdown tells a different story about who the policy affects.
 
 Beyond poverty and distribution, how does a reform affect overall inequality?
 
-PolicyEngine calculates changes in the Gini coefficient—the standard measure of income inequality. A Gini of 0 means perfect equality (everyone has the same income). A Gini of 1 means perfect inequality (one person has everything).
+PolicyEngine calculates changes in the Gini coefficient—the standard measure of income inequality. A Gini of 0 means perfect equality (everyone has the same income). A Gini of 1 means perfect inequality (one person has everything). The Gini is the most commonly reported metric, but it's most sensitive to changes in the middle of the distribution. A reform that helps the very poorest might barely move the Gini even if it transforms lives at the bottom.
+
+That's why PolicyEngine also supports other inequality measures. The Atkinson index, parameterized by an "inequality aversion" parameter, places more weight on the bottom of the distribution as aversion increases—making it more responsive to antipoverty reforms. Generalized Entropy measures can be decomposed into within-group and between-group components, revealing whether inequality is primarily a between-state problem or a within-state problem. Percentile ratios like the 90/10 ratio are intuitive: what's the ratio of income at the 90th percentile to income at the 10th?
 
 A reform that costs $10 billion might reduce the Gini by 0.5%. Another reform with the same budget cost might reduce it by 0.2%. The difference reveals different distributional philosophies embodied in policy design.
 
-Inequality measures complement poverty measures. A reform could reduce poverty while increasing inequality (by benefiting the near-poor more than the poorest). Or it could reduce inequality while having minimal poverty impact (by redistributing among the middle class).
+Inequality measures complement poverty measures. A reform could reduce poverty while increasing inequality (by benefiting the near-poor more than the poorest). Or it could reduce inequality while having minimal poverty impact (by redistributing among the middle class). The American Rescue Plan's expanded Child Tax Credit illustrates the distinction: it dramatically reduced child poverty but had a more modest effect on overall inequality, because the transfers were concentrated at the bottom rather than redistributing across the entire distribution.
 
 PolicyEngine doesn't tell you which outcomes to prefer. It tells you what the outcomes are.
 
@@ -171,6 +175,34 @@ Consider the sequence when a major tax proposal is introduced. First, the policy
 **The US CTC debate.** When proposals circulated in 2024 and 2025 to expand the Child Tax Credit, PolicyEngine could show the trade-offs of different design choices in real time. Making the credit fully refundable cost more but delivered more to the poorest families. Increasing the per-child amount had a different distributional profile than lowering the phase-in threshold. For each variant, PolicyEngine produced budget scores, poverty impacts, and decile-level distributional charts—the same outputs that JCT and TPC produced, but available instantly and queryable by anyone.
 
 This capability depends on having the model already built and maintained. The investment is in infrastructure, not in each individual analysis. And it compounds: each reform analyzed adds to the library of examples, builds user trust, and reveals edge cases that improve the model.
+
+---
+
+## Case study: the expanded Child Tax Credit
+
+The 2021 American Rescue Plan expansion of the Child Tax Credit is the clearest recent demonstration of what the society view can reveal—and what happens when it's missing.
+
+The ARP increased the CTC from $2,000 per child to $3,600 for children under six and $3,000 for children aged six through seventeen. More importantly, it made the credit fully refundable—eliminating the earnings phase-in that had excluded the poorest families—and delivered half via monthly advance payments from July through December 2021.
+
+Before enactment, Columbia University's Center on Poverty and Social Policy used microsimulation to project that the full ARP relief package could cut child poverty by more than half {cite}`columbia2021ctc`. After enactment, Census data confirmed the prediction: child poverty fell to a record low of 5.2% under the Supplemental Poverty Measure in 2021—the lowest rate on record going back to 1967. The expanded CTC alone lifted 2.9 million children out of poverty {cite}`census2022childpoverty`.
+
+The microsimulation predictions were remarkably close to actual outcomes. This wasn't because the models were lucky. It was because the CTC expansion operated through mechanical channels—direct cash transfers with simple eligibility rules—where behavioral uncertainty is low. The society view excels at exactly this kind of analysis: tracing known rules through a representative population to estimate who benefits and by how much.
+
+When the expansion expired in January 2022, Columbia researchers tracked the reversal in near-real-time using monthly poverty estimates. Child poverty nearly doubled within months. The before-and-after comparison was stark, and it was visible only because microsimulation had established the baseline.
+
+The CTC episode also illustrates a subtlety about distributional analysis. The expansion was designed to reach the poorest families by removing the earnings phase-in. But because it also raised the maximum credit for all eligible families, higher-income households benefited too. The distributional tables showed both effects simultaneously: the largest *percentage* gains at the bottom, but significant *dollar* gains further up the distribution. Whether this pattern represented a feature (broad coalition) or a bug (inefficient targeting) depended on values the model couldn't adjudicate.
+
+---
+
+## Case study: the UK mini-budget
+
+The UK provides a contrasting example. In September 2022, Chancellor Kwasi Kwarteng proposed what became known as the "mini-budget"—eliminating the 45p additional rate of income tax, cutting the basic rate, and reversing a planned National Insurance increase. The package was presented as growth-oriented. The distributional reality was different.
+
+PolicyEngine UK published analysis within hours showing the package overwhelmingly benefited higher earners: the top decile gained an average of £2,500 per year while the bottom decile gained essentially nothing {cite}`policyengine2022review`. These were among the only independent household-level distributional estimates available during the critical first days of debate. Media outlets cited the analysis. Within weeks, the government reversed course on the 45p rate abolition; within a month, the Prime Minister resigned.
+
+Around the same time, a more nuanced policy change received less attention but illustrated the society view's analytical power more precisely. When Chancellor Rishi Sunak reduced Universal Credit's taper rate from 63% to 55% in the Autumn 2021 Budget—partially offsetting the removal of the temporary £20/week COVID uplift—microsimulation revealed a crucial distinction. The taper rate cut only helped *working* UC recipients, not the unemployed or those too sick to work. The £20 uplift had reached everyone on UC. Per pound spent, the uplift reduced poverty roughly 40% more effectively than the taper cut. But the taper cut improved work incentives: the share of workers facing marginal effective tax rates above 70% fell from 26% to 9%.
+
+Two policies, similar costs, very different distributional signatures. Without the society view, you couldn't see the tradeoff.
 
 ---
 

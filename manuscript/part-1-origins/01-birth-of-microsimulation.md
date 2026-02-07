@@ -10,9 +10,11 @@ This is the story of how one frustrated economist imagined simulating society fr
 
 ## The Engineer Who Became an Economist
 
-Guy Orcutt came to economics through an unusual path. He earned a B.S. in Physics from the University of Michigan in 1939 before switching to economics for his M.A. (1940) and Ph.D. (1944) {cite}`watts1991orcutt`. He viewed the world as a system to be understood and improved. In his autobiographical reflections, he described "my early fascination with science, my transition from engineering to economics."
+Guy Orcutt came to economics through an unusual path. He earned a B.S. in Physics from the University of Michigan in 1939 before switching to economics for his M.A. (1940) and Ph.D. (1944) {cite}`watts1991orcutt`. He viewed the world as a system to be understood and improved. In his autobiographical reflections, he described "my early fascination with science, my transition from engineering to economics" {cite}`orcutt1990autobiography`.
 
 Inspired by the econometric work of Jan Tinbergen, the young Orcutt harbored what he called his "Tinbergen dream"—building a model that could capture an entire national economy. Early in his career at MIT, he designed and built an analogue electrical-mechanical "regression analyzer" to calculate statistical estimates {cite}`cheng2020orcutt`. He thought like an engineer: if you want to understand a system, you build a model of it.
+
+He was already a significant figure before microsimulation. In 1949, with Donald Cochrane, he published a method for handling serial correlation in regression analysis that became standard econometric practice—the Cochrane-Orcutt procedure {cite}`cochrane1949orcutt`. He directed the Littauer Statistical Laboratory at Harvard. He consulted for the Federal Reserve Board and the International Monetary Fund. He was, by any measure, a successful academic economist working within the mainstream.
 
 But as he worked with macroeconomic models through the 1940s and early 1950s, frustration mounted. The models could predict aggregates—GDP, inflation, unemployment. What they couldn't do was tell you what would happen to actual people.
 
@@ -22,7 +24,9 @@ But as he worked with macroeconomic models through the 1940s and early 1950s, fr
 
 To understand what Orcutt was reacting against, you need to understand how economists thought about the economy in the 1950s.
 
-The dominant approach was macroeconomic modeling. Economists built systems of equations describing aggregate relationships: total consumption as a function of total income, investment as a function of interest rates, employment as a function of output. These models could predict GDP growth or inflation. They helped governments understand business cycles and plan fiscal policy.
+The dominant approach was macroeconomic modeling. Economists built systems of equations describing aggregate relationships: total consumption as a function of total income, investment as a function of interest rates, employment as a function of output. The Cowles Commission—the leading center for mathematical economics, then at the University of Chicago before moving to Yale—was pursuing Keynesian simultaneous-equation models with enormous ambition and limited success. Critics like Milton Friedman argued their forecasts were no better than naive extrapolation. Henri Theil and T.C. Liu pointed out that structural identification was rarely possible, making the theories virtually unfalsifiable. The data were poor, and they sharply restricted what could be estimated.
+
+These models could predict GDP growth or inflation. They helped governments understand business cycles and plan fiscal policy.
 
 But they had a fundamental limitation. As Orcutt put it, with characteristic understatement:
 
@@ -90,7 +94,9 @@ Orcutt knew this was hard. He published anyway. The idea mattered more than the 
 
 But Orcutt's vision was distinctive in its focus on policy relevance. He wasn't simulating weather patterns or playing chess. He was simulating people—their economic decisions, their interactions with government, their trajectories through life. The model's purpose wasn't scientific curiosity alone. It was democratic accountability: give policymakers the tools to understand how their decisions affect citizens.
 
-For the next four years, he built a prototype. In 1961, he and three co-authors—Martin Greenberger, John Korbel, and Alice Rivlin (who would later become the first director of the Congressional Budget Office)—published *Microanalysis of Socioeconomic Systems: A Simulation Study* {cite}`orcutt1961microanalysis`. The book demonstrated a working microsimulation model of the US economy, limited in scope but proof that the concept was viable. It simulated 10,000 decision-making units through time, modeling fertility, mortality, labor force participation, and income.
+For the next four years, he built a prototype. In 1961, he and three co-authors—Martin Greenberger, John Korbel, and Alice Rivlin—published *Microanalysis of Socioeconomic Systems: A Simulation Study* {cite}`orcutt1961microanalysis`. The book demonstrated a working microsimulation model of the US economy, limited in scope but proof that the concept was viable. It simulated 10,000 decision-making units through time, modeling fertility, mortality, labor force participation, and income.
+
+The co-author list matters. Alice Rivlin was Orcutt's doctoral student at Harvard. Fourteen years later, she would become the first director of the Congressional Budget Office—the institution that would make microsimulation a standard tool of American governance. Rivlin later served as Vice Chair of the Federal Reserve. The intellectual lineage from Orcutt's 1957 paper to the CBO's budget scoring infrastructure runs through a single advisor-student relationship.
 
 The gap between proof-of-concept and policy-relevant tool remained vast. But the intellectual foundation was laid.
 
@@ -112,9 +118,11 @@ Sadowsky later spent time at the Brookings Institution and then the Urban Instit
 
 ## DYNASIM: The Eighteen-Year Wait
 
-It wasn't until 1969 that Orcutt got the resources to build something at scale.
+It wasn't until 1969 that Orcutt got the resources to build something at scale—and the path there included a detour.
 
-The Urban Institute, a newly founded think tank in Washington, D.C., hired him to lead a project called DYNASIM—Dynamic Simulation of Income Model. The ambition was comprehensive: simulate all major demographic and economic life events. Births. Deaths. Marriages. Divorces. Education. Employment. Disability. Retirement. Taxes. Benefits.
+After publishing the 1961 book, Orcutt moved from Harvard to the University of Wisconsin-Madison, where he founded the Social Systems Research Institute in 1959. He intended to build a full-scale microsimulation there. It didn't work. The computing resources were insufficient, the institutional support was uncertain, and the ambition outstripped what a university lab could sustain {cite}`cheng2020orcutt`. Cheng's intellectual biography describes it as a "failed trial"—a decade of effort that produced methodological advances but no working policy tool.
+
+The Urban Institute, a newly founded think tank in Washington, D.C., hired him in 1968 to lead a project called DYNASIM—Dynamic Simulation of Income Model. The ambition was comprehensive: simulate all major demographic and economic life events. Births. Deaths. Marriages. Divorces. Education. Employment. Disability. Retirement. Taxes. Benefits.
 
 The technical constraints were still formidable. DYNASIM ran on a DEC system-10 mainframe using a custom software framework called MASH (Microanalytic Simulation of Households) {cite}`soa1997dynasim`. It simulated 10,000 people—a tiny fraction of the U.S. population, but enough to draw statistical inferences.
 
@@ -150,15 +158,17 @@ This comprehensive scope came at a cost. DYNASIM was expensive to run, difficult
 
 DYNASIM didn't stay alone for long.
 
-Its success (and limitations) inspired adaptations around the world {cite}`li2013survey`:
+The Urban Institute itself continued developing the model through successive generations. DYNASIM2, built in the early 1980s with a narrower focus on retirement income policy, combined elements of the original with the PENSIM pension model. DYNASIM3, a major overhaul around 2000, expanded to project the size and characteristics of the US population over 75 years using Social Security and Medicare trustees' assumptions. DYNASIM4, led by Karen Smith and Melissa Favreault, remains active today—one of the longest-lived computational models in the social sciences {cite}`soa1997dynasim`.
 
-- **CORSIM** (United States): A direct descendant, continuing the dynamic microsimulation tradition at Cornell.
+Meanwhile, Orcutt's framework inspired adaptations around the world {cite}`li2013survey`:
+
+- **CORSIM** (United States): Developed by Steven Caldwell at Cornell, a direct descendant that in turn spawned POLISIM (for Social Security Administration analysis) and DYNACAN (Canada's dynamic pension model).
 - **CANSIM** (Canada): Adapted DYNASIM's framework for Canadian policy analysis.
-- **SVERIGE** (Sweden): Applied the approach to Scandinavian welfare state questions.
+- **SVERIGE** (Sweden): Applied the approach to Scandinavian welfare state questions, modeling the entire Swedish population.
 
-Meanwhile, a parallel tradition emerged: static microsimulation. Where Orcutt's dynamic models projected forward in time, static models asked a simpler question: what would happen to today's population if we changed a policy today?
+A parallel tradition emerged alongside these dynamic models: static microsimulation. Where Orcutt's dynamic models projected forward in time, static models asked a simpler question: what would happen to today's population if we changed a policy today?
 
-Static models sacrificed the life-course perspective for tractability. They could be updated faster, run more cheaply, and applied to more specific policy questions. The IRS, Congressional Budget Office, and Treasury all developed static tax models. The UK's Institute for Fiscal Studies built influential static models for budget analysis.
+Static models sacrificed the life-course perspective for tractability. They could be updated faster, run more cheaply, and applied to more specific policy questions. The IRS, Congressional Budget Office, and Treasury all developed static tax models. The UK's Institute for Fiscal Studies built influential static models for budget analysis. Joseph Pechman and Benjamin Okner at Brookings pioneered the distributional approach in 1974, merging data for 72,000 households to estimate who really bore the burden of American taxes—a question aggregate models could never answer {cite}`pechman1974taxburden`.
 
 Both traditions—dynamic and static—descended from Orcutt's insight that modeling individuals was the path to understanding distributions.
 
@@ -238,11 +248,13 @@ And perhaps most fundamentally: microsimulation tells you what a policy would do
 
 ## The Legacy
 
-Guy Orcutt died on March 5, 2006 {cite}`prabook2024orcutt`, having seen his vision transform from impractical dream to standard methodology. Every modern tax calculator, every CBO budget score, every analysis of "who wins and who loses" uses tools that trace back to his 1957 paper.
+Guy Orcutt died on March 5, 2006 {cite}`prabook2024orcutt`, having seen his vision transform from impractical dream to standard methodology. By the end of his career at Yale—where he held the A. Whitney Griswold Professorship of Urban Studies—he had been named a Distinguished Fellow of the American Economic Association, received the Humboldt Award, and served on the executive committees of the AEA, the Econometric Society, and the American Statistical Association {cite}`watts1991orcutt`. Every modern tax calculator, every CBO budget score, every analysis of "who wins and who loses" uses tools that trace back to his 1957 paper.
+
+The intellectual lineage extends through his family. His daughter, Alice Orcutt Nakamura, became an economist. His grandson, Eli Nakamura, won the John Bates Clark Medal in 2019—awarded to the most promising American economist under forty. Three generations of economists, beginning with a physicist who thought the economy could be modeled like an electrical circuit.
 
 But the deeper legacy isn't any particular model. It's a way of thinking—and, for Orcutt, a way of *acting*.
 
-Recent scholarship has emphasized that Orcutt saw microsimulation not just as a tool for understanding society but for improving it {cite}`cheng2020orcutt`. As historian Hsiang-Ke Cheng put it, microsimulation was "an engine designed for not only scrutinizing the system but reengineering the society." The engineer who became an economist never lost his engineer's conviction that systems could be made to work better.
+Recent scholarship has emphasized that Orcutt saw microsimulation not just as a tool for understanding society but for improving it {cite}`cheng2020orcutt`. As historian Hsiang-Ke Cheng put it, microsimulation was "an engine designed for not only scrutinizing the system but reengineering the society." The engineer who became an economist never lost his engineer's conviction that systems could be made to work better. In his 1990 autobiographical reflection—published in a Festschrift issue of the *Journal of Economic Behavior & Organization*—he wrote not with the detachment of a retired professor but with the urgency of someone who still believed the tools could make policy more humane {cite}`orcutt1990autobiography`.
 
 Before Orcutt, economists thought about the economy in terms of aggregates. After Orcutt, it became possible to think about the economy as a collection of individuals, each with their own circumstances, each affected differently by the same policy.
 
@@ -255,6 +267,8 @@ That's Orcutt's insight. It's still being implemented, sixty-seven years later.
 ---
 
 ## Looking Ahead
+
+In 2007, on the fiftieth anniversary of Orcutt's paper, the newly founded *International Journal of Microsimulation* republished it in its inaugural volume {cite}`baroni2007orcutt`. The field that Orcutt created now had its own journal—and the paper that started it all was given pride of place.
 
 Orcutt imagined simulating society from the bottom up. He couldn't have imagined how far the technology would advance—or how much further the vision could be pushed.
 

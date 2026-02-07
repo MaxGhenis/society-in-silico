@@ -18,6 +18,8 @@ Consider the Earned Income Tax Credit. The federal EITC has different phase-in r
 
 Encoding the EITC requires hundreds of parameters and dozens of functions. A single misread of the tax code produces incorrect results for millions of hypothetical households.
 
+And the EITC is just one program. A comprehensive US model must encode federal income tax (seven brackets, dozens of credits, multiple filing statuses), payroll taxes (Social Security, Medicare, Additional Medicare), all fifty state income taxes (each with their own brackets, credits, and conformity rules to federal law), SNAP (categorical eligibility, gross and net income tests, shelter deductions, state options), Medicaid (expansion states vs. non-expansion, categorical eligibility, income disregards), SSI, TANF, housing subsidies, WIC, school meals, and dozens more. PolicyEngine US encodes over 2,700 parameters across these programs. Each parameter has a legislative or regulatory source. Each changes on a schedule—annually for inflation adjustments, irregularly for legislative reforms.
+
 ### Two Architectures
 
 The microsimulation world has converged on two main approaches to rules encoding: spreadsheet-style configuration and code-native implementation.
@@ -75,7 +77,15 @@ To understand a PolicyEngine policy, you browse GitHub, click on a file, and rea
 
 This isn't about better or worse—it's about different communities. EUROMOD serves researchers who work primarily in its ecosystem, often for years. The investment in learning its tooling pays off through deep capability. PolicyEngine and Tax-Calculator serve researchers who might contribute once, or who work across many projects, or who want to integrate microsimulation into other software. The investment in general Python skills pays off through breadth.
 
+A third approach deserves mention: **TAXSIM**, maintained by Daniel Feenberg and the National Bureau of Economic Research since the early 1980s {cite}`feenberg1993taxsim`. TAXSIM is neither spreadsheet-based nor fully open-source in the GitHub sense. It's a compiled program accessible via a web interface—users submit tax return data and receive computed tax liabilities. Its advantage is decades of validation against actual IRS tax return data, making it the benchmark against which other tax calculators are judged. Its limitation is opacity: you can see what goes in and what comes out, but you can't step through the code. For researchers who need validated federal tax calculations and trust NBER's reputation, TAXSIM is the gold standard. For researchers who need to understand *why* a calculation produces a specific result, or who need to modify the rules, the code-native approach is necessary.
+
 The difference matters for transparency. When HM Treasury evaluated PolicyEngine UK (Chapter 5), they could link directly to the GitHub repository {cite}`hmt2025policyengine`. Anyone curious about how the model works can browse the code without installing anything. That immediate accessibility is impossible with tools requiring specialized software to inspect.
+
+### The rules-as-code movement
+
+Behind these architectural choices lies a broader idea: that legislation itself should be machine-readable. The "rules as code" movement—gaining traction in New Zealand, France, and the UK—argues that when a legislature writes a tax law, the definitive encoding should be in structured, executable form, not just natural language. OpenFisca, the French microsimulation framework, was an early embodiment of this idea. The Rules Foundation, described in Chapter 10, is building infrastructure to make it systematic: encoding statutes as versioned, testable code with empirical validation against established calculators.
+
+If rules-as-code succeeds at scale, the rules-encoding problem changes fundamentally. Instead of each microsimulation team independently reading statutes and writing code—duplicating effort and introducing inconsistencies—teams would import shared, validated rule definitions. The maintenance burden would shift from each model separately to a shared infrastructure layer.
 
 ---
 
@@ -95,7 +105,9 @@ These surveys exist because governments need population statistics. They're desi
 
 Except it's never that simple.
 
-The CPS captures wages, salaries, and common benefit receipt well. It captures capital income poorly—people underreport dividends and capital gains, and the very wealthy are systematically undersampled {cite}`meyer2015underreporting`. It doesn't capture certain tax-relevant information at all—itemized deductions, retirement contributions, business income details.
+The CPS captures wages, salaries, and common benefit receipt well. It captures capital income poorly—people underreport dividends and capital gains, and the very wealthy are systematically undersampled {cite}`meyer2015underreporting`. It doesn't capture certain tax-relevant information at all—itemized deductions, retirement contributions, business income details. The top-coding problem is severe: the CPS caps reported income at around $1.1 million, meaning the entire upper tail of the income distribution is compressed into a single value. For policies that affect high earners—capital gains tax changes, top bracket adjustments, the Alternative Minimum Tax—this truncation systematically understates impacts.
+
+The benefit underreporting problem runs in the other direction. Bruce Meyer and colleagues found that 40-50% of SNAP recipients don't report their benefits in household surveys. Medicaid, SSI, TANF—each has substantial non-reporting. This means CPS-based estimates of safety net spending are biased downward, and reforms expanding these programs appear cheaper than they actually are.
 
 Every survey has these gaps. The FRS doesn't include council tax details needed for UK local tax modeling. EU-SILC doesn't capture within-year timing that affects benefit calculations. No single survey has everything a comprehensive microsimulation model needs.
 
@@ -167,11 +179,15 @@ But static analysis misses some effects entirely. A carbon tax might raise $100 
 
 The most studied behavioral response is labor supply {cite}`odonoghue2001dynamic`. How much do people adjust their work when tax rates change?
 
-Economists parameterize this as "elasticities"—the percentage change in hours worked for a 1% change in after-tax wages. Decades of research estimates these parameters from natural experiments, tax reforms, and survey data.
+Economists parameterize this as "elasticities"—the percentage change in hours worked (or income reported) for a 1% change in after-tax wages. Decades of research estimates these parameters from natural experiments, tax reforms, and survey data.
 
-The consensus: elasticities vary dramatically by population. Primary earners in married couples have low elasticities—they work about the same regardless of tax rates. Secondary earners and single parents have higher elasticities—tax changes do affect their labor supply decisions. The very wealthy may have the highest elasticities of all, though estimates vary widely.
+The most comprehensive summary is the elasticity of taxable income (ETI), which captures not just labor supply changes but also tax planning, income shifting, and avoidance responses. A meta-regression by Neisser covering 1,720 estimates from 61 studies found a mean ETI of about 0.30—meaning a 10% increase in the net-of-tax rate produces roughly a 3% increase in reported taxable income {cite}`neisser2021eti`. But the range is enormous: some studies find ETIs near zero, others above 1.0. The variation depends on income level, tax system, time horizon, and econometric method.
 
-Integrating elasticities into microsimulation requires specifying which populations respond how much, then adjusting their simulated earnings accordingly. A reform raising marginal rates on high earners might show 10% less revenue dynamically than statically, as those earners reduce labor supply.
+This uncertainty matters enormously for revenue estimation. A reform raising the top marginal rate from 37% to 39.6% would raise about $50 billion more per year under a low ETI assumption (0.2) than under a high one (0.6). The "correct" elasticity is a major source of disagreement between revenue estimators—and it's not something the data can definitively resolve.
+
+Within this range, some patterns are robust. Primary earners in married couples have low elasticities—they work about the same regardless of tax rates. Secondary earners and single parents have higher elasticities—tax changes do affect their labor supply decisions. The very wealthy may show the largest reported-income responses, though these often reflect tax planning rather than real economic activity.
+
+Integrating elasticities into microsimulation requires specifying which populations respond how much, then adjusting their simulated earnings accordingly. A reform raising marginal rates on high earners might show 10% less revenue dynamically than statically, as those earners reduce reported taxable income.
 
 PolicyEngine implements several labor supply response models. Users can choose between no response (static), CBO-style elasticities, or custom parameters. The interface shows how different assumptions affect revenue estimates—making the uncertainty explicit rather than hidden.
 
