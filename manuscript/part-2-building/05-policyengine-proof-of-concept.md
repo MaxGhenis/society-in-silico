@@ -12,7 +12,13 @@ The most significant shift came in December 2020: EUROMOD went fully open source
 
 The Policy Simulation Library expanded. The Capital Cost Recovery model joined. The OG-USA overlapping-generations model joined. Demo Day webinars showcased new applications. The open-source ecosystem was growing, but a critical gap remained: none of these tools were accessible to non-programmers.
 
-By late 2020, Nikhil Woodruff and I had a working microsimulation model of the UK tax and benefit system we'd built at the UBI Center. OpenFisca UK could calculate taxes, simulate benefits, estimate policy reform effects. But it lived in Python scripts that only programmers could run.
+I had started the UBI Center in 2019 with a simple frustration: I wanted to know what various universal basic income proposals would cost and who they'd help, and no publicly available tool could answer the question with specificity {cite}`ubicenter2019intro`. The UBI Center became a research organization that published open-source analyses of basic income proposals, using whatever microsimulation tools were available—mostly Tax-Calculator and custom Python scripts built on CPS data.
+
+The work taught me two things. First, the tools existed in fragments. Tax-Calculator handled federal income tax beautifully but didn't cover benefits. TAXSIM handled state taxes but required batch processing. No single tool captured the full interaction between taxes and benefits that determined whether a UBI proposal was progressive, regressive, or poverty-reducing.
+
+Second, the audience for policy analysis was far larger than the audience that could use the tools. When I published UBI Center analyses, the response was enormous from people who wanted to explore the ideas themselves—vary the parameters, check different household types, model the proposals their local advocacy group was pushing. They couldn't, because the tools lived in Jupyter notebooks.
+
+By late 2020, Nikhil Woodruff and I had a working microsimulation model of the UK tax and benefit system we'd built at the UBI Center. Nikhil was an undergraduate at UCL studying mathematics and computer science—preternaturally talented at software engineering, with an intuitive grasp of how to translate complex policy rules into clean code. OpenFisca UK could calculate taxes, simulate benefits, estimate policy reform effects. But it lived in Python scripts that only programmers could run.
 
 We'd seen this pattern everywhere—TAXSIM required batch processing, Tax-Calculator needed Python, UKMOD was academic-focused, TAXBEN was proprietary. Powerful tools locked behind technical barriers. The solution was obvious but ambitious: build a web application that put the full power of microsimulation in a browser. Anyone could design a reform, see the costs and distributional effects, understand the impact on their own household. No code required.
 

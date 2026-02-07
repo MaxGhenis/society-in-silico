@@ -1,57 +1,54 @@
-# Chapter 13: Simulating Democracy
+# Chapter 13: Simulating democracy
 
-**Note to readers**: This chapter describes theoretical research, not validated tools. Democrasim is a toy model—a thought experiment in code designed to explore how voter information might affect democratic outcomes. Unlike PolicyEngine (a validated production system) or HiveSight (a preliminary prototype with some empirical validation), Democrasim makes simplifying assumptions that real political scientists would rightly criticize. Use this chapter to understand intuitions about information and democracy, not as established political science.
+**Note to readers**: This chapter describes theoretical research, not validated tools. Democrasim is a toy model—a thought experiment in code designed to explore how voter information might affect democratic outcomes. Unlike PolicyEngine (a validated production system) or HiveSight (a preliminary prototype with some empirical grounding), Democrasim makes simplifying assumptions that real political scientists would rightly criticize. Use this chapter to understand intuitions about information and democracy, not as established political science.
 
 ---
 
 Why do democratic outcomes often diverge from voter welfare?
 
-It's a puzzle that has occupied political scientists for decades. We have mechanisms—elections—designed to translate public preferences into policy. We have representatives whose job is to understand what constituents want. We have a free press, public education, and more access to information than any previous generation.
+It's a question that has occupied political scientists for decades—and the answers they've found should humble anyone who thinks better information tools will fix democracy.
 
-And yet: policies regularly fail to reflect what would actually benefit voters. Tax codes favor the wealthy despite majority support for progressivity. Climate action stalls despite broad concern about warming. Healthcare systems remain inefficient despite universal frustration.
+Christopher Achen and Larry Bartels, in their landmark *Democracy for Realists* (2016), argued that the standard story about democracy—informed citizens evaluate policies, choose candidates whose platforms best match their preferences, and elections translate public will into governance—is largely fiction {cite}`achen2016democracy`. In their analysis, voters mostly choose parties based on social identities and group loyalties, not policy evaluation. They punish incumbents for bad weather. They reward them for economic growth that preceded their term. The "folk theory" of rational, policy-evaluating voters bears little resemblance to how democracy actually functions.
 
-The standard explanations point to special interests, gerrymandering, and media manipulation. These matter. But there's a more fundamental problem hiding in plain sight.
+Bryan Caplan pushed further in *The Myth of the Rational Voter* (2007), arguing that voters aren't just ignorant but *systematically biased* {cite}`caplan2007myth`. Using data from the Survey of Americans and Economists on the Economy, he identified four persistent biases: anti-market bias, anti-foreign bias, make-work bias, and pessimistic bias. These aren't random errors that cancel out in aggregation. They're directional distortions that push democratic outcomes away from what economists would consider welfare-maximizing policies.
 
-*Voters don't know what policies would actually do for them.*
+Against this backdrop, the question I want to explore is more modest: *To what extent does voter accuracy about policy impacts matter for democratic outcomes—and can simulation tools improve it?*
 
 ---
 
-## The Perception Problem
+## The perception problem
 
 Consider a voter named Sarah. She's 42, works as a teacher, earns $65,000 a year, has two kids, and lives in Ohio. She's deciding between candidates with different policy platforms.
 
 Candidate A proposes expanding the Child Tax Credit by $1,000 per child. Candidate B proposes eliminating the state income tax. Which would benefit Sarah more?
 
-Without calculation, Sarah has to guess. Maybe she has a vague sense that she pays state income tax and that feels painful. Maybe she remembers the expanded CTC during COVID and it felt helpful. Maybe she's heard talking heads argue about either policy on cable news, each spin designed to persuade rather than inform.
+Without calculation, Sarah has to guess. Maybe she has a vague sense that she pays state income tax and that feels painful. Maybe she remembers the expanded CTC during COVID and it felt helpful. Maybe she's heard talking heads argue about either policy, each framing designed to persuade rather than inform.
 
 Her choice will be some combination of:
 - Her actual policy preferences (what she values)
 - Her perceived policy impacts (what she thinks would happen)
-- Noise (irrelevant factors that shouldn't matter but do)
+- Identity and group loyalty (what her party, community, or social circle supports)
+- Noise (irrelevant factors—candidate charisma, recent weather, what was on the news this morning)
 
 Even if Sarah has clear preferences—say, she cares most about maximizing her family's resources—her vote may not reflect those preferences because she can't perceive the true policy impacts. She votes with a noisy signal.
 
-Now multiply this by 150 million voters. Each making decisions based on imperfect perceptions. Some biased left, some biased right. Some well-informed about economics but clueless about environment. Some sophisticated about tax policy but misunderstanding healthcare.
+Now multiply this by 150 million voters. Each making decisions based on imperfect perceptions. Some biased left, some biased right. Some well-informed about economics but clueless about environment. The aggregate result: democratic outcomes that only roughly, noisily track what voters actually want.
 
-The aggregate result: democratic outcomes that only roughly, noisily track what voters actually want.
+Achen and Bartels would argue this understates the problem—that many voters aren't even trying to evaluate policies at all. Caplan would add that those who do try are systematically wrong. I think they're both partly right. And I think the interesting question isn't whether information alone can fix democracy—it can't—but whether better information tools can improve the signal, even at the margins.
 
 ---
 
-## Modeling the Noise
+## A toy model
 
-To explore this idea, I've built a toy model called Democrasim. It's not a validated research tool—it's a thought experiment in code, a way to reason about how voter information affects democratic outcomes. The model makes simplifying assumptions that real political scientists would rightly criticize. But it helps clarify the intuition.
-
-Democrasim simulates the full chain from voter cognition to electoral outcomes to welfare.
+To explore this intuition, I've built a toy model called Democrasim. I emphasize "toy"—this is not a contribution to political science. It's a thought experiment in code, a way to make the relationship between voter information and outcomes concrete enough to reason about.
 
 Each simulated voter has:
 
-**Weighted preferences** across policy dimensions. One voter might care 50% about economic issues, 30% about social issues, 20% about environment. Another might weight them 20/40/40. These are the true values—what voters actually care about.
+**Weighted preferences** across policy dimensions. One voter might care 50% about economic issues, 30% about social issues, 20% about environment. These are the true values—what voters actually care about.
 
-**Accuracy**. How well voters perceive actual policy impacts. High accuracy means perceiving close to truth. Low accuracy means perceiving through heavy noise.
+**Accuracy.** How well voters perceive actual policy impacts. High accuracy means perceiving close to truth. Low accuracy means perceiving through heavy noise.
 
-**Bias**. Systematic distortions beyond random noise. A voter might consistently underestimate environmental costs or overestimate tax burden.
-
-**Turnout probability**. Whether they vote at all.
+**Bias.** Systematic distortions beyond random noise. A voter might consistently underestimate environmental costs or overestimate tax burden.
 
 The perception model is simple:
 
@@ -59,230 +56,123 @@ The perception model is simple:
 perceived_impact = true_impact + noise + bias
 ```
 
-Where the noise term scales inversely with accuracy. A voter with accuracy 0.8 perceives policy impacts with less noise than one with accuracy 0.2.
+Where the noise term scales inversely with accuracy. Elections work through utility maximization: each voter evaluates candidates based on perceived impacts weighted by preferences. Most votes wins.
 
-Elections work through straightforward utility maximization. Each voter evaluates candidates based on perceived impacts weighted by preferences. The candidate with highest perceived utility gets their vote. Most votes wins.
-
-The question Democrasim asks: What happens to welfare outcomes when voter accuracy varies?
+The question Democrasim asks: What happens to welfare outcomes as voter accuracy varies?
 
 ---
 
-## The Accuracy-Welfare Connection
+## What the model shows
 
-The simulation results are intuitive but their magnitude is striking.
+The results are intuitive, but putting numbers on them clarifies the stakes.
 
-When accuracy is high—voters perceive close to true policy impacts—electoral outcomes track welfare. The candidate whose policies would actually improve voter lives tends to win.
+When accuracy is high—voters perceive close to true policy impacts—electoral outcomes track welfare. The candidate whose policies would actually improve voter lives tends to win. When accuracy is low—voters perceive through heavy noise—the connection frays. Winners might have good policies or bad ones; the signal is too corrupted to reliably select the beneficial option.
 
-When accuracy is low—voters perceive through heavy noise—the connection frays. Winners might have good policies or bad ones; the signal is too corrupted to reliably select the beneficial option.
+There appears to be a threshold effect. Below a certain level of voter accuracy, democracy becomes essentially random with respect to policy welfare—electoral outcomes bear no meaningful relationship to what would actually benefit voters. Above that threshold, the relationship strengthens rapidly.
 
-Bias introduces a different distortion. If voters systematically underestimate certain costs or overestimate certain benefits, elections will systematically favor policies that exploit those biases, regardless of actual welfare impact.
+Bias introduces a different distortion. If voters systematically underestimate certain costs or overestimate certain benefits, elections will systematically favor policies that exploit those biases, regardless of actual welfare impact. This echoes Caplan's finding about systematic rather than random voter errors.
 
-The threshold matters. There appears to be a level of voter accuracy below which democracy becomes essentially random—electoral outcomes bear no meaningful relationship to what would actually benefit voters. Above that threshold, the relationship strengthens.
+I want to be careful about overclaiming. These results come from a model with extreme simplifications. Real voters have identity attachments, party loyalties, and psychological dynamics that Democrasim ignores entirely. The model assumes voters are trying to maximize welfare through policy evaluation—exactly the "folk theory" that Achen and Bartels argue is wrong for most voters.
 
-This has implications for anyone who cares about democratic function.
-
----
-
-## What Determines Accuracy?
-
-If voter accuracy drives welfare outcomes, what determines accuracy?
-
-**Information availability**. Can voters access relevant data about policy impacts? Or is analysis locked behind paywalls, jargon, and institutional barriers?
-
-**Information quality**. Is available information designed to inform or to persuade? Think tanks with ideological agendas produce analysis, but it's systematically biased.
-
-**Cognitive load**. Even with good information, understanding policy impacts requires effort. Busy people with jobs, families, and finite attention can't spend hours analyzing every ballot measure.
-
-**Trust**. When institutions have been wrong before—or are perceived as biased—voters rationally discount their claims. Even accurate information gets filtered through skepticism.
-
-This explains why throwing more information at voters doesn't automatically help. A 200-page CBO report is technically available; it doesn't mean voters absorb it. Opposing partisan analyses might both be available; voters can't adjudicate between them.
-
-What would actually improve accuracy? Not just more information, but *accessible*, *trustworthy*, *personalized* information about policy impacts.
+But the model captures one real dynamic: *to the extent that some portion of voting behavior is influenced by perceived policy impacts, the quality of those perceptions matters.* Even if only 20% of the vote is policy-driven and 80% is identity-driven, improving the signal quality of that 20% still shifts outcomes.
 
 ---
 
-## The PolicyEngine Connection
+## What political science actually says
 
-This is where tools like PolicyEngine become democratically significant.
+Democrasim's intuitions align with some findings in political science and contradict others.
+
+**Supporting evidence:** Arthur Lupia and Mathew McCubbins showed that voters can use "information shortcuts"—cues from trusted sources—to make decisions that approximate what they'd choose with full information {cite}`lupia1998democratic`. This suggests that the gap between actual and optimal voter behavior is partially an information problem, and that better information delivery could narrow it.
+
+**Complicating evidence:** Achen and Bartels found that even well-informed voters often vote based on group identity rather than policy evaluation {cite}`achen2016democracy`. More information doesn't automatically produce more policy-responsive voting if the information is filtered through partisan lenses. A voter who uses PolicyEngine to calculate that Policy X would save her $2,000 might still vote against it if her party opposes it.
+
+**Fundamental constraints:** Kenneth Arrow's impossibility theorem (1951) proved that no ranked voting system can simultaneously satisfy a small set of reasonable fairness conditions {cite}`arrow1951social`. No amount of voter information resolves this mathematical constraint on aggregating preferences. Gibbard and Satterthwaite independently showed that any non-dictatorial voting system is susceptible to strategic manipulation. Simulation tools might improve sincere voting but don't address strategic voting.
+
+The honest assessment: better voter information is a *necessary but not sufficient* condition for democratic outcomes to track voter welfare. Democrasim isolates the information channel and shows it matters. Real democracy has many other channels—identity, strategy, institutional design—that also matter, and that information tools can't directly address.
+
+---
+
+## The PolicyEngine connection
+
+This is where tools like PolicyEngine become democratically relevant—not as a solution to democratic dysfunction, but as one input among many.
 
 Consider what PolicyEngine offers:
 - **Personalized calculation**: Not "the average family pays X" but "your family, with your specific circumstances, would pay/receive Y under this policy."
-- **Transparent methodology**: Open source code anyone can inspect. No hidden assumptions or ideological bias baked in.
-- **Instant access**: Free, available to anyone with a web browser. No need to trust intermediaries.
+- **Transparent methodology**: Open-source code anyone can inspect. No hidden assumptions or ideological bias baked in.
+- **Instant access**: Free, available to anyone with a web browser.
 
-In Democrasim terms, PolicyEngine is an accuracy multiplier. It takes voters from "I vaguely sense this policy would hurt/help me" to "I calculated that this policy would change my household income by $X."
+In Democrasim's terms, PolicyEngine is an accuracy multiplier for the policy-evaluation component of voting. It takes voters from "I vaguely sense this policy would hurt/help me" to "I calculated that this policy would change my household income by $X."
 
-The voter Sarah we met earlier? Instead of guessing whether the CTC expansion or state tax elimination benefits her more, she could enter her household details and see: CTC expansion would give her $2,000; state tax elimination would save her $1,400. Now she has signal, not noise.
+The voter Sarah we met earlier? Instead of guessing whether the CTC expansion or state tax elimination benefits her more, she could enter her household details and see the numbers directly. Now she has signal, not noise—at least for this one dimension of her decision.
 
-Multiply this across millions of voters. Each with clearer perception of actual policy impacts. The aggregate result: elections that more reliably track voter welfare.
-
-This is the democratic case for open microsimulation. It's not just about individual convenience—though that matters. It's about improving the signal quality of democratic feedback loops.
+This doesn't address the identity-driven components of her vote. It doesn't override party loyalty. It doesn't resolve Arrow-type impossibilities in the voting system itself. But it removes one source of noise from one channel of democratic feedback.
 
 ---
 
-## Closing the Loop
-
-Democrasim suggests a research program: connect simulation tools to model the full democratic cycle.
-
-**Step 1**: Candidates have policy platforms. Not vague promises, but specific proposals. "Expand CTC by $500 per child" or "Replace income tax with consumption tax."
-
-**Step 2**: PolicyEngine calculates actual impacts on voter households. Given a representative sample of households, we know the distribution of effects—who gains, who loses, by how much.
-
-**Step 3**: Voters with varying accuracy perceive these impacts. High-accuracy voters perceive close to truth. Low-accuracy voters perceive through noise and bias.
-
-**Step 4**: Votes aggregate to determine the winner.
-
-**Step 5**: PolicyEngine calculates welfare outcomes under the winning policy.
-
-This closed loop lets us ask questions like: What level of voter accuracy is needed for democratic outcomes to track welfare? How do different interventions compare? Does uncertainty systematically favor certain policy types?
-
-Playing with the model—and I emphasize "playing," not "researching"—suggests an intuition: accuracy interventions might matter more than turnout interventions. If the toy model's logic holds, getting low-information voters to perceive better may matter more than getting non-voters to vote. An uninformed vote adds noise; an informed vote adds signal.
-
-Whether this intuition survives contact with real political science is unknown. The model is too simple to make confident claims. Real voter behavior involves identity, tribal loyalty, strategic considerations, and psychological factors that Democrasim ignores entirely. But as a way to reason about why accurate policy information might have democratic value, it's useful.
-
----
-
-## The Democratic Case for Open Infrastructure
-
-The argument crystallizes:
-
-**Premise 1**: Democratic outcomes track voter welfare only to the extent voters accurately perceive policy impacts.
-
-**Premise 2**: Most voters perceive policy impacts poorly—through noise, bias, and inadequate information.
-
-**Premise 3**: Tools exist that could dramatically improve voter perception accuracy.
-
-**Conclusion**: Investing in accessible, trustworthy policy analysis tools has democratic value beyond individual utility. It's infrastructure for informed self-governance.
-
-This reframes PolicyEngine's mission. It's not just "a useful calculator for nerds who want to optimize their taxes." It's "infrastructure that helps democracy work as intended."
-
-The philanthropic implications are significant. A dollar spent making policy analysis accessible might have higher democratic return than a dollar spent on get-out-the-vote campaigns. Both matter, but one addresses signal quality while the other addresses signal quantity.
-
----
-
-## Simulating Democratic Scenarios
-
-Democrasim enables scenario analysis for democratic reform.
-
-**Scenario: Universal Policy Calculators**
-
-What if every voter had access to PolicyEngine-style tools and actually used them? Accuracy doubles. Simulations show electoral outcomes significantly closer to welfare-optimal policies.
-
-**Scenario: Improved Civics Education**
-
-What if schools taught policy analysis skills? Accuracy increases modestly. Smaller effect because skills without accessible tools still leave voters unable to calculate.
-
-**Scenario: Reduced Media Bias**
-
-What if news coverage focused on policy impacts rather than horse races? Bias decreases. Accuracy unchanged. Outcomes improve for bias-sensitive questions but not noise-sensitive ones.
-
-**Scenario: AI Policy Advisors**
-
-What if every voter had an AI assistant that could answer "how would Policy X affect me?" based on their circumstances and reliable models? This is accuracy approaching 1.0. Electoral outcomes closely track welfare.
-
-This last scenario isn't science fiction. As we explored with Cosilico, AI systems can already use PolicyEngine to answer household-specific policy questions. The barrier is deployment, not capability.
-
----
-
-## Futarchy: Vote Values, Bet Beliefs
+## Futarchy and the values-beliefs separation
 
 There's a more radical proposal for connecting information to governance: Robin Hanson's *futarchy* {cite}`hanson2013futarchy`.
 
-The core idea is captured in a slogan: "Vote on values, but bet on beliefs."
+The core idea: "Vote on values, but bet on beliefs." Democratic processes determine *what we care about*—national welfare metrics, child poverty rates, median income. But *which policies achieve those goals* is determined by prediction markets, not politicians or voters.
 
-Under futarchy, democratic processes still determine *what we care about*—a measure of national welfare, say, or specific metrics like child poverty rates and median income. But *which policies achieve those goals* is determined by prediction markets, not politicians.
+A legislature proposes a bill. Prediction markets open on welfare conditional on the bill passing versus failing. If the market says welfare will be higher with the bill, it becomes law {cite}`hanson2000futarchy`.
 
-Here's how it would work. A legislature proposes a bill. Prediction markets open on national welfare conditional on the bill passing versus failing. If the market says welfare will be higher with the bill than without, it becomes law. If not, it doesn't.
+Despite its elegance, futarchy faces practical objections that explain why no democracy has adopted it. Markets can be manipulated by wealthy actors. Most policy questions don't attract enough trading volume for reliable price discovery. Defining and measuring "welfare" is contentious. And democratic legitimacy depends partly on citizens feeling they had a voice—market-based decisions may lack that psychological buy-in.
 
-The logic is that markets aggregate information better than deliberation {cite}`hanson2000futarchy`. Traders with relevant knowledge profit by pushing prices toward truth. Ideologues who let conviction override evidence lose money. The market converges on the best available estimate of policy effects.
+But the futarchy thought experiment clarifies something important: the distinction between *values* (what outcomes we want) and *beliefs* (what policies produce those outcomes). PolicyEngine addresses the beliefs side—it helps voters understand what policies would actually do. It doesn't tell them what to value. Neither does Democrasim.
 
-This sounds extreme. But the underlying mechanism—separating values from facts—clarifies what simulation tools actually do.
-
-PolicyEngine answers factual questions: "What would happen to child poverty if we passed Policy X?" Prediction markets can answer similar questions: "Given Policy X, what do informed bettors expect to happen to child poverty?"
-
-Both separate the *empirical* question (what would happen?) from the *normative* question (is that outcome good?). Democrasim's accuracy-welfare model makes the same distinction: voters have preferences (values), and they perceive policy impacts (facts). Better fact-perception improves the connection between voting and welfare.
-
-### Personal Futarchy
-
-The futarchy framework applies at individual scale too.
-
-I've built a tool called Farness that implements "personal futarchy" for decisions {cite}`ghenis2024farness`. Instead of asking "should I take the new job?" it structures the decision into:
-
-1. **KPIs** (values): What outcomes do I actually care about? Income, satisfaction, work-life balance?
-2. **Options**: What are all the choices, including ones I haven't considered?
-3. **Forecasts** (beliefs): For each option, what's my prediction for each KPI—with confidence intervals?
-
-The discipline of making explicit numeric forecasts—rather than vague intuitions about what "feels right"—mirrors futarchy's bet-on-beliefs principle. The calibration tracking mirrors prediction market scoring: over time, you learn whether your forecasts are systematically biased.
-
-The connection to this chapter is direct. If a voter could run Farness on "how should I vote on Proposition 12?"—defining KPIs (household income, public services, equity), forecasting each candidate's impact on those KPIs—their vote would contain more signal.
-
-### Why Not Full Futarchy?
-
-Despite its elegance, futarchy faces practical objections that explain why no democracy has adopted it:
-
-**Manipulation**: Can wealthy actors move market prices to get their preferred policies passed? Hanson argues proper market design prevents this, but the concern persists.
-
-**Thin markets**: Most policy questions don't attract enough trading volume for reliable price discovery. Polymarket works for presidential elections with billions wagered; it's less clear how it would work for zoning amendments.
-
-**Conditional complexity**: Markets on "welfare if Policy X passes" require defining welfare, measuring it, and handling the counterfactual. These are hard problems.
-
-**Democratic legitimacy**: People accept losing elections because they had a vote. Would they accept losing market-based decisions? The psychology of legitimacy matters.
-
-Still, the futarchy thought experiment illuminates what democratic information infrastructure could do. Even without replacing elections, we can build tools that help voters bet on beliefs more rigorously—and calibrate those beliefs against outcomes.
+This separation—values are for humans, facts are for tools—underlies the democratic case for simulation infrastructure.
 
 ---
 
-## Objections and Complications
+## Objections
 
-The accuracy-welfare model simplifies real democratic complexity.
+The accuracy-welfare model oversimplifies real democratic complexity. These objections deserve engagement.
 
 **Objection: Preferences themselves are the problem.**
 
 Maybe voters don't just perceive poorly—they have bad preferences. They want policies that harm others. They vote from spite rather than self-interest.
 
-Response: True, but orthogonal. If voters want harmful policies and perceive accurately, they'll get harmful policies. That's a different problem than wanting beneficial policies but perceiving poorly. Better perception at least ensures voters get what they want, even if what they want is bad.
+Response: True, but orthogonal to the information question. If voters want harmful policies and perceive accurately, they'll get harmful policies. That's a different problem than wanting beneficial policies but perceiving poorly. Better perception at least ensures voters get what they want, even if what they want is bad.
 
 **Objection: Information won't reach the disengaged.**
 
-People who don't vote probably wouldn't use policy calculators either. The voters who would use PolicyEngine already vote and may already be relatively informed.
+People who don't vote probably wouldn't use policy calculators either. The voters who would use PolicyEngine are already relatively informed.
 
-Response: Partially true, but the marginal effect still matters. Moving moderately-informed voters to well-informed improves signal quality. And new modalities (AI assistants, social sharing) may reach previously disengaged populations.
+Response: Partially true. But new modalities—AI assistants that proactively explain policy impacts, social media tools that embed calculations, voter guides that personalize information—may reach populations that wouldn't seek out a policy calculator. And moving moderately-informed voters to well-informed still improves signal quality.
 
-**Objection: Calculated self-interest isn't the same as good citizenship.**
+**Objection: Calculated self-interest isn't good citizenship.**
 
 Democracy might benefit from voters considering communal welfare, not just personal impact.
 
-Response: True, and PolicyEngine can calculate societal impacts too. The point isn't selfishness—it's replacing perception with calculation, whatever voters choose to calculate.
+Response: PolicyEngine can calculate societal impacts too—poverty rates, inequality measures, total cost. The point isn't selfishness. It's replacing perception with calculation, whatever voters choose to calculate.
+
+**Objection: Arrow's theorem means this doesn't matter.**
+
+No voting system can perfectly aggregate preferences, so improving information at the individual level can't fix the aggregation problem.
+
+Response: Arrow's theorem constrains the voting *mechanism*, not the quality of individual decisions. Even an imperfect aggregation mechanism produces better outcomes when it aggregates better-informed inputs. Arrow proved no perfect system exists; he didn't prove that all systems are equally good regardless of input quality.
 
 ---
 
-## The Vision
+## The democratic case for open infrastructure
 
-Imagine a voter in 2030.
+The argument crystallizes:
 
-She's considering a ballot measure to reform her state's tax code. Instead of reading dueling op-eds and trying to guess who's lying, she opens a policy analysis app on her phone.
+**Premise 1**: Democratic outcomes track voter welfare only to the extent voters accurately perceive policy impacts—and this is one of several factors, alongside identity, institutions, and strategic behavior.
 
-"Show me how Proposition 12 would affect my household."
+**Premise 2**: Most voters perceive policy impacts poorly—through noise, bias, and inadequate information.
 
-The app—powered by something like PolicyEngine, accessed through something like Cosilico's AI layer—returns: "Based on your household profile, this measure would reduce your state taxes by $340 per year. The trade-off is reduced funding for public education, which your children use. The net welfare impact for your household is approximately..."
+**Premise 3**: Tools exist that could improve voter perception accuracy for the policy-evaluation component of voting.
 
-She might not accept the calculation blindly. She might weigh factors the app doesn't capture. But she starts from signal, not noise.
+**Conclusion**: Investing in accessible, trustworthy policy analysis tools has democratic value beyond individual utility—not as a complete fix, but as one contributor to informed self-governance.
 
-Now she considers communal impacts. "How would this affect households statewide?"
-
-The app shows distributions: "Households earning over $200,000 receive average benefits of $2,400. Households earning under $50,000 see average benefit of $80. Total revenue reduction of $2.1 billion..."
-
-This voter can make an informed choice—not because she's smarter or more educated, but because she has tools that convert policy proposals into understandable impacts.
-
-Across millions of such voters, elections become more responsive to actual preferences. Democracy functions closer to its ideal.
+This reframes PolicyEngine's mission. It's not just "a useful calculator for nerds who want to optimize their taxes." It's a component—one component among many—of democratic infrastructure.
 
 ---
 
-The simulation has limits. Democrasim doesn't capture cultural dynamics, identity politics, or the psychology of tribal belonging. Voters aren't just utility-maximizing calculators.
+## References
 
-But the core insight holds: to the extent democracy is *supposed* to translate preferences into outcomes, it needs voters who can perceive what outcomes would actually result from different choices.
-
-Open microsimulation is infrastructure for that perception. PolicyEngine isn't just a tax calculator. It's a component of democratic signal processing.
-
-The code simulates policies. But what we're really simulating is the possibility of informed self-governance.
-
+```{bibliography}
+:filter: docname in docnames
+```

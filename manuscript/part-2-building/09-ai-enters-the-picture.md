@@ -71,6 +71,12 @@ This was the "AI frontend, deterministic backend" pattern in action. The languag
 
 The insight was: AI systems will increasingly mediate between users and computational tools. PolicyEngine needed to be a good tool for AI to call.
 
+By 2025, this pattern was becoming standard across the AI industry. Anthropic introduced tool use for Claude. OpenAI built function calling into GPT-4 and its successors. Google's Gemini supported structured tool invocation. The Model Context Protocol (MCP) emerged as an open standard for connecting AI systems to external tools and data sources. The infrastructure for AI-tool integration was maturing rapidly.
+
+For policy analysis, this meant a shift in what mattered. In 2023, the bottleneck was model capability—could AI systems reliably call the right tool with the right parameters? By 2025, the bottleneck had shifted to tool quality—were the tools AI called actually accurate, comprehensive, and well-maintained? An AI system that flawlessly called an inaccurate tax calculator was worse than useless. The quality of the deterministic backend became the binding constraint.
+
+This is why the Column Tax TaxCalcBench results were so significant {cite}`columntax2024`. They showed that even in 2025, the best general-purpose AI systems couldn't reliably compute tax returns on their own. GPT-5 with web search got 41.7% of returns fully correct. Claude Opus 4 managed 27.5%. These weren't acceptable error rates for any real application. The AI systems needed better tools—not just any tools, but tools that covered the full complexity of the tax code with the precision that financial calculations demand.
+
 ---
 
 ## Multi-Agent Workflows
@@ -160,6 +166,12 @@ None of this made AI explanations perfectly reliable. But it made them verifiabl
 The integration of AI into PolicyEngine was just beginning. Each month brought new capabilities: better language models, more sophisticated tool use, improved reasoning.
 
 The team was building toward a vision where policy analysis became conversational. Ask a question, get an answer grounded in rigorous computation. Follow up with "what if instead we..." and see the comparison. Request different visualizations, different framings, different levels of detail.
+
+By 2025, the pieces were falling into place. AI coding assistants like Claude Code could work directly with PolicyEngine's Python package—writing simulation scripts, generating visualizations, iterating on reform designs. A policy researcher could describe what they wanted to analyze in plain English, and the AI assistant would write the code, run the simulation, and present the results. The human still made the judgment calls—which reforms to compare, what assumptions to make, how to interpret the results—but the mechanical work of translating policy ideas into code was increasingly automated.
+
+The implications for who could do policy analysis were significant. Previously, running a microsimulation required fluency in Python, familiarity with the PolicyEngine API, and understanding of data structures like weighted survey samples. With AI mediation, a congressional staffer who understood policy but not programming could explore reform options directly. An advocacy organization without a data team could produce the same quality of analysis that previously required hiring an economist.
+
+This democratization had risks. Easier access meant more opportunity for misuse—cherry-picking scenarios, misinterpreting results, presenting partial analyses as comprehensive. But these risks existed in the old system too; they were just concentrated among a smaller group of analysts. Broader access at least allowed broader scrutiny.
 
 The microsimulation engine provided the analytical foundation—comprehensive, accurate, transparent. AI provided the interface—natural, adaptive, accessible. Together, they pointed toward a future where understanding policy was easier than ever before.
 

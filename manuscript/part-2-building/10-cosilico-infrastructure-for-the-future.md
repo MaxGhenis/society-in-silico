@@ -1,193 +1,199 @@
-# Chapter 10: Infrastructure for the Future
+# Chapter 10: Infrastructure for the future
 
 *A note to the reader: This chapter differs from the rest of the book. Earlier chapters described working systems—PolicyEngine, TAXSIM, existing models with validated track records. This chapter describes infrastructure that doesn't yet exist. I include it not as a product review, but as a technical exploration of what would be needed for AI systems to reliably perform tax and benefit calculations. The problems described are real; the solutions are speculative.*
 
 ---
 
-GPT-4 gets tax questions wrong 33% of the time.
+In March 2025, a fintech startup called April raised $38 million to build what they called "embedded tax infrastructure"—AI-powered tools that would let any financial platform offer tax filing to its users. Their pitch deck probably mentioned that 150 million Americans file taxes every year and most hate the experience. What it likely didn't mention is the engineering nightmare underneath.
 
-This is not an urban legend or an exaggerated claim. Blair-Stanek et al. (2023) developed SARA (StAtutory Reasoning Assessment)—a benchmark for evaluating large language models on US income tax calculations—and found that GPT-4 answered only 67% of true/false tax questions correctly. On scenario-based calculations, GPT-4 got tax liabilities exactly right only about a third of the time {cite}`blairstanek2023gpt4tax`.
+April's tax engine needed to handle federal income tax plus the tax codes of every state that levies one. It needed to track annual changes to brackets, credits, phase-outs, and deductions. It needed to integrate with payroll data, brokerage statements, and government forms in dozens of formats. And it needed to be exactly right—not 95% right, not 99% right, but right to the penny, because the IRS doesn't grade on a curve.
 
-The models confused marginal and effective rates. They misapplied filing status rules. They hallucinated phase-out thresholds that didn't exist.
+April is one company solving one slice of this problem. Column Tax is another: they've filed over a million returns through their embedded API and recently introduced an AI agent called Iris to help maintain their tax engine year over year {cite}`columntax2024`. Both companies are well-funded, well-engineered, and focused almost entirely on filing federal and state income tax returns.
 
-> "Today's LLMs cannot 'do taxes' on their own because tax calculations require 100% correctness. Today's models hallucinate."
+Neither handles benefits eligibility. Neither models the interaction between taxes and transfer programs. Neither can answer the question a lending app actually needs to answer: "What is this borrower's true after-tax, after-benefits disposable income?"
 
-This finding, from Column Tax's engineering blog in 2024, captures a fundamental problem: AI systems will increasingly mediate financial decisions, but they cannot reliably calculate the regulatory details that govern those decisions {cite}`columntax2024`.
-
-PolicyEngine had demonstrated that deterministic tax-benefit calculations could be encoded as open-source code. The question was whether that approach could become infrastructure—not just for policy analysis, but for every fintech application, government agency, and AI assistant that needed accurate calculations.
-
-That question led me to explore what such infrastructure would require.
+That question—the full-stack question—is where the infrastructure gap begins.
 
 ---
 
-## The Infrastructure Gap
+## The landscape of partial solutions
 
-Look at the landscape of tax and financial infrastructure in 2024:
+Look at the landscape of tax and financial infrastructure in 2025:
 
-**Sales tax** has Avalara—a company acquired for $8.4 billion in 2022 {cite}`avalara2022acquisition`. They provide APIs that calculate sales tax obligations for e-commerce transactions. But sales tax only.
+**Sales tax** has Avalara—a company acquired for $8.4 billion in 2022 {cite}`avalara2022acquisition`. They provide APIs that calculate sales tax obligations for e-commerce transactions. The global tax tech market is projected to reach $60 billion by 2034 {cite}`taxtech2025market`. But Avalara handles sales tax only.
 
-**Payroll tax** has Symmetry, ADP, and others. They calculate employer and employee tax obligations. But payroll only.
+**Payroll tax** has ADP, Gusto, and others. They calculate employer and employee tax obligations. But payroll only.
 
-**Benefits screening** has Benefit Kitchen and similar services. They estimate program eligibility. But coverage is limited—a handful of states, no tax integration.
+**Tax filing** has TurboTax, Column Tax, April, and emerging players. They help individuals file returns or let platforms embed filing. But they're consumer-facing, not infrastructure for economic calculation.
 
-**Tax filing** has TurboTax and emerging players like Column Tax. They help individuals file returns. But they're consumer-facing, not API-first infrastructure.
+**Benefits screening** has services like Benefit Kitchen and Benefits.gov. They estimate program eligibility. But coverage is limited—a handful of programs, no tax integration, no household-level modeling.
 
-**Policy simulation** has academic models like PolicyEngine, EUROMOD, Tax-Calculator. They're rigorous but not designed as production-ready commercial infrastructure.
+**Policy simulation** has academic models like PolicyEngine, EUROMOD, and Tax-Calculator. They're rigorous and comprehensive but designed for research, not production API calls at enterprise scale.
 
-No one provides the full stack: income tax + benefits eligibility + attribute prediction + population simulation in a single, production-ready API. This gap is both a problem and an opportunity.
+No one provides the full stack: income tax + benefits eligibility + household attribute prediction + population simulation in a single, production-ready API. Each piece exists somewhere. The integration exists nowhere.
 
-This gap matters because every application that involves money eventually runs into tax and benefit calculations. A lending app needs to estimate after-tax income. A benefits platform needs to determine eligibility across programs. A financial planning tool needs to project tax liability under different scenarios. An AI assistant asked about finances needs to call *something* to get accurate numbers.
+This gap matters because every application that involves money eventually runs into tax and benefit calculations. A lending app needs to estimate after-tax income. A benefits platform needs to determine eligibility across programs that interact with each other—SNAP benefits phase out as earned income rises, but the Earned Income Tax Credit phases in, and the net effect depends on household composition, state of residence, and a dozen other variables. A financial planning tool needs to project tax liability under different scenarios. An AI assistant asked "how much would I get from the Child Tax Credit?" needs to call *something* to get an accurate answer.
 
 Without unified infrastructure, each company builds fragmented, partial solutions—or gives wrong answers.
 
 ---
 
-## Why This Can't Be Trained Away
+## Why this can't be trained away
 
-A natural response to the AI accuracy problem is: "Just train better models."
+GPT-4 gets tax questions wrong 33% of the time.
 
-This won't work for tax and benefit calculations, for structural reasons:
+This is not an urban legend. Blair-Stanek et al. (2023) developed SARA—a benchmark for evaluating large language models on US income tax calculations—and found that GPT-4 answered only 67% of true/false tax questions correctly {cite}`blairstanek2023gpt4tax`. On scenario-based calculations, the accuracy was worse. The models confused marginal and effective rates. They misapplied filing status rules. They hallucinated phase-out thresholds that didn't exist.
 
-**Tax law changes annually.** Every January brings new brackets, new thresholds, new credits. Training data from last year encodes rules that no longer apply. Models can't extrapolate to provisions they've never seen.
+A natural response: "Just train better models." This won't work, for structural reasons:
 
-**Fifty states have different rules.** Each state has its own income tax (or no income tax), its own credits, its own benefit programs. The combinatorial explosion of jurisdiction-specific rules exceeds what pretraining can memorize reliably.
+**Tax law changes annually.** Every January brings new brackets, thresholds, and credits. Training data from last year encodes rules that no longer apply. Models can't extrapolate to provisions they've never seen.
 
-**Eligibility depends on dozens of variables.** SNAP eligibility involves income, household size, expenses, categorical eligibility, state supplements. One wrong variable produces wrong results. LLMs compress this complexity into statistical patterns that don't preserve exact logic.
+**Fifty states have different rules.** Each state has its own income tax (or none), its own credits, its own benefit programs. The combinatorial explosion of jurisdiction-specific rules exceeds what pretraining can memorize reliably.
 
-**Calculations must be 100% correct.** A model that's 95% accurate sounds impressive until you realize that 1 in 20 tax returns would be wrong. Real-world tolerance for error in financial calculations is effectively zero.
+**Eligibility depends on dozens of interacting variables.** SNAP eligibility involves income, household size, expenses, categorical eligibility, and state supplements. One wrong variable produces wrong results. Language models compress this complexity into statistical patterns that don't preserve exact logic.
 
-The Column Tax engineers put it bluntly: "Today's LLMs cannot 'do taxes' on their own because tax calculations require 100% correctness" {cite}`columntax2024`.
+**Financial calculations require 100% correctness.** A model that's 95% accurate sounds impressive until you realize that 1 in 20 tax returns would be wrong. Column Tax's engineers put it directly: "Today's LLMs cannot 'do taxes' on their own because tax calculations require 100% correctness" {cite}`columntax2024`.
 
-The solution isn't better training. It's tools.
+The solution isn't better training. It's tools—deterministic, auditable tools that AI systems can call.
 
 ---
 
-## What Would Be Needed: Deterministic + Auditable
+## Meet Priya
 
-The thesis is that AI systems need deterministic, auditable tools for calculations—and that building those tools as open-source infrastructure would create value for everyone.
+Let me make this concrete with a composite character drawn from real patterns I've seen.
+
+Priya runs engineering at a mid-stage fintech company that provides cash advances to gig workers. Her users—DoorDash drivers, Instacart shoppers, freelance designers—need to know their actual take-home income to make borrowing decisions. The app's underwriting model needs the same information to assess risk.
+
+The problem: a gig worker earning $45,000 in a year might owe $4,200 in federal income tax, $1,800 in self-employment tax, $900 in state tax—and qualify for $2,100 in Earned Income Tax Credit, reducing their effective burden to $4,800. But the same worker with two kids might qualify for $3,600 in Child Tax Credit, dropping their net tax to $1,200. Add SNAP eligibility—which depends on net income after a complex set of deductions—and the picture shifts again.
+
+Priya's team tried four approaches:
+
+First, they used a tax estimation library from GitHub. It handled federal brackets but nothing else—no credits, no state taxes, no benefits. Their estimates were off by 30-40% for low-income users.
+
+Second, they called a tax API provider. The provider handled filing-related calculations but couldn't estimate benefits, couldn't model year-over-year changes, and charged per-call fees that made population-level analysis prohibitive.
+
+Third, they tried prompting GPT-4 with tax scenarios. The hallucination rate was unacceptable for a financial product.
+
+Fourth, they considered building it themselves. Their senior engineer estimated six months of work to cover federal tax alone. State taxes would be another six months. Benefits would be another year. And then they'd need to maintain it as laws change.
+
+Priya's company is real, even if Priya herself is composite. The pattern repeats across fintech: every company that touches consumer finance eventually hits the tax-and-benefits wall, and every one builds a partial, fragile solution.
+
+---
+
+## What the infrastructure would require
+
+The thesis is that AI systems need deterministic, auditable tools for calculations—and that building those tools as shared infrastructure would create value for everyone.
 
 Such infrastructure would require three components:
 
-**Rules Engine**: Every tax and benefit formula encoded as deterministic code, traceable to statute. The EITC calculation cites 26 USC § 32. The SNAP calculation cites 7 USC § 2014. Each computation includes a citation and the parameter values used.
+**A rules engine** where every tax and benefit formula is encoded as deterministic code, traceable to statute. The EITC calculation cites 26 USC § 32. The SNAP calculation cites 7 USC § 2014. Each computation includes a citation and the parameter values used. When the IRS updates the EITC maximum credit for 2026, the parameter file changes; the formula doesn't.
 
-**Synthetic Populations**: For aggregate analysis, you need representative data. This would involve constructing synthetic populations by calibrating public microdata to known totals, imputing missing variables, and validating against administrative aggregates. The result would be a privacy-preserving dataset of synthetic households that produces correct aggregate tax revenue when run through the rules engine.
+**Synthetic populations** for aggregate analysis. This means constructing representative datasets by calibrating public microdata—the Current Population Survey, the American Community Survey—to known administrative totals. The result: a privacy-preserving dataset of synthetic households that, when run through the rules engine, produces aggregate tax revenue matching IRS statistics and benefit enrollment matching agency reports.
 
-**Scenario Simulation**: With rules and population, you could answer counterfactual questions. What if the EITC expanded by 50%? Run the baseline, run the reform, take the difference. The output might show: cost estimates over ten years, households affected, poverty reduction in percentage points—all calculated from the underlying rules and population data.
+**A scenario simulation layer** that answers counterfactual questions. What if the EITC expanded by 50%? Run the baseline, run the reform, take the difference. The output: cost estimates, households affected, poverty impact—all computed from the underlying rules and population data, all auditable.
 
-The key properties such a system would need:
+The key properties:
 
-- **Deterministic**: Same inputs produce same outputs, always
+- **Deterministic**: Same inputs, same outputs, always
 - **Auditable**: Every calculation includes legal citation and parameter values
 - **Versioned**: Git history tracks all rule changes
-- **Bi-temporal**: Parameters track both effective date and knowledge date
+- **Bi-temporal**: Parameters track both effective date (when a law takes effect) and knowledge date (when we learned about it)
 
-When an AI agent would call such infrastructure to answer a tax question, the calculation would be provably correct, legally citable, and traceable. The AI explains; the infrastructure calculates.
-
----
-
-## The Foundation Exists
-
-Such infrastructure wouldn't start from scratch. PolicyEngine has demonstrated the core thesis: tax and benefit rules *can* be encoded accurately at scale. Over a million simulations have run on the platform. The UK Treasury has used the UK model for policy costing. US Congressional offices have used the analysis. The codebase covers US federal plus 50 states, the UK, and Canada—with 50+ open-source contributors maintaining and extending it {cite}`policyengine2024about`.
-
-But PolicyEngine was designed as a policy analysis tool—a nonprofit providing free research infrastructure. The gap is commercial infrastructure: production APIs, enterprise support, service-level guarantees.
-
-One potential path would be an open-core model, mirroring patterns in other successful open-source infrastructure: Linux and Red Hat, Kubernetes and cloud providers, PostgreSQL and managed database services. The simulation engine could remain open source while hosted services and enterprise features would be commercial.
-
-Whether this specific approach is the right one remains uncertain. What's clear is that the foundation exists—accurate, open-source policy rules that could be packaged differently to serve different use cases.
+When an AI agent calls such infrastructure to answer a tax question, the calculation is provably correct, legally citable, and traceable. The AI explains; the infrastructure calculates.
 
 ---
 
-## Why Open Source Would Matter
+## The foundation exists
 
-If policy calculation infrastructure were built as open-core—with the simulation engine open source and hosted services commercial—the open-source foundation would serve multiple purposes:
+This infrastructure wouldn't start from scratch.
 
-**Trust through transparency.** When a fintech company integrates tax calculations into their product, they can inspect exactly how those calculations work. No black boxes.
+PolicyEngine has demonstrated the core thesis: tax and benefit rules *can* be encoded accurately at scale. Over a million simulations have run on the platform. The UK's HM Treasury published an algorithmic transparency record describing their evaluation of PolicyEngine as a potential supplement to their internal microsimulation model {cite}`hmt2025policyengine`. US Congressional offices have used the analysis for budget scoring. The codebase covers US federal plus all 50 states, the UK, and Canada—maintained by 50+ open-source contributors {cite}`policyengine2024about`.
 
-**Community contributions.** Tax law is vast and constantly changing. Open source enables distributed maintenance—state-level experts can contribute state-specific rules.
+But PolicyEngine was designed as a policy analysis tool—a nonprofit providing free research infrastructure. The gap is commercial infrastructure: production APIs with millisecond response times, enterprise support with service-level agreements, documentation aimed at developers rather than policy analysts.
 
-**Regulatory readiness.** As AI regulation increases, audit trails matter. Calculations based on open-source, citable code are inherently more defensible than LLM outputs.
+One potential path: an open-core model mirroring patterns in other successful open-source infrastructure. Linux powers the cloud but Red Hat sells enterprise support. Kubernetes orchestrates containers but cloud providers sell managed services. PostgreSQL stores data but managed database services add monitoring, backups, and guarantees.
 
-**Competitive moat.** Paradoxically, open-sourcing the core makes it harder for competitors to catch up. The comprehensive rule coverage becomes a network effect—each additional program encoded increases the value of the whole.
-
----
-
-## Why This Would Matter
-
-The thesis is that accurate tax and benefit calculations could become essential infrastructure—not a niche academic tool but something every fintech app, government service, and AI assistant needs.
-
-Several trends suggest this need is growing:
-
-**AI tool use is becoming standard.** Function calling shipped in GPT-4 and Claude 3. Anthropic's Model Context Protocol is being adopted broadly. AI assistants need reliable tools to call—hallucinating tax calculations is unacceptable.
-
-**AI financial regulation is coming.** The SEC, CFPB, and state regulators are examining AI in financial services. Audit trails and explainability will likely be required. Citation-based approaches are regulation-ready.
-
-**The precedent exists.** Avalara built a large business ($8.4 billion acquisition) providing sales tax APIs alone. Someone will likely build the equivalent for income taxes and benefits. The question is whether it will be open or proprietary.
-
-The underlying need—accurate calculations that AI can call—appears real. Whether the market is large enough to sustain commercial infrastructure remains unproven.
+Under this model, the simulation engine—the rules, the parameters, the formulas—would remain open source. Anyone could inspect, verify, or extend the calculations. Commercial value would come from hosted services, enterprise features, and integration support.
 
 ---
 
-## The Shared Substrate Vision
+## The open-core tension
 
-The deepest rationale for such infrastructure connects to the book's larger thesis:
+An open-core approach to policy infrastructure raises legitimate concerns that deserve honest engagement.
+
+**Governance risk.** If a commercial entity controls the roadmap of open-source policy rules, commercial incentives could distort priorities. A paying customer might want Australian tax rules before a nonprofit wants updated SNAP calculations. The maintainer could deprioritize accuracy fixes that don't affect revenue.
+
+This tension exists in every open-core project, but it's more acute for policy infrastructure. When Red Hat prioritizes enterprise Linux features, the stakes are server uptime. When a policy infrastructure company prioritizes one country's tax code over another, the stakes include whether vulnerable populations get accurate benefits estimates.
+
+**Capture risk.** A well-funded commercial player could dominate the open-source project, effectively making "open source" a brand rather than a genuine commons. Contributors might drift away if they feel their work primarily benefits shareholders.
+
+**Sustainability risk.** Most startups fail. If the commercial layer fails, the open-source foundation might lose its most active maintainers. The codebase could stagnate, and downstream users—nonprofits, government agencies, researchers—would be left maintaining infrastructure designed for a commercial context that no longer exists.
+
+These aren't hypothetical objections. They're structural features of the open-core model that any attempt to build this infrastructure would need to address through governance structures, contributor agreements, and institutional redundancy.
+
+---
+
+## Why open source would matter anyway
+
+Despite the tensions, open-source foundations serve purposes that closed infrastructure cannot.
+
+**Trust through transparency.** When a fintech company integrates tax calculations, they can inspect exactly how those calculations work. When a government agency uses the infrastructure, they can verify it matches statute. No black boxes.
+
+**Distributed maintenance.** Tax law is vast and constantly changing. Open source enables state-level experts to contribute state-specific rules, benefits specialists to maintain eligibility logic, and international contributors to add jurisdictions. No single company can hire enough domain experts to cover every rule.
+
+**Regulatory readiness.** As AI regulation increases, audit trails matter. Calculations based on open-source, citable code are inherently more defensible than LLM outputs. The EU AI Act, US state-level AI regulations, and financial regulators are all moving toward requiring explainability for automated financial decisions.
+
+---
+
+## The market question
+
+Is this a real business or a nice idea?
+
+The market signals are mixed but suggestive.
+
+Avalara built a large business—$8.4 billion acquisition—providing sales tax APIs alone {cite}`avalara2022acquisition`. Column Tax has filed over a million returns through its embedded API. April raised $38 million. The global tax tech market is projected to grow from $21 billion in 2025 to over $60 billion by 2034 {cite}`taxtech2025market`.
+
+But these companies focus on narrow slices: sales tax compliance, income tax filing, payroll calculation. The full-stack vision—income tax plus benefits plus population simulation—has no direct precedent as a commercial product. It's possible the market wants narrow, specialized tools rather than unified infrastructure. It's possible that the integration challenge is too complex for a single API. It's possible that the potential customers—fintechs, government agencies, AI companies—would rather build their own partial solutions than depend on shared infrastructure.
+
+The honest answer: the need for accurate, comprehensive tax-and-benefit calculations appears real. Whether that need translates into a viable market for infrastructure-as-a-service is unproven.
+
+---
+
+## The shared substrate vision
+
+The deepest rationale for such infrastructure connects to the book's larger thesis.
 
 Society is hard to optimize because nobody has a shared model to reason against. Congress debates with napkin math. Banks model risk without knowing policy changes. AI agents hallucinate eligibility rules.
 
 What's needed is a shared substrate—a simulation everyone can query, so decisions are grounded in the same reality.
 
-When policymakers consider reforming the EITC, they should be able to query the same simulation that banks use to assess lending risk, that fintech apps use to estimate tax liability, that AI assistants use to answer questions. The calculations should be the same because the underlying reality is the same.
+When policymakers consider reforming the EITC, they should be able to query the same simulation that banks use to assess lending risk, that fintech apps use to estimate tax liability, that AI assistants use to answer questions. The calculations should be the same because the underlying law is the same.
 
-Today, fragmentation creates divergent answers. Official government estimates use proprietary models. Think tanks use different models. Companies build ad-hoc solutions. Individuals get inconsistent information. The policy debate suffers because participants aren't reasoning against the same facts.
+Today, fragmentation creates divergent answers. Official government estimates use proprietary models. Think tanks use different models. Companies build ad-hoc solutions. Individuals get inconsistent information from AI chatbots that hallucinate confidently. The policy debate suffers because participants aren't reasoning against the same facts.
 
 Shared infrastructure could change this. A canonical, open-source, production-quality simulation that anyone can query—and anyone can verify—creates common ground. Disagreements can focus on values and priorities rather than on whose numbers are right.
 
-This is infrastructure for democratic deliberation: transparent, accessible, shared.
-
 ---
 
-## From Analysis to Infrastructure
+## The work ahead
 
-This vision represents an evolution in thinking about what policy simulation infrastructure could be.
+As I write this, I'm exploring whether to build this infrastructure through two complementary organizations.
 
-PolicyEngine asked: "Can we make policy analysis accessible to everyone?" The answer was yes—through open-source models, web interfaces, and free public tools.
+The first is the **Rules Foundation**, a 501(c)(3) nonprofit developing open-source standards for encoding law as code. The foundation maintains Atlas—an archive of statutes, regulations, and IRS guidance—and RAC (Rules as Code), a domain-specific language for encoding tax and benefit formulas in a format that's both human-readable and machine-executable. RAC encodes each calculation with legal citations, parameter values, and deterministic logic. The encoding for the Earned Income Tax Credit, for example, traces each step to 26 USC § 32, with parameter values that update annually as the IRS publishes new thresholds. The foundation also builds AutoRAC, tooling that uses AI to accelerate the encoding of statutes into RAC format. Jurisdiction-specific encodings—US federal, California, New York, Canada—are maintained as separate open-source repositories.
 
-The next question is: "Can accurate policy calculations become infrastructure that everything else builds on?" The answer would require commercial sustainability, production-quality engineering, and integration with the broader ecosystem of AI tools and financial applications.
+The second is **Cosilico**, a commercial venture that would build production APIs on top of the Rules Foundation's open-source encoding. Cosilico's layer adds microdata (representative household datasets for population simulation), synthetic data generation, and hosted API endpoints with the performance and reliability guarantees that production applications require.
 
-PolicyEngine demonstrated the proof of concept. Scaling it to production infrastructure is the open challenge.
+This structure directly addresses the open-core governance tension described earlier. The rules themselves—the encoding of law—live in a nonprofit foundation with an independent governance structure. No commercial entity controls which statutes get encoded or how. The commercial layer provides infrastructure services on top of the open-source foundation, the same way managed database services build on PostgreSQL without controlling PostgreSQL's development.
 
----
+Both organizations are early. The Rules Foundation has encoded portions of US federal tax law and several state codes. Cosilico has no production API, no paying customers, no proof that the market exists at scale.
 
-## What Success Would Look Like
+I include this chapter not because the infrastructure has been built, but because the problem is real regardless of whether this particular attempt succeeds. AI systems need deterministic tools for financial calculations. Column Tax, April, and others are building pieces of the answer for tax filing. No one is building the full stack that connects taxes, benefits, and population simulation.
 
-If such infrastructure were built successfully, the results would be visible throughout the financial ecosystem:
+If these specific ventures fail—and most do—the thesis remains: open-source policy simulation infrastructure, production-ready and commercially sustainable, would be valuable. Someone should build it. Maybe I will. Maybe Column Tax will expand beyond filing. Maybe a government agency will fund it as public infrastructure. Maybe the open-source community around PolicyEngine and OpenFisca will evolve to fill the gap without any commercial layer at all.
 
-**AI assistants** that give accurate answers to tax and benefit questions—not because they've been trained better, but because they call reliable tools.
+The honest framing is aspiration, not accomplishment. PolicyEngine demonstrated that open policy simulation is possible and valuable. Whether it can become the production infrastructure that AI systems and financial applications rely on—fast enough, reliable enough, comprehensive enough, and commercially sustainable enough—remains the open question.
 
-**Fintech applications** that correctly calculate after-tax income, benefit eligibility, and financial impacts—without each company reinventing the calculations.
-
-**Government agencies** that use the same validated calculations as the private sector—reducing discrepancies and improving trust.
-
-**Policy debates** grounded in shared numbers—where disagreements are about values, not whose model is right.
-
-**Individual citizens** who can understand how policies affect them—accessing the same calculations that Congress uses.
-
-This is the vision of "society in silico" applied practically: simulation as infrastructure for understanding and improving the systems that govern our lives.
-
----
-
-## The Work Ahead
-
-As I write this in late 2024, I'm exploring whether to build this infrastructure through a venture called Cosilico. The company is incorporated. Early design work has begun. But there's no production API, no paying customers, no proof that the market exists.
-
-I include this chapter not because such infrastructure has been built, but because the problem is real regardless of whether this particular attempt succeeds. AI systems need deterministic tools for financial calculations. Someone will likely build this infrastructure. The question is whether it will be open or proprietary.
-
-If this specific venture fails—and most startups do—the thesis remains: open-source policy simulation infrastructure, production-ready and commercially sustainable, would be valuable. Someone should build it. Maybe I will. Maybe someone else will do it better. Maybe PolicyEngine itself will evolve to fill this role without a separate commercial layer.
-
-The honest framing is aspiration, not accomplishment. PolicyEngine demonstrated that open policy simulation is possible and valuable. Whether it can be packaged as production infrastructure that AI systems and fintech companies rely on remains unproven.
-
-What I can say with confidence: the gap exists. GPT-4 gets tax questions wrong a third of the time. Every fintech company that needs accurate calculations today builds fragmented, partial solutions. The need for shared infrastructure appears real, even if the path to building it remains uncertain.
-
-This chapter describes a problem and a potential solution. Whether that solution materializes—and whether it's commercially viable—is unknown. You're reading this partly to understand what infrastructure would be needed for AI to reliably handle policy calculations, and why it matters whether that infrastructure is open or proprietary.
+What I can say with confidence: the gap exists. GPT-4 gets tax questions wrong a third of the time. Every Priya at every fintech company that needs accurate calculations builds fragmented, partial solutions. The $60 billion tax tech market is growing fast but remains balkanized into narrow verticals. The need for shared infrastructure appears real, even if the path to building it remains uncertain.
 
 ---
 

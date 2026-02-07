@@ -36,15 +36,21 @@ Every chapter of this book has been about building the second path.
 
 Guy Orcutt imagined simulating the economy household by household in 1957. For decades, that vision was realized only inside government agencies—Congressional Budget Office, Joint Committee on Taxation, Treasury—accessible to the powerful, invisible to citizens.
 
-OpenFisca cracked open the model in France. The code was published. Anyone could run it. Rules as code became a movement: legislation should be readable by machines and humans alike.
+The path from there to here wasn't linear. It required several things to happen in sequence.
 
-PolicyEngine extended this to the US and UK, adding a web interface that lets anyone—not just programmers—see how policies affect their household. The household view: "How does this tax credit affect me?" The society view: "Who gains and who loses across the population?"
+First, the computers had to get fast enough. Orcutt's 1961 Microanalysis of Socioeconomic Systems pushed the limits of mid-century mainframes. By the 2000s, a laptop could run simulations that once required institutional computing infrastructure. By the 2020s, cloud computing made it possible to run millions of household simulations in seconds.
 
-Cosilico is building the next layer: infrastructure that lets AI agents encode rules from authoritative sources with empirical validation. Not AI replacing analysis—AI using deterministic tools to ground its reasoning.
+Second, the data had to improve—and become accessible. The Current Population Survey, the Survey of Consumer Finances, IRS public-use files, administrative records from government agencies. Each data source added resolution to the picture of who Americans are and what they earn. Enhanced microdata techniques—combining multiple sources through statistical matching—pushed accuracy further.
+
+Third, the code had to go open. OpenFisca cracked open the model in France. The code was published. Anyone could run it. Rules as code became a movement: legislation should be readable by machines and humans alike. In the US, the Open Source Policy Center at AEI demonstrated that rigorous tax microsimulation could be built transparently. UKMOD showed that cross-national models could be freely available.
+
+Fourth, the interface had to democratize. PolicyEngine extended open-source microsimulation to the US and UK, adding a web interface that lets anyone—not just programmers—see how policies affect their household. The household view: "How does this tax credit affect me?" The society view: "Who gains and who loses across the population?"
+
+Fifth, the Rules Foundation began encoding statutes as code—structured, versioned, testable representations of tax and benefit law. Cosilico is building the infrastructure layer on top: APIs that let AI agents and applications query these rules with empirical validation. Not AI replacing analysis—AI using deterministic tools to ground its reasoning.
 
 HiveSight simulates opinions. Democrasim simulates elections. Squigglepy quantifies uncertainty. Each component addresses a layer of the problem.
 
-Together, they form the beginnings of democratic simulation infrastructure.
+Together, they form the beginnings of democratic simulation infrastructure. No single piece is complete. But the architecture is visible: deterministic rule engines at the foundation, microsimulation models in the middle, AI interfaces at the top, and uncertainty quantification threaded through every layer.
 
 ---
 
@@ -144,17 +150,19 @@ The alternative is AI confidently wrong about policy—a future where more peopl
 
 If I'm still building these tools in five years, what does success look like?
 
-**PolicyEngine covers more countries.** Not just US and UK, but every jurisdiction with sufficient data. Tax-benefit models as global infrastructure.
+**PolicyEngine covers more countries.** Not just US and UK, but every jurisdiction with sufficient data. The tax-benefit rules of each country encoded as testable code. The underlying framework—PolicyEngine Core—is already country-agnostic; what's needed is the painstaking work of encoding each nation's specific rules and finding representative microdata. A dozen countries would be ambitious. A hundred would be transformative.
 
-**Uncertainty is quantified.** Every estimate comes with confidence intervals. Users see ranges, not false precision.
+**Uncertainty is quantified.** Every estimate comes with confidence intervals. Users see ranges, not false precision. "This reform costs $50 billion [90% CI: $35B-$68B]" rather than "this reform costs $50 billion." The methodology exists—Monte Carlo simulation over uncertain parameters, bootstrapping over survey weights. The engineering work to integrate it into production tools is substantial but tractable.
 
-**Cosilico works at scale.** AI agents reliably encode rules from statutes. Validation against authoritative oracles is automatic. The human-AI partnership produces rules faster and more accurately than either alone.
+**The Rules Foundation scales.** Statutes encoded as structured, versioned, testable code—covering federal tax law, state tax codes, benefit programs, and eventually regulations beyond the tax-benefit system. Cosilico provides the infrastructure: AI agents that encode rules from authoritative sources, validate against established calculators, and maintain the codebase as laws change. The human-AI partnership produces rules faster and more accurately than either alone.
 
-**Value forecasting has been tested.** We know whether historical validation works. We know how far forward projections are reliable. We've integrated (or abandoned) the approach based on evidence.
+**Value forecasting has been tested.** We know whether historical validation works—whether models trained on past survey data can predict future survey responses. We know how far forward projections are reliable. We've integrated (or abandoned) the approach based on evidence.
 
-**Adoption is mainstream.** Policy debates reference open models. Journalists query microsimulations. Voters compare candidates using shared infrastructure. The asymmetry of analysis has flattened.
+**Adoption is mainstream.** Policy debates reference open models. Journalists query microsimulations. Voters compare candidates using shared infrastructure. When a presidential candidate releases a tax plan, independent distributional analysis appears within hours—not from a single think tank, but from dozens of users running the same open tools with different assumptions. The asymmetry of analysis has flattened.
 
-Some of this will happen. Some won't. The vision adjusts as reality teaches.
+**AI systems call reliable tools.** When someone asks an AI assistant about tax policy, the response is grounded in deterministic calculations from validated models, not generated from training data alone. The infrastructure we're building becomes part of the AI stack—the equivalent of a calculator for policy questions.
+
+Some of this will happen. Some won't. The vision adjusts as reality teaches. Five years ago, I would not have predicted that HM Treasury would formally evaluate PolicyEngine as infrastructure. I would not have predicted that AI systems would be capable of encoding statutes. The specifics are unpredictable; the direction is clear.
 
 ---
 
@@ -182,9 +190,11 @@ In Westworld, Serac's system ultimately fails. Rehoboam couldn't handle the chao
 
 The fiction was too neat, but the lesson holds.
 
-Closed systems are brittle. They optimize for their assumptions. When the world shifts—and it always shifts—they break in ways their designers didn't anticipate.
+Closed systems are brittle. They optimize for their assumptions. When the world shifts—and it always shifts—they break in ways their designers didn't anticipate. The government microsimulation monopoly of the 1980s was a mild version of this brittleness: models that couldn't be challenged couldn't be corrected. When JCT produced an estimate, there was no mechanism for outside correction—you could disagree, but you couldn't demonstrate the error. The open-source movement changed this not by producing better models, but by making models *improvable*.
 
 Open systems are different. They expose assumptions. They invite correction. They adapt as understanding improves. They're never finished, but they're also never frozen.
+
+This is the lesson of the entire trajectory traced in this book. Orcutt's 1957 paper proposed the idea. Government agencies realized it in closed systems. Think tanks challenged the government monopoly. Open-source projects made the tools public. AI is now making the tools accessible. Each step expanded who could participate in the conversation about what policies do and who they affect.
 
 Society in silico isn't about predicting the future with certainty. It's about creating tools that help us reason about possible futures with calibrated uncertainty.
 
@@ -200,11 +210,15 @@ That's not a prediction machine. It's a reasoning aid.
 
 The question that opened this book has no definitive answer. Simulation can't tell us what to value. It can't guarantee we'll use insights wisely. It can't prevent bad-faith actors from gaming the tools.
 
-What it can do is make the invisible visible. The distributional effects hidden in policy details. The uncertainty masked by point estimates. The values implicit in optimization targets. The trajectories of moral change across generations.
+What it can do is make the invisible visible. The distributional effects hidden in policy details. The uncertainty masked by point estimates. The values implicit in optimization targets. The benefit cliffs that trap families. The marginal tax rates that discourage work. The interactions between programs that no single-program analysis reveals.
 
-Making these visible doesn't solve politics. It informs it.
+Making these visible doesn't solve politics. It informs it. A voter who can see that a candidate's tax plan would increase their family's net income by $1,200 may still vote for the other candidate—for reasons of values, identity, or priorities that go beyond economics. That's their right. But they can make that choice with open eyes rather than closed.
 
 And that, in the end, is the aspiration. Not a perfect model of society. Not a machine that optimizes humanity. Just tools—open, transparent, uncertainty-aware—that help us see more clearly what we're choosing and why.
+
+Guy Orcutt died in 2006, half a century after his foundational paper. He lived to see microsimulation become institutional infrastructure but not to see it become public infrastructure. The open-source models, the web applications, the AI integrations—all came after. But the core insight was his: model society from the bottom up, one household at a time, and the picture that emerges is richer than any aggregate equation can capture.
+
+We're still following that insight. The tools are better. The data is richer. The interfaces are more accessible. The vision is the same: understand the system well enough to improve it, transparently enough that everyone can participate in the conversation about how.
 
 The work continues. The invitation stands.
 

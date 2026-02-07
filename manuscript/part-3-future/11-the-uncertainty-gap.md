@@ -106,6 +106,24 @@ But we're far from the aspiration. When you use PolicyEngine today, you get a nu
 
 ---
 
+## How Other Fields Handle Uncertainty
+
+Policy microsimulation's failure to report uncertainty is unusual. Most quantitative fields have solved this problem—or at least confronted it honestly.
+
+**Weather forecasting** is the gold standard. Modern weather models don't produce a single forecast—they run ensemble simulations, perturbing initial conditions slightly and seeing how the forecasts diverge. The National Weather Service reports "60% chance of rain"—a calibrated probability that reflects genuine uncertainty about atmospheric dynamics. Forecast skill improves continuously, and the improvement is measured precisely: the five-day forecast today is as accurate as the three-day forecast was thirty years ago.
+
+**Clinical trials** report confidence intervals as a matter of scientific practice. A drug that reduces mortality by 15% (95% CI: 8% to 22%) tells clinicians something fundamentally different from a drug that reduces mortality by 15% (95% CI: -2% to 32%). The first is reliably beneficial. The second might not help at all. The confidence interval isn't optional context—it's the core information.
+
+**Financial risk management** lives on uncertainty quantification. Value at Risk models estimate the worst-case loss at a given confidence level. Portfolio optimization uses covariance matrices. Options pricing depends on implied volatility. The 2008 financial crisis revealed that these models underestimated tail risks—but the response was to improve uncertainty modeling, not to abandon it.
+
+**Climate modeling** runs large ensembles of global climate models, producing probability distributions over temperature increases, sea level rise, and precipitation changes. The IPCC reports use calibrated uncertainty language: "likely" means 66-100% probability, "very likely" means 90-100%.
+
+Policy microsimulation is the outlier. It produces outputs of comparable complexity to climate projections—millions of interacting variables, uncertain parameters, structural assumptions—but reports them without uncertainty bounds. The gap isn't technological; the statistical tools exist. It's institutional and cultural. Funders expect clean numbers. Legislators need single estimates for budget scoring. Journalists want headlines, not distributions.
+
+Closing this gap is the central methodological challenge for the next decade of microsimulation.
+
+---
+
 ## The Deeper Issue: Uncertainty About Structure
 
 There's a harder problem beneath parameter uncertainty: we don't know if the model is right.

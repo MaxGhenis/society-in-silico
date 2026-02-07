@@ -48,17 +48,19 @@ The result is an enhanced dataset that matches official aggregates more closely 
 
 The most basic question about any policy reform: what does it cost?
 
-Budget scoring is the bread and butter of policy analysis. When a legislator proposes expanding the EITC, the first question is always "how much?" When an advocate proposes a new child benefit, feasibility depends on the price tag.
+Budget scoring is the bread and butter of policy analysis. When a legislator proposes expanding the EITC, the first question is always "how much?" When an advocate proposes a new child benefit, feasibility depends on the price tag. And when a senator needs a revenue estimate before markup, the number determines whether the amendment survives.
 
 PolicyEngine calculates net budget impact by summing changes in tax revenue and benefit expenditure across all households. The fully refundable CTC example costs $2 billion because the additional credits paid out exceed any behavioral responses or interactions with other programs {cite}`policyengine2023scoring`.
 
+The calculation is conceptually simple but computationally intensive. For each of the roughly 100,000 weighted household records in the enhanced dataset, the model runs two simulations: one under current law, one under the reform. The difference in total government revenue and spending, summed across all records with appropriate weights, yields the budget estimate. The whole process takes seconds on a modern server—but under the hood, it's evaluating millions of individual program eligibility checks, tax bracket calculations, and benefit phase-outs.
+
 But budget impact isn't a single number. It varies by:
 
-- **Year**: Tax provisions phase in and out. Inflation adjusts thresholds. Economic conditions change.
-- **Baseline**: Impact relative to current law differs from impact relative to scheduled future law.
-- **Behavioral assumptions**: Do people work more or less in response to changed incentives?
+- **Year**: Tax provisions phase in and out. Inflation adjusts thresholds. Economic conditions change. A reform that costs $10 billion in its first year might cost $15 billion by year five as more people become eligible.
+- **Baseline**: Impact relative to current law differs from impact relative to scheduled future law. If the TCJA individual provisions are set to expire, scoring an extension requires specifying whether the baseline includes or excludes that expiration—a choice that can swing estimates by hundreds of billions.
+- **Behavioral assumptions**: Do people work more or less in response to changed incentives? Static estimates ignore behavioral response. Estimates with labor supply elasticities may reduce projected costs (if people work more) or increase them (if they work less).
 
-PolicyEngine shows budget impact as a primary output, but contextualizes it with distributional analysis and household examples that reveal what the numbers mean.
+PolicyEngine shows budget impact as a primary output, but contextualizes it with distributional analysis and household examples that reveal what the numbers mean. A $50 billion reform means little in isolation—it matters whether it's $50 billion concentrated on families in poverty or $50 billion distributed across the income spectrum.
 
 ---
 
@@ -156,13 +158,17 @@ The society view enables a form of policy analysis that wasn't previously possib
 
 When Congress debates expanding the Child Tax Credit, PolicyEngine can show the distributional impacts within hours. When a state considers changing its EITC, the model can estimate effects before the vote {cite}`policyengine2022review`.
 
-This speed matters. Policy debates often proceed faster than traditional analytical processes. By the time a think tank publishes a detailed study, the legislative moment may have passed. Real-time tools change who can participate in the debate.
+This speed matters. Policy debates often proceed faster than traditional analytical processes. Traditional think tank analysis takes weeks or months: a team reads the legislation, codes it into their model, runs the simulations, writes up findings, goes through review. By the time the study is published, the legislative moment may have passed. Real-time tools change who can participate in the debate—and when.
 
-In the UK, PolicyEngine produced analysis of Prime Minister Liz Truss's tax cuts within hours of their announcement—the only independent distributional estimates available while the policies were being debated {cite}`policyengine2022review`.
+The model's speed comes from pre-investment. Building and maintaining the microsimulation engine takes years. But once the infrastructure exists, analyzing a new reform takes hours or days, not weeks. The marginal cost of each analysis is low because the fixed cost of the underlying model has already been paid.
 
-> "When the Chancellor announced a budget, PolicyEngine had analysis published within a day."
+Consider the sequence when a major tax proposal is introduced. First, the policy parameters need to be translated from legislative text into model inputs—tax rates, thresholds, phase-out schedules. PolicyEngine's parameter system is designed for this: each program variable is separately adjustable. Second, the simulation runs across the full microdata sample. Third, the outputs—budget impact, poverty rates, distributional charts—are generated automatically.
 
-This capability depends on having the model already built and maintained. The investment is in infrastructure, not in each individual analysis.
+**The UK Truss episode.** In September 2022, when Chancellor Kwasi Kwarteng announced what became known as the "mini-budget"—eliminating the 45p additional rate of income tax, cutting the basic rate from 20p to 19p, and reversing a planned National Insurance increase—PolicyEngine UK published distributional analysis within hours {cite}`policyengine2022review`. The estimates showed the package overwhelmingly benefiting higher earners: the top decile gained an average of £2,500 per year while the bottom decile gained essentially nothing. These were the only independent household-level distributional estimates available during the critical first days of debate. Media outlets cited the analysis. Within weeks, the government reversed course on the 45p rate abolition; within a month, Truss resigned.
+
+**The US CTC debate.** When proposals circulated in 2024 and 2025 to expand the Child Tax Credit, PolicyEngine could show the trade-offs of different design choices in real time. Making the credit fully refundable cost more but delivered more to the poorest families. Increasing the per-child amount had a different distributional profile than lowering the phase-in threshold. For each variant, PolicyEngine produced budget scores, poverty impacts, and decile-level distributional charts—the same outputs that JCT and TPC produced, but available instantly and queryable by anyone.
+
+This capability depends on having the model already built and maintained. The investment is in infrastructure, not in each individual analysis. And it compounds: each reform analyzed adds to the library of examples, builds user trust, and reveals edge cases that improve the model.
 
 ---
 
@@ -172,11 +178,15 @@ The society view is powerful for producing estimates. But its deeper value may b
 
 Think tanks use PolicyEngine to power their research. Advocacy organizations model their preferred reforms. Journalists fact-check claims about policy costs. Academic researchers run simulations without building models from scratch.
 
-Each use case has different needs. Researchers want detailed methodology documentation. Advocates want shareable results they can embed. Journalists want quick answers they can verify. Policymakers want comparisons across multiple options.
+Each use case has different needs. Researchers want detailed methodology documentation and API access for running thousands of scenarios. Advocates want shareable results they can embed in op-eds and campaign materials. Journalists want quick answers they can verify—and crucially, they want to be able to show their work. Policymakers want side-by-side comparisons across multiple reform options.
 
-The same underlying microsimulation engine serves all these users. What varies is the interface, the outputs emphasized, the level of technical detail exposed.
+The same underlying microsimulation engine serves all these users. What varies is the interface, the outputs emphasized, the level of technical detail exposed. The web application provides the most accessible interface—anyone with a browser can run analyses. The Python package provides programmatic access for researchers who need to run custom scenarios, iterate over parameter spaces, or integrate with other tools. The API enables third-party applications to incorporate PolicyEngine's calculations into their own products.
 
-This is the platform potential of open-source policy analysis. Not just a tool that produces estimates, but infrastructure that others can build on.
+This layered architecture—web application, Python package, API—means the society view can scale in multiple directions simultaneously. A nonprofit advocating for expanded childcare subsidies can model their proposal on the website. A university researcher studying the interaction between SNAP and the EITC can use the Python package to simulate hundreds of reform variants. A fintech company building a financial planning tool can call the API to show users how policy proposals would affect their household.
+
+The platform model also changes the dynamics of policy debate. When analysis is a one-time product—a report published by a think tank—the debate is about whether to trust that specific report. When analysis is infrastructure that anyone can use, the debate shifts to whether the underlying model is sound. That's a more productive conversation, because model quality is testable and improvable in ways that report credibility is not.
+
+This is the platform potential of open-source policy analysis. Not just a tool that produces estimates, but infrastructure that others build on—extending the analytical capacity of every organization that uses it.
 
 ---
 

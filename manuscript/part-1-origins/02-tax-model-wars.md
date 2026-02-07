@@ -14,11 +14,17 @@ But only beginning. Four decades later, that asymmetry persists—and understand
 
 While IFS was building TAXBEN in London, American government agencies were constructing their own microsimulation apparatus—but behind closed doors.
 
+The story begins with Alice Rivlin.
+
+In 1974, Congress created the Congressional Budget Office to give itself independent analytical capacity—no longer relying solely on the executive branch for budget projections. Rivlin, an economist at Brookings, became CBO's first director. Her vision was specific: CBO would be nonpartisan, analytical, and unafraid to publish numbers that made both parties uncomfortable {cite}`rivlin1984economics`. She staffed the office with economists, not political operatives, and established a culture of methodological transparency that persists five decades later.
+
+CBO developed microsimulation models for health insurance, Social Security, and tax analysis. For long-term projections—especially the fiscal trajectory of entitlement programs—they built CBOLT, the Congressional Budget Office Long-Term model {cite}`cbo2018overview`. These models gave Congress something it had never had: the ability to independently evaluate the President's budget proposals with its own numbers.
+
 The Joint Committee on Taxation, created in 1926, had long been Congress's official scorekeeper for tax legislation {cite}`jct2024history`. By the 1970s, JCT was developing sophisticated microsimulation models: an Individual Model, a Corporate Model, an International Cross Border Model, an Estate and Gift Model {cite}`jct2024revenue`. When a member of Congress proposed a tax change, JCT's models would estimate its cost. These estimates carried legal weight—the Budget Act of 1974 made JCT the official source of revenue estimates for Congress.
 
-The Treasury's Office of Tax Analysis built parallel capabilities for the executive branch. George Sadowsky's work in the early 1960s had demonstrated what was possible {cite}`sadowsky1991computing`; by the 1980s, Treasury maintained the Individual Income Tax Model (ITM), regularly updated with fresh data from IRS tax returns.
+The process was—and remains—remarkably consequential. A senator drafts a tax amendment. JCT's staff feed the proposal into their microsimulation models, which apply the new rules to a representative sample of tax returns drawn from actual IRS data. Within days, sometimes hours, JCT produces a "score"—the projected change in federal revenue over ten years. That number determines whether the amendment is fiscally viable, whether it fits within a budget resolution, whether it can pass under reconciliation rules. A score that comes in too high kills proposals before they reach a vote.
 
-The Congressional Budget Office, created in 1974 to give Congress independent analytical capacity, developed its own microsimulation models. For short-term tax analysis, CBO built models similar to JCT's. For long-term projections—especially Social Security—they developed CBOLT, the Congressional Budget Office Long-Term model {cite}`cbo2018overview`.
+The Treasury's Office of Tax Analysis built parallel capabilities for the executive branch. George Sadowsky's work in the early 1960s had demonstrated what was possible {cite}`sadowsky1991computing`; by the 1980s, Treasury maintained the Individual Income Tax Model (ITM), regularly updated with fresh data from IRS tax returns. Treasury's models served the President—providing revenue estimates for Administration proposals—while JCT's served Congress.
 
 Outside government, the Urban Institute was building its own analytical infrastructure. Karen Smith joined Urban in the 1980s and would spend three decades developing microsimulation models for Social Security, pensions, taxation, and welfare reform {cite}`urban2024karensmith`. She played lead roles in both MINT (the Social Security Administration's retirement income model) and DYNASIM (Urban's flagship dynamic microsimulation). While Urban's models served government clients rather than challenging official estimates, Smith was building expertise that would bridge the mainframe era into the age of open source.
 
@@ -43,6 +49,46 @@ This created several problems.
 Some academics pushed back. At the National Bureau of Economic Research, Daniel Feenberg began building TAXSIM in the early 1980s {cite}`feenberg1993taxsim`. By the 1990s, it had become internet-accessible—one of the first tax calculators available online. Feenberg would maintain TAXSIM for his entire career, a quiet but essential contribution that enabled generations of tax research. When researchers needed to calculate tax liabilities for survey respondents, TAXSIM was there—reliable, documented, freely available to academics.
 
 But TAXSIM was a research tool, not a policy analysis platform. It calculated taxes for individual records; it didn't produce the aggregate estimates and distributional tables that drove policy debates. Feenberg had demonstrated that useful tools could be built outside government, even if they couldn't fully replicate official infrastructure. The question was whether anyone could go further.
+
+---
+
+## The Challengers
+
+The first serious challenge to the government monopoly on policy analysis came from within the establishment—but outside the government.
+
+In 2002, C. Eugene Steuerle and Leonard Burman founded the Tax Policy Center, a joint venture of the Urban Institute and Brookings Institution {cite}`tpc2024model`. Both were tax policy veterans—Steuerle had served at Treasury, Burman had worked at CBO and the Treasury Department. They understood the government's models because they had helped build them. Now they wanted to create something similar that would be independent, publicly accessible, and willing to analyze proposals the official scorekeepers wouldn't touch.
+
+TPC built a microsimulation model using IRS public-use tax return data—the same foundation as government models, though with less granular data than what JCT accessed through confidential returns. The model could estimate revenue effects and distributional impacts of tax proposals, producing the kind of analysis that had previously required government resources.
+
+The impact was immediate. When Mitt Romney ran for president in 2012, TPC published an analysis showing that his tax plan—which cut rates while claiming revenue neutrality through unspecified base broadening—was mathematically impossible without raising taxes on the middle class or losing revenue {cite}`tpc2012romney`. The finding dominated media coverage and reshaped the campaign debate. Romney's team disputed the analysis but couldn't rebut it with their own numbers—they didn't have a comparable model.
+
+During the 2017 Tax Cuts and Jobs Act debate, TPC's distributional analysis showed that the benefits tilted heavily toward high-income households—a finding that complicated Republican messaging about the bill helping the middle class. JCT's official score put the ten-year cost at $1.46 trillion; TPC's estimates were broadly consistent but added distributional detail that JCT didn't publish.
+
+Kent Smetters at the University of Pennsylvania launched the Penn Wharton Budget Model (PWBM) in 2016, adding another independent voice {cite}`pwbm2017tcja`. PWBM distinguished itself by producing dynamic estimates—incorporating macroeconomic feedback effects that static models ignore. For the TCJA, PWBM projected a cost of $1.8 to $2.2 trillion on a dynamic basis, significantly higher than JCT's static estimate. The difference reflected PWBM's assessment that the economic growth effects of the tax cuts would be modest—enough to offset some but not most of the revenue loss.
+
+The Budget Lab at Yale, launched later, brought another analytical lens. By the mid-2020s, the ecosystem of independent tax analysis organizations had grown from zero to half a dozen, each with its own model, data, and methodology. The government's analytical monopoly was broken.
+
+---
+
+## The Dynamic Scoring Wars
+
+Beneath the institutional competition lay a deeper methodological dispute: should budget scores account for macroeconomic feedback?
+
+The question sounds technical. It's actually political dynamite.
+
+Here's the issue. When JCT scores a tax cut, it traditionally uses "static" scoring—calculating the direct effect on revenue without assuming the tax cut changes the size of the economy. A $100 billion tax cut costs $100 billion.
+
+But supply-side economists have long argued this understates the benefits of tax cuts. Lower tax rates increase incentives to work and invest, they claim. The economy grows. Some of that growth generates additional tax revenue, partially offsetting the cost. Under "dynamic" scoring, the $100 billion tax cut might cost only $70 billion.
+
+The debate raged for decades. In 2003, the American Enterprise Institute hosted a forum on dynamic scoring featuring Alan Auerbach, William Gale, and other leading economists. In 2005, Auerbach published a formal treatment arguing that dynamic scoring was conceptually correct but practically difficult—the macroeconomic models needed to estimate feedback effects were themselves uncertain {cite}`auerbach2005dynamic`.
+
+In January 2015, the new Republican House majority passed a rule requiring JCT to provide dynamic scores for major legislation—bills with budgetary effects exceeding 0.25% of GDP {cite}`crs2015dynamic`. This was a victory for supply-side advocates who believed static scoring systematically overstated the cost of tax cuts.
+
+The first major test came with the TCJA in 2017. JCT's static score: $1.46 trillion in revenue loss over ten years. JCT's dynamic score: $1.07 trillion, reflecting projected economic growth that would generate $389 billion in additional revenue. The dynamic score reduced the estimated cost by 27%—significant, but far from the supply-side dream that the cuts would "pay for themselves."
+
+Seven years later, the data confirmed that the supply-side prediction was wrong. Real revenue from 2018 through 2024—excluding the anomalous 2022 pandemic spike—came in within 0.5% of CBO's 2018 projections {cite}`crfb2024tcja`. The tax cuts did not pay for themselves. The microsimulation models had been approximately right.
+
+Doug Elmendorf, Glenn Hubbard, and Heidi Williams published a comprehensive assessment of dynamic scoring in the Brookings Papers on Economic Activity in 2024, concluding that the practice had improved budget analysis at the margins but hadn't resolved the fundamental uncertainty about macroeconomic feedback {cite}`elmendorf2024dynamic`. The models were better than guessing, but they weren't the precision instruments that advocates on either side wanted them to be.
 
 ---
 
@@ -74,7 +120,15 @@ Malcolm Torry, directing the Citizen's Basic Income Trust, showed what civil soc
 
 The 2010s brought a new possibility: fully open-source tax microsimulation.
 
-In France, the government itself released OpenFisca—source code for a tax-benefit calculator that anyone could use, modify, and extend {cite}`openfisca2024about`. In the United States, Matt Jensen founded the Open Source Policy Center at the American Enterprise Institute and built Tax-Calculator, an open-source model of federal income and payroll taxes {cite}`aei2015taxbrain`. The revolution was international, cross-ideological, and grounded in the same insight: that policy analysis should be transparent, reproducible, and accessible.
+In France, the government itself released OpenFisca—source code for a tax-benefit calculator that anyone could use, modify, and extend {cite}`openfisca2024about`. OpenFisca's architecture was distinctive: it represented tax and benefit rules as code in a modular framework, where each provision was a separate function that could be tested, inspected, and updated independently. The framework would later be adopted by governments in New Zealand, Tunisia, and elsewhere—not just for analysis but as part of a broader "rules as code" movement that treated legislation as software.
+
+In the United States, the open source push came from an unexpected source: a conservative think tank.
+
+In 2013, Matt Jensen founded the Open Source Policy Center (OSPC) at the American Enterprise Institute {cite}`aei2015taxbrain`. The premise was counterintuitive—AEI was known for market-oriented policy advocacy, not software development. But Jensen argued that better public policy analysis required transparency, and transparency required open source. "A fundamental reason for adopting open source methods," OSPC stated, "is to let people from all backgrounds contribute to the models that our society uses to assess economic policy."
+
+OSPC built Tax-Calculator, an open-source model of federal income and payroll taxes, along with a web interface called TaxBrain that let users simulate reforms without writing code. They added supporting tools: Tax-Data for processing IRS microdata, Behavioral-Response for modeling labor supply effects, OG-USA for overlapping-generations macroeconomic analysis. The Policy Simulation Library grew to catalog open-source policy models across institutions.
+
+The ideological irony was productive. A conservative think tank building open-source tools meant the project couldn't be dismissed as a left-wing effort to undermine official estimates. It was a genuine commitment to transparency that attracted contributors across the political spectrum.
 
 These projects proved the concept—rigorous microsimulation could be done in the open. But they also revealed the challenges. Building the tools was one thing; making them usable by non-experts was another. The code was public, but who could read it? The models were open, but who could trust them? Open source had demonstrated what was possible; it hadn't yet delivered on the promise of democratized policy analysis.
 
@@ -82,17 +136,17 @@ These projects proved the concept—rigorous microsimulation could be done in th
 
 ## The Landscape Today
 
-By the 2020s, tax microsimulation had stratified into distinct tiers.
+By the 2020s, tax microsimulation had stratified into distinct tiers—but the tiers were multiplying and the boundaries were blurring.
 
 **Government models** remained the most authoritative for official purposes. JCT scores still determined what Congress believed policies would cost. Treasury estimates still informed Administration proposals. CBO projections still anchored long-term fiscal debates. These models had the best data—actual tax returns, confidential and comprehensive—and the institutional authority that came from decades of use.
 
-**Established think tanks** operated the next tier. The Tax Policy Center (a joint venture of Urban Institute and Brookings) maintained a microsimulation model that could challenge government estimates {cite}`tpc2024model`. IFS continued to shape UK budget debates. These institutions had the credibility to be taken seriously, even when their numbers differed from official scores.
+**Established think tanks** operated the next tier—and the tier was growing. The Tax Policy Center {cite}`tpc2024model` had been joined by the Penn Wharton Budget Model, the Tax Foundation (which built its own microsimulation model emphasizing dynamic effects), the Institute on Taxation and Economic Policy (ITEP, whose model focused on state and local taxes and distributional analysis), and the Budget Lab at Yale. Each had a different methodological emphasis, different data sources, and—inevitably—different political valence. TPC and ITEP leaned left on distributional analysis. The Tax Foundation leaned right on growth effects. PWBM positioned itself as neutral. The plurality meant that any major tax proposal would face a barrage of competing estimates, each legitimate, each different.
 
-**Open-source projects** represented the newest tier. Tax-Calculator and UKMOD made it possible for anyone with technical skills to run tax simulations. They couldn't match government models' data quality, but they offered something government models couldn't: transparency, accessibility, and the ability to be adapted for new purposes.
+**Open-source projects** represented the newest tier. Tax-Calculator, UKMOD, and PolicyEngine made it possible for anyone with technical skills to run tax simulations—and in PolicyEngine's case, anyone with a web browser. They couldn't match government models' data quality, but they offered something government models couldn't: transparency, accessibility, and the ability to be adapted for new purposes.
 
 **Civil society users** like Malcolm Torry demonstrated that the tools could be used effectively by advocates and independent researchers—blurring the line between analyst and advocate, but expanding who could participate in policy debates.
 
-The asymmetry that had characterized the field for decades was finally beginning to break down. Not completely—government still had the best data, the legal authority, and the institutional credibility. But the monopoly on analytical capability was ending.
+The asymmetry that had characterized the field for decades was finally breaking down. Not completely—government still had the best data, the legal authority, and the institutional credibility. But the monopoly on analytical capability was ending. By 2025, a reasonably informed person could access half a dozen independent estimates of any major tax proposal within days of its introduction. That would have been unimaginable in 1990.
 
 ---
 

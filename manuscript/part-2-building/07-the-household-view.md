@@ -43,9 +43,11 @@ From these inputs, the calculator computes dozens of outputs. Federal income tax
 
 The result appears as a detailed breakdown: here is what you pay, here is what you receive, here is your net income after all transfers {cite}`policyengine2022review`.
 
-> "Our free, open-source app calculates users' tax liability and benefit eligibility, and then lets them change the rules to see the impact on their own household and society."
-
 This isn't just convenience. It's a form of empowerment. When you can see the complete calculation, you can plan. You can understand why a raise might not increase your take-home pay as much as expected. You can identify programs you're eligible for but not receiving.
+
+The scope is significant. PolicyEngine's US model covers federal income tax, payroll taxes, the Earned Income Tax Credit, the Child Tax Credit, SNAP, SSI, WIC, TANF, and dozens of other federal and state programs. The UK model covers income tax, National Insurance, Universal Credit, Child Benefit, and the full suite of means-tested benefits. Each program is coded as a separate module, following rules extracted from legislation, regulation, and agency guidance.
+
+The comprehensiveness matters because programs interact. A family's SNAP benefits depend on their net income after taxes and other deductions. Their tax liability depends on credits that depend on whether they have qualifying children—the same children who might generate SSI payments or child care subsidies. Change one variable and the effects ripple through the system. No single-program calculator captures these interactions. PolicyEngine does, because the microsimulation engine evaluates all programs simultaneously for each household.
 
 ---
 
@@ -85,17 +87,19 @@ This visibility serves two purposes. For individuals, it helps with financial pl
 
 But PolicyEngine isn't just a calculator for current law. Its power comes from letting users change the rules.
 
-Click into the policy editor, and you can adjust any parameter in the model. Raise the EITC maximum. Eliminate the benefit cliff in SNAP. Add a child allowance. Convert the Child Tax Credit to full refundability.
+Click into the policy editor, and you can adjust any parameter in the model. Raise the EITC maximum. Eliminate the benefit cliff in SNAP. Add a child allowance. Convert the Child Tax Credit to full refundability. Set a universal basic income. Flatten the income tax. The reform space is as broad as the model's coverage.
 
 Then return to your household, and see what changes.
 
-This is the "what if" that wasn't previously possible for ordinary people. What if Congress reformed the CTC? Here's what it would mean for your family. What if your state expanded its EITC? Here's the impact on your take-home pay.
+This is the "what if" that wasn't previously possible for ordinary people. What if Congress reformed the CTC? Here's what it would mean for your family. What if your state expanded its EITC? Here's the impact on your take-home pay. What if a candidate's tax plan were enacted? Here's the bottom line for your household.
 
-The visualizations update in real time. The net income chart shows baseline in gray, reform in blue. Two sets of earnings dead zones appear, revealing whether the reform helps or hurts work incentives for your specific situation.
-
-> "After specifying a policy reform, the net income and marginal tax rate charts show two lines each: one for baseline (gray), and one for reform (blue)."
+The visualizations update in real time. The net income chart shows baseline in gray, reform in blue. Two sets of earnings dead zones appear, revealing whether the reform helps or hurts work incentives for your specific situation. The marginal tax rate chart shows both lines stacked, making it immediately visible where a reform smooths out the benefit system or creates new cliffs.
 
 This isn't abstract policy analysis. It's your life, under different rules.
+
+Consider a concrete example. In 2021, Congress temporarily expanded the Child Tax Credit from $2,000 to $3,600 per child under six and $3,000 per child ages 6-17. The credit was also made fully refundable—families who owed no federal income tax could still receive the full amount. For a single parent earning $15,000 with two young children, this wasn't a marginal change. Under the old CTC, they received roughly $1,800 (limited by the 15% phase-in rate on earnings above $2,500). Under the expansion, they received $7,200. PolicyEngine could show this difference instantly—not as a policy brief about national averages, but as a specific dollar amount for a specific family.
+
+When the expansion expired at the end of 2021, PolicyEngine could show that same family's income dropping by over $5,000. The tool made visible what policy debates often obscure: the concrete financial impact of legislative choices on real households.
 
 ---
 
@@ -110,6 +114,22 @@ The household view reveals complexity that aggregate statistics hide.
 **Case 3: State credit stacking.** Washington's Working Families Tax Credit begins phasing out $5,000 below where the federal EITC phases out, creating an additional marginal tax rate of 12-24% that stacks on top of federal rates {cite}`policyengine2023cliffs`.
 
 Each case represents millions of real households making real decisions. The household view makes the specific impacts calculable for any individual's circumstances.
+
+---
+
+## The UK Household View
+
+The household calculator originated in the UK, where PolicyEngine launched in 2021 before expanding to the US {cite}`ubicenter2021policyengine`. The UK model carries a different flavor because the tax-benefit system is different—more centralized, with Universal Credit replacing several legacy benefits, and a national health service that removes healthcare from the calculation.
+
+But the UK version demonstrated something the US version later confirmed: the household view is most powerful when the system is most complex.
+
+Universal Credit, the UK's flagship welfare reform, was designed to simplify the benefit system by combining six legacy benefits into one. In practice, it introduced its own complexities. The UC taper rate—the rate at which benefits are withdrawn as income rises—interacts with income tax, National Insurance, council tax support, and student loan repayment to create marginal rates that can exceed 70% for some working families.
+
+PolicyEngine UK made these interactions visible. When Chancellor Rishi Sunak reduced the UC taper rate from 63% to 55% in the 2021 Autumn Budget, PolicyEngine could show exactly what this meant for specific household types: a single parent working 25 hours per week at minimum wage would keep an additional £1,000 per year. A couple with children where one partner worked full-time would see a smaller gain. The distributional effects varied enormously by household composition—details that aggregate statistics masked.
+
+When Prime Minister Liz Truss announced sweeping tax cuts in September 2022, PolicyEngine produced distributional analysis within hours—the only independent household-level estimates available while the policies were being debated. The tool showed that the cuts disproportionately benefited higher earners, a finding that contributed to the public backlash. Within weeks, most of the cuts were reversed.
+
+In 2025, HM Treasury published an evaluation of PolicyEngine UK under the Algorithmic Transparency Recording Standard {cite}`hmt2025policyengine`. The fact that a government treasury department was formally evaluating an open-source model as a potential supplement to its own internal tools marked a shift. The walls between government and independent analysis were thinning.
 
 ---
 
@@ -135,9 +155,9 @@ This is where the household view connects to the society view. The same microsim
 
 That statistical picture—budget costs, poverty impacts, distributional effects—is the subject of the next chapter. But it rests on the foundation of the household view: the ability to correctly calculate how any specific policy affects any specific family.
 
-Without that household-level accuracy, the society-level estimates would be meaningless. Microsimulation works precisely because it gets the individual calculations right, then aggregates them appropriately.
+Without that household-level accuracy, the society-level estimates would be meaningless. Microsimulation works precisely because it gets the individual calculations right, then aggregates them appropriately. This is what distinguishes microsimulation from macroeconomic modeling. A macro model might estimate that a tax cut costs $100 billion and increases GDP by 0.3%. A microsimulation model can also tell you that the same tax cut gives $12,000 to a high-income household in Connecticut and $200 to a low-income household in Mississippi—and that the Mississippi household faces a higher marginal rate afterward because the cut pushed them into a benefit phase-out zone. The aggregate numbers emerge from millions of individual calculations, each grounded in actual rules applied to actual circumstances.
 
-The household view is not just a user-friendly interface. It's the verification that the underlying model works—visible to anyone who cares to check.
+The household view is not just a user-friendly interface. It's the verification that the underlying model works—visible to anyone who cares to check. Every user who runs their own scenario and recognizes the result as approximately correct provides an informal validation. Every user who finds an error and reports it improves the model. The household view makes microsimulation self-correcting in a way that aggregate models never are.
 
 ---
 

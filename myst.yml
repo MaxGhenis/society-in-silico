@@ -36,27 +36,29 @@ project:
           title: The Accuracy Question
     - title: "Part II: Building"
       children:
-        - file: manuscript/part-2-building/04-policyengine-proof-of-concept.md
+        - file: manuscript/part-2-building/05-policyengine-proof-of-concept.md
           title: "PolicyEngine: Proof of Concept"
-        - file: manuscript/part-2-building/05-the-household-view.md
+        - file: manuscript/part-2-building/06-three-ingredients-microsimulation.md
+          title: "Three Ingredients of Microsimulation"
+        - file: manuscript/part-2-building/07-the-household-view.md
           title: The Household View
-        - file: manuscript/part-2-building/06-the-society-view.md
+        - file: manuscript/part-2-building/08-the-society-view.md
           title: The Society View
-        - file: manuscript/part-2-building/07-ai-enters-the-picture.md
+        - file: manuscript/part-2-building/09-ai-enters-the-picture.md
           title: AI Enters the Picture
-        - file: manuscript/part-2-building/08-cosilico-infrastructure-for-the-future.md
+        - file: manuscript/part-2-building/10-cosilico-infrastructure-for-the-future.md
           title: "Cosilico: Infrastructure for the Future"
     - title: "Part III: Research Directions"
       children:
-        - file: manuscript/part-3-future/10-the-uncertainty-gap.md
+        - file: manuscript/part-3-future/11-the-uncertainty-gap.md
           title: The Uncertainty Gap
-        - file: manuscript/part-3-future/11-simulating-opinion.md
+        - file: manuscript/part-3-future/12-simulating-opinion.md
           title: Simulating Opinion
-        - file: manuscript/part-3-future/12-simulating-democracy.md
+        - file: manuscript/part-3-future/13-simulating-democracy.md
           title: Simulating Democracy
-        - file: manuscript/part-3-future/13-simulating-values.md
+        - file: manuscript/part-3-future/14-simulating-values.md
           title: Simulating Values
-        - file: manuscript/part-3-future/14-society-in-silico.md
+        - file: manuscript/part-3-future/15-society-in-silico.md
           title: Society in Silico
     - title: Research Notes
       children:

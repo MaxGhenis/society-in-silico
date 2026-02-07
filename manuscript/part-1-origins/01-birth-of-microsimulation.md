@@ -80,13 +80,19 @@ Orcutt called it "microanalytic simulation." Later generations would shorten thi
 
 There was just one problem: the vision was decades ahead of the tools.
 
-In 1957, computers filled rooms and cost millions of dollars. Programming meant punch cards. A dataset of 10,000 households—modest by modern standards—represented an enormous computational burden. And Orcutt wasn't proposing to simulate households once. He wanted to project them forward in time, modeling births and deaths, marriages and divorces, job changes and retirement. Each household would accumulate a life history. The model would track it all.
+In 1957, computers filled rooms and cost millions of dollars. Programming meant punch cards and assembly language. A dataset of 10,000 households—modest by modern standards—represented an enormous computational burden. The IBM 704, state of the art when Orcutt published, could perform roughly 12,000 floating-point operations per second. A modern laptop performs billions. The entire computational capacity available to Orcutt was less than what a smartphone uses to play a simple game.
+
+And Orcutt wasn't proposing to simulate households once. He wanted to project them forward in time, modeling births and deaths, marriages and divorces, job changes and retirement. Each household would accumulate a life history. The model would track it all.
 
 > "The problem of keeping track of all possible paths and their respective probabilities appears rather appalling."
 
-Orcutt knew this was hard. He published anyway. The idea mattered more than the implementation.
+Orcutt knew this was hard. He published anyway. The idea mattered more than the implementation. And he wasn't alone in thinking big. The late 1950s were a remarkable moment for computational ambition. John von Neumann had described weather forecasting as a computational problem before his death in 1957. Herbert Simon and Allen Newell were building the first artificial intelligence programs at Carnegie Mellon. The idea that computers could model complex systems was in the air.
 
-For the next decade, he built prototypes. In 1961, he produced a working microsimulation model—limited in scope but proof that the concept was viable {cite}`orcutt1961microanalysis`. But the gap between proof-of-concept and policy-relevant tool remained vast.
+But Orcutt's vision was distinctive in its focus on policy relevance. He wasn't simulating weather patterns or playing chess. He was simulating people—their economic decisions, their interactions with government, their trajectories through life. The model's purpose wasn't scientific curiosity alone. It was democratic accountability: give policymakers the tools to understand how their decisions affect citizens.
+
+For the next four years, he built a prototype. In 1961, he and three co-authors—Martin Greenberger, John Korbel, and Alice Rivlin (who would later become the first director of the Congressional Budget Office)—published *Microanalysis of Socioeconomic Systems: A Simulation Study* {cite}`orcutt1961microanalysis`. The book demonstrated a working microsimulation model of the US economy, limited in scope but proof that the concept was viable. It simulated 10,000 decision-making units through time, modeling fertility, mortality, labor force participation, and income.
+
+The gap between proof-of-concept and policy-relevant tool remained vast. But the intellectual foundation was laid.
 
 ---
 

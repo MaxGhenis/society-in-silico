@@ -121,17 +121,81 @@ Third, it points toward synthesis. The best forecasts might combine simulation-b
 
 ---
 
+## The Survey Data Crisis
+
+Before we can assess whether models produce accurate outputs, we need to ask whether their inputs are accurate. The answer is troubling.
+
+Bruce Meyer, an economist at the University of Chicago, has spent two decades documenting what he calls a crisis in household survey data {cite}`meyer2015underreporting`. The problem is straightforward: people don't accurately report their income and benefits to survey takers. And the underreporting isn't random—it's systematically biased in ways that distort policy analysis.
+
+The numbers are stark. When Meyer and colleagues linked survey responses to administrative records, they found that roughly 40-50% of SNAP recipients didn't report receiving benefits in the Current Population Survey. Over 60% of Temporary Assistance for Needy Families (TANF) and General Assistance went unreported. About a third of housing assistance recipients didn't mention it. Even Social Security—arguably the simplest transfer to remember, since it arrives monthly—was underreported by roughly 10% of recipients.
+
+This isn't just an academic concern. It cascades through every model built on survey data.
+
+Consider what happens when a microsimulation model tries to estimate the poverty impact of SNAP. The model assigns SNAP benefits to households that appear eligible based on their survey-reported income. But if half of actual SNAP recipients didn't report receiving benefits—and therefore may also have misreported income or household composition—the model is working with a distorted picture of who gets SNAP, how much they get, and what their financial circumstances actually look like.
+
+The underreporting has gotten worse over time. Survey response rates have declined steadily since the 1990s. The people who don't respond aren't random—they're disproportionately low-income, young, and mobile. The Census Bureau fills in missing data through imputation—statistical inference about what non-responders would have said. But imputed values carry their own biases, and as the imputed share grows, surveys increasingly reflect the models used to fill gaps rather than actual household circumstances.
+
+The problem runs in both directions. Seniors systematically underreport retirement income. A Census Bureau study linking CPS responses to IRS and Social Security Administration records found that median income for those 65 and older was 30% higher in administrative data than in survey reports {cite}`census2017retirement`. The result: CPS-based poverty rates for seniors—9.1%—were 2.2 percentage points higher than rates calculated from validated administrative records, which showed 6.9%. Senior poverty is real, but the headline survey numbers overstate it.
+
+High incomes are top-coded in public-use data—values above a threshold are replaced with that threshold to protect confidentiality. This compresses the income distribution at the top, making policies that affect high earners harder to model accurately. The CPS top-codes individual earnings at around $1.1 million, meaning a household earning $2 million looks identical to one earning $1.1 million.
+
+These data problems affect every microsimulation model that relies on household surveys—which is nearly all of them. The government models with access to confidential IRS data avoid some of these issues, but even they face challenges: tax returns miss non-filers, don't capture non-taxable transfers, and reflect legal tax units rather than economic households.
+
+The honest assessment: microsimulation models are only as good as their data, and their data is imperfect in systematic, consequential ways.
+
+---
+
+## TAXSIM: The Academic Benchmark
+
+While government agencies built their models behind closed doors, one academic tool quietly became the standard for validating tax calculations: TAXSIM.
+
+Daniel Feenberg at the National Bureau of Economic Research began building TAXSIM in the early 1980s. By the 1990s it was internet-accessible—one of the first tax calculators available online. Feenberg maintained it for his entire career, updating it annually as tax law changed, a commitment spanning over four decades {cite}`feenberg1993taxsim`.
+
+TAXSIM calculates federal and state income tax liabilities for individual tax units. Feed it income, deductions, filing status, and state of residence; it returns tax liability, credits, and marginal tax rates. The calculations follow the actual tax code—brackets, phase-outs, AMT, credits—with meticulous attention to legislative detail.
+
+The tool enabled generations of tax research. When economists needed to estimate effective tax rates for households in the Panel Study of Income Dynamics or the Survey of Consumer Finances, TAXSIM was the standard tool. Hundreds of published papers cite it. Its widespread use created an informal validation network: if TAXSIM produced results that conflicted with a researcher's expectations, someone would investigate and report bugs. The model improved through collective scrutiny.
+
+TAXSIM's accuracy for its core function—calculating federal income tax for a given set of inputs—is high. The rules are deterministic and well-documented. Where discrepancies arise, they typically involve edge cases in state tax codes or interactions with credits that have complex eligibility rules.
+
+But TAXSIM was designed as a research tool, not a policy analysis platform. It calculates taxes for individual records; it doesn't produce the aggregate revenue estimates and distributional tables that drive policy debates. It covers taxes but not benefits. It doesn't simulate SNAP, Medicaid, SSI, or housing assistance—the benefit programs that create the cliffs and interactions described in later chapters.
+
+Still, TAXSIM established an important precedent: an independent, publicly available tool could match or exceed the accuracy of proprietary systems for well-defined calculations. The gap wasn't in capability—it was in scope.
+
+---
+
+## When Models Disagree
+
+If microsimulation models are accurate, they should agree with each other. They often don't.
+
+During the 2017 Tax Cuts and Jobs Act debate, four major institutions produced revenue estimates. JCT's static score: $1.46 trillion in revenue loss over ten years. Penn Wharton's dynamic estimate: $1.8 to $2.2 trillion. The Tax Foundation's dynamic model: roughly $1.0 trillion, reflecting their more optimistic assumptions about growth effects. TPC produced distributional analysis broadly consistent with JCT on revenue.
+
+The range—from $1.0 trillion to $2.2 trillion—was enormous. All four institutions employed competent economists. All used microsimulation. Why did they disagree by a factor of two?
+
+Three sources of divergence explain most cross-model disagreements:
+
+**Data differences.** JCT uses confidential IRS tax return data—the most comprehensive source available. TPC uses public-use IRS data, which is less granular. The Tax Foundation and PWBM use different combinations of public data sources. Different data produces different baseline distributions, which produces different reform estimates.
+
+**Behavioral assumptions.** Static models assume no behavioral response. Dynamic models assume some combination of labor supply changes, saving changes, and investment shifts. The Tax Foundation's model assumed larger growth effects from corporate tax cuts; PWBM assumed smaller ones. These assumptions drove the gap between $1.0 trillion and $2.2 trillion more than any other factor.
+
+**Modeling choices.** How do you handle income shifting between corporate and individual returns? How do you project economic growth? How do you treat provisions that expire? Each choice is defensible; together they compound into meaningful differences.
+
+The disagreements aren't evidence of failure. They're evidence that policy analysis involves judgment—about data, behavior, and modeling choices—that no amount of technical sophistication eliminates. The value of having multiple models is precisely that the disagreements reveal where assumptions drive results.
+
+When JCT and the Tax Foundation produce different estimates, the question to ask isn't "who's right?" It's "what assumptions differ, and which do I find more plausible?" Microsimulation makes the disagreement specific and tractable. Without it, the debate would be pure assertion.
+
+---
+
 ## Where Models Fail
 
 The failures are instructive.
 
-**Behavioral responses**: Static models assume people don't change behavior in response to policy. But tax changes trigger income-shifting, benefit changes affect labor supply, and coverage mandates alter insurance choices. Models that assume static behavior systematically miss these effects.
+**Behavioral responses**: Static models assume people don't change behavior in response to policy. But tax changes trigger income-shifting, benefit changes affect labor supply, and coverage mandates alter insurance choices. Models that assume static behavior systematically miss these effects. The TCJA led to a surge in pass-through business income as high earners restructured to take advantage of the new 20% deduction—a behavioral shift that no static model predicted.
 
-**Take-up rates**: Models often assume people claim benefits they're eligible for. In reality, take-up varies widely—sometimes 80%, sometimes 40%. Getting take-up wrong cascades through the entire analysis.
+**Take-up rates**: Models often assume people claim benefits they're eligible for. In reality, take-up varies widely. The IRS estimates EITC take-up at roughly 78-80%—relatively high for a tax credit, but still meaning one in five eligible families miss it. SNAP take-up runs around 82% nationally but varies dramatically by state. SSI take-up for eligible elderly individuals may be as low as 50-60%. Getting take-up wrong cascades through the entire analysis: overestimate SNAP participation and you'll overestimate both program costs and poverty reduction.
 
-**Data limitations**: The Current Population Survey underreports income at the top and bottom. Models built on CPS data inherit this bias. Administrative records help, but bring their own issues: coverage gaps, timeliness, and linkage challenges.
+**Data limitations**: As Meyer's work shows, the surveys underlying most models systematically misrepresent who receives benefits, how much income households have, and what their circumstances look like. Administrative records help, but bring their own issues: coverage gaps (non-filers don't appear in tax data), timeliness (there's a two-year lag before IRS data becomes available for research), and linkage challenges (matching records across agencies without common identifiers).
 
-**Structural change**: Models calibrated to past behavior may fail when the structure of the economy shifts. The ACA exchange enrollment miss likely reflected unprecedented market dynamics that historical data couldn't predict.
+**Structural change**: Models calibrated to past behavior may fail when the structure of the economy shifts. The ACA exchange enrollment miss likely reflected unprecedented market dynamics that historical data couldn't predict. Similarly, the pandemic-era expansion of the Child Tax Credit produced take-up patterns that no historical model would have forecast—the IRS had to build an entirely new delivery system to reach non-filers.
 
 ---
 
@@ -165,10 +229,17 @@ The accuracy question has a flip side: compared to what?
 
 Before microsimulation, policy analysis relied on:
 - **Rules of thumb**: "A 10% tax cut increases revenue through growth." (The TCJA data proved this false.)
-- **Expert judgment**: "Trust me, this will work." (Track record: poor.)
+- **Expert judgment**: "Trust me, this will work." (Philip Tetlock's research showed most experts forecast little better than chance {cite}`tetlock2005expert`.)
 - **Partisan assertion**: "This reform will help working families." (Vague and unverifiable.)
+- **Back-of-the-envelope calculations**: Quick estimates based on average tax rates applied to aggregate income, missing the distributional complexity that determines who actually benefits.
 
 Microsimulation forces specificity. Which families? How much help? Through what mechanisms? Even when the answer is approximate, the *question* becomes clearer.
+
+Consider the 2021 expansion of the Child Tax Credit. Without microsimulation, the debate would have been "does a bigger credit help families?" With microsimulation, the debate became precise: the expansion would cost approximately $105 billion per year, reduce child poverty by roughly 40%, and deliver the largest benefits to the lowest-income families who previously received zero credit because they owed no federal income tax. These specific claims could be checked, debated, and—after the expansion was implemented—compared to actual outcomes.
+
+The Census Bureau's subsequent data showed child poverty falling from 9.7% to 5.2% in 2021—closely matching the microsimulation projections. When the expansion expired and the credit reverted to its previous structure, child poverty rebounded. The models had been right about both the effect and its reversal.
+
+This doesn't mean the models were perfect. They didn't fully predict take-up patterns for non-filers, or the macroeconomic interactions of a credit expansion during a pandemic recovery. But they got the direction, magnitude, and distributional shape approximately right—which is more than any alternative method delivered.
 
 ---
 
@@ -177,6 +248,12 @@ Microsimulation forces specificity. Which families? How much help? Through what 
 George Box's famous line—"all models are wrong, but some are useful"—isn't cynicism {cite}`box1976science`. It's epistemic hygiene. The modeler who believes the model captures full truth is more dangerous than the modeler who knows its limits.
 
 The accuracy question doesn't have a triumphant answer. The honest answer is: approximately right, sometimes wrong, better than alternatives, and always improvable.
+
+The practitioners who build these models live with this tension daily. They know the survey data undercounts transfers. They know behavioral responses are hard to model. They know their confidence intervals should be wider than their point estimates suggest. They publish the numbers anyway, because approximate knowledge beats ignorance.
+
+What distinguishes responsible microsimulation from false precision is transparency. When CBO publishes a score, they also publish their methodology, their assumptions, and their track record. When an open-source model like PolicyEngine or Tax-Calculator produces an estimate, anyone can inspect the code, identify the assumptions, and propose corrections. The models improve through this iterative process of publication, scrutiny, and correction.
+
+The closed models of the 1980s and 1990s—accurate but unverifiable—are giving way to open models that are both auditable and improvable. The accuracy question will never have a final answer, because the economy changes, the data improves, and the methods evolve. But the trajectory is toward greater accuracy, greater transparency, and greater accountability.
 
 That's what evidence-based policy actually looks like. Not certainty. Not faith. Just careful reasoning, transparent methods, and the humility to check ourselves against reality.
 

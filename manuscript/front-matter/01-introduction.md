@@ -1,30 +1,4 @@
-# Introduction: The Model and the World
-
-<!--
-Opening options:
-
-OPTION A - Westworld hook:
-Open with Serac and Rehoboam. The French trillionaire who watched Paris burn,
-then built an AI to predict and control human behavior. His solution to chaos:
-eliminate freedom. "I don't predict the future—I create it."
-
-Then the pivot: This isn't just fiction. We're already building societal models.
-The question is whether they'll be Serac's closed system or something democratic.
-
-OPTION B - Policy analyst scene:
-A budget analyst running simulations the night before a major vote.
-The human moment behind the computational process. Then zoom out to the stakes.
-
-OPTION C - GPT-4 fails at taxes:
-Open with the surprising finding: GPT-4 gets only 67% of tax questions right.
-The world's most capable AI can't reliably calculate your refund.
-This is the problem—and the opportunity.
-
-RECOMMENDATION: Start with Option A (Westworld), transition through C (AI limitations),
-end with the democratic alternative vision.
--->
-
-## Draft Opening
+# Introduction: The model and the world
 
 "I don't predict the future. I create it."
 
@@ -42,11 +16,49 @@ That's the fork in the road. That's what this book is about.
 
 ---
 
-## The Stakes
+## The AI can't do your taxes
+
+In 2023, researchers at Georgetown Law posed 276 true/false tax questions to GPT-4, the most capable AI system in the world at the time. They provided the full text of the Internal Revenue Code as context. GPT-4 got 67% right {cite}`blairstanek2023gpt4tax`.
+
+Not 67% on trick questions or obscure edge cases—67% on questions that tax professionals answer routinely. The errors weren't mathematical. GPT-4 could do the arithmetic. It misread the statutes. It confused filing statuses. It hallucinated phase-out thresholds that didn't exist.
+
+By 2025, the picture hadn't improved much. Column Tax released TaxCalcBench, a benchmark testing whether AI could correctly compute complete tax returns {cite}`columntax2024`. The best-performing general-purpose model—GPT-5 with web search—got 41.7% of returns fully correct. Claude Opus 4 managed 27.5%. Gemini 2.5 Pro hit 32.4%. Even Filed, a specialized tax AI, reached only 72.5%.
+
+These aren't acceptable error rates for a system that determines how much you owe the government.
+
+The pattern reveals something important about AI and policy. Language models can generate fluent explanations of tax law. They can summarize complex regulations. They can even write passable tax planning memos. What they can't do is *calculate*—apply specific rules to specific circumstances and produce a number that's guaranteed to be correct.
+
+Tax law changes every year. Fifty states have different rules. Eligibility for benefits depends on dozens of interacting variables. The combinatorial complexity exceeds what pretraining can memorize. As Column Tax's engineers put it: "Today's LLMs cannot 'do taxes' on their own because tax calculations require 100% correctness."
+
+The solution isn't better training. It's better tools—deterministic, auditable computational tools that AI systems can call when they need exact answers.
+
+This is the central technical insight of the book: AI needs tools, and the tools that matter most for policy questions are microsimulation models.
+
+---
+
+## What simulation reveals
+
+Consider a single parent in Ohio earning $45,000 with two children. She's trying to decide whether to accept a promotion that would raise her salary to $55,000.
+
+Without calculation, the answer seems obvious—more money is better. But the tax-benefit system creates a labyrinth of interactions. At $55,000, she loses eligibility for the Earned Income Tax Credit—a cliff worth over $3,000. Her SNAP benefits phase down. Her childcare subsidy may evaporate. Her marginal tax rate—the share of each additional dollar she keeps—might briefly exceed 80%.
+
+The parent who earns $55,000 may take home less than the parent who earns $45,000. This isn't a theoretical curiosity. It affects millions of families every year. And you can't see it without running the numbers through a model that captures the full interaction of taxes and benefits.
+
+That's what microsimulation does. It calculates how policies affect specific households by applying the actual rules—every bracket, every phase-out, every eligibility test—to specific circumstances. Then it aggregates across a representative sample of the population to estimate what a policy does to everyone.
+
+When Congress debates expanding the Child Tax Credit, microsimulation answers: How much would it cost? Which families would benefit? Would it reduce poverty? By how much? These aren't guesses. They're calculations—the product of applying the proposed rules to millions of synthetic households drawn from actual survey data.
+
+The idea goes back to 1957, when an economist named Guy Orcutt proposed modeling society from the bottom up—simulating individual households rather than relying on aggregate equations. For decades, the tools to realize his vision were locked inside government agencies: the Congressional Budget Office, the Joint Committee on Taxation, the Treasury Department. If you wanted to know how a policy would affect you, you had to trust their numbers. You couldn't check their work.
+
+That's changing. Open-source microsimulation models now make it possible for anyone—researchers, journalists, advocates, curious citizens—to run the same kinds of analyses that once required government resources. The code is public. The methodology is inspectable. The results are reproducible.
+
+---
+
+## The stakes
 
 We don't have Rehoboam. But we're not starting from zero.
 
-Governments already use predictive models to allocate benefits, assess fraud risk, shape policy. Insurance companies price your premiums with algorithms you can't inspect. Banks decide your creditworthiness with models they won't explain. And AI assistants—including GPT-4, the most capable language model when I started writing this—get only 67% of basic tax questions right.[^gpt4-tax]
+Governments already use predictive models to allocate benefits, assess fraud risk, and shape policy. Insurance companies price your premiums with algorithms you can't inspect. Banks decide your creditworthiness with models they won't explain. And AI assistants—the primary interface through which many people will encounter policy information—get tax questions wrong a third of the time.
 
 These models exist. The question is who controls them.
 
@@ -56,60 +68,26 @@ These models exist. The question is who controls them.
 
 **What are they for?** Optimization or understanding?
 
-## The Alternative
-
-Society needs a shared model to reason against. Right now, Congress debates tax policy with napkin math. Voters can't calculate how reforms affect their own households. AI confidently hallucinates benefit eligibility rules.
-
-This book traces a different path—from [[guy-orcutt|Guy Orcutt]]'s 1957 vision of simulating individual households, through six decades of institutional models locked inside government agencies, to the open source movement making these tools public infrastructure.
-
-The democratic alternative looks like this:
-
-- Anyone can see how a proposed policy change affects their household
-- Anyone can understand who gains and loses from a reform
-- Anyone can test their assumptions about how society works
-- Anyone can contribute to making the model more accurate
-
-I'll tell this story through my own path—from learning discrete-event simulation at Berkeley, to building headcount forecasts at Google, to discovering that the same tools could illuminate policy questions that affected my family personally. The thread running through it all: simulation as a way to make complex systems comprehensible. But this isn't my story alone. It's the story of a technology that's been waiting sixty years for its democratic moment.
-
-That's not Rehoboam. That's the opposite of Rehoboam.
+The gap between policy debates and policy analysis is vast. Political arguments run on emotion and tribal loyalty. Policy analysis runs on computation and precision. Bridging that gap without sliding into technocracy is the central challenge.
 
 ---
 
-## Key Themes
+## What's ahead
 
-**The gap between policy debates and policy analysis.** Political arguments run on emotion and tribal loyalty. Policy analysis runs on computation and precision. Bridging that gap without sliding into technocracy is the central challenge.
+This book traces the story of microsimulation—from Orcutt's frustration with aggregate models in 1957, through six decades of institutional models locked inside government agencies, to the open-source movement making these tools public infrastructure. It arrives at the present moment, where AI systems need deterministic tools for financial calculations and the boundaries of what we can simulate are expanding.
 
-**Models as translation devices.** They turn raw administrative data and dense legislation into comprehensible impact. A 300-page tax bill becomes "your family pays $1,200 less next year."
+**Part I: Origins** traces the intellectual history. Chapter 1 follows Guy Orcutt from his engineering background to the invention of microsimulation. Chapter 2 maps the "tax model wars"—the institutional competition between government agencies, think tanks, and open-source projects for analytical authority. Chapter 3 covers the European tradition, from EUROMOD to OpenFisca. Chapter 4 confronts the accuracy question: how good are these models, really?
 
-**The democratization thesis.** Simulation tools are becoming public infrastructure. Power is shifting from institutions that guard models to communities that build them in the open.
+**Part II: Building** follows the open-source turn. Chapter 5 describes PolicyEngine's development from research tool to public infrastructure. Chapter 6 explains the three ingredients that make microsimulation work. Chapters 7 and 8 explore the household view and society view—individual impact and population-wide analysis. Chapter 9 examines how AI is entering the picture. Chapter 10 describes the infrastructure gap and what it would take to build production-ready simulation for AI systems.
 
-**The AI question.** What language models can and can't do, and why deterministic tools matter more than ever when AI makes everything else probabilistic.
+**Part III: Future** confronts the speculative edge. Chapter 11 tackles the uncertainty gap in policy analysis. Chapter 12 explores simulating public opinion. Chapter 13 models democratic processes. Chapter 14 asks whether we can forecast how human values evolve—and what that might mean for AI alignment. Chapter 15 returns to the fork in the road: Serac's closed system versus the democratic alternative.
 
-**Open source as philosophy.** Transparency is a democratic value, not just an engineering practice.
-
-## What's Ahead
-
-**Part I: Origins** traces the intellectual history—from [[guy-orcutt|Orcutt]]'s frustration with aggregate models in 1957, through [[dynasim|DYNASIM]]'s mainframe ambitions, to the [[ifs-taxben|IFS]] and [[taxsim|NBER]] models that shaped policy for decades.
-
-**Part II: Building** follows the open source turn—[[openfisca|OpenFisca]] in France, [[policyengine|PolicyEngine]] spanning US and UK, the reality of encoding law as [[rules-as-code|code]].
-
-**Part III: Future** confronts the AI moment—what changes when language models help write rules, when agents need reliable tools, when simulating society at scale becomes technically feasible.
-
-The book ends where it started: at the fork in the road. The choice between Serac's closed system and the democratic alternative is being made right now, in code and policy and institutional design. This is the case for the open path.
+The book ends where it started: at the choice between models that concentrate power and models that distribute it. That choice is being made right now, in code and policy and institutional design. This is the case for the open path.
 
 ---
 
-## Research Links
+## References
 
-- [[rehoboam-contrast]]
-- [[cosilico]]
-- [[microsimulation-definition]]
-- [[guy-orcutt]]
-- [[policyengine]]
-- [[dynasim]]
-- [[ifs-taxben]]
-- [[taxsim]]
-- [[openfisca]]
-- [[rules-as-code]]
-
-[^gpt4-tax]: Blair-Stanek et al. (2023), "Can GPT-4 Really Do Tax?" Researchers posed 276 true/false tax cases to GPT-4 with the full Internal Revenue Code provided. GPT-4 got 186 correct (67%). None of the errors were mathematical—all involved misreading the statutes. arXiv:2309.09992
+```{bibliography}
+:filter: docname in docnames
+```
