@@ -70,6 +70,10 @@ HiveSight's approach is microdata-grounded. Just as PolicyEngine simulates polic
 
 This grounds the diversity in reality. Instead of asking "what would a random perturbation of the AI say?", we ask "what would someone with these actual characteristics say?" across a representative sample of real demographic profiles.
 
+A concrete example: suppose a city council is considering a congestion pricing policy—a $15 fee for driving into the downtown core during peak hours. A traditional survey would cost $30,000-50,000 and take three weeks. With HiveSight, the council could enter the question, specify the city's demographic distribution, and receive simulated responses in minutes. The output might show: 62% opposition overall, but with sharp demographic splits—78% opposition among suburban car commuters, 55% support among urban residents who use transit. The income gradient might show that opposition peaks among middle-income households who can't easily switch to transit but feel the fee acutely, while both low-income households (who don't drive) and high-income households (who absorb the fee) show less opposition.
+
+Would these numbers match a real survey? Based on the current evidence: approximately, for the broad patterns (the demographic splits, the income gradient), but probably not precisely for the specific percentages. The value isn't replacing the real survey—it's deciding whether the real survey is worth fielding. If HiveSight shows 90% opposition across all demographics, the council might shelve the proposal without spending $40,000 to confirm. If it shows a close split with interesting demographic variation, that's when the real survey investment pays off.
+
 ---
 
 ## What the research says about accuracy
