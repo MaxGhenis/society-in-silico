@@ -22,9 +22,11 @@ This isn't a bug in any particular model. It's structural. The microsimulation p
 
 Consider what goes into a PolicyEngine estimate:
 
-**Input data uncertainty.** The model uses survey data (the Current Population Survey in the US, the Family Resources Survey in the UK) that samples households from the broader population. Every survey has sampling error—the actual population might differ from what the survey captured. But microsimulation treats the survey as if it perfectly represents reality.
+**Input data uncertainty.** The model uses survey data (the Current Population Survey in the US, the Family Resources Survey in the UK) that samples households from the broader population. Every survey has sampling error—the actual population might differ from what the survey captured. The CPS samples about 100,000 households from a nation of 130 million. That's a remarkably good sample by survey standards—but it means that individual cells in the data (say, self-employed workers in Montana with investment income) may contain only a handful of observations. When you compute a national cost estimate by summing weighted household impacts, the sampling uncertainty propagates. PolicyEngine's Enhanced CPS reduced deviations from administrative totals by 97 percent through calibration (Chapter 8), but that calibration optimizes to match known targets—it doesn't eliminate the underlying sampling variance for questions nobody has asked yet. And even calibrated weights carry residual uncertainty that the model ignores.
 
 **Parameter uncertainty.** Tax brackets, benefit rates, eligibility thresholds—these are usually known precisely. But behavioral parameters are estimated from research: how much do people change their labor supply when marginal tax rates change? Different studies produce different estimates. The model picks one and treats it as truth.
+
+The elasticity of taxable income—the key parameter governing how much people adjust their reported income in response to tax changes—illustrates this perfectly. A meta-regression analysis of 1,720 estimates from 61 studies found a mean elasticity of 0.30, but individual estimates ranged from near zero to above 1.0, driven by differences in regression techniques, sample restrictions, and country contexts {cite}`neisser2021eti`. The range isn't just academic: a reform that raises the top marginal tax rate by 10 percentage points might increase revenue by $100 billion with an elasticity of 0.2, or only $60 billion with an elasticity of 0.5. Same reform, same model, wildly different conclusions—depending on which study you trust for a single parameter.
 
 **Structural uncertainty.** The model makes assumptions about how programs interact, how households respond, how the economy adjusts. These assumptions are embedded in the code. Alternative assumptions would produce different results.
 
@@ -46,7 +48,15 @@ You might think uncertainty is a technical detail—interesting to methodologist
 
 **Model comparison is undermined.** Different microsimulation models produce different estimates for the same policy. Is one right and another wrong? Or are they both within reasonable uncertainty bounds? Without quantification, we can't tell.
 
-The Penn Wharton Budget Model, one of the few groups to systematically compare projections to outcomes, found that their estimates were generally accurate but had meaningful variance {cite}`pwbm2024accuracy`. CBO publishes uncertainty ranges for some estimates. But most microsimulation, including PolicyEngine, produces point estimates only.
+The Penn Wharton Budget Model, one of the few groups to systematically compare projections to outcomes, found that their estimates were generally accurate but had meaningful variance {cite}`pwbm2024accuracy`. CBO itself has started publishing retrospective accuracy evaluations—and the results are illuminating. In its June 2024 projections for fiscal year 2025, CBO underestimated federal revenues by 6 percent—$334 billion off {cite}`cbo2025budget_accuracy`. The largest single factor was tariff increases that the agency hadn't anticipated, a reminder that policy itself is uncertain. Over longer horizons, CBO's track record on deficit projections from 1984 to 2023 shows systematic patterns: revenue is harder to forecast than spending, and errors compound over time {cite}`cbo2024deficit`. These aren't failures of competence—CBO's economic forecasts are actually more accurate than those of the Administration, the Blue Chip consensus, and the Survey of Professional Forecasters {cite}`cbo2025forecasting`. They're evidence that even the best forecasters working with the best data face irreducible uncertainty.
+
+But most microsimulation, including PolicyEngine, produces point estimates only.
+
+The persistence of point estimates isn't just a technical oversight. It's a political equilibrium. Budget scoring requires a single number because legislation needs a cost estimate for reconciliation rules—you can't pass a bill that "probably costs between $40 billion and $65 billion." CBO's analysts know their estimates are uncertain, but the legislative process demands precision that doesn't exist. Journalists need a headline, not a probability density function. Advocacy groups need a talking point: "this reform lifts 2 million children out of poverty" mobilizes support in a way that "this reform lifts between 1.4 and 2.6 million children out of poverty" does not.
+
+This creates a perverse dynamic. Producers of analysis know the estimates are uncertain. Consumers of analysis treat them as certain. And the producers, knowing the consumers won't engage with uncertainty, don't bother reporting it. The illusion of precision becomes self-reinforcing.
+
+Breaking this cycle may require institutional leadership. When the National Weather Service first reported probabilistic forecasts, public reception was skeptical—people wanted to know whether it would rain, not that there was a 40 percent chance. But over time, probabilistic thinking became normal. Today, "60 percent chance of rain" is intuitive to most Americans. Policy analysis could follow the same arc: initially uncomfortable, eventually expected. CBO's fan charts are a first step. But they'll only become standard if users demand them—and users will only demand them if they understand what they're missing.
 
 ---
 
@@ -78,6 +88,14 @@ I've used Squigglepy, a Python implementation, in Democrasim—a model of voter 
 
 The limitation: Squiggle works well for Fermi estimation (rough calculations with explicit uncertainty) but doesn't integrate naturally with detailed microsimulation. You can't easily wrap PolicyEngine's 10,000 lines of Python in Squiggle distributions.
 
+### Bootstrap Resampling
+
+A middle ground between full Monte Carlo and no uncertainty at all: resample the survey data itself. Draw many bootstrap samples from the microdata (say, 500), reweight each to match population totals, and run the policy simulation on each. The result is a distribution of estimates that reflects sampling uncertainty without requiring any changes to the policy engine.
+
+This approach has a practical advantage: it's embarrassingly parallel. Each bootstrap replicate is independent, so the computation scales linearly with the number of processors. On a cloud computing cluster, 500 replicates might add minutes rather than hours to a simulation that currently takes seconds. And it captures the most important source of uncertainty for many estimates—the fact that the survey is a sample, not a census.
+
+The limitation is that bootstrap resampling captures only input data uncertainty. It tells you nothing about parameter uncertainty (wrong elasticities) or structural uncertainty (wrong model). But for many practical questions—"how confident should I be in this cost estimate?"—input data uncertainty is the dominant term, and bootstrapping answers it directly.
+
 ### Scenario Analysis
 
 The simplest approach: run the model under different assumptions and present multiple results. "Under baseline assumptions, the reform costs $50B. Under optimistic labor supply assumptions, $40B. Under pessimistic assumptions, $65B."
@@ -100,7 +118,9 @@ What would a fully uncertainty-aware microsimulation look like?
 
 This is technically feasible. The tools exist—Monte Carlo, Bayesian inference, probabilistic programming. The barriers are computational (running thousands of scenarios is expensive), architectural (current models weren't designed for uncertainty), and institutional (funders and users expect point estimates).
 
-Some progress is happening. CBO has started publishing uncertainty ranges for some long-term projections. Academic researchers increasingly report sensitivity analyses. The Squiggle community is building tools specifically for policy-relevant estimation.
+Some progress is happening. CBO has started publishing uncertainty ranges for some long-term projections. Since 2019, they've reported "fan charts" for major budget forecasts—symmetrical bands showing the range of outcomes consistent with historical forecast errors. Their 10-year deficit projections now include shaded regions covering the 25th to 75th and 5th to 95th percentile ranges from past performance. This is exactly the kind of calibrated uncertainty that policy analysis needs.
+
+Academic researchers increasingly report sensitivity analyses. The Squiggle community is building tools specifically for policy-relevant estimation. And the financial sector's experience with Value at Risk models offers a cautionary template: even imperfect uncertainty quantification is better than none, as long as users understand the models' limitations—which the 2008 crisis showed they often don't.
 
 But we're far from the aspiration. When you use PolicyEngine today, you get a number. You should mentally add "±something" to every result—but the model won't tell you how much.
 
@@ -110,13 +130,15 @@ But we're far from the aspiration. When you use PolicyEngine today, you get a nu
 
 Policy microsimulation's failure to report uncertainty is unusual. Most quantitative fields have solved this problem—or at least confronted it honestly.
 
-**Weather forecasting** is the gold standard. Modern weather models don't produce a single forecast—they run ensemble simulations, perturbing initial conditions slightly and seeing how the forecasts diverge. The National Weather Service reports "60% chance of rain"—a calibrated probability that reflects genuine uncertainty about atmospheric dynamics. Forecast skill improves continuously, and the improvement is measured precisely: the five-day forecast today is as accurate as the three-day forecast was thirty years ago.
+**Weather forecasting** is the gold standard. Modern weather models don't produce a single forecast—they run ensemble simulations, perturbing initial conditions slightly and seeing how the forecasts diverge. The European Centre for Medium-Range Weather Forecasts runs 51 ensemble members for each forecast cycle, producing not a prediction but a probability distribution. The National Weather Service reports "60% chance of rain"—a calibrated probability that reflects genuine uncertainty about atmospheric dynamics. Crucially, these probabilities are *verified*: meteorologists track whether events predicted at 60% probability actually occur 60% of the time. When they don't, the models are recalibrated. Forecast skill improves continuously, and the improvement is measured precisely: the five-day forecast today is as accurate as the three-day forecast was thirty years ago. The parallel to microsimulation is striking: both involve complex nonlinear systems with many interacting variables. But meteorology invested decades in ensemble methods and calibration. Policy simulation hasn't started.
 
 **Clinical trials** report confidence intervals as a matter of scientific practice. A drug that reduces mortality by 15% (95% CI: 8% to 22%) tells clinicians something fundamentally different from a drug that reduces mortality by 15% (95% CI: -2% to 32%). The first is reliably beneficial. The second might not help at all. The confidence interval isn't optional context—it's the core information.
 
 **Financial risk management** lives on uncertainty quantification. Value at Risk models estimate the worst-case loss at a given confidence level. Portfolio optimization uses covariance matrices. Options pricing depends on implied volatility. The 2008 financial crisis revealed that these models underestimated tail risks—but the response was to improve uncertainty modeling, not to abandon it.
 
 **Climate modeling** runs large ensembles of global climate models, producing probability distributions over temperature increases, sea level rise, and precipitation changes. The IPCC reports use calibrated uncertainty language: "likely" means 66-100% probability, "very likely" means 90-100%.
+
+**Election forecasting** has evolved from punditry to probabilistic modeling. FiveThirtyEight's models didn't say "Candidate X will win." They said "Candidate X wins in 72% of simulations." The models ran thousands of scenarios, varying turnout, polling error, and state-level correlations. When Nate Silver said there was a 29% chance of a Trump victory in 2016, and Trump won, that wasn't a failure—it was an event within the stated uncertainty. The lesson for policy analysis: probabilistic framing changes how people process predictions and prepares them for outcomes that differ from the central estimate.
 
 Policy microsimulation is the outlier. It produces outputs of comparable complexity to climate projections—millions of interacting variables, uncertain parameters, structural assumptions—but reports them without uncertainty bounds. The gap isn't technological; the statistical tools exist. It's institutional and cultural. Funders expect clean numbers. Legislators need single estimates for budget scoring. Journalists want headlines, not distributions.
 
@@ -134,7 +156,11 @@ Microsimulation models assume people respond to incentives in ways estimated fro
 
 Consider universal basic income. Most microsimulation models estimate labor supply responses using elasticities from marginal tax changes—small policy variations that leave the fundamental structure of work unchanged. But UBI might change the meaning of work, the relationship between employment and identity, the nature of economic security. Would responses to UBI mirror responses to a 5% change in marginal tax rates? Maybe not.
 
+Finland tested this. In 2017-2018, the Finnish government ran a randomized controlled trial: 2,000 unemployed individuals received a basic income of €560 per month with no conditions, while 175,000 similar individuals formed the control group. Microsimulation models had predicted that reducing participation tax rates by 23 percentage points—the effective incentive change—would increase employment. The experiment found no statistically significant effect on employment days in the first year {cite}`kangas2020finland`. The eventual AEJ paper found modest positive effects in the second year, concentrated among specific subgroups {cite}`hanna2018removing`. But the headline result was clear: the microsimulation predictions, grounded in historical elasticities, overstated the employment response. The models weren't wrong about the incentive structure—participation tax rates did fall by 23 points. They were wrong about how people would respond to a fundamentally different kind of program.
+
 This is structural uncertainty—uncertainty about whether the model captures the relevant causal mechanisms at all. No amount of Monte Carlo simulation addresses this. You can propagate uncertainty through a wrong model and get precise estimates that are precisely wrong.
+
+The ACA individual mandate tells a similar story from the other direction. When Congress zeroed out the mandate penalty in 2017, CBO projected that 13 million fewer people would have health insurance by 2027—a number derived from models where the mandate was a powerful driver of enrollment {cite}`cbo2017ahca`. The actual effect was far smaller. People had enrolled for reasons the models didn't fully capture: the availability of subsidies, the peace of mind of coverage, the administrative momentum of having signed up. The models overweighted the penalty's importance because historical data couldn't distinguish between "people enrolled because of the mandate" and "people enrolled at the same time the mandate existed."
 
 The honest answer is uncomfortable: we can quantify uncertainty about things we know we don't know (parameter values, sampling error), but we can't easily quantify uncertainty about things we don't know we don't know (model misspecification, structural breaks, emergent behavior).
 
@@ -154,13 +180,17 @@ Fourth, be especially skeptical of novel policies. Microsimulation is most relia
 
 Finally, remember that point estimates are still useful. Knowing that a reform costs "approximately $50 billion" is better than no information. The uncertainty isn't infinite—we know the cost isn't $5 billion or $500 billion. Even imprecise estimates narrow the range of possibilities.
 
+Consider what this looks like in practice. Suppose PolicyEngine estimates that making the Child Tax Credit fully refundable costs $12 billion per year and reduces child poverty by 15 percent. An uncertainty-aware version might report: the cost is $12 billion ±$3 billion (driven mainly by uncertainty in how many currently non-filing families would claim the credit), and the poverty reduction is 15 percent ±4 percentage points (driven by uncertainty in income measurement for low-income households, which surveys systematically undercount). The central estimate hasn't changed. But the user now knows that the poverty impact is robust—even the pessimistic scenario shows meaningful reduction—while the cost estimate has real range. That's more useful than a single number, not because it's more precise, but because it's more honest about what we know and don't know.
+
 ---
 
 ## The Road Ahead
 
-Uncertainty quantification is coming to microsimulation, slowly. Computational costs are falling. Probabilistic programming tools are maturing. The research community increasingly recognizes that point estimates without uncertainty are incomplete.
+Uncertainty quantification is coming to microsimulation, slowly. Computational costs are falling—cloud computing makes it feasible to run thousands of parallel simulations that would have been prohibitive a decade ago. Probabilistic programming tools are maturing: PyMC, Stan, and NumPyro make Bayesian inference accessible to engineers who aren't statisticians. The research community increasingly recognizes that point estimates without uncertainty are incomplete.
 
-PolicyEngine will eventually report uncertainty bounds. The infrastructure projects enabling this—Squigglepy for probabilistic estimation, EggNest for Monte Carlo simulation, MicroCalibrate for robust survey weights—are pieces of a larger puzzle.
+PolicyEngine will eventually report uncertainty bounds. The infrastructure projects enabling this—Squigglepy for probabilistic estimation, EggNest for Monte Carlo simulation, MicroCalibrate for robust survey weights—are pieces of a larger puzzle. The most tractable first step is probably bootstrapping over survey weights: draw many samples from the microdata, recompute the policy estimate for each, and report the resulting distribution. This captures input data uncertainty—which for many estimates is the dominant source—without requiring any changes to the policy engine itself. Parameter uncertainty is harder, because it requires specifying prior distributions over behavioral parameters that are themselves contested. Structural uncertainty is hardest of all, because it requires imagining models you haven't built.
+
+AI might accelerate progress. Language models can already read research papers and extract parameter estimates. A system that automatically surveyed the literature on labor supply elasticities, compiled the distribution of published estimates, and attached that distribution as a prior to the relevant microsimulation parameter would be genuinely useful—transforming months of manual literature review into something approaching automation. This wouldn't solve structural uncertainty, but it would make parameter uncertainty quantification tractable for models with hundreds of behavioral parameters.
 
 But the deeper lesson is epistemological. Microsimulation is powerful because it simulates complex systems—millions of households, thousands of policy rules, intricate interactions. That power comes with a temptation to believe the outputs are precise.
 

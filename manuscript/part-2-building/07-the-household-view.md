@@ -14,9 +14,7 @@ This is the problem PolicyEngine's household calculator was designed to solve {c
 
 ## The Invisible Labyrinth
 
-Americans interact with a tax-benefit system of staggering complexity. A typical low-income family might simultaneously receive the federal Earned Income Tax Credit (phased by income and number of children), the Child Tax Credit (partially refundable, phased by income), SNAP benefits (with categorical eligibility plus an income test that varies by state), Supplemental Security Income for a disabled family member, Medicaid, housing assistance through local voucher programs, state child care subsidies, and free school meals. That's eight programs, each with its own definition of income, its own household unit, and its own phase-out schedule.
-
-Each was designed independently. Each has its own definition of "income," its own household unit, its own phase-out schedule. The interactions are not coherent—they are accretions of decades of legislation, regulation, and administrative convenience.
+Americans interact with a tax-benefit system of staggering complexity. A typical low-income family might simultaneously receive the federal Earned Income Tax Credit (phased by income and number of children), the Child Tax Credit (partially refundable, phased by income), SNAP benefits (with categorical eligibility plus an income test that varies by state), Supplemental Security Income for a disabled family member, Medicaid, housing assistance through local voucher programs, state child care subsidies, and free school meals. That's eight programs, each designed independently, each with its own definition of "income," its own household unit, its own phase-out schedule. The interactions are not coherent—they are accretions of decades of legislation, regulation, and administrative convenience.
 
 The result is a system that no participant fully understands. Caseworkers specialize in one program. Tax preparers specialize in one side of the ledger. Benefits counselors know eligibility rules but not tax implications. No one sees the whole picture.
 
@@ -86,6 +84,10 @@ This is the "what if" that wasn't previously possible for ordinary people. What 
 
 The visualizations update in real time. The net income chart shows baseline in gray, reform in blue. Two sets of earnings dead zones appear, revealing whether the reform helps or hurts work incentives for your specific situation. The marginal tax rate chart shows both lines stacked, making it immediately visible where a reform smooths out the benefit system or creates new cliffs.
 
+The reform space is surprisingly deep. A user exploring basic income proposals, for example, can create a flat tax at any rate, a universal benefit at any amount, and immediately see how this simplification compares to the current system for their household. Do they come out ahead or behind? Does the marginal rate chart smooth out, eliminating the cliffs? Or does the reform create new problems—a higher average rate, or a loss of targeted benefits that the flat benefit doesn't replace?
+
+For policymakers and their staff, this capability transforms how policy is designed. Rather than proposing a reform and waiting weeks for CBO or JCT to score it, a legislative aide can model dozens of variants in an afternoon. Set the benefit at $3,000 per child versus $4,000. Phase it in at $2,500 versus $0. Cap it at $75,000 versus $150,000. Each variant shows a different household impact chart, revealing design trade-offs that are invisible in legislative text but immediate in simulation.
+
 This isn't abstract policy analysis. It's your life, under different rules.
 
 Consider a concrete example. In 2021, Congress temporarily expanded the Child Tax Credit from $2,000 to $3,600 per child under six and $3,000 per child ages 6-17. The credit was also made fully refundable—families who owed no federal income tax could still receive the full amount. For a single parent earning $15,000 with two young children, this wasn't a marginal change. Under the old CTC, they received roughly $1,800 (limited by the 15% phase-in rate on earnings above $2,500). Under the expansion, they received $7,200. PolicyEngine could show this difference instantly—not as a policy brief about national averages, but as a specific dollar amount for a specific family.
@@ -103,6 +105,12 @@ The household view reveals complexity that aggregate statistics hide.
 **Case 2: The SNAP categorical cliff.** Receiving SSI provides categorical eligibility for SNAP—you qualify regardless of income. But once SSI phases out, you lose categorical eligibility and must meet SNAP's own income test. This creates a cliff at precisely the income level where you're trying to become self-sufficient.
 
 **Case 3: State credit stacking.** Washington's Working Families Tax Credit begins phasing out $5,000 below where the federal EITC phases out, creating an additional marginal tax rate of 12-24% that stacks on top of federal rates {cite}`policyengine2023cliffs`.
+
+**Case 4: The marriage penalty.** Consider two single parents, each earning $25,000 with one child. Separately, each qualifies for substantial EITC and CTC benefits. If they marry, their combined $50,000 income pushes them into higher phase-out ranges for both credits. The EITC marriage penalty has been partially addressed by wider phase-out thresholds for married filers, but the interaction with state programs and benefit phase-outs means the combined household often receives less in total transfers than the two separate households did. PolicyEngine can show this precisely: enter the two individuals separately, note the total. Then enter them as a married couple, note the difference. The marriage penalty isn't always obvious from reading the tax code—it emerges from the interaction of multiple programs, each with its own treatment of household structure.
+
+**Case 5: The aging-out cliff.** A family receiving SSI for a disabled child faces a transition when that child turns 18. SSI eligibility rules change from parents' income and resources to the individual's own—often resulting in higher SSI payments but loss of certain family-based benefits. At the same time, the child may age out of pediatric Medicaid provisions, school meal programs, and childcare subsidies. PolicyEngine can model these transitions by adjusting the child's age and watching the cascading effects across programs.
+
+**Case 6: Self-employment and gig work.** Gig workers face a uniquely opaque tax situation. Their self-employment tax (15.3% on net earnings, covering both employer and employee shares of Social Security and Medicare) comes as a surprise to many. But the interaction with benefits is even less intuitive: self-employment income is treated differently by SNAP (which allows a standard deduction for self-employment expenses) and the EITC (which uses net self-employment income). A rideshare driver earning $40,000 gross with $12,000 in expenses has $28,000 in net self-employment income for EITC purposes, but the SNAP calculation may use a different figure. PolicyEngine handles these distinctions because it encodes each program's specific definition of income.
 
 Each case represents millions of real households making real decisions. The household view makes the specific impacts calculable for any individual's circumstances.
 
@@ -135,6 +143,22 @@ The household calculator is not a replacement for official agency calculators or
 The team invests heavily in validation, comparing results to official calculators and published tables {cite}`policyengine2024ukvalidation`. Where discrepancies appear, they trigger investigation and often improvement. But perfect accuracy is unattainable in a system this complex.
 
 This honest uncertainty matters. The alternative—black-box calculations that claim false precision—would be worse. By showing the model's logic transparently, PolicyEngine allows users to judge whether the calculation matches their understanding of their own situation.
+
+---
+
+## From Calculator to Infrastructure
+
+The household calculator began as a web tool for curious individuals. It became something more when other organizations started building on top of it.
+
+In 2025, MyFriendBen—a benefits screening platform—launched in North Carolina, Illinois, Colorado, and New York using PolicyEngine's API as its calculation engine. The platform asks users a series of questions in plain language, available in 12 languages, then calls the same household calculation engine that powers the PolicyEngine website. In six minutes, users see which programs they're likely eligible for and approximately how much they'd receive.
+
+The results were striking. In Colorado, users discovered they were eligible for benefits averaging $1,500 per month—money they hadn't known they could access. The platform achieved over 90 percent accuracy compared to actual benefit determinations, because it was running the same comprehensive calculation that PolicyEngine's household view performs: evaluating all programs simultaneously, accounting for interactions, catching the eligibility that single-program screeners miss.
+
+This represents a shift from the household view as analysis tool to the household view as infrastructure. The underlying calculation—given these household characteristics, compute all taxes and benefits—is the same whether it's called by a curious policy wonk on policyengine.org or by a benefits navigator helping a family in Charlotte. The API exposes the same logic, the same parameters, the same interactions.
+
+Other organizations built on the same foundation. The Gary Community Ventures in Colorado integrated PolicyEngine calculations into their financial coaching tools. The Fund for Guaranteed Income used the API to show pilot program participants how their guaranteed income payments would interact with existing benefits—critical information, since participants needed to know whether accepting a cash transfer would reduce their SNAP or SSI benefits dollar-for-dollar.
+
+The household view, it turned out, was not just a product feature. It was a primitive—a basic computation that many different applications needed. Benefits screening, financial coaching, guaranteed income pilot design, tax preparation assistance, legislative staff analysis: all variations on the same question. "Given this household, what are their taxes and benefits?"
 
 ---
 

@@ -10,6 +10,8 @@ When I watched this in 2020, I recognized the technology. I'd been building micr
 
 They'd also revealed a choice we're making right now.
 
+The fictional version is extreme—a single AI controlling human destiny. But the underlying dynamic is already real. Governments use algorithmic risk scores to allocate child welfare investigations, set bail amounts, and flag potential fraud in benefit claims. Insurance companies use predictive models you can't inspect to set your premiums. Credit agencies reduce your financial life to a three-digit number using methods they won't fully explain. Each of these systems makes predictions about individuals based on computational models of human behavior—and each operates with minimal transparency about its assumptions, its uncertainty, or its error rates.
+
 Serac's system was closed: he decided what "optimal" meant, and everyone else lived inside his model without consent. But computational models of society don't have to work that way. What if anyone could query the model? Challenge its assumptions? Propose alternatives? What if simulation became public infrastructure for democratic deliberation, not a tool for autocratic control?
 
 That's the fork in the road. That's what this book is about.
@@ -28,13 +30,17 @@ Language models can generate fluent explanations of tax law. They can summarize 
 
 The solution isn't better training. It's better tools—deterministic, auditable computational tools that AI systems can call when they need exact answers.
 
-This is the central technical insight of the book: AI needs tools, and the tools that matter most for policy questions are microsimulation models.
+This is the central technical insight of the book: AI needs tools, and the tools that matter most for policy questions are microsimulation models. The pattern is familiar from other domains. AI systems don't memorize multiplication tables—they call calculators. They don't learn orbital mechanics from scratch—they call physics engines. For the same reasons, they shouldn't try to memorize tax law. They should call a tax engine that encodes the rules exactly, traces each calculation to statute, and produces guaranteed-correct results.
+
+The trouble is that no comprehensive tax-and-benefit engine exists as unified public infrastructure. Avalara handles sales tax. ADP handles payroll. TurboTax handles filing. But nothing answers the full-stack question that matters for policy: given this specific household in this specific state, what are all their taxes and all their benefits, how do they interact, and what happens when you change the rules? That question—the question microsimulation was built to answer—is what connects a 1957 academic paper to a 2025 AI benchmark failure.
 
 ---
 
 ## Why now
 
-Three trends are converging to make this moment different from any previous era of policy analysis.
+Twenty years ago, if you wanted to know how a tax reform would affect American families, you had two options: read the CBO score (a single number for the nation) or hire a consulting firm to run proprietary models. Ten years ago, open-source tools like Tax-Calculator and EUROMOD existed, but using them required programming expertise and statistical training. Five years ago, PolicyEngine put microsimulation in a web browser, but the audience was still mostly policy professionals.
+
+Three trends are now converging to make this moment different from any previous era of policy analysis.
 
 **AI systems are becoming the primary interface for information.** When someone asks "how much would I get from the Child Tax Credit?" they increasingly ask an AI assistant rather than navigating IRS.gov. If the assistant hallucinates an answer, the person may make financial decisions based on fiction. The infrastructure that AI systems call when they need accurate answers doesn't exist as a unified, production-ready service. Each company building AI assistants has to solve the tax-and-benefits problem from scratch—or get it wrong.
 
@@ -58,7 +64,11 @@ That's what microsimulation does. It calculates how policies affect specific hou
 
 When Congress debates expanding the Child Tax Credit, microsimulation answers: How much would it cost? Which families would benefit? Would it reduce poverty? By how much? These aren't guesses. They're calculations—the product of applying the proposed rules to millions of synthetic households drawn from actual survey data.
 
-The idea goes back to 1957, when an economist named Guy Orcutt proposed modeling society from the bottom up—simulating individual households rather than relying on aggregate equations. For decades, the tools to realize his vision were locked inside government agencies: the Congressional Budget Office, the Joint Committee on Taxation, the Treasury Department. If you wanted to know how a policy would affect you, you had to trust their numbers. You couldn't check their work.
+The same logic applies across the Atlantic. When the UK Chancellor announces changes to Universal Credit taper rates, a microsimulation model can show that a single parent working 25 hours per week at minimum wage keeps an additional £1,000 per year, while a two-earner couple sees a smaller gain. When Scotland sets different income tax rates from the rest of the UK, simulation reveals who wins and who loses across the income distribution. The tool is country-agnostic; the rules are country-specific.
+
+The idea goes back to 1957, when an economist named Guy Orcutt proposed modeling society from the bottom up—simulating individual households rather than relying on aggregate equations. His insight was that you could learn more about how the economy works by tracking what happens to millions of individual families than by studying national averages. A 2% change in GDP tells you nothing about whether the people who need help are getting it. But simulate the change household by household—applying actual tax rules to actual income data—and you see what aggregate numbers hide: the family that falls through the cracks, the benefit cliff that punishes a raise, the interaction between programs that no single-program analysis reveals.
+
+For decades, the tools to realize Orcutt's vision were locked inside government agencies: the Congressional Budget Office, the Joint Committee on Taxation, the Treasury Department. If you wanted to know how a policy would affect you, you had to trust their numbers. You couldn't check their work.
 
 That's changing. Open-source microsimulation models now make it possible for anyone—researchers, journalists, advocates, curious citizens—to run the same kinds of analyses that once required government resources. The code is public. The methodology is inspectable. The results are reproducible.
 
@@ -78,11 +88,13 @@ These models exist. The question is who controls them.
 
 **What are they for?** Optimization or understanding?
 
-The gap between policy debates and policy analysis is vast. Political arguments run on emotion and tribal loyalty. Policy analysis runs on computation and precision. Bridging that gap without sliding into technocracy is the central challenge.
+The gap between policy debates and policy analysis is vast. Political arguments run on emotion and tribal loyalty. Policy analysis runs on computation and precision. In a typical election, candidates propose tax plans that would affect millions of families by thousands of dollars each—and most voters have no way to know whether they'd come out ahead or behind. They rely on campaign claims, pundit interpretations, and gut feeling. The tools to calculate the actual impact exist, but they're not available to the people the policies affect. Bridging that gap—making analysis accessible without sliding into technocracy—is the central challenge.
 
 Consider the stakes concretely. When Congress debated extending the 2017 Tax Cuts and Jobs Act in 2025, the ten-year cost estimates ranged from $4 trillion to $5 trillion depending on the assumptions {cite}`cbo2025tcja`—a trillion-dollar range that could fund entire new programs or blow a hole in the deficit. The official scorekeepers at the Joint Committee on Taxation used models the public couldn't inspect. Independent groups like the Tax Policy Center, the Penn Wharton Budget Model, and PolicyEngine produced their own estimates, each with different data and methods. Members of Congress voted based on whichever number supported their position.
 
 This isn't how it has to work. Imagine instead that every estimate was produced by open models—inspectable, reproducible, challengeable. That disagreements could be traced to specific assumptions rather than handwaved as "different methodologies." That a citizen could enter their own household circumstances and see, before a vote, exactly what the proposal would mean for them. Not approximately. Not according to a talking head. Precisely, calculated from the same rules that would govern their taxes.
+
+Imagine further that the uncertainty was visible. Not "this reform costs $4.5 trillion" but "this reform costs $4.5 trillion, with a 90% confidence interval of $3.8 to $5.2 trillion, and here are the assumptions that matter most." That AI assistants, when asked about policy, could call these models and return accurate, citable answers instead of hallucinated approximations. That a nonprofit screening families for benefit eligibility could use the same calculation engine as the Congressional Budget Office, producing consistent results because they're running the same code against the same rules.
 
 That infrastructure is closer to reality than most people realize. And building it—making it accurate, accessible, and trustworthy—is the project this book describes.
 
@@ -90,7 +102,7 @@ That infrastructure is closer to reality than most people realize. And building 
 
 ## What's ahead
 
-This book traces the story of microsimulation—from Orcutt's frustration with aggregate models in 1957, through six decades of institutional models locked inside government agencies, to the open-source movement making these tools public infrastructure. It arrives at the present moment, where AI systems need deterministic tools for financial calculations and the boundaries of what we can simulate are expanding.
+This book traces the story of microsimulation—from Orcutt's frustration with aggregate models in 1957, through six decades of institutional models locked inside government agencies, to the open-source movement making these tools public infrastructure. It arrives at the present moment, where AI systems need deterministic tools for financial calculations and the boundaries of what we can simulate are expanding into territory—public opinion, democratic processes, human values—that raises questions this book can frame but not resolve.
 
 **Part I: Origins** traces the intellectual history. Chapter 1 follows Guy Orcutt from his engineering background to the invention of microsimulation. Chapter 2 maps the "tax model wars"—the institutional competition between government agencies, think tanks, and open-source projects for analytical authority. Chapter 3 covers the European tradition, from EUROMOD to OpenFisca. Chapter 4 confronts the accuracy question: how good are these models, really?
 
@@ -98,7 +110,13 @@ This book traces the story of microsimulation—from Orcutt's frustration with a
 
 **Part III: Future** confronts the speculative edge. Chapter 11 tackles the uncertainty gap in policy analysis. Chapter 12 explores simulating public opinion. Chapter 13 models democratic processes. Chapter 14 asks whether we can forecast how human values evolve—and what that might mean for AI alignment. Chapter 15 returns to the fork in the road: Serac's closed system versus the democratic alternative.
 
-The book ends where it started: at the choice between models that concentrate power and models that distribute it. That choice is being made right now, in code and policy and institutional design. This is the case for the open path.
+The book ends where it started: at the choice between models that concentrate power and models that distribute it. That choice is being made right now, in code and policy and institutional design.
+
+Some warnings before we begin. This is not a neutral survey. I've built many of the tools I describe, and I'll try to be honest about their limitations, but I'm not a disinterested observer. The chapters on systems I've created—PolicyEngine, HiveSight, Democrasim—are marked as such. The speculative chapters are labeled clearly. Where I describe infrastructure that doesn't yet exist, I say so.
+
+I've also tried to resist the temptation to oversell. The technology described in this book won't save democracy, eliminate poverty, or solve AI alignment. What it can do is make the invisible visible—the distributional effects hidden in policy details, the uncertainty masked by point estimates, the benefit cliffs that trap families. Whether that visibility translates into better decisions depends on what people do with it.
+
+This is the case for the open path.
 
 ---
 
