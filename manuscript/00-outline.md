@@ -95,11 +95,11 @@
 - Deterministic backends for AI frontends
 - Claude explains, the engine computes
 
-### Chapter 10: Cosilico - Infrastructure for the Future
-**Research:** [[cosilico]], PolicyEngine future state
+### Chapter 10: Axiom Foundation and Axiom Labs - Infrastructure for the Future
+**Research:** [[cosilico]], [[axiom-foundation]], PolicyEngine future state
 
 - The next layer: agentic rule encoding
-- Why PolicyEngine will use Cosilico (not maintain its own models)
+- Why PolicyEngine will consume a shared rules layer rather than maintain its own models
 - Validation against authoritative oracles
 - Building infrastructure others can build on
 
@@ -156,7 +156,7 @@
 ## Back Matter
 
 ### Epilogue: The Work Ahead
-- What's launching (Cosilico timeline)
+- What's launching (Axiom Foundation / Axiom Labs timeline)
 - What's unfinished (uncertainty quantification, value forecasting experiments)
 - How to contribute
 

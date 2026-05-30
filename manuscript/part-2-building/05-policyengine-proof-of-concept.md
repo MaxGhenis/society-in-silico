@@ -12,7 +12,7 @@ The most significant shift came in December 2020: EUROMOD went fully open source
 
 The Policy Simulation Library expanded. The Capital Cost Recovery model joined. The OG-USA overlapping-generations model joined. Demo Day webinars showcased new applications. The open-source ecosystem was growing, but a critical gap remained: none of these tools were accessible to non-programmers.
 
-I had started the UBI Center in 2019 with a simple frustration: I wanted to know what various universal basic income proposals would cost and who they'd help, and no publicly available tool could answer the question with specificity {cite}`ubicenter2019intro`. The UBI Center became a research organization that published open-source analyses of basic income proposals, using whatever microsimulation tools were available—mostly Tax-Calculator and custom Python scripts built on CPS data.
+I had started the UBI Center in 2019 with a simple frustration: I wanted to know what various universal basic income proposals would cost and who they'd help, and no publicly available tool could answer the question with specificity [@ubicenter2019intro]. The UBI Center became a research organization that published open-source analyses of basic income proposals, using whatever microsimulation tools were available—mostly Tax-Calculator and custom Python scripts built on CPS data.
 
 The work taught me two things. First, the tools existed in fragments. Tax-Calculator handled federal income tax beautifully but didn't cover benefits. TAXSIM handled state taxes but required batch processing. No single tool captured the full interaction between taxes and benefits that determined whether a UBI proposal was progressive, regressive, or poverty-reducing.
 
@@ -42,11 +42,11 @@ The first version took months to build. Nikhil handled most of the engineering�
 
 The output was similarly contested. We wanted to show budget cost, poverty impact, inequality metrics, and distributional effects—but presenting all of that at once risked information overload. The solution was progressive disclosure: headline numbers first (net cost, poverty change), then detailed breakdowns (by income decile, by household type, by region) for users who wanted to dig deeper.
 
-We launched PolicyEngine UK in September 2021 {cite}`policyengine2021review`.
+We launched PolicyEngine UK in September 2021 [@policyengine2021review].
 
 The premise was simple: enter a policy reform—raise income tax, increase child benefits, introduce a carbon dividend—and see the effects. Not abstract estimates, but specific numbers. The cost to the Treasury. The change in poverty rates. The impact on inequality. And critically: enter your own household circumstances and see what the reform would mean for you personally.
 
-The response surprised us. Within weeks, advocacy groups were using PolicyEngine to design proposals. Parliamentary groups experimented with policies during presentations. When the Chancellor announced Autumn Budget changes to Universal Credit, we published analysis within a day {cite}`policyengine2021review`. News outlets cited our numbers.
+The response surprised us. Within weeks, advocacy groups were using PolicyEngine to design proposals. Parliamentary groups experimented with policies during presentations. When the Chancellor announced Autumn Budget changes to Universal Credit, we published analysis within a day [@policyengine2021review]. News outlets cited our numbers.
 
 In October 2021, we spun PolicyEngine off as a separate nonprofit organization. The mission statement evolved from "Make Everyone a Policymaker" to "Help People Understand and Change Public Policy." The second verb mattered—understanding was passive, changing required agency.
 
@@ -58,11 +58,11 @@ The early team was small and overextended. Nikhil remained the primary engineer,
 
 ## Crossing the Atlantic
 
-In March 2022, we launched PolicyEngine US {cite}`policyengine2022review`.
+In March 2022, we launched PolicyEngine US [@policyengine2022review].
 
 The US model was different—not just in the policies encoded, but in the entire structure of the challenge. The UK has a single national tax system, though Scotland sets its own income tax rates. Universal Credit replaced most legacy benefits, meaning one system handled most means-tested support. The US has fifty states with separate income tax codes, plus a federal system of bewildering complexity. Benefits are fragmented across agencies: SNAP from the USDA, SSI from the Social Security Administration, Medicaid from HHS, housing vouchers from HUD, childcare subsidies from state agencies. Each program has its own definition of income, its own household unit, its own eligibility rules. Modeling the US wasn't just harder than modeling the UK—it was a categorically different kind of problem, with complexity that grew multiplicatively rather than additively.
 
-We started with what we could model: federal income and payroll taxes, major benefit programs like SNAP and the EITC. The household calculator launched first—enter your circumstances, see your taxes and benefits. Then in July 2022, we added population impacts using the Current Population Survey, the same microdata foundation that official government estimates relied on {cite}`policyengine2022review`.
+We started with what we could model: federal income and payroll taxes, major benefit programs like SNAP and the EITC. The household calculator launched first—enter your circumstances, see your taxes and benefits. Then in July 2022, we added population impacts using the Current Population Survey, the same microdata foundation that official government estimates relied on [@policyengine2022review].
 
 But state-level analysis remained incomplete. We began encoding state income taxes one by one: Maryland, Massachusetts, Oregon, New York, Pennsylvania, Washington. Each state had its own structure, its own EITC variants, its own quirks. Some states piggyback on the federal adjusted gross income, making their systems relatively simple to encode once you have the federal model. Others—like New York, with its multiple income tax schedules, city taxes, and supplemental credits—were their own miniature ecosystems. By the end of 2022, we had modeled six states. Forty-four remained.
 
@@ -78,13 +78,13 @@ The proof of concept worked—people wanted accessible policy analysis—but sca
 
 As PolicyEngine grew, we tracked how different groups engaged with the tool. The patterns revealed both what we'd built successfully and what remained aspirational.
 
-Researchers found PolicyEngine could answer questions other tools couldn't. The Center for Growth and Opportunity used it to analyze how targeted cash assistance affects work incentives. The Social Market Foundation modeled cost-of-living responses. Academic economists cited PolicyEngine results in papers {cite}`policyengine2022review`. The academic use case worked because researchers needed flexibility—they wanted to test specific policy variants, compare alternatives, run sensitivity analyses. PolicyEngine provided that.
+Researchers found PolicyEngine could answer questions other tools couldn't. The Center for Growth and Opportunity used it to analyze how targeted cash assistance affects work incentives. The Social Market Foundation modeled cost-of-living responses. Academic economists cited PolicyEngine results in papers [@policyengine2022review]. The academic use case worked because researchers needed flexibility—they wanted to test specific policy variants, compare alternatives, run sensitivity analyses. PolicyEngine provided that.
 
 Advocacy groups discovered they could make quantitative arguments without hiring consultants. The Maryland Child Alliance analyzed child poverty policies. UBI Lab Northern Ireland modeled recovery basic income proposals. Organizations that had previously relied on government estimates or expensive think tank reports could now run their own simulations. This democratization mattered—it meant smaller organizations with limited budgets could participate in policy debates with numbers, not just narratives.
 
-Journalists appreciated the speed. When UK Prime Minister Liz Truss announced tax cuts during her short-lived administration, we produced distributional analysis within hours. News coverage included our estimates before official government figures appeared {cite}`policyengine2022review`. The journalism use case revealed both capability and risk—we could move fast, but speed created pressure to avoid errors that would undermine credibility.
+Journalists appreciated the speed. When UK Prime Minister Liz Truss announced tax cuts during her short-lived administration, we produced distributional analysis within hours. News coverage included our estimates before official government figures appeared [@policyengine2022review]. The journalism use case revealed both capability and risk—we could move fast, but speed created pressure to avoid errors that would undermine credibility.
 
-Policymakers themselves used the tool, though more cautiously. We presented to the US Congressional Budget Office, to UK Parliamentary groups, to the Green Party of England and Wales {cite}`policyengine2022review`. Staff members and elected officials ran scenarios, explored alternatives, asked "what if" questions. But official use remained limited—governments had their own models, their own methodologies, their own validation processes. PolicyEngine could inform but not replace official analysis.
+Policymakers themselves used the tool, though more cautiously. We presented to the US Congressional Budget Office, to UK Parliamentary groups, to the Green Party of England and Wales [@policyengine2022review]. Staff members and elected officials ran scenarios, explored alternatives, asked "what if" questions. But official use remained limited—governments had their own models, their own methodologies, their own validation processes. PolicyEngine could inform but not replace official analysis.
 
 The most revealing feedback came from legislative staff. A Congressional aide could use PolicyEngine to quickly test whether a proposed CTC expansion would actually reach the families the member cared about, then use that analysis to shape the legislative language before requesting a formal CBO score. The informal tool didn't replace the formal process—but it changed what questions got asked at the formal stage. Instead of "what does this cost?" as the first question, staff could arrive at CBO with proposals already refined for distributional impact.
 
@@ -100,7 +100,7 @@ The results were mixed. Each model had a test suite comparing outputs to officia
 
 Some bugs were straightforward: a phase-out rate coded as 21.06% instead of 21.6%, caught by comparing to IRS published tables. Others were genuinely ambiguous. When a regulation says income is calculated "net of applicable deductions," which deductions apply? Different official sources sometimes gave different answers. We maintained a tracking system for these ambiguities—cases where reasonable interpretations of the same statute produced different numbers. The existence of these ambiguities was itself a finding: the tax-benefit system was so complex that even the agencies administering it sometimes disagreed on the rules.
 
-For the UK model, HM Treasury eventually conducted their own evaluation. They found 60 percent of National Insurance calculations fell within 0.5 percent of their internal model {cite}`hmt2025policyengine`. But income tax validation proved more challenging—they had difficulty identifying comparable variables between our approaches. Edge cases revealed gaps throughout: housing benefit interactions with legacy benefits, Scotland-specific tax provisions, transition rules for households moving between programs. The lesson was that validation against government models is harder than it sounds—not because the math is difficult, but because the two systems may define "income" differently, aggregate at different levels, or handle household composition in incompatible ways.
+For the UK model, HM Treasury eventually conducted their own evaluation. They found 60 percent of National Insurance calculations fell within 0.5 percent of their internal model [@hmt2025policyengine]. But income tax validation proved more challenging—they had difficulty identifying comparable variables between our approaches. Edge cases revealed gaps throughout: housing benefit interactions with legacy benefits, Scotland-specific tax provisions, transition rules for households moving between programs. The lesson was that validation against government models is harder than it sounds—not because the math is difficult, but because the two systems may define "income" differently, aggregate at different levels, or handle household composition in incompatible ways.
 
 The US model faced different validation challenges. With fifty state income tax systems, we needed to compare against fifty different official sources—when those sources existed. Some states provided online calculators we could test against. Others had rules buried in legislative text with no official tool to verify our implementation. Federal programs were better documented, but interactions between federal and state systems created combinatorial complexity.
 
@@ -118,7 +118,7 @@ In 2024, the National Science Foundation awarded PolicyEngine a Pathways to Enab
 
 By April 2024, we solved the problem that had frustrated me at the UBI Center: state-level analysis. PolicyEngine launched comprehensive income tax modeling for all 50 states and DC. Over 100 open-source contributors had encoded the nation's Byzantine patchwork of tax codes. What we couldn't find in 2019, we built by 2024. The final push required a sustained campaign: identifying the remaining states, finding contributors with local expertise or recruiting engineers willing to parse unfamiliar tax codes, and validating each implementation against whatever official tools or published tables existed. Some states were straightforward—flat tax states with few credits took days. Others—New York, California, Hawaii—took weeks of iterative debugging.
 
-The technical sophistication grew in parallel. In August 2025, we launched the Enhanced Current Population Survey, integrating five datasets using machine learning and calibrating to 9,168 administrative totals. The approach combined Quantile Regression Forests for imputation with gradient descent optimization for reweighting—techniques that cut our deviations from official statistics by 97 percent {cite}`policyengine2022enhanced`. We built two new open-source packages to do it: microimpute and microcalibrate.
+The technical sophistication grew in parallel. In August 2025, we launched the Enhanced Current Population Survey, integrating five datasets using machine learning and calibrating to 9,168 administrative totals. The approach combined Quantile Regression Forests for imputation with gradient descent optimization for reweighting—techniques that cut our deviations from official statistics by 97 percent [@policyengine2022enhanced]. We built two new open-source packages to do it: microimpute and microcalibrate.
 
 But the real validation came from who started using it.
 
@@ -130,19 +130,19 @@ A month later, we signed a second MOU with the Federal Reserve Bank of Atlanta. 
 
 The three-way validation approach was deliberate. When independently developed models agree on a calculation, researchers can trust the result. When they diverge, the differences reveal important questions about policy interpretation or implementation details. Having three models—PolicyEngine, TAXSIM, and the Policy Rules Database—helped isolate where discrepancies originated.
 
-We were no longer just another microsimulation model. We had become the integrator, the platform that validated across Python and R, across taxes and benefits, across academic and government implementations.
+We were positioning PolicyEngine as more than another microsimulation model—as an integrator that could cross-validate across Python and R, across taxes and benefits, across academic and government implementations.
 
 And then came the UK.
 
-In March 2025, HM Treasury published an Algorithmic Transparency Record revealing they had piloted PolicyEngine UK as a potential supplement to their official Intra-Governmental Tax and Benefit Microsimulation model—IGOTM, the closed system that had generated government policy estimates for decades. The Times reported that the tool "can more accurately predict the outcome of ministers' decisions and is expected to be used mostly in budget periods."
+In March 2025, HM Treasury published an Algorithmic Transparency Record revealing they had piloted PolicyEngine UK as a potential supplement to their official Intra-Governmental Tax and Benefit Microsimulation model—IGOTM, the closed system that had generated government policy estimates for decades. The Times reported that the tool could more accurately predict the outcomes of ministers' decisions and was expected to be used mainly in budget periods.
 
 The Treasury highlighted our machine learning approach to fixing survey data errors—combining multiple years of the Family Resources Survey, using random forest models to impute missing income, employing gradient descent to reweight households. The same techniques we'd developed for the Enhanced CPS, now being evaluated by the UK government to supplement their internal models.
 
-The significance went beyond validation. For decades, government microsimulation models were closed by default—proprietary code, restricted data, results that could be questioned but not reproduced. An outside tool demonstrating comparable accuracy threatened that default. If an open-source model could match the government's internal estimates, the case for keeping those models closed weakened. The Treasury's evaluation wasn't just about PolicyEngine; it was about whether the monopoly on policy analysis infrastructure could hold.
+The significance went beyond validation. For decades, government microsimulation models were closed by default—proprietary code, restricted data, results that could be questioned but not reproduced. An outside tool good enough for the Treasury to pilot threatened that default. If an open-source model could even partly reproduce the government's internal estimates—and the Treasury thought it worth testing—the case for keeping those models closed weakened. The Treasury's evaluation wasn't just about PolicyEngine; it was about whether the monopoly on policy analysis infrastructure could hold.
 
-From frustrated researcher cobbling together tools in 2019 to government ministries piloting our models in 2025. Six years.
+In 2019 I couldn't find a tool to answer a basic question about a universal basic income; by 2025 HM Treasury was piloting one we'd built.
 
-In 2025, MyFriendBen—a benefits screening platform—launched in North Carolina, Illinois, Colorado, and New York using PolicyEngine's API to calculate eligibility and benefit amounts. The tool achieved over 90 percent accuracy in six minutes, available in 12 languages. Colorado users discovered they were eligible for benefits averaging $1,500 per month—money they hadn't known they could access.
+In 2025, MyFriendBen—a benefits screening platform—launched in North Carolina, Illinois, Colorado, and New York using PolicyEngine's API to calculate eligibility and benefit amounts. PolicyEngine's launch note reported that the personalized estimates matched expected amounts more than 90 percent of the time, in about six minutes, across 12 languages—a self-reported figure, not an independent audit [@policyengine2025myfriendben]. In Colorado, MyFriendBen reported that users surfaced an average of $1,500 per month in benefits they appeared eligible for but hadn't claimed [@myfriendben2025pueblo].
 
 This was the vision from 2021: not just researchers using PolicyEngine, but PolicyEngine powering tools that helped people navigate the system. The API had become infrastructure for benefit access.
 
@@ -167,7 +167,3 @@ The proof of concept had worked. We'd demonstrated that open-source, accessible,
 ---
 
 ## References
-
-```{bibliography}
-:filter: docname in docnames
-```

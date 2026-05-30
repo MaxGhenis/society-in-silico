@@ -1,4 +1,7 @@
-// Book structure and chapter loading utilities
+import * as fs from 'node:fs';
+import * as path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { parse as parseYaml } from 'yaml';
 
 export interface Chapter {
   slug: string;
@@ -23,163 +26,180 @@ export interface BookStructure {
   parts: Part[];
 }
 
-// Define the book structure based on myst.yml
-export const bookStructure: BookStructure = {
-  title: "Society in Silico",
-  subtitle: "The Story of Policy Simulation",
-  author: "Max Ghenis",
-  frontMatter: [
-    {
-      slug: "thesis",
-      title: "Thesis",
-      file: "manuscript/front-matter/00-thesis.md",
-    },
-    {
-      slug: "preface",
-      title: "Preface",
-      file: "manuscript/front-matter/00-preface.md",
-    },
-    {
-      slug: "introduction",
-      title: "Introduction",
-      file: "manuscript/front-matter/01-introduction.md",
-    },
-  ],
-  parts: [
-    {
-      title: "Origins",
-      number: 1,
-      chapters: [
-        {
-          slug: "birth-of-microsimulation",
-          title: "The Birth of Microsimulation",
-          file: "manuscript/part-1-origins/01-birth-of-microsimulation.md",
-          part: "Origins",
-          partNumber: 1,
-          chapterNumber: 1,
-        },
-        {
-          slug: "tax-model-wars",
-          title: "The Tax Model Wars",
-          file: "manuscript/part-1-origins/02-tax-model-wars.md",
-          part: "Origins",
-          partNumber: 1,
-          chapterNumber: 2,
-        },
-        {
-          slug: "open-source-revolution",
-          title: "The Open Source Revolution",
-          file: "manuscript/part-1-origins/03-open-source-revolution.md",
-          part: "Origins",
-          partNumber: 1,
-          chapterNumber: 3,
-        },
-        {
-          slug: "the-accuracy-question",
-          title: "The Accuracy Question",
-          file: "manuscript/part-1-origins/04-the-accuracy-question.md",
-          part: "Origins",
-          partNumber: 1,
-          chapterNumber: 4,
-        },
-      ],
-    },
-    {
-      title: "Building",
-      number: 2,
-      chapters: [
-        {
-          slug: "policyengine-proof-of-concept",
-          title: "PolicyEngine: Proof of Concept",
-          file: "manuscript/part-2-building/04-policyengine-proof-of-concept.md",
-          part: "Building",
-          partNumber: 2,
-          chapterNumber: 5,
-        },
-        {
-          slug: "the-household-view",
-          title: "The Household View",
-          file: "manuscript/part-2-building/05-the-household-view.md",
-          part: "Building",
-          partNumber: 2,
-          chapterNumber: 6,
-        },
-        {
-          slug: "the-society-view",
-          title: "The Society View",
-          file: "manuscript/part-2-building/06-the-society-view.md",
-          part: "Building",
-          partNumber: 2,
-          chapterNumber: 7,
-        },
-        {
-          slug: "ai-enters-the-picture",
-          title: "AI Enters the Picture",
-          file: "manuscript/part-2-building/07-ai-enters-the-picture.md",
-          part: "Building",
-          partNumber: 2,
-          chapterNumber: 8,
-        },
-        {
-          slug: "cosilico-infrastructure-for-the-future",
-          title: "Cosilico: Infrastructure for the Future",
-          file: "manuscript/part-2-building/08-cosilico-infrastructure-for-the-future.md",
-          part: "Building",
-          partNumber: 2,
-          chapterNumber: 9,
-        },
-      ],
-    },
-    {
-      title: "Future",
-      number: 3,
-      chapters: [
-        {
-          slug: "the-uncertainty-gap",
-          title: "The Uncertainty Gap",
-          file: "manuscript/part-3-future/10-the-uncertainty-gap.md",
-          part: "Future",
-          partNumber: 3,
-          chapterNumber: 10,
-        },
-        {
-          slug: "simulating-opinion",
-          title: "Simulating Opinion",
-          file: "manuscript/part-3-future/11-simulating-opinion.md",
-          part: "Future",
-          partNumber: 3,
-          chapterNumber: 11,
-        },
-        {
-          slug: "simulating-democracy",
-          title: "Simulating Democracy",
-          file: "manuscript/part-3-future/12-simulating-democracy.md",
-          part: "Future",
-          partNumber: 3,
-          chapterNumber: 12,
-        },
-        {
-          slug: "simulating-values",
-          title: "Simulating Values",
-          file: "manuscript/part-3-future/13-simulating-values.md",
-          part: "Future",
-          partNumber: 3,
-          chapterNumber: 13,
-        },
-        {
-          slug: "society-in-silico",
-          title: "Society in Silico",
-          file: "manuscript/part-3-future/14-society-in-silico.md",
-          part: "Future",
-          partNumber: 3,
-          chapterNumber: 14,
-        },
-      ],
-    },
-  ],
-};
+type QuartoChapterEntry =
+  | string
+  | {
+      part?: string;
+      chapters?: string[];
+    };
 
-// Get all chapters in reading order
+interface QuartoAuthor {
+  name?: string;
+}
+
+interface QuartoConfig {
+  book?: {
+    title?: string;
+    subtitle?: string;
+    author?: string | string[] | QuartoAuthor | QuartoAuthor[];
+    chapters?: QuartoChapterEntry[];
+  };
+}
+
+function findRepoRoot(): string {
+  const bundledCandidate = path.dirname(
+    fileURLToPath(new URL('../../../_quarto.yml', import.meta.url))
+  );
+  const cwd = process.cwd();
+  const candidates = [bundledCandidate, path.resolve(cwd, '..'), cwd];
+
+  for (const candidate of candidates) {
+    if (fs.existsSync(path.join(candidate, '_quarto.yml'))) {
+      return candidate;
+    }
+  }
+
+  throw new Error('Unable to locate repo-root _quarto.yml from website build context');
+}
+
+export const repoRoot = findRepoRoot();
+const quartoPath = path.join(repoRoot, '_quarto.yml');
+
+export function resolveProjectFile(file: string): string {
+  return path.resolve(repoRoot, file);
+}
+
+function loadQuartoConfig(): QuartoConfig {
+  const config = parseYaml(fs.readFileSync(quartoPath, 'utf-8')) as QuartoConfig;
+
+  if (!config.book?.chapters?.length) {
+    throw new Error('_quarto.yml is missing book.chapters entries');
+  }
+
+  return config;
+}
+
+function resolveContentFile(file: string): string {
+  const normalized = path.normalize(file);
+  if (normalized === 'index.md') {
+    const thesisFile = path.join('manuscript', 'front-matter', '00-thesis.md');
+    if (fs.existsSync(resolveProjectFile(thesisFile))) {
+      return thesisFile;
+    }
+  }
+  return file;
+}
+
+function slugFromFile(file: string): string {
+  const normalized = path.normalize(file);
+  if (normalized.endsWith(path.join('manuscript', 'front-matter', '00-thesis.md'))) {
+    return 'thesis';
+  }
+
+  return path.basename(file, path.extname(file)).replace(/^\d+-/, '');
+}
+
+function readDocumentTitle(file: string): string | null {
+  const content = fs.readFileSync(resolveProjectFile(file), 'utf-8');
+  const match = content.match(/^#\s+(.+)$/m);
+  return match ? match[1].trim() : null;
+}
+
+function fallbackTitleFromSlug(slug: string): string {
+  return slug
+    .split('-')
+    .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
+    .join(' ');
+}
+
+function chapterFromFile(file: string, overrides?: Partial<Chapter>): Chapter {
+  const contentFile = resolveContentFile(file);
+  const slug = slugFromFile(contentFile);
+
+  if (!fs.existsSync(resolveProjectFile(contentFile))) {
+    throw new Error(`_quarto.yml references a missing file: ${file}`);
+  }
+
+  return {
+    slug,
+    title: readDocumentTitle(contentFile) ?? fallbackTitleFromSlug(slug),
+    file: contentFile,
+    ...overrides,
+  };
+}
+
+function partTitleFromConfig(part?: string): string {
+  return (part ?? '').replace(/^Part\s+[A-Z0-9]+\s*:\s*/i, '').trim();
+}
+
+function readAuthor(author: QuartoConfig['book'] extends { author?: infer T } ? T : never): string {
+  if (typeof author === 'string') {
+    return author;
+  }
+
+  if (Array.isArray(author)) {
+    const first = author[0];
+    if (typeof first === 'string') {
+      return first;
+    }
+    return first?.name?.trim() || 'Max Ghenis';
+  }
+
+  if (author && typeof author === 'object') {
+    return author.name?.trim() || 'Max Ghenis';
+  }
+
+  return 'Max Ghenis';
+}
+
+function loadBookStructure(): BookStructure {
+  const book = loadQuartoConfig().book!;
+  const frontMatter: Chapter[] = [];
+  const parts: Part[] = [];
+  let chapterNumber = 0;
+
+  for (const entry of book.chapters ?? []) {
+    if (typeof entry === 'string') {
+      frontMatter.push(chapterFromFile(entry));
+      continue;
+    }
+
+    const partNumber = parts.length + 1;
+    const partTitle = partTitleFromConfig(entry.part) || `Part ${partNumber}`;
+    const chapters = (entry.chapters ?? []).map((file) => {
+      chapterNumber += 1;
+      return chapterFromFile(file, {
+        part: partTitle,
+        partNumber,
+        chapterNumber,
+      });
+    });
+
+    if (chapters.length > 0) {
+      parts.push({
+        title: partTitle,
+        number: partNumber,
+        chapters,
+      });
+    }
+  }
+
+  if (frontMatter.length === 0 || parts.length === 0) {
+    throw new Error('Failed to derive book structure from _quarto.yml');
+  }
+
+  return {
+    title: book.title?.trim() || 'Society in Silico',
+    subtitle: book.subtitle?.trim() || '',
+    author: readAuthor(book.author),
+    frontMatter,
+    parts,
+  };
+}
+
+// Website routing and navigation derive from the same TOC Quarto uses to build the book.
+export const bookStructure: BookStructure = loadBookStructure();
+
 export function getAllChapters(): Chapter[] {
   const chapters: Chapter[] = [...bookStructure.frontMatter];
   for (const part of bookStructure.parts) {
@@ -188,12 +208,10 @@ export function getAllChapters(): Chapter[] {
   return chapters;
 }
 
-// Get chapter by slug
 export function getChapterBySlug(slug: string): Chapter | undefined {
   return getAllChapters().find((chapter) => chapter.slug === slug);
 }
 
-// Get previous and next chapters for navigation
 export function getChapterNavigation(slug: string): {
   prev: Chapter | null;
   next: Chapter | null;
@@ -207,7 +225,6 @@ export function getChapterNavigation(slug: string): {
   };
 }
 
-// Get chapter position (e.g., "Chapter 3 of 14")
 export function getChapterPosition(slug: string): {
   current: number;
   total: number;
@@ -221,13 +238,11 @@ export function getChapterPosition(slug: string): {
   };
 }
 
-// Estimate reading time (average 200 words per minute)
 export function estimateReadingTime(content: string): number {
   const words = content.trim().split(/\s+/).length;
   return Math.ceil(words / 200);
 }
 
-// Count words in content
 export function countWords(content: string): number {
   return content.trim().split(/\s+/).length;
 }

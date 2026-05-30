@@ -2,13 +2,13 @@
 
 Between 2011 and 2016, two projects on opposite sides of the Atlantic launched what would become the open-source policy modeling movement. But the first shot in the revolution came from three economists with a book and a website.
 
-In January 2011, Camille Landais, Thomas Piketty, and Emmanuel Saez published *Pour une révolution fiscale*—"For a Tax Revolution"—proposing a restructuring of French direct taxes into a single progressive income tax {cite}`landais2011revolution`. The book itself was standard fare for public economists. What wasn't standard was the accompanying website: revolution-fiscale.fr featured an interactive tax simulator that let any French citizen design their own tax reform and see the budgetary and distributional consequences. More than 500,000 people visited the site. The underlying model—which would evolve into TAXIPP at the Institut des politiques publiques—drew on the same microsimulation tradition as EUROMOD, but with a crucial innovation: the results were public, the methodology was published, and citizens could experiment for themselves.
+In January 2011, Camille Landais, Thomas Piketty, and Emmanuel Saez published *Pour une révolution fiscale*—"For a Tax Revolution"—proposing a restructuring of French direct taxes into a single progressive income tax [@landais2011revolution]. The book itself was standard fare for public economists. What wasn't standard was the accompanying website: revolution-fiscale.fr featured an interactive tax simulator that let any French citizen design their own tax reform and see the budgetary and distributional consequences. More than 500,000 people visited the site. The underlying model—which would evolve into TAXIPP at the Institut des politiques publiques—drew on the same microsimulation tradition as EUROMOD, but with a crucial innovation: the results were public, the methodology was published, and citizens could experiment for themselves.
 
 Previously, running such simulations had been possible only inside the French Finance Ministry. Unlike the United States, where the Congressional Budget Office provided independent scoring, the French parliament had to go through the Ministry to evaluate proposed amendments. Piketty, Saez, and Landais had broken the monopoly—not with institutional authority, but with code.
 
-Four months later, a small team at France Stratégie—the French government's policy analysis agency—released something even more radical: not just a simulator, but the source code itself {cite}`openfisca2024about`. They called it OpenFisca. Created by Mahdi Ben Jelloul and Clément Schaff, the premise was that tax and benefit rules should exist not just as legal text but as executable code. Give the system a person's circumstances—income, family structure, location—and it would calculate their taxes and benefits. Change a parameter—a tax rate, an eligibility threshold—and see the effects immediately. Where revolution-fiscale.fr had opened the *results* of microsimulation, OpenFisca opened the *engine*.
+Four months later, a small team at France Stratégie—the French government's policy analysis agency—released something even more radical: not just a simulator, but the source code itself [@openfisca2024about]. They called it OpenFisca. Created by Mahdi Ben Jelloul and Clément Schaff, the premise was that tax and benefit rules should exist not just as legal text but as executable code. Give the system a person's circumstances—income, family structure, location—and it would calculate their taxes and benefits. Change a parameter—a tax rate, an eligibility threshold—and see the effects immediately. Where revolution-fiscale.fr had opened the *results* of microsimulation, OpenFisca opened the *engine*.
 
-Meanwhile in the United States, Matt Jensen was building a parallel vision at the American Enterprise Institute. In 2014, he founded the Open Source Policy Center with an equally blunt diagnosis {cite}`aei2015taxbrain`: "The closed-source approach to estimating the costs and economic impact of policies raises challenges, as there is limited accessibility and transparency in the process, leaving the public and many policymakers in the dark." Jensen recruited Martin Holmer—MIT PhD, decades of microsimulation experience—to build Tax-Calculator, an open-source model of US federal income and payroll taxes {cite}`holmer2024profile`.
+Meanwhile in the United States, Matt Jensen was building a parallel vision at the American Enterprise Institute. In 2013, he founded the Open Source Policy Center with an equally blunt diagnosis [@aei2015taxbrain]: "The closed-source approach to estimating the costs and economic impact of policies raises challenges, as there is limited accessibility and transparency in the process, leaving the public and many policymakers in the dark." Jensen recruited Martin Holmer—MIT PhD, decades of microsimulation experience—to build Tax-Calculator, an open-source model of US federal income and payroll taxes [@holmer2024profile].
 
 Both projects bet on the same insight: that policy analysis should be transparent, reproducible, and accessible. Both released their code under open-source licenses. And both were funded by surprising sources—OpenFisca by the French government itself, Tax-Calculator by a conservative think tank. The revolution cut across ideological lines.
 
@@ -24,13 +24,13 @@ This wasn't new in principle. Tax agencies had been encoding rules in software f
 
 The open source revolution proposed transparency: publish the code, let anyone run it, enable verification and experimentation.
 
-In 2018, New Zealand's Service Innovation Lab launched "Better Rules"—a collaboration between Inland Revenue, the Ministry of Business, Innovation and Employment, and the Parliamentary Counsel Office {cite}`nz2018betterrules`. The team spent three weeks translating legislation into Python code, demonstrating that rules could be drafted in both human-readable and machine-readable form simultaneously.
+In 2018, New Zealand's Service Innovation Lab launched "Better Rules"—a collaboration between Inland Revenue, the Ministry of Business, Innovation and Employment, and the Parliamentary Counsel Office [@nz2018betterrules]. The team spent three weeks translating legislation into Python code, demonstrating that rules could be drafted in both human-readable and machine-readable form simultaneously.
 
-Estonia's Chief Information Officer called it "the most transformative idea" he'd seen {cite}`nz2018betterrules`. The OECD took notice, eventually publishing "Cracking the Code: Rulemaking for Humans and Machines" in 2020—a primer for governments on what rules as code could mean {cite}`oecd2020cracking`.
+Estonia's Chief Information Officer called it "the most transformative idea" he'd seen [@nz2018betterrules]. The OECD took notice, eventually publishing "Cracking the Code: Rulemaking for Humans and Machines" in 2020—a primer for governments on what rules as code could mean [@oecd2020cracking].
 
-By 2022, OpenFisca had been deployed on four continents {cite}`openfisca2024about`. France used it for Mes Aides, a citizen-facing benefits calculator. New Zealand built a rates rebate application. Tunisia, Senegal, Australia, Canada, and others adapted the framework for their own systems.
+By 2022, OpenFisca had been deployed on four continents [@openfisca2024about]. France used it for Mes Aides, a citizen-facing benefits calculator. New Zealand built a rates rebate application. Tunisia, Senegal, Australia, Canada, and others adapted the framework for their own systems.
 
-The OECD named OpenFisca's approach an "Innovation of the Year" at the World Government Summit. The European Commission recognized it as the most innovative open-source software in their Joinup program {cite}`openfisca2024about`. A small French project had become a global movement.
+The OECD named OpenFisca's approach an "Innovation of the Year" at the World Government Summit. The European Commission recognized it as the most innovative open-source software in their Joinup program [@openfisca2024about]. A small French project had become a global movement.
 
 ---
 
@@ -64,11 +64,11 @@ The gap between OpenFisca's elegant framework and actually usable policy analysi
 
 The OpenFisca and Tax-Calculator projects represented different architectural philosophies applied to the same problem.
 
-**OpenFisca** offered a unified framework. Countries adapted its core architecture to their own tax-benefit systems while sharing the underlying platform. The engine was country-independent—written in Python with NumPy-based vector computing—while country-specific packages defined the rules for each jurisdiction. This meant a new country could get started quickly: at the 2016 Open Government Partnership Summit in Paris, a team of French and Tunisian volunteers modeled Senegal's income tax in under 36 hours, winning first prize at the hackathon {cite}`openfisca2024about`. By 2019, France's National Assembly had built LexImpact on top of OpenFisca, enabling members of parliament to simulate the effects of proposed amendments on income tax—122 legislative simulations in parliamentary debates by 2021. The framework that had started as a think tank tool was becoming legislative infrastructure.
+**OpenFisca** offered a unified framework. Countries adapted its core architecture to their own tax-benefit systems while sharing the underlying platform. The engine was country-independent—written in Python with NumPy-based vector computing—while country-specific packages defined the rules for each jurisdiction. This meant a new country could get started quickly: at the 2016 Open Government Partnership Summit in Paris, a team of French and Tunisian volunteers modeled Senegal's income tax in under 36 hours, winning first prize at the hackathon [@openfisca2024about]. By 2019, France's National Assembly had built LexImpact on top of OpenFisca, enabling members of parliament to simulate the effects of proposed amendments on income tax—122 legislative simulations in parliamentary debates by 2021. The framework that had started as a think tank tool was becoming legislative infrastructure.
 
 **Tax-Calculator** spawned an ecosystem. Holmer built it in Python with over 200 adjustable parameters. The project grew into the Policy Simulation Library—a federation of independent open-source policy models sharing transparency standards and interoperability criteria. Jason DeBacker and Richard Evans built OG-USA for dynamic scoring that complemented Tax-Calculator's static analysis. The Tax Foundation contributed its capital cost recovery model. QuantEcon brought computational economics tools. By 2023, PSL was hosting monthly "Demo Days" where researchers from the Congressional Budget Office, NOAA, Johns Hopkins, and the City of New York presented their work. The community had institutional memory, governance structures, and credibility across the political spectrum.
 
-Even the Federal Reserve joined. FRB/US, the Fed's main macroeconomic model—375 equations describing the entire US economy—had been publicly available since the late 1990s, but in 2022 the Fed released a Python implementation {cite}`frbus2024`. The central bank's primary forecasting tool was now open source.
+Even the Federal Reserve joined. FRB/US, the Fed's main macroeconomic model—several hundred equations describing the US economy—dates to 1996 and became publicly available in 2014; in 2022 the Fed released a Python implementation [@frbus2024]. The central bank's primary forecasting tool was now open source.
 
 The two approaches had different strengths. OpenFisca's unified framework made deployment simpler and enabled cross-national comparisons. PSL's federation enabled specialization and rapid experimentation. OpenFisca's government backing gave it institutional credibility. Tax-Calculator's independence from government gave it ideological flexibility—analysts across the political spectrum could use it without accusations of bias.
 
@@ -120,7 +120,7 @@ This was my introduction to what economists call "means-tested benefit cliffs" a
 
 Around this time, internal discussions at Google were addressing technological unemployment, AI's labor market implications, and whether society needed new institutions to ensure basic needs were met as automation advanced. Some employees were discussing universal basic income—unconditional cash payments that could provide a floor without the means-testing problems that created cliffs like the one Alex faced.
 
-In 2012, Google.org awarded GiveDirectly a $2.4 million Global Impact Award {cite}`givedirectly2012google`. The organization was providing unconditional cash transfers to extremely poor households in Kenya—people living on roughly a dollar a day received about $1,000 per household. As economists, GiveDirectly's founders ran randomized controlled trials to measure effects. The results were positive: improved earnings, assets, nutrition, educational outcomes.
+In 2012, Google.org awarded GiveDirectly a $2.4 million Global Impact Award [@givedirectly2012google]. The organization was providing unconditional cash transfers to extremely poor households in Kenya—people living on roughly a dollar a day received about $1,000 per household. As economists, GiveDirectly's founders ran randomized controlled trials to measure effects. The results were positive: improved earnings, assets, nutrition, educational outcomes.
 
 I volunteered with GiveDirectly, helping them use data more efficiently and hosting talks at Google's campus. The cash transfer model felt like a useful thought experiment: instead of targeting programs with complex eligibility rules and implicit taxes on earning more, just provide cash and fund it through explicit taxes.
 
@@ -148,7 +148,7 @@ I returned to YouTube briefly, but left Google in July 2018 after eight years. I
 
 ### Founding the UBI Center
 
-In 2019, I founded the UBI Center {cite}`ubicenter2019`—an explicitly open-source think tank focused on universal basic income policy. The mission: produce rigorous research that could inform UBI debates, with all code and data public so anyone could verify the findings.
+In 2019, I founded the UBI Center [@ubicenter2019]—an explicitly open-source think tank focused on universal basic income policy. The mission: produce rigorous research that could inform UBI debates, with all code and data public so anyone could verify the findings.
 
 The challenge emerged immediately. A $1,000-per-month basic income costs roughly $3 trillion annually. Funding that requires tax increases or benefit reforms. To model UBI properly, you needed to model the entire tax-benefit system—not because UBI directly affected other programs (many proposals specifically avoided counting UBI as income for benefit eligibility), but because you needed to show what tax or benefit changes would finance it.
 
@@ -208,7 +208,7 @@ What none of them had done was build the full stack: rules plus data plus interf
 
 That challenge would require not just technical work but organizational building. Someone would need to fund ongoing maintenance, hire engineers, establish relationships with official data sources, build trust with policymakers.
 
-In 2021, the UBI Center researcher who had been frustrated by the tool gaps decided to address them directly. PolicyEngine was born—first for the UK, then for the US—as an attempt to complete what the open-source revolution had started {cite}`policyengine2024about`.
+In 2021, the UBI Center researcher who had been frustrated by the tool gaps decided to address them directly. PolicyEngine was born—first for the UK, then for the US—as an attempt to complete what the open-source revolution had started [@policyengine2024about].
 
 That story is the subject of Part II. But it only makes sense in the context of what came before: Orcutt's vision of simulating society from the bottom up, the tax model wars that concentrated analytical power in government institutions, and the open-source revolution that began to democratize access without yet completing the job.
 
@@ -218,6 +218,3 @@ The tools were ready. The infrastructure was emerging. The question was whether 
 
 ## References
 
-```{bibliography}
-:filter: docname in docnames
-```

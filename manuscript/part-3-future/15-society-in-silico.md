@@ -46,11 +46,11 @@ Third, the code had to go open. OpenFisca cracked open the model in France. The 
 
 Fourth, the interface had to democratize. PolicyEngine extended open-source microsimulation to the US and UK, adding a web interface that lets anyone—not just programmers—see how policies affect their household. The household view: "How does this tax credit affect me?" The society view: "Who gains and who loses across the population?"
 
-Fifth, the Rules Foundation began encoding statutes as code—structured, versioned, testable representations of tax and benefit law. Cosilico is building the infrastructure layer on top: APIs that let AI agents and applications query these rules with empirical validation. Not AI replacing analysis—AI using deterministic tools to ground its reasoning.
+Fifth, the Axiom Foundation began encoding statutes as code—structured, versioned, testable representations of tax and benefit law, kept open as a public good so that AI agents and applications can query the rules with empirical validation. Its counterpart, the Brier Institute, took the modeling-and-forecasting side—now home to PolicyEngine's microsimulation alongside calibration-native prediction—open, scored answers to the questions law can't settle with certainty: how a population will respond, how values will shift. Not AI replacing analysis—AI using deterministic rules and calibrated forecasts to ground its reasoning.
 
-The scale of what's been built is easy to understate because it accumulated gradually. PolicyEngine US encodes thousands of federal and state tax-benefit rules. The Enhanced CPS integrates five datasets, calibrated to over 9,000 administrative totals. Validation partnerships with NBER and the Federal Reserve Bank of Atlanta cross-check calculations against independent implementations. MyFriendBen screens families for benefits across four states using the same calculation engine. More than 100 contributors have written code. The codebase runs to hundreds of thousands of lines.
+The scale of what's been built is easy to understate because it accumulated gradually. PolicyEngine US encodes thousands of federal and state tax-benefit rules. The Enhanced CPS integrates five datasets, calibrated to over 9,000 administrative totals. Microimpute, MicroCalibrate, and Microplex are pulling pieces of the data pipeline into reusable packages rather than burying them in one model. Validation partnerships with NBER and the Federal Reserve Bank of Atlanta cross-check calculations against independent implementations. MyFriendBen screens families for benefits across four states using the same calculation engine. More than 100 contributors have written code. The codebase runs to hundreds of thousands of lines.
 
-HiveSight simulates opinions. Democrasim simulates elections. Squigglepy quantifies uncertainty. Each component addresses a layer of the problem.
+HiveSight explores opinion simulation. Democrasim explores electoral mechanisms. Squigglepy quantifies uncertainty. State legislative tracking and AI-assisted bill triage show how the stack could monitor policy changes in real time. Each component addresses a layer of the problem.
 
 Together, they form the beginnings of democratic simulation infrastructure. No single piece is complete. But the architecture is visible: deterministic rule engines at the foundation, microsimulation models in the middle, AI interfaces at the top, and uncertainty quantification threaded through every layer.
 
@@ -66,7 +66,7 @@ Let me be honest about what's incomplete.
 
 **Adoption is early.** PolicyEngine has thousands of users, but policy debates still happen mostly without it. When Congress debated the 2025 TCJA extension, the public conversation was shaped by CBO scores and think tank estimates, not by citizens running their own analyses. The tools exist; the cultural change hasn't fully occurred. Moving from "available" to "expected" is a transition that took weather forecasting decades—probabilistic precipitation forecasts existed long before the public demanded them.
 
-**AI integration is nascent.** Cosilico isn't launched. The vision of AI agents reliably using deterministic microsimulation is closer to prototype than production. When someone asks an AI assistant about tax policy today, the response comes from training data, not from a calculation engine. The infrastructure that would make tool-calling the default for policy questions doesn't yet exist at production scale.
+**AI integration is nascent.** Axiom and the Brier Institute are early. The vision of AI agents reliably using deterministic microsimulation—and calibrated forecasts—is closer to prototype than production. When someone asks an AI assistant about tax policy today, the response comes from training data, not from a calculation engine. The infrastructure that would make tool-calling the default for policy questions doesn't yet exist at production scale.
 
 This book describes aspiration as much as achievement. We're partway up the mountain, not at the summit.
 
@@ -96,13 +96,13 @@ The alternative to open simulation isn't human judgment uncorrupted by models. I
 
 **Vibes-based policy debate.** Politicians wave hands. Pundits assert confidently. Numbers float by without sources. Anyone with a megaphone claims authority; none provide audit trails.
 
-**AI systems aligned to current values without understanding how values evolve.** LLMs trained on today's preferences, frozen in place, even as humanity's considered views change.
+**AI systems trained on current values without understanding how values evolve.** LLMs learn from today's preferences, even as humanity's considered views change.
 
 **Power concentrated in those with access to compute and data.** The rich can simulate; the poor guess. Corporations optimize; citizens react. The asymmetry compounds. When a hedge fund can model the distributional impact of a tax reform in minutes and a community organization can't, the hedge fund's perspective dominates the policy conversation—not because it's right, but because it arrives first and with numbers attached.
 
 These aren't hypothetical failure modes. They describe the current default. The Joint Committee on Taxation produces revenue estimates Congress relies on, using models Congress can't inspect. States allocate billions in benefits using eligibility rules that recipients can't fully understand. AI chatbots confidently answer tax questions wrong a third of the time. The question isn't whether we need better tools—it's whether the tools serve the public or just the institutions that build them.
 
-Open simulation addresses each failure mode: auditable code instead of black boxes, reproducible results instead of vibes, value forecasting instead of frozen alignment, public infrastructure instead of private advantage. It's not guaranteed to help. But the counterfactual is worse.
+Open simulation addresses each failure mode: auditable code instead of black boxes, reproducible results instead of vibes, empirical evidence about value change instead of treating today's preferences as fixed, public infrastructure instead of private advantage. It's not guaranteed to help. But the counterfactual is worse.
 
 ---
 
@@ -136,9 +136,9 @@ As AI systems become more capable, they'll increasingly be asked questions about
 
 The AI can respond in two ways:
 
-**Option 1: Make stuff up.** Draw on training data, synthesize plausible-sounding text, perhaps hallucinate eligibility rules or invent statistics. This is what happens today. Even frontier models get fewer than one in three complete tax returns right {cite}`bock2025taxcalcbench`.
+**Option 1: Make stuff up.** Draw on training data, synthesize plausible-sounding text, perhaps hallucinate eligibility rules or invent statistics. This is what happens today. Even frontier models get fewer than one in three complete tax returns right [@bock2025taxcalcbench].
 
-**Option 2: Call reliable tools.** Use PolicyEngine as a backend. Look up actual parameters from Cosilico's validated rules. Calculate instead of guess. Return auditable results.
+**Option 2: Call reliable tools.** Use PolicyEngine as a backend. Look up actual parameters from the Axiom Foundation's open encodings. Calculate instead of guess. Return auditable results.
 
 The infrastructure for Option 2 is maturing. AI systems in 2025 can call external tools through standardized protocols—Model Context Protocol, function calling APIs, tool-use frameworks that let language models invoke deterministic calculations and return structured results. The IRS has deployed Salesforce's Agentforce AI agents for case summarization and policy searching. California's Poppy digital assistant helps state employees navigate dense policy catalogs. These are early steps, but they establish the pattern: AI as interface, deterministic systems as backend.
 
@@ -158,13 +158,15 @@ If I'm still building these tools in five years, what does success look like?
 
 **Uncertainty is quantified.** Every estimate comes with confidence intervals. Users see ranges, not false precision. "This reform costs $50 billion [90% CI: $35B-$68B]" rather than "this reform costs $50 billion." The methodology exists—Monte Carlo simulation over uncertain parameters, bootstrapping over survey weights. The engineering work to integrate it into production tools is substantial but tractable.
 
-**The Rules Foundation scales.** Statutes encoded as structured, versioned, testable code—covering federal tax law, state tax codes, benefit programs, and eventually regulations beyond the tax-benefit system. Cosilico provides the infrastructure: AI agents that encode rules from authoritative sources, validate against established calculators, and maintain the codebase as laws change. The human-AI partnership produces rules faster and more accurately than either alone.
+**The Axiom Foundation scales.** Statutes encoded as structured, versioned, testable code—covering federal tax law, state tax codes, benefit programs, and eventually regulations beyond the tax-benefit system—delivered as open, self-hostable bundles that any application can call. AI agents help encode rules from authoritative sources, validate against established calculators, and maintain the codebase as laws change. The human-AI partnership produces rules faster and more accurately than either alone.
 
-**Value forecasting has been tested.** We know whether historical validation works—whether models trained on past survey data can predict future survey responses. We know how far forward projections are reliable. We've integrated (or abandoned) the approach based on evidence. The preliminary results from Chapter 14—17 GSS variables showing better-than-naive forecasting for most items—either generalize to a broader set of variables and longer horizons, or they don't. Either way, we'll know.
+**Value forecasting has faced a real validation program.** We know whether models trained on past survey data can predict future survey responses. We know how far forward projections are reliable. We've integrated (or abandoned) the approach based on evidence. The preliminary results from Chapter 14—17 GSS variables showing better-than-naive forecasting for most items—either generalize to a broader set of variables and longer horizons, or they don't. Either way, we'll know.
 
 **Adoption is mainstream.** Policy debates reference open models. Journalists query microsimulations. Voters compare candidates using shared infrastructure. When a presidential candidate releases a tax plan, independent distributional analysis appears within hours—not from a single think tank, but from dozens of users running the same open tools with different assumptions. The asymmetry of analysis has flattened. Benefits navigators use the same calculation engine as Congressional staff. Financial coaches for low-income families can show clients exactly how a raise will interact with benefit phase-outs—not approximately, but precisely, accounting for every program they receive.
 
 **AI systems call reliable tools.** When someone asks an AI assistant about tax policy, the response is grounded in deterministic calculations from validated models, not generated from training data alone. The infrastructure we're building becomes part of the AI stack—the equivalent of a calculator for policy questions.
+
+**AI economic shocks become policy-simulation problems.** The most useful near-term question may not be "what will AI do to the economy?" but "under a given AI-labor shock, which tax and transfer systems best protect households?" PolicyEngine's AI-inequality research frames exactly that mediation problem: AI economic shocks, policy interventions, then distributional outcomes across income, consumption, and wealth [@policyengine2026aiinequality]. That is a good stress test for society-in-silico infrastructure because it combines scenario uncertainty, behavioral response, fiscal capacity, and distributional values without pretending the model can forecast the whole future.
 
 Some of this will happen. Some won't. The vision adjusts as reality teaches. Five years ago, I would not have predicted that HM Treasury would formally evaluate PolicyEngine as infrastructure. I would not have predicted that AI systems would be capable of encoding statutes. The specifics are unpredictable; the direction is clear.
 
@@ -228,14 +230,8 @@ The next transition is happening now. AI systems are becoming the interface thro
 
 We're still following Orcutt's insight. The tools are better. The data is richer. The interfaces are more accessible. The vision is the same: understand the system well enough to improve it, transparently enough that everyone can participate in the conversation about how.
 
-The work continues. The invitation stands.
-
-Welcome to society in silico.
+The work continues—and it's open to anyone who wants to take part.
 
 ---
 
 ## References
-
-```{bibliography}
-:filter: docname in docnames
-```

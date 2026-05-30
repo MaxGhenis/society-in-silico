@@ -12,7 +12,7 @@ def strip_markdown(text: str) -> str:
     Removes:
     - Code blocks (```...```)
     - HTML comments (<!-- ... -->)
-    - Citations ({cite}`...`)
+    - Citations ({cite}`...`, [@...])
     - Footnote references ([^...])
     - Wiki-style links ([[...]])
     - Horizontal rules (---)
@@ -44,6 +44,7 @@ def strip_markdown(text: str) -> str:
     # Remove citations (and trailing space before punctuation)
     result = re.sub(r"\s*\{cite\}`[^`]*`", "", result)
     result = re.sub(r"\s*\{cite:[a-z]+\}`[^`]*`", "", result)
+    result = re.sub(r"\s*\[@[^\]]+\]", "", result)
 
     # Remove footnote references
     result = re.sub(r"\[\^[^\]]*\]", "", result)
@@ -76,7 +77,7 @@ def strip_markdown(text: str) -> str:
 
 
 def extract_citations(text: str) -> list[str]:
-    """Extract {cite}`key` citations from markdown text.
+    """Extract citation keys from markdown text.
 
     Args:
         text: Markdown content
@@ -84,7 +85,9 @@ def extract_citations(text: str) -> list[str]:
     Returns:
         List of citation keys
     """
-    return re.findall(r"\{cite\}`([^`]+)`", text)
+    keys = re.findall(r"\{cite\}`([^`]+)`", text)
+    keys.extend(re.findall(r"\[@([^\]\s;]+)\]", text))
+    return keys
 
 
 def extract_wiki_links(text: str) -> list[str]:
@@ -119,5 +122,6 @@ def count_words(text: str) -> int:
     text = re.sub(r"`[^`]+`", "", text)
     # Remove citations
     text = re.sub(r"\{cite\}`[^`]+`", "", text)
+    text = re.sub(r"\[@[^\]]+\]", "", text)
     # Count words
     return len(text.split())

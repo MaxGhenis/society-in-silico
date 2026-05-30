@@ -8,10 +8,10 @@ import {
   getChapterPosition,
   estimateReadingTime,
   countWords,
+  resolveProjectFile,
 } from '../../lib/book';
 import { marked } from 'marked';
 import * as fs from 'node:fs';
-import * as path from 'node:path';
 
 export function getStaticPaths() {
   const chapters = getAllChapters();
@@ -28,11 +28,10 @@ if (!chapter) {
 }
 
 // Read the markdown file
-const projectRoot = path.resolve(process.cwd(), '..');
-const filePath = path.join(projectRoot, chapter.file);
+const filePath = resolveProjectFile(chapter.file);
 
 // Load BibTeX references
-const bibPath = path.join(projectRoot, 'references.bib');
+const bibPath = resolveProjectFile('references.bib');
 const citationData: Record<string, { author: string; year: string; title: string; url?: string }> = {};
 try {
   const bibContent = fs.readFileSync(bibPath, 'utf-8');
@@ -60,7 +59,9 @@ const concepts: Record<string, { title: string; desc: string }> = {
   'policyengine': { title: 'PolicyEngine', desc: 'Open-source tax-benefit microsimulation platform' },
   'openfisca': { title: 'OpenFisca', desc: 'Open-source platform for modeling tax and benefit systems' },
   'taxsim': { title: 'TAXSIM', desc: 'NBER tax microsimulation model' },
-  'cosilico': { title: 'Cosilico', desc: 'Infrastructure for simulating society' },
+  'cosilico': { title: 'Axiom Labs', desc: 'Applied policy simulation infrastructure' },
+  'axiom-foundation': { title: 'Axiom Foundation', desc: 'Open standards and canonical encodings for law as code' },
+  'axiom-labs': { title: 'Axiom Labs', desc: 'Applied policy simulation infrastructure' },
   'ubi-center': { title: 'UBI Center', desc: 'Think tank for universal basic income research' },
   'rules-as-code': { title: 'Rules as Code', desc: 'Movement to express legislation in machine-executable form' },
 };
@@ -74,18 +75,22 @@ const usedCitations: string[] = [];
 try {
   content = fs.readFileSync(filePath, 'utf-8');
 
-  // Process citations: {cite}`key` → superscript with tooltip data
+  // Process Pandoc / Quarto citations: [@key; @other] -> superscripts with tooltip data
   // Also handle punctuation: move citation after trailing punctuation
-  content = content.replace(/\{cite\}`([^`]+)`([.,;:!?])?/g, (_, key, punct) => {
-    const cite = citationData[key];
-    if (cite) {
+  content = content.replace(/\[([^\]]*@[\w:-][^\]]*)\]([.,;:!?])?/g, (_, group, punct) => {
+    const refs = [...group.matchAll(/@([\w:-]+)/g)]
+      .map((match) => match[1])
+      .filter((key) => citationData[key]);
+    if (refs.length === 0) return punct || '';
+
+    const sup = refs.map((key) => {
+      const cite = citationData[key];
       if (!usedCitations.includes(key)) usedCitations.push(key);
       const num = usedCitations.indexOf(key) + 1;
       const tooltip = `${cite.author}, ${cite.year}`;
-      const sup = `<sup class="cite" data-key="${key}" data-tip="${tooltip}" data-url="${cite.url || ''}">[${num}]</sup>`;
-      return punct ? `${punct}${sup}` : sup;
-    }
-    return punct || '';
+      return `<sup class="cite" data-key="${key}" data-tip="${tooltip}" data-url="${cite.url || ''}">[${num}]</sup>`;
+    }).join('');
+    return punct ? `${punct}${sup}` : sup;
   });
 
   // Process wiki-links: [[entity]] → concept with tooltip
@@ -98,14 +103,9 @@ try {
     return entity.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
   });
 
-  // Remove other MyST-specific syntax
+  // Remove authoring-only syntax that should not appear in the custom reader
   content = content
-    .replace(/\{ref\}`[^`]+`/g, '')
-    .replace(/\{numref\}`[^`]+`/g, '')
-    .replace(/```\{figure\}[\s\S]*?```/g, '')
-    .replace(/```\{note\}[\s\S]*?```/g, '')
-    .replace(/```\{warning\}[\s\S]*?```/g, '')
-    .replace(/```\{bibliography\}[\s\S]*?```/g, '')
+    .replace(/\{\{<\s*include\s+[^>]+>\}\}/g, '')
     .replace(/## References\s*$/gm, '')
     .replace(/  +/g, ' ');
 

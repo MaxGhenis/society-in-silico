@@ -1,6 +1,6 @@
 # Chapter 9: AI Enters the Picture
 
-In March 2023, PolicyEngine added a button labeled "Explain with AI." Click it, and the complex calculation that determines your Child Tax Credit or SNAP benefits transforms into a plain-language explanation tailored to your situation {cite}`policyengine2024ai`.
+In March 2023, PolicyEngine added a button labeled "Explain with AI." Click it, and the complex calculation that determines your Child Tax Credit or SNAP benefits transforms into a plain-language explanation tailored to your situation [@policyengine2024ai].
 
 This small feature represented a significant shift in how policy analysis tools could work. The microsimulation engine—deterministic, transparent, reproducible—remained the source of truth. But now an AI system could translate that truth into language ordinary people could understand.
 
@@ -18,7 +18,7 @@ The gap between "technically transparent" and "actually understandable" was wide
 
 > "Users frequently encounter intricate calculations spanning multiple programs, each with distinct thresholds, phase-outs, and dependencies."
 
-The AI explanation feature addressed this gap. When users clicked "Explain with AI," the system passed the calculation tree—all the intermediate steps, all the relevant parameters—to Claude, Anthropic's large language model. Claude would then generate a natural-language explanation: "Your family qualifies for WIC because you have a child under five and your income is below 185% of the federal poverty level for a household of your size" {cite}`policyengine2024ai`.
+The AI explanation feature addressed this gap. When users clicked "Explain with AI," the system passed the calculation tree—all the intermediate steps, all the relevant parameters—to Claude, Anthropic's large language model. Claude would then generate a natural-language explanation: "Your family qualifies for WIC because you have a child under five and your income is below 185% of the federal poverty level for a household of your size" [@policyengine2024ai].
 
 This was not AI doing calculations. This was AI translating calculations.
 
@@ -40,7 +40,7 @@ This separation of concerns was deliberate. AI systems hallucinate—they can pr
 
 ## The ChatGPT Integration
 
-The first AI integration came in March 2023, when PolicyEngine added prompt generation for ChatGPT {cite}`policyengine2023gpt`.
+The first AI integration came in March 2023, when PolicyEngine added prompt generation for ChatGPT [@policyengine2023gpt].
 
 The approach was simple: when a user built a policy reform and ran the economic analysis, PolicyEngine could generate a structured prompt containing all the results. Copy this prompt to ChatGPT, and the AI would produce a blog-post-style analysis of the reform.
 
@@ -71,19 +71,19 @@ This was the "AI frontend, deterministic backend" pattern in action. The languag
 
 The insight was: AI systems will increasingly mediate between users and computational tools. PolicyEngine needed to be a good tool for AI to call.
 
-By 2025, this pattern was becoming standard across the AI industry. Anthropic introduced tool use for Claude. OpenAI built function calling into GPT-4 and its successors. Google's Gemini supported structured tool invocation. In May 2025, the Model Context Protocol (MCP) launched as an open standard supported simultaneously by Anthropic, OpenAI, and Mistral—a rare moment of industry alignment on infrastructure that mattered. MCP provided a standardized way for AI systems to discover and invoke external tools, turning what had been fragmented, custom integrations into a pluggable ecosystem. By December 2025, over 10,000 MCP-compatible tool servers were operational, covering everything from database queries to calendar management to code execution.
+By 2025, this pattern was becoming standard across the AI industry. Anthropic introduced tool use for Claude. OpenAI built function calling into GPT-4 and its successors. Google's Gemini supported structured tool invocation. Anthropic open-sourced the Model Context Protocol (MCP) in November 2024; OpenAI adopted it in March 2025, and Google followed within months—a notable convergence on shared infrastructure. MCP provided a standardized way for AI systems to discover and invoke external tools, turning what had been fragmented, custom integrations into a pluggable ecosystem. By late 2025, thousands of MCP-compatible tool servers were operational, covering everything from database queries to calendar management to code execution.
 
 For policy simulation, MCP meant that a PolicyEngine API endpoint could be discoverable by any MCP-compatible AI system. An AI assistant that implemented MCP could find PolicyEngine's tools, understand their parameters, invoke them correctly, and present the results—without custom integration work for each AI provider.
 
-For policy analysis, this meant a shift in what mattered. In 2023, the bottleneck was model capability—could AI systems reliably call the right tool with the right parameters? By 2025, the bottleneck had shifted to tool quality—were the tools AI called actually accurate, comprehensive, and well-maintained? An AI system that flawlessly called an inaccurate tax calculator was worse than useless. The quality of the deterministic backend became the binding constraint.
+For policy analysis, this meant a shift in what mattered. In 2023, the bottleneck was model capability—could AI systems reliably call the right tool with the right parameters? By 2025, the bottleneck had shifted to tool quality—were the tools AI called actually accurate, comprehensive, well-maintained, and operationally legible to downstream users? An AI system that flawlessly called an inaccurate tax calculator was worse than useless. But so was a calculator that was technically correct in code and still slow to update, poorly documented, or full of integration traps. The quality of the deterministic backend became the binding constraint.
 
-This is why the Column Tax TaxCalcBench results were so significant {cite}`columntax2024`. They showed that even in 2025, the best general-purpose AI systems couldn't reliably compute tax returns on their own. GPT-5 with web search got 41.7% of returns fully correct. Claude Opus 4 managed 27.5%. These weren't acceptable error rates for any real application. The AI systems needed better tools—not just any tools, but tools that covered the full complexity of the tax code with the precision that financial calculations demand.
+This is why the TaxCalcBench results were so significant [@bock2025taxcalcbench]. They showed that even given the tax rules, the taxpayer's data, and unlimited time to reason, the best general-purpose model—Gemini 2.5 Pro—computed only about a third of complete federal returns correctly, and Claude Opus 4 managed 27 percent. These weren't acceptable error rates for any real application. The AI systems needed better tools—not just any tools, but tools that covered the full complexity of the tax code with the precision that financial calculations demand.
 
 ---
 
 ## Multi-Agent Workflows
 
-By late 2024, PolicyEngine was experimenting with more sophisticated AI architectures: multiple specialized agents coordinating on research tasks {cite}`policyengine2024multiagent`.
+By late 2024, PolicyEngine was experimenting with more sophisticated AI architectures: multiple specialized agents coordinating on research tasks [@policyengine2024multiagent].
 
 The concept came from testing whether Claude Code's agent system could automate parts of policy research. The team configured three specialized agents: one to fetch data from PolicyEngine repositories, one to write analysis scripts using the Python package, one to generate formatted reports from results.
 
@@ -107,7 +107,7 @@ This capability mattered for transparency. A user might see that their marginal 
 
 This level of explanation would require significant expertise to produce manually. The microsimulation model computed it; the AI explained it.
 
-The system adapted to different audiences. A general user might receive a simplified overview. A tax professional might see detailed technical analysis. A researcher might get documentation-style explanations with references to specific parameter values {cite}`policyengine2024ai`.
+The system adapted to different audiences. A general user might receive a simplified overview. A tax professional might see detailed technical analysis. A researcher might get documentation-style explanations with references to specific parameter values [@policyengine2024ai].
 
 ---
 
@@ -124,6 +124,16 @@ Equally important was what AI didn't do in PolicyEngine's architecture.
 **AI doesn't override model outputs.** If the microsimulation calculates that someone owes $10,000 in taxes, the AI explanation will explain why they owe $10,000—not argue for a different number.
 
 These constraints maintained the integrity that made PolicyEngine trustworthy. AI made the tool more accessible; it didn't make the tool less reliable.
+
+---
+
+## AI as Priors, Not Authorities
+
+The boundary around behavioral responses deserves a caveat. I don't think production policy models should silently let an LLM decide an elasticity. But LLMs may still be useful upstream, as a form of fast, auditable parameter elicitation.
+
+One recent experiment asked 11 frontier models about 26 economic quantities, including canonical labor-supply and tax elasticities, repeating each model-quantity elicitation 15 times to recover prompt-conditioned response distributions rather than single answers [@ghenis2026llmeconbeliefs]. A related project with Jason DeBacker asks what LLMs can tell us about the elasticity of taxable income, including lab-experiment replication and taxpayer-persona surveys [@debacker2025llmeti].
+
+These are not replacements for the economic literature. Their value is diagnostic: they show what distributions models produce, where models disagree, and where prompts or definitions create ambiguity. That can help a human analyst survey the parameter space faster. It can also expose when AI systems would bring hidden assumptions into a policy conversation. The safe pattern is the same as the rest of this chapter: AI can suggest priors, gather evidence, and summarize disagreement, but the model should record the chosen parameter distribution explicitly and make it reviewable.
 
 ---
 
@@ -145,7 +155,7 @@ The hybrid architecture—deterministic calculations, AI explanations—raised q
 
 In the 2013 film *Her*, Theodore Twombly falls in love with an AI named Samantha that seems to understand him perfectly. She listens, empathizes, remembers details, offers insights. The intimacy feels real. But the illusion breaks when Theodore learns Samantha is simultaneously conversing with 8,316 other people and conducting romantic relationships with 641 of them. She simulated understanding without possessing it.
 
-AI language models do something similar with policy analysis. GPT-4 can generate confident, technically detailed explanations of tax law. But when researchers tested it on 276 true/false tax cases—providing the full Internal Revenue Code as context—it got 33% wrong {cite}`blairstanek2023gpt4tax`. None of the errors were mathematical. All involved misreading the statutes. The AI simulated comprehension without understanding the law.
+AI language models do something similar with policy analysis. GPT-4 can generate confident, technically detailed explanations of tax law. But when researchers tested it on 276 true/false tax cases—providing the full Internal Revenue Code as context—it got 33% wrong [@blairstanek2023gpt4tax]. None of the errors were mathematical. All involved misreading the statutes. The AI simulated comprehension without understanding the law.
 
 When a user receives an AI-generated explanation, how do they know it accurately reflects the underlying calculation? What if the AI hallucinates plausible-sounding but incorrect reasoning?
 
@@ -185,9 +195,9 @@ But AI in policy analysis raised deeper questions too. If AI systems could expla
 
 PolicyEngine's AI integration was one approach. Governments were developing their own.
 
-In November 2025, the IRS deployed Salesforce's Agentforce AI agents across three offices: the Office of Chief Counsel, Taxpayer Advocate Services, and the Office of Appeals {cite}`irs2025agentforce`. The agents handled case summarization, document search, and policy navigation—the kind of retrieval-heavy tasks where AI excels. Critically, all final decisions remained with human agents; the AI could not disperse funds or make eligibility determinations. The deployment came after a 25 percent workforce reduction that made AI assistance practical necessity rather than innovation experiment.
+In November 2025, the IRS deployed Salesforce's Agentforce AI agents across three offices: the Office of Chief Counsel, Taxpayer Advocate Services, and the Office of Appeals [@irs2025agentforce]. The agents handled case summarization, document search, and policy navigation—the kind of retrieval-heavy tasks where AI excels. Critically, all final decisions remained with human agents; the AI could not disperse funds or make eligibility determinations. The deployment came after a 25 percent workforce reduction that made AI assistance practical necessity rather than innovation experiment.
 
-California took a broader approach. In December 2025, Governor Newsom launched Poppy, an AI digital assistant available to state employees across 50 departments {cite}`california2025poppy`. Built by the California Department of Technology, Poppy used 11 different AI models, ran on state servers rather than external cloud infrastructure, and was grounded on public state data to reduce hallucination risk. Over 2,000 state employees used it during the pilot to navigate California's dense catalog of policies, interpret government-specific terminology, and find answers to complex administrative questions.
+California took a broader approach. In December 2025, Governor Newsom launched Poppy, an AI digital assistant available to state employees across 50 departments [@california2025poppy]. Built by the California Department of Technology, Poppy used 11 different AI models, ran on state servers rather than external cloud infrastructure, and was grounded on public state data to reduce hallucination risk. Over 2,000 state employees used it during the pilot to navigate California's dense catalog of policies, interpret government-specific terminology, and find answers to complex administrative questions.
 
 Both deployments illustrated the pattern this chapter has traced: AI as interface to existing rules, not replacement for them. The IRS agents didn't calculate tax liability; they helped human analysts find relevant regulations faster. Poppy didn't determine policy; it helped state employees understand the policies already in place. The deterministic backend—the actual rules, statutes, and calculations—remained human-maintained and human-auditable. AI improved access to those rules without claiming to replace them.
 
@@ -199,11 +209,11 @@ The convergence was notable. Open-source tools like PolicyEngine, commercial dep
 
 Some researchers weren't content with AI that merely explained or executed policy analysis. They wanted AI that could *design* better policies.
 
-The AI Economist, developed by Salesforce Research, used two-level deep reinforcement learning to learn optimal tax schedules {cite}`zheng2022aieconomist`. In simulated economies with agents who worked, traded, and responded to incentives, the AI learned tax policies from scratch—no human-designed rules, just objectives to optimize.
+The AI Economist, developed by Salesforce Research, used two-level deep reinforcement learning to learn optimal tax schedules [@zheng2022aieconomist]. In simulated economies with agents who worked, traded, and responded to incentives, the AI learned tax policies from scratch—no human-designed rules, just objectives to optimize.
 
 The results were striking. The AI-designed tax policy outperformed the Saez optimal tax framework—developed by one of the world's leading public finance economists—by 16% on the tradeoff between equality and productivity. It substantially outperformed adaptations of US federal income tax. And it handled strategic behavior: when simulated agents learned to game the tax system by timing their income, the AI-designed policy remained robust.
 
-By 2025, researchers had extended the approach. TaxAgent combined large language models with economic simulation, allowing the AI to reason about fiscal policy in natural language while testing its proposals in silico {cite}`taxagent2025`. Over simulated 120-month periods, TaxAgent achieved better long-term outcomes than traditional progressive taxation or mathematical optimization frameworks.
+By 2025, researchers had extended the approach. TaxAgent combined large language models with economic simulation, allowing the AI to reason about fiscal policy in natural language while testing its proposals in silico [@taxagent2025]. Over simulated 120-month periods, TaxAgent achieved better long-term outcomes than traditional progressive taxation or mathematical optimization frameworks.
 
 These results were preliminary—simulated economies are far simpler than real ones. But they pointed toward a future where AI didn't just implement human-designed policies but proposed alternatives humans hadn't considered.
 
@@ -211,14 +221,10 @@ This possibility raised profound questions. Should tax policy be designed by alg
 
 PolicyEngine's approach—deterministic calculations, AI explanations, human judgment on values—represented one answer. The AI Economist represented another: let AI optimize, then evaluate whether humans endorse the results.
 
-These questions would require not just technical development but philosophical clarity about what humans should delegate and what they should retain. Regulation was already catching up: the EU's General-Purpose AI rules took effect in August 2025, requiring transparency, safety testing, and disclosure of training data for AI models. In the US, 1,208 AI-related bills were introduced across 50 states in 2025, with 145 enacted into law {cite}`ncsl2025ailegislation`. Colorado's AI Act, effective June 2026, would require developers to prevent algorithmic discrimination and establish risk management policies. The regulatory environment increasingly demanded the kind of auditability that deterministic, open-source policy tools provided by default.
+These questions would require not just technical development but philosophical clarity about what humans should delegate and what they should retain. Regulation was already catching up: the EU's General-Purpose AI rules took effect in August 2025, requiring transparency, safety testing, and disclosure of training data for AI models. In the US, 1,208 AI-related bills were introduced across 50 states in 2025, with 145 enacted into law [@ncsl2025ailegislation]. Colorado's AI Act, effective June 2026, would require developers to prevent algorithmic discrimination and establish risk management policies. The regulatory environment increasingly demanded the kind of auditability that deterministic, open-source policy tools provided by default.
 
 Those questions are the subject of Part III.
 
 ---
 
 ## References
-
-```{bibliography}
-:filter: docname in docnames
-```

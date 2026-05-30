@@ -8,9 +8,9 @@ Why do democratic outcomes often diverge from voter welfare?
 
 It's a question that has occupied political scientists for decades—and the answers they've found should humble anyone who thinks better information tools will fix democracy.
 
-Christopher Achen and Larry Bartels, in their landmark *Democracy for Realists* (2016), argued that the standard story about democracy—informed citizens evaluate policies, choose candidates whose platforms best match their preferences, and elections translate public will into governance—is largely fiction {cite}`achen2016democracy`. In their analysis, voters mostly choose parties based on social identities and group loyalties, not policy evaluation. They punish incumbents for bad weather. They reward them for economic growth that preceded their term. The "folk theory" of rational, policy-evaluating voters bears little resemblance to how democracy actually functions.
+Christopher Achen and Larry Bartels, in their landmark *Democracy for Realists* (2016), argued that the standard story about democracy—informed citizens evaluate policies, choose candidates whose platforms best match their preferences, and elections translate public will into governance—is largely fiction [@achen2016democracy]. In their analysis, voters mostly choose parties based on social identities and group loyalties, not policy evaluation. They punish incumbents for bad weather. They reward them for economic growth that preceded their term. The "folk theory" of rational, policy-evaluating voters bears little resemblance to how democracy actually functions.
 
-Bryan Caplan pushed further in *The Myth of the Rational Voter* (2007), arguing that voters aren't just ignorant but *systematically biased* {cite}`caplan2007myth`. Using data from the Survey of Americans and Economists on the Economy, he identified four persistent biases: anti-market bias, anti-foreign bias, make-work bias, and pessimistic bias. These aren't random errors that cancel out in aggregation. They're directional distortions that push democratic outcomes away from what economists would consider welfare-maximizing policies.
+Bryan Caplan pushed further in *The Myth of the Rational Voter* (2007), arguing that voters aren't just ignorant but *systematically biased* [@caplan2007myth]. Using data from the Survey of Americans and Economists on the Economy, he identified four persistent biases: anti-market bias, anti-foreign bias, make-work bias, and pessimistic bias. These aren't random errors that cancel out in aggregation. They're directional distortions that push democratic outcomes away from what economists would consider welfare-maximizing policies.
 
 Against this backdrop, the question I want to explore is more modest: *To what extent does voter accuracy about policy impacts matter for democratic outcomes—and can simulation tools improve it?*
 
@@ -92,7 +92,7 @@ Democrasim is a toy model, but the question it poses—does voter information qu
 
 The evidence is mixed, which is itself informative.
 
-**Information provision experiments** have shown modest but real effects. When researchers in developing countries provided voters with candidate report cards—scorecards showing incumbents' performance on corruption, public spending, or economic outcomes—voting patterns shifted. In Brazil, Ferraz and Finan found that municipalities where corruption audit results were publicly disclosed before elections saw corrupt incumbents punished at the polls {cite}`ferraz2008exposing`. The effect was concentrated where local media covered the disclosures—information that existed but didn't reach voters had no effect.
+**Information provision experiments** have shown modest but real effects. When researchers in developing countries provided voters with candidate report cards—scorecards showing incumbents' performance on corruption, public spending, or economic outcomes—voting patterns shifted. In Brazil, Ferraz and Finan found that municipalities where corruption audit results were publicly disclosed before elections saw corrupt incumbents punished at the polls [@ferraz2008exposing]. The effect was concentrated where local media covered the disclosures—information that existed but didn't reach voters had no effect.
 
 **Voter guide experiments** in the United States have shown smaller effects. When nonpartisan voter guides are distributed, they tend to increase political knowledge without dramatically changing vote choices. The reason: in highly partisan environments, most voters have already committed to a party identity, and additional policy information rarely overrides that commitment. This is Achen and Bartels's point: identity dominates evaluation.
 
@@ -112,11 +112,11 @@ Democrasim captures the information channel in isolation. Reality involves that 
 
 Democrasim's intuitions align with some findings in political science and contradict others.
 
-**Supporting evidence:** Arthur Lupia and Mathew McCubbins showed that voters can use "information shortcuts"—cues from trusted sources—to make decisions that approximate what they'd choose with full information {cite}`lupia1998democratic`. This suggests that the gap between actual and optimal voter behavior is partially an information problem, and that better information delivery could narrow it.
+**Supporting evidence:** Arthur Lupia and Mathew McCubbins showed that voters can use "information shortcuts"—cues from trusted sources—to make decisions that approximate what they'd choose with full information [@lupia1998democratic]. This suggests that the gap between actual and optimal voter behavior is partially an information problem, and that better information delivery could narrow it.
 
-**Complicating evidence:** Achen and Bartels found that even well-informed voters often vote based on group identity rather than policy evaluation {cite}`achen2016democracy`. More information doesn't automatically produce more policy-responsive voting if the information is filtered through partisan lenses. A voter who uses PolicyEngine to calculate that Policy X would save her $2,000 might still vote against it if her party opposes it.
+**Complicating evidence:** Achen and Bartels found that even well-informed voters often vote based on group identity rather than policy evaluation [@achen2016democracy]. More information doesn't automatically produce more policy-responsive voting if the information is filtered through partisan lenses. A voter who uses PolicyEngine to calculate that Policy X would save her $2,000 might still vote against it if her party opposes it.
 
-**Fundamental constraints:** Kenneth Arrow's impossibility theorem (1951) proved that no ranked voting system can simultaneously satisfy a small set of reasonable fairness conditions {cite}`arrow1951social`. No amount of voter information resolves this mathematical constraint on aggregating preferences. Gibbard and Satterthwaite independently showed that any non-dictatorial voting system is susceptible to strategic manipulation. Simulation tools might improve sincere voting but don't address strategic voting.
+**Fundamental constraints:** Kenneth Arrow's impossibility theorem (1951) proved that no ranked voting system can simultaneously satisfy a small set of reasonable fairness conditions [@arrow1951social]. No amount of voter information resolves this mathematical constraint on aggregating preferences. Gibbard and Satterthwaite independently showed that any non-dictatorial voting system is susceptible to strategic manipulation. Simulation tools might improve sincere voting but don't address strategic voting.
 
 The honest assessment: better voter information is a *necessary but not sufficient* condition for democratic outcomes to track voter welfare. Democrasim isolates the information channel and shows it matters. Real democracy has many other channels—identity, strategy, institutional design—that also matter, and that information tools can't directly address.
 
@@ -141,11 +141,11 @@ This doesn't address the identity-driven components of her vote. It doesn't over
 
 ## Futarchy and the values-beliefs separation
 
-There's a more radical proposal for connecting information to governance: Robin Hanson's *futarchy* {cite}`hanson2013futarchy`.
+There's a more radical proposal for connecting information to governance: Robin Hanson's *futarchy* [@hanson2013futarchy].
 
 The core idea: "Vote on values, but bet on beliefs." Democratic processes determine *what we care about*—national welfare metrics, child poverty rates, median income. But *which policies achieve those goals* is determined by prediction markets, not politicians or voters.
 
-A legislature proposes a bill. Prediction markets open on welfare conditional on the bill passing versus failing. If the market says welfare will be higher with the bill, it becomes law {cite}`hanson2000futarchy`.
+A legislature proposes a bill. Prediction markets open on welfare conditional on the bill passing versus failing. If the market says welfare will be higher with the bill, it becomes law [@hanson2000futarchy].
 
 Despite its elegance, futarchy faces practical objections that explain why no democracy has adopted it. Markets can be manipulated by wealthy actors. Most policy questions don't attract enough trading volume for reliable price discovery. Defining and measuring "welfare" is contentious. And democratic legitimacy depends partly on citizens feeling they had a voice—market-based decisions may lack that psychological buy-in.
 
@@ -203,6 +203,3 @@ This reframes PolicyEngine's mission. It's not just "a useful calculator for ner
 
 ## References
 
-```{bibliography}
-:filter: docname in docnames
-```

@@ -16,7 +16,7 @@ This book is my attempt to trace those questions from their origins to their imp
 
 This is a narrative about tools and the people who build them. It begins in 1957 with Guy Orcutt, an economist-engineer who imagined simulating society household by household, decades before the computers existed to do it. It moves through six decades of institutional microsimulation—mainframes at the Urban Institute, proprietary models at the Congressional Budget Office, the quiet revolution of open-source policy tools in Europe and the United States. It arrives at the present moment, where AI systems need deterministic tools for financial calculations, where open-source simulation is becoming public infrastructure, and where the boundaries of what we can simulate are expanding in directions that raise hard questions about democracy, values, and what it means to model a society.
 
-Along the way, I describe projects I've built or helped build—PolicyEngine, HiveSight, Democrasim, Cosilico, the Rules Foundation. I try to be honest about what works, what doesn't, and what remains aspiration rather than accomplishment. Some chapters describe validated systems with real users. Others describe prototypes. One chapter describes infrastructure that doesn't yet exist. I label the differences clearly, because the distinction between "this works" and "this might work someday" matters.
+Along the way, I describe projects I've built or helped build—PolicyEngine, HiveSight, Democrasim, the Axiom Foundation, and the Brier Institute. I try to be honest about what works, what doesn't, and what remains aspiration rather than accomplishment. Some chapters describe validated systems with real users. Others describe prototypes. One chapter describes infrastructure that doesn't yet exist. I label the differences clearly, because the distinction between "this works" and "this might work someday" matters.
 
 ## What this book is not
 
@@ -26,7 +26,7 @@ This is not a memoir, though my own path through this work provides the connecti
 
 This is not a manifesto. I have views—about open source, about democratic access to information, about how AI should handle policy questions—but I try to present them alongside the strongest counterarguments I can find. The chapters on silicon sampling and democratic simulation, in particular, are structured around the tensions and limitations of the ideas, not as advocacy.
 
-And this is not finished. I'm writing it while the work it describes is ongoing. PolicyEngine continues to evolve. The Rules Foundation is encoding new statutes. Cosilico is still early. The research directions in Part III—simulating opinion, democracy, values—are genuinely speculative. I think there's value in describing the landscape as it exists, including the parts that are still being built. But readers should understand that some of what I describe will look different in two years.
+And this is not finished. I'm writing it while the work it describes is ongoing. PolicyEngine continues to evolve. The Axiom Foundation is encoding new statutes. The Brier Institute's forecasting work is still early. The research directions in Part III—simulating opinion, democracy, values—are genuinely speculative. I think there's value in describing the landscape as it exists, including the parts that are still being built. But readers should understand that some of what I describe will look different in two years.
 
 ## Who this book is for
 
@@ -44,7 +44,7 @@ The book is organized in three parts, and they build on each other but can be re
 
 **Part I: Origins** is history. It covers the intellectual tradition of microsimulation, from Orcutt's insight through the institutional models that shaped decades of policy analysis. If you want to understand where these tools came from and why they matter, start here.
 
-**Part II: Building** is about the present. It describes the open-source tools that are making policy simulation public infrastructure—PolicyEngine's household and society views, the role AI is beginning to play, and the infrastructure gap that led me to explore building Cosilico and the Rules Foundation.
+**Part II: Building** is about the present. It describes the open-source tools that are making policy simulation public infrastructure—PolicyEngine's household and society views, the role AI is beginning to play, and the infrastructure gap that led me to explore building the Axiom Foundation.
 
 **Part III: Research directions** is about the future, and it's the most speculative section. It covers uncertainty quantification, silicon sampling for opinion research, simulating democratic processes, and the question of whether simulation can help with AI alignment. These chapters are clearly labeled as research directions rather than established work.
 

@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { bookStructure } from '../../lib/book';
 ---
 
-<Layout title="Read — Society in Silico" description="Read the full book online: The Story of Policy Simulation">
+<Layout title="Read — Society in Silico" description={`Read the full book online: ${bookStructure.subtitle}`}>
   <div class="min-h-screen bg-[var(--color-paper)] relative">
     <!-- Subtle paper texture overlay -->
     <div class="fixed inset-0 pointer-events-none opacity-[0.015]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E');"></div>

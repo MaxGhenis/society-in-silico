@@ -1,0 +1,79 @@
+{
+  "dataset": "hf://policyengine/policyengine-us-data/enhanced_cps_2024.h5",
+  "period": "2025",
+  "reform": "policyengine_us.reforms.eitc.streamlined_eitc:streamlined_eitc",
+  "sample_size": 1000,
+  "replicates": 10,
+  "seed_start": 1,
+  "elapsed_seconds": 290.6893210411072,
+  "full_sample": {
+    "delta_eitc": -12622862488.400352,
+    "delta_net": -13940030055.636719
+  },
+  "summary": {
+    "delta_eitc": {
+      "mean": -12909686816.50433,
+      "stdev": 1598489880.175104,
+      "min": -14999250058.955246,
+      "max": -11065047431.078773
+    },
+    "delta_net": {
+      "mean": -14012632682.39629,
+      "stdev": 1640030141.7290676,
+      "min": -16178382662.86914,
+      "max": -12066854096.623047
+    }
+  },
+  "replicate_deltas": [
+    {
+      "seed": 1,
+      "delta_eitc": -11093704295.922417,
+      "delta_net": -12066854096.623047
+    },
+    {
+      "seed": 2,
+      "delta_eitc": -11354164586.934399,
+      "delta_net": -12565102319.078125
+    },
+    {
+      "seed": 3,
+      "delta_eitc": -13430370270.629845,
+      "delta_net": -14384303237.667969
+    },
+    {
+      "seed": 4,
+      "delta_eitc": -14999250058.955246,
+      "delta_net": -16178382662.86914
+    },
+    {
+      "seed": 5,
+      "delta_eitc": -14709429361.544823,
+      "delta_net": -15847179415.382812
+    },
+    {
+      "seed": 6,
+      "delta_eitc": -14258996174.445488,
+      "delta_net": -15796654128.921875
+    },
+    {
+      "seed": 7,
+      "delta_eitc": -11065047431.078773,
+      "delta_net": -12281820302.476562
+    },
+    {
+      "seed": 8,
+      "delta_eitc": -13765429113.190674,
+      "delta_net": -14439652086.855469
+    },
+    {
+      "seed": 9,
+      "delta_eitc": -13321217050.252274,
+      "delta_net": -14446536337.019531
+    },
+    {
+      "seed": 10,
+      "delta_eitc": -11099259822.089363,
+      "delta_net": -12119842237.06836
+    }
+  ]
+}

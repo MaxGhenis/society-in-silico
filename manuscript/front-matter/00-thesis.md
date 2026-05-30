@@ -1,30 +1,3 @@
----
-exports:
-  - format: pdf
-    template: plain_latex_book
-    output: exports/society-in-silico.pdf
-    toc: true
-    articles:
-      - file: 00-thesis.md
-      - file: 00-preface.md
-      - file: 01-introduction.md
-      - file: ../part-1-origins/01-birth-of-microsimulation.md
-      - file: ../part-1-origins/02-tax-model-wars.md
-      - file: ../part-1-origins/03-open-source-revolution.md
-      - file: ../part-1-origins/04-the-accuracy-question.md
-      - file: ../part-2-building/05-policyengine-proof-of-concept.md
-      - file: ../part-2-building/06-three-ingredients-microsimulation.md
-      - file: ../part-2-building/07-the-household-view.md
-      - file: ../part-2-building/08-the-society-view.md
-      - file: ../part-2-building/09-ai-enters-the-picture.md
-      - file: ../part-2-building/10-cosilico-infrastructure-for-the-future.md
-      - file: ../part-3-future/11-the-uncertainty-gap.md
-      - file: ../part-3-future/12-simulating-opinion.md
-      - file: ../part-3-future/13-simulating-democracy.md
-      - file: ../part-3-future/14-simulating-values.md
-      - file: ../part-3-future/15-society-in-silico.md
----
-
 # The Thesis
 
 ## The Question
@@ -49,13 +22,13 @@ But we can have:
 
 ## The Arc
 
-**Part I: History**
+**Part I: Origins**
 Microsimulation began as an aspiration. Guy Orcutt in 1957 imagined simulating the economy household by household. He didn't have the compute. The vision preceded the capability by decades.
 
 **Part II: Building**
-PolicyEngine, Cosilico, and related projects are proof that open simulation infrastructure is possible. Not complete—possible. They demonstrate that the tools of policy analysis can be democratized, that AI can call deterministic backends, that rules can be encoded with validation.
+PolicyEngine, the Axiom Foundation, the Brier Institute, and related projects are proof that open simulation infrastructure is possible. Not complete—possible. They demonstrate that the tools of policy analysis can be democratized, that AI can call deterministic backends, that rules can be encoded with validation.
 
-**Part III: Future**
+**Part III: Research Directions**
 The deepest question: Can we simulate not just how policies affect people, but how values evolve? Can we ground AI alignment in empirical forecasts of what an informed, reflective humanity would want? This is aspirational by definition—but it's aspirational in a direction we can work toward.
 
 ## The Claim
@@ -83,7 +56,7 @@ Open simulation is infrastructure for collective reasoning. It won't be perfect.
 
 ## The Honest Caveat
 
-This book is written while the work is ongoing. Cosilico isn't launched. PolicyEngine doesn't have full uncertainty quantification. The value forecasting thesis is untested.
+This book is written while the work is ongoing. The Brier Institute's forecasting work remains early. PolicyEngine doesn't have full uncertainty quantification. The value forecasting thesis has preliminary tests, not independent validation.
 
 The book sets a vision—then invites the reader to watch (and participate in) the attempt to realize it.
 

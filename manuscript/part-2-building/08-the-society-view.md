@@ -1,8 +1,8 @@
 # Chapter 8: The Society View
 
-Making the Child Tax Credit fully refundable would cost $2 billion per year. It would benefit households across the income distribution, with the highest proportion affected in the top decile. Poverty would fall by 0.3 percentage points.
+Making the Child Tax Credit fully refundable would cost $2 billion per year. The families who gain are those whose credit currently exceeds the income tax they owe—low- and moderate-income working families. Poverty would fall by 0.3 percentage points.
 
-These are not guesses. They are calculations—the product of applying a policy reform to a representative sample of the American population and aggregating the results {cite}`policyengine2023scoring`.
+These are not guesses. They are calculations—the product of applying a policy reform to a representative sample of the American population and aggregating the results [@policyengine2023scoring].
 
 This is the society view: microsimulation scaled from individual households to the entire nation.
 
@@ -12,11 +12,11 @@ This is the society view: microsimulation scaled from individual households to t
 
 The household view answers "what would this policy mean for me?" The society view answers "what would this policy mean for everyone?"
 
-The question has a distinguished history. In 1974, Joseph Pechman and Benjamin Okner at Brookings published *Who Bears the Tax Burden?*, the first comprehensive attempt to allocate all US tax burdens across the income distribution using household-level data {cite}`pechman1974taxburden`. They merged data for 72,000 households and found that the American tax system was essentially proportional for the vast majority of families—a finding that challenged both conservative claims that taxes were too progressive and liberal claims that they were too regressive. The methodology they developed—using micro-data with incidence assumptions to distribute tax burdens across income groups—became the template for every subsequent distributional analysis, from Treasury's Office of Tax Analysis to the JCT to the CBO's annual distribution reports.
+The question has a distinguished history. In 1974, Joseph Pechman and Benjamin Okner at Brookings published *Who Bears the Tax Burden?*, the first comprehensive attempt to allocate all US tax burdens across the income distribution using household-level data [@pechman1974taxburden]. They merged data for 72,000 households and found that the American tax system was essentially proportional for the vast majority of families—a finding that challenged both conservative claims that taxes were too progressive and liberal claims that they were too regressive. The methodology they developed—using micro-data with incidence assumptions to distribute tax burdens across income groups—became the template for every subsequent distributional analysis, from Treasury's Office of Tax Analysis to the JCT to the CBO's annual distribution reports.
 
 The transition from household to society seems straightforward: run the household calculation for every household in the country, sum up the results. In principle, that's exactly what happens. In practice, it requires solving some of the hardest problems in policy analysis.
 
-Start with the obvious challenge: you can't actually survey every household. The Current Population Survey samples about 60,000 households each month—a tiny fraction of the roughly 130 million households in America {cite}`census2024cps`. Each sampled household must represent thousands of similar households in the population.
+Start with the obvious challenge: you can't actually survey every household. The Current Population Survey samples about 60,000 households each month—a tiny fraction of the roughly 130 million households in America [@census2024cps]. Each sampled household must represent thousands of similar households in the population.
 
 This is done through weights. Each household in the survey carries a weight indicating how many households it represents. A household in rural Wyoming might represent 5,000 similar households. A household in Manhattan might represent 500. The Census Bureau calculates these weights carefully, adjusting for sampling design and non-response.
 
@@ -28,11 +28,11 @@ When PolicyEngine runs a policy simulation, it calculates the impact on each sam
 
 The quality of society-level analysis depends entirely on the quality of the underlying data. PolicyEngine confronts this directly.
 
-The Current Population Survey has known limitations {cite}`policyengine2022enhanced`. As Chapter 4 described, household surveys systematically undercount the safety net—Bruce Meyer and colleagues found that 40-50% of SNAP recipients don't report their benefits, and the problem extends across programs and income levels {cite}`meyer2015underreporting`. High incomes are top-coded. The sample is too small for reliable state-level analysis. Asset information is missing, making wealth-based policies unmeasurable.
+The Current Population Survey has known limitations [@policyengine2022enhanced]. As Chapter 4 described, household surveys systematically undercount the safety net—Bruce Meyer and colleagues found that 40-50% of SNAP recipients don't report their benefits, and the problem extends across programs and income levels [@meyer2015underreporting]. High incomes are top-coded. The sample is too small for reliable state-level analysis. Asset information is missing, making wealth-based policies unmeasurable.
 
 These data problems don't just add noise—they bias results in specific directions. CPS-based projections tend to underestimate the budgetary impacts of reforming means-tested programs or taxing top earners, because the data undercounts both the benefits received and the income earned.
 
-PolicyEngine addresses these problems through data enhancement—a technical process that combines multiple data sources using machine learning techniques {cite}`policyengine2022enhanced`.
+PolicyEngine addresses these problems through data enhancement—a technical process that combines multiple data sources using machine learning techniques [@policyengine2022enhanced].
 
 The process works in stages. First, replace reported taxes and benefits with computed amounts from the microsimulation model, ensuring internal consistency. Second, integrate IRS tax records to correct income distributions, using quantile regression rather than simple matching. Third, reweight the sample using gradient descent to minimize divergence from known administrative totals. Fourth, incorporate additional surveys—the Survey of Consumer Finances for wealth, the Consumer Expenditure Survey for spending patterns.
 
@@ -46,7 +46,7 @@ The most basic question about any policy reform: what does it cost?
 
 Budget scoring is the bread and butter of policy analysis. When a legislator proposes expanding the EITC, the first question is always "how much?" When an advocate proposes a new child benefit, feasibility depends on the price tag. And when a senator needs a revenue estimate before markup, the number determines whether the amendment survives.
 
-PolicyEngine calculates net budget impact by summing changes in tax revenue and benefit expenditure across all households. The fully refundable CTC example costs $2 billion because the additional credits paid out exceed any behavioral responses or interactions with other programs {cite}`policyengine2023scoring`.
+PolicyEngine calculates net budget impact by summing changes in tax revenue and benefit expenditure across all households. The fully refundable CTC example costs $2 billion because the additional credits paid out exceed any behavioral responses or interactions with other programs [@policyengine2023scoring].
 
 The calculation is conceptually simple but computationally intensive. For each of the roughly 100,000 weighted household records in the enhanced dataset, the model runs two simulations: one under current law, one under the reform. The difference in total government revenue and spending, summed across all records with appropriate weights, yields the budget estimate. The whole process takes seconds on a modern server—but under the hood, it's evaluating millions of individual program eligibility checks, tax bracket calculations, and benefit phase-outs.
 
@@ -64,13 +64,13 @@ PolicyEngine shows budget impact as a primary output, but contextualizes it with
 
 Reducing poverty is often the stated goal of tax-benefit reforms. But what does "reducing poverty" actually mean, and how do you measure it?
 
-PolicyEngine uses the Supplemental Poverty Measure (SPM), which the Census Bureau introduced in 2011 as a more comprehensive alternative to the Official Poverty Measure {cite}`policyengine2023sex`. Unlike the older measure, the SPM accounts for taxes, in-kind benefits like SNAP, geographic variation in housing costs, work expenses, and out-of-pocket medical spending. For a family of four (two adults, two children) renting their home, the 2024 SPM threshold is about $39,000—meaning a family with resources below that level is considered in poverty {cite}`bls2024spm`.
+PolicyEngine uses the Supplemental Poverty Measure (SPM), which the Census Bureau introduced in 2011 as a more comprehensive alternative to the Official Poverty Measure [@policyengine2023sex]. Unlike the older measure, the SPM accounts for taxes, in-kind benefits like SNAP, geographic variation in housing costs, work expenses, and out-of-pocket medical spending. For a family of four (two adults, two children) renting their home, the 2024 SPM threshold is about $39,000—meaning a family with resources below that level is considered in poverty [@bls2024spm].
 
-Under current law, PolicyEngine estimates that 9.6% of Americans have resources below their SPM poverty threshold. 3.3% are in deep poverty—below half the threshold. Women face higher poverty rates than men. Children face higher rates than working-age adults, who face higher rates than seniors {cite}`policyengine2023sex`.
+Under current law, PolicyEngine estimates that 9.6% of Americans have resources below their SPM poverty threshold. 3.3% are in deep poverty—below half the threshold. Women face higher poverty rates than men. Children face higher rates than working-age adults, who face higher rates than seniors [@policyengine2023sex].
 
 When you apply a reform, PolicyEngine recalculates each household's resources, compares to poverty thresholds, and produces new aggregate rates. The change in the overall rate, broken down by demographics, shows who the reform helps and by how much.
 
-The WIC program, for example, reduces overall poverty by 0.8% and deep poverty by 2.2%. It disproportionately benefits children—reducing child poverty by 2.6%. And it has differential gender impacts: poverty falls 0.9% for women but only 0.7% for men {cite}`policyengine2023sex`.
+The WIC program, for example, reduces overall poverty by 0.8% and deep poverty by 2.2%. It disproportionately benefits children—reducing child poverty by 2.6%. And it has differential gender impacts: poverty falls 0.9% for women but only 0.7% for men [@policyengine2023sex].
 
 This granularity matters. A reform that "reduces poverty" might do so primarily for seniors while leaving child poverty unchanged. A reform that appears gender-neutral might have very different effects on men and women. The society view reveals these patterns.
 
@@ -80,9 +80,9 @@ This granularity matters. A reform that "reduces poverty" might do so primarily 
 
 Beyond poverty, who wins and who loses?
 
-PolicyEngine divides the population into deciles by income and shows what fraction of each decile gains, loses, or is unaffected. A bar chart reveals whether a reform is progressive (helping lower deciles more) or regressive (helping higher deciles more) {cite}`policyengine2023scoring`.
+PolicyEngine divides the population into deciles by income and shows what fraction of each decile gains, loses, or is unaffected. A bar chart reveals whether a reform is progressive (helping lower deciles more) or regressive (helping higher deciles more) [@policyengine2023scoring].
 
-For the fully refundable CTC, the distributional picture is counterintuitive. While the reform expands a credit that phases out with income, the highest proportion of people affected is in the top decile. Why? Because the reform extends refundability to higher-income households who previously hit the income tax floor.
+For the fully refundable CTC, the distributional picture is the opposite of what the headline credit might suggest. The families who gain are those whose credit currently exceeds the income tax they owe, so they forfeit part of it under today's rules. Full refundability reaches them—low- and moderate-income working families with children, concentrated in the lower-middle of the distribution. Higher-income households, who already claim the credit in full, see no change.
 
 This kind of analysis reveals complexities that headline numbers obscure. A "$2 billion reform that reduces poverty" could be distributed in wildly different ways—some more aligned with stated goals than others.
 
@@ -140,7 +140,7 @@ This isn't perfect neutrality—that's impossible. But it's a deliberate effort 
 
 Society-level estimates carry more uncertainty than household calculations. The sample is weighted, the data is imputed, the interactions are complex. How do you know if the estimates are right?
 
-PolicyEngine approaches validation systematically {cite}`policyengine2024ukvalidation`. Compare model outputs to official statistics. Match aggregate tax revenue to IRS totals. Match benefit expenditure to agency reports. Match poverty rates to Census publications.
+PolicyEngine approaches validation systematically [@policyengine2024ukvalidation]. Compare model outputs to official statistics. Match aggregate tax revenue to IRS totals. Match benefit expenditure to agency reports. Match poverty rates to Census publications.
 
 The results are mixed—and being honest about this matters.
 
@@ -162,7 +162,7 @@ No microsimulation model perfectly matches reality. The question is whether the 
 
 The society view enables a form of policy analysis that wasn't previously possible outside government: real-time response to policy proposals.
 
-When Congress debates expanding the Child Tax Credit, PolicyEngine can show the distributional impacts within hours. When a state considers changing its EITC, the model can estimate effects before the vote {cite}`policyengine2022review`.
+When Congress debates expanding the Child Tax Credit, PolicyEngine can show the distributional impacts within hours. When a state considers changing its EITC, the model can estimate effects before the vote [@policyengine2022review].
 
 This speed matters. Policy debates often proceed faster than traditional analytical processes. Traditional think tank analysis takes weeks or months: a team reads the legislation, codes it into their model, runs the simulations, writes up findings, goes through review. By the time the study is published, the legislative moment may have passed. Real-time tools change who can participate in the debate—and when.
 
@@ -170,9 +170,11 @@ The model's speed comes from pre-investment. Building and maintaining the micros
 
 Consider the sequence when a major tax proposal is introduced. First, the policy parameters need to be translated from legislative text into model inputs—tax rates, thresholds, phase-out schedules. PolicyEngine's parameter system is designed for this: each program variable is separately adjustable. Second, the simulation runs across the full microdata sample. Third, the outputs—budget impact, poverty rates, distributional charts—are generated automatically.
 
-**The UK Truss episode.** In September 2022, when Chancellor Kwasi Kwarteng announced what became known as the "mini-budget"—eliminating the 45p additional rate of income tax, cutting the basic rate from 20p to 19p, and reversing a planned National Insurance increase—PolicyEngine UK published distributional analysis within hours {cite}`policyengine2022review`. The estimates showed the package overwhelmingly benefiting higher earners: the top decile gained an average of £2,500 per year while the bottom decile gained essentially nothing. These were the only independent household-level distributional estimates available during the critical first days of debate. Media outlets cited the analysis. Within weeks, the government reversed course on the 45p rate abolition; within a month, Truss resigned.
+**Speed in practice.** In September 2022, when Chancellor Kwasi Kwarteng announced what became known as the "mini-budget"—a sweeping package of tax cuts—PolicyEngine UK published household-level distributional analysis within hours, while the official scorekeepers stayed silent [@policyengine2022review]. (The case study later in this chapter returns to what that analysis showed.) What matters here is the speed: because the model already existed, scoring a surprise budget cost a few hours of compute rather than weeks of staffing, and the results reached the debate while the policy window was still open.
 
 **The US CTC debate.** When proposals circulated in 2024 and 2025 to expand the Child Tax Credit, PolicyEngine could show the trade-offs of different design choices in real time. Making the credit fully refundable cost more but delivered more to the poorest families. Increasing the per-child amount had a different distributional profile than lowering the phase-in threshold. For each variant, PolicyEngine produced budget scores, poverty impacts, and decile-level distributional charts—the same outputs that JCT and TPC produced, but available instantly and queryable by anyone.
+
+By 2026, the workflow had started moving from one-off dashboards toward legislative monitoring infrastructure. PolicyEngine's State Legislative Tracker watches for state tax and benefit bills, scores whether each bill is modelable in the existing parameter system, and routes high-value bills into an encoding pipeline that can compute fiscal impacts, poverty effects, winners and losers, and district-level outputs [@policyengine2026statelegtracker]. The important shift is operational. The society view is no longer just a report you produce after someone asks. It can become a standing system that notices modelable legislation, triages it, and turns statutory text into simulation-ready analysis while the policy window is still open.
 
 This capability depends on having the model already built and maintained. The investment is in infrastructure, not in each individual analysis. And it compounds: each reform analyzed adds to the library of examples, builds user trust, and reveals edge cases that improve the model.
 
@@ -184,7 +186,7 @@ The 2021 American Rescue Plan expansion of the Child Tax Credit is the clearest 
 
 The ARP increased the CTC from $2,000 per child to $3,600 for children under six and $3,000 for children aged six through seventeen. More importantly, it made the credit fully refundable—eliminating the earnings phase-in that had excluded the poorest families—and delivered half via monthly advance payments from July through December 2021.
 
-Before enactment, Columbia University's Center on Poverty and Social Policy used microsimulation to project that the full ARP relief package could cut child poverty by more than half {cite}`columbia2021ctc`. After enactment, Census data confirmed the prediction: child poverty fell to a record low of 5.2% under the Supplemental Poverty Measure in 2021—the lowest rate on record going back to 1967. The expanded CTC alone lifted 2.9 million children out of poverty {cite}`census2022childpoverty`.
+Before enactment, Columbia University's Center on Poverty and Social Policy used microsimulation to project that the full ARP relief package could cut child poverty by more than half [@columbia2021ctc]. After enactment, Census data confirmed the prediction: child poverty fell to a record low of 5.2% under the Supplemental Poverty Measure in 2021—the lowest rate on record going back to 1967. The expanded CTC alone lifted 2.9 million children out of poverty [@census2022childpoverty].
 
 The microsimulation predictions were remarkably close to actual outcomes. This wasn't because the models were lucky. It was because the CTC expansion operated through mechanical channels—direct cash transfers with simple eligibility rules—where behavioral uncertainty is low. The society view excels at exactly this kind of analysis: tracing known rules through a representative population to estimate who benefits and by how much.
 
@@ -198,7 +200,7 @@ The CTC episode also illustrates a subtlety about distributional analysis. The e
 
 The UK provides a contrasting example. In September 2022, Chancellor Kwasi Kwarteng proposed what became known as the "mini-budget"—eliminating the 45p additional rate of income tax, cutting the basic rate, and reversing a planned National Insurance increase. The package was presented as growth-oriented. The distributional reality was different.
 
-PolicyEngine UK published analysis within hours showing the package overwhelmingly benefited higher earners: the top decile gained an average of £2,500 per year while the bottom decile gained essentially nothing {cite}`policyengine2022review`. These were among the only independent household-level distributional estimates available during the critical first days of debate. Media outlets cited the analysis. Within weeks, the government reversed course on the 45p rate abolition; within a month, the Prime Minister resigned.
+PolicyEngine UK published analysis within hours showing the package overwhelmingly benefited higher earners: the top decile gained an average of £2,500 per year while the bottom decile gained essentially nothing [@policyengine2022review]. These were among the only independent household-level distributional estimates available during the critical first days of debate. Media outlets cited the analysis. Within weeks, the government reversed course on the 45p rate abolition; within a month, the Prime Minister resigned.
 
 Around the same time, a more nuanced policy change received less attention but illustrated the society view's analytical power more precisely. When Chancellor Rishi Sunak reduced Universal Credit's taper rate from 63% to 55% in the Autumn 2021 Budget—partially offsetting the removal of the temporary £20/week COVID uplift—microsimulation revealed a crucial distinction. The taper rate cut only helped *working* UC recipients, not the unemployed or those too sick to work. The £20 uplift had reached everyone on UC. Per pound spent, the uplift reduced poverty roughly 40% more effectively than the taper cut. But the taper cut improved work incentives: the share of workers facing marginal effective tax rates above 70% fell from 26% to 9%.
 
@@ -225,7 +227,3 @@ This is the platform potential of open-source policy analysis. Not just a tool t
 ---
 
 ## References
-
-```{bibliography}
-:filter: docname in docnames
-```

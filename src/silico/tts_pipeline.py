@@ -22,7 +22,7 @@ def strip_markdown(text: str) -> str:
     Removes:
     - Code blocks (```...```)
     - HTML comments (<!-- ... -->)
-    - Citations ({cite}`...`)
+    - Citations ({cite}`...`, [@...])
     - Footnote references ([^...])
     - Wiki-style links ([[...]])
     - Horizontal rules (---)
@@ -48,6 +48,7 @@ def strip_markdown(text: str) -> str:
     # Remove citations (and trailing space before punctuation)
     result = re.sub(r"\s*\{cite\}`[^`]*`", "", result)
     result = re.sub(r"\s*\{cite:[a-z]+\}`[^`]*`", "", result)
+    result = re.sub(r"\s*\[@[^\]]+\]", "", result)
 
     # Remove footnote references
     result = re.sub(r"\[\^[^\]]*\]", "", result)

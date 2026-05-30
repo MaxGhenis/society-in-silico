@@ -1,17 +1,25 @@
-.PHONY: serve build pdf clean
+.PHONY: serve build pdf epub docx clean
 
-# Start local dev server
+# Start local Quarto preview server
 serve:
-	npx myst build --html
+	quarto preview
 
-# Build static HTML (no server)
+# Build static HTML book
 build:
-	npx myst build --html --execute
+	quarto render --to html
 
-# Build PDF via Typst
+# Build PDF book
 pdf:
-	npx myst build --pdf
+	quarto render --to pdf
+
+# Build EPUB book
+epub:
+	quarto render --to epub
+
+# Build DOCX book
+docx:
+	quarto render --to docx
 
 # Clean build artifacts
 clean:
-	rm -rf _build
+	rm -rf _book .quarto

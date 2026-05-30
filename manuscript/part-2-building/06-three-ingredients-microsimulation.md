@@ -1,6 +1,6 @@
 # Chapter 6: The Three Ingredients of Microsimulation
 
-Every microsimulation model rests on three foundations: rules encoding, microdata construction, and behavioral dynamics. This three-part framework doesn't appear explicitly in the microsimulation literature—textbooks focus on techniques, not architecture {cite}`caldwell1996microsimulation`—but it captures what any team building these models must solve.
+Every microsimulation model rests on three foundations: rules encoding, microdata construction, and behavioral dynamics. This three-part framework doesn't appear explicitly in the microsimulation literature—textbooks focus on techniques, not architecture [@caldwell1996microsimulation]—but it captures what any team building these models must solve.
 
 Get the rules wrong, and your calculations are incorrect. Get the data wrong, and your estimates are biased. Ignore dynamics, and your projections miss how people respond to policy changes.
 
@@ -24,7 +24,7 @@ And the EITC is just one program. A comprehensive US model must encode federal i
 
 The microsimulation world has converged on two main approaches to rules encoding: spreadsheet-style configuration and code-native implementation.
 
-**EUROMOD exemplifies the spreadsheet approach {cite}`sutherland2013euromod`.** Policy rules live in XML files—structured text that looks more like configuration than code. A typical EUROMOD XML file contains policy parameters (rates, thresholds, amounts), policy spine definitions (which calculations run in what order), and switch settings (which policies are active). To view or modify these rules, you download the EUROMOD software and open the project files in its graphical interface. The interface presents policies as expandable trees of parameters, with dialogue boxes for editing values.
+**EUROMOD exemplifies the spreadsheet approach [@sutherland2013euromod].** Policy rules live in XML files—structured text that looks more like configuration than code. A typical EUROMOD XML file contains policy parameters (rates, thresholds, amounts), policy spine definitions (which calculations run in what order), and switch settings (which policies are active). To view or modify these rules, you download the EUROMOD software and open the project files in its graphical interface. The interface presents policies as expandable trees of parameters, with dialogue boxes for editing values.
 
 This architecture has real advantages. Researchers without programming backgrounds can modify parameters—change a tax rate, adjust a benefit threshold—without writing code. The interface enforces structure, preventing certain classes of errors. And the XML format is technically "open source"—anyone can read the files.
 
@@ -77,13 +77,13 @@ To understand a PolicyEngine policy, you browse GitHub, click on a file, and rea
 
 This isn't about better or worse—it's about different communities. EUROMOD serves researchers who work primarily in its ecosystem, often for years. The investment in learning its tooling pays off through deep capability. PolicyEngine and Tax-Calculator serve researchers who might contribute once, or who work across many projects, or who want to integrate microsimulation into other software. The investment in general Python skills pays off through breadth.
 
-A third approach deserves mention: **TAXSIM**, maintained by Daniel Feenberg and the National Bureau of Economic Research since the early 1980s {cite}`feenberg1993taxsim`. TAXSIM is neither spreadsheet-based nor fully open-source in the GitHub sense. It's a compiled program accessible via a web interface—users submit tax return data and receive computed tax liabilities. Its advantage is decades of validation against actual IRS tax return data, making it the benchmark against which other tax calculators are judged. Its limitation is opacity: you can see what goes in and what comes out, but you can't step through the code. For researchers who need validated federal tax calculations and trust NBER's reputation, TAXSIM is the gold standard. For researchers who need to understand *why* a calculation produces a specific result, or who need to modify the rules, the code-native approach is necessary.
+A third approach deserves mention: **TAXSIM**, maintained by Daniel Feenberg and the National Bureau of Economic Research since the early 1980s [@feenberg1993taxsim]. TAXSIM is neither spreadsheet-based nor fully open-source in the GitHub sense. It's a compiled program accessible via a web interface—users submit tax return data and receive computed tax liabilities. Its advantage is decades of validation against actual IRS tax return data, making it the benchmark against which other tax calculators are judged. Its limitation is opacity: you can see what goes in and what comes out, but you can't step through the code. For researchers who need validated federal tax calculations and trust NBER's reputation, TAXSIM is the gold standard. For researchers who need to understand *why* a calculation produces a specific result, or who need to modify the rules, the code-native approach is necessary.
 
-The difference matters for transparency. When HM Treasury evaluated PolicyEngine UK (Chapter 5), they could link directly to the GitHub repository {cite}`hmt2025policyengine`. Anyone curious about how the model works can browse the code without installing anything. That immediate accessibility is impossible with tools requiring specialized software to inspect.
+The difference matters for transparency. When HM Treasury evaluated PolicyEngine UK (Chapter 5), they could link directly to the GitHub repository [@hmt2025policyengine]. Anyone curious about how the model works can browse the code without installing anything. That immediate accessibility is impossible with tools requiring specialized software to inspect.
 
 ### The rules-as-code movement
 
-Behind these architectural choices lies a broader idea: that legislation itself should be machine-readable. The "rules as code" movement—gaining traction in New Zealand, France, and the UK—argues that when a legislature writes a tax law, the definitive encoding should be in structured, executable form, not just natural language. OpenFisca, the French microsimulation framework, was an early embodiment of this idea. The Rules Foundation, described in Chapter 10, is building infrastructure to make it systematic: encoding statutes as versioned, testable code with empirical validation against established calculators.
+Behind these architectural choices lies a broader idea: that legislation itself should be machine-readable. The "rules as code" movement—gaining traction in New Zealand, France, and the UK—argues that when a legislature writes a tax law, the definitive encoding should be in structured, executable form, not just natural language. OpenFisca, the French microsimulation framework, was an early embodiment of this idea. The Axiom Foundation, described in Chapter 10, is building infrastructure to make it systematic: encoding statutes as versioned, testable code with empirical validation against established calculators.
 
 If rules-as-code succeeds at scale, the rules-encoding problem changes fundamentally. Instead of each microsimulation team independently reading statutes and writing code—duplicating effort and introducing inconsistencies—teams would import shared, validated rule definitions. The maintenance burden would shift from each model separately to a shared infrastructure layer.
 
@@ -99,13 +99,13 @@ Where do these records come from?
 
 ### The Survey Foundation
 
-Most microsimulation uses household survey data. In the US, that's typically the Current Population Survey (CPS)—an annual sample of about 100,000 households {cite}`census2024cps`. In the UK, the Family Resources Survey (FRS). In Europe, the European Union Statistics on Income and Living Conditions (EU-SILC).
+Most microsimulation uses household survey data. In the US, that's typically the Current Population Survey (CPS)—an annual sample of about 100,000 households [@census2024cps]. In the UK, the Family Resources Survey (FRS). In Europe, the European Union Statistics on Income and Living Conditions (EU-SILC).
 
 These surveys exist because governments need population statistics. They're designed for measuring income, employment, poverty—exactly what microsimulation models need. The data already exists. Just use it.
 
 Except it's never that simple.
 
-The CPS captures wages, salaries, and common benefit receipt well. It captures capital income poorly—people underreport dividends and capital gains, and the very wealthy are systematically undersampled {cite}`meyer2015underreporting`. It doesn't capture certain tax-relevant information at all—itemized deductions, retirement contributions, business income details. The top-coding problem is severe: the CPS caps reported income at around $1.1 million, meaning the entire upper tail of the income distribution is compressed into a single value. For policies that affect high earners—capital gains tax changes, top bracket adjustments, the Alternative Minimum Tax—this truncation systematically understates impacts.
+The CPS captures wages, salaries, and common benefit receipt well. It captures capital income poorly—people underreport dividends and capital gains, and the very wealthy are systematically undersampled [@meyer2015underreporting]. It doesn't capture certain tax-relevant information at all—itemized deductions, retirement contributions, business income details. The top-coding problem is severe: the CPS caps reported income at around $1.1 million, meaning the entire upper tail of the income distribution is compressed into a single value. For policies that affect high earners—capital gains tax changes, top bracket adjustments, the Alternative Minimum Tax—this truncation systematically understates impacts.
 
 The benefit underreporting problem runs in the other direction. Bruce Meyer and colleagues found that 40-50% of SNAP recipients don't report their benefits in household surveys. Medicaid, SSI, TANF—each has substantial non-reporting. This means CPS-based estimates of safety net spending are biased downward, and reforms expanding these programs appear cheaper than they actually are.
 
@@ -121,7 +121,7 @@ The technique requires careful judgment about what "similar" means. Matching on 
 
 Tax-Data, part of the Policy Simulation Library, pioneered this approach for US tax modeling. The package statistically matches CPS records to IRS Public Use Files (PUF), combining survey income data with tax return information. The result captures tax-relevant details—capital gains realizations, itemized deduction patterns—that the CPS alone would miss.
 
-The Enhanced CPS that PolicyEngine launched in August 2025 extended this further {cite}`policyengine2022enhanced`. We integrated five datasets: the CPS, Survey of Consumer Finances, Consumer Expenditure Survey, Residential Energy Consumption Survey, and American Time Use Survey. Each contributed different information. The SCF filled in wealth. The CEX added spending patterns relevant for consumption taxes. The RECS added energy consumption for carbon tax modeling. The ATUS added time use for understanding childcare policy.
+The Enhanced CPS that PolicyEngine launched in August 2025 extended this further [@policyengine2022enhanced]. We integrated five datasets: the CPS, Survey of Consumer Finances, Consumer Expenditure Survey, Residential Energy Consumption Survey, and American Time Use Survey. Each contributed different information. The SCF filled in wealth. The CEX added spending patterns relevant for consumption taxes. The RECS added energy consumption for carbon tax modeling. The ATUS added time use for understanding childcare policy.
 
 Statistical matching doesn't create new information—it combines existing information in ways that plausibly represent real households. The validity depends on whether the matching assumptions hold. When they do, you get more comprehensive records. When they don't, you get statistical artifacts that bias your estimates.
 
@@ -135,6 +135,8 @@ The Enhanced CPS used Quantile Regression Forests instead. Rather than predictin
 
 This matters for policy analysis. A reform that caps itemized deductions at $25,000 affects different people depending on where they fall in the distribution. Mean imputation would systematically misestimate this impact. Distributional imputation gets closer to reality.
 
+The data layer is now becoming reusable infrastructure rather than model-specific plumbing. Microimpute packages several imputation methods behind a common interface—statistical matching, OLS, quantile regression, Quantile Regression Forests, and mixture-density networks—so analysts can benchmark imputation choices instead of inheriting one default [@microimpute2026]. Microplex extends the idea toward multi-source synthesis and reweighting, including zero-inflated target variables and conditional synthetic generation [@microplex2026]. The long-term direction is clear: synthetic populations should be built, tested, and versioned as infrastructure in their own right, not treated as a hidden appendix to the tax model.
+
 ### Calibration
 
 Even perfect statistical matching and imputation don't guarantee the microdata matches administrative totals. The CPS might show aggregate wages of $9 trillion when IRS records show $10 trillion. That 10% gap propagates to every estimate—revenue projections, distributional tables, poverty rates.
@@ -147,6 +149,8 @@ The Enhanced CPS calibrated to 9,168 administrative targets. Federal income tax 
 
 The impact was dramatic. Before calibration, aggregate deviations from administrative totals averaged 8.3%. After calibration, 0.2%. The same survey records, reweighted to match reality.
 
+MicroCalibrate generalizes this piece of the pipeline: survey weight calibration with holdout robustness checks, hyperparameter tuning, and sparse-weight options that can reduce dataset size while preserving target accuracy [@microcalibrate2026]. That matters because calibration is not a one-time preprocessing trick. Every new geography, survey fusion, or synthetic population creates a new calibration problem, and each one needs diagnostics before its policy estimates deserve trust.
+
 ### Projection
 
 Microdata represents a point in time. The 2023 CPS describes America in 2023. But policy analysis often asks about future years—what would this reform cost in 2027?
@@ -157,7 +161,7 @@ Simple projection uses indexes. Multiply all wages by projected wage growth. Mul
 
 Sophisticated projection involves modeling—who dies, who retires, who enters the workforce, how incomes evolve for individuals over time. These dynamic models are more accurate but more complex to build and validate.
 
-PolicyEngine uses projection factors from the Congressional Budget Office and other official forecasts {cite}`cbo2025forecasting`. The CBO already projects future tax revenues, benefit costs, and economic variables. Aligning microdata projection to CBO's assumptions ensures our estimates are comparable to official baselines.
+PolicyEngine uses projection factors from the Congressional Budget Office and other official forecasts [@cbo2025forecasting]. The CBO already projects future tax revenues, benefit costs, and economic variables. Aligning microdata projection to CBO's assumptions ensures our estimates are comparable to official baselines.
 
 ---
 
@@ -177,11 +181,11 @@ But static analysis misses some effects entirely. A carbon tax might raise $100 
 
 ### Labor Supply Responses
 
-The most studied behavioral response is labor supply {cite}`odonoghue2001dynamic`. How much do people adjust their work when tax rates change?
+The most studied behavioral response is labor supply [@odonoghue2001dynamic]. How much do people adjust their work when tax rates change?
 
 Economists parameterize this as "elasticities"—the percentage change in hours worked (or income reported) for a 1% change in after-tax wages. Decades of research estimates these parameters from natural experiments, tax reforms, and survey data.
 
-The most comprehensive summary is the elasticity of taxable income (ETI), which captures not just labor supply changes but also tax planning, income shifting, and avoidance responses. A meta-regression by Neisser covering 1,720 estimates from 61 studies found a mean ETI of about 0.30—meaning a 10% increase in the net-of-tax rate produces roughly a 3% increase in reported taxable income {cite}`neisser2021eti`. But the range is enormous: some studies find ETIs near zero, others above 1.0. The variation depends on income level, tax system, time horizon, and econometric method.
+The most comprehensive summary is the elasticity of taxable income (ETI), which captures not just labor supply changes but also tax planning, income shifting, and avoidance responses. A meta-regression by Neisser covering 1,720 estimates from 61 studies found a mean ETI of about 0.30—meaning a 10% increase in the net-of-tax rate produces roughly a 3% increase in reported taxable income [@neisser2021eti]. But the range is enormous: some studies find ETIs near zero, others above 1.0. The variation depends on income level, tax system, time horizon, and econometric method.
 
 This uncertainty matters enormously for revenue estimation. A reform raising the top marginal rate from 37% to 39.6% would raise about $50 billion more per year under a low ETI assumption (0.2) than under a high one (0.6). The "correct" elasticity is a major source of disagreement between revenue estimators—and it's not something the data can definitively resolve.
 
@@ -227,7 +231,7 @@ This three-part framework organizes how to think about microsimulation models. W
 
 **Dynamics:** What behavioral assumptions does the model make? Are they explicit or hidden? How sensitive are results to different assumptions? Are static and dynamic estimates clearly distinguished?
 
-Different models emphasize different ingredients. TAXSIM's strength is rules accuracy—decades of validation against actual tax returns {cite}`feenberg1993taxsim`. Tax-Data's strength is microdata construction—careful statistical matching and calibration. OG-USA's strength is dynamics—a full overlapping-generations model with computed behavioral responses.
+Different models emphasize different ingredients. TAXSIM's strength is rules accuracy—decades of validation against actual tax returns [@feenberg1993taxsim]. Tax-Data's strength is microdata construction—careful statistical matching and calibration. OG-USA's strength is dynamics—a full overlapping-generations model with computed behavioral responses.
 
 PolicyEngine aims to be strong across all three. We invested heavily in rules encoding (comprehensive UK and US tax-benefit systems), microdata construction (the Enhanced CPS with statistical matching and gradient descent calibration), and behavioral options (elasticity-based labor supply responses with transparent parameters).
 
@@ -252,7 +256,3 @@ This is why building PolicyEngine took years, not months. Not because any single
 ---
 
 ## References
-
-```{bibliography}
-:filter: docname in docnames
-```

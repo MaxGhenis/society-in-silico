@@ -1,10 +1,10 @@
 # Chapter 11: The Uncertainty Gap
 
-In 2017, the Congressional Budget Office released its analysis of the American Health Care Act, the Republican plan to repeal and replace Obamacare {cite}`cbo2017ahca`. The headline number: 23 million fewer Americans would have health insurance by 2026.
+In 2017, the Congressional Budget Office released its analysis of the American Health Care Act, the Republican plan to repeal and replace Obamacare [@cbo2017ahca]. The headline number: 23 million fewer Americans would have health insurance by 2026.
 
 Not "approximately 23 million." Not "between 18 and 28 million." Just: 23 million.
 
-The number was devastatingly precise—and almost certainly wrong. Not because CBO made an error, but because any forecast a decade out involves enormous uncertainty. Economic conditions might change. Behavioral responses might differ from historical patterns. The labor market might evolve unpredictably. Yet the public discourse treated "23 million" as if it were a measurement, not an estimate.
+The number was devastatingly precise—and that precision was an illusion. Not because CBO made an error, and not because 23 million was a poor central estimate, but because any forecast nearly a decade out carries enormous uncertainty that a single number cannot express. Economic conditions might change. Behavioral responses might differ from historical patterns. The labor market might evolve unpredictably. Yet the public discourse treated "23 million" as if it were a measurement, not an estimate.
 
 It's the PreCrime problem from *Minority Report*. In the 2002 film, three "precogs" predict future murders with seemingly perfect accuracy. Authorities arrest people before crimes occur. The predictions look like facts—displayed on screens, precise down to the location and time. No uncertainty, no probability, just destiny.
 
@@ -26,7 +26,7 @@ Consider what goes into a PolicyEngine estimate:
 
 **Parameter uncertainty.** Tax brackets, benefit rates, eligibility thresholds—these are usually known precisely. But behavioral parameters are estimated from research: how much do people change their labor supply when marginal tax rates change? Different studies produce different estimates. The model picks one and treats it as truth.
 
-The elasticity of taxable income—the key parameter governing how much people adjust their reported income in response to tax changes—illustrates this perfectly. A meta-regression analysis of 1,720 estimates from 61 studies found a mean elasticity of 0.30, but individual estimates ranged from near zero to above 1.0, driven by differences in regression techniques, sample restrictions, and country contexts {cite}`neisser2021eti`. The range isn't just academic: a reform that raises the top marginal tax rate by 10 percentage points might increase revenue by $100 billion with an elasticity of 0.2, or only $60 billion with an elasticity of 0.5. Same reform, same model, wildly different conclusions—depending on which study you trust for a single parameter.
+The elasticity of taxable income—the key parameter governing how much people adjust their reported income in response to tax changes—illustrates this perfectly. A meta-regression analysis of 1,720 estimates from 61 studies found a mean elasticity of 0.30, but individual estimates ranged from near zero to above 1.0, driven by differences in regression techniques, sample restrictions, and country contexts [@neisser2021eti]. The range isn't just academic: a reform that raises the top marginal tax rate by 10 percentage points might increase revenue by $100 billion with an elasticity of 0.2, or only $60 billion with an elasticity of 0.5. Same reform, same model, wildly different conclusions—depending on which study you trust for a single parameter.
 
 **Structural uncertainty.** The model makes assumptions about how programs interact, how households respond, how the economy adjusts. These assumptions are embedded in the code. Alternative assumptions would produce different results.
 
@@ -48,7 +48,7 @@ You might think uncertainty is a technical detail—interesting to methodologist
 
 **Model comparison is undermined.** Different microsimulation models produce different estimates for the same policy. Is one right and another wrong? Or are they both within reasonable uncertainty bounds? Without quantification, we can't tell.
 
-The Penn Wharton Budget Model, one of the few groups to systematically compare projections to outcomes, found that their estimates were generally accurate but had meaningful variance {cite}`pwbm2024accuracy`. CBO itself has started publishing retrospective accuracy evaluations—and the results are illuminating. In its June 2024 projections for fiscal year 2025, CBO underestimated federal revenues by 6 percent—$334 billion off {cite}`cbo2025budget_accuracy`. The largest single factor was tariff increases that the agency hadn't anticipated, a reminder that policy itself is uncertain. Over longer horizons, CBO's track record on deficit projections from 1984 to 2023 shows systematic patterns: revenue is harder to forecast than spending, and errors compound over time {cite}`cbo2024deficit`. These aren't failures of competence—CBO's economic forecasts are actually more accurate than those of the Administration, the Blue Chip consensus, and the Survey of Professional Forecasters {cite}`cbo2025forecasting`. They're evidence that even the best forecasters working with the best data face irreducible uncertainty.
+The Penn Wharton Budget Model, one of the few groups to systematically compare projections to outcomes, found that their estimates were generally accurate but had meaningful variance [@pwbm2024accuracy]. CBO itself has started publishing retrospective accuracy evaluations—and the results are illuminating. In its June 2024 projections for fiscal year 2025, CBO underestimated federal revenues by 6 percent—$334 billion off [@cbo2025budget_accuracy]. The largest single factor was tariff increases that the agency hadn't anticipated, a reminder that policy itself is uncertain. Over longer horizons, CBO's track record on deficit projections from 1984 to 2023 shows systematic patterns: revenue is harder to forecast than spending, and errors compound over time [@cbo2024deficit]. These aren't failures of competence—CBO's economic forecasts are actually more accurate than those of the Administration, the Blue Chip consensus, and the Survey of Professional Forecasters [@cbo2025forecasting]. They're evidence that even the best forecasters working with the best data face irreducible uncertainty.
 
 But most microsimulation, including PolicyEngine, produces point estimates only.
 
@@ -57,6 +57,18 @@ The persistence of point estimates isn't just a technical oversight. It's a poli
 This creates a perverse dynamic. Producers of analysis know the estimates are uncertain. Consumers of analysis treat them as certain. And the producers, knowing the consumers won't engage with uncertainty, don't bother reporting it. The illusion of precision becomes self-reinforcing.
 
 Breaking this cycle may require institutional leadership. When the National Weather Service first reported probabilistic forecasts, public reception was skeptical—people wanted to know whether it would rain, not that there was a 40 percent chance. But over time, probabilistic thinking became normal. Today, "60 percent chance of rain" is intuitive to most Americans. Policy analysis could follow the same arc: initially uncomfortable, eventually expected. CBO's fan charts are a first step. But they'll only become standard if users demand them—and users will only demand them if they understand what they're missing.
+
+---
+
+## The Welfare Cost of Hidden Uncertainty
+
+Uncertainty is not only a presentation problem for analysts. It changes behavior.
+
+Taxpayers respond to the marginal tax rates they perceive, not the marginal tax rates a model computes. In a separate project, I modeled workers choosing labor supply from a noisy signal of their true marginal tax rate. Under quasilinear-isoelastic preferences, the expected deadweight loss from misperception has a simple approximation: roughly one half times the labor-supply elasticity times the variance of the rate error, divided by one minus the true marginal rate, all multiplied by earnings [@ghenis2026disutility].
+
+The calibrated numbers are preliminary, but the scale is not trivial. Using a 12 percentage point standard deviation for federal marginal-rate misperception, the stylized central estimate is about $30 billion per year in aggregate welfare cost. Applying the same logic to person-level marginal tax rates from PolicyEngine US raises the estimate to about $37 billion, with sensitivity ranges from roughly $10 billion to $71 billion depending on parameter assumptions [@ghenis2026disutility].
+
+The point is not that these are definitive costs. The point is that hidden uncertainty is itself costly. If households cannot tell whether an extra hour of work leaves them better off or worse off, some will make distorted choices. Tools that expose marginal tax rates, benefit cliffs, and confidence ranges are not merely nicer dashboards. They can reduce real welfare losses caused by policy opacity.
 
 ---
 
@@ -82,7 +94,7 @@ Applying this to microsimulation would require rethinking the entire architectur
 
 ### Squiggle and Fermi Estimation
 
-Squiggle, developed by the Quantified Uncertainty Research Institute, is a language for probabilistic estimation {cite}`squiggle2024`. Instead of writing `cost = revenue - expenses`, you write distributions: `cost = normal(100, 10) - lognormal(50, 1.5)`. The output is a probability distribution that propagates uncertainty through calculations.
+Squiggle, developed by the Quantified Uncertainty Research Institute, is a language for probabilistic estimation [@squiggle2024]. Instead of writing `cost = revenue - expenses`, you write distributions: `cost = normal(100, 10) - lognormal(50, 1.5)`. The output is a probability distribution that propagates uncertainty through calculations.
 
 I've used Squigglepy, a Python implementation, in Democrasim—a model of voter behavior and election outcomes. Rather than predicting "Candidate A wins with 52%," it produces distributions: "Candidate A wins 60% of simulations, with vote shares ranging from 48% to 56%."
 
@@ -95,6 +107,20 @@ A middle ground between full Monte Carlo and no uncertainty at all: resample the
 This approach has a practical advantage: it's embarrassingly parallel. Each bootstrap replicate is independent, so the computation scales linearly with the number of processors. On a cloud computing cluster, 500 replicates might add minutes rather than hours to a simulation that currently takes seconds. And it captures the most important source of uncertainty for many estimates—the fact that the survey is a sample, not a census.
 
 The limitation is that bootstrap resampling captures only input data uncertainty. It tells you nothing about parameter uncertainty (wrong elasticities) or structural uncertainty (wrong model). But for many practical questions—"how confident should I be in this cost estimate?"—input data uncertainty is the dominant term, and bootstrapping answers it directly.
+
+### A Simple PolicyEngine Demonstration
+
+To make this concrete, I ran a small paired-subsample experiment in PolicyEngine US on March 31, 2026. Using the Enhanced CPS, I took ten 1,000-household subsamples, ran the same stylized EITC reform on each baseline/reform pair, and recorded the change in aggregate EITC and household net income. The helper script for reproducing this calculation now lives in `scripts/policyengine_uncertainty_demo.py`.
+
+| Statistic | Aggregate EITC change | Aggregate household net income change |
+| --- | ---: | ---: |
+| Full-sample point estimate | -$12.6B | -$13.9B |
+| Mean across 10 paired subsamples | -$12.9B | -$14.0B |
+| Range across 10 paired subsamples | -$11.1B to -$15.0B | -$12.1B to -$16.2B |
+
+Across the ten subsamples, ordinary survey sampling alone moved the national estimate by roughly 12% below to 19% above the full-sample point estimate before touching behavioral elasticities, forecast error, or model misspecification.
+
+This is not a production-quality confidence interval. The subsamples are intentionally lightweight, the number of replicates is small, and the exercise captures only input-data uncertainty. But it demonstrates the right intuition: the single reported estimate is not the result. It is the center of a distribution that most policy tools currently hide.
 
 ### Scenario Analysis
 
@@ -156,11 +182,11 @@ Microsimulation models assume people respond to incentives in ways estimated fro
 
 Consider universal basic income. Most microsimulation models estimate labor supply responses using elasticities from marginal tax changes—small policy variations that leave the fundamental structure of work unchanged. But UBI might change the meaning of work, the relationship between employment and identity, the nature of economic security. Would responses to UBI mirror responses to a 5% change in marginal tax rates? Maybe not.
 
-Finland tested this. In 2017-2018, the Finnish government ran a randomized controlled trial: 2,000 unemployed individuals received a basic income of €560 per month with no conditions, while 175,000 similar individuals formed the control group. Microsimulation models had predicted that reducing participation tax rates by 23 percentage points—the effective incentive change—would increase employment. The experiment found no statistically significant effect on employment days in the first year {cite}`kangas2020finland`. The eventual AEJ paper found modest positive effects in the second year, concentrated among specific subgroups {cite}`hanna2018removing`. But the headline result was clear: the microsimulation predictions, grounded in historical elasticities, overstated the employment response. The models weren't wrong about the incentive structure—participation tax rates did fall by 23 points. They were wrong about how people would respond to a fundamentally different kind of program.
+Finland tested this. In 2017-2018, the Finnish government ran a randomized controlled trial: 2,000 unemployed individuals received a basic income of €560 per month with no conditions, while 175,000 similar individuals formed the control group. Microsimulation models had predicted that reducing participation tax rates by 23 percentage points—the effective incentive change—would increase employment. The experiment found no statistically significant effect on employment days in the first year [@kangas2020finland]. The eventual AEJ paper found modest positive effects in the second year, concentrated among specific subgroups [@hanna2018removing]. But the headline result was clear: the microsimulation predictions, grounded in historical elasticities, overstated the employment response. The models weren't wrong about the incentive structure—participation tax rates did fall by 23 points. They were wrong about how people would respond to a fundamentally different kind of program.
 
 This is structural uncertainty—uncertainty about whether the model captures the relevant causal mechanisms at all. No amount of Monte Carlo simulation addresses this. You can propagate uncertainty through a wrong model and get precise estimates that are precisely wrong.
 
-The ACA individual mandate tells a similar story from the other direction. When Congress zeroed out the mandate penalty in 2017, CBO projected that 13 million fewer people would have health insurance by 2027—a number derived from models where the mandate was a powerful driver of enrollment {cite}`cbo2017ahca`. The actual effect was far smaller. People had enrolled for reasons the models didn't fully capture: the availability of subsidies, the peace of mind of coverage, the administrative momentum of having signed up. The models overweighted the penalty's importance because historical data couldn't distinguish between "people enrolled because of the mandate" and "people enrolled at the same time the mandate existed."
+The ACA individual mandate tells a similar story from the other direction. When Congress zeroed out the mandate penalty in 2017, CBO projected that 13 million fewer people would have health insurance by 2027—a number derived from models where the mandate was a powerful driver of enrollment [@cbo2017ahca]. The actual effect was far smaller. People had enrolled for reasons the models didn't fully capture: the availability of subsidies, the peace of mind of coverage, the administrative momentum of having signed up. The models overweighted the penalty's importance because historical data couldn't distinguish between "people enrolled because of the mandate" and "people enrolled at the same time the mandate existed."
 
 The honest answer is uncomfortable: we can quantify uncertainty about things we know we don't know (parameter values, sampling error), but we can't easily quantify uncertainty about things we don't know we don't know (model misspecification, structural breaks, emergent behavior).
 
@@ -209,7 +235,3 @@ The aspiration isn't perfect prediction. It's calibrated uncertainty: knowing wh
 ---
 
 ## References
-
-```{bibliography}
-:filter: docname in docnames
-```

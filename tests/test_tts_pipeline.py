@@ -30,6 +30,10 @@ class TestStripMarkdown:
         text = "This is a claim {cite}`jones2024`."
         assert strip_markdown(text) == "This is a claim."
 
+    def test_strips_quarto_citations(self):
+        text = "This is a claim [@jones2024]."
+        assert strip_markdown(text) == "This is a claim."
+
     def test_strips_footnote_refs(self):
         text = "Some text[^1] with footnotes[^gpt4-tax]."
         assert strip_markdown(text) == "Some text with footnotes."

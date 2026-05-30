@@ -177,4 +177,4 @@ Potential additions:
 - Generate Obsidian graph from tracking data
 - TTS voice customization per character/narrator
 - Chapter-specific pacing/pauses
-- Integration with MyST build process
+- Integration with Quarto build process

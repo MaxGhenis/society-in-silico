@@ -1,6 +1,8 @@
 # Build output
 output/
 _build/
+.quarto/
+_book/
 .myst/
 
 # Obsidian
@@ -23,3 +25,18 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.bak
+
+# Generated audiobook audio (large binaries — keep out of git)
+audiobook/*.mp3
+audiobook/*.m4b
+audiobook/*.wav
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+/.quarto/
+
+**/*.quarto_ipynb

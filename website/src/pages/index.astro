@@ -1,8 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { bookStructure } from '../lib/book';
+
+const [partOne, partTwo, partThree] = bookStructure.parts;
 ---
 
-<Layout title="Society in Silico — The Story of Microsimulation">
+<Layout title={`Society in Silico — ${bookStructure.subtitle}`}>
   <div class="min-h-screen bg-[var(--color-paper)] relative overflow-hidden">
     <!-- Simulation grid background -->
     <div class="absolute inset-0 sim-grid"></div>
@@ -42,7 +45,7 @@ import Layout from '../layouts/Layout.astro';
 
               <!-- Subtitle -->
               <p class="font-display text-xl md:text-2xl text-[var(--color-ink-light)] italic mb-8 animate-fade-up delay-200">
-                The Story of Policy Simulation
+                {bookStructure.subtitle}
               </p>
 
               <!-- Description -->
@@ -164,23 +167,23 @@ import Layout from '../layouts/Layout.astro';
             <a href="/book" class="hover:text-[var(--color-sienna)] transition-colors">Table of Contents</a>
           </h2>
           <div class="grid md:grid-cols-3 gap-8">
-            <a href="/book/birth-of-microsimulation" class="group animate-fade-up">
+            <a href={`/book/${partOne?.chapters[0]?.slug ?? 'birth-of-microsimulation'}`} class="group animate-fade-up">
               <span class="font-mono text-[10px] tracking-[0.3em] text-[var(--color-sienna)] uppercase">Part I</span>
-              <h3 class="font-display text-xl font-semibold text-[var(--color-ink)] mt-2 mb-3 group-hover:text-[var(--color-sienna)] transition-colors">Origins</h3>
+              <h3 class="font-display text-xl font-semibold text-[var(--color-ink)] mt-2 mb-3 group-hover:text-[var(--color-sienna)] transition-colors">{partOne?.title ?? 'Origins'}</h3>
               <p class="text-sm text-[var(--color-ink-muted)] leading-relaxed">
                 From Orcutt's 1957 microsimulation to CGE models—how economists learned to simulate society.
               </p>
             </a>
-            <a href="/book/policyengine-proof-of-concept" class="group animate-fade-up delay-100">
+            <a href={`/book/${partTwo?.chapters[0]?.slug ?? 'policyengine-proof-of-concept'}`} class="group animate-fade-up delay-100">
               <span class="font-mono text-[10px] tracking-[0.3em] text-[var(--color-sienna)] uppercase">Part II</span>
-              <h3 class="font-display text-xl font-semibold text-[var(--color-ink)] mt-2 mb-3 group-hover:text-[var(--color-sienna)] transition-colors">Building</h3>
+              <h3 class="font-display text-xl font-semibold text-[var(--color-ink)] mt-2 mb-3 group-hover:text-[var(--color-sienna)] transition-colors">{partTwo?.title ?? 'Building'}</h3>
               <p class="text-sm text-[var(--color-ink-muted)] leading-relaxed">
                 The open-source revolution—how transparent tools are democratizing policy analysis.
               </p>
             </a>
-            <a href="/book/the-uncertainty-gap" class="group animate-fade-up delay-200">
+            <a href={`/book/${partThree?.chapters[0]?.slug ?? 'the-uncertainty-gap'}`} class="group animate-fade-up delay-200">
               <span class="font-mono text-[10px] tracking-[0.3em] text-[var(--color-gold)] uppercase">Part III</span>
-              <h3 class="font-display text-xl font-semibold text-[var(--color-ink)] mt-2 mb-3 group-hover:text-[var(--color-sienna)] transition-colors">Future</h3>
+              <h3 class="font-display text-xl font-semibold text-[var(--color-ink)] mt-2 mb-3 group-hover:text-[var(--color-sienna)] transition-colors">{partThree?.title ?? 'Future'}</h3>
               <p class="text-sm text-[var(--color-ink-muted)] leading-relaxed">
                 What happens when AI meets microsimulation? The coming transformation of policy analysis.
               </p>

@@ -4,7 +4,7 @@
 
 ---
 
-In 2023, a research paper with a provocative title appeared: "Out of One, Many: Using Language Models to Simulate Human Samples" {cite}`argyle2023out`. The researchers at Brigham Young University had done something that would have seemed like science fiction a decade earlier. They asked GPT-3 to adopt specific demographic personas—a 65-year-old Black woman from Mississippi, a 28-year-old white man from Oregon—and answer survey questions. Then they compared the AI's responses to actual survey data.
+In 2023, a research paper with a provocative title appeared: "Out of One, Many: Using Language Models to Simulate Human Samples" [@argyle2023out]. The researchers at Brigham Young University had done something that would have seemed like science fiction a decade earlier. They asked GPT-3 to adopt specific demographic personas—a 65-year-old Black woman from Mississippi, a 28-year-old white man from Oregon—and answer survey questions. Then they compared the AI's responses to actual survey data.
 
 The results were striking. When properly conditioned on demographic characteristics, the language model showed high correspondence with human voting patterns across the 2012, 2016, and 2020 presidential elections. It captured the partisan divide by education. It predicted regional variation. In many ways, it predicted responses like the population it was simulating.
 
@@ -16,13 +16,13 @@ This opens a strange new question: Can we simulate not just how policies affect 
 
 Argyle et al. didn't publish in isolation. Their paper landed in a growing body of research exploring whether language models can serve as proxies for human survey respondents.
 
-Santurkar et al. (2023) took a different angle, asking a more pointed question: whose opinions do language models actually reflect {cite}`santurkar2023opinions`? They found that base language models disproportionately reflect the views of liberal, educated, Western populations—the demographic footprint of the training data. Fine-tuning models with reinforcement learning from human feedback (RLHF) shifted this distribution but didn't eliminate it. The models could be prompted to adopt different perspectives, but their default stance was not representative of any actual population.
+Santurkar et al. (2023) took a different angle, asking a more pointed question: whose opinions do language models actually reflect [@santurkar2023opinions]? They found that base language models disproportionately reflect the views of liberal, educated, Western populations—the demographic footprint of the training data. Fine-tuning models with reinforcement learning from human feedback (RLHF) shifted this distribution but didn't eliminate it. The models could be prompted to adopt different perspectives, but their default stance was not representative of any actual population.
 
-Park et al. (2023) pushed the concept further with "generative agents"—autonomous AI characters that lived in a simulated town, formed relationships, made plans, and exhibited emergent social behavior {cite}`park2023generative`. Their architecture combined a language model with a memory system that stored experiences, synthesized reflections, and retrieved relevant context for decisions. The result: AI agents that weren't just answering survey questions but simulating ongoing lives.
+Park et al. (2023) pushed the concept further with "generative agents"—autonomous AI characters that lived in a simulated town, formed relationships, made plans, and exhibited emergent social behavior [@park2023generative]. Their architecture combined a language model with a memory system that stored experiences, synthesized reflections, and retrieved relevant context for decisions. The result: AI agents that weren't just answering survey questions but simulating ongoing lives.
 
-Bisbee et al. (2024) introduced a critical counterpoint. They systematically compared ChatGPT's simulated survey responses to real human data and found significant problems {cite}`bisbee2024synthetic`. Simulated responses showed less variation than real surveys. Regression coefficients from silicon samples often differed significantly from human-derived estimates. The models struggled to reproduce the full distribution of opinions, tending instead toward central tendencies that smoothed away the messy extremes of real public opinion.
+Bisbee et al. (2024) introduced a critical counterpoint. They systematically compared ChatGPT's simulated survey responses to real human data and found significant problems [@bisbee2024synthetic]. Simulated responses showed less variation than real surveys. Regression coefficients from silicon samples often differed significantly from human-derived estimates. The models struggled to reproduce the full distribution of opinions, tending instead toward central tendencies that smoothed away the messy extremes of real public opinion.
 
-Mei et al. (2024) found more encouraging results in a narrower domain: GPT-4 could reproduce human behavior across six canonical psychology experiments, suggesting that for well-studied behavioral patterns the models have absorbed enough training signal to generate plausible responses {cite}`mei2024llms`.
+Mei et al. (2024) found more encouraging results in a narrower domain: GPT-4 could reproduce human behavior across six canonical psychology experiments, suggesting that for well-studied behavioral patterns the models have absorbed enough training signal to generate plausible responses [@mei2024llms].
 
 The picture that emerges is nuanced. Silicon sampling works best for well-studied populations on well-studied questions, and worst for underrepresented groups on novel topics. It's a tool with a specific operating range, not a general substitute for human data.
 
@@ -30,11 +30,13 @@ The picture that emerges is nuanced. Silicon sampling works best for well-studie
 
 ## The market research problem
 
-Every year, companies and governments spend roughly $140 billion on survey research {cite}`esomar2024market`. They want to know what people think—about products, policies, candidates, ideas. The traditional method: find a representative sample of humans, ask them questions, aggregate the responses.
+Every year, companies and governments spend roughly $140 billion on survey research [@esomar2024market]. They want to know what people think—about products, policies, candidates, ideas. The traditional method: find a representative sample of humans, ask them questions, aggregate the responses.
 
 This works, but it's slow and expensive. A well-designed survey with 1,000 respondents might cost $50,000 and take weeks to field. Want to test a slightly different question wording? That's another $50,000. Want to check if opinions differ across 50 demographic subgroups? The costs multiply.
 
 For large corporations and government agencies, this is manageable. For startups, nonprofits, local governments, and individual researchers, it's often prohibitive. Many questions that would be valuable to answer simply don't get asked.
+
+Commercial entrants are starting to package a broader version of this vision. In 2026, Simile described itself as "the simulation company" and argued that simulation, rather than prediction alone, is the next frontier of AI [@simile2026company; @simile2026frontier]. I take that as evidence that synthetic social research is escaping the lab. But it also raises the bar. For public-interest uses, plausible demos are not enough; we need calibration, uncertainty estimates, and clear limits on what the simulations can and cannot support.
 
 What if you could get approximate answers instantly for a fraction of the cost?
 
@@ -42,7 +44,7 @@ What if you could get approximate answers instantly for a fraction of the cost?
 
 ## Silicon sampling
 
-The idea is called "silicon sampling"—using AI models to simulate survey respondents {cite}`sarstedt2024silicon`. Instead of recruiting human participants, you prompt a language model to answer as if it were a person with specific characteristics.
+The idea is called "silicon sampling"—using AI models to simulate survey respondents [@sarstedt2024silicon]. Instead of recruiting human participants, you prompt a language model to answer as if it were a person with specific characteristics.
 
 The naive approach doesn't work. If you simply ask GPT-4 "Do you support raising the minimum wage?", it will give you a measured, hedged response reflecting its training—probably something about tradeoffs and depending on circumstances. That's not what any individual human would say.
 
@@ -82,15 +84,17 @@ Does silicon sampling work? The honest answer: partially, in specific domains, w
 
 **What works reasonably well:**
 
-The Argyle study showed high correspondence between AI and human voting patterns across presidential elections {cite}`argyle2023out`. Marketing researchers report that silicon sampling holds promise for pretesting survey instruments and pilot studies {cite}`sarstedt2024silicon`. For questions where the training data contains strong demographic-opinion correlations—voting behavior, partisan attitudes, consumer preferences for well-known product categories—the models generate plausible distributions.
+The Argyle study showed high correspondence between AI and human voting patterns across presidential elections [@argyle2023out]. Marketing researchers report that silicon sampling holds promise for pretesting survey instruments and pilot studies [@sarstedt2024silicon]. For questions where the training data contains strong demographic-opinion correlations—voting behavior, partisan attitudes, consumer preferences for well-known product categories—the models generate plausible distributions.
 
 **What doesn't work well:**
 
-Bisbee et al. (2024) found that silicon sampling produces less variation than real surveys and yields regression coefficients that often differ significantly from human data {cite}`bisbee2024synthetic`. Santurkar et al. (2023) showed that models default to the opinions of their training data's dominant demographic—liberal, educated, Western—even when prompted otherwise {cite}`santurkar2023opinions`. The models almost never generate "don't know" responses, which real survey respondents give frequently. On sensitive topics, models exhibit social desirability bias, producing answers that sound acceptable rather than ones that match what real people actually say.
+Bisbee et al. (2024) found that silicon sampling produces less variation than real surveys and yields regression coefficients that often differ significantly from human data [@bisbee2024synthetic]. Santurkar et al. (2023) showed that models default to the opinions of their training data's dominant demographic—liberal, educated, Western—even when prompted otherwise [@santurkar2023opinions]. The models almost never generate "don't know" responses, which real survey respondents give frequently. On sensitive topics, models exhibit social desirability bias, producing answers that sound acceptable rather than ones that match what real people actually say.
 
 **What remains unknown:**
 
-No systematic validation has been conducted for HiveSight specifically. The prototype exists, the architecture is built, but rigorous benchmarking against traditional surveys—the kind of validation that would justify confidence in the results—hasn't been done. I flag this not as a future plan but as a current limitation.
+HiveSight-specific validation is now being designed rather than assumed. A pre-analysis plan freezes benchmark suites using GSS 2024 attitudes, SHED 2024 household finance questions, and SDCPC 2024 consumer-choice items; compares generic persona prompting, geography-only prompting, rich nonlocal microdata, HiveSight's local synthetic population, and synthetic fallback profiles; and defines subgroup error metrics before results are run [@hivesight2026benchmarkpap]. The current handoff notes real SHED 2024 normalization with 12,295 rows, while GSS normalization and the full runner remain unfinished. That is the right status: benchmark protocol before benchmark claims.
+
+The companion calibration work asks a narrower methodological question: can we learn correction functions from LLM responses and respondent demographics to actual GSS answers [@hivesight2026calibration]? If that works, HiveSight becomes less like raw persona prompting and more like a calibrated measurement instrument. If it doesn't, that failure should be visible before anyone treats synthetic opinion estimates as evidence.
 
 ---
 
@@ -106,7 +110,7 @@ The biases in silicon sampling are not random—they're structural, which means 
 
 **Social desirability bias.** Safety-tuned models are trained to be helpful, harmless, and honest. This training makes them reluctant to express extreme, controversial, or socially undesirable opinions—even when real humans with matching demographics would express exactly those views. The model produces a sanitized version of public opinion.
 
-**Stereotyping.** When prompted with demographic characteristics, models sometimes reproduce stereotypes rather than capturing genuine variation within groups. A prompt describing a rural white evangelical man might produce a caricature rather than the range of views that actual rural white evangelical men hold. Santurkar et al. found that fine-tuning could push models to "embody caricatures of those groups" {cite}`santurkar2023opinions`.
+**Stereotyping.** When prompted with demographic characteristics, models sometimes reproduce stereotypes rather than capturing genuine variation within groups. A prompt describing a rural white evangelical man might produce a caricature rather than the range of views that actual rural white evangelical men hold. Santurkar et al. found that fine-tuning could push models to "embody caricatures of those groups" [@santurkar2023opinions].
 
 ---
 
@@ -191,7 +195,3 @@ Approximate knowledge, widely distributed and clearly labeled, might serve the p
 ---
 
 ## References
-
-```{bibliography}
-:filter: docname in docnames
-```

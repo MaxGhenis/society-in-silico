@@ -1,8 +1,8 @@
 # Chapter 4: The Accuracy Question
 
-In 2017, the Joint Committee on Taxation estimated the Tax Cuts and Jobs Act would reduce federal revenue by $1.46 trillion over ten years. The Penn Wharton Budget Model projected larger losses—$1.8 to $2.2 trillion on a dynamic basis, accounting for economic effects {cite}`pwbm2017tcja`. Congressional Republicans disputed both. Supply-siders predicted the tax cuts would pay for themselves through growth.
+In 2017, the Joint Committee on Taxation estimated the Tax Cuts and Jobs Act would reduce federal revenue by $1.46 trillion over ten years. The Penn Wharton Budget Model projected larger losses—$1.8 to $2.2 trillion on a dynamic basis, accounting for economic effects [@pwbm2017tcja]. Congressional Republicans disputed both. Supply-siders predicted the tax cuts would pay for themselves through growth.
 
-The supply-side fantasy didn't materialize. The microsimulations had been approximately right about the direction and magnitude.
+The supply-side prediction didn't materialize. The microsimulations had been approximately right about the direction and magnitude.
 
 But "approximately right" is the best we can honestly say.
 
@@ -38,9 +38,9 @@ Good models pass the first two levels reliably. The third is where humility ente
 
 The Affordable Care Act provides one of the best natural experiments for testing microsimulation accuracy.
 
-In March 2010, CBO predicted the ACA would reduce the non-elderly uninsured rate from over 18 percent to about 7.6 percent by 2016. This assumed all states would adopt Medicaid expansion {cite}`collins2015aca`.
+In March 2010, CBO predicted the ACA would reduce the non-elderly uninsured rate from over 18 percent to about 7.6 percent by 2016. This assumed all states would adopt Medicaid expansion [@collins2015aca].
 
-Then the Supreme Court made Medicaid expansion optional, and 19 states declined. Adjusting for this, CBO's projected uninsured rate for 2016 becomes 9.4 percent. The actual rate, according to CDC data, was 10.4 percent {cite}`kiely2017aca`.
+Then the Supreme Court made Medicaid expansion optional, and 19 states declined. Adjusting for this, CBO's projected uninsured rate for 2016 becomes 9.4 percent. The actual rate, according to CDC data, was 10.4 percent [@kiely2017aca].
 
 That's remarkably close—within one percentage point—given a six-year forecast horizon and a major legal disruption.
 
@@ -52,11 +52,11 @@ But the aggregate accuracy masked component errors:
 | Medicaid expansion | 10 million | 14.4 million |
 | Total uninsured | 30 million | 27.9 million |
 
-Source: {cite}`collins2015aca`, {cite}`kiely2017aca`
+Source: [@collins2015aca], [@kiely2017aca]
 
 CBO overestimated exchange enrollment by more than half. They underestimated Medicaid enrollment by nearly 50%. Yet the total coverage gain was roughly correct because the errors partially canceled.
 
-As one analysis put it: "CBO's mistake was in estimating *where* the uninsured would get covered, not *how many* of them would gain coverage" {cite}`collins2015aca`.
+As one analysis put it: "CBO's mistake was in estimating *where* the uninsured would get covered, not *how many* of them would gain coverage" [@collins2015aca].
 
 ---
 
@@ -64,7 +64,7 @@ As one analysis put it: "CBO's mistake was in estimating *where* the uninsured w
 
 Here's a question rarely asked: Is government forecasting getting *better* over time?
 
-CBO publishes systematic retrospectives comparing their projections to actual outcomes—an unusual level of institutional honesty {cite}`cbo2024deficit`. The data reveals a striking pattern.
+CBO publishes systematic retrospectives comparing their projections to actual outcomes—an unusual level of institutional honesty [@cbo2024deficit]. The data reveals a striking pattern.
 
 For sixth-year deficit projections (the medium-term forecasts that guide major policy debates):
 
@@ -73,23 +73,23 @@ For sixth-year deficit projections (the medium-term forecasts that guide major p
 | 1989-2001 | 3.2% |
 | 2002-2019 | 1.0% |
 
-That's a **threefold improvement** in forecast accuracy over two decades {cite}`cbo2024deficit`.
+That's a **threefold improvement** in forecast accuracy over two decades [@cbo2024deficit].
 
 What drove this? Better data—the IRS now provides richer administrative records. Better computing—models can handle more complexity. Better methods—decades of retrospective analysis revealed systematic biases that could be corrected.
 
-But the improvement has limits. CBO's 2025 forecasting record shows their projections remain roughly as accurate as the Blue Chip consensus (an average of 50 private-sector forecasts) and the Administration's forecasts {cite}`cbo2025forecasting`. No one has found a way to consistently outperform the collective wisdom of informed forecasters.
+But the improvement has limits. CBO's 2025 forecasting record shows their projections remain roughly as accurate as the Blue Chip consensus (an average of 50 private-sector forecasts) and the Administration's forecasts [@cbo2025forecasting]. No one has found a way to consistently outperform the collective wisdom of informed forecasters.
 
-And recent years have shown increased volatility. The 2021 projection had CBO's largest *over*estimate on record. The 2023 projection had the largest *under*estimate—an error of 3.9% of GDP, more than three times the historical average {cite}`cbo2024deficit`. The pandemic scrambled all forecasting models.
+And recent years have shown increased volatility. The 2021 projection had CBO's largest *over*estimate on record. The 2023 projection had the largest *under*estimate—an error of 3.9% of GDP, more than three times the historical average [@cbo2024deficit]. The pandemic scrambled all forecasting models.
 
 ### The Random Walk Challenge
 
-Perhaps the most humbling finding comes from academic research. A Berkeley thesis examining CBO forecasts from 1976 to 2007 found that a "random walk" projection—simply assuming next year's deficit equals this year's—would have outperformed CBO on average for both short and medium-term forecasts {cite}`inayatali2023cbo`.
+Perhaps the most humbling finding comes from academic research. A Berkeley thesis examining CBO forecasts from 1976 to 2007 found that a "random walk" projection—simply assuming next year's deficit equals this year's—would have outperformed CBO on average for both short and medium-term forecasts [@inayatali2023cbo].
 
 This doesn't mean CBO is incompetent. It means economic forecasting faces irreducible uncertainty. The events that matter most—recessions, financial crises, pandemics—are precisely the events that cannot be predicted. Models calibrated on normal times fail when abnormal times arrive.
 
 ### The TCJA Tracking
 
-For the Tax Cuts and Jobs Act specifically, we now have seven years of data. Real (inflation-adjusted) revenue for 2018 through 2024—excluding the anomalous 2022 pandemic spike—came in within 0.5% of CBO's 2018 projections {cite}`crfb2024tcja`.
+For the Tax Cuts and Jobs Act specifically, we now have seven years of data. Real (inflation-adjusted) revenue for 2018 through 2024—excluding the anomalous 2022 surge, driven by capital-gains realizations and inflation rather than the tax law—came in within 0.5% of CBO's 2018 projections [@crfb2024tcja].
 
 That's remarkably accurate for a major tax overhaul. The supply-side claims that tax cuts would pay for themselves proved false. The microsimulation estimates proved roughly correct.
 
@@ -103,13 +103,13 @@ The logic is compelling. Markets aggregate dispersed information. Participants h
 
 How do prediction markets compare to official forecasts?
 
-**For macroeconomic variables**, an NBER study found that prediction markets were "weakly more accurate than survey forecasts" across GDP, inflation, and employment {cite}`wolfers2012prediction`. The advantage was modest but consistent.
+**For macroeconomic variables**, an NBER study found that prediction markets were "weakly more accurate than survey forecasts" across GDP, inflation, and employment [@wolfers2012prediction]. The advantage was modest but consistent.
 
-**For elections**, the evidence is striking. In the 2024 presidential race, polls showed a coin flip. Polymarket had Trump at 58% the Monday before Election Day—a prediction that proved far more accurate {cite}`polymarket2024election`. Academic studies found prediction markets outperformed FiveThirtyEight's model in 2018 and 2020 {cite}`crane2020prediction`.
+**For elections**, the evidence is striking. In the 2024 presidential race, polls showed a coin flip. Polymarket had Trump at 58% the Monday before Election Day—a prediction that proved far more accurate [@polymarket2024election]. Academic studies found prediction markets outperformed FiveThirtyEight's model in 2018 and 2020 [@crane2020prediction].
 
-**For Fed decisions**, Good Judgment's "superforecasters"—individuals identified through forecasting tournaments as exceptionally calibrated—beat financial futures markets by 30% in 2024-2025 {cite}`goodjudgment2024`.
+**For Fed decisions**, Good Judgment's "superforecasters"—individuals identified through forecasting tournaments as exceptionally calibrated—beat financial futures markets by 30% in 2024-2025 [@goodjudgment2024].
 
-Philip Tetlock's research revealed the key insight: most experts forecast little better than chance {cite}`tetlock2005expert`. But a small subset—about 2% of participants in the subsequent Good Judgment Project—consistently outperform. These superforecasters share traits: they update frequently, think probabilistically, and avoid ideological commitment to specific predictions {cite}`tetlock2015superforecasting`.
+Philip Tetlock's research revealed the key insight: most experts forecast little better than chance [@tetlock2005expert]. But a small subset—about 2% of participants in the subsequent Good Judgment Project—consistently outperform. These superforecasters share traits: they update frequently, think probabilistically, and avoid ideological commitment to specific predictions [@tetlock2015superforecasting].
 
 What does this mean for microsimulation?
 
@@ -125,7 +125,7 @@ Third, it points toward synthesis. The best forecasts might combine simulation-b
 
 Before we can assess whether models produce accurate outputs, we need to ask whether their inputs are accurate. The answer is troubling.
 
-Bruce Meyer, an economist at the University of Chicago, has spent two decades documenting what he calls a crisis in household survey data {cite}`meyer2015underreporting`. The problem is straightforward: people don't accurately report their income and benefits to survey takers. And the underreporting isn't random—it's systematically biased in ways that distort policy analysis.
+Bruce Meyer, an economist at the University of Chicago, has spent two decades documenting what he calls a crisis in household survey data [@meyer2015underreporting]. The problem is straightforward: people don't accurately report their income and benefits to survey takers. And the underreporting isn't random—it's systematically biased in ways that distort policy analysis.
 
 The numbers are stark. When Meyer and colleagues linked survey responses to administrative records, they found that roughly 40-50% of SNAP recipients didn't report receiving benefits in the Current Population Survey. Over 60% of Temporary Assistance for Needy Families (TANF) and General Assistance went unreported. About a third of housing assistance recipients didn't mention it. Even Social Security—arguably the simplest transfer to remember, since it arrives monthly—was underreported by roughly 10% of recipients.
 
@@ -135,7 +135,7 @@ Consider what happens when a microsimulation model tries to estimate the poverty
 
 The underreporting has gotten worse over time. Survey response rates have declined steadily since the 1990s. The people who don't respond aren't random—they're disproportionately low-income, young, and mobile. The Census Bureau fills in missing data through imputation—statistical inference about what non-responders would have said. But imputed values carry their own biases, and as the imputed share grows, surveys increasingly reflect the models used to fill gaps rather than actual household circumstances.
 
-The problem runs in both directions. Seniors systematically underreport retirement income. A Census Bureau study linking CPS responses to IRS and Social Security Administration records found that median income for those 65 and older was 30% higher in administrative data than in survey reports {cite}`census2017retirement`. The result: CPS-based poverty rates for seniors—9.1%—were 2.2 percentage points higher than rates calculated from validated administrative records, which showed 6.9%. Senior poverty is real, but the headline survey numbers overstate it.
+The problem runs in both directions. Seniors systematically underreport retirement income. A Census Bureau study linking CPS responses to IRS and Social Security Administration records found that median income for those 65 and older was 30% higher in administrative data than in survey reports [@census2017retirement]. The result: CPS-based poverty rates for seniors—9.1%—were 2.2 percentage points higher than rates calculated from validated administrative records, which showed 6.9%. Senior poverty is real, but the headline survey numbers overstate it.
 
 High incomes are top-coded in public-use data—values above a threshold are replaced with that threshold to protect confidentiality. This compresses the income distribution at the top, making policies that affect high earners harder to model accurately. The CPS top-codes individual earnings at around $1.1 million, meaning a household earning $2 million looks identical to one earning $1.1 million.
 
@@ -147,7 +147,7 @@ The honest assessment: microsimulation models are only as good as their data, an
 
 ## TAXSIM: The Academic Benchmark
 
-TAXSIM, the NBER tax calculator introduced in Chapter 2, offers a useful validation benchmark. Because Feenberg maintained it for over four decades and over a thousand published papers cite it {cite}`feenberg1993taxsim`, widespread use created an informal validation network: if TAXSIM produced results that conflicted with a researcher's expectations, someone would investigate and report bugs. The model improved through collective scrutiny.
+TAXSIM, the NBER tax calculator introduced in Chapter 2, offers a useful validation benchmark. Because Feenberg maintained it for over four decades and over a thousand published papers cite it [@feenberg1993taxsim], widespread use created an informal validation network: if TAXSIM produced results that conflicted with a researcher's expectations, someone would investigate and report bugs. The model improved through collective scrutiny.
 
 TAXSIM's accuracy for its core function—calculating federal income tax for a given set of inputs—is high. The rules are deterministic and well-documented. Where discrepancies arise, they typically involve edge cases in state tax codes or interactions with credits that have complex eligibility rules.
 
@@ -159,15 +159,15 @@ But TAXSIM covers taxes only—not benefits. It doesn't simulate SNAP, Medicaid,
 
 If microsimulation models are accurate, they should agree with each other. They often don't.
 
-During the 2017 Tax Cuts and Jobs Act debate, four major institutions produced revenue estimates. JCT's static score: $1.46 trillion in revenue loss over ten years. Penn Wharton's dynamic estimate: $1.8 to $2.2 trillion. The Tax Foundation's dynamic model: roughly $1.0 trillion, reflecting their more optimistic assumptions about growth effects. TPC produced distributional analysis broadly consistent with JCT on revenue.
+During the 2017 Tax Cuts and Jobs Act debate, four major institutions produced revenue estimates. JCT's static score: $1.46 trillion in revenue loss over ten years. Penn Wharton's dynamic estimate: $1.8 to $2.2 trillion. The Tax Foundation's dynamic model: roughly $0.45 trillion ($448 billion), reflecting their more optimistic assumptions about growth effects. TPC produced distributional analysis broadly consistent with JCT on revenue.
 
-The range—from $1.0 trillion to $2.2 trillion—was enormous. All four institutions employed competent economists. All used microsimulation. Why did they disagree by a factor of two?
+The range—from about $0.45 trillion to $2.2 trillion—was enormous. All four institutions employed competent economists. All used microsimulation. Why did they disagree by nearly a factor of five?
 
 Three sources of divergence explain most cross-model disagreements:
 
 **Data differences.** JCT uses confidential IRS tax return data—the most comprehensive source available. TPC uses public-use IRS data, which is less granular. The Tax Foundation and PWBM use different combinations of public data sources. Different data produces different baseline distributions, which produces different reform estimates.
 
-**Behavioral assumptions.** Static models assume no behavioral response. Dynamic models assume some combination of labor supply changes, saving changes, and investment shifts. The Tax Foundation's model assumed larger growth effects from corporate tax cuts; PWBM assumed smaller ones. These assumptions drove the gap between $1.0 trillion and $2.2 trillion more than any other factor.
+**Behavioral assumptions.** Static models assume no behavioral response. Dynamic models assume some combination of labor supply changes, saving changes, and investment shifts. The Tax Foundation's model assumed larger growth effects from corporate tax cuts; PWBM assumed smaller ones. These assumptions drove the gap between $0.45 trillion and $2.2 trillion more than any other factor.
 
 **Modeling choices.** How do you handle income shifting between corporate and individual returns? How do you project economic growth? How do you treat provisions that expire? Each choice is defensible; together they compound into meaningful differences.
 
@@ -183,7 +183,7 @@ The failures are instructive.
 
 **Behavioral responses**: Static models assume people don't change behavior in response to policy. But tax changes trigger income-shifting, benefit changes affect labor supply, and coverage mandates alter insurance choices. Models that assume static behavior systematically miss these effects. The TCJA led to a surge in pass-through business income as high earners restructured to take advantage of the new 20% deduction—a behavioral shift that no static model predicted.
 
-**Take-up rates**: Models often assume people claim benefits they're eligible for. In reality, take-up varies widely. The IRS estimates EITC take-up at roughly 78-80%—relatively high for a tax credit, but still meaning one in five eligible families miss it {cite}`irs2024eitc`. SNAP take-up runs around 82% nationally but varies dramatically by state {cite}`usda2024snap`. SSI take-up for eligible elderly individuals may be as low as 50-60%. Getting take-up wrong cascades through the entire analysis: overestimate SNAP participation and you'll overestimate both program costs and poverty reduction.
+**Take-up rates**: Models often assume people claim benefits they're eligible for. In reality, take-up varies widely. The IRS estimates EITC take-up at roughly 78-80%—relatively high for a tax credit, but still meaning one in five eligible families miss it [@irs2024eitc]. SNAP take-up runs around 82% nationally but varies dramatically by state [@usda2024snap]. SSI take-up for eligible elderly individuals may be as low as 50-60%. Getting take-up wrong cascades through the entire analysis: overestimate SNAP participation and you'll overestimate both program costs and poverty reduction.
 
 **Data limitations**: As Meyer's work shows, the surveys underlying most models systematically misrepresent who receives benefits, how much income households have, and what their circumstances look like. Administrative records help, but bring their own issues: coverage gaps (non-filers don't appear in tax data), timeliness (there's a two-year lag before IRS data becomes available for research), and linkage challenges (matching records across agencies without common identifiers).
 
@@ -193,7 +193,7 @@ The failures are instructive.
 
 ## The AHCA Counterfactual
 
-In 2017, CBO estimated that repealing the ACA under the American Health Care Act would cause 23 million people to lose coverage over a decade {cite}`cbo2017ahca`.
+In 2017, CBO estimated that repealing the ACA under the American Health Care Act would cause 23 million people to lose coverage over a decade [@cbo2017ahca].
 
 We never got to test this prediction—the bill failed. But the analysis forced a conversation that wouldn't have happened otherwise. *Which* 23 million? Low-income? Rural? Elderly? The specificity of microsimulation, even when imperfect, structured the debate.
 
@@ -221,7 +221,7 @@ The accuracy question has a flip side: compared to what?
 
 Before microsimulation, policy analysis relied on:
 - **Rules of thumb**: "A 10% tax cut increases revenue through growth." (The TCJA data proved this false.)
-- **Expert judgment**: "Trust me, this will work." (Philip Tetlock's research showed most experts forecast little better than chance {cite}`tetlock2005expert`.)
+- **Expert judgment**: "Trust me, this will work." (Philip Tetlock's research showed most experts forecast little better than chance [@tetlock2005expert].)
 - **Partisan assertion**: "This reform will help working families." (Vague and unverifiable.)
 - **Back-of-the-envelope calculations**: Quick estimates based on average tax rates applied to aggregate income, missing the distributional complexity that determines who actually benefits.
 
@@ -229,7 +229,7 @@ Microsimulation forces specificity. Which families? How much help? Through what 
 
 Consider the 2021 expansion of the Child Tax Credit. Without microsimulation, the debate would have been "does a bigger credit help families?" With microsimulation, the debate became precise: the expansion would cost approximately $105 billion per year, reduce child poverty by roughly 40%, and deliver the largest benefits to the lowest-income families who previously received zero credit because they owed no federal income tax. These specific claims could be checked, debated, and—after the expansion was implemented—compared to actual outcomes.
 
-The Census Bureau's subsequent data showed child poverty falling from 9.7% to 5.2% in 2021—closely matching the microsimulation projections {cite}`census2022spm`. Columbia University's Center on Poverty and Social Policy tracked the monthly declines in real time as expanded CTC payments went out, confirming the projected magnitude {cite}`parolin2021monthly`. When the expansion expired and the credit reverted to its previous structure, child poverty rebounded. The models had been right about both the effect and its reversal.
+The Census Bureau's subsequent data showed child poverty falling from 9.7% to 5.2% in 2021—closely matching the microsimulation projections [@census2022spm]. Columbia University's Center on Poverty and Social Policy tracked the monthly declines in real time as expanded CTC payments went out, confirming the projected magnitude [@parolin2021monthly]. When the expansion expired and the credit reverted to its previous structure, child poverty rebounded. The models had been right about both the effect and its reversal.
 
 This doesn't mean the models were perfect. They didn't fully predict take-up patterns for non-filers, or the macroeconomic interactions of a credit expansion during a pandemic recovery. But they got the direction, magnitude, and distributional shape approximately right—which is more than any alternative method delivered.
 
@@ -237,7 +237,7 @@ This doesn't mean the models were perfect. They didn't fully predict take-up pat
 
 ## The Practitioner's Creed
 
-George Box's famous line—"all models are wrong, but some are useful"—isn't cynicism {cite}`box1976science`. It's epistemic hygiene. The modeler who believes the model captures full truth is more dangerous than the modeler who knows its limits.
+George Box's famous line—"all models are wrong, but some are useful"—isn't cynicism [@box1976science]. It's epistemic hygiene. The modeler who believes the model captures full truth is more dangerous than the modeler who knows its limits.
 
 The accuracy question doesn't have a triumphant answer. The honest answer is: approximately right, sometimes wrong, better than alternatives, and always improvable.
 
@@ -257,6 +257,3 @@ That's what evidence-based policy actually looks like. Not certainty. Not faith.
 
 ## References
 
-```{bibliography}
-:filter: docname in docnames
-```

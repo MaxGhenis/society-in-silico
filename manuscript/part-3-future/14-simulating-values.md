@@ -4,7 +4,7 @@
 
 **Validation status across the book's tools**:
 - **Proven**: PolicyEngine (government-validated, million+ simulations, production system)
-- **Preliminary**: Cosilico and HiveSight (prototypes with some validation, not production-ready)
+- **Preliminary**: HiveSight and the Brier Institute's forecasting agents (prototypes with some validation, not production-ready)
 - **Theoretical**: Democrasim and value forecasting (experimental models with limited validation)
 
 ---
@@ -25,7 +25,7 @@ As AI systems become more capable, a question looms: What should they be trying 
 
 The naive answer—"do what humans want"—immediately fractures. Which humans? Their stated preferences or revealed preferences? What they want now or what they'd want with better information? What one culture values or what's universal?
 
-Stuart Russell, the UC Berkeley computer scientist whose textbook *Artificial Intelligence: A Modern Approach* trained a generation of AI researchers, crystallized the problem in *Human Compatible* (2019) {cite}`russell2019human`. His argument: the standard model of AI—optimize a fixed objective function—is fundamentally dangerous. An AI system that pursues a fixed goal with sufficient capability will resist being turned off (that would prevent goal achievement) and acquire resources (more resources means better goal achievement). The problem isn't malice. It's competence applied to the wrong objective.
+Stuart Russell, the UC Berkeley computer scientist whose textbook *Artificial Intelligence: A Modern Approach* trained a generation of AI researchers, crystallized the problem in *Human Compatible* (2019) [@russell2019human]. His argument: the standard model of AI—optimize a fixed objective function—is fundamentally dangerous. An AI system that pursues a fixed goal with sufficient capability will resist being turned off (that would prevent goal achievement) and acquire resources (more resources means better goal achievement). The problem isn't malice. It's competence applied to the wrong objective.
 
 Russell's proposed solution has three principles: the machine's purpose is to maximize the realization of human preferences; the machine is initially uncertain about what those preferences are; and the ultimate source of information about human preferences is human behavior. The third principle means the AI should *observe* rather than *assume*—learning preferences from how people act rather than from a fixed specification.
 
@@ -35,7 +35,7 @@ Current practical approaches to AI alignment take different positions on this te
 
 **RLHF (Reinforcement Learning from Human Feedback)** trains AI on current human preferences. Rate these outputs; the model learns what we approve of. Problem: our current preferences may be biased, inconsistent, or short-sighted. The raters are a small, unrepresentative sample—typically English-speaking knowledge workers, not the global population the AI will serve.
 
-**Constitutional AI**, developed by Anthropic, defines principles the AI should follow—be helpful, be harmless, be honest—and trains models to self-evaluate against these principles {cite}`anthropic2023constitutional`. The approach has practical advantages: it scales better than human rating, produces more consistent training signal, and can be updated by revising the principles rather than retraining from scratch. Problem: who writes the constitution? The principles reflect the values of the lab's researchers. When Anthropic's team writes "be harmless," they're encoding a specific interpretation of harm that might not match everyone's. How do you handle genuine moral disagreement—between cultures, between generations, between individuals who disagree about what "harmful" means?
+**Constitutional AI**, developed by Anthropic, defines principles the AI should follow—be helpful, be harmless, be honest—and trains models to self-evaluate against these principles [@anthropic2023constitutional]. The approach has practical advantages: it scales better than human rating, produces more consistent training signal, and can be updated by revising the principles rather than retraining from scratch. Problem: who writes the constitution? The principles reflect the values of the lab's researchers. When Anthropic's team writes "be harmless," they're encoding a specific interpretation of harm that might not match everyone's. How do you handle genuine moral disagreement—between cultures, between generations, between individuals who disagree about what "harmful" means?
 
 **Idealized values** asks what fully rational, fully informed humans would want. Problem: this is a philosophical thought experiment, not an empirical research program. No one specifies how to compute the answer.
 
@@ -63,15 +63,15 @@ This isn't about finding moral truth. It's about forecasting moral change—the 
 
 The idea is simple in concept, ambitious in execution:
 
-**Step 1: Train language models on historical data.** Use surveys from decades past—the General Social Survey back to 1972 {cite}`gss2024`, Gallup polls, the World Values Survey. Train models to understand what people believed, why, and how those beliefs connected to demographic characteristics.
+**Step 1: Train language models on historical data.** Use surveys from decades past—the General Social Survey back to 1972 [@gss2024], Gallup polls, the World Values Survey. Train models to understand what people believed, why, and how those beliefs connected to demographic characteristics.
 
 **Step 2: Test predictive accuracy.** If you train a model on data through 1996, can it predict value trajectories through 2021? This is empirically testable. Either the model predicts moral change better than baseline or it doesn't.
 
 **Step 3: If validated, project forward.** What values would humanity converge toward after extended reflection? Not a decade, but a century. Not with today's constraints, but in post-scarcity conditions.
 
-**Step 4: Use that projection as an alignment target.** Instead of aligning AI to our current, possibly confused values, align it to our projected post-reflection values.
+**Step 4: Use that projection as alignment evidence.** Instead of treating current preferences as fixed, use projected post-reflection values as one input into alignment decisions.
 
-This transforms alignment from philosophy to forecasting.
+This adds an empirical forecasting layer to alignment, which otherwise remains philosophical and governance-laden.
 
 ---
 
@@ -89,9 +89,9 @@ A post-scarcity, post-reflection humanity might look like:
 | Spiritual/transcendent focus | 15% |
 | Other frameworks | 10% |
 
-The alignment target isn't picking one. It's the *distribution*.
+The alignment input isn't picking one. It's the *distribution*.
 
-An AI aligned to this distribution would:
+A system that treated this distribution seriously would:
 - Take actions that score well across multiple value systems
 - Exercise caution when value systems disagree
 - Avoid moves that catastrophically violate any significant fraction of values
@@ -209,7 +209,7 @@ Every tool in this book contributes to value forecasting:
 
 **Squigglepy** provides uncertainty quantification. Value forecasts aren't point estimates but probability distributions with confidence intervals.
 
-**Cosilico** provides the integration layer. AI agents that can reason about policies, using deterministic tools, now have a target: not "what do users currently want?" but "what would reflective humanity value?"
+**The Brier Institute** ties these together—it's the home, now, for PolicyEngine's microsimulation and for calibration-native forecasting alike, the whole modeling-and-prediction side of the work. Value forecasting is, at bottom, a forecasting problem: a probability distribution over what people will come to value, scored against what actually happens. Brier-1, a calibration-native prediction agent, makes those forecasts; the open Brier Almanac scores them continuously against outcomes, so the track record is public and improvable. Where **Axiom** supplies the *rules*—what a given set of values would imply, computed deterministically—Brier supplies the *models and forecasts*: how those rules play out across a population, and how the values themselves are likely to move, with calibrated uncertainty. Legal confidence on one side, household-and-future uncertainty on the other, over a shared substrate of calibrated synthetic populations.
 
 The full stack:
 
@@ -304,7 +304,7 @@ This uncertainty is one more reason for humility. Value forecasting provides evi
 
 **"This is moral relativism."**
 
-Not quite. Value forecasting predicts what values humanity would hold after reflection—not that all values are equally valid. It's empirical, not nihilistic. If the forecast is that post-reflection humanity would reject torture, that's not relativism; that's prediction.
+Not quite. Value forecasting tries to predict what values humanity would hold after reflection—not that all values are equally valid. It's empirical, not nihilistic. If the forecast is that post-reflection humanity would reject torture, that's not relativism; that's prediction.
 
 **"Values depend on contingent factors. They're not predictable."**
 
@@ -375,17 +375,17 @@ The simulation stack doesn't answer these questions definitively. It constructs 
 
 The deepest version of this vision:
 
-AI systems aligned not to our current preferences—confused, biased, evolving—but to our projected post-reflection values. Not to what we happen to want this moment, but to what we would endorse after centuries of collective reasoning.
+AI systems informed not only by our current preferences—confused, biased, evolving—but by evidence about how values might change under reflection. Not just what we happen to want this moment, but what we might endorse after extended collective reasoning.
 
 This is humility, not arrogance. It says: we don't know the right values with certainty. We know our current values are provisional. The best we can do is forecast, quantify uncertainty, and update as we learn.
 
 The 2024 experiments provided both encouragement and caution.
 
-**Encouragement**: LLMs captured value dynamics that simple baselines missed. A 2.2× improvement over extrapolation suggests genuine pattern recognition. Calibration techniques from meteorology (EMOS) successfully corrected overconfidence. The infrastructure works.
+**Encouragement**: LLMs captured value dynamics that simple baselines missed. A 2.2× improvement over extrapolation suggests genuine pattern recognition. Calibration techniques from meteorology (EMOS) corrected overconfidence in this small experiment. The basic forecasting workflow can run.
 
 **Caution**: The HOMOSEX reversal humbled every forecaster. Value change contains irreducible surprises. Any system claiming to know humanity's future values with confidence is selling certainty it doesn't have.
 
-The research program is no longer "just beginning"—the first experiments are complete. Historical validation showed predictive power. Long-term forecasts with calibrated uncertainty now exist. But the work has revealed how much remains unknown.
+The research program is no longer "just beginning"—the first experiments are complete. Historical validation showed predictive power in a small test. Exploratory long-term forecasts with calibrated uncertainty now exist. But the work has revealed how much remains unknown.
 
 **What systematic validation would require:**
 
@@ -407,7 +407,7 @@ What would humanity want after reflection?
 
 We can't know with certainty. But we might be able to forecast with calibrated uncertainty.
 
-And that forecast—representing our best probabilistic guess about considered human values—might be the most responsible alignment target we can specify.
+And that forecast—representing a probabilistic guess about considered human values—might be useful alignment evidence, not an authority over alignment.
 
 Not perfect. Not final. But grounded in evidence, transparent in method, and humble about uncertainty.
 
@@ -425,7 +425,3 @@ That's the aspiration. The work continues.
 ---
 
 ## References
-
-```{bibliography}
-:filter: docname in docnames
-```

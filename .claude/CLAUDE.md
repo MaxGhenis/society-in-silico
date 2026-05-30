@@ -2,7 +2,7 @@
 
 ## Book Overview
 
-"Society in Silico" is a narrative non-fiction book about microsimulation, economic modeling, and policy technology. The author is Max Ghenis, founder of PolicyEngine and contributor to Cosilico.
+"Society in Silico" is a narrative non-fiction book about microsimulation, economic modeling, and policy technology. The author is Max Ghenis, founder of PolicyEngine and of the Axiom Foundation and Axiom Labs.
 
 ## Voice & Style
 
@@ -73,24 +73,24 @@
 When drafting chapters:
 1. Start with a hook—a story, question, or surprising fact
 2. Ground abstractions in concrete examples
-3. Include "try it yourself" moments pointing to PolicyEngine
-4. End chapters with forward momentum
+3. Where a number illustrates a point, prefer one PolicyEngine can reproduce
+4. End chapters with forward momentum (without salesy "try it yourself" callouts)
 
 ## Citations & Bibliography
 
-This project uses **MyST markdown** with BibTeX. The config is in `myst.yml`.
+This project uses **Quarto** with BibTeX. The build config is in `_quarto.yml`; the bibliography is `references.bib`.
 
 ### Citation Format
 ```markdown
-{cite}`key`           → inline citation
-{cite:p}`key`         → parenthetical (Author, Year)
-{cite:t}`key`         → textual: Author (Year)
+[@key]            → citation, renders as (Author, Year)
+[@key, p. 12]     → with a page/locator
+@key              → in-text: Author (Year)
 ```
 
 ### Adding Sources
-1. Add BibTeX entry to `references.bib`
-2. Use `{cite}`key`` in markdown
-3. MyST auto-generates bibliography
+1. Add a BibTeX entry to `references.bib`
+2. Cite with `[@key]` in markdown
+3. Quarto auto-generates the bibliography at build time
 
 ### Example
 ```bibtex
@@ -104,7 +104,7 @@ This project uses **MyST markdown** with BibTeX. The config is in `myst.yml`.
 ```
 ```markdown
 # In chapter
-CBO's accuracy improved 3x from 1989-2001 to 2002-2019 {cite}`cbo2024deficit`.
+CBO's accuracy improved 3x from 1989-2001 to 2002-2019 [@cbo2024deficit].
 ```
 
 ### What Requires Citations
@@ -153,4 +153,4 @@ Use [[wiki-links]] to connect to research notes.
 
 ## Current Status
 
-**Phase**: Early outlining and research gathering
+**Phase**: Full draft complete (~60,000 words across 15 chapters in 3 parts), in revision. Build is Quarto (`_quarto.yml` is the canonical TOC); citations are Pandoc `[@key]`.

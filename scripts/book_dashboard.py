@@ -49,6 +49,7 @@ def count_words(text: str) -> int:
     text = re.sub(r"`[^`]+`", "", text)
     # Remove citations
     text = re.sub(r"\{cite\}`[^`]+`", "", text)
+    text = re.sub(r"\[@[^\]]+\]", "", text)
     # Count words
     return len(text.split())
 
@@ -59,8 +60,11 @@ def extract_wiki_links(text: str) -> list[str]:
 
 
 def extract_citations(text: str) -> list[str]:
-    """Extract {cite}`key` citations from text."""
-    return re.findall(r"\{cite\}`([^`]+)`", text)
+    """Extract citation keys from text."""
+    keys = re.findall(r"\{cite\}`([^`]+)`", text)
+    for citation_group in re.findall(r"\[([^\]]*@[\w:-][^\]]*)\]", text):
+        keys.extend(re.findall(r"@([\w:-]+)", citation_group))
+    return keys
 
 
 def get_bibtex_keys() -> set[str]:
@@ -82,7 +86,7 @@ def analyze_chapter(filepath: Path) -> dict:
         "words": count_words(content),
         "wiki_links": extract_wiki_links(content),
         "citations": extract_citations(content),
-        "has_references": "```{bibliography}" in content,
+        "has_references": "## References" in content,
     }
 
 
@@ -183,11 +187,9 @@ def generate_dashboard_data() -> dict:
     """Generate all data for the dashboard."""
     # Analyze chapters
     chapters = []
-    for part_dir in MANUSCRIPT_DIR.iterdir():
-        if part_dir.is_dir():
-            for md_file in sorted(part_dir.glob("*.md")):
-                if not md_file.name.startswith("00-"):  # Skip outline
-                    chapters.append(analyze_chapter(md_file))
+    for md_file in sorted(MANUSCRIPT_DIR.rglob("*.md")):
+        if md_file.name != "00-outline.md":
+            chapters.append(analyze_chapter(md_file))
 
     # Analyze research notes
     notes = analyze_research_notes()
