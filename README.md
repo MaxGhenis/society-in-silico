@@ -1,66 +1,74 @@
 # Society in Silico
 
-A book about economic simulation, the journey from academic models to policy tools, and what it means in the age of AI.
+A book about economic simulation, the journey from academic models to open policy
+infrastructure, and what the agent era changes. By Max Ghenis.
 
 ## About
 
-This book traces the history of microsimulation from Guy Orcutt's 1957 vision through to modern tools like PolicyEngine and the Axiom Foundation. It's written to be accessible—not a textbook, but a narrative that connects:
+The book traces microsimulation from Guy Orcutt's 1957 vision through the
+institutional era (CBO, JCT, IFS), the open-source turn (OpenFisca,
+Tax-Calculator, PolicyEngine), and the agent turn — AI systems encoding law as
+verified code at scale — to the prediction pole and the speculative horizon. Its
+discipline, stated in chapter 3 and enforced throughout: a simulation is
+admissible only where its verification chain terminates in ground truth.
 
-- The personal journey of building simulation tools
-- The intellectual history of modeling society computationally
-- How microsimulation bridges academia and policy
-- What AI means for the future of policy analysis
+Seventeen chapters in five parts:
+
+1. **The closed stack** — origins, the tax model wars, the accuracy question,
+   and the personal story that started it
+2. **The open engine** — the PolicyEngine years
+3. **The agent turn** — encoding the law, the verification problem,
+   microsimulation anywhere, and the decomposition
+4. **The prediction pole** — the uncertainty gap and the scoreboard; simulating
+   opinion
+5. **The horizon** — simulating democracy, simulating values, and the return to
+   the fork in the road
 
 ## Structure
 
 ```
-website/              # Read-online site, driven by _quarto.yml
-manuscript/           # The book itself
+_quarto.yml           # Canonical TOC + build config
+index.md              # Landing page
+manuscript/
   front-matter/       # Preface, introduction
-  part-1-origins/     # History of microsimulation
-  part-2-building/    # PolicyEngine & Axiom journey
-  part-3-future/      # AI age implications
-_quarto.yml           # Canonical TOC + primary Quarto build config
-research/             # Notes, references, research
-  people/             # Profiles of key figures
-  concepts/           # Linked concept notes
-  timeline/           # Historical events
-  references/         # Source materials
-assets/               # Images, diagrams
-build/                # Compatibility wrappers around the root Quarto project
+  part-1-closed-stack/
+  part-2-open-engine/
+  part-3-agent-turn/
+  part-4-prediction/
+  part-5-horizon/
+references.bib        # BibTeX bibliography (Pandoc [@key] citations)
+reviews/              # Dated review rounds; 2026-07-10T1227/ holds the
+                      #   from-scratch design, fact sheet, and style notes
+research/             # Concept notes, people, timeline (Obsidian wiki-links)
+feedback/             # Earlier reader-persona reviews
+website/              # Read-online site (Astro), driven by _quarto.yml
+scripts/, src/        # Analysis helpers and the audiobook/concept pipeline
+```
+
+`[NEEDS CITATION: …]` and `[VERIFY: …]` markers in the manuscript are
+deliberate — they mark claims awaiting source resolution. Resolve them; don't
+delete them.
+
+## Building
+
+```bash
+make serve   # Local Quarto preview
+make build   # Static HTML book
+make pdf     # PDF
+make epub    # EPUB
+make docx    # DOCX
 ```
 
 ## Workflow
 
-This repo is designed to work with:
-- **Obsidian** for conceptual mapping and research organization
-- **AI coding assistants** for drafting, editing, and review passes
-- **Quarto** as the canonical table of contents and primary build system
-- **Compatibility targets** in `build/`, also derived from `_quarto.yml`
-
-### Opening in Obsidian
-
-Open this folder as an Obsidian vault. The `research/` folder uses wiki-style links for connecting concepts.
-
-### Building
-
-```bash
-make serve             # Local Quarto preview
-make build             # Static HTML book build
-make pdf               # PDF build
-make epub              # EPUB build
-make docx              # DOCX build
-
-cd build && make pdf   # Same Quarto project, old subdir workflow
-```
-
-The source of truth for chapter order is `_quarto.yml`. The website reader and
-the compatibility build targets both derive their TOC from that file.
-
-## Author
-
-Max Ghenis
+- **Quarto** is the build system; `_quarto.yml` is the single source of truth
+  for chapter order.
+- **Obsidian**: open the repo as a vault for the `research/` wiki-links.
+- **AI assistants**: read `.claude/CLAUDE.md` first — it carries the voice
+  rules, citation standards, and the retired-names list; the canonical fact
+  sheet for claims about the author's projects is
+  `reviews/2026-07-10T1227/rewrite-facts.md`.
 
 ## License
 
-Content is draft/unpublished. All rights reserved.
+Text © Max Ghenis, licensed CC BY-NC 4.0 (see LICENSE).
