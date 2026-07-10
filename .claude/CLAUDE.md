@@ -2,7 +2,13 @@
 
 ## Book Overview
 
-"Society in Silico" is a narrative non-fiction book about microsimulation, economic modeling, and policy technology. The author is Max Ghenis, founder of PolicyEngine and of the Axiom Foundation and Axiom Labs.
+"Society in Silico" is a narrative non-fiction book about microsimulation, economic modeling, and policy technology. The author is Max Ghenis, founder of PolicyEngine, CEO of the Axiom Foundation (the determinism pole: verified rules-as-code), and founder of the Thesis Institute (the prediction pole: graded forecasts of government metrics).
+
+### Naming (critical — retired names must never appear as current)
+Retired: **Cosilico** (as the old infra org), **Brier Institute / Brier-1 / Brier Almanac**, **Farness**, **Atlas / RAC / AutoRAC** (now: the corpus / RuleSpec / axiom-encode), **Axiom Labs**, **microplex** (the data layer is **populace**, full stop). The canonical fact sheet for all org/project claims is `reviews/2026-07-10T1227/rewrite-facts.md` — read it before writing anything about the author's projects. Absolute rule from that sheet: the Thesis Institute has zero resolved, witness-verified forecasts as of July 2026 — never claim a forecast track record.
+
+### Headings
+Sentence case for ALL headings (only first word and proper nouns capitalized).
 
 ## Voice & Style
 
@@ -153,4 +159,9 @@ Use [[wiki-links]] to connect to research notes.
 
 ## Current Status
 
-**Phase**: Full draft complete (~60,000 words across 15 chapters in 3 parts), in revision. Build is Quarto (`_quarto.yml` is the canonical TOC); citations are Pandoc `[@key]`.
+**Phase**: From-scratch rewrite (July 2026) — 17 chapters in 5 parts (~75–85k words),
+restructured per `reviews/2026-07-10T1227/from-scratch-outline.md` around the agent
+turn (encoding, verification, microsimulation anywhere, the decomposition) and the
+prediction pole. Build is Quarto (`_quarto.yml` is the canonical TOC); citations are
+Pandoc `[@key]`. `[NEEDS CITATION: …]` and `[VERIFY: …]` markers in the manuscript
+are deliberate — resolve, don't delete.

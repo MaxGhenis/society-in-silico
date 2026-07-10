@@ -10,27 +10,33 @@ book:
     - index.md
     - manuscript/front-matter/00-preface.md
     - manuscript/front-matter/01-introduction.md
-    - part: "Part I: Origins"
+    - part: "Part I: The closed stack"
       chapters:
-        - manuscript/part-1-origins/01-birth-of-microsimulation.md
-        - manuscript/part-1-origins/02-tax-model-wars.md
-        - manuscript/part-1-origins/03-open-source-revolution.md
-        - manuscript/part-1-origins/04-the-accuracy-question.md
-    - part: "Part II: Building"
+        - manuscript/part-1-closed-stack/01-birth-of-microsimulation.md
+        - manuscript/part-1-closed-stack/02-tax-model-wars.md
+        - manuscript/part-1-closed-stack/03-the-accuracy-question.md
+        - manuscript/part-1-closed-stack/04-a-wall-of-frustration.md
+    - part: "Part II: The open engine"
       chapters:
-        - manuscript/part-2-building/05-policyengine-proof-of-concept.md
-        - manuscript/part-2-building/06-three-ingredients-microsimulation.md
-        - manuscript/part-2-building/07-the-household-view.md
-        - manuscript/part-2-building/08-the-society-view.md
-        - manuscript/part-2-building/09-ai-enters-the-picture.md
-        - manuscript/part-2-building/10-cosilico-infrastructure-for-the-future.md
-    - part: "Part III: Research Directions"
+        - manuscript/part-2-open-engine/05-proof-of-concept.md
+        - manuscript/part-2-open-engine/06-the-household-and-the-society.md
+        - manuscript/part-2-open-engine/07-three-ingredients.md
+    - part: "Part III: The agent turn"
       chapters:
-        - manuscript/part-3-future/11-the-uncertainty-gap.md
-        - manuscript/part-3-future/12-simulating-opinion.md
-        - manuscript/part-3-future/13-simulating-democracy.md
-        - manuscript/part-3-future/14-simulating-values.md
-        - manuscript/part-3-future/15-society-in-silico.md
+        - manuscript/part-3-agent-turn/08-the-ai-cant-do-your-taxes.md
+        - manuscript/part-3-agent-turn/09-encoding-the-law.md
+        - manuscript/part-3-agent-turn/10-the-verification-problem.md
+        - manuscript/part-3-agent-turn/11-microsimulation-anywhere.md
+        - manuscript/part-3-agent-turn/12-the-decomposition.md
+    - part: "Part IV: The prediction pole"
+      chapters:
+        - manuscript/part-4-prediction/13-the-uncertainty-gap.md
+        - manuscript/part-4-prediction/14-simulating-opinion.md
+    - part: "Part V: The horizon"
+      chapters:
+        - manuscript/part-5-horizon/15-simulating-democracy.md
+        - manuscript/part-5-horizon/16-simulating-values.md
+        - manuscript/part-5-horizon/17-society-in-silico.md
 
 bibliography: references.bib
 lang: en-US

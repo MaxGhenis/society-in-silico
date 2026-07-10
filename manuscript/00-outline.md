@@ -1,214 +1,44 @@
-# Society in Silico - Chapter Outline
+# Society in Silico — outline (July 2026 structure)
 
-## Front Matter
+Canonical structure lives in `_quarto.yml`; design rationale and per-chapter specs in
+`reviews/2026-07-10T1227/from-scratch-outline.md`; fact discipline in
+`reviews/2026-07-10T1227/rewrite-facts.md`.
 
-### Preface
-- Why I wrote this book
-- Who it's for
-- How to read it (technical vs. narrative paths)
+## Front matter
+- Preface — why, for whom, written mid-build (the moving aspiration/accomplishment
+  boundary is part of the story); Nikhil/No 10 disclosure at first mention
+- Introduction: The model and the world — Rehoboam fork; the AI can't do your taxes
+  (TaxCalcBench → PolicyBench); the four questions (law / people / prediction /
+  values) as the book's map
 
-### Introduction: The Rehoboam Problem
-- Westworld hook: Serac's deterministic prediction machine
-- The recognition: I've been building something similar
-- The key difference: open, democratic, uncertainty-aware
-- The question: Can simulation help society realize its goals?
-- Overview of the book's arc
+## Part I: The closed stack
+1. The birth of microsimulation — Orcutt; ends on per-unit verifiability
+2. The tax model wars — institutions + open-source history; §6103 analytical moat
+3. The accuracy question — validation levels; random walk; survey-data crisis;
+   ends stating the admission rule
+4. A wall of frustration — the personal origin; Alex's cliff; UBI Center; "So we did."
 
----
+## Part II: The open engine
+5. Proof of concept — PolicyEngine origin; ends on rules/data/prediction separability
+6. The household and the society — cliffs and marginal rates; distributional analysis;
+   neutrality; the household calc as the atomic unit of verification
+7. The three ingredients — rules (three architectures), data (populace), dynamics
+   (the determinism/prediction seam)
 
-## Part I: Origins
-*How did we get here? The intellectual tradition behind microsimulation.*
+## Part III: The agent turn
+8. The AI can't do your taxes — tools not training; PolicyBench; benchmark-integrity arc
+9. Encoding the law — Axiom field report; money atoms; all public policy; commons + operators
+10. The verification problem — oracles; parity; dispositions; ratchets; bugs filed upstream
+11. Microsimulation anywhere — the SOUTHMOD week; findings ledgers; the open referee
+12. The decomposition — Axiom states, Thesis predicts; populace substrate; the pattern
+    ("agents can [verb] the world's [corpus]") and its gating test
 
-### Chapter 1: The Birth of Microsimulation
-**Research:** [[guy-orcutt]], [[microsimulation-definition]]
+## Part IV: The prediction pole
+13. The uncertainty gap, and the scoreboard — Thesis; intervals graded by reality;
+    zero resolved yet, said plainly
+14. Simulating opinion — cells, not personas; the registered benchmark, ties and all
 
-- Guy Orcutt's 1957 vision: simulate the economy household by household
-- The audacity: 50 million households when computers filled rooms
-- Why macroeconomic models weren't enough
-- The gap between vision and capability
-- Orcutt's legacy: DYNASIM, CORSIM, and descendants
-
-### Chapter 2: The Tax Model Wars
-**Research:** [[taxsim]], [[ifs-taxben]], [[tax-calculator]]
-
-- How governments learned to simulate taxes
-- The IFS and UK budget analysis tradition
-- TAXSIM and US academic tax modeling
-- The problem: these tools stayed inside institutions
-- CBO, JCT, and the asymmetry of policy analysis
-
-### Chapter 3: The Open Source Revolution
-**Research:** [[openfisca]], [[rules-as-code]]
-
-- OpenFisca: France opens its tax-benefit model
-- Rules as code movement: legislation as software
-- The democratization premise: if citizens can run the models, power shifts
-- Limitations: technical barriers, data access, trust
-
-### Chapter 4: The Accuracy Question
-**Research:** [[simulation-accuracy]], validation cases
-
-- Do these models actually work?
-- The Penn Wharton validation: predicted vs. actual
-- Where microsimulation succeeds and fails
-- The honest answer: better than alternatives, not perfect
-
----
-
-## Part II: Building
-*What does it take to build open policy infrastructure?*
-
-### Chapter 5: PolicyEngine - Proof of Concept
-**Research:** [[policyengine]], [[ubi-center]]
-
-- Origin story: UBI analysis needed cross-country tools
-- The decision to build, not just use
-- Technical choices: OpenFisca fork, web interface, API
-- What "open" really means: code, data, methodology
-
-### Chapter 6: The Three Ingredients of Microsimulation
-**Research:** [[microsimulation-definition]], [[enhanced-cps]], [[tax-data]]
-
-- Rules encoding: GitHub-native vs. spreadsheet-style (EUROMOD/UKMOD)
-- Microdata construction: statistical matching, calibration, imputation, projection
-- Behavioral dynamics: elasticities, structural models, responses to policy
-- The integration challenge: making all three work together
-- Why this framework doesn't appear explicitly in the literature
-
-### Chapter 7: The Household View
-- The calculator: "What do I owe? What do I get?"
-- Why personal relevance matters for policy understanding
-- Marginal tax rates and the complexity people actually face
-- Making the invisible visible
-
-### Chapter 8: The Society View
-- From households to populations: microsimulation at scale
-- Distributional analysis: who wins, who loses
-- Budget scoring: what does this cost?
-- The neutrality challenge: analysis without advocacy
-
-### Chapter 9: AI Enters the Picture
-**Research:** [[ai-integration-philosophy]]
-
-- How PolicyEngine uses AI: explanation, not calculation
-- The insight: "LLMs will call tools"
-- Deterministic backends for AI frontends
-- Claude explains, the engine computes
-
-### Chapter 10: Axiom Foundation and Axiom Labs - Infrastructure for the Future
-**Research:** [[cosilico]], [[axiom-foundation]], PolicyEngine future state
-
-- The next layer: agentic rule encoding
-- Why PolicyEngine will consume a shared rules layer rather than maintain its own models
-- Validation against authoritative oracles
-- Building infrastructure others can build on
-
----
-
-## Part III: Future
-*Where does this lead? The deepest questions.*
-
-### Chapter 11: The Uncertainty Gap
-**Research:** [[max-ai-portfolio]] Theme 6
-
-- The dirty secret: microsimulation gives point estimates
-- "This reform costs $50B" — but what's the confidence interval?
-- Why uncertainty quantification matters for trust
-- Partial solutions: Monte Carlo, Bayesian methods, squigglepy
-- The aspiration: uncertainty-aware policy analysis
-
-### Chapter 12: Simulating Opinion
-**Research:** [[hivesight-silicon-sampling]], diversity problem
-
-- HiveSight and silicon sampling
-- The diversity problem: temperature isn't enough
-- Microdata as the solution: structured human variation
-- Can we simulate what people think? Should we?
-
-### Chapter 13: Simulating Democracy
-**Research:** [[democrasim-architecture]]
-
-- From opinions to elections to policies
-- The "accuracy" parameter: what informed voters provide
-- Closing the loop: values → votes → policies → outcomes
-- Democratic simulation as infrastructure
-
-### Chapter 14: Simulating Values
-**Research:** [[value-forecasting-alignment]] — THE CAPSTONE
-
-- The deepest question: what would humanity want after reflection?
-- Why current alignment approaches fall short
-- The proposal: empirically validated value forecasting
-- Heterogeneity as feature, not bug
-- Uncertainty at two levels: aleatoric and epistemic
-- From projection to alignment target
-- The aspiration: AI aligned to our considered values, not our current ones
-
-### Chapter 15: Society in Silico
-- Returning to Rehoboam: what we're building isn't that
-- Open vs. closed, democratic vs. authoritarian simulation
-- The honest caveat: we're not done, we'll never be done
-- Simulation as method, not destination
-- An invitation to participate
-
----
-
-## Back Matter
-
-### Epilogue: The Work Ahead
-- What's launching (Axiom Foundation / Axiom Labs timeline)
-- What's unfinished (uncertainty quantification, value forecasting experiments)
-- How to contribute
-
-### Appendix A: Technical Primer
-- How microsimulation works (for non-technical readers)
-- Key concepts: variables, parameters, reforms, microdata
-
-### Appendix B: Try It Yourself
-- PolicyEngine walkthrough
-- Sample analyses readers can run
-
-### Acknowledgments
-
-### Notes & References
-
----
-
-## Chapter-Research Mapping
-
-| Chapter | Primary Research Notes |
-|---------|----------------------|
-| 1 | guy-orcutt, microsimulation-definition, dynasim |
-| 2 | taxsim, ifs-taxben, tax-calculator |
-| 3 | openfisca, rules-as-code |
-| 4 | simulation-accuracy |
-| 5 | policyengine, ubi-center |
-| 6 | microsimulation-definition, enhanced-cps, tax-data |
-| 9 | ai-integration-philosophy |
-| 10 | cosilico |
-| 11 | max-ai-portfolio (uncertainty theme) |
-| 12 | hivesight-silicon-sampling |
-| 13 | democrasim-architecture |
-| 14 | value-forecasting-alignment |
-| 15 | 00-thesis, rehoboam-contrast |
-
-## Gaps to Fill
-
-- [ ] Chapter 2: Need more on CBO/JCT institutional history
-- [ ] Chapter 7-8: Need concrete PolicyEngine case studies
-- [ ] Chapter 11: Need technical detail on uncertainty methods
-- [ ] Chapter 14: Need to flesh out experimental design for value forecasting
-- [ ] People: Need profiles for more historical figures (Ann Harding, etc.)
-
-## Word Count Targets
-
-| Section | Target |
-|---------|--------|
-| Front matter | 5,000 |
-| Part I (4 chapters) | 20,000 |
-| Part II (6 chapters) | 30,000 |
-| Part III (5 chapters) | 25,000 |
-| Back matter | 5,000 |
-| **Total** | **85,000** |
-
-~5,600 words per chapter average
+## Part V: The horizon
+15. Simulating democracy — Democrasim as toy; facts for tools, values for humans
+16. Simulating values — bounded speculation past the admission rule; the honest miss
+17. Society in silico — the Rehoboam payoff; what we built / haven't; the invitation
