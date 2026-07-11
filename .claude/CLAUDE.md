@@ -165,3 +165,11 @@ turn (encoding, verification, microsimulation anywhere, the decomposition) and t
 prediction pole. Build is Quarto (`_quarto.yml` is the canonical TOC); citations are
 Pandoc `[@key]`. `[NEEDS CITATION: …]` and `[VERIFY: …]` markers in the manuscript
 are deliberate — resolve, don't delete.
+
+**Subtitle (chosen 2026-07-11)**: *Simulating futures to build the one we want* —
+sentence case; `_quarto.yml` is canonical and the website inherits it. Ch 16 carries
+the July 2026 pre-registered value-forecasting replication (persistence beat every
+model; identity-leakage probe) — its numbers trace to
+github.com/maxghenis/value-forecasting branch `ea-post-rewrite-2026-07`
+[@ghenis2026valueforecasting]; keep the book, the EA post, and the paper telling the
+same story with the same figures.

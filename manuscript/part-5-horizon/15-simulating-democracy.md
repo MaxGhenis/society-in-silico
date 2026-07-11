@@ -38,6 +38,8 @@ Bias bends outcomes a different way. If voters systematically overvalue tax cuts
 
 I want to be careful not to overclaim. These results come from a model with extreme simplifications; real voters have identities, loyalties, and psychology that Democrasim ignores entirely, and it assumes voters are trying to maximize welfare through policy evaluation — the very folk theory Achen and Bartels dismantle. What it captures is one real dynamic: to the degree that *some* of the vote responds to perceived impacts, the quality of those perceptions matters. Even if only a fifth of the vote is policy-driven and the rest is identity, cleaning up that fifth still moves outcomes.
 
+That one dynamic is also why this toy earns its place in the book. Read Democrasim backwards and it is the motivation model for everything the earlier chapters built: if outcomes track welfare only where perceptions of policy impacts are accurate, then the machinery that makes accurate perception cheap — rules encoded exactly, populations calibrated honestly, forecasts graded in public — is not a technocratic garnish on self-government but an input to whether it works at all. The stack exists to raise the accuracy term in this model. Democrasim is the sketch of why that term matters.
+
 ## What the evidence shows
 
 Democrasim is a toy, but the question underneath it — does voter information quality change outcomes? — has been studied for real, and the evidence is mixed in a way that is itself informative.
