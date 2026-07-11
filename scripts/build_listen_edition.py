@@ -76,9 +76,8 @@ def main() -> None:
     book = config["book"]
     pieces = [
         f"# {book['title']}\n\n*{book['subtitle']}.*\n\nBy {book['author']}. "
-        "Listen edition, generated from the draft manuscript — citations, tables, "
-        "and editorial marks are omitted; the web edition at societyinsilico.com "
-        "carries them.\n"
+        "This listen edition drops citations, tables, and editorial marks — "
+        "the web edition at societyinsilico.com carries them all.\n"
     ]
 
     part_num = 0

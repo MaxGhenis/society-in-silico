@@ -79,3 +79,21 @@ concreteness and willingness to stay in a moment.
 Confident, honest explainer prose with an engineer's taxonomy habit — and, where
 the author's hand pressed hardest, a quieter, more specific voice that is better
 than the book's default and should become it.
+
+## Addendum (2026-07-11, from Max's listen-pass feedback) — BINDING
+
+1. **Active voice, direct, throughout — no defensive framing.** Passive survives
+   only where the actor is unknown/irrelevant or the patient is the true topic.
+   Cut throat-clearing ("It would be easy to…", "It is worth noting…", "To be
+   sure…", "one might argue", "There is/are…" openers): state the thing.
+2. **First sentences get the strictest scrutiny** — of the book, of every chapter,
+   of every section, and of every generated artifact (a listen-edition preamble is
+   a first sentence too). Max caught a passive preamble within seconds of pressing
+   play.
+3. **No tautologies:** "encode X *as code*" (encode already says it), "end result,"
+   "combine together," "past history."
+4. **Epistemic honesty is not defensiveness.** Every limitation, failure, and
+   unresolved-forecast statement stays — voiced actively ("No forecast has
+   resolved," not "no forecast has yet been able to be resolved").
+5. Weak progressive/tentative verbs lose to simple forms where truth allows:
+   "was trying to understand" → "wanted to know."

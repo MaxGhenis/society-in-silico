@@ -1,0 +1,89 @@
+# Facts catalog — "The AI can't do your taxes"
+
+Source: `manuscript/part-3-agent-turn/08-the-ai-cant-do-your-taxes.md` (headed "Chapter 8" in the source; new-TOC position → ch 9).
+Raw material for a from-scratch rewrite. Facts/Story beats/Arguments are paraphrased; Quotes and Author-texture are verbatim. Citation keys and `[NEEDS CITATION]`/`[VERIFY]` markers preserved exactly.
+
+## Facts
+
+- In March 2023 PolicyEngine added an "Explain with AI" button that turned the calculation behind a household's Child Tax Credit or SNAP benefits into a paragraph of plain English tailored to that situation [@policyengine2024ai].
+- Illustrative example (flagged hypothetical in source): a family of four in Connecticut earning $47,000/year qualifies for about $475/year in WIC benefits, but the "why" was buried in intermediate steps — income thresholds, categorical eligibility, participation windows, documentation rules — all tracked by the model but not legible to a user.
+- Open-source code made the eligibility logic visible but not legible; a user could in principle trace the tree from inputs to answer but in practice almost never would.
+- The button passed the full calculation tree (every intermediate value, every parameter) to a language model, which restated the result in usable language (e.g., qualifying because a child is under five and income falls below 185% of the poverty line for the household size).
+- The language model read the answer back; it did not compute it.
+- Architecture principle (deliberate): a deterministic backend produces the numbers; an AI frontend explains them. The microsimulation engine encodes rules exactly and returns identical outputs for identical inputs, auditable to the line of statute; the language model never touches the arithmetic and calls the engine rather than answering from its own weights.
+- GPT-4 evidence (2023): researchers handed GPT-4 the full text of the Internal Revenue Code and asked it 276 true-or-false questions about it; it misread about a third; none of the errors were arithmetic — all were misreadings of the law [@blairstanek2023gpt4tax].
+- TaxCalcBench: released July 2025 by Column Tax; gave frontier models everything needed to prepare a return (rules, taxpayer data, effectively unlimited reasoning time) and asked for the complete filing; the best model computed fewer than one in three complete returns correctly [@bock2025taxcalcbench].
+- A federal return is only a slice of a household's situation; most families meet taxes and benefits at once (EITC phasing out while SNAP phases down while Medicaid eligibility flips near a threshold).
+- PolicyBench: in 2026 PolicyEngine put the full tax-and-benefit problem on a public board; it draws realistic household scenarios from calibrated microdata and asks around twenty frontier and open-weight models to compute the complete tax-and-benefit result, scoring how often each lands within a dollar of the engine's answer [@policybench2026].
+- Scenarios drawn from real population data (not textbook cases) so errors cluster where households are complicated — multiple earners, mixed-age children, stacked benefits.
+- PolicyBench standing (state in round terms only): as of mid-2026 the best model still gets roughly one in six household calculations wrong by more than a dollar; most models miss a quarter or more [@policybench2026].
+- The dollar threshold matters because the misses are family-level, not rounding: a household wrongly ruled Medicaid-ineligible, a SNAP allotment off by real money, a credit at the wrong amount. A benefit determination is a number that decides whether a family gets help this month.
+- Benchmark-integrity incident: PolicyBench at first published an AI-written explanation narrative alongside each scored scenario, meant to make the board legible to auditors; the narratives read well but at first lied. (Source ch 8 attaches no citation to this passage; ch 10's recap attaches [@policybench2026].)
+- One fabricated narrative described a household of retirees as enrollees in a "non-elderly expansion" category that did not apply to them; the mechanism was invented, the prose fluent — a combination that smuggled a false derivation past human review because it sounded like an explanation.
+- Fix (not a better prompt): stop letting the narrative come from the model's imagination and make it come from the engine's internals — regenerate every explanation from the actual variables and intermediate values the computation produced, and add validators that reject any mechanism the trace does not support; an ungrounded claim now fails the build rather than reaching a reader.
+- Stated lesson: even the audit layer needs ground truth; to have an AI check work you must give it traces (the numbers the system actually computed), not prose. This principle (verify with traces, not narration) is the basis of the next two chapters.
+- Tools-not-training claim: if frontier models cannot reliably compute a return, the better inference is that they need a tool, not more training.
+- PolicyEngine's first tool attempt (same 2023 season, described as crude): generated a structured text block — the reform's parameters against baselines, budgetary and distributional results, a style note — for a user to paste into ChatGPT, which spun it into readable analysis; the numbers were right because they came from the engine, not the model [@policyengine2023gpt]. The human was still the integration layer, ferrying data between two systems by hand.
+- Tool-calling inverted the flow: GPT-4, Claude, and successors could invoke a function mid-response (hit an API, take the result, keep going), so the AI could translate a question ("what if we make the Child Tax Credit fully refundable?") into policy parameters, call the engine, receive quantitative results, and explain what came back — language outside, computation inside.
+- MCP timeline: Anthropic open-sourced the Model Context Protocol in November 2024; OpenAI adopted it in March 2025; Google followed within months. MCP gave AI systems a common way to discover and invoke external tools; a PolicyEngine endpoint became findable and callable by any compatible assistant without bespoke per-provider wiring.
+- Bottleneck shift (the chapter's argument): in 2023 the binding constraint was model capability (could the AI pick the right tool and call it correctly at all); by 2025–2026 models cleared that bar and the constraint moved to the tools — whether they were accurate, comprehensive, current, and legible to downstream users.
+- An AI that flawlessly calls an inaccurate calculator is worse than useless because it launders a wrong number through a confident, well-formatted sentence; a technically correct calculator can also fail if it is slow to update, undocumented, or full of integration traps.
+- Tool quality is several distinct properties, each its own work: accuracy; comprehensiveness (a tool covering federal tax and three benefit programs returns the wrong household total the moment a fourth program is in play); currency (tracking a law change within days, not months); legibility to whoever stands downstream. None is solved by more training.
+- Four boundaries the AI never crosses (each the same rule from a different side):
+  - Does not set policy parameters — the Child Tax Credit maximum is $2,200 because Congress set it at $2,200 in the One Big Beautiful Bill Act of 2025 [@obbba2025], not because a model inferred a plausible figure; every parameter carries legislative or regulatory provenance.
+  - Does not estimate behavioral responses — elasticities come from the economic literature and explicit, recorded methodological choices, not from a language model's in-the-moment inference.
+  - Does not judge whether a policy is good — it can report a reform cuts poverty 3% and costs $50B; whether that trade is worth making is a human question.
+  - Does not overrule the engine — if the computation says a household owes $10,000, the explanation explains $10,000.
+- Unifying rule: authority for a number belongs with whoever can be held to account for it — a legislature for a parameter, a documented literature for an elasticity, a voter for a value judgment, the engine for a computation — never with the system that is merely good at describing the number.
+- AI-as-priors caveat (the one place a language model has upstream value): a production model should never silently let an AI pick an elasticity and bury it, but an AI can be a fast, auditable way to survey what the plausible values even are before a human commits.
+- Elicitation experiment: one recent experiment put 26 economic quantities (canonical labor-supply and tax elasticities among them) to eleven frontier models, repeating each elicitation fifteen times to recover a distribution of answers rather than a single number [@ghenis2026llmeconbeliefs].
+- Related project with Jason DeBacker probes what language models imply about the elasticity of taxable income, including replications of lab experiments and surveys of simulated taxpayer personas [@debacker2025llmeti].
+- These elicitations are diagnostic, not substitutes for the literature: they show what distribution a model carries, where models disagree, and where a change of wording or definition moves the answer. Tight clustering is a weak signal; wide scatter (enough to flip a reform from progressive to regressive) is the more useful finding because it names which assumption the result is hostage to. The chosen parameter must still be written down explicitly and left open to review.
+- Interface-not-authority example: a researcher asks in plain English how extending premium tax credits would affect insurance coverage among middle-income families in several states; the assistant translates that into computational steps (define the reform, select the population, run the simulations, aggregate), the engine does the analysis, the assistant renders the findings back.
+- Augmentation, not automation: when PolicyEngine tested letting several specialized agents coordinate on a research task, they handled standard distributional runs well but stumbled where programs interacted — implementing each correctly in isolation and then missing how a benefit taper in one interacts with a phase-out in another [@policyengine2024multiagent]. The mechanical work translated cleanly; the coordination logic did not.
+- Widening access cuts both ways: it lets a congressional staffer who understands policy but not programming, or an advocacy group without a data team, run analyses that once required an economist — and it opens room for cherry-picked scenarios and confident misreadings alongside genuine scrutiny. Those risks existed in the old system too, concentrated among the few who could run the models; broader access invites broader checking.
+- 67% marginal-tax-rate example: shown that a worker faces a 67% marginal tax rate at their income, the engine hands over the pieces (federal tax, payroll tax, an EITC phasing out, a partial credit clawback) and the model assembles them into the one plain sentence explaining why an extra dollar of earnings mostly vanishes.
+- Independent convergence on the same architecture (strong evidence the shape is forced by the problem):
+  - IRS: in November 2025 the IRS deployed Salesforce's Agentforce agents across three offices — the Office of Chief Counsel, the Taxpayer Advocate Service, and Appeals — for case summarization, document search, and policy navigation; every final decision stayed with a human agent; the AI could not disburse funds or make an eligibility determination; the deployment followed a workforce reduction [@irs2025agentforce].
+  - California: a month later (December 2025) California launched Poppy, a digital assistant for state employees across fifty departments; built in-house and run on state servers rather than external cloud, drawing on eleven different models and grounded on public state data to hold down hallucination; used by more than two thousand employees during its pilot [@california2025poppy].
+- Neither system computes an entitlement; both help a human find or understand a rule; the rules, statutes, and calculations stay human-maintained and human-auditable underneath. An open-source tool, a commercial deployment, and a government-built assistant converged on the same division of labor: deterministic systems for the answers, AI for the access.
+- Closing hook: if an AI is now only as good as the tool it calls, the tool worth building is demanding — not merely accurate but accountable, every number checkable against ground truth (traced to a line of statute, matched against an independent calculator, reconciled to an administrative total). Building such a tool turned out to be possible = the next chapter.
+
+## Story beats
+
+- The "Explain with AI" button (March 2023): the Connecticut $475/year WIC family whose "why" was buried in the calculation tree; the button closing the legibility gap by passing the tree to a model that restates the result; the pivot line that the model read the answer back rather than computing it.
+- The benchmark march (rising difficulty): GPT-4 misreading about a third of 276 IRC true/false questions (2023) → TaxCalcBench's best model computing fewer than one in three complete returns (July 2025) → PolicyBench's best model wrong on roughly one in six household calculations by more than a dollar (mid-2026).
+- When the audit layer hallucinated: the fabricated "non-elderly expansion" retirees narrative; auditors who read the confident narratives inheriting the fabrication; the fix that regenerates every explanation from the engine's internals and rejects any mechanism the trace doesn't support.
+- Everyone lands on the same architecture: IRS Agentforce (Nov 2025) and California's Poppy (Dec 2025) arriving independently at deterministic-answers / AI-access, alongside open-source PolicyEngine — convergence as evidence.
+
+## Quotes
+
+- No verbatim external (attributed) quotes appear in this chapter. (The Column Tax "100% correctness" quote lives in ch 9; the transfer verdict and open-referee quotes live in ch 11.)
+
+## Arguments
+
+1. Language models cannot reliably compute a household's taxes or benefits themselves; the failure is measurable and has not improved on schedule (GPT-4 on the IRC; TaxCalcBench; PolicyBench).
+2. The dangerous failure mode is fluent misreading — simulated comprehension that looks exactly like understanding; a wrong number wrapped in a confident derivation actively discourages the second look a bare wrong number invites.
+3. The fix is architecture, not scale: a deterministic engine computes, the model explains; the truth must stay out of the model's weights.
+4. Even the audit/explanation layer needs ground truth — you verify with traces (the numbers actually computed), not with narration.
+5. The bottleneck moved from model capability (2023) to tool quality (2025–26); an AI that flawlessly calls an inaccurate tool launders a wrong number through a confident sentence.
+6. Tool quality is plural — accuracy, comprehensiveness, currency, legibility — and none of these is a problem more training solves; each must be built and kept building inside the tool.
+7. Authority for a number belongs with whoever can be held accountable for it; the AI is the interface, not the authority, and moving the truth into the model's weights reproduces the exact failure the benchmarks measure.
+8. AI may serve as priors — surveying plausible elasticities, surfacing disagreement — but never as the silent author of a chosen parameter; model disagreement is often more informative than model agreement.
+9. This is augmentation, not automation: agents handle mechanical translation but stumble on cross-program coordination, which is the seam where a human analyst still stands.
+10. Independent convergence by an open-source project, a commercial vendor, and two governments on the same division of labor is strong evidence the architecture is forced by the problem rather than chosen.
+
+## Author-texture (verbatim, may be reused)
+
+- No protected keeper lines (from the mandated set) appear in this chapter.
+- Candidate distinctive lines (verbatim, reusable, NOT on the protected keeper list — use sparingly):
+  - "The model did not compute the answer. It read the answer back."
+  - "deterministic systems for the answers, AI for the access."
+
+## Structural notes
+
+- Chapter's job: establish LLMs as interface, not calculator; motivate the deterministic tool through the benchmark evidence; plant the benchmark-integrity / traces-not-prose lesson that ch 10 reuses; show independent convergence on the architecture; end by defining the demanding, accountable tool the rest of the book builds.
+- Handoff in: inherits the per-unit-verifiability criterion introduced in the Part II "Three ingredients" chapter (ch 7).
+- Handoff out (8→9, the tools hook): closing beat says building a checkable, accountable tool "turned out to be possible. That is the next chapter."
+- Phrasing constraints: describe PolicyBench in round terms only ("roughly one in six household calculations wrong by more than a dollar," best model, mid-2026, [@policybench2026]); no leaderboard decimals; prefer "the best 2026 models" over version lists that will date; flag illustrative examples as hypothetical (the Connecticut WIC family).
+- Cross-chapter consistency: the benchmark-integrity incident (fabricated "non-elderly expansion" narrative; regenerate-from-internals fix; give-judges-traces lesson) appears here and is recapped in ch 10's "gates are for us first" section — keep them telling the same story; ch 10 attaches [@policybench2026] to it.

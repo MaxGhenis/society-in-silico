@@ -1,64 +1,40 @@
 # Preface
 
-In 2019, I was trying to understand how a universal basic income would affect poverty in the United States. Not the vibes-level version—"it would help a lot of people" or "it would cost too much"—but the precise version. How many families would cross the poverty line? Which families? What would it cost, net of reduced spending on existing programs? A $1,000-a-month basic income runs to roughly $3 trillion a year; the interesting questions all live in how you pay for it, and in how it interacts with the Earned Income Tax Credit, SNAP, Medicaid, and housing assistance.
+In 2019 I wanted a number nobody would give me. The question was simple to state: if the United States paid every adult a basic income, how many families would that pull over the poverty line, and what would it cost once you netted out the programs it replaced? Congress had models that could answer it. So did the Treasury, the Congressional Budget Office, the Tax Policy Center, the Joint Committee on Taxation. I could read their reports. I could not ask their models my question, because the models lived behind institutional walls, ran on confidential data, and answered only to their owners.
 
-I couldn't find the answer. Not because no one had modeled it, but because the models that could answer the question were locked inside government agencies and think tanks, built on confidential data, and inaccessible to anyone outside those institutions. The Congressional Budget Office had models. The Tax Policy Center had models. The Joint Committee on Taxation had models. None of them were available for me to query with my specific question.
+So I built. First a scrappy research shop called the UBI Center, which ran analyses on the open-source tools that existed. Then, with Nikhil Woodruff — a college student I found on a subreddit, who turned out to pair real economics with real engineering — PolicyEngine: policy simulation for anyone with a web browser.^[A disclosure that doubles as a plot point: as of July 2026, Nikhil serves in the UK government at 10 Downing Street. [VERIFY with Nikhil: role wording] When this book describes British institutions evaluating tools he helped build, read it knowing where he sits now.] Type in your household, move a policy lever, watch your taxes and benefits recompute. No credentials, no paywall, no waiting.
 
-So I started building. First a scrappy research outfit called the UBI Center, running analyses on existing open-source tools. Then, with Nikhil Woodruff, PolicyEngine—an attempt to make the same kind of policy simulation available to anyone with a web browser.^[A disclosure that is also, I think, part of the story: as of July 2026, Nikhil serves in the UK government at 10 Downing Street. [VERIFY with Nikhil: role wording] Where this book discusses UK institutions evaluating tools he helped build, read it with that in mind.] Enter your household details, change a policy parameter, see what happens. No expertise required. No paywall. No waiting for an analyst to run the numbers.
+Building it raised questions I had not planned to spend my thirties on. If you can encode tax law, what else can you encode? When an AI assistant answers a benefits question — and it will, because that is where people now ask — who builds the calculator it should be calling instead of guessing? If simulation can say what a policy does to a family's budget, can it say what the public thinks about it? And if machines can hold the rules, the people, and the predictions all at once, what keeps any of it honest?
 
-That work led to a series of questions I hadn't anticipated. If you can encode tax law as code, what else can you encode? If AI systems need accurate financial calculations and can't do them on their own, who builds the tools they call? If simulation can tell you what a policy does to people's wallets, can it also tell you what people think about it? And if you can simulate policies, opinions, and values—what does that mean for how society governs itself?
-
-This book is my attempt to trace those questions from their origins to their implications.
-
----
+That last question runs the book. My answer, stated up front so you can hold me to it: a simulation deserves your attention only where you can check it against something real — a statute, a census total, an official number that arrives later and grades the forecast. Everything I describe here either passes that test, fails it in the open, or gets labeled as the speculation it is.
 
 ## What this book is
 
-This is a narrative about tools and the people who build them. It begins in 1957 with Guy Orcutt, an economist-engineer who imagined simulating society household by household, decades before the computers existed to do it. It moves through six decades of institutional microsimulation—mainframes at the Urban Institute, proprietary models at the Congressional Budget Office, the quiet revolution of open-source policy tools in Europe and the United States. It arrives at the present moment, where AI agents write and verify the code that once took institutions years to build, where open simulation is becoming public infrastructure, and where the boundaries of what we can simulate are expanding in directions that raise hard questions about democracy, values, and what it means to model a society.
+A story about tools and the people who built them. It starts in 1957, when an economist named Guy Orcutt proposed simulating a nation household by household, decades before computers could. It runs through the era when such models existed but belonged to institutions — mainframes at the Urban Institute, black boxes at the CBO — and through the open-source turn that put them in browsers. It ends somewhere I did not expect when I started writing: AI agents encoding entire countries' tax codes in a day and proving their work against the reference models governments already trust.
 
-Along the way, I describe projects I've built or helped build—PolicyEngine, HiveSight, Democrasim, the Axiom Foundation, and the Thesis Institute. I try to be honest about what works, what doesn't, and what remains aspiration rather than accomplishment. The honest accounting turned out to be a moving target. A chapter drafted in 2025 as a sketch of infrastructure that didn't yet exist had to be rewritten in 2026 as a field report on infrastructure that does—law encoded by AI agents and checked, line by line, against the models governments already trust. Other parts remain exactly as speculative as they were. I label the difference throughout, because the distinction between "this works," "this is early," and "this might work someday" is the book's whole currency—and the speed at which things moved between those categories is itself part of the story.
+That ending rearranged the book under me. A chapter I drafted in 2025 described infrastructure that did not exist and said so plainly. By mid-2026 the infrastructure existed, and the chapter had to become a field report. I have kept the labels current throughout — this works, this is early, this is speculation — because the boundary between them is the book's real subject, and because the speed at which things crossed it is the story.
 
 ## What this book is not
 
-This is not a textbook. I won't teach you microsimulation methodology, and the technical details I include are meant to illuminate ideas, not to serve as documentation. If you want to learn how to build a tax-benefit model, the references will point you to better sources.
+Not a textbook; when I include technical detail, it is there to make an idea land, and the references point to proper treatments. Not a memoir; my path supplies connective tissue, and the story is bigger than it. Not a manifesto; I hold views and argue them, but the chapters on simulated opinion and simulated democracy give the strongest counterarguments I could find, because those ideas deserve adversaries.
 
-This is not a memoir, though my own path through this work provides the connective tissue. I include personal experience where it illuminates the ideas and omit it where it doesn't. The story of microsimulation is bigger than any one person's involvement.
-
-This is not a manifesto. I have views—about open source, about democratic access to information, about how AI should handle policy questions—but I try to present them alongside the strongest counterarguments I can find. The chapters on simulated opinion and simulated democracy, in particular, are structured around the tensions and limitations of the ideas, not as advocacy.
-
-And this is not finished. I'm writing while the work is ongoing. The Axiom Foundation launches publicly this summer; the Thesis Institute follows in the fall; the forecasts its scoreboard publishes will take years to grade themselves against reality, and as of this writing not one has resolved. The research directions in the later chapters—simulating opinion, democracy, values—are genuinely speculative, and I say so where they are. Readers should expect that some of what I describe will look different in two years. Between the first draft and this one, it already does.
+And not finished. The Axiom Foundation launches this summer. The Thesis Institute follows in the fall, and its first forecasts will take months and years to grade — as I write, not one has resolved. Some of what you read here will look different in two years. Between my first draft and this one, it already does.
 
 ## Who this book is for
 
-I've written for three readers, and any one lens is enough.
+Three readers, any one lens enough. Policy people who want to know how computation is changing their trade, with no code required. Technologists building AI, fintech, or data systems who need to understand why this domain punishes shortcuts. And anyone who has wondered why the chatbot gets tax questions wrong, why budget models are secret, or what it would mean to run society's experiments in silicon before running them on people.
 
-**Policy people** who want to understand how computational tools are changing policy analysis. You don't need to know how to code. I explain the technical concepts through stories and examples, and the details that matter—how a tax-benefit model works, what microsimulation actually does, why AI can't just learn tax law—are explained in plain language.
+## How to read it
 
-**Technologists** who are building AI systems, fintech applications, or data infrastructure and want to understand the policy domain. You'll find the architecture discussions relevant, and the policy context will help you understand why this domain is harder than it looks.
+Five parts. Part I is history: how government built an analytic machine the public could not inspect, and how you would even know whether such a machine is right. Part II is PolicyEngine: rebuilding that machine in the open, for one household and for a country. Part III is the turn everything else follows from: AI agents writing verified law-as-code at scale, the discipline that makes their work trustworthy, and what happened when the method reached countries that never had public models at all. Part IV crosses from calculation to prediction — the uncertainty that point estimates hide, and a public scoreboard that waits for reality to grade it. Part V walks to the speculative edge, simulated democracy and simulated values, and returns to the choice the introduction opens.
 
-**Curious readers** who follow the intersection of technology and governance. If you've wondered why AI gets tax questions wrong, why government budget models are secret, or what it would mean to simulate a society—this book is an attempt to answer those questions accessibly.
-
-## How to read this book
-
-The book runs in five parts, and they build on each other but tolerate skipping.
-
-**Part I: The closed stack** is history—how government built an analytic machinery the public couldn't see, from Orcutt's 1957 vision through the tax model wars, ending with the question that disciplines everything after it: how would you know whether any of these models is right?
-
-**Part II: The open engine** is the PolicyEngine story—proof that the closed stack could be rebuilt in public, what the engine shows one household and a whole country, and the three ingredients every such model must solve.
-
-**Part III: The agent turn** is the new heart of the book: why AI systems need deterministic policy tools, how AI agents came to write verified law-as-code at scale, how you trust machine-encoded law, and what happened when the method reached countries that never had public models at all.
-
-**Part IV: The prediction pole** crosses from calculation to forecasting—the uncertainty that point estimates hide, the scoreboard being built to price it honestly, and what large language models actually add to opinion research once you benchmark them.
-
-**Part V: The horizon** is the speculative edge—simulated democracy, simulated values—clearly labeled, and the return to the fork in the road the introduction opens.
-
-If you're impatient, read the introduction, then Part III, and dip into Part V for the ideas that interest you. If you have time, the history in Part I makes everything else richer.
+Impatient readers: introduction, then Part III, then whatever pulls you. The history repays the time, but the book tolerates skipping.
 
 ---
 
-I started this project because I believed—and still believe—that the tools we use to understand society shape the decisions we make about it. When those tools are locked inside institutions, the understanding is locked too. When they're open, transparent, and accessible, more people can participate in the conversation about what policies we should adopt and why.
+I wrote this book because the tools we use to understand society decide what we can see about it, and for fifty years the best tools belonged to the few institutions that could afford them. That era is ending. What replaces it — open machinery anyone can inspect and check, or closed machinery with a friendlier interface — is being decided now, in code, in procurement contracts, and in choices that look technical but are not.
 
-That's an optimistic view. Whether it survives contact with the evidence is something you can judge for yourself.
+You can judge for yourself whether the open path holds up. The evidence is all here, marked with exactly how much I trust it.
 
 Max Ghenis
 Washington, DC, 2026
