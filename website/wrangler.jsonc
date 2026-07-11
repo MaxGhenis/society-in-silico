@@ -1,16 +1,11 @@
 {
-	"main": "dist/_worker.js/index.js",
+	// societyinsilico.com is a Cloudflare Pages project ("societyinsilico").
+	// Deploy: bun run deploy (from website/). DNS: CNAME apex -> societyinsilico.pages.dev.
 	"name": "societyinsilico",
-  "compatibility_date": "2025-12-18",
-  "compatibility_flags": [
-    "nodejs_compat",
-    "global_fetch_strictly_public"
-  ],
-	"assets": {
-		"binding": "ASSETS",
-		"directory": "./dist"
-	},
-	"observability": {
-    "enabled": true
-  }
+	"pages_build_output_dir": "./dist",
+	"compatibility_date": "2025-12-18",
+	"compatibility_flags": [
+		"nodejs_compat",
+		"global_fetch_strictly_public"
+	]
 }

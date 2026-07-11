@@ -1,24 +1,22 @@
 ---
-import '../styles/global.css'
+import '../styles/global.css';
 import { bookStructure } from '../lib/book';
 
 interface Props {
   title: string;
   description?: string;
   noIndex?: boolean;
-  dark?: boolean;
 }
 
 const {
   title,
   description = bookStructure.subtitle,
   noIndex = false,
-  dark = false,
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class={dark ? 'dark' : ''}>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,12 +24,45 @@ const {
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="book" />
     {noIndex && <meta name="robots" content="noindex, nofollow" />}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script is:inline>
+      // Theme before paint: stored choice wins; otherwise system.
+      (function () {
+        try {
+          const stored = localStorage.getItem('sis-theme');
+          const system = window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light';
+          document.documentElement.setAttribute('data-theme', stored || system);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
   </head>
-  <body class={dark ? 'bg-[var(--color-midnight)] text-white' : ''}>
+  <body>
     <slot />
+    <script is:inline>
+      // Theme toggle wiring for any .theme-toggle on the page.
+      document.querySelectorAll('.theme-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const root = document.documentElement;
+          const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', next);
+          try {
+            localStorage.setItem('sis-theme', next);
+          } catch (e) {}
+        });
+      });
+    </script>
   </body>
 </html>

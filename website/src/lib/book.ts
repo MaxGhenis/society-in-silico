@@ -7,6 +7,7 @@ export interface Chapter {
   slug: string;
   title: string;
   file: string;
+  words?: number;
   part?: string;
   partNumber?: number;
   chapterNumber?: number;
@@ -79,23 +80,7 @@ function loadQuartoConfig(): QuartoConfig {
   return config;
 }
 
-function resolveContentFile(file: string): string {
-  const normalized = path.normalize(file);
-  if (normalized === 'index.md') {
-    const thesisFile = path.join('manuscript', 'front-matter', '00-thesis.md');
-    if (fs.existsSync(resolveProjectFile(thesisFile))) {
-      return thesisFile;
-    }
-  }
-  return file;
-}
-
 function slugFromFile(file: string): string {
-  const normalized = path.normalize(file);
-  if (normalized.endsWith(path.join('manuscript', 'front-matter', '00-thesis.md'))) {
-    return 'thesis';
-  }
-
   return path.basename(file, path.extname(file)).replace(/^\d+-/, '');
 }
 
@@ -113,17 +98,22 @@ function fallbackTitleFromSlug(slug: string): string {
 }
 
 function chapterFromFile(file: string, overrides?: Partial<Chapter>): Chapter {
-  const contentFile = resolveContentFile(file);
-  const slug = slugFromFile(contentFile);
+  const slug = slugFromFile(file);
 
-  if (!fs.existsSync(resolveProjectFile(contentFile))) {
+  if (!fs.existsSync(resolveProjectFile(file))) {
     throw new Error(`_quarto.yml references a missing file: ${file}`);
   }
 
+  const content = fs.readFileSync(resolveProjectFile(file), 'utf-8');
+  const titleMatch = content.match(/^#\s+(.+)$/m);
+  const title = (titleMatch ? titleMatch[1].trim() : fallbackTitleFromSlug(slug))
+    .replace(/^Chapter\s+\d+:\s*/i, '');
+
   return {
     slug,
-    title: readDocumentTitle(contentFile) ?? fallbackTitleFromSlug(slug),
-    file: contentFile,
+    title,
+    file,
+    words: countWords(content),
     ...overrides,
   };
 }
@@ -160,6 +150,8 @@ function loadBookStructure(): BookStructure {
 
   for (const entry of book.chapters ?? []) {
     if (typeof entry === 'string') {
+      // index.md is the site landing page, not a readable chapter.
+      if (path.normalize(entry) === 'index.md') continue;
       frontMatter.push(chapterFromFile(entry));
       continue;
     }
@@ -245,4 +237,39 @@ export function estimateReadingTime(content: string): number {
 
 export function countWords(content: string): number {
   return content.trim().split(/\s+/).length;
+}
+
+export interface DraftStats {
+  chapters: number;
+  parts: number;
+  words: number;
+  citationsPending: number;
+  verifyMarks: number;
+  forecastsResolved: number;
+}
+
+// The book's own discipline, applied to itself: the site reports the
+// manuscript's live verification state, computed from source at build time.
+export function getDraftStats(): DraftStats {
+  let words = 0;
+  let citationsPending = 0;
+  let verifyMarks = 0;
+  let chapters = 0;
+
+  for (const chapter of getAllChapters()) {
+    const content = fs.readFileSync(resolveProjectFile(chapter.file), 'utf-8');
+    words += countWords(content);
+    citationsPending += (content.match(/\[NEEDS CITATION/g) || []).length;
+    verifyMarks += (content.match(/\[VERIFY/g) || []).length;
+    chapters += 1;
+  }
+
+  return {
+    chapters,
+    parts: bookStructure.parts.length,
+    words,
+    citationsPending,
+    verifyMarks,
+    forecastsResolved: 0,
+  };
 }
