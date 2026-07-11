@@ -1,8 +1,8 @@
 # Introduction: The model and the world
 
-"I don't predict the future. I create it."
+"For the first time, history has an author."
 
-The line belongs to Engerraund Serac, the villain of Westworld's third season. After watching Paris burn in a thermonuclear strike, Serac builds Rehoboam: an AI that models every human life and predicts its course — when you will lose your job, when you will get sick, when you will die. Prediction slides into control. The system starts arranging outcomes to match its forecasts, and people who wander off their assigned trajectories get flagged for "reconditioning." The show's premise is that a person is "just a brief algorithm," compressible to code. Its horror is simpler: one man owns the model, and no one else knows it exists.
+Engerraund Serac says it with pride. He is the villain of Westworld's third season: after watching Paris burn in a thermonuclear strike, he builds Rehoboam, an AI that models every human life and predicts its course — when you will lose your job, when you will get sick, when you will die. Prediction slides into control. The system starts arranging outcomes to match its forecasts, and people who wander off their assigned trajectories get flagged for "reconditioning." The show's premise is that a person is "just a brief algorithm," compressible to code. Its horror is simpler: history has an author, the author has a model, and no one else knows either exists.
 
 I watched this in 2020 and recognized the machinery. I had been building models of society since 2018 — smaller, tamer ones that predict how a tax change lands on millions of simulated households. The writers had taken tools I used every day and followed them to their darkest terminus.
 

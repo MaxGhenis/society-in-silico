@@ -47,14 +47,16 @@
 }
 
 @article{cheng2020orcutt,
-  author = {Cheng, Hsiang-Ke},
+  author = {Cheng, Chung-Tang},
   title = {Guy H. Orcutt's Engineering Microsimulation to Reengineer Society},
   journal = {History of Political Economy},
   volume = {52},
   number = {S1},
-  pages = {191--215},
+  pages = {191--217},
   year = {2020},
-  doi = {10.1215/00182702-8718000}
+  doi = {10.1215/00182702-8717953},
+  url = {https://read.dukeupress.edu/hope/article-abstract/52/S1/191/166649/},
+  note = {Author corrected per primary source (2026-07-11 verification): the historian is Chung-Tang Cheng (National Taipei University), NOT ``Hsiang-Ke Cheng.'' ``Hsiang-Ke'' belongs to a different scholar, Hsiang-Ke Chao. Pages 191--217; DOI 10.1215/00182702-8717953.}
 }
 
 @incollection{sadowsky1991computing,
@@ -163,7 +165,8 @@
   number = {1},
   pages = {92--101},
   year = {2021},
-  url = {https://microsimulation.pub/articles/00231}
+  url = {https://microsimulation.pub/articles/00231},
+  note = {Year field is already correct (2021); the key name ``ukmod2020'' is cosmetically stale but retained for citation stability (2026-07-11 verification).}
 }
 
 @misc{urban2024karensmith,
@@ -370,12 +373,15 @@
 @article{blairstanek2023gpt4tax,
   author = {Blair-Stanek, Andrew and Holzenberger, Nils and Van Durme, Benjamin},
   title = {OpenAI Cribbed Our Tax Example, But Can GPT-4 Really Do Tax?},
-  journal = {arXiv preprint},
+  journal = {Tax Notes Federal},
+  volume = {180},
   year = {2023},
+  month = {August},
+  pages = {1101},
   eprint = {2309.09992},
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2309.09992},
-  note = {GPT-4 achieved 67\% accuracy on 276 true/false tax law questions}
+  note = {Venue completed per primary source (2026-07-11 verification): Tax Notes Federal vol. 180 (Aug 14, 2023); also arXiv:2309.09992. GPT-4 scored 186/276 = 67\% on the true/false subset of the SARA benchmark --- given the SARA statutory text (nine curated IRC sections; see @holzenberger2020sara), NOT the full Internal Revenue Code.}
 }
 
 @misc{columntax2024,
@@ -394,7 +400,7 @@
   eprint = {2507.16126},
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2507.16126},
-  note = {Best model (Gemini 2.5 Pro) achieved 32.35\% strict accuracy on 51 complete tax returns}
+  note = {Exact strict (complete-return) accuracy per primary source (2026-07-11 verification): Gemini 2.5 Pro 32.35\% (best), Claude Opus 4 27.45\%, Gemini 2.5 Flash 25.98\%, Claude Sonnet 4 23.04\%. Lenient (within \$5/line): 51.96 / 42.65 / 41.18 / 38.24\%. 15--20\% of failures use bracket-percentage math instead of IRS tax-table lookups, often ``off by \$3.'' The book's ``fewer than one in three'' tracks the strict metric.}
 }
 
 % cosilico2024thesis removed (unused)
@@ -432,17 +438,23 @@
   journal = {Proceedings of the National Academy of Sciences},
   volume = {121},
   number = {9},
+  pages = {e2313925121},
   year = {2024},
-  doi = {10.1073/pnas.2313925121}
+  doi = {10.1073/pnas.2313925121},
+  url = {https://www.pnas.org/doi/10.1073/pnas.2313925121},
+  note = {eLocator confirmed per primary source (2026-07-11 verification): PNAS 121(9), e2313925121. Do NOT cite the different article floating online as 121(10)/e2401336121. Six games: dictator, ultimatum, trust, bomb risk, public goods, finitely-repeated prisoner's dilemma.}
 }
 
 @article{sarstedt2024silicon,
-  author = {Sarstedt, Marko and Adler, Susanne J. and Ringle, Christian M. and Cho, Giyeong and Diamantopoulos, Adamantios and Hwang, Heungsun and Liengaard, Benjamin D.},
+  author = {Sarstedt, Marko and Adler, Susanne J. and Rau, Lea and Schmitt, Bernd},
   title = {Using Large Language Models to Generate Silicon Samples in Consumer and Marketing Research: Challenges, Opportunities, and Guidelines},
   journal = {Psychology \& Marketing},
+  volume = {41},
+  number = {6},
+  pages = {1254--1270},
   year = {2024},
   doi = {10.1002/mar.21982},
-  note = {Silicon sampling promising for pretesting/pilot studies; important limitations for main studies}
+  note = {Author list corrected and volume/pages added per primary source (2026-07-11 verification, DOI 10.1002/mar.21982): four authors --- Sarstedt, Adler, Rau, Schmitt --- NOT the seven-author list previously recorded (which conflated a different Sarstedt paper). Psychology \& Marketing 41(6):1254--1270. Silicon sampling promising for pretesting/pilot studies; important limitations for main studies.}
 }
 
 % =============================================================================
@@ -463,25 +475,30 @@
   year = {2025},
   month = {7},
   institution = {Congressional Budget Office},
-  url = {https://www.cbo.gov/publication/61334}
+  number = {Publication 61334},
+  url = {https://www.cbo.gov/publication/61334},
+  note = {Per primary source (2026-07-11 verification): CBO's forecasts ``tend to be more accurate'' than the Administration's and the Blue Chip consensus, and are ``broadly similar'' / comparable to the Survey of Professional Forecasters (back to 1976). ``Beat'' overstates it slightly --- on some measures CBO is only broadly similar.}
 }
 
-@report{cbo2017ahca,
+@techreport{cbo2017ahca,
   author = {{Congressional Budget Office}},
-  title = {American Health Care Act: Cost Estimate},
+  title = {H.R. 1628, American Health Care Act of 2017},
   year = {2017},
   month = {5},
   institution = {Congressional Budget Office},
-  url = {https://www.cbo.gov/publication/52752}
+  number = {Publication 52752},
+  url = {https://www.cbo.gov/publication/52752},
+  note = {Estimated 23 million more uninsured in 2026 vs. current law; \$119B deficit reduction 2017--2026. NB: the separate ``13 million fewer insured by 2027'' figure is NOT from this report --- it is from CBO pub 53300 (Nov 2017); see @cbo2017mandate.}
 }
 
 @article{collins2015aca,
-  author = {Collins, Sara R. and Gunja, Munira and Doty, Michelle M. and Beutel, Sophie},
+  author = {Glied, Sherry A. and Arora, Anupama and Sol{\'i}s-Rom{\'a}n, Claudia},
   title = {The CBO's Crystal Ball: How Well Did It Forecast the Effects of the Affordable Care Act?},
   journal = {Commonwealth Fund Issue Brief},
   year = {2015},
   month = {12},
-  url = {https://www.commonwealthfund.org/publications/issue-briefs/2015/dec/cbos-crystal-ball-how-well-did-it-forecast-effects-affordable}
+  url = {https://www.commonwealthfund.org/publications/issue-briefs/2015/dec/cbos-crystal-ball-how-well-did-it-forecast-effects-affordable},
+  note = {Authors corrected per primary source (2026-07-11 verification): the actual authors are Glied, Arora, and Sol{\'i}s-Rom{\'a}n, NOT Collins/Gunja/Doty/Beutel. The new-sources key glied2015aca was folded into this existing key rather than duplicated, to preserve citation stability. The ``where...not how many'' quote is NOT from this brief --- it belongs to @kiely2017aca.}
 }
 
 @article{kiely2017aca,
@@ -495,11 +512,12 @@
 
 @mastersthesis{inayatali2023cbo,
   author = {Inayatali, Ammar},
-  title = {The Accuracy of Historical CBO Debt Projections},
+  title = {Always in Motion is the Future: The Accuracy of Historical CBO Debt Projections},
   school = {University of California, Berkeley},
-  year = {2023},
-  type = {Undergraduate Thesis},
-  url = {https://econ.berkeley.edu/sites/default/files/Inayatali_Ammar_Thesis.pdf}
+  year = {2019},
+  type = {Undergraduate Honors Thesis, Department of Economics},
+  url = {https://econ.berkeley.edu/sites/default/files/Inayatali_Ammar_Thesis.pdf},
+  note = {Year corrected 2023->2019 and title completed per primary source (2026-07-11 verification). Advisor: David Romer. The thesis's OWN finding: CBO overestimated the cumulative budget balance by ~3.9\% of cumulative GDP across long-term (1996--2008) reports. The ``random walk beat the CBO, 1976--2007'' claim is NOT the thesis's result --- it is quoted in its literature review from Kliesen \& Thornton (2012); see @kliesen2012cbo. Key name retained (kept ``2023'') for citation stability; the thesis cites CBO's Jan 2019 outlook as its latest data, so ~2019 is likely --- verify at copyedit.}
 }
 
 @article{crfb2024tcja,
@@ -539,7 +557,8 @@
   title = {Superforecasting: The Art and Science of Prediction},
   publisher = {Crown},
   year = {2015},
-  isbn = {978-0804136716}
+  isbn = {978-0804136716},
+  note = {Good Judgment Project superforecasters beat an intelligence-community prediction market (analysts with classified access) by ~25--30\% in the IARPA ACE tournament (2011--2015). Phrase as ``25--30\%,'' not a flat 30\% (2026-07-11 verification).}
 }
 
 @book{tetlock2005expert,
@@ -640,9 +659,12 @@
 
 @misc{esomar2024market,
   author = {{ESOMAR}},
-  title = {Global Market Research Industry Revenue},
+  title = {Global Market Research 2024},
   year = {2024},
-  note = {Global market research industry forecasted at \$140 billion in 2024}
+  address = {Amsterdam},
+  publisher = {ESOMAR},
+  url = {https://www.esomar.org/global-market-research-report},
+  note = {Insights industry ~US\$142B (2023 data), up from ~US\$130B (2022) per primary source (2026-07-11 verification). The book's ``~\$140 billion+'' is correct and conservative.}
 }
 
 % Duplicate openfisca2024about removed (kept at line 218)
@@ -730,10 +752,11 @@
 @misc{hmt2025policyengine,
   author = {{HM Treasury}},
   title = {HMT: Policy Engine UK - Algorithmic Transparency Recording Standard},
-  year = {2025},
+  year = {2024},
+  month = {December},
   howpublished = {UK Government Algorithmic Transparency Records},
   url = {https://www.gov.uk/algorithmic-transparency-records/hmt-modelling-policy-engine},
-  note = {Evaluation of PolicyEngine UK as potential supplement to HMT's internal microsimulation model}
+  note = {Date corrected 2025->2024 per primary source (2026-07-11 verification): the gov.uk record states ``Published 17 December 2024,'' NOT March 2025. Exact wording: ``NI calculations proved to be very accurate, with almost 60\% of datapoints falling within 0.5\% of one another.'' Income tax ``less promising ... difficulty in finding appropriate variables to compare.'' Model ``not currently deployed''; supplements IGOTM. Key name retained (kept ``2025'') for citation stability; the new-sources drop-in hmt2024policyengine was folded here rather than duplicated. NB: the separate ``The Times'' paraphrase currently attributed to this key is a citation mismatch --- still open.}
 }
 
 % =============================================================================
@@ -745,7 +768,7 @@
   title = {Tax Tech Market Size to Hit USD 60.66 Billion by 2034},
   year = {2025},
   url = {https://www.precedenceresearch.com/tax-tech-market},
-  note = {Global tax tech market projected from \$20.78B in 2025 to \$60.66B by 2034, CAGR 12.64\%}
+  note = {Tax-tech market ~\$20.8B (2025), ~\$23.4B (2026), projected ~\$60.7B by 2034 (CAGR 12.64\%). Per primary source (2026-07-11 verification): the ``\$60 billion'' figure is a mid-2030s PROJECTION, not the current market size --- prose should not imply today's market is near \$60B.}
 }
 
 @misc{axiomfoundation2026,
@@ -829,7 +852,7 @@
   year = {2026},
   month = {February},
   url = {https://www.simile.ai/blog/the-simulation-company},
-  note = {Simile positions itself as a company building AI simulation of society}
+  note = {Per primary source (2026-07-11 verification): Simile is the commercial vehicle of the Stanford ``Generative Agents'' team (Joon Sung Park, Michael Bernstein, Percy Liang, Lainie Yallen) --- the same team behind @park2023generative. Emerged from stealth Feb 12, 2026 with a \$100M Series A led by Index Ventures.}
 }
 
 @misc{simile2026frontier,
@@ -846,8 +869,8 @@
   title = {Coverage for Half a Million Children and Families Will Be Reinstated Thanks to HHS' Swift Action},
   year = {2023},
   month = {September},
-  url = {https://www.cms.gov/newsroom/press-releases/coverage-half-million-children-families-will-be-reinstated-thanks-hhs-swift-action},
-  note = {CMS announced that roughly half a million children and families would have coverage restored after states identified an eligibility-systems issue affecting automatic renewals during unwinding}
+  url = {https://www.cms.gov/newsroom/press-releases/coverage-half-million-children-and-families-will-be-reinstated-thanks-hhs-swift-action},
+  note = {Per primary source (2026-07-11 verification): ~500,000 children and others improperly disenrolled by an ex parte (auto-renewal) defect run at the household rather than individual level across 30 states; CMS alert letter Aug 30, 2023.}
 }
 
 @misc{kffhealthnews2024deloitte,
@@ -874,9 +897,12 @@
   author = {Santurkar, Shibani and Durmus, Esin and Ladhak, Faisal and Lee, Cinoo and Liang, Percy and Hashimoto, Tatsunori},
   title = {Whose Opinions Do Language Models Reflect?},
   booktitle = {Proceedings of the 40th International Conference on Machine Learning (ICML)},
+  series = {PMLR},
+  volume = {202},
+  pages = {29971--30004},
   year = {2023},
   url = {https://proceedings.mlr.press/v202/santurkar23a/santurkar23a.pdf},
-  note = {LLMs disproportionately reflect liberal, educated, Western populations; fine-tuning can push models to embody caricatures of demographic groups}
+  note = {PMLR 202:29971--30004 (added per primary source, 2026-07-11 verification). LLMs disproportionately reflect liberal, educated, Western populations; skew left-leaning after human feedback; fine-tuning can push models to embody caricatures of demographic groups}
 }
 
 @inproceedings{park2023generative,
@@ -889,7 +915,7 @@
 }
 
 @article{bisbee2024synthetic,
-  author = {Bisbee, James and Clinton, Joshua D. and Dorff, Cassy and Kenkel, Brenton and Larson, Jennifer},
+  author = {Bisbee, James and Clinton, Joshua D. and Dorff, Cassy and Kenkel, Brenton and Larson, Jennifer M.},
   title = {Synthetic Replacements for Human Survey Data? The Perils of Large Language Models},
   journal = {Political Analysis},
   volume = {32},
@@ -897,7 +923,7 @@
   pages = {401--416},
   year = {2024},
   doi = {10.1017/pan.2024.5},
-  note = {ChatGPT sampling not reliable for statistical inference; less variation than real surveys, regression coefficients differ significantly}
+  note = {FIVE authors (Bisbee, Clinton, Dorff, Kenkel, Larson) --- confirmed per primary source (2026-07-11 verification); writers must not let ``et al.'' drop the other four. ChatGPT sampling not reliable for statistical inference; less variation than real surveys, regression coefficients differ significantly.}
 }
 
 @book{achen2016democracy,
@@ -931,8 +957,9 @@
   author = {Arrow, Kenneth J.},
   title = {Social Choice and Individual Values},
   publisher = {John Wiley \& Sons},
+  address = {New York},
   year = {1951},
-  note = {Impossibility theorem: no ranked voting system can simultaneously satisfy unanimity, non-dictatorship, and independence of irrelevant alternatives}
+  note = {Publisher confirmed correct per primary source (2026-07-11 verification): the 1951 first edition is John Wiley \& Sons (Cowles Commission Monograph 12), NOT Yale; Yale University Press published only later editions (3rd ed. 2012). Impossibility theorem: no ranked voting system can simultaneously satisfy unanimity, non-dictatorship, and independence of irrelevant alternatives.}
 }
 
 @book{rivlin1984economics,
@@ -1092,12 +1119,15 @@
 }
 
 @techreport{kangas2020finland,
-  author = {Kangas, Olli and Jauhiainen, Signe and Simanainen, Miska and Ylikännö, Minna},
-  title = {The Basic Income Experiment 2017--2018 in Finland: Preliminary Results},
-  institution = {Ministry of Social Affairs and Health, Finland},
-  year = {2019},
-  url = {https://julkaisut.valtioneuvosto.fi/handle/10024/161361},
-  note = {First results: no statistically significant effect on employment days in year one despite 23pp reduction in participation tax rates}
+  author = {Kangas, Olli and Jauhiainen, Signe and Simanainen, Miska and Ylik{\"a}nn{\"o}, Minna},
+  title = {Evaluation of the Finnish Basic Income Experiment},
+  institution = {Ministry of Social Affairs and Health},
+  type = {Reports and Memoranda of the Ministry of Social Affairs and Health},
+  number = {2020:15},
+  year = {2020},
+  address = {Helsinki},
+  url = {https://julkaisut.valtioneuvosto.fi/handle/10024/162219},
+  note = {Retargeted from the 2019 preliminary report to the 2020:15 final evaluation per primary source (2026-07-11 verification), aligning the key year (2020) with its content. 2,000 unemployed treated, EUR560/month tax-exempt, Jan 2017--Dec 2018; preliminary (2019): no significant first-year employment effect; final (May 2020): small positive employment effect + wellbeing gains. Control ~173,000 widely reported but NOT confirmable on the official page --- verify exact N. ISBN 978-952-00-9890-2.}
 }
 
 @article{hanna2018removing,
@@ -1117,16 +1147,16 @@
   year = {2025},
   month = {11},
   url = {https://www.axios.com/2025/11/21/irs-deploys-ai-agents},
-  note = {IRS deployed Agentforce AI agents in Office of Chief Counsel, Taxpayer Advocate Services, and Office of Appeals}
+  note = {Announced Nov 21, 2025. Agentforce across the Office of Chief Counsel, Taxpayer Advocate Service, and Office of Appeals; case summarization and search; agents cannot make final decisions or disburse funds. Followed a ~25\% workforce reduction (100k -> ~75k). (2026-07-11 verification.)}
 }
 
 @online{california2025poppy,
-  author = {{Office of Governor Gavin Newsom}},
-  title = {Governor Newsom launches new initiatives to accelerate responsible AI in state government},
-  year = {2025},
-  month = {12},
-  url = {https://www.gov.ca.gov/2025/12/16/governor-newsom-launches-new-initiatives-to-partner-with-tech-policy-experts-and-accelerate-responsible-ai-in-state-government/},
-  note = {Poppy digital assistant deployed to 2,000+ state employees across 50 departments}
+  author = {{California Department of Technology}},
+  title = {Poppy: California's Digital Assistant},
+  year = {2026},
+  howpublished = {California Department of Technology},
+  url = {https://www.cdt.ca.gov/poppy/},
+  note = {Retargeted to the CDT Poppy page and corrected per primary source (2026-07-11 verification): the pilot BEGAN Sept 29, 2025 (before the IRS Nov 2025 deployment), with 2,800+ state employees across 67 departments (NOT ``fifty''), drawing on ~10 GenAI models (Claude, Gemini, GPT, Nova; NOT ``eleven''), run on state infrastructure; statewide rollout July 2026. The prior ``a month later [Dec 2025] launched'' framing is wrong (a separate Newsom AI announcement landed Dec 16, 2025).}
 }
 
 @online{ncsl2025ailegislation,
@@ -1141,9 +1171,10 @@
   author = {{Congressional Budget Office}},
   title = {The Accuracy of CBO's Budget Projections for Fiscal Year 2025},
   institution = {Congressional Budget Office},
+  number = {Publication 61916},
   year = {2025},
   url = {https://www.cbo.gov/publication/61916},
-  note = {CBO underestimated revenues by 6\% and outlays by 2\% in its June 2024 projections for FY2025}
+  note = {CBO's June 2024 projection underestimated FY2025 revenues by \$334 billion (6\%): projected \$4.9T, actual \$5.2T (also underestimated outlays by 2\%). Per primary source (2026-07-11 verification), CBO attributes roughly half the revenue miss to unanticipated tariff increases (from Feb 2025) --- the single largest factor, so ``largely because of tariffs'' overstates it slightly.}
 }
 
 @techreport{cbo2025tcja,
@@ -1308,10 +1339,10 @@
 }
 
 @misc{obbba2025,
-  author = {{U.S. Congress}},
+  author = {{119th United States Congress}},
   title = {H.R. 1, One Big Beautiful Bill Act},
   year = {2025},
-  note = {119th Congress, enacted July 4, 2025},
+  note = {Public Law 119-21, 119th Congress (H.R. 1), enacted July 4, 2025. Per primary source (2026-07-11 verification): the short title ``One Big Beautiful Bill Act'' was struck during Senate amendment, so the enacted law technically has no official short title (the popular name is fine for prose). Writers must cite the public-law number as P.L. 119-21.},
   url = {https://www.congress.gov/bill/119th-congress/house-bill/1}
 }
 
@@ -1385,4 +1416,493 @@
   year = {2026},
   url = {https://github.com/maxghenis/value-forecasting},
   note = {Registered analysis; pre-analysis plan committed before elicitation. Branch ea-post-rewrite-2026-07}
+}
+
+% =============================================================================
+% PRIMARY-SOURCE VERIFICATION MERGE (2026-07-11)
+% New entries merged from reviews/2026-07-11-fromscratch/research/{part1,part2,part345}-new-sources.bib.
+% Collisions with existing keys were resolved in place above (see per-entry notes);
+% three new-sources keys were FOLDED into existing keys rather than duplicated
+% (glied2015aca -> collins2015aca; hmt2024policyengine -> hmt2025policyengine;
+% inayatali2019cbo -> inayatali2023cbo). Two new-sources keys were SKIPPED as
+% semantic duplicates of existing entries (orcutt1990engineering = orcutt1990autobiography;
+% tetlock2005epj = tetlock2005expert). One key was renamed to avoid clobbering a
+% distinct existing post (part345 columntax2024 -> columntax2025iris).
+% =============================================================================
+
+% ---- Part I corrections / [NEEDS CITATION] resolutions ----
+
+@article{kliesen2012cbo,
+  author  = {Kliesen, Kevin L. and Thornton, Daniel L.},
+  title   = {How Good Are the Government's Deficit and Debt Projections and Should We Care?},
+  journal = {Federal Reserve Bank of St.\ Louis Review},
+  year    = {2012},
+  volume  = {94},
+  number  = {1},
+  pages   = {21--39},
+  note    = {TRUE source of the ``random walk beat the CBO, 1976--2007, over short and medium horizons'' finding, which the Inayatali thesis quotes in its literature review (see @inayatali2023cbo).},
+  url     = {https://research.stlouisfed.org/publications/review/2012/01/01/how-good-are-the-governments-deficit-and-debt-projections-and-should-we-care}
+}
+
+@book{asimov1952foundation,
+  author    = {Asimov, Isaac},
+  title     = {Foundation and Empire},
+  year      = {1952},
+  publisher = {Gnome Press},
+  address   = {New York},
+  note      = {Source of ``The reaction of one man could be forecast by no known mathematics; the reaction of a billion is something else again.''}
+}
+
+@techreport{weik1961survey,
+  author      = {Weik, Martin H.},
+  title       = {A Third Survey of Domestic Electronic Digital Computing Systems},
+  institution = {Ballistic Research Laboratories, Aberdeen Proving Ground},
+  type        = {Report},
+  number      = {1115},
+  year        = {1961},
+  month       = {3},
+  note        = {Canonical primary source for period machine specs (the IBM 704 performed ~12,000 floating-point additions per second). Resolves the [NEEDS CITATION: IBM 704 FLOPS rate] marker.},
+  url         = {https://ed-thelen.org/comp-hist/BRL61.html}
+}
+
+@article{larrimore2008topcoding,
+  author  = {Larrimore, Jeff and Burkhauser, Richard V. and Feng, Shuaizhang and Zayatz, Laura},
+  title   = {Consistent Cell Means for Topcoded Incomes in the Public Use March {CPS} (1976--2007)},
+  journal = {Journal of Economic and Social Measurement},
+  year    = {2008},
+  volume  = {33},
+  number  = {2--3},
+  pages   = {89--128},
+  note    = {Documents how the public-use March CPS top-codes high incomes and the cell-mean/swap approach used to reconstruct the censored top. Resolves the [NEEDS CITATION: CPS top-coding] marker.},
+  url     = {https://content.iospress.com/articles/journal-of-economic-and-social-measurement/jem00299}
+}
+
+@techreport{jct2017macro,
+  author      = {{Joint Committee on Taxation}},
+  title       = {Macroeconomic Analysis of the Conference Agreement for {H.R.} 1, the ``{Tax} Cuts and Jobs Act''},
+  institution = {Joint Committee on Taxation},
+  type        = {Report},
+  number      = {JCX-69-17},
+  year        = {2017},
+  month       = {12},
+  note        = {Dynamic score: ~0.7\% GDP boost, ~\$385B net deficit reduction (~\$451B more revenue minus ~\$66B more interest) -> ~\$1.07T dynamic cost.},
+  url         = {https://www.jct.gov/publications/2017/jcx-69-17/}
+}
+
+@techreport{jct2017budget,
+  author      = {{Joint Committee on Taxation}},
+  title       = {Estimated Budget Effects of the Conference Agreement for {H.R.} 1, the ``{Tax} Cuts and Jobs Act''},
+  institution = {Joint Committee on Taxation},
+  type        = {Report},
+  number      = {JCX-67-17},
+  year        = {2017},
+  month       = {12},
+  note        = {Static ten-year revenue estimate ~\$1.456 trillion. Resolves the [NEEDS CITATION: JCT TCJA static and dynamic scores] marker (with @jct2017macro).},
+  url         = {https://www.jct.gov/publications/2017/jcx-67-17/}
+}
+
+@misc{sadowsky2005interview,
+  author       = {Sadowsky, George},
+  title        = {An Interview with George Sadowsky},
+  howpublished = {ACM Ubiquity},
+  year         = {2005},
+  note         = {First-hand account of computerizing Treasury revenue estimation for the Revenue Act of 1964; source of ``probably the most useful program I ever wrote'' (~3 months, 1963). Exact publication month/year to confirm.},
+  url          = {https://ubiquity.acm.org/article.cfm?id=1008527}
+}
+
+% ---- Part II: PolicyEngine-era primary sources ----
+
+@misc{nsf2025pose,
+  author       = {{National Science Foundation}},
+  title        = {Award Abstract \#2518372: POSE: Phase I: PolicyEngine --- Advancing Public Policy Analysis},
+  year         = {2025},
+  month        = {August},
+  howpublished = {NSF Award Search},
+  url          = {https://www.nsf.gov/awardsearch/showAward?AWD_ID=2518372},
+  note         = {POSE Phase I; awardee PSL Foundation; PI Max Ghenis; award date 15 August 2025; start 1 September 2025; \$299,974 (FY2025). Corrects the manuscript's ``In 2024'' to 2025.}
+}
+
+@misc{policyengine2025nsfpose,
+  author       = {{PolicyEngine}},
+  title        = {National Science Foundation awards PolicyEngine \$300,000 grant},
+  year         = {2025},
+  month        = {August},
+  howpublished = {PolicyEngine Research},
+  url          = {https://www.policyengine.org/us/research/nsf-pose-phase-1-grant},
+  note         = {Announced 18 August 2025. States TAXSIM ``cited in over 1,100 academic publications'' (cf. the 1,200 in the NBER MOU post); Feenberg as external I-Corps mentor.}
+}
+
+@misc{policyengine2025nbertaxsim,
+  author       = {{PolicyEngine}},
+  title        = {PolicyEngine and {NBER} sign memorandum of understanding for {TAXSIM} emulator development},
+  year         = {2025},
+  month        = {September},
+  howpublished = {PolicyEngine Research},
+  url          = {https://www.policyengine.org/us/research/policyengine-nber-mou-taxsim},
+  note         = {5 September 2025. ``Over 1,200 papers have applied TAXSIM, based on citations of the Feenberg and Coutts (1993) paper.'' Resolves the [NEEDS CITATION: TAXSIM paper count] marker.}
+}
+
+@misc{policyengine2025atlantafed,
+  author       = {{PolicyEngine}},
+  title        = {PolicyEngine and Atlanta Fed sign memorandum of understanding for Policy Rules Database validation},
+  year         = {2025},
+  howpublished = {PolicyEngine Research},
+  url          = {https://www.policyengine.org/us/research/policyengine-atlanta-fed-mou-prd},
+  note         = {Policy Rules Database covers SNAP, Medicaid, housing vouchers, and child care subsidies plus taxes/EITC/CTC; powers the CLIFF tools; co-developed with the National Center for Children in Poverty.}
+}
+
+@misc{policyengine2026downingstreet,
+  author       = {{PolicyEngine}},
+  title        = {PolicyEngine powers rapid policy analysis at No 10 Downing Street},
+  year         = {2026},
+  howpublished = {PolicyEngine Research},
+  url          = {https://www.policyengine.org/us/research/policyengine-10-downing-street},
+  note         = {Nikhil Woodruff served as an ``Innovation Fellow with 10DS'' (No 10 data science team) for ~six months from summer 2025, building the 10ds-microsim package on PolicyEngine, ``intensively validated against external projections and official forecasts.'' The [VERIFY with Nikhil: role wording] marker stays; publication date to confirm at copyedit.}
+}
+
+@misc{policyengine2024usreview,
+  author       = {{PolicyEngine}},
+  title        = {PolicyEngine {US} in 2024: A year in review},
+  year         = {2024},
+  month        = {December},
+  howpublished = {PolicyEngine Research},
+  url          = {https://www.policyengine.org/us/research/us-year-in-review-2024},
+  note         = {29 December 2024. ``We introduced comprehensive state income tax models for all 50 states and DC.'' Confirms the 50-state milestone year (2024); the specific ``April'' month is not stated here.}
+}
+
+@misc{policyengine2022growthplan,
+  author       = {Ghenis, Max},
+  title        = {Tax cuts in Prime Minister Truss's Growth Plan 2022},
+  year         = {2022},
+  month        = {September},
+  journal      = {PolicyEngine Blog},
+  url          = {https://blog.policyengine.org/tax-cuts-in-prime-minister-trusss-growth-plan-2022-a4a862892dc1},
+  note         = {Published 23 September 2022, the day of the mini-budget. Top income decile net income +\pounds2,738 (2.5\%); bottom decile +\pounds45 (0.4\%); Gini +1.2\%; top-1\% share +2.2\%. Corrects the manuscript's ``about \pounds2,500.''}
+}
+
+@misc{policyengine2021uctaper,
+  author       = {Woodruff, Nikhil},
+  title        = {Analysing Autumn Budget Universal Credit reforms with PolicyEngine},
+  year         = {2021},
+  month        = {October},
+  journal      = {PolicyEngine Blog},
+  url          = {https://blog.policyengine.org/analysing-autumn-budget-universal-credit-reforms-with-policyengine-2ce93f177428},
+  note         = {Autumn Budget 2021 UC reform: taper 63\% -> 55\%, work allowance +\pounds500/yr. PolicyEngine estimate: cost \pounds2.8bn/yr, poverty -3.1\%, benefits 12\% of population. Does NOT contain the ``\pounds1,000/single parent at 25hrs'' or ``26\%->9\% above 70\% MTR'' figures --- those markers stay open.}
+}
+
+@misc{ubicenter2019freedomdividend,
+  author       = {Ghenis, Max},
+  title        = {Distributional analysis of Andrew Yang's Freedom Dividend},
+  year         = {2019},
+  month        = {June},
+  howpublished = {UBI Center},
+  url          = {https://www.ubicenter.org/distributional-analysis-of-andrew-yangs-freedom-dividend},
+  note         = {24 June 2019. \$12,000/yr to 236M adults = \$2.8T gross; new tax revenue raises \$1.2T, leaving \$1.4T unfunded; poverty -74\% (7.3\% -> 1.9\%); child poverty -54\% (7.9\% -> 3.6\%).}
+}
+
+@misc{ubicenter2022ukcarbon,
+  author       = {Ghenis, Max and Woodruff, Nikhil},
+  title        = {The progressivity of a {UK} carbon dividend},
+  year         = {2022},
+  month        = {April},
+  howpublished = {UBI Center},
+  url          = {https://www.ubicenter.org/uk-carbon-dividend},
+  note         = {23 April 2022. \pounds100/tonne carbon dividend cuts poverty 14\% (deep child poverty ~33\% per the report); bottom decile +6.2\%, top decile -2.1\%, Gini -3.4\%. US companion (\$100/ton): poverty -10\%, deep child poverty -27\%.}
+}
+
+@misc{policyengine2025illinoisbenefithub,
+  author       = {{PolicyEngine}},
+  title        = {Illinois Benefit Hub launches with PolicyEngine-powered eligibility screening},
+  year         = {2025},
+  howpublished = {PolicyEngine Research},
+  url          = {https://www.policyengine.org/us/research/illinois-benefit-hub},
+  note         = {Illinois is the 4th MyFriendBen state, ``following launches in Colorado, North Carolina, and New York''; 12-language, ~6-minute screener on the PolicyEngine API.}
+}
+
+@techreport{census2022ctcimpact,
+  author       = {{U.S. Census Bureau}},
+  title        = {The Impact of the 2021 Expanded Child Tax Credit on Child Poverty},
+  institution  = {U.S. Census Bureau},
+  type         = {SEHSD Working Paper},
+  number       = {2022-24},
+  year         = {2022},
+  url          = {https://www.census.gov/library/working-papers/2022/demo/SEHSD-wp2022-24.html},
+  note         = {CTC lifted 5.3M people incl. 2.9M children out of poverty in 2021; the expansion alone lifted 2.1M children. SPM child poverty 9.7\% (2020) -> 5.2\% (2021).}
+}
+
+@misc{census2023spm,
+  author       = {{U.S. Census Bureau}},
+  title        = {Poverty Measure That Includes Government Assistance Increased to 12.4\% in 2022, When Pandemic Relief Ended},
+  year         = {2023},
+  month        = {September},
+  url          = {https://www.census.gov/library/stories/2023/09/supplemental-poverty-measure.html},
+  note         = {Official SPM 7.8\% (2021) -> 12.4\% (2022). Reconciles the ch 6 [VERIFY] against PolicyEngine's ~9.6\% figure.}
+}
+
+@misc{tpc2024eitcparameters,
+  author       = {{Tax Policy Center}},
+  title        = {{EITC} Parameters},
+  year         = {2024},
+  url          = {https://taxpolicycenter.org/statistics/eitc-parameters},
+  note         = {Statutory EITC phase-out rates (26 U.S.C. sec. 32(b); IRS Rev. Proc. 2024-40): one child 15.98\%, two or more 21.06\% (7.65\% childless). Confirms both the ``sixteen/twenty-one cents'' and the 21.06\% two-child transposition anecdote.}
+}
+
+@misc{taxcalculator2021v321,
+  author       = {{PSL Models}},
+  title        = {Tax-Calculator Release 3.2.1},
+  year         = {2021},
+  month        = {August},
+  howpublished = {GitHub},
+  url          = {https://github.com/PSLmodels/Tax-Calculator/releases/tag/3.2.1},
+  note         = {Released 6 August 2021 (``3.2.1 (2021-08-06)''). Resolves the [NEEDS CITATION: Tax-Calculator v3.2.1 release date] marker.}
+}
+
+% ---- Part III-V: AI benchmarks, OBBBA, gov-tech, opinion/values ----
+
+@misc{holzenberger2020sara,
+  author       = {Holzenberger, Nils and Blair-Stanek, Andrew and Van Durme, Benjamin},
+  title        = {A Dataset for Statutory Reasoning in Tax Law Entailment and Question Answering},
+  booktitle    = {Proceedings of the Natural Legal Language Processing Workshop},
+  year         = {2020},
+  eprint       = {2005.05257},
+  archivePrefix= {arXiv},
+  note         = {SARA = nine sections of the US Internal Revenue Code, moderately edited to be self-contained; 376 cases (276 true/false + 100 numerical). The subset GPT-4 was given (NOT the full IRC).},
+  url          = {https://arxiv.org/abs/2005.05257}
+}
+
+@misc{anthropic2024mcp,
+  author       = {{Anthropic}},
+  title        = {Introducing the Model Context Protocol},
+  year         = {2024},
+  month        = {November},
+  howpublished = {Anthropic news},
+  note         = {MCP open-sourced Nov 2024 (authors David Soria Parra, Justin Spahr-Summers). OpenAI adopted March 2025 (Altman, Mar 26 2025); Google DeepMind followed within months.},
+  url          = {https://www.anthropic.com/news/model-context-protocol}
+}
+
+@misc{columntax2025iris,
+  author       = {{Column Tax}},
+  title        = {Introducing Iris: Our AI Tax Development Agent},
+  year         = {2025},
+  howpublished = {Column Tax blog},
+  note         = {``Today's LLMs cannot `do taxes' on their own. That's because tax calculations require 100\% correctness.'' Over 1 million returns filed, over \$1B in refunds processed. Renamed from a colliding columntax2024 key: the existing columntax2024 points at a DIFFERENT 2024 post (``Will AI Agents Help File Your Taxes?''); this 2025 Iris post is the home of the ``100\% correctness'' quote (2026-07-11 verification).},
+  url          = {https://www.columntax.com/blog/introducing-iris-our-ai-tax-development-agent}
+}
+
+@techreport{cbo2017mandate,
+  author       = {{Congressional Budget Office}},
+  title        = {Repealing the Individual Health Insurance Mandate: An Updated Estimate},
+  institution  = {Congressional Budget Office},
+  number       = {Publication 53300},
+  year         = {2017},
+  month        = {November},
+  note         = {Projected 4 million more uninsured in 2019 and 13 million in 2027; ~\$338B deficit reduction 2018--2027. This is the true source of the ``13 million fewer insured by 2027'' claim (miscited to @cbo2017ahca in the draft).},
+  url          = {https://www.cbo.gov/publication/53300}
+}
+
+@misc{usda2026snapper,
+  author       = {{U.S. Department of Agriculture, Food and Nutrition Service}},
+  title        = {USDA Announces FY 2025 State Payment Error Rates in SNAP},
+  year         = {2026},
+  month        = {June},
+  note         = {National payment error rate FY2025 = 10.62\% (overpayment 9.28\%, underpayment 1.33\%); ~\$10.1B in improper payments. Released June 24, 2026. Resolves the [NEEDS CITATION: USDA FY2025 SNAP national payment error rate] marker.},
+  url          = {https://www.usda.gov/about-usda/news/press-releases/2026/06/24/usda-announces-fy-2025-state-payment-error-rates-snap}
+}
+
+@misc{fns2026snapqcper,
+  author       = {{U.S. Department of Agriculture, Food and Nutrition Service}},
+  title        = {SNAP Quality Control Payment Error Rates},
+  year         = {2026},
+  howpublished = {FNS SNAP Quality Control},
+  url          = {https://www.fns.usda.gov/snap/qc/per}
+}
+
+@misc{cms2026communityengagement,
+  author       = {{Centers for Medicare and Medicaid Services}},
+  title        = {Medicaid Program; Community Engagement Requirement for Certain Individuals},
+  year         = {2026},
+  month        = {June},
+  howpublished = {Interim Final Rule with Comment Period, CMS-2454-IFC, 91 Fed. Reg.},
+  note         = {Implements OBBBA Sec. 71119. Statutory deadline for able-bodied adults (19--64) in expansion states to meet the 80-hour/month community-engagement requirement is Dec. 31, 2026; states verify at application and renewal. Rule effective July 31, 2026; published in the Federal Register June 3, 2026. Resolves the [NEEDS CITATION: CMS interim final rule] marker.},
+  url          = {https://www.federalregister.gov/documents/2026/06/03/2026-11094/medicaid-program-community-engagement-requirement-for-certain-individuals}
+}
+
+@misc{fns2026snapadmincost,
+  author       = {{U.S. Department of Agriculture, Food and Nutrition Service}},
+  title        = {Supplemental Nutrition Assistance Program: Changes in Federal-State Administrative Cost Sharing},
+  year         = {2026},
+  month        = {June},
+  howpublished = {Federal Register},
+  note         = {OBBBA Sec. 10106 amends Sec. 16(a) of the Food and Nutrition Act, cutting the federal share of SNAP state administrative costs from 50\% to 25\% (state share 50->75\%) beginning FY2027.},
+  url          = {https://www.federalregister.gov/documents/2026/06/24/2026-12696/supplemental-nutrition-assistance-program-changes-in-federal-state-administrative-cost-sharing}
+}
+
+@techreport{crs2025snapoverview,
+  author       = {{Congressional Research Service}},
+  title        = {Supplemental Nutrition Assistance Program (SNAP) and Related Nutrition Programs in P.L. 119-21: An Overview},
+  institution  = {Congressional Research Service},
+  number       = {R48552},
+  year         = {2025},
+  note         = {SNAP state benefit cost-share tiers from FY2028: <6\% PER -> 0\%; 6--<8\% -> 5\%; 8--<10\% -> 10\%; >=10\% -> 15\% of benefit costs. First year (FY2028) a state may elect its FY2025 or FY2026 PER.},
+  url          = {https://www.congress.gov/crs-product/R48552}
+}
+
+@misc{cbpp2026snapstates,
+  author       = {{Center on Budget and Policy Priorities}},
+  title        = {States' First-Ever Bill for SNAP Benefits Could Cost Billions},
+  year         = {2026},
+  howpublished = {CBPP},
+  note         = {Using FY2025 error-rate data, states would owe roughly \$9 billion in total in new SNAP benefit costs; nearly half of states \$100M+.},
+  url          = {https://www.cbpp.org/blog/states-first-ever-bill-for-snap-benefits-could-cost-billions}
+}
+
+@misc{pradhan2024deloitte,
+  author       = {Pradhan, Rachana and Liss, Samantha},
+  title        = {Medicaid for Millions in America Hinges on Deloitte-Run Systems Plagued by Errors},
+  year         = {2024},
+  month        = {June},
+  howpublished = {KFF Health News},
+  note         = {25 states have awarded Deloitte eligibility-system contracts worth ``at least \$5 billion'' (June 2024); updated to ``at least \$6 billion'' in the Oct 2025 follow-up. Resolves the [NEEDS CITATION: Deloitte state count and contract value] marker.},
+  url          = {https://kffhealthnews.org/news/article/medicaid-deloitte-run-eligibility-systems-plagued-by-errors/}
+}
+
+@misc{liss2024deloittefix,
+  author       = {Liss, Samantha and Pradhan, Rachana},
+  title        = {Errors in Deloitte-Run Medicaid Systems Can Cost Millions and Take Years To Fix},
+  year         = {2024},
+  month        = {September},
+  howpublished = {KFF Health News},
+  note         = {Correct authors are Liss \& Pradhan (the existing kffhealthnews2024deloitte key wrongly lists ``Houghton, Kim''). Kentucky: Beverly Likens (she/her) lost coverage; fix cost \$522,455 and 3,500+ hours over ~10 months. Georgia: 25,000+ SNAP/TANF cases, ~2 years to untangle.},
+  url          = {https://kffhealthnews.org/health-industry/deloitte-run-medicaid-systems-errors-cost-millions-take-years-to-fix/}
+}
+
+@techreport{robodebt2023report,
+  author       = {Holmes, Catherine},
+  title        = {Report of the Royal Commission into the Robodebt Scheme},
+  institution  = {Commonwealth of Australia},
+  year         = {2023},
+  month        = {July},
+  note         = {Presented 7 July 2023. Overview p. xxix: ``Robodebt was a crude and cruel mechanism, neither fair nor legal, and it made many people feel like criminals.'' Settlement: Prygodicz v Commonwealth (No 2) [2021] FCA 634 --- A\$1.8B (~\$751M refunded to ~381,000 people; ~470,000 = wrongful debts raised, NOT refund recipients). Resolves the [NEEDS CITATION: Robodebt royal commission] marker.},
+  url          = {https://robodebt.royalcommission.gov.au/publications/report}
+}
+
+@misc{bauserman2022midas,
+  author       = {{Michigan Supreme Court}},
+  title        = {Bauserman v. Unemployment Insurance Agency},
+  year         = {2022},
+  howpublished = {509 Mich. 673, Docket No. 160813 (decided July 26, 2022)},
+  note         = {MiDAS (Michigan Integrated Data Automated System) auto-adjudicated fraud without human review Oct 1, 2013--Aug 7, 2015; a state review found ~93\% of those determinations wrong. ~40,000 wrongfully accused (~20,000 in the no-review window). \$20M class settlement announced Oct 20, 2022. Resolves the [NEEDS CITATION: Michigan MiDAS] marker.},
+  url          = {https://www.courts.michigan.gov/4a1c19/siteassets/case-documents/opinions-orders/msc-term-opinions-(manually-curated)/21-22/bauserman-op.pdf}
+}
+
+@misc{ledgerwood2017,
+  author       = {{Arkansas Supreme Court}},
+  title        = {Arkansas Department of Human Services v. Ledgerwood},
+  year         = {2017},
+  howpublished = {2017 Ark. 308, 530 S.W.3d 336},
+  note         = {Caption is ``Arkansas DHS v. Ledgerwood'' (DHS was appellant), NOT ``Ledgerwood v. Arkansas DHS.'' RUGs allocation algorithm (Brant Fries / interRAI) cut ARChoices attendant-care hours (~43\% avg). Plaintiff Bradley Ledgerwood cut 56->32 weekly hours. Invalidated on state APA rulemaking grounds (not promulgated as a rule); due-process notice findings came in RELATED FEDERAL litigation. Resolves the [NEEDS CITATION: Arkansas home-care litigation] marker.},
+  url          = {https://www.courtlistener.com/opinion/4441883/ark-dept-of-human-servs-v-ledgerwood/}
+}
+
+@misc{fns2024automation,
+  author       = {{U.S. Department of Agriculture, Food and Nutrition Service}},
+  title        = {Use of Advanced Automation in SNAP},
+  year         = {2024},
+  month        = {January},
+  howpublished = {FNS policy memo (revised Feb 24, 2025)},
+  note         = {Revised version: ``bots are considered non-merit staff and prohibited from performing these merit staff functions'' (eligibility interviews, determination, appeals). Cites 7 CFR 272.15, 272.3; FNA Sec. 17(b).},
+  url          = {https://www.fns.usda.gov/snap/advanced-automation}
+}
+
+@misc{fns2024aiframework,
+  author       = {{U.S. Department of Agriculture, Food and Nutrition Service}},
+  title        = {Framework for State, Local, Tribal, and Territorial Use of Artificial Intelligence for Public Benefit Administration},
+  year         = {2024},
+  month        = {April},
+  note         = {``All AI must be used in compliance with program requirements for the use of merit systems personnel, such as those applicable to SNAP.'' The book's ``AI may not replace state merit personnel'' is a fair paraphrase of this + the automation memo, not a single verbatim sentence. Resolves the [NEEDS CITATION: FNS merit-personnel guidance] marker (with @fns2024automation).},
+  url          = {https://www.fns.usda.gov/framework-artificial-intelligence-public-benefit}
+}
+
+@misc{kff2024unwinding,
+  author       = {{KFF}},
+  title        = {Medicaid Enrollment and Unwinding Tracker},
+  year         = {2024},
+  howpublished = {KFF},
+  note         = {~25.2 million disenrolled; 56.4 million renewed (data through ~Sept 2024).},
+  url          = {https://www.kff.org/report-section/medicaid-enrollment-and-unwinding-tracker-overview/}
+}
+
+@misc{ipcc2013uncertainty,
+  author       = {Mastrandrea, Michael D. and others},
+  title        = {Guidance Note for Lead Authors of the IPCC Fifth Assessment Report on Consistent Treatment of Uncertainties},
+  institution  = {Intergovernmental Panel on Climate Change},
+  year         = {2010},
+  note         = {Calibrated likelihood language: ``likely'' = 66--100\%, ``very likely'' = 90--100\%.},
+  url          = {https://www.ipcc.ch/site/assets/uploads/2017/08/AR5_Uncertainty_Guidance_Note.pdf}
+}
+
+@misc{gss2024homosex,
+  author       = {{NORC at the University of Chicago}},
+  title        = {General Social Survey: HOMOSEX (``sexual relations between two adults of the same sex''), Data Explorer variable 633},
+  year         = {2024},
+  howpublished = {GSS Data Explorer},
+  note         = {Exact 2018/2021/2022/2024 survey-weighted HOMOSEX values are ACCOUNT-GATED on the Data Explorer (UNVERIFIED at primary), but the DIRECTION is corroborated: ``always wrong'' = 34.9\% in 2024 (-> ``not wrong at all'' mid-50s), and Gallup's parallel moral-acceptance measure fell 71\%->~64\% (2022->23). DISCOVERY/CAVEAT: the GSS moved to mixed-mode collection beginning with the 2021 wave (pandemic); the 2021 wave used push-to-web (response rate ~17\% vs ~50\% in 2022), which tends to RAISE ``not wrong at all'' --- so a 2021--22 peak may be partly a mode artifact. NORC cautions against reading post-2020 changes as pure attitude shifts. Reconcile the manuscript's ~63\% (2022) with the brief's ~61\% (2022).},
+  url          = {https://gssdataexplorer.norc.org/variables/633/vshow}
+}
+
+@article{mellers2014winning,
+  author       = {Mellers, Barbara and others},
+  title        = {Psychological Strategies for Winning a Geopolitical Forecasting Tournament},
+  journal      = {Psychological Science},
+  volume       = {25},
+  number       = {5},
+  pages        = {1106--1115},
+  year         = {2014},
+  doi          = {10.1177/0956797614524255}
+}
+
+@article{wolfers2004prediction,
+  author       = {Wolfers, Justin and Zitzewitz, Eric},
+  title        = {Prediction Markets},
+  journal      = {Journal of Economic Perspectives},
+  volume       = {18},
+  number       = {2},
+  pages        = {107--126},
+  year         = {2004},
+  doi          = {10.1257/0895330041371321},
+  url          = {https://www.aeaweb.org/articles?id=10.1257/0895330041371321}
+}
+
+@misc{dropp2017obamacare,
+  author       = {Dropp, Kyle and Nyhan, Brendan},
+  title        = {One-Third Don't Know Obamacare and Affordable Care Act Are the Same},
+  year         = {2017},
+  month        = {February},
+  howpublished = {The New York Times (The Upshot); poll fielded by Morning Consult, n approx 2{,}000},
+  note         = {35\% = 17\% ``different policies'' + 18\% ``don't know.'' Published Feb 7, 2017. Resolves the [NEEDS CITATION: Feb 2017 Morning Consult/NYT poll] marker.},
+  url          = {https://www.nytimes.com/2017/02/07/upshot/one-third-dont-know-obamacare-and-affordable-care-act-are-the-same.html}
+}
+
+@misc{brownback2012experiment,
+  author       = {{Center on Budget and Policy Priorities}},
+  title        = {Kansas Provides Compelling Evidence of Failure of ``Supply-Side'' Tax Cuts},
+  year         = {2017},
+  note         = {Gov. Sam Brownback, MSNBC ``Morning Joe,'' June 2012: ``We'll have a real live experiment.'' Business-profits exemption repealed by bipartisan legislative override June 6, 2017.},
+  url          = {https://www.cbpp.org/research/kansas-provides-compelling-evidence-of-failure-of-supply-side-tax-cuts}
+}
+
+@misc{westworld2020winterline,
+  author       = {{HBO}},
+  title        = {Westworld, Season 3, Episode 2: ``The Winter Line''},
+  year         = {2020},
+  note         = {VERBATIM Serac (Vincent Cassel) line, to Maeve: ``For the first time, history has an author.'' (fuller context: ``...humanity has been a miserable little den of thugs stumbling from one catastrophe to the next. Our history is like the ravings of lunatics. Chaos. But we've changed that. For the first time, history has an author.''). The book's ``I don't predict the future. I create it.'' is a PARAPHRASE, NOT a verbatim line --- BANNED as a quotation.},
+  url          = {https://www.hbo.com/westworld}
+}
+
+@misc{columntax2025taxcalcbench,
+  author       = {{Column Tax}},
+  title        = {TaxCalcBench: Can AI file your taxes?},
+  year         = {2025},
+  howpublished = {Column Tax blog},
+  url          = {https://www.columntax.com/blog/taxcalcbench}
 }

@@ -1,4 +1,4 @@
-.PHONY: serve build pdf epub docx clean
+.PHONY: serve build pdf epub docx check clean
 
 # Start local Quarto preview server
 serve:
@@ -19,6 +19,11 @@ epub:
 # Build DOCX book
 docx:
 	quarto render --to docx
+
+# Knowledge-layer linter: concept-introduction order, retired names,
+# marker census, code-block provenance
+check:
+	uv run --with pyyaml scripts/check_book.py all
 
 # Clean build artifacts
 clean:

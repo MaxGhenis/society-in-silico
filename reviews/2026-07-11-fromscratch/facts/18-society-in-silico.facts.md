@@ -5,7 +5,7 @@ Source: `manuscript/part-5-horizon/17-society-in-silico.md`. Target chapter numb
 
 ### The frame (return to Serac / Rehoboam)
 - The chapter returns to the book's opening: Engerraund Serac in his control room, watching Rehoboam's predictions cascade across the displays — individual lives reduced to trajectories, a society optimized to one man's definition of optimal.
-- Serac's line: "I don't predict the future. I create it." That is one vision of society in silico; the book has traced another.
+- Serac's philosophy: his job is not to predict the future but to create it — one vision of society in silico; the book has traced another. [BANNED as a verbatim quotation — "I don't predict the future. I create it." is NOT a real Serac line and never appears in the show; present it only as unquoted characterization. The nearest verbatim Serac line (S3E2 "The Winter Line," to Maeve) is "For the first time, history has an author." — use that if the frame is quoted (corrected per research/part345-verification.md correction #1) [@westworld2020winterline].]
 
 ### Two paths
 - Both visions start from the same recognition: complex social systems can be modeled computationally — policies simulated before they are enacted, a population represented as millions of synthetic households, consequences estimated before anyone has to live them. They diverge on everything after.
@@ -68,14 +68,14 @@ The five beats:
 - Final lines: "The machinery can simulate the futures on offer; only the public it serves can decide which one is worth building. Society in silico is not a destination. It's a method."
 
 ## Story beats
-- **Serac / Rehoboam opening frame (bookend to the book's beginning).** Return to the control room and the cascading predictions; Serac's "I don't predict the future. I create it." names the closed vision the whole book has argued against.
+- **Serac / Rehoboam opening frame (bookend to the book's beginning).** Return to the control room and the cascading predictions; Serac's create-not-predict philosophy names the closed vision the whole book has argued against. [The verbatim line to use is "For the first time, history has an author." (S3E2) [@westworld2020winterline]; "I don't predict the future. I create it." is BANNED — not a real quote — per research/part345-verification.md #1.]
 - **The mid-build reflection beat.** The book confesses it was outrun by its own subject — chapters written as aspiration became descriptions of shipped infrastructure between drafts. "A book about the pace of change that was itself outrun by it is an awkward artifact, but an honest one." Offered as the strongest evidence for the "the window is now" claim.
 - **The brittleness payoff.** Rehoboam shatters on Dolores and the hosts — genuine novelty the closed model cannot predict. The fiction's failure carries the chapter's thesis: closed systems are brittle; open ones are improvable.
 - **The Orcutt bookend.** Orcutt died in 2006, having seen microsimulation become institutional but not public infrastructure; the agent era's addition (per-unit verifiability) completes his per-unit insight.
 - **The shared-factual-floor scene.** A near-future candidate's tax plan analyzed within hours by many people running the same open model — the concrete picture of what the infrastructure buys.
 
 ## Quotes
-- "I don't predict the future. I create it." — Serac, *Westworld* (the closed-vision frame; keep attribution).
+- "For the first time, history has an author." — Engerraund Serac, *Westworld* (S3E2 "The Winter Line," 2020) [@westworld2020winterline] (the closed-vision frame; this is the verified verbatim line). [BANNED: the previously-used "I don't predict the future. I create it." is NOT a real Serac quote — never present it in quotation marks (corrected per research/part345-verification.md #1); Serac's create-not-predict stance may appear only as unquoted characterization.]
 - "The open-source movement changed this not by producing better models, but by making models improvable." — narrative line, Chapter 17 (protected; see Author-texture / Arguments).
 - "Society in silico is not a destination. It's a method." — narrative closing line (protected; see Author-texture).
 

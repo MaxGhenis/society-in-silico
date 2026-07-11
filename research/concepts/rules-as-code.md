@@ -1,3 +1,5 @@
+> Superseded terminology — see registry.yml and reviews/2026-07-10T1227/rewrite-facts.md.
+
 # Rules as Code
 
 **Also known as**: Legislation as Code, RaC

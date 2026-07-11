@@ -22,6 +22,7 @@ The first is the spreadsheet behind a graphical interface, and EUROMOD is its mo
 
 The second architecture is code-native, the approach PolicyEngine and Tax-Calculator take. Policy rules are ordinary source code—readable in any editor, browsable on GitHub, changed through the same version-control workflow developers use for everything else. A calculation is literally a function you can step through in a debugger and cover with unit tests. Here is a UK National Insurance contribution in PolicyEngine:
 
+<!-- source: illustrative -->
 ```python
 def formula(person, period, parameters):
     earnings = person("employee_earnings", period)
@@ -36,6 +37,7 @@ def formula(person, period, parameters):
 
 Anyone who reads Python can follow it: pull earnings, look up thresholds and a rate, apply the rate to earnings in the liable band. The values themselves live separately, in human-readable YAML:
 
+<!-- source: illustrative -->
 ```yaml
 gov:
   hmrc:

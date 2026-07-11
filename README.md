@@ -59,7 +59,13 @@ make build   # Static HTML book
 make pdf     # PDF
 make epub    # EPUB
 make docx    # DOCX
+make check   # Knowledge-layer linter
 ```
+
+`make check` — concept-introduction order, retired names, marker census,
+code-block provenance. Runs `scripts/check_book.py` (stdlib + PyYAML) and exits
+non-zero on failure; the concept order and code-block rules are enforced from
+`research/concepts/registry.yml`.
 
 ## Workflow
 

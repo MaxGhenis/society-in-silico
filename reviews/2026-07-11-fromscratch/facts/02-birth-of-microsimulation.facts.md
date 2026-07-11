@@ -22,10 +22,10 @@ Source: `manuscript/part-1-closed-stack/01-birth-of-microsimulation.md`
 - Aggregation itself was Orcutt's identified culprit — framed as a mathematical error, not merely a limitation. (uncited; conceptual claim)
 - The Y = X² toy example (data content): a nonlinear relationship between input X and output Y, with 100 people. If every person has X = 1, total output is 100. Split them into 50 people at X = 0 and 50 at X = 2: the average X is still 1, so a macro model built on the average still predicts 100. Computed at the individual level, the fifty zeros contribute nothing and the fifty twos contribute four apiece, for a total of 200. (The aggregate is identical; the individual-level truth is twice as large.)
 - Tax systems are nonlinear — dense with thresholds, phase-outs, and cliffs; benefit programs turn on specific household circumstances. (uncited; conceptual)
-- Isaac Asimov's *Foundation* trilogy (1951–53) introduced "psychohistory," a fictional science that predicted the behavior of vast populations through statistical law, with a built-in limit: it worked only for masses, never for a single person. [NEEDS CITATION: Foundation and Empire, 1952 bib entry]
+- Isaac Asimov's *Foundation* trilogy (1951–53) introduced "psychohistory," a fictional science that predicted the behavior of vast populations through statistical law, with a built-in limit: it worked only for masses, never for a single person [@asimov1952foundation]. (Marker resolved per primary source — see research/part1-new-sources.bib.)
 - Orcutt named his method "microanalytic simulation"; later practitioners shortened it to "microsimulation."
 - In 1957 computers filled rooms and cost millions; programming meant punch cards and assembly language. (uncited)
-- The IBM 704, state of the art when Orcutt published, managed roughly 12,000 floating-point operations per second; a modern laptop does billions. [NEEDS CITATION: IBM 704 FLOPS rate]
+- The IBM 704, state of the art when Orcutt published, managed roughly 12,000 floating-point operations per second; a modern laptop does billions [@weik1961survey]. (Marker resolved per primary source — Weik 1961, "A Third Survey of Domestic Electronic Digital Computing Systems"; see research/part1-verification.md.)
 - John von Neumann had cast weather forecasting as a computing problem before his death in 1957. (uncited)
 - Herbert Simon and Allen Newell were writing the first artificial-intelligence programs at the Carnegie Institute of Technology in the late 1950s. (uncited)
 - For four years after 1957, Orcutt built a prototype.
@@ -34,6 +34,7 @@ Source: `manuscript/part-1-closed-stack/01-birth-of-microsimulation.md`
 - Fourteen years after 1961, Alice Rivlin became the first director of the Congressional Budget Office; she later served as vice chair of the Federal Reserve.
 - Between 1962 and 1965, George Sadowsky brought computers to revenue estimation at the Treasury's Office of Tax Analysis [@sadowsky1991computing].
 - Sadowsky built a microanalytic model to analyze preliminary versions of the Revenue Act of 1964; it was simpler than Orcutt's dynamic vision and did not age households forward.
+- (new — primary source) Sadowsky later called this the "probably the most useful program I ever wrote," built in about three months in 1963 while he was a Treasury consultant and Yale graduate student [@sadowsky2005interview].
 - By the late 1960s, tax microsimulation was becoming standard in budget analysis.
 - Sadowsky passed through Brookings and then the Urban Institute.
 - Orcutt spent the decade after 1958 trying to build a full-scale microsimulation at the University of Wisconsin–Madison, where he founded the Social Systems Research Institute in 1959.
@@ -60,7 +61,7 @@ Source: `manuscript/part-1-closed-stack/01-birth-of-microsimulation.md`
 - Guy Orcutt died on March 5, 2006 [@prabook2024orcutt].
 - Orcutt's daughter, Alice Orcutt Nakamura, became an economist.
 - Orcutt's granddaughter, Emi Nakamura, won the John Bates Clark Medal in 2019 (awarded to the most promising American economist under forty).
-- Historian Hsiang-Ke Cheng characterized microsimulation as "an engine designed for not only scrutinizing the system but reengineering the society" [@cheng2020orcutt].
+- Historian Chung-Tang Cheng characterized microsimulation as "an engine designed for not only scrutinizing the system but reengineering the society" [@cheng2020orcutt]. (Name corrected from "Hsiang-Ke Cheng" per primary source — see research/part1-verification.md correction #1; "Hsiang-Ke" belongs to a different scholar, Hsiang-Ke Chao.)
 - The chapter frames the 2026 payoff: Orcutt's "interacting units which receive inputs and generate outputs" are the per-unit encoding at the center of the book; building a society one unit at a time buys per-unit verifiability — each simulated household checkable against ground truth (its tax against the statute, its benefits against an administrative total, its forecast against the official number when it lands).
 
 ## Story beats
@@ -80,10 +81,10 @@ Source: `manuscript/part-1-closed-stack/01-birth-of-microsimulation.md`
 - Orcutt: the alternative was a model built from "interacting units which receive inputs and generate outputs." [@orcutt1957new]
 - Orcutt: "The most distinctive feature of this new type of model is the key role played by actual decision-making units of the real world such as the individual, the household, and the firm" [@orcutt1957new].
 - Orcutt: "Predictions about aggregates will still be needed but will be obtained by aggregating behavior of elemental units rather than by attempting to aggregate behavioral relationships." (attributed to Orcutt)
-- Asimov (*Foundation and Empire*): "The reaction of one man could be forecast by no known mathematics; the reaction of a billion is something else again" [NEEDS CITATION: Foundation and Empire, 1952 bib entry].
+- Asimov (*Foundation and Empire*): "The reaction of one man could be forecast by no known mathematics; the reaction of a billion is something else again" [@asimov1952foundation]. (Marker resolved. Fuller context available: "Psycho-history dealt not with man, but with man-masses. It was the science of mobs; mobs in their billions.")
 - Orcutt (on the difficulty of dynamic paths): "The problem of keeping track of all possible paths and their respective probabilities appears rather appalling." (attributed to Orcutt)
 - Orcutt (autobiographical): "my early fascination with science, my transition from engineering to economics" [@orcutt1990autobiography].
-- Hsiang-Ke Cheng (historian): microsimulation was "an engine designed for not only scrutinizing the system but reengineering the society" [@cheng2020orcutt].
+- Chung-Tang Cheng (historian): microsimulation was "an engine designed for not only scrutinizing the system but reengineering the society" [@cheng2020orcutt].
 - Cheng (on the Wisconsin years): a "failed trial" [@cheng2020orcutt].
 - Orcutt's own terms, verbatim: "Tinbergen dream" [@cheng2020orcutt]; "microanalytic simulation" (his name for the method).
 
