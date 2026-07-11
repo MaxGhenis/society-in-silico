@@ -4,7 +4,7 @@ project:
 
 book:
   title: Society in Silico
-  subtitle: Simulation as Infrastructure for Collective Reasoning
+  subtitle: Simulating futures to build the one we want
   author: Max Ghenis
   chapters:
     - index.md

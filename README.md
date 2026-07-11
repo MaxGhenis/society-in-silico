@@ -1,5 +1,7 @@
 # Society in Silico
 
+*Simulating futures to build the one we want.*
+
 A book about economic simulation, the journey from academic models to open policy
 infrastructure, and what the agent era changes. By Max Ghenis.
 
