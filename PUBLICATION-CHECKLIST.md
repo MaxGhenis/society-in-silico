@@ -42,5 +42,7 @@ rather than a copyedit.
   update preface, ch 12, ch 13, and ch 17 together.
 - [ ] Listen edition: ⁂ glyph missing from the listen-PDF font (renders in
   print PDF and EPUB); pick a font with U+2042 or substitute in the TTS export.
-- [ ] Re-copy artifacts to Drive after the final content pass (print PDF,
-  EPUB, listen md/docx/pdf).
+- [x] Artifacts on Drive (2026-07-12, post-editorial-pass): print PDF, EPUB,
+  listen docx/pdf in "Society in Silico — drafts"
+  (https://drive.google.com/drive/folders/1vkgnZpx46IYoWGUmevZcjTSW7BPSS1TO,
+  personal account). Re-copy after any future content pass.
