@@ -6,7 +6,7 @@ Engerraund Serac says it with pride. He is the villain of Westworld's third seas
 
 I watched this in 2020 and recognized the machinery. I had been building models of society since 2018 — smaller, tamer ones that predict how a tax change lands on millions of simulated households. The writers had taken tools I used every day and followed them to their darkest terminus.
 
-They had also, without meaning to, posed a design question that this book spends nineteen chapters answering. The dangerous thing about Rehoboam was never the simulation. It was the secrecy, the monopoly, and the absence of anything that could tell the system it was wrong. Governments already score citizens for fraud risk and bail decisions with models no defendant can inspect. Insurers price your premiums with algorithms they will not explain. The machinery of prediction exists and is spreading; the only live question is its architecture. Closed, proprietary, graded by no one? Or open, inspectable, and checked — line by line — against the world it claims to describe?
+They had also, without meaning to, posed a design question that this book spends seventeen chapters answering. The dangerous thing about Rehoboam was never the simulation. It was the secrecy, the monopoly, and the absence of anything that could tell the system it was wrong. Governments already score citizens for fraud risk and bail decisions with models no defendant can inspect. Insurers price your premiums with algorithms they will not explain. The machinery of prediction exists and is spreading; the only live question is its architecture. Closed, proprietary, graded by no one? Or open, inspectable, and checked — line by line — against the world it claims to describe?
 
 That fork is the book.
 
@@ -30,7 +30,7 @@ Three developments converged to make this decade different from every previous e
 
 AI became the interface. When someone wonders how much Child Tax Credit they will get, they increasingly ask a chatbot, not IRS.gov. Whatever the assistant says, someone may act on. The infrastructure those assistants should consult — accurate, current, citable — either exists as public plumbing or every AI company improvises its own, badly.
 
-Policy complexity kept compounding. The tax code has roughly doubled in length since 1985, and it interlocks with dozens of benefit programs whose rules shift by state and by year. A single parent earning $35,000 faces genuinely different arithmetic in Texas and New York, and the difference can run to thousands of dollars. No unaided human navigates this; the question is only which computer helps, and who can see inside it.
+Policy complexity kept compounding. The tax code has roughly doubled in length since 1985 [NEEDS CITATION: tax-code length growth since 1985], and it interlocks with dozens of benefit programs whose rules shift by state and by year. A single parent earning $35,000 faces genuinely different arithmetic in Texas and New York, and the difference can run to thousands of dollars. No unaided human navigates this; the question is only which computer helps, and who can see inside it.
 
 And open modeling grew up. What began as academic code became working infrastructure: by 2025 PolicyEngine covered federal taxes plus all fifty states, the United Kingdom, and Canada, built by more than a hundred contributors; EUROMOD spanned twenty-seven European countries; OpenFisca ran on four continents. The question stopped being whether open policy simulation could work and became whether it would be the shared foundation — for AI systems, for governments, for citizens — or a curiosity beside the closed models that still decide budgets.
 
@@ -58,7 +58,7 @@ Everything the book covers is machinery for answering four questions, in rising 
 
 The five parts follow that ladder:
 
-- **Part I — The closed stack.** Orcutt's idea; the institutional models that ran the country's fiscal arguments from behind closed doors; and the question that disciplines everything: how would you know whether any model is right?
+- **Part I — The closed stack.** Orcutt's idea; the institutional models that ran the country's fiscal arguments from behind closed doors; the question that disciplines everything — how would you know whether any model is right? — and the family arithmetic that turned the question personal.
 - **Part II — The open engine.** Building PolicyEngine: what the engine shows one household, what it shows a country, and the three problems every such model must solve.
 - **Part III — The agent turn.** AI agents writing verified law-as-code at scale; the gates and oracles that make machine-encoded law trustworthy; five African tax systems encoded and checked in a week; and why the organization rebuilt itself around the epistemology.
 - **Part IV — The prediction pole.** The uncertainty point estimates hide, the public scoreboard built to price it, and what language models actually add to opinion research once you benchmark them honestly.
