@@ -196,27 +196,40 @@ def check_concepts() -> Report:
             continue
         intro_idx = index_by_path[intro_path]
 
-        # Earliest occurrence across the whole book.
+        # Files where an early mention is deliberate narrative foreshadowing —
+        # a teaser before the owning chapter's full definition. Listed per
+        # concept in the registry as `foreshadow_ok`.
+        foreshadow_ok = {
+            (REPO_ROOT / f).resolve() for f in e.get("foreshadow_ok", []) or []
+        }
+
+        # Earliest occurrence across the whole book, skipping sanctioned
+        # foreshadow files when locating a violation.
         first_ch = None
+        first_any = None
         for ch in chapters:
             hit = first_match(texts[ch], terms)
-            if hit:
+            if hit and first_any is None:
+                first_any = (ch, hit)
+            if hit and ch not in foreshadow_ok:
                 first_ch = (ch, hit)
                 break
 
-        if first_ch is None:
+        if first_any is None:
             rep.warn(f"{cid}: no occurrence of name/alias anywhere in the manuscript")
             continue
 
-        ch, (_, line, term) = first_ch
-        first_idx = index_by_path[ch]
+        if first_ch is not None:
+            ch, (_, line, term) = first_ch
+            first_idx = index_by_path[ch]
 
-        if first_idx < intro_idx:
-            rep.fail(
-                f"{cid}: used before introduced — first appears as '{term}' in "
-                f"{rel(ch)}:{line} (ch #{first_idx}), but introduced_in is "
-                f"{e['introduced_in']} (ch #{intro_idx})"
-            )
+            if first_idx < intro_idx:
+                rep.fail(
+                    f"{cid}: used before introduced — first appears as '{term}' in "
+                    f"{rel(ch)}:{line} (ch #{first_idx}), but introduced_in is "
+                    f"{e['introduced_in']} (ch #{intro_idx}); if deliberate, add the "
+                    f"file to this concept's foreshadow_ok list"
+                )
 
         # Does the introduced_in file mention the concept at all?
         if first_match(texts[intro_path], terms) is None:

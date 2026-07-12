@@ -1,343 +1,492 @@
-# Concept registry — Society in Silico
-#
-# The single source of truth for the terms a general reader must have defined
-# exactly once, in dependency order across the book. Consumed by
-# `scripts/check_book.py concepts`, which flags a concept whose name/alias first
-# appears in a chapter EARLIER than `introduced_in` (used before introduced) and
-# warns when a later chapter re-defines one (double introduction).
-#
-# Fields per entry:
-#   id            kebab-case identifier (stable; referenced by `related`)
-#   name          canonical display name
-#   definition    one sentence, general-reader
-#   introduced_in manuscript path where the first FULL definition lives
-#   aliases       other surface forms the linter should also match (word-boundary,
-#                 case-insensitive). Chosen to match the ACTUAL prose, not to game
-#                 the check — where a term is legitimately used before its home
-#                 chapter, the linter is meant to catch it.
-#   related       ids of adjacent concepts
-#   obsidian_note research/concepts/ note, if one exists
-#
-# Chapter order (from _quarto.yml) used by the linter:
-#   0 index.md
-#   1 front-matter/00-preface   2 front-matter/01-introduction
-#   3 01-birth-of-microsimulation 4 02-tax-model-wars 5 03-the-accuracy-question
-#   6 04-a-wall-of-frustration  7 05-proof-of-concept 8 06-the-household-and-the-society
-#   9 07-three-ingredients     10 08-the-ai-cant-do-your-taxes 11 09-encoding-the-law
-#  12 10-the-verification-problem 13 11-microsimulation-anywhere 14 12-the-decomposition
-#  15 13-the-uncertainty-gap   16 14-simulating-opinion 17 15-simulating-democracy
-#  18 16-simulating-values     19 17-society-in-silico
-#
-# NOTE: the book's thesis objects (the admission rule, the synthetic population,
-# forecast grading) are stated in the abstract (index.md) and elaborated later; they
-# are anchored to index.md deliberately. Concepts named in a roadmap/table/teaser
-# before their real definition are anchored to the definition and WILL be flagged —
-# that is the point. See the final report / reviews notes for which flags are
-# intentional narrative setup vs. genuine ordering issues.
-
 concepts:
-  # ---- Part I foundations ----
-  - id: microsimulation
-    name: microsimulation
-    definition: >-
-      Computing a policy on each simulated household or person and summing the
-      results, instead of modeling the economy as aggregate equations.
-    introduced_in: manuscript/front-matter/01-introduction.md
-    aliases: [microanalytic simulation, microsimulation model, microsimulation models]
-    related: [aggregation-problem, tax-benefit-model, synthetic-population, static-vs-dynamic-modeling]
-    obsidian_note: research/concepts/microsimulation-definition.md
-
-  - id: aggregation-problem
-    name: the aggregation problem
-    definition: >-
-      The mathematical fact that averaging inputs before applying a nonlinear rule
-      gives a different (and wrong) answer than applying the rule to each unit and
-      then summing.
-    introduced_in: manuscript/part-1-closed-stack/01-birth-of-microsimulation.md
-    aliases: [aggregation problem, aggregation itself, problem with averages]
-    related: [microsimulation]
-    obsidian_note:
-
-  - id: static-vs-dynamic-modeling
-    name: static vs dynamic modeling
-    definition: >-
-      Static models compute the day-one effect of a policy with behavior held fixed;
-      dynamic models age the population forward or let behavior and the economy respond.
-    introduced_in: manuscript/part-1-closed-stack/01-birth-of-microsimulation.md
-    aliases: [static microsimulation, dynamic microsimulation, dynamic scoring, static model, static score, dynamic estimate]
-    related: [microsimulation, budget-scoring, behavioral-response]
-    obsidian_note:
-
-  - id: tax-benefit-model
-    name: tax-benefit model
-    definition: >-
-      A microsimulation model that computes both the taxes owed and the benefits
-      received by a household, capturing how the two interact.
-    introduced_in: manuscript/part-1-closed-stack/02-tax-model-wars.md
-    aliases: [tax-benefit model, tax-benefit microsimulation model, tax and benefit model, TAXBEN]
-    related: [microsimulation, rules-as-code, marginal-tax-rate]
-    obsidian_note:
-
-  - id: top-coding
-    name: top-coding
-    definition: >-
-      Masking the highest incomes in public survey and tax files — collapsing them
-      into a single category or an average — so the top tail is blurred for privacy.
-    introduced_in: manuscript/part-1-closed-stack/02-tax-model-wars.md
-    aliases: [top-coding, top-coded, top-code, top-codes]
-    related: [survey-microdata, administrative-data]
-    obsidian_note:
-
-  - id: administrative-data
-    name: administrative data
-    definition: >-
-      The records governments hold or publish from running programs — tax returns,
-      benefit rolls, agency totals — used as the ground truth a model is checked against.
-    introduced_in: index.md
-    aliases: [administrative data, administrative records, administrative totals, administrative total, administrative reality]
-    related: [survey-microdata, calibration-reweighting, top-coding, synthetic-population]
-    obsidian_note:
-
-  - id: survey-microdata
-    name: survey microdata
-    definition: >-
-      The household-level records from surveys like the Current Population Survey
-      that supply a model its people, imperfect because respondents misreport and
-      the very rich are undersampled.
-    introduced_in: manuscript/part-1-closed-stack/03-the-accuracy-question.md
-    aliases: [survey microdata, household survey data, survey data, survey-based]
-    related: [administrative-data, imputation, top-coding, calibration-reweighting]
-    obsidian_note:
-
-  - id: rules-as-code
-    name: rules as code
-    definition: >-
-      The principle that the rules governing citizens should exist not only as legal
-      prose but as executable, publicly computable code.
-    introduced_in: manuscript/part-1-closed-stack/02-tax-model-wars.md
-    aliases: [rules as code, rules-as-code, legislation as code, machine-consumable rules]
-    related: [tax-benefit-model, rulespec, encoding-pipeline]
-    obsidian_note: research/concepts/rules-as-code.md
-
-  - id: budget-scoring
-    name: budget scoring
-    definition: >-
-      Producing an official estimate of a bill's cost — the projected change in
-      revenue or spending over a budget window — that decides whether it can proceed.
-    introduced_in: manuscript/part-1-closed-stack/02-tax-model-wars.md
-    aliases: [budget scoring, budget score, revenue estimate, revenue score, distributional table, static score, dynamic score]
-    related: [static-vs-dynamic-modeling, baseline, behavioral-response]
-    obsidian_note:
-
-  - id: synthetic-population
-    name: synthetic population
-    definition: >-
-      An artificial population assembled from public data and calibrated to
-      administrative totals so it behaves like the real one without exposing any real
-      person's record.
-    introduced_in: index.md
-    aliases: [synthetic population, synthetic households, synthesize, synthesized, synthesis]
-    related: [calibration-reweighting, imputation, microdata-commons, administrative-data]
-    obsidian_note:
-
-  - id: calibration-reweighting
-    name: calibration and reweighting
-    definition: >-
-      Adjusting each survey record's weight — how many people it represents — so the
-      weighted totals reproduce the administrative aggregates the government publishes.
-    introduced_in: manuscript/part-1-closed-stack/02-tax-model-wars.md
-    aliases: [reweighting, reweight, calibrate, calibration, calibrated to, gradient-descent reweighting]
-    related: [synthetic-population, imputation, administrative-data, microdata-commons]
-    obsidian_note:
-
-  # ---- The household concepts ----
-  - id: marginal-tax-rate
-    name: marginal tax rate
-    definition: >-
-      The share of one additional dollar of earnings lost to taxes and withdrawn
-      benefits combined — the effective, not statutory, rate a household faces.
-    introduced_in: manuscript/part-1-closed-stack/04-a-wall-of-frustration.md
-    aliases: [marginal tax rate, marginal rate, marginal rates, effective marginal tax rate, implicit marginal tax rate]
-    related: [benefit-cliff, tax-benefit-model, behavioral-response]
-    obsidian_note:
-
-  - id: benefit-cliff
-    name: benefit cliff
-    definition: >-
-      A point where earning more leaves a household worse off, because the benefits
-      withdrawn and taxes owed on the next dollar exceed the dollar itself.
-    introduced_in: manuscript/part-1-closed-stack/04-a-wall-of-frustration.md
-    aliases: [benefit cliff, benefit cliffs, means-tested benefit cliff, cliff]
-    related: [marginal-tax-rate, tax-benefit-model]
-    obsidian_note:
-
-  - id: baseline
-    name: baseline
-    definition: >-
-      The world a reform is measured against — current law, or an assumption about
-      what current law would become — whose choice can swing an estimate by hundreds
-      of billions.
-    introduced_in: manuscript/part-2-open-engine/06-the-household-and-the-society.md
-    aliases: [baseline, baselines]
-    related: [budget-scoring, static-vs-dynamic-modeling]
-    obsidian_note:
-
-  # ---- The three ingredients ----
-  - id: imputation
-    name: imputation
-    definition: >-
-      Predicting a variable a survey never measured from the ones it did, ideally
-      sampling a whole distribution of plausible values rather than a single average.
-    introduced_in: manuscript/part-2-open-engine/07-three-ingredients.md
-    aliases: [imputation, impute, imputes, imputed, imputing, quantile regression forest, quantile-regression forest]
-    related: [survey-microdata, calibration-reweighting, synthetic-population, microdata-commons]
-    obsidian_note:
-
-  - id: behavioral-response
-    name: behavioral response and elasticity (ETI)
-    definition: >-
-      How people change work, saving, or take-up when a policy changes their
-      incentives, summarized by an elasticity such as the elasticity of taxable income.
-    introduced_in: manuscript/part-2-open-engine/07-three-ingredients.md
-    aliases: [behavioral response, behavioural response, behavioral assumptions, elasticity of taxable income, ETI, labor-supply elasticity, labor supply response]
-    related: [static-vs-dynamic-modeling, budget-scoring, marginal-tax-rate]
-    obsidian_note:
-
-  # ---- The agent turn: rules ----
-  - id: rulespec
-    name: RuleSpec
-    definition: >-
-      The YAML encoding format in which a rule's logic and its parameters are kept as
-      separate, versioned, testable files carrying their own effective dates.
-    introduced_in: manuscript/part-2-open-engine/07-three-ingredients.md
-    aliases: [RuleSpec, rulespec/v1]
-    related: [rules-as-code, encoding-pipeline, money-atom-gate]
-    obsidian_note:
-
-  - id: money-atom-gate
-    name: money-atom gate
-    definition: >-
-      A merge-blocking check requiring every monetary amount an encoding produces to
-      trace to a quoted excerpt of the governing source, or the build fails.
-    introduced_in: manuscript/part-2-open-engine/07-three-ingredients.md
-    aliases: [money-atom gate, money-atom check, money-atom grounding, "money-atom"]
-    related: [rulespec, encoding-pipeline, oracle, conformance-ratchet, admission-rule]
-    obsidian_note:
-
-  - id: encoding-pipeline
-    name: encoding pipeline (axiom-encode)
-    definition: >-
-      The staged pipeline in which an AI agent drafts an encoding from a corpus of
-      source law and merge-blocking gates screen it before a human adjudicates.
-    introduced_in: manuscript/part-3-agent-turn/09-encoding-the-law.md
-    aliases: [axiom-encode, encoding pipeline]
-    related: [rulespec, money-atom-gate, oracle, conformance-ratchet]
-    obsidian_note:
-
-  # ---- The agent turn: verification ----
-  - id: oracle
-    name: oracle (reference model)
-    definition: >-
-      An independent implementation of the same law — a reference calculator built by
-      other people — whose per-record answers an encoding is checked against.
-    introduced_in: manuscript/part-3-agent-turn/10-the-verification-problem.md
-    aliases: [oracle, oracles, reference model, reference models, reference calculator, reference calculators, reference implementation]
-    related: [encoding-pipeline, disposition, conformance-ratchet, admission-rule]
-    obsidian_note:
-
-  - id: disposition
-    name: disposition
-    definition: >-
-      An evidence-backed explanation that closes an oracle mismatch — an arithmetic
-      reconciliation, a statutory citation, or a documented convention — so a raw gap
-      is either dispositioned or counts as unexplained.
-    introduced_in: manuscript/part-3-agent-turn/10-the-verification-problem.md
-    aliases: [disposition, dispositioned, dispositions]
-    related: [oracle, conformance-ratchet]
-    obsidian_note:
-
-  - id: conformance-ratchet
-    name: conformance ratchet
-    definition: >-
-      A CI gate configured as a one-way valve, under which tested coverage may only
-      rise and unexplained mismatches may only fall, so correctness cannot silently rot.
-    introduced_in: manuscript/part-3-agent-turn/10-the-verification-problem.md
-    aliases: [conformance ratchet, conformance ratchets, conformance gate, one-way valve, ratchet]
-    related: [oracle, disposition, encoding-pipeline, admission-rule]
-    obsidian_note:
-
-  - id: admission-rule
-    name: the admission rule (per-unit verifiability)
-    definition: >-
-      A simulation is admissible only where its verification chain terminates in
-      ground truth — an oracle parity, a statutory exactness, a calibrated marginal,
-      or a forecast score — checkable one unit at a time.
-    introduced_in: index.md
-    aliases: [admission rule, admissible, verification chain terminates in ground truth, verification chain ends in ground truth, per-unit verifiability, per-unit verifiable, confident fiction]
-    related: [oracle, money-atom-gate, prediction-pole, per-unit]
-    obsidian_note:
-
-  # ---- The data and prediction poles ----
-  - id: microdata-commons
-    name: microdata commons (populace)
-    definition: >-
-      The open, calibrated-microdata commons — synthesis, imputation, and calibration
-      shipped as versioned release bundles — that both poles of the stack stand on.
-    introduced_in: manuscript/part-2-open-engine/05-proof-of-concept.md
-    aliases: [populace, calibrated-microdata commons, microdata commons, data commons]
-    related: [synthetic-population, calibration-reweighting, imputation]
-    obsidian_note:
-
-  - id: prediction-pole
-    name: the prediction pole (forecast grading)
-    definition: >-
-      Publishing forecasts of government metrics with intervals in advance and grading
-      each when the official first-print number lands — the accountability loop point
-      estimates lack.
-    introduced_in: index.md
-    aliases: [prediction pole, forecast graded, forecast grading, graded forecast, the scoreboard, graded when the official number]
-    related: [admission-rule, forecast-calibration, budget-scoring, futarchy]
-    obsidian_note:
-
-  - id: forecast-calibration
-    name: forecast calibration
-    definition: >-
-      In the forecasting sense, a stated probability is calibrated when events
-      predicted at 60 percent happen close to 60 percent of the time — verified against
-      outcomes and recalibrated when it drifts (distinct from data calibration).
-    introduced_in: manuscript/part-4-prediction/13-the-uncertainty-gap.md
-    aliases: [recalibrate, recalibrated, calibration step, calibrated probability, forecast calibration]
-    related: [prediction-pole, calibration-reweighting]
-    obsidian_note:
-
-  # ---- Opinion, democracy, values ----
-  - id: post-stratification
-    name: post-stratification
-    definition: >-
-      Chopping a population into demographic cells, estimating within each, and
-      reweighting the cells to the known composition of the whole — the survey-statistics
-      backbone HiveSight fills with a language model.
-    introduced_in: manuscript/part-4-prediction/14-simulating-opinion.md
-    aliases: [post-stratification, post-stratification cells, post-stratify]
-    related: [silicon-sampling, calibration-reweighting, survey-microdata]
-    obsidian_note:
-
-  - id: silicon-sampling
-    name: silicon sampling
-    definition: >-
-      Using a language model to stand in for human survey respondents, reliable only
-      for well-studied populations answering well-studied questions.
-    introduced_in: manuscript/part-4-prediction/14-simulating-opinion.md
-    aliases: [silicon sampling, silicon sample, synthetic respondents, synthetic opinion]
-    related: [post-stratification, survey-microdata]
-    obsidian_note: research/concepts/hivesight-silicon-sampling.md
-
-  - id: futarchy
-    name: futarchy
-    definition: >-
-      Robin Hanson's proposal to vote on values but bet on beliefs — democracy sets the
-      welfare metric and prediction markets decide which policies achieve it.
-    introduced_in: manuscript/part-5-horizon/15-simulating-democracy.md
-    aliases: [futarchy]
-    related: [prediction-pole]
-    obsidian_note:
+- id: microsimulation
+  name: microsimulation
+  definition: Computing a policy on each simulated household or person and summing the results, instead
+    of modeling the economy as aggregate equations.
+  introduced_in: manuscript/front-matter/01-introduction.md
+  aliases:
+  - microanalytic simulation
+  - microsimulation model
+  - microsimulation models
+  related:
+  - aggregation-problem
+  - tax-benefit-model
+  - synthetic-population
+  - static-vs-dynamic-modeling
+  obsidian_note: research/concepts/microsimulation-definition.md
+- id: aggregation-problem
+  name: the aggregation problem
+  definition: The mathematical fact that averaging inputs before applying a nonlinear rule gives a different
+    (and wrong) answer than applying the rule to each unit and then summing.
+  introduced_in: manuscript/part-1-closed-stack/01-birth-of-microsimulation.md
+  aliases:
+  - aggregation problem
+  - aggregation itself
+  - problem with averages
+  related:
+  - microsimulation
+  obsidian_note: null
+- id: static-vs-dynamic-modeling
+  name: static vs dynamic modeling
+  definition: Static models compute the day-one effect of a policy with behavior held fixed; dynamic models
+    age the population forward or let behavior and the economy respond.
+  introduced_in: manuscript/part-1-closed-stack/01-birth-of-microsimulation.md
+  aliases:
+  - static microsimulation
+  - dynamic microsimulation
+  - dynamic scoring
+  - static model
+  - static score
+  - dynamic estimate
+  related:
+  - microsimulation
+  - budget-scoring
+  - behavioral-response
+  obsidian_note: null
+- id: tax-benefit-model
+  name: tax-benefit model
+  definition: A microsimulation model that computes both the taxes owed and the benefits received by a
+    household, capturing how the two interact.
+  introduced_in: manuscript/part-1-closed-stack/02-tax-model-wars.md
+  aliases:
+  - tax-benefit model
+  - tax-benefit microsimulation model
+  - tax and benefit model
+  - TAXBEN
+  related:
+  - microsimulation
+  - rules-as-code
+  - marginal-tax-rate
+  obsidian_note: null
+- id: top-coding
+  name: top-coding
+  definition: Masking the highest incomes in public survey and tax files — collapsing them into a single
+    category or an average — so the top tail is blurred for privacy.
+  introduced_in: manuscript/part-1-closed-stack/02-tax-model-wars.md
+  aliases:
+  - top-coding
+  - top-coded
+  - top-code
+  - top-codes
+  related:
+  - survey-microdata
+  - administrative-data
+  obsidian_note: null
+- id: administrative-data
+  name: administrative data
+  definition: The records governments hold or publish from running programs — tax returns, benefit rolls,
+    agency totals — used as the ground truth a model is checked against.
+  introduced_in: index.md
+  aliases:
+  - administrative data
+  - administrative records
+  - administrative totals
+  - administrative total
+  - administrative reality
+  related:
+  - survey-microdata
+  - calibration-reweighting
+  - top-coding
+  - synthetic-population
+  obsidian_note: null
+- id: survey-microdata
+  name: survey microdata
+  definition: The household-level records from surveys like the Current Population Survey that supply
+    a model its people, imperfect because respondents misreport and the very rich are undersampled.
+  introduced_in: manuscript/part-1-closed-stack/03-the-accuracy-question.md
+  aliases:
+  - survey microdata
+  - household survey data
+  - survey data
+  - survey-based
+  related:
+  - administrative-data
+  - imputation
+  - top-coding
+  - calibration-reweighting
+  obsidian_note: null
+- id: rules-as-code
+  name: rules as code
+  definition: The principle that the rules governing citizens should exist not only as legal prose but
+    as executable, publicly computable code.
+  introduced_in: manuscript/part-1-closed-stack/02-tax-model-wars.md
+  aliases:
+  - rules as code
+  - rules-as-code
+  - legislation as code
+  - machine-consumable rules
+  related:
+  - tax-benefit-model
+  - rulespec
+  - encoding-pipeline
+  obsidian_note: research/concepts/rules-as-code.md
+- id: budget-scoring
+  name: budget scoring
+  definition: Producing an official estimate of a bill's cost — the projected change in revenue or spending
+    over a budget window — that decides whether it can proceed.
+  introduced_in: manuscript/part-1-closed-stack/02-tax-model-wars.md
+  aliases:
+  - budget scoring
+  - budget score
+  - revenue estimate
+  - revenue score
+  - distributional table
+  - static score
+  - dynamic score
+  related:
+  - static-vs-dynamic-modeling
+  - baseline
+  - behavioral-response
+  obsidian_note: null
+- id: synthetic-population
+  name: synthetic population
+  definition: An artificial population assembled from public data and calibrated to administrative totals
+    so it behaves like the real one without exposing any real person's record.
+  introduced_in: index.md
+  aliases:
+  - synthetic population
+  - synthetic households
+  - synthesize
+  - synthesized
+  - synthesis
+  related:
+  - calibration-reweighting
+  - imputation
+  - microdata-commons
+  - administrative-data
+  obsidian_note: null
+- id: calibration-reweighting
+  name: calibration and reweighting
+  definition: Adjusting each survey record's weight — how many people it represents — so the weighted
+    totals reproduce the administrative aggregates the government publishes.
+  introduced_in: manuscript/part-1-closed-stack/02-tax-model-wars.md
+  aliases:
+  - reweighting
+  - reweight
+  - calibrate
+  - calibration
+  - calibrated to
+  - gradient-descent reweighting
+  related:
+  - synthetic-population
+  - imputation
+  - administrative-data
+  - microdata-commons
+  obsidian_note: null
+- id: marginal-tax-rate
+  name: marginal tax rate
+  definition: The share of one additional dollar of earnings lost to taxes and withdrawn benefits combined
+    — the effective, not statutory, rate a household faces.
+  introduced_in: manuscript/part-1-closed-stack/04-a-wall-of-frustration.md
+  aliases:
+  - marginal tax rate
+  - marginal rate
+  - marginal rates
+  - effective marginal tax rate
+  - implicit marginal tax rate
+  related:
+  - benefit-cliff
+  - tax-benefit-model
+  - behavioral-response
+  obsidian_note: null
+  foreshadow_ok:
+  - manuscript/front-matter/01-introduction.md
+  - manuscript/part-1-closed-stack/01-birth-of-microsimulation.md
+  - manuscript/part-1-closed-stack/03-the-accuracy-question.md
+- id: benefit-cliff
+  name: benefit cliff
+  definition: A point where earning more leaves a household worse off, because the benefits withdrawn
+    and taxes owed on the next dollar exceed the dollar itself.
+  introduced_in: manuscript/part-1-closed-stack/04-a-wall-of-frustration.md
+  aliases:
+  - benefit cliff
+  - benefit cliffs
+  - means-tested benefit cliff
+  - cliff
+  related:
+  - marginal-tax-rate
+  - tax-benefit-model
+  obsidian_note: null
+  foreshadow_ok:
+  - manuscript/front-matter/00-preface.md
+  - manuscript/front-matter/01-introduction.md
+  - manuscript/part-1-closed-stack/01-birth-of-microsimulation.md
+  - manuscript/part-1-closed-stack/03-the-accuracy-question.md
+- id: baseline
+  name: baseline
+  definition: The world a reform is measured against — current law, or an assumption about what current
+    law would become — whose choice can swing an estimate by hundreds of billions.
+  introduced_in: manuscript/part-2-open-engine/06-the-household-and-the-society.md
+  aliases:
+  - baseline
+  - baselines
+  related:
+  - budget-scoring
+  - static-vs-dynamic-modeling
+  obsidian_note: null
+  foreshadow_ok:
+  - manuscript/part-1-closed-stack/02-tax-model-wars.md
+  - manuscript/part-1-closed-stack/03-the-accuracy-question.md
+  - manuscript/part-2-open-engine/05-proof-of-concept.md
+- id: imputation
+  name: imputation
+  definition: Predicting a variable a survey never measured from the ones it did, ideally sampling a whole
+    distribution of plausible values rather than a single average.
+  introduced_in: manuscript/part-2-open-engine/07-three-ingredients.md
+  aliases:
+  - imputation
+  - impute
+  - imputes
+  - imputed
+  - imputing
+  - quantile regression forest
+  - quantile-regression forest
+  related:
+  - survey-microdata
+  - calibration-reweighting
+  - synthetic-population
+  - microdata-commons
+  obsidian_note: null
+  foreshadow_ok:
+  - manuscript/part-1-closed-stack/03-the-accuracy-question.md
+  - manuscript/part-2-open-engine/05-proof-of-concept.md
+  - manuscript/part-2-open-engine/06-the-household-and-the-society.md
+- id: behavioral-response
+  name: behavioral response and elasticity (ETI)
+  definition: How people change work, saving, or take-up when a policy changes their incentives, summarized
+    by an elasticity such as the elasticity of taxable income.
+  introduced_in: manuscript/part-2-open-engine/07-three-ingredients.md
+  aliases:
+  - behavioral response
+  - behavioural response
+  - behavioral assumptions
+  - elasticity of taxable income
+  - ETI
+  - labor-supply elasticity
+  - labor supply response
+  related:
+  - static-vs-dynamic-modeling
+  - budget-scoring
+  - marginal-tax-rate
+  obsidian_note: null
+  foreshadow_ok:
+  - manuscript/part-1-closed-stack/02-tax-model-wars.md
+  - manuscript/part-1-closed-stack/03-the-accuracy-question.md
+  - manuscript/part-2-open-engine/06-the-household-and-the-society.md
+- id: rulespec
+  name: RuleSpec
+  definition: The YAML encoding format in which a rule's logic and its parameters are kept as separate,
+    versioned, testable files carrying their own effective dates.
+  introduced_in: manuscript/part-2-open-engine/07-three-ingredients.md
+  aliases:
+  - RuleSpec
+  - rulespec/v1
+  related:
+  - rules-as-code
+  - encoding-pipeline
+  - money-atom-gate
+  obsidian_note: null
+- id: money-atom-gate
+  name: money-atom gate
+  definition: A merge-blocking check requiring every monetary amount an encoding produces to trace to
+    a quoted excerpt of the governing source, or the build fails.
+  introduced_in: manuscript/part-2-open-engine/07-three-ingredients.md
+  aliases:
+  - money-atom gate
+  - money-atom check
+  - money-atom grounding
+  - money-atom
+  related:
+  - rulespec
+  - encoding-pipeline
+  - oracle
+  - conformance-ratchet
+  - admission-rule
+  obsidian_note: null
+- id: encoding-pipeline
+  name: encoding pipeline (axiom-encode)
+  definition: The staged pipeline in which an AI agent drafts an encoding from a corpus of source law
+    and merge-blocking gates screen it before a human adjudicates.
+  introduced_in: manuscript/part-3-agent-turn/09-encoding-the-law.md
+  aliases:
+  - axiom-encode
+  - encoding pipeline
+  related:
+  - rulespec
+  - money-atom-gate
+  - oracle
+  - conformance-ratchet
+  obsidian_note: null
+- id: oracle
+  name: oracle (reference model)
+  definition: An independent implementation of the same law — a reference calculator built by other people
+    — whose per-record answers an encoding is checked against.
+  introduced_in: manuscript/part-3-agent-turn/10-the-verification-problem.md
+  aliases:
+  - oracle
+  - oracles
+  - reference model
+  - reference models
+  - reference calculator
+  - reference calculators
+  - reference implementation
+  related:
+  - encoding-pipeline
+  - disposition
+  - conformance-ratchet
+  - admission-rule
+  obsidian_note: null
+  foreshadow_ok:
+  - manuscript/front-matter/00-preface.md
+  - manuscript/front-matter/01-introduction.md
+  - manuscript/part-1-closed-stack/01-birth-of-microsimulation.md
+  - manuscript/part-1-closed-stack/02-tax-model-wars.md
+  - manuscript/part-1-closed-stack/03-the-accuracy-question.md
+  - manuscript/part-2-open-engine/05-proof-of-concept.md
+  - manuscript/part-2-open-engine/06-the-household-and-the-society.md
+  - manuscript/part-2-open-engine/07-three-ingredients.md
+  - manuscript/part-3-agent-turn/09-encoding-the-law.md
+- id: disposition
+  name: disposition
+  definition: An evidence-backed explanation that closes an oracle mismatch — an arithmetic reconciliation,
+    a statutory citation, or a documented convention — so a raw gap is either dispositioned or counts
+    as unexplained.
+  introduced_in: manuscript/part-3-agent-turn/10-the-verification-problem.md
+  aliases:
+  - disposition
+  - dispositioned
+  - dispositions
+  related:
+  - oracle
+  - conformance-ratchet
+  obsidian_note: null
+- id: conformance-ratchet
+  name: conformance ratchet
+  definition: A CI gate configured as a one-way valve, under which tested coverage may only rise and unexplained
+    mismatches may only fall, so correctness cannot silently rot.
+  introduced_in: manuscript/part-3-agent-turn/10-the-verification-problem.md
+  aliases:
+  - conformance ratchet
+  - conformance ratchets
+  - conformance gate
+  - one-way valve
+  - ratchet
+  related:
+  - oracle
+  - disposition
+  - encoding-pipeline
+  - admission-rule
+  obsidian_note: null
+  foreshadow_ok:
+  - manuscript/part-2-open-engine/07-three-ingredients.md
+  - manuscript/part-3-agent-turn/09-encoding-the-law.md
+- id: admission-rule
+  name: the admission rule (per-unit verifiability)
+  definition: A simulation is admissible only where its verification chain terminates in ground truth
+    — an oracle parity, a statutory exactness, a calibrated marginal, or a forecast score — checkable
+    one unit at a time.
+  introduced_in: index.md
+  aliases:
+  - admission rule
+  - admissible
+  - verification chain terminates in ground truth
+  - verification chain ends in ground truth
+  - per-unit verifiability
+  - per-unit verifiable
+  - confident fiction
+  related:
+  - oracle
+  - money-atom-gate
+  - prediction-pole
+  - per-unit
+  obsidian_note: null
+- id: microdata-commons
+  name: microdata commons (populace)
+  definition: The open, calibrated-microdata commons — synthesis, imputation, and calibration shipped
+    as versioned release bundles — that both poles of the stack stand on.
+  introduced_in: manuscript/part-2-open-engine/06-the-household-and-the-society.md
+  aliases:
+  - populace
+  - calibrated-microdata commons
+  - microdata commons
+  - data commons
+  related:
+  - synthetic-population
+  - calibration-reweighting
+  - imputation
+  obsidian_note: null
+  foreshadow_ok:
+  - manuscript/part-2-open-engine/05-proof-of-concept.md
+- id: prediction-pole
+  name: the prediction pole (forecast grading)
+  definition: Publishing forecasts of government metrics with intervals in advance and grading each when
+    the official first-print number lands — the accountability loop point estimates lack.
+  introduced_in: index.md
+  aliases:
+  - prediction pole
+  - forecast graded
+  - forecast grading
+  - graded forecast
+  - the scoreboard
+  - graded when the official number
+  related:
+  - admission-rule
+  - forecast-calibration
+  - budget-scoring
+  - futarchy
+  obsidian_note: null
+- id: forecast-calibration
+  name: forecast calibration
+  definition: In the forecasting sense, a stated probability is calibrated when events predicted at 60
+    percent happen close to 60 percent of the time — verified against outcomes and recalibrated when it
+    drifts (distinct from data calibration).
+  introduced_in: manuscript/part-4-prediction/13-the-uncertainty-gap.md
+  aliases:
+  - recalibrate
+  - recalibrated
+  - calibration step
+  - calibrated probability
+  - forecast calibration
+  related:
+  - prediction-pole
+  - calibration-reweighting
+  obsidian_note: null
+- id: post-stratification
+  name: post-stratification
+  definition: Chopping a population into demographic cells, estimating within each, and reweighting the
+    cells to the known composition of the whole — the survey-statistics backbone HiveSight fills with
+    a language model.
+  introduced_in: manuscript/part-4-prediction/14-simulating-opinion.md
+  aliases:
+  - post-stratification
+  - post-stratification cells
+  - post-stratify
+  related:
+  - silicon-sampling
+  - calibration-reweighting
+  - survey-microdata
+  obsidian_note: null
+- id: silicon-sampling
+  name: silicon sampling
+  definition: Using a language model to stand in for human survey respondents, reliable only for well-studied
+    populations answering well-studied questions.
+  introduced_in: manuscript/part-4-prediction/14-simulating-opinion.md
+  aliases:
+  - silicon sampling
+  - silicon sample
+  - synthetic respondents
+  - synthetic opinion
+  related:
+  - post-stratification
+  - survey-microdata
+  obsidian_note: research/concepts/hivesight-silicon-sampling.md
+- id: futarchy
+  name: futarchy
+  definition: Robin Hanson's proposal to vote on values but bet on beliefs — democracy sets the welfare
+    metric and prediction markets decide which policies achieve it.
+  introduced_in: manuscript/part-5-horizon/15-simulating-democracy.md
+  aliases:
+  - futarchy
+  related:
+  - prediction-pole
+  obsidian_note: null
