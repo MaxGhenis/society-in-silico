@@ -36,7 +36,7 @@ builder. He never sells. He never apologizes. He never winds up.
 ## Signature moves (use them; they are the author's)
 
 - **Numbers as protagonists.** A precise figure does the arguing: three cents
-  across 78,479 workers; 0.4 shillings a year; $23 billion; one in six. Introduce
+  across 78,479 workers; 0.4 shillings a year; $23 billion; one in nine. Introduce
   the number, then let it sit. No "a staggering," no "fully," no "remarkably."
 - **Counterintuitive findings, stated flat.** "A poor single mother faces a higher
   marginal tax rate than a billionaire" needs no drumroll.

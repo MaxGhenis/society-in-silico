@@ -25,9 +25,13 @@ into the draft. Cite only BibTeX keys that exist in `references.bib` (read it).
   BD thread. (The Federal Reserve Bank of Atlanta naming is APPROVED by the author —
   keep existing mentions.)
 - **No leaderboard decimals that will drift.** Describe PolicyBench standings in
-  round terms ("roughly one in six household calculations wrong by more than a
-  dollar for the best model, as of mid-2026"), cite the site, avoid two-decimal
-  precision.
+  round terms ("roughly one in nine household calculations wrong by more than a
+  dollar for the best model, as of mid-2026"; typical model about one in four),
+  cite the site, avoid two-decimal precision. [Amended 2026-07-12 to the live
+  board's 2026-07-10 snapshot — 24 models, best (GPT-5.6 Sol) 88.7% exact
+  (= within $1), median ≈76% — after Sol's adversarial review flagged the prior
+  snapshot as stale. Only 9 of 24 models miss a quarter or more: never say
+  "most models miss a quarter or more."]
 - **Do not present the commercial operator (Cosilico PBC) as launched.** See "The
   commons and its operators" below.
 - Internal EUROMOD/UKMOD relationship strategy never appears; public treatment is
@@ -226,10 +230,11 @@ into the draft. Cite only BibTeX keys that exist in `references.bib` (read it).
   returns correctly.
 - **PolicyBench** (PolicyEngine, 2026, policybench.org): a public benchmark of
   LLMs on complete US household tax-and-benefit calculations over realistic
-  populace-drawn scenarios; ~20 frontier and open-weight models on the board.
-  Headline metric: share of household calculations within $1. As of mid-2026, the
-  best model gets roughly **one in six** household calculations wrong by more than
-  a dollar; most models miss a quarter or more; errors are family-level (wrong
+  populace-drawn scenarios; 24 frontier and open-weight models on the board (say "two dozen").
+  Headline metric: share of household calculations within $1 ("Exact"). As of
+  mid-2026 (board snapshot 2026-07-10), the best model gets roughly **one in
+  nine** household calculations wrong by more than a dollar; the typical model
+  misses about one in four; errors are family-level (wrong
   Medicaid eligibility, wrong SNAP amount), not rounding. Use round terms; cite
   [@policybench2026].
 - **The benchmark's own integrity arc (meta-lesson, use in the AI or verification
