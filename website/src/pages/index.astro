@@ -5,12 +5,11 @@ import { bookStructure, getDraftStats } from '../lib/book';
 const stats = getDraftStats();
 const roman = ['I', 'II', 'III', 'IV', 'V', 'VI'];
 const firstChapter = bookStructure.frontMatter[0];
-const kWords = Math.round(stats.words / 1000);
 ---
 
 <Layout
   title="Society in Silico — a book by Max Ghenis"
-  description="Simulating futures to build the one we want. A book about rebuilding the analytic stack of government in the open — read the draft."
+  description="Simulating futures to build the one we want. Teaching computers the law, building a simulated country to run it on, and grading the predictions against reality — a book drafted in public."
 >
   <nav class="topbar">
     <a href="/" class="eyebrow" style="color: var(--ink)">Society <em style="font-family: var(--font-body); font-style: italic; text-transform: none; letter-spacing: 0">in silico</em></a>
@@ -30,9 +29,9 @@ const kWords = Math.round(stats.words / 1000);
     </h1>
 
     <p class="mt-8 max-w-xl text-lg leading-relaxed" style="color: var(--ink-2)">
-      {bookStructure.subtitle}. The story of teaching computers the law, giving them
-      everyone's circumstances, and grading their predictions against reality —
-      and of the fork that decides who such machinery serves.
+      {bookStructure.subtitle}. The story of teaching computers the law, building a
+      simulated country to run it on, and grading the predictions against reality —
+      and of the fork that decides who the machinery serves.
     </p>
 
     <div class="mt-8 flex flex-wrap items-center gap-3">
@@ -59,9 +58,10 @@ const kWords = Math.round(stats.words / 1000);
     </div>
     <p class="mt-4 max-w-2xl text-sm leading-relaxed" style="color: var(--ink-3)">
       In 1957, Guy Orcutt noticed that national averages can be identical while the
-      societies underneath them differ completely — so he proposed simulating the
+      lives underneath them differ completely — so he proposed simulating the
       households instead. This book is about what happened when that idea finally got
-      the machinery it needed, and the discipline that keeps the machinery honest.
+      the machinery it needed, and the case it builds is one sentence long: history
+      should have auditors, not an author.
     </p>
   </section>
 
@@ -87,7 +87,7 @@ const kWords = Math.round(stats.words / 1000);
   <section id="contents" class="mx-auto max-w-5xl px-5 py-16">
     <div class="mb-10 flex flex-wrap items-baseline justify-between gap-3">
       <h2 class="eyebrow" style="font-size: 0.8125rem">Contents</h2>
-      <span class="ledger-meta">{stats.chapters} chapters · {kWords},000 words and counting</span>
+      <span class="ledger-meta">{stats.chapters} chapters · {stats.words.toLocaleString('en-US')} words</span>
     </div>
 
     <div class="mb-8">
@@ -148,7 +148,7 @@ const kWords = Math.round(stats.words / 1000);
             <button type="submit" class="btn btn--ghost" style="white-space: nowrap">Follow the draft</button>
           </form>
           <p class="mt-2 text-xs" style="color: var(--ink-3); font-family: var(--font-mono)">
-            occasional updates as chapters land · no spam
+            occasional updates as the draft hardens · no spam
           </p>
         </div>
 
@@ -179,11 +179,12 @@ const kWords = Math.round(stats.words / 1000);
       <div>
         <p style="font-family: var(--font-display); font-weight: 650">{bookStructure.author}</p>
         <p class="mt-1 max-w-sm text-sm" style="color: var(--ink-2)">
-          Founder of PolicyEngine; CEO of the Axiom Foundation; founder of the Thesis
-          Institute. Writing this book in public from Washington, DC.
+          Co-founder of PolicyEngine, CEO of the Axiom Foundation, founder of the
+          Thesis Institute — writing this book in public from Washington, DC.
         </p>
       </div>
       <div class="flex gap-5 text-sm" style="font-family: var(--font-mono)">
+        <a href="https://maxghenis.com" style="color: var(--green)">maxghenis.com</a>
         <a href="https://github.com/MaxGhenis/society-in-silico" style="color: var(--green)">source</a>
         <a href="https://x.com/MaxGhenis" style="color: var(--green)">x</a>
         <a href="https://github.com/MaxGhenis" style="color: var(--green)">github</a>
