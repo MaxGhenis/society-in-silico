@@ -52,7 +52,7 @@ const firstChapter = bookStructure.frontMatter[0];
         </div>
         <p id="field-caption" class="text-sm italic" style="color: var(--ink-2); font-family: var(--font-body)">
           Every dot is a household. Same average income either way — but only one view shows who
-          <span style="color: var(--amber)">falls off a benefit cliff</span>.
+          <span style="color: var(--amber)">sits on a benefit cliff</span>.
         </p>
       </div>
     </div>
@@ -229,6 +229,11 @@ const firstChapter = bookStructure.frontMatter[0];
           size: 1 + rand() * 1.4,
         });
       }
+      // Pen's parade: households in income order, so the x-axis means something.
+      dots.sort((a, b) => a.yDist - b.yDist);
+      dots.forEach((d, i) => { d.x = (i + 0.5) / N; });
+      // The dashed line sits at the true mean of the plotted distribution.
+      const meanDist = dots.reduce((s, d) => s + d.yDist, 0) / N;
 
       let t = 1; // 0 = average view, 1 = distribution view
       let target = 1;
@@ -257,7 +262,7 @@ const firstChapter = bookStructure.frontMatter[0];
         const c = colors();
 
         const pad = 28;
-        const meanY = h * 0.5;
+        const meanY = pad + (1 - meanDist) * (h - pad * 2);
 
         // The mean line, always present: what the aggregate sees.
         ctx.strokeStyle = c.hairline;
@@ -267,6 +272,11 @@ const firstChapter = bookStructure.frontMatter[0];
         ctx.lineTo(w - pad, meanY);
         ctx.stroke();
         ctx.setLineDash([]);
+        ctx.fillStyle = c.ink3;
+        ctx.font = '10px "IBM Plex Mono", monospace';
+        ctx.textAlign = 'right';
+        ctx.fillText('average income', w - pad, meanY - 7);
+        ctx.textAlign = 'left';
 
         for (const d of dots) {
           const x = pad + d.x * (w - pad * 2);
@@ -285,7 +295,7 @@ const firstChapter = bookStructure.frontMatter[0];
         // Axis label
         ctx.fillStyle = c.ink3;
         ctx.font = '10px "IBM Plex Mono", monospace';
-        ctx.fillText(t > 0.5 ? 'household income →' : 'the average (identical either way)', pad, h - 10);
+        ctx.fillText(t > 0.5 ? 'households, poorest to richest →' : 'every household at the average', pad, h - 10);
       }
 
       function step() {
