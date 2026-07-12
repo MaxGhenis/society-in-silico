@@ -237,13 +237,13 @@ const firstChapter = bookStructure.frontMatter[0];
         const ai = Math.floor(hash(ak, 13) * cells.length);
         for (let i = 0; i < cells.length; i++) {
           const d = cells[i];
-          let alpha = 0.075
-            + 0.03 * Math.sin(t * 0.9 + d.ph)
-            + 0.10 * Math.pow(Math.max(0, Math.cos((d.ix + d.iy) * 0.35 - t * 0.45)), 3);
-          let fill = c.green, r = 1.3;
-          if (i === gi && gu < 0.2) { alpha = 0.30 * (1 - gu / 0.2) + alpha; r = 1.8; }
-          if (i === ai && au < 0.05) { alpha = 0.38; fill = c.amber; r = 2.1; }
-          ctx.globalAlpha = Math.min(0.34, alpha);
+          let alpha = 0.115
+            + 0.045 * Math.sin(t * 0.9 + d.ph)
+            + 0.17 * Math.pow(Math.max(0, Math.cos((d.ix + d.iy) * 0.35 - t * 0.45)), 3);
+          let fill = c.green, r = 1.5;
+          if (i === gi && gu < 0.2) { alpha = 0.42 * (1 - gu / 0.2) + alpha; r = 2.1; }
+          if (i === ai && au < 0.05) { alpha = 0.5; fill = c.amber; r = 2.4; }
+          ctx.globalAlpha = Math.min(0.5, alpha);
           ctx.fillStyle = fill;
           ctx.beginPath();
           ctx.arc(d.x, d.y, r, 0, 6.283);
