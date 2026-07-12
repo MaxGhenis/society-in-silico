@@ -261,7 +261,8 @@ export function getDraftStats(): DraftStats {
     words += countWords(content);
     citationsPending += (content.match(/\[NEEDS CITATION/g) || []).length;
     verifyMarks += (content.match(/\[VERIFY/g) || []).length;
-    chapters += 1;
+    // Front matter reads on the site but does not count as a chapter.
+    if (chapter.chapterNumber != null) chapters += 1;
   }
 
   return {
