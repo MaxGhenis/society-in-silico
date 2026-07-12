@@ -1,6 +1,6 @@
 # Preface
 
-In 2019 I wanted a number nobody would give me. The question was simple to state: if the United States paid every adult a basic income, how many families would that pull over the poverty line, and what would it cost once you netted out the programs it replaced? Congress had models that could answer it — the Congressional Budget Office's, the Joint Committee on Taxation's. So did the Treasury, and, outside government, the Tax Policy Center. I could read their reports. I could not ask their models my question, because the models lived behind institutional walls, most ran on confidential data, and all answered only to their owners.
+In 2019 I wanted a number nobody would give me. The question was simple to state: if the United States paid every adult a basic income, how many families would that pull over the poverty line, and what would it cost once you netted out the programs it replaced? Washington had models that could answer it — the Congressional Budget Office's, the Joint Committee on Taxation's, the Treasury's; outside government, the Tax Policy Center had one too. I could read their reports. I could not ask their models my question, because the models lived behind institutional walls, most ran on confidential data, and all answered only to their owners.
 
 So I built. First a scrappy research shop called the UBI Center, which ran analyses on the open-source tools that existed. Then, with Nikhil Woodruff — a college student I found on a subreddit, who turned out to pair real economics with real engineering — PolicyEngine: policy simulation for anyone with a web browser.^[A disclosure that doubles as a plot point: as of July 2026, Nikhil serves in the UK government at 10 Downing Street. [VERIFY with Nikhil: role wording] When this book describes British institutions evaluating tools he helped build, read it knowing where he sits now.] Type in your household, move a policy lever, watch your taxes and benefits recompute. No credentials, no paywall, no waiting.
 
@@ -34,7 +34,7 @@ Impatient readers: introduction, then Part III, then whatever pulls you. The his
 
 I wrote this book because the tools we use to understand society decide what we can see about it, and for fifty years the best tools belonged to the few institutions that could afford them. That era is ending. What replaces it — open machinery anyone can inspect and check, or closed machinery with a friendlier interface — is being decided now, in code, in procurement contracts, and in choices that look technical but are not.
 
-You can judge for yourself whether the open path holds up. The evidence is all here, marked with exactly how much I trust it.
+The number nobody would give me in 2019 is now anyone's to compute — in a browser, with the machinery in plain sight.
 
 Max Ghenis
 Washington, DC, 2026

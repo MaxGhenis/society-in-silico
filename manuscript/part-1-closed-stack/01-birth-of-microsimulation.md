@@ -2,7 +2,7 @@
 
 In 1957, an economist named Guy Orcutt opened a paper with a verdict on his own profession: "Existing models of our socio-economic system have proved to be of rather limited predictive usefulness" [@orcutt1957new]. The journal was the *Review of Economics and Statistics* — respectable, not glamorous — and the paper, "A New Type of Socio-Economic System," was dense with equations and read by almost nobody. What it proposed was a simulated United States, built one household at a time, on computers that could not yet run it.
 
-The idea arrived in three acts, and the dates matter. In 1957 Orcutt proposed it. In 1961 he and three co-authors published a working demonstration — limited, but running. In 1975 the Urban Institute completed DYNASIM, the first full-scale version, eighteen years after the proposal. Everything this book describes descends from those three dates, so it is worth understanding what Orcutt saw that made him spend a career on the gap between them.
+The idea arrived in three acts. In 1957 Orcutt proposed it. In 1961 he and three co-authors published a working demonstration — limited, but running. In 1975 the Urban Institute completed DYNASIM, the first full-scale version, eighteen years after the proposal. Whatever Orcutt saw in 1957, he judged it worth a career.
 
 ## The engineer
 
