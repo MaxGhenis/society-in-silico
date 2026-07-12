@@ -3,23 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import { bookStructure, getDraftStats } from '../lib/book';
 
 const stats = getDraftStats();
-const Y0 = 290, YSCALE = 260 / 32000;
-const yFor = (v) => Y0 - v * YSCALE;
-const societies = ['a', 'b'].map((soc, si) => ({
-  x0: si === 0 ? 20 : 500,
-  dots: Array.from({ length: 100 }, (_, i) => {
-    const cx = (si === 0 ? 20 : 500) + 14 + i * 4.12 + ((i * 7) % 5);
-    const jit = ((i * 37) % 9) - 4;
-    const hi = soc === 'b' && i % 2 === 1;
-    const lo = soc === 'b' && i % 2 === 0;
-    return {
-      cx,
-      cyAvg: yFor(15000) + jit,
-      cyFull: (lo ? yFor(0) : hi ? yFor(30000) : yFor(15000)) + jit,
-      cls: lo ? 'dot dot--zero' : 'dot',
-    };
-  }),
-}));
 const roman = ['I', 'II', 'III', 'IV', 'V', 'VI'];
 const firstChapter = bookStructure.frontMatter[0];
 ---
@@ -58,42 +41,25 @@ const firstChapter = bookStructure.frontMatter[0];
     </div>
   </header>
 
-  <!-- ————— signature: the book's first example, running ————— -->
-  <section class="mx-auto max-w-5xl px-5 pb-16" aria-label="The book's first example, running">
+  <!-- ————— signature: the loop, alive ————— -->
+  <section class="mx-auto max-w-5xl px-5 pb-16" aria-label="The loop the book describes, running">
     <div class="field-wrap">
-      <svg id="twosoc" data-state="avg" viewBox="0 0 960 320" class="block w-full" aria-hidden="true">
-        {societies.map((soc, si) => (
-          <g>
-            <text x={soc.x0 + 14} y="24" class="soc-label">{si === 0 ? 'Society A' : 'Society B'}</text>
-            <line x1={soc.x0 + 10} y1={yFor(10000)} x2={soc.x0 + 440} y2={yFor(10000)} class="thr-line" />
-            <text x={soc.x0 + 440} y={yFor(10000) - 7} text-anchor="end" class="thr-label">tax begins · $10,000</text>
-            <line x1={soc.x0 + 10} y1={Y0 + 4} x2={soc.x0 + 440} y2={Y0 + 4} class="base-line" />
-            {soc.dots.map((d) => (
-              <circle class={d.cls} cx={d.cx} r="3.4" style={`--cy-avg: ${d.cyAvg}px; --cy-full: ${d.cyFull}px`} />
-            ))}
-          </g>
-        ))}
-      </svg>
-      <div class="flex flex-wrap items-center justify-between gap-3 border-t px-4 py-3" style="border-color: var(--hairline-soft)">
-        <div class="field-toggle" role="group" aria-label="Model the societies as">
-          <button id="btn-avg" aria-pressed="true">the average</button>
-          <button id="btn-full" aria-pressed="false">every household</button>
-        </div>
+      <canvas id="loop" class="block h-[300px] w-full md:h-[340px]" aria-hidden="true"></canvas>
+      <div class="border-t px-4 py-3" style="border-color: var(--hairline-soft)">
         <p class="text-sm" style="color: var(--ink-2); font-family: var(--font-mono)">
-          A: $15,000 avg · revenue <b style="color: var(--ink)">$100,000</b>
-          <span class="mx-2" style="color: var(--hairline)">|</span>
-          B: $15,000 avg · revenue <b id="revB" style="color: var(--ink)">$100,000</b>
+          <span style="color: var(--amber)">steps</span> — the rules ·
+          <span style="color: var(--green)">fan</span> — simulated futures ·
+          line — what happened · dots — grades; misses stay on the page
         </p>
       </div>
     </div>
     <p class="mt-4 max-w-2xl text-sm leading-relaxed" style="color: var(--ink-3)">
-      The book's first example: a 20 percent tax on income above $10,000, run on two societies
-      with the same average income. A model built on the average collects $100,000 from each.
-      Compute household by household and Society B — half at zero, half at $30,000 — owes twice
-      that. In 1957, Guy Orcutt saw that averages hide exactly this, and proposed simulating the
-      households instead. This book is about what happened when his idea finally got the machinery
-      it needed, and the case it builds is one sentence long: history should have auditors, not an
-      author.
+      The loop the book describes, idling: rules set the level, simulation fans the futures,
+      reality lands and takes its grade, and the fan regrows from wherever the world went.
+      In 1957, Guy Orcutt proposed simulating society household by household, decades before
+      machines could run the idea. This book is about what happened when it finally got its
+      machinery — encoded law, a simulated country, forecasts graded by reality — and the case
+      it builds is one sentence long: history should have auditors, not an author.
     </p>
   </section>
 
@@ -230,39 +196,175 @@ const firstChapter = bookStructure.frontMatter[0];
     </div>
   </footer>
 
-  <!-- ————— two societies toggle ————— -->
-  <style>
-    #twosoc .dot { fill: var(--green); opacity: 0.85; transition: cy 0.9s cubic-bezier(0.22, 1, 0.36, 1), fill 0.5s, opacity 0.5s; }
-    #twosoc[data-state="avg"] .dot { cy: var(--cy-avg); }
-    #twosoc[data-state="full"] .dot { cy: var(--cy-full); }
-    #twosoc[data-state="full"] .dot--zero { fill: var(--ink-3); opacity: 0.55; }
-    #twosoc .thr-line { stroke: var(--hairline); stroke-dasharray: 4 5; }
-    #twosoc .base-line { stroke: var(--hairline-soft); }
-    #twosoc .soc-label { fill: var(--ink-2); font-family: var(--font-display); font-size: 14px; font-weight: 650; }
-    #twosoc .thr-label { fill: var(--ink-3); font-family: 'IBM Plex Mono', monospace; font-size: 10px; }
-    @media (prefers-reduced-motion: reduce) { #twosoc .dot { transition: none; } }
-  </style>
+  <!-- ————— the loop ————— -->
   <script is:inline>
     (function () {
-      const svg = document.getElementById('twosoc');
-      if (!svg) return;
-      const btnAvg = document.getElementById('btn-avg');
-      const btnFull = document.getElementById('btn-full');
-      const revB = document.getElementById('revB');
-      function go(state) {
-        svg.setAttribute('data-state', state);
-        btnAvg.setAttribute('aria-pressed', String(state === 'avg'));
-        btnFull.setAttribute('aria-pressed', String(state === 'full'));
-        revB.textContent = state === 'full' ? '$200,000' : '$100,000';
-        revB.style.color = state === 'full' ? 'var(--amber)' : 'var(--ink)';
+      const canvas = document.getElementById('loop');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      let seed = 20261957;
+      function rand() {
+        seed = (seed * 1103515245 + 12345) % 2147483648;
+        return seed / 2147483648;
       }
-      btnAvg.addEventListener('click', () => go('avg'));
-      btnFull.addEventListener('click', () => go('full'));
-      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        setTimeout(() => go('full'), 900);
-      } else {
-        go('full');
+      function gauss() { return (rand() + rand() + rand() + rand() - 2) / 0.577; }
+
+      // The process: an amber rule level that occasionally steps; a value that
+      // mean-reverts to it; a fan of simulated futures; reality landing each beat.
+      const STEP_W = 26;          // px per beat
+      const BEAT_S = 2.1;         // seconds per beat
+      const HIST_MAX = 60;
+      const FAN_N = 26;           // simulated paths
+      const FAN_H = 14;           // horizon, in beats
+      const SIGMA = 0.055;
+
+      let level = 0.52;           // rule level, 0..1 (drawn top=1)
+      let untilStep = 6;
+      const hist = [];            // {v, level, grade: 'hit'|'miss'|null}
+      let value = level;
+      let fan = [], band = [];
+      for (let i = 0; i < 26; i++) advance(true);
+      function simulate() {
+        fan = []; band = [];
+        for (let k = 0; k < FAN_N; k++) {
+          let v = value; const path = [v];
+          for (let h = 0; h < FAN_H; h++) {
+            v = level + (v - level) * 0.62 + gauss() * SIGMA;
+            path.push(Math.max(0.06, Math.min(0.94, v)));
+          }
+          fan.push(path);
+        }
+        for (let h = 0; h <= FAN_H; h++) {
+          const col = fan.map((p) => p[h]).sort((a, b) => a - b);
+          band.push([col[2], col[FAN_N - 3]]);
+        }
       }
+
+      function advance(silent) {
+        if (--untilStep <= 0) {
+          level = Math.max(0.2, Math.min(0.8, level + (rand() - 0.5) * 0.34));
+          untilStep = 5 + Math.floor(rand() * 5);
+        }
+        const next = level + (value - level) * 0.62 + gauss() * (SIGMA * (rand() < 0.1 ? 2.4 : 1));
+        value = Math.max(0.06, Math.min(0.94, next));
+        let grade = null;
+        if (!silent && band.length > 1) grade = value >= band[1][0] && value <= band[1][1] ? 'hit' : 'miss';
+        hist.push({ v: value, level, grade });
+        if (hist.length > HIST_MAX) hist.shift();
+        simulate();
+      }
+      simulate();
+
+      function colors() {
+        const st = getComputedStyle(document.documentElement);
+        return {
+          green: st.getPropertyValue('--green').trim() || '#57c99b',
+          amber: st.getPropertyValue('--amber').trim() || '#e09e4a',
+          ink2: st.getPropertyValue('--ink-2').trim() || '#aab8b1',
+          ink3: st.getPropertyValue('--ink-3').trim() || '#7a8680',
+          hair: st.getPropertyValue('--hairline').trim() || '#3a443f',
+        };
+      }
+
+      let phase = 0; // 0..1 within a beat (drives the scroll)
+      function draw() {
+        const dpr = window.devicePixelRatio || 1;
+        const w = canvas.clientWidth, h = canvas.clientHeight;
+        if (!w) return;
+        if (canvas.width !== w * dpr) { canvas.width = w * dpr; canvas.height = h * dpr; }
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.clearRect(0, 0, w, h);
+        const c = colors();
+        const pad = 16, top = 18, bot = 26;
+        const Y = (v) => top + (1 - v) * (h - top - bot);
+        const nowX = Math.round(w * 0.62);
+        const off = phase * STEP_W;
+
+        // rules staircase: history levels, then current level extending into the future
+        ctx.strokeStyle = c.amber; ctx.globalAlpha = 0.5; ctx.lineWidth = 1.4;
+        ctx.beginPath();
+        for (let i = 0; i < hist.length; i++) {
+          const x0 = nowX - (hist.length - 1 - i) * STEP_W - off;
+          const y = Y(hist[i].level);
+          if (i === 0) ctx.moveTo(Math.max(pad, x0 - STEP_W), y);
+          const prevY = Y(hist[Math.max(0, i - 1)].level);
+          if (prevY !== y) { ctx.lineTo(x0, prevY); ctx.lineTo(x0, y); }
+          ctx.lineTo(x0 + STEP_W, y);
+        }
+        ctx.lineTo(w - pad, Y(hist[hist.length - 1].level));
+        ctx.stroke();
+
+        // what happened
+        ctx.globalAlpha = 1; ctx.strokeStyle = c.ink2; ctx.lineWidth = 1.6;
+        ctx.beginPath();
+        for (let i = 0; i < hist.length; i++) {
+          const x = nowX - (hist.length - 1 - i) * STEP_W - off;
+          if (x < pad - STEP_W) continue;
+          const y = Y(hist[i].v);
+          i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+
+        // grades
+        for (let i = 0; i < hist.length; i++) {
+          const x = nowX - (hist.length - 1 - i) * STEP_W - off;
+          if (x < pad || !hist[i].grade) continue;
+          const y = Y(hist[i].v);
+          if (hist[i].grade === 'hit') {
+            ctx.fillStyle = c.green; ctx.globalAlpha = 0.9;
+            ctx.beginPath(); ctx.arc(x, y, 2.6, 0, Math.PI * 2); ctx.fill();
+          } else {
+            ctx.strokeStyle = c.amber; ctx.globalAlpha = 1; ctx.lineWidth = 1.6;
+            ctx.beginPath(); ctx.arc(x, y, 3.6, 0, Math.PI * 2); ctx.stroke();
+          }
+        }
+        ctx.globalAlpha = 1;
+
+        // the fan of simulated futures
+        const fanX = (hh) => Math.min(w - pad, nowX - off + hh * STEP_W);
+        ctx.fillStyle = c.green; ctx.globalAlpha = 0.07;
+        ctx.beginPath();
+        ctx.moveTo(fanX(0), Y(band[0][0]));
+        for (let hh = 1; hh <= FAN_H; hh++) ctx.lineTo(fanX(hh), Y(band[hh][0]));
+        for (let hh = FAN_H; hh >= 0; hh--) ctx.lineTo(fanX(hh), Y(band[hh][1]));
+        ctx.closePath(); ctx.fill();
+        ctx.globalAlpha = 0.14; ctx.strokeStyle = c.green; ctx.lineWidth = 1;
+        for (const path of fan) {
+          ctx.beginPath();
+          for (let hh = 0; hh <= FAN_H; hh++) {
+            const x = fanX(hh); if (x > w - pad) break;
+            hh === 0 ? ctx.moveTo(x, Y(path[hh])) : ctx.lineTo(x, Y(path[hh]));
+          }
+          ctx.stroke();
+        }
+        ctx.globalAlpha = 1;
+
+        // now cursor
+        ctx.strokeStyle = c.hair; ctx.setLineDash([3, 5]);
+        ctx.beginPath(); ctx.moveTo(nowX, 8); ctx.lineTo(nowX, h - 20); ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle = c.ink3; ctx.font = '10px "IBM Plex Mono", monospace';
+        ctx.fillText('now', nowX + 6, 16);
+        const cur = hist[hist.length - 1];
+        ctx.fillStyle = c.ink2;
+        ctx.beginPath(); ctx.arc(nowX - off + 0, Y(cur.v), 3.2, 0, Math.PI * 2); ctx.fill();
+      }
+
+      if (reduced) { phase = 0; draw(); window.addEventListener('resize', draw); return; }
+
+      let last = performance.now();
+      function frame(t) {
+        const dt = (t - last) / 1000; last = t;
+        phase += dt / BEAT_S;
+        if (phase >= 1) { phase -= 1; advance(false); }
+        draw();
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+      window.addEventListener('resize', draw);
+      new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
     })();
   </script>
 </Layout>
