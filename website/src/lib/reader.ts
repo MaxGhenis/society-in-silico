@@ -50,7 +50,8 @@ const concepts: Record<string, { title: string; desc: string }> = {
   taxsim: { title: 'TAXSIM', desc: 'NBER tax microsimulation model' },
   'axiom-foundation': { title: 'The Axiom Foundation', desc: 'Open, verified encodings of public policy (RuleSpec)' },
   'thesis-institute': { title: 'Thesis Institute', desc: 'Open, graded forecasts of government metrics' },
-  populace: { title: 'populace', desc: 'Calibrated population microdata commons' },
+  microcosm: { title: 'Microcosm', desc: 'Calibrated population microdata commons' },
+  chronicle: { title: 'Chronicle', desc: 'Witnessed record of official first prints' },
   'ubi-center': { title: 'UBI Center', desc: 'Think tank for universal basic income research' },
   'rules-as-code': { title: 'Rules as Code', desc: 'Movement to express legislation in machine-executable form' },
 };
