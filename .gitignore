@@ -40,3 +40,8 @@ __pycache__/
 /.quarto/
 
 **/*.quarto_ipynb
+
+# Quarto in-flight render artifacts (final output lives in _book/)
+/index.html
+manuscript/**/*.html
+site_libs/
