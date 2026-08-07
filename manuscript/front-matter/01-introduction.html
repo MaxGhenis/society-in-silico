@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; Introduction: The model and the world – Society in Silico</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../manuscript/part-1-closed-stack/01-birth-of-microsimulation.html" rel="next">
+<link href="../../manuscript/front-matter/00-preface.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-87aed0b8589e23e45aa8556edf37a91b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../manuscript/front-matter/01-introduction.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction: The model and the world</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Society in Silico</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Society in Silico</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../manuscript/front-matter/00-preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../manuscript/front-matter/01-introduction.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction: The model and the world</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I: The closed stack</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../manuscript/part-1-closed-stack/01-birth-of-microsimulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Chapter 1: The birth of microsimulation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../manuscript/part-1-closed-stack/02-tax-model-wars.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Chapter 2: The tax model wars</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../manuscript/part-1-closed-stack/03-the-accuracy-question.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chapter 3: The accuracy question</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../manuscript/part-1-closed-stack/04-a-wall-of-frustration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Chapter 4: A wall of frustration</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II: The open engine</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../manuscript/part-2-open-engine/05-proof-of-concept.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Chapter 5: Proof of concept</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../manuscript/part-2-open-engine/06-the-household-and-the-society.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Chapter 6: The household and the society</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../manuscript/part-2-open-engine/07-three-ingredients.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Chapter 7: The three ingredients</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III: The agent turn</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../manuscript/part-3-agent-turn/08-the-ai-cant-do-your-taxes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Chapter 8: The AI can’t do your taxes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../manuscript/part-3-agent-turn/09-encoding-the-law.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Chapter 9: Encoding the law</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../manuscript/part-3-agent-turn/10-the-verification-problem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Chapter 10: The verification problem</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../manuscript/part-3-agent-turn/11-microsimulation-anywhere.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Chapter 11: Microsimulation anywhere</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../manuscript/part-3-agent-turn/12-the-decomposition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Chapter 12: The decomposition</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part IV: The prediction pole</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../manuscript/part-4-prediction/13-the-uncertainty-gap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chapter 13: The uncertainty gap, and the scoreboard</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../manuscript/part-4-prediction/14-simulating-opinion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Chapter 14: Simulating opinion</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part V: The horizon</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../manuscript/part-5-horizon/15-simulating-democracy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Chapter 15: Simulating democracy</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../manuscript/part-5-horizon/16-simulating-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Chapter 16: Simulating values</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../manuscript/part-5-horizon/17-society-in-silico.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Chapter 17: Society in silico</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-ai-cant-do-your-taxes" id="toc-the-ai-cant-do-your-taxes" class="nav-link active" data-scroll-target="#the-ai-cant-do-your-taxes"><span class="header-section-number">2.1</span> The AI can’t do your taxes</a></li>
+  <li><a href="#why-the-story-turns-now" id="toc-why-the-story-turns-now" class="nav-link" data-scroll-target="#why-the-story-turns-now"><span class="header-section-number">2.2</span> Why the story turns now</a></li>
+  <li><a href="#what-a-model-shows-you" id="toc-what-a-model-shows-you" class="nav-link" data-scroll-target="#what-a-model-shows-you"><span class="header-section-number">2.3</span> What a model shows you</a></li>
+  <li><a href="#the-stakes" id="toc-the-stakes" class="nav-link" data-scroll-target="#the-stakes"><span class="header-section-number">2.4</span> The stakes</a></li>
+  <li><a href="#four-questions" id="toc-four-questions" class="nav-link" data-scroll-target="#four-questions"><span class="header-section-number">2.5</span> Four questions</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction: The model and the world</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>“For the first time, history has an author.”</p>
+<p>Engerraund Serac says it with pride. He is the villain of Westworld’s third season: after watching Paris burn in a thermonuclear strike, he builds Rehoboam, an AI that models every human life and predicts its course — when you will lose your job, when you will get sick, when you will die. Prediction slides into control. The system starts arranging outcomes to match its forecasts, and people who wander off their assigned trajectories get flagged for “reconditioning.” The show’s premise is that a person is “just a brief algorithm,” compressible to code. Its horror is simpler: history has an author, the author has a model, and no one else knows either exists.</p>
+<p>I watched this in 2020 and recognized the machinery. I had been building models of society since 2018 — smaller, tamer ones that predict how a tax change lands on millions of simulated households. The writers had taken tools I used every day and followed them to their darkest terminus.</p>
+<p>They had also, without meaning to, posed a design question that this book spends seventeen chapters answering. The dangerous thing about Rehoboam was never the simulation. It was the secrecy, the monopoly, and the absence of anything that could tell the system it was wrong. Governments already score citizens for fraud risk and bail decisions with models no defendant can inspect. Insurers and credit bureaus run the same pattern in private markets — a real fight, under different law, and not this book’s; the chapters ahead are about the public machinery, where what the model computes is the policy. That machinery exists and is spreading; the only live question is its architecture. Closed, proprietary, graded by no one? Or open, inspectable, and checked — line by line — against the world it claims to describe?</p>
+<p>That fork is the book.</p>
+<section id="the-ai-cant-do-your-taxes" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="the-ai-cant-do-your-taxes"><span class="header-section-number">2.1</span> The AI can’t do your taxes</h2>
+<p>Start with a fact that surprises people who expect artificial intelligence to be good at arithmetic.</p>
+<p>In July 2025, the tax-software company Column Tax published TaxCalcBench, a test of whether frontier AI models could complete real federal tax returns <span class="citation" data-cites="bock2025taxcalcbench">(<a href="#ref-bock2025taxcalcbench" role="doc-biblioref">Bock et al. 2025</a>)</span>. The models got everything a preparer would get: the taxpayer’s full information, the rules, unlimited time to think. The best performer, Google’s Gemini 2.5 Pro, produced a correct return less than a third of the time. Claude Opus 4 managed 27 percent. The errors followed a pattern: the models computed tax from bracket percentages instead of looking up the IRS tax tables, drifting $3 to $5 off on return after return; they fumbled credit eligibility; they lost track of supplementary forms. Software that costs fifty dollars does this flawlessly. The most capable AI systems on Earth could not.</p>
+<p>Researchers had seen it coming. In 2023, a Johns Hopkins and Maryland team found GPT-4 answered only 67 percent of true-or-false tax questions correctly — better than a coin, useless for a filing <span class="citation" data-cites="blairstanek2023gpt4tax">(<a href="#ref-blairstanek2023gpt4tax" role="doc-biblioref">Blair-Stanek et al. 2023</a>)</span>. The models have improved since, and the improvement is measured, not conceded: on PolicyBench, PolicyEngine’s own benchmark of complete household tax-and-benefit calculations, the newest flagships beat their predecessors, generation over generation. What the same board shows is how far there is left to go. As of mid-2026, across two dozen frontier and open models, the best still got roughly one in nine households wrong by more than a dollar, and the typical model missed about one in four <span class="citation" data-cites="policybench2026">(<a href="#ref-policybench2026" role="doc-biblioref">PolicyEngine 2026</a>)</span>. A dollar sounds like a rounding slip until you see what the misses are: the wrong Medicaid eligibility, the wrong food-assistance amount.</p>
+<p>The limitation is structural. Language models learn patterns from text; tax law is not a pattern, it is a specification. It changes every year, differs across fifty states, and turns on interactions among dozens of provisions that no amount of pretraining can memorize into reliability. More training data does not fix a specification problem.</p>
+<p>Tools fix it. AI systems do not memorize multiplication tables; they call calculators. They do not learn orbital mechanics by reading about rockets; they call physics engines. For the same reason, an AI answering a tax question should call a tax engine — software that encodes the rules exactly, cites the statute behind every number, and returns answers that can be checked. When people ask what this book is about technically, this is the one-sentence version: teaching machines to call verified models of society instead of guessing.</p>
+<p>The catch, and the reason there was a book’s worth of work to do: the tool did not exist. Avalara computes sales tax. ADP runs payroll. TurboTax files returns. Nothing answered the whole question — for this household, in this state, all taxes and all benefits, every interaction, and what changes if the law does. That question has a sixty-nine-year-old name: microsimulation. Its story starts in 1957 and runs straight into the benchmark failures above.</p>
+</section>
+<section id="why-the-story-turns-now" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="why-the-story-turns-now"><span class="header-section-number">2.2</span> Why the story turns now</h2>
+<p>Three developments converged to make this decade different from every previous era of policy analysis.</p>
+<p>When someone wonders how much Child Tax Credit they will get, they increasingly ask a chatbot, not IRS.gov: AI became the interface. Whatever the assistant says, someone may act on. The infrastructure those assistants should consult — accurate, current, citable — either exists as public plumbing or every AI company improvises its own, badly.</p>
+<p>The rules those assistants must navigate kept compounding. The tax code has roughly doubled in length since 1985 [NEEDS CITATION: tax-code length growth since 1985], and it interlocks with dozens of benefit programs whose rules shift by state and by year. A single parent earning $35,000 faces genuinely different arithmetic in Texas and New York, and the difference can run to thousands of dollars. No unaided human navigates this; the question is only which computer helps, and who can see inside it.</p>
+<p>And the answer to both was growing up in public. What began as academic code became working infrastructure: by 2025 PolicyEngine covered federal taxes plus all fifty states, the United Kingdom, and Canada, built by more than a hundred contributors; EUROMOD spanned twenty-seven European countries; OpenFisca ran on four continents. The question stopped being whether open policy simulation could work and became whether it would be the shared foundation — for AI systems, for governments, for citizens — or a curiosity beside the closed models that still decide budgets.</p>
+</section>
+<section id="what-a-model-shows-you" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="what-a-model-shows-you"><span class="header-section-number">2.3</span> What a model shows you</h2>
+<p>Picture a single mother in Ohio earning $45,000 with two kids, offered a promotion to $55,000. Obviously she should take it.</p>
+<p>Run the rules and the obvious answer wobbles. Across that income range her Earned Income Tax Credit phases out, her food assistance shrinks, and — depending on her county and her childcare subsidy — a benefit can vanish at a hard threshold. Of each new dollar, the tax-benefit system quietly takes back most of it; cross the wrong line and the raise leaves her family with less than before. Millions of American families sit somewhere on this labyrinth, and none of it is visible in an average. You can only see it by applying every bracket, phase-out, and eligibility test to her household in particular — and then to a few hundred thousand more households, to learn how many share her trap.</p>
+<p>That is microsimulation: compute the law on each simulated family, then add up. Guy Orcutt proposed it in 1957 after concluding that models of national aggregates could never answer the questions that mattered, because two economies with identical averages can contain utterly different lives. His idea became the machinery behind every serious answer to “who wins and who loses” — and for fifty years that machinery sat inside the CBO, the Treasury, and a handful of institutions, where you could read its outputs but never check its work.</p>
+<p>This book is about what happened when that stopped being true: first slowly, through open source, and then all at once, when AI agents learned to build and verify the models themselves.</p>
+</section>
+<section id="the-stakes" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="the-stakes"><span class="header-section-number">2.4</span> The stakes</h2>
+<p>When Congress debated extending the 2017 tax cuts in 2025, cost estimates ranged from four to five trillion dollars depending on modeling assumptions <span class="citation" data-cites="cbo2025tcja">(<a href="#ref-cbo2025tcja" role="doc-biblioref">Congressional Budget Office 2025</a>)</span> — a spread wider than most federal agencies’ budgets, on the single largest fiscal decision of the decade. The official scorekeepers used models the public cannot inspect. Independent groups produced competing numbers from different data and methods. Members of Congress quoted whichever figure served, and voted; the extension passed that July <span class="citation" data-cites="obbba2025">(<a href="#ref-obbba2025" role="doc-biblioref"><span class="nocase">119th United States Congress</span> 2025</a>)</span>. Nothing in the process could tell a voter which number deserved belief, or why.</p>
+<p>It does not have to work like that. Estimates can come from open models, where a disagreement traces to a named assumption instead of dissolving into “methodological differences.” Uncertainty can be printed instead of hidden: “$4.5 trillion, plus or minus $700 billion, and here is the assumption doing the work.” A family can run the proposal on their own circumstances before their representative votes on it. An AI assistant can cite a calculation instead of hallucinating one, because a public engine exists for it to call. None of this is hypothetical anymore; the chapters ahead describe each piece running.</p>
+<p>But “running” is a claim, and this book holds claims to a rule that chapter 3 states and the rest enforce: a simulation is admissible only where its verification chain ends in ground truth. A rule proves itself against the statute and against independent calculators. A synthetic population proves itself against the census. A forecast proves itself when the official number lands and grades it — and until then it is a bet, labeled as one. The alternative to that discipline is Serac’s machine with better branding: fluent, confident, and answerable to nothing.</p>
+</section>
+<section id="four-questions" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="four-questions"><span class="header-section-number">2.5</span> Four questions</h2>
+<p>Everything the book covers is machinery for answering four questions, in rising order of difficulty. What does the law say? Who are the people? What will happen? What do we want? The first has exact answers a computer can hold. The second has statistical answers a census can check. The third has probabilistic answers reality eventually grades. The fourth belongs to humans — and the book’s final chapters ask, carefully, whether simulation can help us hear ourselves answer it without ever answering it for us.</p>
+<p>The five parts follow that ladder:</p>
+<ul>
+<li><strong>Part I — The closed stack.</strong> Orcutt’s idea; the institutional models that ran the country’s fiscal arguments from behind closed doors; the question that disciplines everything — how would you know whether any model is right? — and the family arithmetic that turned the question personal.</li>
+<li><strong>Part II — The open engine.</strong> Building PolicyEngine: what the engine shows one household, what it shows a country, and the three problems every such model must solve.</li>
+<li><strong>Part III — The agent turn.</strong> AI agents writing verified law-as-code at scale; the gates and oracles that make machine-encoded law trustworthy; five African tax systems encoded and checked in a week; and why the organization rebuilt itself around the epistemology.</li>
+<li><strong>Part IV — The prediction pole.</strong> The uncertainty point estimates hide, the public scoreboard built to price it, and what language models actually add to opinion research once you benchmark them honestly.</li>
+<li><strong>Part V — The horizon.</strong> Simulated democracy and simulated values, labeled as the research directions they are, and the return to the fork.</li>
+</ul>
+<p>Two warnings before we start. I built many of the tools this book describes — PolicyEngine, the PolicyBench benchmark, the HiveSight and Democrasim experiments of Parts IV and V — and I am not a neutral witness; where the work is mine, I say so, and where it failed, I show the failure. And the boundary between “runs today” and “someday, maybe” moved faster during the writing than in any year of my career — so every chapter marks which side of it each claim sits on, as of the date on the preface.</p>
+<p>The technology here will not save democracy or end poverty. What it can do is narrower and worth having: make the invisible visible — the cliff hidden in a benefit formula, the uncertainty behind a confident headline number, the difference between a model someone owns and a model anyone can check. What we do with the visibility is the political question, and it stays ours.</p>
+<p>This is the case for the open path.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-obbba2025" class="csl-entry" role="listitem">
+<span class="nocase">119th United States Congress</span>. 2025. <em>H.r. 1, One Big Beautiful Bill Act</em>. <a href="https://www.congress.gov/bill/119th-congress/house-bill/1">https://www.congress.gov/bill/119th-congress/house-bill/1</a>.
+</div>
+<div id="ref-blairstanek2023gpt4tax" class="csl-entry" role="listitem">
+Blair-Stanek, Andrew, Nils Holzenberger, and Benjamin Van Durme. 2023. <span>“OpenAI Cribbed Our Tax Example, but Can GPT-4 Really Do Tax?”</span> <em>Tax Notes Federal</em> 180: 1101. <a href="https://arxiv.org/abs/2309.09992">https://arxiv.org/abs/2309.09992</a>.
+</div>
+<div id="ref-bock2025taxcalcbench" class="csl-entry" role="listitem">
+Bock, Michael R., Kara Molisee, Zachary Ozer, and Sumit Shah. 2025. <span>“TaxCalcBench: Evaluating Frontier Models on the Tax Calculation Task.”</span> <em>arXiv Preprint</em>. <a href="https://arxiv.org/abs/2507.16126">https://arxiv.org/abs/2507.16126</a>.
+</div>
+<div id="ref-cbo2025tcja" class="csl-entry" role="listitem">
+Congressional Budget Office. 2025. <em>Budgetary Outcomes Under Alternative Assumptions about Spending and Revenue Policies</em>. Congressional Budget Office. <a href="https://www.cbo.gov/publication/60419">https://www.cbo.gov/publication/60419</a>.
+</div>
+<div id="ref-policybench2026" class="csl-entry" role="listitem">
+PolicyEngine. 2026. <em>PolicyBench: Benchmarking Language Models on Household Tax and Benefit Calculations</em>. <a href="https://policybench.org">https://policybench.org</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../manuscript/front-matter/00-preface.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../manuscript/part-1-closed-stack/01-birth-of-microsimulation.html" class="pagination-link" aria-label="Chapter 1: The birth of microsimulation">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Chapter 1: The birth of microsimulation</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
