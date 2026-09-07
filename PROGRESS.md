@@ -15,6 +15,10 @@
 - Inspected status, branch, remotes, commit history, and available base before substantive edits.
 - Loaded PolicyEngine analysis, US domain, and data skills. Calculations will use the managed package; population statistics will retain MicroSeries weights and use `map_to`.
 - Confirmed the promised `scripts/notebooks/pe-computed-numbers.ipynb` is missing.
+- Verified PolicyEngine 5.3.0 from the live PyPI release listing and installed its US extra entirely offline in the isolated `.venv-pe` (US 1.764.6, core 3.30.1, Python 3.14.4). Saved complete dependency pins.
+- Located and independently hash-checked the certified Build P dataset (57,240 households; SHA256 `48b9d479fb4fd1c3537f9383ce4697d130b6f618658409d74f6233c43b994c7e`) in the existing Hugging Face cache. A national rescore is feasible locally.
+- Baseline `UV_OFFLINE=1 make check` passed; its marker census reports 23 citation, 25 verification, and 2 decision markers. Saved log in the lane artifact directory.
+- Exploratory runs confirmed CTC entitlement must be distinguished from applied credits. Household validation is checking explicit parent and spouse roles before any manuscript numbers change.
 
 ## Next
 
