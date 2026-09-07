@@ -55,6 +55,7 @@ number-sections: false
 format:
   html:
     toc: true
+    css: book.css
   pdf:
     toc: true
     documentclass: book

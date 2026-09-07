@@ -1,0 +1,41 @@
+[
+  {
+    "file": "cheng-crossref.json",
+    "url": "https://api.crossref.org/works/10.1215/00182702-8718000",
+    "final_url": "https://api.crossref.org/works/10.1215/00182702-8718000",
+    "status": 200,
+    "content_type": "application/json",
+    "sha256": "5277a35ddedf7e833d1f83e2db9b23094afba8dde0e38b36b7f916f71d2218b5"
+  },
+  {
+    "file": "soa-dynasim.pdf",
+    "url": "https://www.soa.org/globalassets/assets/files/research/projects/chapter_3.pdf",
+    "final_url": "https://www.soa.org/globalassets/assets/files/research/projects/chapter_3.pdf",
+    "status": 200,
+    "content_type": "application/pdf",
+    "sha256": "c012631046722c90a00bb477e72b1ebb5800c06e550fddcc2bdb30d571d34e87"
+  },
+  {
+    "file": "snap-series.html",
+    "url": "https://www.fns.usda.gov/research/snap/national-participation-rates",
+    "final_url": "https://www.fna.usda.gov/research/snap/national-participation-rates",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "sha256": "07d5c5d6c0f2aa2f3ece1159014437b117572c3b8e83d80236fcc68403a16898"
+  },
+  {
+    "file": "snap-2024-report.pdf",
+    "url": "https://fns-prod.azureedge.us/sites/default/files/resource-files/ops-snap-trendsfy20-fy22-report.pdf",
+    "final_url": "https://fns-prod.azureedge.us/sites/default/files/resource-files/ops-snap-trendsfy20-fy22-report.pdf",
+    "status": 200,
+    "content_type": "application/pdf",
+    "sha256": "57d655786841a62b8d62f194d7b47b08590b695e8a4d135c33c0385271b7d158"
+  },
+  {
+    "file": "pe-uk-validation.ipynb",
+    "url": "https://raw.githubusercontent.com/PolicyEngine/policyengine-uk/5e57717fcb7fa12c969e0aa33eeb1d9786fccaeb/docs/book/validation/validation.ipynb",
+    "final_url": "https://raw.githubusercontent.com/PolicyEngine/policyengine-uk/5e57717fcb7fa12c969e0aa33eeb1d9786fccaeb/docs/book/validation/validation.ipynb",
+    "status": 200,
+    "sha256": "f43c4985d567d469fdf3ff80ed7a358909f3f5efee1a476277fad6f118df4541"
+  }
+]

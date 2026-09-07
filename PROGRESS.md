@@ -28,8 +28,12 @@
 - Reconciled the FINAL source recovery against the completed branch: Pennsylvania EITC omission, exact 2008–2011 New York table window, approximately 173,000 Finnish controls, activation-rule confounding, an explicit unresolved Finnish model-prediction marker, and historical SSI limits. Final recovery and cached-source hashes match their manifests. Computation code, notebook and receipts are unchanged.
 - Re-ran `make check` after recovery: pass, with 19 citation / 25 verification / 2 decision markers. The added Finnish marker intentionally restores an unresolved claim.
 
+- Opened draft PR #5 at `2d7f7defa3bbcfdbd1f666733a85c928731f5e97`; `REVIEW-READY.md` and exact file hashes were delivered in the lane directory. Independent review remains pending.
+- Refreshed full HTML/PDF, nine tests, artifact agreement and all generated links. At the fixed review head, all 1,326 internal links/assets resolved; 167 external URLs were checked. Four confirmed 404s led to supported repairs: Cheng DOI, Society of Actuaries PDF route, retired UK validation docs, and USDA SNAP report. The USDA repair also corrects the nonexistent 2019–2021 report title and replaces the undated 82% claim with the report's scoped FY 2022 estimate (88% under federal income/resource eligibility).
+- Actual WebKit desktop/mobile inspection found long bibliography URL overflow; a scoped wrapping rule fixes all four affected mobile pages. Fixed Ruff 0.16.6's implicit-string-concatenation style finding in the artifact validator. Computation code, notebook, receipts and chapter 6/13 computed numbers are unchanged. The coordinator is explicitly notified that this is a follow-up revision.
+
 ## Next
 
-1. Commit a fixed computational/source revision and prepare `REVIEW-READY.md` with its exact head and evidence paths for the coordinator's independent review.
+1. Update the coordinator review handoff explicitly after validation repairs; do not silently change the revision under review.
 2. Create a normal draft PR, validate notebook/JSON/chapter agreement and full HTML/PDF/links, and inspect affected pages using available loopback/browser access.
 3. Wait for actual independent findings, fix actionable issues with explicit revision updates, and finalize review claims only after that evidence arrives. Do not merge or publish.

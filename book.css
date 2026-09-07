@@ -1,0 +1,5 @@
+/* Bibliography and footnote URLs must fit narrow reading viewports. */
+#refs a,
+.footnotes a {
+  overflow-wrap: anywhere;
+}

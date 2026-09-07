@@ -65,8 +65,10 @@ def main():
     expected = [
         f"${national['net_fiscal_cost'] / 1e9:.1f} billion",
         f"{poverty['percentage_point_reduction']:.2f} percentage points",
-        f"{poverty['baseline']['child_poverty_rate'] * 100:.2f} to "
-        f"{poverty['reform']['child_poverty_rate'] * 100:.2f} percent",
+        (
+            f"{poverty['baseline']['child_poverty_rate'] * 100:.2f} to "
+            f"{poverty['reform']['child_poverty_rate'] * 100:.2f} percent"
+        ),
         f"{poverty['children_lifted_out'] / 1e6:.2f} million fewer children",
     ]
     for page in pages:
