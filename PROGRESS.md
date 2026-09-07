@@ -35,8 +35,10 @@
 - Received the coordinator host computational review of frozen `61c5ce5`: no actionable findings. Supplied hashes match the unchanged computation/receipt artifacts. Preserved the report, 15 fresh household checks, targeted national health results, scripts and logs under `reviews/2026-09-07-reproducibility/independent/`. The review checked weighting and arithmetic but did not rerun the entire national pipeline; source integration remains outside its verdict.
 - Documented the reviewer's nonblocking accounting clarification: raw ACA entitlement is not expenditure; assigned PTC, annual premium PTC and BHP changes are zero for this reform. The README preserves that evidence and the need to cover nonzero terms for other reforms.
 
+- Final continuation validation passes: 20 HTML inputs, 158-page PDF, ten real WebKit page/viewport checks over chapters 1/3/6/7/13, notebook download bytes, 1,346 internal links/assets, current artifact agreement and Ruff. The four external 404s are repaired; 50 automated access denials and five network/TLS/DNS exceptions are preserved for manual follow-up. Refreshed logs, marker inventory and source/display evidence are committed in the review directory.
+
 ## Next
 
-1. Update the coordinator review handoff explicitly after validation repairs; do not silently change the revision under review.
-2. Create a normal draft PR, validate notebook/JSON/chapter agreement and full HTML/PDF/links, and inspect affected pages using available loopback/browser access.
-3. Wait for actual independent findings, fix actionable issues with explicit revision updates, and finalize review claims only after that evidence arrives. Do not merge or publish.
+1. Obtain the coordinator's independent verdict on the FINAL source integration and link-repair revision `d43b859`, using the exact head and hashes in the lane's `REVIEW-READY.md`. Computational review is complete at the unchanged `61c5ce5` calculation revision; do not extend it to unrelated sources or a full national rerun.
+2. Address actionable source findings in explicit follow-up commits if any, refresh affected validation, and update the draft PR/head/handoff transparently.
+3. Preserve the 19 citation / 25 verification / 2 decision markers, external-access exceptions, and author/partner/publication gates. No merge or publication.

@@ -1,0 +1,730 @@
+[
+  {
+    "url": "https://blog.policyengine.org/analysing-autumn-budget-universal-credit-reforms-with-policyengine-2ce93f177428",
+    "source_pages": [
+      "manuscript/part-2-open-engine/06-the-household-and-the-society.html"
+    ],
+    "status": 403,
+    "final_url": "https://blog.policyengine.org/analysing-autumn-budget-universal-credit-reforms-with-policyengine-2ce93f177428",
+    "elapsed_seconds": 0.07,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "policyengine2021uctaper"
+    ]
+  },
+  {
+    "url": "https://blog.policyengine.org/automate-policy-analysis-with-policy-engines-new-chatgpt-integration",
+    "source_pages": [
+      "manuscript/part-3-agent-turn/08-the-ai-cant-do-your-taxes.html"
+    ],
+    "status": 403,
+    "final_url": "https://blog.policyengine.org/automate-policy-analysis-with-policy-engines-new-chatgpt-integration",
+    "elapsed_seconds": 0.1,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "policyengine2023gpt"
+    ]
+  },
+  {
+    "url": "https://blog.policyengine.org/breaking-down-us-poverty-impacts-by-sex",
+    "source_pages": [
+      "manuscript/part-2-open-engine/06-the-household-and-the-society.html"
+    ],
+    "status": 403,
+    "final_url": "https://blog.policyengine.org/breaking-down-us-poverty-impacts-by-sex",
+    "elapsed_seconds": 0.07,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "policyengine2023sex"
+    ]
+  },
+  {
+    "url": "https://blog.policyengine.org/estimating-your-supplemental-security-income-benefits-in-policyengine-74c6396ee402",
+    "source_pages": [
+      "manuscript/part-2-open-engine/06-the-household-and-the-society.html"
+    ],
+    "status": 403,
+    "final_url": "https://blog.policyengine.org/estimating-your-supplemental-security-income-benefits-in-policyengine-74c6396ee402",
+    "elapsed_seconds": 0.08,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "policyengine2022ssi"
+    ]
+  },
+  {
+    "url": "https://blog.policyengine.org/from-idea-to-impact-scoring-a-policy-reform-on-the-new-policyengine-us",
+    "source_pages": [
+      "manuscript/part-2-open-engine/06-the-household-and-the-society.html"
+    ],
+    "status": 403,
+    "final_url": "https://blog.policyengine.org/from-idea-to-impact-scoring-a-policy-reform-on-the-new-policyengine-us",
+    "elapsed_seconds": 0.07,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "policyengine2023scoring"
+    ]
+  },
+  {
+    "url": "https://blog.policyengine.org/how-would-reforms-affect-cliffs-1338055e2648",
+    "source_pages": [
+      "manuscript/part-2-open-engine/06-the-household-and-the-society.html"
+    ],
+    "status": 403,
+    "final_url": "https://blog.policyengine.org/how-would-reforms-affect-cliffs-1338055e2648",
+    "elapsed_seconds": 0.07,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "policyengine2023cliffs"
+    ]
+  },
+  {
+    "url": "https://blog.policyengine.org/multi-agent-workflows-policy-research",
+    "source_pages": [
+      "manuscript/part-3-agent-turn/08-the-ai-cant-do-your-taxes.html"
+    ],
+    "status": 403,
+    "final_url": "https://blog.policyengine.org/multi-agent-workflows-policy-research",
+    "elapsed_seconds": 0.07,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "policyengine2024multiagent"
+    ]
+  },
+  {
+    "url": "https://blog.policyengine.org/policyengine-2022-year-in-review",
+    "source_pages": [
+      "manuscript/part-2-open-engine/05-proof-of-concept.html",
+      "manuscript/part-2-open-engine/06-the-household-and-the-society.html"
+    ],
+    "status": 403,
+    "final_url": "https://blog.policyengine.org/policyengine-2022-year-in-review",
+    "elapsed_seconds": 0.07,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "policyengine2022review"
+    ]
+  },
+  {
+    "url": "https://blog.policyengine.org/policyengines-2021-year-in-review-cfb4893ecf2e",
+    "source_pages": [
+      "manuscript/part-2-open-engine/05-proof-of-concept.html"
+    ],
+    "status": 403,
+    "final_url": "https://blog.policyengine.org/policyengines-2021-year-in-review-cfb4893ecf2e",
+    "elapsed_seconds": 0.08,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "policyengine2021review"
+    ]
+  },
+  {
+    "url": "https://blog.policyengine.org/tax-cuts-in-prime-minister-trusss-growth-plan-2022-a4a862892dc1",
+    "source_pages": [
+      "manuscript/part-2-open-engine/05-proof-of-concept.html",
+      "manuscript/part-2-open-engine/06-the-household-and-the-society.html"
+    ],
+    "status": 403,
+    "final_url": "https://blog.policyengine.org/tax-cuts-in-prime-minister-trusss-growth-plan-2022-a4a862892dc1",
+    "elapsed_seconds": 0.08,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "policyengine2022growthplan"
+    ]
+  },
+  {
+    "url": "https://content.iospress.com/articles/journal-of-economic-and-social-measurement/jem00299",
+    "source_pages": [
+      "manuscript/part-1-closed-stack/03-the-accuracy-question.html",
+      "manuscript/part-2-open-engine/07-three-ingredients.html"
+    ],
+    "status": 403,
+    "final_url": "https://content.iospress.com/articles/journal-of-economic-and-social-measurement/jem00299",
+    "elapsed_seconds": 0.1,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "larrimore2008topcoding"
+    ]
+  },
+  {
+    "url": "https://crsreports.congress.gov/product/pdf/R/R46839",
+    "source_pages": [
+      "manuscript/part-2-open-engine/06-the-household-and-the-society.html"
+    ],
+    "status": 403,
+    "final_url": "https://crsreports.congress.gov/product/pdf/R/R46839",
+    "elapsed_seconds": 0.08,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "crs2021ctcarpa"
+    ]
+  },
+  {
+    "url": "https://doi.org/10.1002/mar.21982",
+    "source_pages": [
+      "manuscript/part-4-prediction/14-simulating-opinion.html"
+    ],
+    "status": 403,
+    "final_url": "https://onlinelibrary.wiley.com/doi/10.1002/mar.21982",
+    "elapsed_seconds": 0.25,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "sarstedt2024silicon"
+    ]
+  },
+  {
+    "url": "https://doi.org/10.1073/pnas.2313925121",
+    "source_pages": [
+      "manuscript/part-4-prediction/14-simulating-opinion.html"
+    ],
+    "status": 403,
+    "final_url": "https://pnas.org/doi/10.1073/pnas.2313925121",
+    "elapsed_seconds": 0.14,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "mei2024llms"
+    ]
+  },
+  {
+    "url": "https://doi.org/10.1093/ej/ueab038",
+    "source_pages": [
+      "manuscript/part-2-open-engine/07-three-ingredients.html",
+      "manuscript/part-4-prediction/13-the-uncertainty-gap.html"
+    ],
+    "status": 403,
+    "final_url": "https://academic.oup.com/ej/article/131/640/3365/6263638",
+    "elapsed_seconds": 0.12,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "neisser2021eti"
+    ]
+  },
+  {
+    "url": "https://doi.org/10.1111/jopp.12008",
+    "source_pages": [
+      "manuscript/part-5-horizon/15-simulating-democracy.html"
+    ],
+    "status": 403,
+    "final_url": "https://onlinelibrary.wiley.com/doi/10.1111/jopp.12008",
+    "elapsed_seconds": 0.14,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "hanson2013futarchy"
+    ]
+  },
+  {
+    "url": "https://doi.org/10.1145/3586183.3606763",
+    "source_pages": [
+      "manuscript/part-4-prediction/14-simulating-opinion.html"
+    ],
+    "status": 403,
+    "final_url": "https://dl.acm.org/doi/10.1145/3586183.3606763",
+    "elapsed_seconds": 0.13,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "park2023generative"
+    ]
+  },
+  {
+    "url": "https://doi.org/10.1162/qjec.2008.123.2.703",
+    "source_pages": [
+      "manuscript/part-5-horizon/15-simulating-democracy.html"
+    ],
+    "status": 403,
+    "final_url": "https://academic.oup.com/qje/article-lookup/doi/10.1162/qjec.2008.123.2.703",
+    "elapsed_seconds": 0.14,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "ferraz2008exposing"
+    ]
+  },
+  {
+    "url": "https://doi.org/10.1215/00182702-8718000",
+    "source_pages": [
+      "manuscript/part-1-closed-stack/01-birth-of-microsimulation.html"
+    ],
+    "status": 403,
+    "final_url": "https://read.dukeupress.edu/hope/article/52/S1/191/166649/Guy-H-Orcutt-s-Engineering-Microsimulation-to",
+    "elapsed_seconds": 0.13,
+    "citation_keys": [
+      "cheng2020orcutt"
+    ]
+  },
+  {
+    "url": "https://doi.org/10.1257/000282805774670275",
+    "source_pages": [
+      "manuscript/part-1-closed-stack/02-tax-model-wars.html"
+    ],
+    "status": 403,
+    "final_url": "https://pubs.aeaweb.org/doi/10.1257/000282805774670275",
+    "elapsed_seconds": 0.13,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "auerbach2005dynamic"
+    ]
+  },
+  {
+    "url": "https://doi.org/10.1257/app.20170478",
+    "source_pages": [
+      "manuscript/part-1-closed-stack/03-the-accuracy-question.html",
+      "manuscript/part-2-open-engine/06-the-household-and-the-society.html"
+    ],
+    "status": 403,
+    "final_url": "https://pubs.aeaweb.org/doi/10.1257/app.20170478",
+    "elapsed_seconds": 0.13,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "meyermittag2019linked"
+    ]
+  },
+  {
+    "url": "https://doi.org/10.1257/pol.20200143",
+    "source_pages": [
+      "manuscript/part-4-prediction/13-the-uncertainty-gap.html"
+    ],
+    "status": 403,
+    "final_url": "https://pubs.aeaweb.org/doi/10.1257/pol.20200143",
+    "elapsed_seconds": 0.12,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "verho2022removing"
+    ]
+  },
+  {
+    "url": "https://doi.org/10.1257/pol.20210560",
+    "source_pages": [
+      "manuscript/part-1-closed-stack/03-the-accuracy-question.html"
+    ],
+    "status": 403,
+    "final_url": "https://pubs.aeaweb.org/doi/10.1257/pol.20210560",
+    "elapsed_seconds": 0.26,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "hemmeter2025communicating"
+    ]
+  },
+  {
+    "url": "https://doi.org/10.2307/2286841",
+    "source_pages": [
+      "manuscript/part-1-closed-stack/03-the-accuracy-question.html"
+    ],
+    "status": 403,
+    "final_url": "https://www.tandfonline.com/doi/full/10.1080/01621459.1976.10480949",
+    "elapsed_seconds": 0.18,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "box1976science"
+    ]
+  },
+  {
+    "url": "https://gssdataexplorer.norc.org/variables/633/vshow",
+    "source_pages": [
+      "manuscript/part-5-horizon/16-simulating-values.html"
+    ],
+    "error": "HTTPSConnectionPool(host='gssdataexplorer.norc.org', port=443): Max retries exceeded with url: /variables/633/vshow (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)')))",
+    "elapsed_seconds": 0.12,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "gss2024homosex"
+    ]
+  },
+  {
+    "url": "https://ifs.org.uk/about/history-ifs",
+    "source_pages": [
+      "manuscript/part-1-closed-stack/02-tax-model-wars.html"
+    ],
+    "status": 403,
+    "final_url": "https://ifs.org.uk/about/history-ifs",
+    "elapsed_seconds": 0.08,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "ifs2024history"
+    ]
+  },
+  {
+    "url": "https://medium.com/ubicenter/introducing-the-ubi-center-72a8011bfc39",
+    "source_pages": [
+      "manuscript/part-2-open-engine/05-proof-of-concept.html"
+    ],
+    "status": 403,
+    "final_url": "https://medium.com/ubicenter/introducing-the-ubi-center-72a8011bfc39",
+    "elapsed_seconds": 0.08,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "ubicenter2019intro"
+    ]
+  },
+  {
+    "url": "https://mrdrc.isr.umich.edu/publications/papers/pdf/wp319.pdf",
+    "source_pages": [
+      "manuscript/part-1-closed-stack/03-the-accuracy-question.html"
+    ],
+    "status": 403,
+    "final_url": "https://mrdrc.isr.umich.edu/publications/papers/pdf/wp319.pdf",
+    "elapsed_seconds": 0.11,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "mcgarryschoeni2015ssi"
+    ]
+  },
+  {
+    "url": "https://prabook.com/web/guy_henderson.orcutt/696679",
+    "source_pages": [
+      "manuscript/part-1-closed-stack/01-birth-of-microsimulation.html"
+    ],
+    "status": 403,
+    "final_url": "https://prabook.com/web/guy_henderson.orcutt/696679",
+    "elapsed_seconds": 0.13,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "prabook2024orcutt"
+    ]
+  },
+  {
+    "url": "https://research.stlouisfed.org/publications/review/2012/01/01/how-good-are-the-governments-deficit-and-debt-projections-and-should-we-care",
+    "source_pages": [
+      "manuscript/part-1-closed-stack/03-the-accuracy-question.html"
+    ],
+    "error": "HTTPSConnectionPool(host='fraser.stlouisfed.org', port=443): Read timed out. (read timeout=12)",
+    "elapsed_seconds": 12.31,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "kliesen2012cbo"
+    ]
+  },
+  {
+    "url": "https://robodebt.royalcommission.gov.au/publications/report",
+    "source_pages": [
+      "manuscript/part-3-agent-turn/09-encoding-the-law.html"
+    ],
+    "error": "HTTPSConnectionPool(host='robodebt.royalcommission.gov.au', port=443): Read timed out. (read timeout=12)",
+    "elapsed_seconds": 12.33,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "robodebt2023report"
+    ]
+  },
+  {
+    "url": "https://taxpolicycenter.org/statistics/eitc-parameters",
+    "source_pages": [
+      "manuscript/part-2-open-engine/05-proof-of-concept.html",
+      "manuscript/part-2-open-engine/06-the-household-and-the-society.html"
+    ],
+    "status": 403,
+    "final_url": "https://taxpolicycenter.org/statistics/eitc-parameters",
+    "elapsed_seconds": 0.08,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "tpc2024eitcparameters"
+    ]
+  },
+  {
+    "url": "https://ubiquity.acm.org/article.cfm?id=1008527",
+    "source_pages": [
+      "manuscript/part-1-closed-stack/01-birth-of-microsimulation.html",
+      "manuscript/part-1-closed-stack/02-tax-model-wars.html"
+    ],
+    "status": 403,
+    "final_url": "https://ubiquity.acm.org/article.cfm?id=1008527",
+    "elapsed_seconds": 0.12,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "sadowsky2005interview"
+    ]
+  },
+  {
+    "url": "https://www.axios.com/2025/11/21/irs-deploys-ai-agents",
+    "source_pages": [
+      "manuscript/part-3-agent-turn/08-the-ai-cant-do-your-taxes.html",
+      "manuscript/part-5-horizon/17-society-in-silico.html"
+    ],
+    "status": 403,
+    "final_url": "https://www.axios.com/2025/11/21/irs-deploys-ai-agents",
+    "elapsed_seconds": 0.09,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "irs2025agentforce"
+    ]
+  },
+  {
+    "url": "https://www.bls.gov/pir/spm/spm_thresholds_2024.htm",
+    "source_pages": [
+      "manuscript/part-2-open-engine/06-the-household-and-the-society.html"
+    ],
+    "status": 403,
+    "final_url": "https://www.bls.gov/pir/spm/spm_thresholds_2024.htm",
+    "elapsed_seconds": 0.25,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "bls2024spm"
+    ]
+  },
+  {
+    "url": "https://www.businesswire.com/news/home/20220808005258/en/Avalara-to-be-Acquired-by-Vista-Equity-Partners-for-8.4-Billion",
+    "source_pages": [
+      "manuscript/part-3-agent-turn/09-encoding-the-law.html"
+    ],
+    "error": "HTTPSConnectionPool(host='www.businesswire.com', port=443): Read timed out. (read timeout=12)",
+    "elapsed_seconds": 12.09,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "avalara2022acquisition"
+    ]
+  },
+  {
+    "url": "https://www.cbo.gov/publication/52752",
+    "source_pages": [
+      "manuscript/part-1-closed-stack/03-the-accuracy-question.html",
+      "manuscript/part-4-prediction/13-the-uncertainty-gap.html"
+    ],
+    "status": 403,
+    "final_url": "https://www.cbo.gov/publication/52752",
+    "elapsed_seconds": 0.04,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "cbo2017ahca"
+    ]
+  },
+  {
+    "url": "https://www.cbo.gov/publication/53300",
+    "source_pages": [
+      "manuscript/part-4-prediction/13-the-uncertainty-gap.html"
+    ],
+    "status": 403,
+    "final_url": "https://www.cbo.gov/publication/53300",
+    "elapsed_seconds": 0.04,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "cbo2017mandate"
+    ]
+  },
+  {
+    "url": "https://www.cbo.gov/publication/53667",
+    "source_pages": [
+      "manuscript/part-1-closed-stack/02-tax-model-wars.html"
+    ],
+    "status": 403,
+    "final_url": "https://www.cbo.gov/publication/53667",
+    "elapsed_seconds": 0.05,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "cbo2018overview"
+    ]
+  },
+  {
+    "url": "https://www.cbo.gov/publication/60419",
+    "source_pages": [
+      "manuscript/front-matter/01-introduction.html"
+    ],
+    "status": 403,
+    "final_url": "https://www.cbo.gov/publication/60419",
+    "elapsed_seconds": 0.06,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "cbo2025tcja"
+    ]
+  },
+  {
+    "url": "https://www.cbo.gov/publication/61067",
+    "source_pages": [
+      "manuscript/part-1-closed-stack/03-the-accuracy-question.html",
+      "manuscript/part-4-prediction/13-the-uncertainty-gap.html"
+    ],
+    "status": 403,
+    "final_url": "https://www.cbo.gov/publication/61067",
+    "elapsed_seconds": 0.04,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "cbo2024deficit"
+    ]
+  },
+  {
+    "url": "https://www.cbo.gov/publication/61334",
+    "source_pages": [
+      "manuscript/part-1-closed-stack/03-the-accuracy-question.html",
+      "manuscript/part-2-open-engine/07-three-ingredients.html",
+      "manuscript/part-4-prediction/13-the-uncertainty-gap.html"
+    ],
+    "status": 403,
+    "final_url": "https://www.cbo.gov/publication/61334",
+    "elapsed_seconds": 0.05,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "cbo2025forecasting"
+    ]
+  },
+  {
+    "url": "https://www.cbo.gov/publication/61916",
+    "source_pages": [
+      "manuscript/part-4-prediction/13-the-uncertainty-gap.html"
+    ],
+    "status": 403,
+    "final_url": "https://www.cbo.gov/publication/61916",
+    "elapsed_seconds": 0.04,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "cbo2025budget_accuracy"
+    ]
+  },
+  {
+    "url": "https://www.cbpp.org/blog/states-first-ever-bill-for-snap-benefits-could-cost-billions",
+    "source_pages": [
+      "manuscript/part-3-agent-turn/09-encoding-the-law.html"
+    ],
+    "status": 403,
+    "final_url": "https://www.cbpp.org/blog/states-first-ever-bill-for-snap-benefits-could-cost-billions",
+    "elapsed_seconds": 0.15,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "cbpp2026snapstates"
+    ]
+  },
+  {
+    "url": "https://www.cbpp.org/research/kansas-provides-compelling-evidence-of-failure-of-supply-side-tax-cuts",
+    "source_pages": [
+      "manuscript/part-5-horizon/15-simulating-democracy.html"
+    ],
+    "status": 403,
+    "final_url": "https://www.cbpp.org/research/kansas-provides-compelling-evidence-of-failure-of-supply-side-tax-cuts",
+    "elapsed_seconds": 0.07,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "brownback2012experiment"
+    ]
+  },
+  {
+    "url": "https://www.column.tax/blog/will-ai-agents-help-file-your-taxes",
+    "source_pages": [
+      "manuscript/part-3-agent-turn/09-encoding-the-law.html"
+    ],
+    "error": "HTTPSConnectionPool(host='www.column.tax', port=443): Max retries exceeded with url: /blog/will-ai-agents-help-file-your-taxes (Caused by NameResolutionError(\"HTTPSConnection(host='www.column.tax', port=443): Failed to resolve 'www.column.tax' ([Errno 8] nodename nor servname provided, or not known)\"))",
+    "elapsed_seconds": 0.01,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "columntax2024"
+    ]
+  },
+  {
+    "url": "https://www.congress.gov/bill/119th-congress/house-bill/1",
+    "source_pages": [
+      "manuscript/front-matter/01-introduction.html",
+      "manuscript/part-1-closed-stack/02-tax-model-wars.html",
+      "manuscript/part-1-closed-stack/03-the-accuracy-question.html",
+      "manuscript/part-2-open-engine/06-the-household-and-the-society.html",
+      "manuscript/part-3-agent-turn/08-the-ai-cant-do-your-taxes.html",
+      "manuscript/part-3-agent-turn/09-encoding-the-law.html",
+      "manuscript/part-4-prediction/13-the-uncertainty-gap.html",
+      "manuscript/part-5-horizon/17-society-in-silico.html"
+    ],
+    "status": 403,
+    "final_url": "https://www.congress.gov/bill/119th-congress/house-bill/1",
+    "elapsed_seconds": 0.09,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "obbba2025"
+    ]
+  },
+  {
+    "url": "https://www.fns.usda.gov/framework-artificial-intelligence-public-benefit",
+    "source_pages": [
+      "manuscript/part-3-agent-turn/09-encoding-the-law.html"
+    ],
+    "status": 403,
+    "final_url": "https://www.fna.usda.gov/framework-artificial-intelligence-public-benefit",
+    "elapsed_seconds": 1.56,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "fns2024aiframework"
+    ]
+  },
+  {
+    "url": "https://www.jct.gov/about-us/history/",
+    "source_pages": [
+      "manuscript/part-1-closed-stack/02-tax-model-wars.html"
+    ],
+    "status": 403,
+    "final_url": "https://www.jct.gov/about-us/history/",
+    "elapsed_seconds": 0.1,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "jct2024history"
+    ]
+  },
+  {
+    "url": "https://www.jct.gov/operations/revenue-estimating/",
+    "source_pages": [
+      "manuscript/part-1-closed-stack/02-tax-model-wars.html"
+    ],
+    "status": 403,
+    "final_url": "https://www.jct.gov/operations/revenue-estimating/",
+    "elapsed_seconds": 0.16,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "jct2024revenue"
+    ]
+  },
+  {
+    "url": "https://www.jct.gov/publications/2017/jcx-67-17/",
+    "source_pages": [
+      "manuscript/part-1-closed-stack/02-tax-model-wars.html"
+    ],
+    "status": 403,
+    "final_url": "https://www.jct.gov/publications/2017/jcx-67-17/",
+    "elapsed_seconds": 0.11,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "jct2017budget"
+    ]
+  },
+  {
+    "url": "https://www.jct.gov/publications/2017/jcx-69-17/",
+    "source_pages": [
+      "manuscript/part-1-closed-stack/02-tax-model-wars.html"
+    ],
+    "status": 403,
+    "final_url": "https://www.jct.gov/publications/2017/jcx-69-17/",
+    "elapsed_seconds": 0.09,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "jct2017macro"
+    ]
+  },
+  {
+    "url": "https://www.nytimes.com/2017/02/07/upshot/one-third-dont-know-obamacare-and-affordable-care-act-are-the-same.html",
+    "source_pages": [
+      "manuscript/part-5-horizon/15-simulating-democracy.html"
+    ],
+    "status": 403,
+    "final_url": "https://www.nytimes.com/2017/02/07/upshot/one-third-dont-know-obamacare-and-affordable-care-act-are-the-same.html",
+    "elapsed_seconds": 0.17,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "dropp2017obamacare"
+    ]
+  },
+  {
+    "url": "https://www.povertycenter.columbia.edu/publication/monthly-poverty-july-2021",
+    "source_pages": [
+      "manuscript/part-1-closed-stack/03-the-accuracy-question.html"
+    ],
+    "status": 403,
+    "final_url": "https://www.povertycenter.columbia.edu/publication/monthly-poverty-july-2021",
+    "elapsed_seconds": 0.09,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "parolin2021monthly"
+    ]
+  },
+  {
+    "url": "https://www.usda.gov/about-usda/news/press-releases/2026/06/24/usda-announces-fy-2025-state-payment-error-rates-snap",
+    "source_pages": [
+      "manuscript/part-3-agent-turn/09-encoding-the-law.html"
+    ],
+    "status": 403,
+    "final_url": "https://www.usda.gov/about-usda/news/press-releases/2026/06/24/usda-announces-fy-2025-state-payment-error-rates-snap",
+    "elapsed_seconds": 0.54,
+    "reused_same_session_check": true,
+    "citation_keys": [
+      "usda2026snapper"
+    ]
+  }
+]

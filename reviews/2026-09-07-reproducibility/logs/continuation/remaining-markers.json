@@ -1,0 +1,278 @@
+[
+  {
+    "file": "manuscript/front-matter/00-preface.md",
+    "line": 5,
+    "kind": "VERIFY",
+    "marker": "[VERIFY with Nikhil: role wording]"
+  },
+  {
+    "file": "manuscript/front-matter/01-introduction.md",
+    "line": 33,
+    "kind": "NEEDS CITATION",
+    "marker": "[NEEDS CITATION: tax-code length growth since 1985]"
+  },
+  {
+    "file": "manuscript/part-1-closed-stack/01-birth-of-microsimulation.md",
+    "line": 9,
+    "kind": "VERIFY",
+    "marker": "[VERIFY: three-year degree + dissertation locus of the regression analyzer]"
+  },
+  {
+    "file": "manuscript/part-1-closed-stack/01-birth-of-microsimulation.md",
+    "line": 51,
+    "kind": "VERIFY",
+    "marker": "[VERIFY: MASH authorship attribution against the cited source]"
+  },
+  {
+    "file": "manuscript/part-1-closed-stack/02-tax-model-wars.md",
+    "line": 3,
+    "kind": "VERIFY",
+    "marker": "[VERIFY: no-prior-outside-body claim]"
+  },
+  {
+    "file": "manuscript/part-1-closed-stack/02-tax-model-wars.md",
+    "line": 65,
+    "kind": "NEEDS CITATION",
+    "marker": "[NEEDS CITATION: Brewer quote]"
+  },
+  {
+    "file": "manuscript/part-1-closed-stack/02-tax-model-wars.md",
+    "line": 65,
+    "kind": "NEEDS CITATION",
+    "marker": "[NEEDS CITATION: UKMOD user list]"
+  },
+  {
+    "file": "manuscript/part-1-closed-stack/02-tax-model-wars.md",
+    "line": 67,
+    "kind": "NEEDS CITATION",
+    "marker": "[NEEDS CITATION: Reed quote]"
+  },
+  {
+    "file": "manuscript/part-1-closed-stack/02-tax-model-wars.md",
+    "line": 73,
+    "kind": "VERIFY",
+    "marker": "[VERIFY: first-anywhere claim]"
+  },
+  {
+    "file": "manuscript/part-1-closed-stack/02-tax-model-wars.md",
+    "line": 75,
+    "kind": "VERIFY",
+    "marker": "[VERIFY: OpenFisca release timing \u2014 catalog says released four months after the book; chapter says building began then, release later that year]"
+  },
+  {
+    "file": "manuscript/part-1-closed-stack/04-a-wall-of-frustration.md",
+    "line": 65,
+    "kind": "VERIFY",
+    "marker": "[VERIFY with Nikhil: role wording]"
+  },
+  {
+    "file": "manuscript/part-2-open-engine/05-proof-of-concept.md",
+    "line": 39,
+    "kind": "VERIFY",
+    "marker": "[VERIFY: real incident]"
+  },
+  {
+    "file": "manuscript/part-2-open-engine/05-proof-of-concept.md",
+    "line": 39,
+    "kind": "VERIFY",
+    "marker": "[VERIFY: swap in a specific logged case]"
+  },
+  {
+    "file": "manuscript/part-2-open-engine/05-proof-of-concept.md",
+    "line": 49,
+    "kind": "VERIFY",
+    "marker": "[VERIFY wording vs MOU at copyedit]"
+  },
+  {
+    "file": "manuscript/part-2-open-engine/05-proof-of-concept.md",
+    "line": 55,
+    "kind": "VERIFY",
+    "marker": "[VERIFY with Nikhil: role wording]"
+  },
+  {
+    "file": "manuscript/part-2-open-engine/06-the-household-and-the-society.md",
+    "line": 69,
+    "kind": "VERIFY",
+    "marker": "[VERIFY: publish or soften \u2014 the 9,168-target and 97% figures are author-internal; cite the August 2025 release notes or fall back to the public documentation]"
+  },
+  {
+    "file": "manuscript/part-2-open-engine/06-the-household-and-the-society.md",
+    "line": 83,
+    "kind": "VERIFY",
+    "marker": "[VERIFY: date this estimate's vintage and reconcile with the Census official SPM of ~12.4% for 2022 [@census2023spm]"
+  },
+  {
+    "file": "manuscript/part-2-open-engine/06-the-household-and-the-society.md",
+    "line": 93,
+    "kind": "VERIFY",
+    "marker": "[VERIFY: state the current aggregate-revenue gap on the calibrated stack at publication]"
+  },
+  {
+    "file": "manuscript/part-2-open-engine/06-the-household-and-the-society.md",
+    "line": 105,
+    "kind": "NEEDS CITATION",
+    "marker": "[NEEDS CITATION: recompute the \u00a31,000 single-parent figure \u2014 not in the UC-taper post; nearest official comparator is ~\u00a31,200/yr for a different household spec]"
+  },
+  {
+    "file": "manuscript/part-2-open-engine/06-the-household-and-the-society.md",
+    "line": 107,
+    "kind": "NEEDS CITATION",
+    "marker": "[NEEDS CITATION: per-pound poverty comparison, uplift vs taper]"
+  },
+  {
+    "file": "manuscript/part-2-open-engine/06-the-household-and-the-society.md",
+    "line": 107,
+    "kind": "NEEDS CITATION",
+    "marker": "[NEEDS CITATION: recompute the 26\u21929 percent share]"
+  },
+  {
+    "file": "manuscript/part-2-open-engine/07-three-ingredients.md",
+    "line": 13,
+    "kind": "NEEDS CITATION",
+    "marker": "[NEEDS CITATION: PolicyEngine US parameter count]"
+  },
+  {
+    "file": "manuscript/part-2-open-engine/07-three-ingredients.md",
+    "line": 19,
+    "kind": "NEEDS CITATION",
+    "marker": "[NEEDS CITATION: EUROMOD UK component file size]"
+  },
+  {
+    "file": "manuscript/part-2-open-engine/07-three-ingredients.md",
+    "line": 56,
+    "kind": "VERIFY",
+    "marker": "[VERIFY counts at publication]"
+  },
+  {
+    "file": "manuscript/part-3-agent-turn/09-encoding-the-law.md",
+    "line": 41,
+    "kind": "VERIFY",
+    "marker": "[VERIFY: corpus concept-registry count]"
+  },
+  {
+    "file": "manuscript/part-3-agent-turn/09-encoding-the-law.md",
+    "line": 57,
+    "kind": "VERIFY",
+    "marker": "[VERIFY: US rule-file and state counts]"
+  },
+  {
+    "file": "manuscript/part-3-agent-turn/09-encoding-the-law.md",
+    "line": 63,
+    "kind": "NEEDS CITATION",
+    "marker": "[NEEDS CITATION: Accardi and Lumba authority doctrines]"
+  },
+  {
+    "file": "manuscript/part-3-agent-turn/09-encoding-the-law.md",
+    "line": 71,
+    "kind": "DECISION",
+    "marker": "[DECISION for author at publication: whether to name Cosilico PBC here]"
+  },
+  {
+    "file": "manuscript/part-3-agent-turn/11-microsimulation-anywhere.md",
+    "line": 29,
+    "kind": "NEEDS CITATION",
+    "marker": "[NEEDS CITATION: Rwanda findings ledger URL]"
+  },
+  {
+    "file": "manuscript/part-3-agent-turn/11-microsimulation-anywhere.md",
+    "line": 53,
+    "kind": "NEEDS CITATION",
+    "marker": "[NEEDS CITATION: UK transfer evaluation, pre-registered harness, July 2026]"
+  },
+  {
+    "file": "manuscript/part-3-agent-turn/11-microsimulation-anywhere.md",
+    "line": 57,
+    "kind": "NEEDS CITATION",
+    "marker": "[NEEDS CITATION: Belgium calibration and EUROMOD per-record agreement]"
+  },
+  {
+    "file": "manuscript/part-3-agent-turn/12-the-decomposition.md",
+    "line": 25,
+    "kind": "VERIFY",
+    "marker": "[VERIFY: docket grading-policy wording]"
+  },
+  {
+    "file": "manuscript/part-3-agent-turn/12-the-decomposition.md",
+    "line": 35,
+    "kind": "NEEDS CITATION",
+    "marker": "[NEEDS CITATION: reduced-complexity climate emulators, FaIR-class]"
+  },
+  {
+    "file": "manuscript/part-3-agent-turn/12-the-decomposition.md",
+    "line": 57,
+    "kind": "DECISION",
+    "marker": "[DECISION for author at publication: whether to name Cosilico PBC here]"
+  },
+  {
+    "file": "manuscript/part-4-prediction/13-the-uncertainty-gap.md",
+    "line": 15,
+    "kind": "VERIFY",
+    "marker": "[VERIFY: keep in sync with chapter 6's gated 97% figure]"
+  },
+  {
+    "file": "manuscript/part-4-prediction/13-the-uncertainty-gap.md",
+    "line": 61,
+    "kind": "VERIFY",
+    "marker": "[VERIFY: identify the Finland employment forecast and compare its uncertainty interval with the experimental estimate before claiming model overprediction]"
+  },
+  {
+    "file": "manuscript/part-5-horizon/15-simulating-democracy.md",
+    "line": 35,
+    "kind": "NEEDS CITATION",
+    "marker": "[NEEDS CITATION: US voter-guide effects]"
+  },
+  {
+    "file": "manuscript/part-5-horizon/15-simulating-democracy.md",
+    "line": 45,
+    "kind": "NEEDS CITATION",
+    "marker": "[NEEDS CITATION: Gibbard 1973; Satterthwaite 1975]"
+  },
+  {
+    "file": "manuscript/part-5-horizon/16-simulating-values.md",
+    "line": 23,
+    "kind": "VERIFY",
+    "marker": "[VERIFY: exact survey-weighted HOMOSEX values are account-gated on the GSS Data Explorer; direction corroborated \u2014 pull at copyedit.]"
+  },
+  {
+    "file": "manuscript/part-5-horizon/16-simulating-values.md",
+    "line": 51,
+    "kind": "NEEDS CITATION",
+    "marker": "[NEEDS CITATION: Talkie-1930, talkie-lm.com]"
+  },
+  {
+    "file": "manuscript/part-5-horizon/16-simulating-values.md",
+    "line": 73,
+    "kind": "NEEDS CITATION",
+    "marker": "[NEEDS CITATION: WVS coverage and waves]"
+  },
+  {
+    "file": "manuscript/part-5-horizon/16-simulating-values.md",
+    "line": 89,
+    "kind": "NEEDS CITATION",
+    "marker": "[NEEDS CITATION: swap in the published essay when it ships.]"
+  },
+  {
+    "file": "manuscript/part-5-horizon/17-society-in-silico.md",
+    "line": 15,
+    "kind": "VERIFY",
+    "marker": "[VERIFY: calibration-target count at publication]"
+  },
+  {
+    "file": "manuscript/part-5-horizon/17-society-in-silico.md",
+    "line": 15,
+    "kind": "VERIFY",
+    "marker": "[VERIFY: partnership wording with both partners before print]"
+  },
+  {
+    "file": "manuscript/part-5-horizon/17-society-in-silico.md",
+    "line": 15,
+    "kind": "VERIFY",
+    "marker": "[VERIFY: screener reach at publication]"
+  },
+  {
+    "file": "manuscript/part-5-horizon/17-society-in-silico.md",
+    "line": 17,
+    "kind": "VERIFY",
+    "marker": "[VERIFY: rule-file and state counts at publication]"
+  }
+]

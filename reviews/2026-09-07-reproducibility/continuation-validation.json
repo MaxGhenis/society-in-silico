@@ -1,0 +1,29 @@
+{
+  "source_revision": "d43b859c462720d3f97d36e408335b2fa90397a2",
+  "review_evidence_revision": "cfed6e345b13d5b24d4e971d98f9c2e60f3bf0b4",
+  "computational_review_revision": "61c5ce5ee55032419d1021bbde6bd9e62dc27884",
+  "html_pages": 20,
+  "pdf_pages": 158,
+  "browser_page_viewports": 10,
+  "internal_links_and_assets": 1346,
+  "internal_failures": 0,
+  "external_url_statuses": {
+    "200": 110,
+    "202": 2,
+    "403": 50,
+    "network_error": 5
+  },
+  "markers": {
+    "citation": 19,
+    "verification": 25,
+    "decision": 2
+  },
+  "sha256": {
+    "output/pdf/Society-in-Silico.pdf": "a0b771732df8b0848125118e3baca5288f3a396c0ada814ac23dc40be347c241",
+    "scripts/notebooks/pe-computed-numbers.ipynb": "d8d35361233c4a4c98b3915270b1289f854c97c3c21ec27d9382265f8b356154"
+  },
+  "browser_artifacts": "/Users/maxghenis/capacity-sprint-20260907/society/worktree/output/playwright/recovered-source-review",
+  "pdf_inspection": "/Users/maxghenis/capacity-sprint-20260907/society/review-head-validation/pdf-pages",
+  "independent_computational_review": "no actionable findings; representative households and targeted national health rerun, not a full national pipeline rerun",
+  "independent_source_review": "pending"
+}
