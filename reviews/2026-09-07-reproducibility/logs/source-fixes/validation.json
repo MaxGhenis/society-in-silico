@@ -1,0 +1,36 @@
+{
+  "delivered_base": "755f75d741a5cd4aff8080c319b94d619f54a9b8",
+  "reviewed_source_head": "d43b859c462720d3f97d36e408335b2fa90397a2",
+  "changes": [
+    {
+      "file": "manuscript/part-1-closed-stack/03-the-accuracy-question.md",
+      "line": 61,
+      "fix": "Explicit recipient household units for all three New York rates; Social Security sentence unchanged"
+    },
+    {
+      "file": "manuscript/part-2-open-engine/06-the-household-and-the-society.md",
+      "line": 49,
+      "fix": "Narrow to published UK national tax/benefit aggregate comparisons with official statistics and UKMOD estimates"
+    },
+    {
+      "file": "manuscript/part-2-open-engine/06-the-household-and-the-society.md",
+      "line": 67,
+      "fix": "Explicit actual SNAP recipient household denominator"
+    }
+  ],
+  "manuscript_sha256": {
+    "manuscript/part-1-closed-stack/03-the-accuracy-question.md": "1e36031a76508026b15a7ec327fcb50db55f6e02bd94029db5ccd1be8a768d78",
+    "manuscript/part-2-open-engine/06-the-household-and-the-society.md": "89dd689f31a7bbe3751b990ad7d64d582b0f33fc5d81d1214375e320ebb87726"
+  },
+  "checks": {
+    "make_check": "pass",
+    "source_preservation": "pass; 46 markers and all protected files unchanged",
+    "make_build": "pass; 20 HTML inputs",
+    "artifact_agreement": "pass",
+    "pdf": "pass; affected physical pages 36,56,57 visually inspected",
+    "browser": "pass; chapters 3/6 at desktop/mobile, zero overflow/page/HTTP errors"
+  },
+  "pdf_sha256": "b160c707610ea89a1fdd90b6ca5de4e47de0df00645348a7d54190e3ab889d83",
+  "review_status": "owner fixes implemented; coordinator targeted rereview pending",
+  "unchanged_national_pipeline_rerun": false
+}

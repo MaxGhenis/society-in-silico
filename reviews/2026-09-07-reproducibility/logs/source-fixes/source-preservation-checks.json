@@ -1,0 +1,33 @@
+{
+  "base": "755f75d741a5cd4aff8080c319b94d619f54a9b8",
+  "protected_paths_unchanged": [
+    "scripts/pe_computed_numbers.py",
+    "scripts/pe_numbers_report.py",
+    "scripts/execute_pe_notebook.py",
+    "scripts/check_pe_artifacts.py",
+    "scripts/notebooks",
+    "scripts/results/pe-computed-numbers",
+    "tests/test_pe_computed_numbers.py",
+    "references.bib",
+    "_quarto.yml",
+    "book.css",
+    "manuscript/part-2-open-engine/07-three-ingredients.md",
+    "manuscript/part-4-prediction/13-the-uncertainty-gap.md"
+  ],
+  "markers_identical": true,
+  "marker_count": 46,
+  "social_security_sentence_unchanged": "A separate linkage of the 2013 CPS ASEC to Social Security and IRS records found no Social Security income recorded in the survey for 2012 for about eight percent of recipients aged 65 and over [@census2017retirement].",
+  "method": "Git byte/diff identity against delivered head; full manuscript Markdown marker sequence comparison; exact person-level Social Security sentence comparison. No PolicyEngine execution.",
+  "source_evidence": [
+    {
+      "path": "/Users/maxghenis/capacity-sprint-20260907/society-source-review/artifacts/evidence/meyer-mittag.txt",
+      "locator": "section I.A, printed p.180; Table 1, printed p.183",
+      "sha256": "13d9efc650547023ee9978f939c58fbed6073d1d54e61230b06a7d63afea4a62"
+    },
+    {
+      "path": "/Users/maxghenis/capacity-sprint-20260907/society-source-review/artifacts/evidence/pe-uk-validation-source.txt",
+      "locator": "aggregate/official estimate functions and UKMOD comparison series, years 2023\u20132025",
+      "sha256": "23dd4c9197f48c5de9f201a5b6a8a487d84ea050da1610579520e2716e5ae9c4"
+    }
+  ]
+}

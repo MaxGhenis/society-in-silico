@@ -39,9 +39,11 @@
 
 - Received and preserved unchanged the independent source review of `d43b859`; its two P2 findings are accepted for repair. It confirms the other recovered caveats and markers but does not approve the whole manuscript or a fresh full render. Verified the current clean branch/PR head at `755f75d` and fetched unchanged `origin/main` (`11dee8b`); no base integration is needed.
 
+- Implemented both accepted P2 source fixes in three existing paragraph lines: explicit recipient household denominators in chapters 3/6, and a chapter 6 clause limited to published UK aggregate comparisons with official statistics and UKMOD. Social Security remains person-level and age-qualified.
+- Fresh focused checks pass: make check; unchanged protected computation/notebook/receipt/bibliography/config files and all 46 markers; all 20 HTML inputs; artifact/number/download agreement; full PDF with physical pages 36/56/57 visually inspected; chapters 3/6 in desktop/mobile WebKit with zero page/HTTP errors or horizontal overflow. No national pipeline was rerun. Targeted coordinator rereview remains pending.
+
 ## Next
 
-1. Make the recipient household denominators explicit in chapters 3/6 while preserving the person-level, age-qualified Social Security rate.
-2. Narrow chapter 6's continuous official-calculator claim to the pinned notebook's UK national aggregate comparisons with official statistics and UKMOD estimates.
-3. Run make check, focused source/preservation checks, artifact agreement and affected HTML/PDF visual inspection. Do not rerun the unchanged national pipeline.
-4. Commit the fixes explicitly, update draft PR #5 and `SOURCE-FIXES-REVIEW-READY.md`, and await the coordinator's targeted rereview. Keep all markers and publication/partner gates; do not launch a nested review.
+1. Deliver `SOURCE-FIXES-REVIEW-READY.md` with the exact focused commit, diff and evidence; update existing draft PR #5 and verify its head/body.
+2. Await the coordinator's targeted rereview of the two P2 repairs. Keep the source revision fixed or explicitly disclose any further change. Do not launch a nested review.
+3. Preserve all 19 citation / 25 verification / 2 decision markers, external-access exceptions, computational-review limits and editorial/author/partner/publication gates. No merge, publication, reset or paid jobs.

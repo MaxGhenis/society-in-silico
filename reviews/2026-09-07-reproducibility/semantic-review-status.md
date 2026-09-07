@@ -43,3 +43,18 @@ Later source edits, including the FINAL recovery and explicit link repairs, are
 outside this computational verdict. Coordinator source review remains pending.
 No approval of the whole manuscript, empirical forecast, publication, author or
 partner claims follows from this scoped review.
+
+## Focused source findings and owner fixes
+
+The independent source delta review of `d43b859` returned two P2 findings. Its
+unchanged report and receipt are retained in `independent/source-delta-review.md`
+and `source-review-receipt.json`. It supported the remaining recovered source
+caveats and markers, within the scope and environment limits in that report.
+
+The owner explicitly repaired recipient household denominators in chapters 3/6
+and narrowed chapter 6's validation sentence to the pinned UK aggregate/UKMOD
+comparison. The person-level Social Security sentence, numerical calculations,
+raw receipts, other caveats and all 46 markers are unchanged. `source-fixes.md`
+records the evidence and fresh local HTML/PDF/source checks. The coordinator's
+targeted rereview is pending; implementation and local checks do not change the
+independent verdict to a pass by themselves. No nested review was launched.
