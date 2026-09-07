@@ -60,11 +60,17 @@ def test_offline_dataset_check_preserves_mismatched_existing_file(tmp_path):
 
 
 def test_fiscal_cost_includes_health_savings_and_preserves_attribution():
-    cost = pe_numbers.fiscal_statistics({
-        "household_tax": -100, "household_benefits": 10,
-        "federal_benefit_cost": -6, "state_benefit_cost": -4,
-        "income_tax": -98, "employee_payroll_tax": 0, "state_income_tax": -2,
-    })
+    cost = pe_numbers.fiscal_statistics(
+        {
+            "household_tax": -100,
+            "household_benefits": 10,
+            "federal_benefit_cost": -6,
+            "state_benefit_cost": -4,
+            "income_tax": -98,
+            "employee_payroll_tax": 0,
+            "state_income_tax": -2,
+        }
+    )
     assert cost["tax_and_nonhealth_benefit_cost"] == 110
     assert cost["total_cost"] == 100
     assert cost["federal_attributed_cost"] == 92
@@ -87,6 +93,18 @@ def test_ctc_applies_refundability_not_uncapped_entitlement(households):
     assert ctc["reform"]["ctc_received"][at_15k] == pytest.approx(4400, abs=0.02)
     assert ctc["baseline"]["ctc_received"][0] == 0
     assert ctc["reform"]["ctc_received"][0] == 4400
+
+
+def test_historical_ctc_holds_family_inputs_fixed(households):
+    history = households["historical_ctc"]
+    assert [
+        history[str(year)]["ctc_received"] for year in (2020, 2021, 2022)
+    ] == pytest.approx([1875, 7200, 1875], abs=0.02)
+    assert (
+        history["2020"]["inputs"]["people"]
+        == history["2021"]["inputs"]["people"]
+        == history["2022"]["inputs"]["people"]
+    )
 
 
 def test_ssi_parental_deeming_matches_2026_ssa_eligibility_boundary(households):

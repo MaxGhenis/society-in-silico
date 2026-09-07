@@ -15,6 +15,20 @@ uv pip install --python .venv-pe/bin/python -r scripts/notebooks/requirements.tx
 .venv-pe/bin/python scripts/pe_computed_numbers.py national
 ```
 
+To execute and save every notebook cell, including both calculations:
+
+```sh
+.venv-pe/bin/python scripts/execute_pe_notebook.py
+.venv-pe/bin/python -m pytest tests/test_pe_computed_numbers.py -q
+```
+
+The executor runs the notebook's plain Python cells in order and checkpoints
+outputs after each cell. It opens no Jupyter ports (kernel startup is blocked in
+the sprint environment). It records that execution backend in notebook metadata;
+the same cells also run in an interactive Jupyter kernel. The notebook imports
+the computation module, so clone the repository rather than downloading only
+the notebook. Figures and numeric receipts are in `../results/pe-computed-numbers/`.
+
 The September 7, 2026 run installed entirely from the local uv cache by adding
 `--offline` to the first two commands. The complete environment is pinned in
 `requirements.txt` (Python 3.14.4, macOS arm64). PolicyEngine 5.3.0 was verified
@@ -33,3 +47,31 @@ National runs use one baseline/reform pipeline at a time with numerical threads
 limited to one. They require substantially more memory and time than household
 calculations. All results are static estimates with the model's take-up
 assumptions held fixed, not forecasts or benefit determinations.
+
+## Calculation conventions
+
+- **Marginal rates:** $100 forward earnings differences over $0–$60,000, plus
+  the chapter's $38,000→$39,000 comparison. Net income includes modeled non-cash
+  benefits and excludes health valuations. It is not a bank-balance measure.
+- **Households:** 35-year-old single parents, $18,000 annual rent, no voucher.
+  NC has children aged 8 (SSI disability) and 5; NY has one child aged 8 (SSI
+  disability). Explicit parent counts enable parental SSI deeming; explicit
+  absence of an SSI spouse prevents the convenience API's single marital-unit
+  grouping from introducing spousal deeming. Other inputs and program take-up
+  use the pinned model defaults.
+- **Capital gains:** an NYC single filer, age 45, with $30m in qualifying
+  long-term gains and a further $10,000. This does not describe all carried
+  interest or compensation.
+- **CTC receipt:** refundable CTC plus applied nonrefundable credits in a case
+  where CTC is the only such credit (checked). The model's `ctc` variable alone
+  is an entitlement before tax-liability limits. The reform retains the $2,200
+  maximum and high-income phase-out; it removes refundability restrictions.
+- **National score:** managed MicroSeries with explicit `map_to`. The fiscal
+  calculation follows the components of PolicyEngine 5.3.0's
+  `tax_benefit_models/us/analysis.py:calculate_budgetary_impact`, including the
+  model's federal and state health-cost variables once. Net household gains and
+  federal income-tax revenue loss are distinct reported measures. The federal,
+  state and unattributed accounting partition is preserved.
+- **Uncertainty:** no behavioral scenarios or confidence interval have been
+  estimated. The old dense Enhanced CPS results are not reproduced by this
+  different certified population. A new score must state its own data vintage.

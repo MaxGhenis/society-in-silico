@@ -23,6 +23,7 @@
 - Updated chapter 6's household figures and notebook link, chapter 13's recap, and feedback items 21/33. The old national totals remain unchanged pending verification.
 - The first national run caught a ~$20m Medicaid interaction, invalidating the simplifying assumption of unchanged health costs. Revised fiscal accounting follows PolicyEngine 5.3.0's budget helper components on MicroSeries outputs, adding federal/state health costs once. A full notebook execution is now validating this, with local simulation checkpoints.
 - Jupyter kernel startup is blocked by local socket permissions; the notebook has a pure-Python executor that actually runs every code cell and records outputs/errors without ports. Local WebKit launch also aborts in this environment; plan HTML structural checks plus Quarto PDF visual inspection with the PDF skill.
+- Saved the executable notebook with its completed household cells while the national cell runs. Added clone/setup/execution instructions and exact calculation conventions. Inspected both generated household figures visually: labels, curves, comparison and wider cliff are legible.
 
 ## Next
 
