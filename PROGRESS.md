@@ -7,7 +7,7 @@
 - Original worktree and main checkout were clean at inspection and remain untouched. No reset or clean was used.
 - Cached `origin/main` is `11dee8b5658c549f1a052cbdf506b013b36a7aa3`, already an ancestor. Fetch attempts before edits and at handoff failed with `Could not resolve host: github.com`; current remote base and a hosted draft PR remain blocked.
 - No publication or merge. No usage reset, automatic reset, paid overflow, or paid remote compute. `auto_reset.enabled=false` and the sprint no-reset marker remain intact.
-- Deadline: September 7, 2026, 21:00 America/New_York. Handoff packaging is in progress; no further simulation is needed for this milestone.
+- Deadline: September 7, 2026, 21:00 America/New_York. Final validation and draft PR text are committed; the final handoff includes a verified Git bundle and output report. No further simulation is needed for this milestone.
 
 ## Done
 
@@ -27,7 +27,6 @@
 
 ## Next
 
-1. Save final validation evidence, draft PR text, a verified Git bundle, and the output report.
-2. When network access returns, fetch current `origin/main`, integrate safely, obtain the outstanding independent semantic review, and create a draft PR. Do not merge or publish.
-3. If still active, have the sprint coordinator stop review run `20260907-173749-society-pe-review` (PID 56952); this sandbox could not signal it.
-4. Leave wider manuscript verification, uncertainty scenarios, and partner approvals for their authorized follow-up work.
+1. When network access returns, fetch current `origin/main`, integrate safely, obtain the outstanding independent semantic review, and create a draft PR. Do not merge or publish.
+2. If still active, have the sprint coordinator stop review run `20260907-173749-society-pe-review` (PID 56952); this sandbox could not signal it.
+3. Leave wider manuscript verification, uncertainty scenarios, and partner approvals for their authorized follow-up work.
