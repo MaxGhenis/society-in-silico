@@ -30,6 +30,9 @@
 
 - `make check` and the full HTML build pass. The notebook and supporting resources are copied correctly, and chapters 6/13 render the verified figures. PDF rendering also succeeds; visual inspection caught a preexisting duplicate chapter-number problem (“8 Chapter 6”), now fixed by disabling automatic numbering. Added an artifact-chain validator for execution counts, source hashes, derived chapter figures, anchors, and copied notebook/resources. Final source-hash validation awaits the planned final execution.
 
+- Integrated five supported source-lane findings after inspecting cached primary evidence: AHCA vote chronology, Finland control group and citation/activation-model caveat, dated state EITC count, recipient-level underreporting with population/vintage limits, and historical elderly SSI take-up. Added a source memo and cache hashes. The source lane stopped on authentication failure; unsupported or overly broad patch wording was not copied.
+- The one authorized semantic Subfleet review was dispatched on pinned `.codex-3`, but DNS prevented connection to `chatgpt.com`; it produced no findings. A stop request for its retrying process was denied by sandbox process permissions. No independent-review pass is claimed. The final local notebook execution is in progress.
+
 ## Next
 
 1. Request one bounded read-only semantic Subfleet review and fix actionable findings.
