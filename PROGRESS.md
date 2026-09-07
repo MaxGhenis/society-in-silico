@@ -32,6 +32,9 @@
 - Refreshed full HTML/PDF, nine tests, artifact agreement and all generated links. At the fixed review head, all 1,326 internal links/assets resolved; 167 external URLs were checked. Four confirmed 404s led to supported repairs: Cheng DOI, Society of Actuaries PDF route, retired UK validation docs, and USDA SNAP report. The USDA repair also corrects the nonexistent 2019–2021 report title and replaces the undated 82% claim with the report's scoped FY 2022 estimate (88% under federal income/resource eligibility).
 - Actual WebKit desktop/mobile inspection found long bibliography URL overflow; a scoped wrapping rule fixes all four affected mobile pages. Fixed Ruff 0.16.6's implicit-string-concatenation style finding in the artifact validator. Computation code, notebook, receipts and chapter 6/13 computed numbers are unchanged. The coordinator is explicitly notified that this is a follow-up revision.
 
+- Received the coordinator host computational review of frozen `61c5ce5`: no actionable findings. Supplied hashes match the unchanged computation/receipt artifacts. Preserved the report, 15 fresh household checks, targeted national health results, scripts and logs under `reviews/2026-09-07-reproducibility/independent/`. The review checked weighting and arithmetic but did not rerun the entire national pipeline; source integration remains outside its verdict.
+- Documented the reviewer's nonblocking accounting clarification: raw ACA entitlement is not expenditure; assigned PTC, annual premium PTC and BHP changes are zero for this reform. The README preserves that evidence and the need to cover nonzero terms for other reforms.
+
 ## Next
 
 1. Update the coordinator review handoff explicitly after validation repairs; do not silently change the revision under review.

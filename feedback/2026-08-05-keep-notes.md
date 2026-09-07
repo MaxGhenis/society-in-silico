@@ -213,9 +213,11 @@ flagged.
     the older dense Enhanced CPS score or estimate behavioral uncertainty. Nine
     targeted tests, `make check`, `make build`, and the artifact/link validator
     pass. Affected PDF pages and both notebook figures were inspected visually.
-    The first independent review could not connect because of DNS and the
-    coordinator killed it. Coordinator computational/source review remains
-    pending; no independent-review approval is claimed.
+    The coordinator's host computational review of the unchanged calculations
+    found no actionable issues after fresh household calls, a targeted national
+    health check, and weighting/arithmetic review. It did not rerun the entire
+    national pipeline or approve the later source edits. The earlier disconnected
+    nested attempt supplied no findings.
 
 34. **"Taxsin doesn't answer all three questions"** — FIXED (`ccba406`), ch 7:
     TAXSIM scoped to the rules question only, "by design … which is precisely what

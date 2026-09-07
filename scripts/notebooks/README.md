@@ -80,6 +80,18 @@ assumptions held fixed, not forecasts or benefit determinations.
   health-program changes as well as income-tax changes. This code path explains
   why such an interaction is possible; it is not an independent validation of
   each affected household or a behavioral forecast. Earnings remain fixed.
+- **Independent accounting check:** the coordinator's review of the unchanged
+  `61c5ce5` calculations reran the national health terms. Raw `aca_ptc` is
+  entitlement before take-up; its $156.80m increase produced zero changes in
+  `assigned_aca_ptc`, annualized `premium_tax_credit`, and `basic_health_program`
+  for this reform and dataset. It therefore adds no omitted expenditure to this
+  score. These zero deltas and the review are retained under
+  `reviews/2026-09-07-reproducibility/independent/` in the repository. A different
+  reform with nonzero assigned PTC or BHP changes needs explicit fiscal coverage;
+  do not add raw entitlement or count both assigned and annualized PTC. The
+  reviewer reran representative households and these targeted national terms,
+  checked weights and receipt arithmetic, and found no actionable computational
+  issue; they did not rerun the full national poverty/fiscal pipeline.
 - **Uncertainty:** no behavioral scenarios or confidence interval have been
   estimated. The old dense Enhanced CPS results are not reproduced by this
   different certified population. A new score must state its own data vintage.
