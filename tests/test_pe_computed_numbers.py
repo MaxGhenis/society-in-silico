@@ -38,6 +38,19 @@ def test_child_rates_reject_unweighted_or_misaligned_inputs():
         pe_numbers.child_poverty_statistics(child, child.set_axis([4, 5]), child)
 
 
+def test_checkpoint_round_trip_preserves_weighted_aggregates():
+    snapshot = {
+        "income_tax": MicroSeries([5, 10], weights=[10, 90]),
+        "person_in_poverty": MicroSeries([True, False, True], weights=[10, 90, 1000]),
+        "is_child": MicroSeries([True, True, False], weights=[10, 90, 1000]),
+    }
+    result = json.loads(json.dumps(pe_numbers.aggregate_snapshot(snapshot)))
+    assert result["weighted_totals"]["income_tax"] == 950
+    assert result["child_population"] == 100
+    assert result["children_in_poverty"] == 10
+    assert result["child_poverty_rate"] == 0.1
+
+
 def test_offline_dataset_check_preserves_mismatched_existing_file(tmp_path):
     source = tmp_path / "certified.h5"
     source.write_bytes(b"certified fixture")

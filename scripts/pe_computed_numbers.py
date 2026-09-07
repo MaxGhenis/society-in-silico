@@ -12,7 +12,6 @@ import hashlib
 import importlib.metadata as md
 import json
 import os
-import pickle
 import platform
 from contextlib import contextmanager
 from datetime import datetime, timezone
@@ -400,10 +399,20 @@ def run_national(dataset_file: Path | None = None) -> dict:
             if not all(isinstance(series, MicroSeries) for series in snapshot.values()):
                 raise TypeError("Population outputs must retain MicroSeries weights")
             snapshots[label] = snapshot
-            # Local-only checkpoint: retain the completed expensive run if a
-            # later check fails. Never committed or loaded from an external source.
-            with (run_dir / f"{label}-checkpoint.pkl").open("wb") as stream:
-                pickle.dump({"provenance": receipt, "runtime_provenance": sim.policyengine_bundle, "outputs": snapshot}, stream)
+            # Save weighted aggregates while MicroSeries metadata is intact.
+            # Plain pandas pickling drops MicroSeries weights; never use it as
+            # a resumable population checkpoint.
+            (run_dir / f"{label}-aggregates.json").write_text(
+                json.dumps(
+                    {
+                        "provenance": receipt,
+                        "runtime_provenance": sim.policyengine_bundle,
+                        "aggregates": aggregate_snapshot(snapshot),
+                    },
+                    indent=2,
+                    default=str,
+                ) + "\n"
+            )
             del sim
             gc.collect()
     baseline, reform = snapshots["baseline"], snapshots["reform"]
@@ -441,6 +450,28 @@ def run_national(dataset_file: Path | None = None) -> dict:
         json.dumps(answer, indent=2, default=str) + "\n"
     )
     return answer
+
+
+def aggregate_snapshot(snapshot: dict) -> dict:
+    """Durable totals/rates, computed before serializing away survey metadata."""
+    from microdf import MicroSeries
+
+    if not all(isinstance(s, MicroSeries) for s in snapshot.values()):
+        raise TypeError("Aggregate checkpoints require weighted MicroSeries")
+    poverty = child_poverty_statistics(
+        snapshot["person_in_poverty"],
+        snapshot["person_in_poverty"],
+        snapshot["is_child"],
+    )
+    return {
+        "weighted_totals": {
+            name: float(series.sum())
+            for name, series in snapshot.items()
+            if name not in {"person_in_poverty", "is_child"}
+        },
+        "child_population": poverty["child_population"],
+        **poverty["baseline"],
+    }
 
 
 def fiscal_statistics(changes: dict) -> dict:

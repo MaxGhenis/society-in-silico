@@ -25,11 +25,13 @@
 - Jupyter kernel startup is blocked by local socket permissions; the notebook has a pure-Python executor that actually runs every code cell and records outputs/errors without ports. Local WebKit launch also aborts in this environment; plan HTML structural checks plus Quarto PDF visual inspection with the PDF skill.
 - Saved the executable notebook with its completed household cells while the national cell runs. Added clone/setup/execution instructions and exact calculation conventions. Inspected both generated household figures visually: labels, curves, comparison and wider cliff are legible.
 
+- Completed every notebook code cell with real managed PolicyEngine. The certified national result is $20.868bn net fiscal cost, $20.885bn federal income-tax revenue loss, child SPM poverty 17.017%→15.122%, and 1.477m fewer children in poverty. Chapter 6 and chapter 13 now use that vintage and remove uncomputed uncertainty-band claims.
+- A checkpoint reload probe found plain pandas pickling drops MicroSeries weights. Replaced it with JSON totals/rates computed while weights are intact; nine tests pass. The completed result predates this serialization-only change (its receipt identifies the exact executed source hash). A final execution will validate the final source and weighted checkpoints.
+
 ## Next
 
-1. Inventory local model environments and certified data; record exact reproducibility pins.
-2. Execute and validate household earnings increments and full-refundability examples.
-3. Run a managed national rescore only if local certified data and resources suffice; otherwise record the exact blocker without replacing claims with invented results.
-4. Commit executable notebook, script, receipts, and verified chapter/feedback updates in coherent steps.
-5. Run `make check`, `make build`, inspect affected rendered pages, and integrate useful supported source-lane findings.
-6. Prepare a draft PR if network access permits; write final handoff to `/Users/maxghenis/capacity-sprint-20260907/society/result.md`.
+1. Request one bounded read-only semantic Subfleet review and fix actionable findings.
+2. Run `make check`, `make build`, and inspect the affected rendered pages and notebook resources.
+3. Integrate useful supported findings from the separate source lane.
+4. Execute the final notebook source and preserve final output hashes and validation logs.
+5. Prepare a draft PR if network access permits; write final handoff to `/Users/maxghenis/capacity-sprint-20260907/society/result.md`.

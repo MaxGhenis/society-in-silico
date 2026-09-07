@@ -195,18 +195,22 @@ flagged.
     40–45% roundup figure, and the $105B cost to the JCT figure via CRS R46839.
 
 33. **"Numbers that can come straight from pe we should calculate, maybe link a
-    ipynb"** — HOUSEHOLD CALCULATIONS VERIFIED (2026-09-07); national rescore in
-    verification. `scripts/notebooks/pe-computed-numbers.ipynb` now executes
-    `scripts/pe_computed_numbers.py` using managed PolicyEngine 5.3.0 / US 1.764.6.
-    The specified NC family's $38,000→$39,000 raise leaves $73 (92.7% withdrawn);
-    the NYC long-term-gains comparison is 38.6%. Explicit parental roles and no
-    SSI spouse replace the under-specified old curve. The notebook also verifies
-    $1,875→$4,400 for CTC full refundability at $15,000 in 2026, and the historical
-    $1,875/$7,200/$1,875 credits in 2020/2021/2022. Chapters 6 and 13's household
-    figures and chapter 6's notebook link are updated. National scoring uses the
-    locally cached, hash-verified certified Microcosm Build P bundle and
-    MicroSeries/map_to; the first run caught a health-cost interaction, so the old
-    national numbers remain pending until full fiscal accounting passes.
+    ipynb"** — CALCULATIONS VERIFIED (2026-09-07); final book checks pending.
+    `scripts/notebooks/pe-computed-numbers.ipynb` executes all four code cells
+    using managed PolicyEngine 5.3.0 / US 1.764.6, with saved outputs and exact
+    environment pins. The specified NC family's $38,000→$39,000 raise leaves
+    $73 (92.7% withdrawn); the NYC long-term-gains comparison is 38.6%.
+    Explicit parental roles and no SSI spouse replace the under-specified old
+    curve. CTC receipt at $15,000 is $1,875→$4,400 with full refundability in
+    2026; historical 2020/2021/2022 credits are $1,875/$7,200/$1,875.
+    The locally cached, hash-verified certified Microcosm Build P national run
+    uses MicroSeries/map_to: $20.87bn net fiscal cost, child SPM poverty
+    17.02%→15.12%, 1.48m fewer children in poverty. Fiscal accounting includes
+    the model's health-cost interaction. Chapters 6 and 13 now use this score
+    and identify its vintage; the uncomputed uncertainty-band claims are
+    removed. Chapter 6 links the notebook; receipts and figures are saved in
+    `scripts/results/pe-computed-numbers/`. These static results do not recreate
+    the older dense Enhanced CPS score or estimate behavioral uncertainty.
 
 34. **"Taxsin doesn't answer all three questions"** — FIXED (`ccba406`), ch 7:
     TAXSIM scoped to the rules question only, "by design … which is precisely what
