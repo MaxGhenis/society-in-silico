@@ -48,6 +48,9 @@ book:
 
 bibliography: references.bib
 lang: en-US
+# Chapter numbers are already part of the authored headings. Automatic book
+# numbering counted the preface/introduction and displayed “8 Chapter 6”.
+number-sections: false
 
 format:
   html:

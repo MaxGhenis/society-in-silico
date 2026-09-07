@@ -28,6 +28,8 @@
 - Completed every notebook code cell with real managed PolicyEngine. The certified national result is $20.868bn net fiscal cost, $20.885bn federal income-tax revenue loss, child SPM poverty 17.017%→15.122%, and 1.477m fewer children in poverty. Chapter 6 and chapter 13 now use that vintage and remove uncomputed uncertainty-band claims.
 - A checkpoint reload probe found plain pandas pickling drops MicroSeries weights. Replaced it with JSON totals/rates computed while weights are intact; nine tests pass. The completed result predates this serialization-only change (its receipt identifies the exact executed source hash). A final execution will validate the final source and weighted checkpoints.
 
+- `make check` and the full HTML build pass. The notebook and supporting resources are copied correctly, and chapters 6/13 render the verified figures. PDF rendering also succeeds; visual inspection caught a preexisting duplicate chapter-number problem (“8 Chapter 6”), now fixed by disabling automatic numbering. Added an artifact-chain validator for execution counts, source hashes, derived chapter figures, anchors, and copied notebook/resources. Final source-hash validation awaits the planned final execution.
+
 ## Next
 
 1. Request one bounded read-only semantic Subfleet review and fix actionable findings.
