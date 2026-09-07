@@ -2,12 +2,12 @@
 
 ## State
 
-- The requested local implementation and validation are complete: feedback item 33 has an executed notebook, scripts, figures, pinned environment, certified data provenance, and corrected chapter 6/13 numbers.
+- Continuation active from `61c5ce5`: preserve the completed calculations, reconcile the final recovered source artifacts, prepare a hosted draft PR and an exact revision for coordinator review.
 - Branch: `codex/society-reproducibility-20260907`. The isolated continuation preserves all six authorized commits through `e8e034c10c220faac4a0eed727d00e8362cec56c`.
 - Original worktree and main checkout were clean at inspection and remain untouched. No reset or clean was used.
-- Cached `origin/main` is `11dee8b5658c549f1a052cbdf506b013b36a7aa3`, already an ancestor. Fetch attempts before edits and at handoff failed with `Could not resolve host: github.com`; current remote base and a hosted draft PR remain blocked.
+- Full host network is now available. Fetched `origin/main` on September 7, 2026 at about 18:09 ET: `11dee8b5658c549f1a052cbdf506b013b36a7aa3`, still an ancestor. The clean continuation needs no base merge. The public GitHub repository has no open PRs; draft creation is authorized.
 - No publication or merge. No usage reset, automatic reset, paid overflow, or paid remote compute. `auto_reset.enabled=false` and the sprint no-reset marker remain intact.
-- Deadline: September 7, 2026, 21:00 America/New_York. Final validation and draft PR text are committed; the final handoff includes a verified Git bundle and output report. No further simulation is needed for this milestone.
+- Deadline: September 7, 2026, 21:00 America/New_York. No additional nested review will be launched. The coordinator has killed the disconnected review process; its attempt supplied no approval.
 
 ## Done
 
@@ -27,6 +27,7 @@
 
 ## Next
 
-1. When network access returns, fetch current `origin/main`, integrate safely, obtain the outstanding independent semantic review, and create a draft PR. Do not merge or publish.
-2. If still active, have the sprint coordinator stop review run `20260907-173749-society-pe-review` (PID 56952); this sandbox could not signal it.
-3. Leave wider manuscript verification, uncertainty scenarios, and partner approvals for their authorized follow-up work.
+1. Integrate the FINAL recovered source artifacts: Pennsylvania omission, exact New York table period, approximate Finnish control count, activation-rule confound, explicit unresolved Finnish forecast marker, and historical SSI limits.
+2. Commit a fixed computational/source revision and prepare `REVIEW-READY.md` with its exact head and evidence paths for the coordinator's independent review.
+3. Create a normal draft PR, validate notebook/JSON/chapter agreement and full HTML/PDF/links, and inspect affected pages using available loopback/browser access.
+4. Wait for actual independent findings, fix actionable issues with explicit revision updates, and finalize review claims only after that evidence arrives. Do not merge or publish.
