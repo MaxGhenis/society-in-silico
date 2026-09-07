@@ -2,7 +2,7 @@
 
 ## State
 
-- Continuation active from `61c5ce5`: preserve the completed calculations, reconcile the final recovered source artifacts, prepare a hosted draft PR and an exact revision for coordinator review.
+- Focused continuation active from delivered draft PR #5 at `755f75d`: repair the two accepted P2 source findings, preserve the calculations and all other source caveats, and prepare a fixed revision for targeted coordinator rereview.
 - Branch: `codex/society-reproducibility-20260907`. The isolated continuation preserves all six authorized commits through `e8e034c10c220faac4a0eed727d00e8362cec56c`.
 - Original worktree and main checkout were clean at inspection and remain untouched. No reset or clean was used.
 - Full host network is now available. Fetched `origin/main` on September 7, 2026 at about 18:09 ET: `11dee8b5658c549f1a052cbdf506b013b36a7aa3`, still an ancestor. The clean continuation needs no base merge. The public GitHub repository has no open PRs; draft creation is authorized.
@@ -37,8 +37,11 @@
 
 - Final continuation validation passes: 20 HTML inputs, 158-page PDF, ten real WebKit page/viewport checks over chapters 1/3/6/7/13, notebook download bytes, 1,346 internal links/assets, current artifact agreement and Ruff. The four external 404s are repaired; 50 automated access denials and five network/TLS/DNS exceptions are preserved for manual follow-up. Refreshed logs, marker inventory and source/display evidence are committed in the review directory.
 
+- Received and preserved unchanged the independent source review of `d43b859`; its two P2 findings are accepted for repair. It confirms the other recovered caveats and markers but does not approve the whole manuscript or a fresh full render. Verified the current clean branch/PR head at `755f75d` and fetched unchanged `origin/main` (`11dee8b`); no base integration is needed.
+
 ## Next
 
-1. Obtain the coordinator's independent verdict on the FINAL source integration and link-repair revision `d43b859`, using the exact head and hashes in the lane's `REVIEW-READY.md`. Computational review is complete at the unchanged `61c5ce5` calculation revision; do not extend it to unrelated sources or a full national rerun.
-2. Address actionable source findings in explicit follow-up commits if any, refresh affected validation, and update the draft PR/head/handoff transparently.
-3. Preserve the 19 citation / 25 verification / 2 decision markers, external-access exceptions, and author/partner/publication gates. No merge or publication.
+1. Make the recipient household denominators explicit in chapters 3/6 while preserving the person-level, age-qualified Social Security rate.
+2. Narrow chapter 6's continuous official-calculator claim to the pinned notebook's UK national aggregate comparisons with official statistics and UKMOD estimates.
+3. Run make check, focused source/preservation checks, artifact agreement and affected HTML/PDF visual inspection. Do not rerun the unchanged national pipeline.
+4. Commit the fixes explicitly, update draft PR #5 and `SOURCE-FIXES-REVIEW-READY.md`, and await the coordinator's targeted rereview. Keep all markers and publication/partner gates; do not launch a nested review.

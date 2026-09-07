@@ -1,0 +1,25 @@
+{
+  "reviewed_head": "d43b859c462720d3f97d36e408335b2fa90397a2",
+  "delivered_owner_head": "755f75d741a5cd4aff8080c319b94d619f54a9b8",
+  "report_sha256": "7329d66674098c34d12c672b6ac456bc55043a9b8f7a3254f082d4e3668efb68",
+  "source_artifact_repository": "/Users/maxghenis/capacity-sprint-20260907/society-source-review/artifacts",
+  "findings": [
+    {
+      "priority": "P2",
+      "locations": [
+        "manuscript/part-1-closed-stack/03-the-accuracy-question.md:61",
+        "manuscript/part-2-open-engine/06-the-household-and-the-society.md:67"
+      ],
+      "issue": "Recipient household denominators not explicit"
+    },
+    {
+      "priority": "P2",
+      "locations": [
+        "manuscript/part-2-open-engine/06-the-household-and-the-society.md:49",
+        "references.bib:302"
+      ],
+      "issue": "Pinned aggregate validation notebook does not substantiate continuous household-calculator comparisons"
+    }
+  ],
+  "status": "accepted for focused owner repair; targeted coordinator rereview pending"
+}
