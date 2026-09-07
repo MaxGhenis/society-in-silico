@@ -73,6 +73,11 @@ def main():
         rendered_text = "".join(page.text)
         for phrase in expected:
             assert phrase in rendered_text, (page.path.name, phrase)
+    source_pages = [
+        Page(built / "manuscript/part-1-closed-stack/03-the-accuracy-question.html"),
+        Page(built / "manuscript/part-2-open-engine/07-three-ingredients.html"),
+    ]
+    for page in pages + source_pages:
         for link in page.links:
             href = link["href"]
             if href.startswith("#"):
@@ -87,7 +92,15 @@ def main():
         assert target.is_file(), ("Missing download", target)
         if target.suffix == ".ipynb":
             assert target.read_bytes() == notebook.read_bytes(), "Built notebook is stale"
-    for source in (script, *RESULTS.glob("*")):
+    resources = (
+        script,
+        ROOT / "scripts/pe_numbers_report.py",
+        ROOT / "scripts/execute_pe_notebook.py",
+        notebook.parent / "README.md",
+        notebook.parent / "requirements.txt",
+        *RESULTS.glob("*"),
+    )
+    for source in resources:
         if source.is_file():
             target = built / source.relative_to(ROOT)
             assert target.read_bytes() == source.read_bytes(), ("Stale resource", target)

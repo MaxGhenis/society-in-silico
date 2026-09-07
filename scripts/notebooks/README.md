@@ -9,7 +9,7 @@ full-refundability score used in chapters 6 and 13.
 From the repository root:
 
 ```sh
-uv venv --python 3.14 .venv-pe
+uv venv --python 3.14.4 .venv-pe
 uv pip install --python .venv-pe/bin/python -r scripts/notebooks/requirements.txt
 .venv-pe/bin/python scripts/pe_computed_numbers.py households
 .venv-pe/bin/python scripts/pe_computed_numbers.py national

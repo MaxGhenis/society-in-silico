@@ -195,7 +195,7 @@ flagged.
     40–45% roundup figure, and the $105B cost to the JCT figure via CRS R46839.
 
 33. **"Numbers that can come straight from pe we should calculate, maybe link a
-    ipynb"** — CALCULATIONS VERIFIED (2026-09-07); final book checks pending.
+    ipynb"** — FIXED AND VALIDATED (2026-09-07).
     `scripts/notebooks/pe-computed-numbers.ipynb` executes all four code cells
     using managed PolicyEngine 5.3.0 / US 1.764.6, with saved outputs and exact
     environment pins. The specified NC family's $38,000→$39,000 raise leaves
@@ -210,7 +210,11 @@ flagged.
     and identify its vintage; the uncomputed uncertainty-band claims are
     removed. Chapter 6 links the notebook; receipts and figures are saved in
     `scripts/results/pe-computed-numbers/`. These static results do not recreate
-    the older dense Enhanced CPS score or estimate behavioral uncertainty.
+    the older dense Enhanced CPS score or estimate behavioral uncertainty. Nine
+    targeted tests, `make check`, `make build`, and the artifact/link validator
+    pass. Affected PDF pages and both notebook figures were inspected visually.
+    The requested independent review could not connect because of DNS; no
+    independent-review approval is claimed.
 
 34. **"Taxsin doesn't answer all three questions"** — FIXED (`ccba406`), ch 7:
     TAXSIM scoped to the rules question only, "by design … which is precisely what

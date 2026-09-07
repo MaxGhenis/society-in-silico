@@ -1,6 +1,6 @@
 {
   "provenance": {
-    "executed_at_utc": "2026-09-07T21:22:01.353125+00:00",
+    "executed_at_utc": "2026-09-07T21:44:11.048257+00:00",
     "python": "3.14.4",
     "packages": {
       "policyengine": "5.3.0",
@@ -97,7 +97,7 @@
       "source_manifest_uri": "hf://dataset/policyengine/populace-us@populace-us-2024-buildp-sparse-rmloss100-cae8640-20260728T011454Z/releases/populace-us-2024-buildp-sparse-rmloss100-cae8640-20260728T011454Z/release_manifest.json",
       "version": "populace-us-2024-buildp-sparse-rmloss100-cae8640-20260728T011454Z"
     },
-    "script_sha256": "17df2f990be40c41ef1b4112b3c3b6156b831d00e231caa35fc1029b2cefd2fb",
+    "script_sha256": "9776b561a04d62feea227b55bb732b25ead823dde1b3c3063bf4696c8dc9051b",
     "year": 2026
   },
   "runtime_provenance": {
@@ -173,8 +173,8 @@
     "household_benefits": 0.0,
     "household_health_costs": 0.0,
     "household_net_income": 20888305889.452236,
-    "household_tax": -20888308339.947838,
-    "income_tax": -20885352314.074844,
+    "household_tax": -20888308339.94777,
+    "income_tax": -20885352314.074776,
     "medicaid": -20019688.54227918,
     "snap": 0.0,
     "ssi": 0.0,
@@ -182,16 +182,16 @@
     "state_income_tax": -2956227.112850872,
     "tanf": 0.0
   },
-  "net_fiscal_cost": 20868288652.260174,
+  "net_fiscal_cost": 20868288652.260105,
   "fiscal": {
-    "tax_and_nonhealth_benefit_cost": 20888308339.947838,
+    "tax_and_nonhealth_benefit_cost": 20888308339.94777,
     "shared_funding_health_cost_change": -20019687.687662758,
-    "federal_attributed_cost": 20914622349.648438,
+    "federal_attributed_cost": 20914622349.64837,
     "state_attributed_cost": -46333496.148405194,
     "unattributed_cost": -201.23985850811005,
-    "total_cost": 20868288652.260174
+    "total_cost": 20868288652.260105
   },
-  "federal_income_tax_revenue_loss": 20885352314.074844,
+  "federal_income_tax_revenue_loss": 20885352314.074776,
   "poverty": {
     "child_population": 77947677.24210365,
     "baseline": {

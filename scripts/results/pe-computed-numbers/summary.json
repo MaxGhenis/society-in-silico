@@ -54,8 +54,8 @@
     }
   },
   "national": {
-    "net_fiscal_cost": 20868288652.260174,
-    "federal_income_tax_revenue_loss": 20885352314.074844,
+    "net_fiscal_cost": 20868288652.260105,
+    "federal_income_tax_revenue_loss": 20885352314.074776,
     "poverty": {
       "child_population": 77947677.24210365,
       "baseline": {

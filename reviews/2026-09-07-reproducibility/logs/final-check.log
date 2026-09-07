@@ -1,0 +1,45 @@
+uv run --with pyyaml scripts/check_book.py all
+
+=== concepts ===
+  30 concepts; 20 chapters in reading order.
+  [WARN] static-vs-dynamic-modeling: possible re-introduction in later chapter manuscript/part-1-closed-stack/02-tax-model-wars.md:85 ("dynamic scoring, a capital-cost-recovery model f")
+  [WARN] administrative-data: possible re-introduction in later chapter manuscript/part-1-closed-stack/03-the-accuracy-question.md:89 ("administrative totals, a forecast graded when th")
+  [WARN] calibration-reweighting: possible re-introduction in later chapter manuscript/part-4-prediction/13-the-uncertainty-gap.md:53 ("calibration is a property of stated probabilitie")
+  [WARN] benefit-cliff: possible re-introduction in later chapter manuscript/part-2-open-engine/06-the-household-and-the-society.md:27 ("cliff is an interaction — the fault of the combi")
+  [WARN] baseline: possible re-introduction in later chapter manuscript/part-4-prediction/13-the-uncertainty-gap.md:41 ("baseline, an optimistic case, and a pessimistic ")
+  [WARN] oracle: possible re-introduction in later chapter manuscript/part-3-agent-turn/12-the-decomposition.md:67 ("oracle, a household against administrative total")
+  [WARN] microdata-commons: possible re-introduction in later chapter manuscript/part-3-agent-turn/12-the-decomposition.md:31 ("Microcosm, a society in miniature — households s")
+  -> concepts: ok (0 fail, 7 warn)
+
+=== names ===
+  scanning 20 manuscript files.
+  -> names: ok (0 fail, 0 warn)
+
+=== markers ===
+  file                                                               NEEDS CITATION  VERIFY  DECISION
+  ---------------------------------------------------------------------------------------------------
+  manuscript/front-matter/00-preface.md                                           0       1         0
+  manuscript/front-matter/01-introduction.md                                      1       0         0
+  manuscript/part-1-closed-stack/01-birth-of-microsimulation.md                   0       2         0
+  manuscript/part-1-closed-stack/02-tax-model-wars.md                             3       3         0
+  manuscript/part-1-closed-stack/04-a-wall-of-frustration.md                      0       1         0
+  manuscript/part-2-open-engine/05-proof-of-concept.md                            0       4         0
+  manuscript/part-2-open-engine/06-the-household-and-the-society.md               3       3         0
+  manuscript/part-2-open-engine/07-three-ingredients.md                           2       1         0
+  manuscript/part-3-agent-turn/09-encoding-the-law.md                             1       2         1
+  manuscript/part-3-agent-turn/11-microsimulation-anywhere.md                     3       0         0
+  manuscript/part-3-agent-turn/12-the-decomposition.md                            1       1         1
+  manuscript/part-4-prediction/13-the-uncertainty-gap.md                          0       1         0
+  manuscript/part-5-horizon/15-simulating-democracy.md                            2       0         0
+  manuscript/part-5-horizon/16-simulating-values.md                               3       1         0
+  manuscript/part-5-horizon/17-society-in-silico.md                               0       4         0
+  ---------------------------------------------------------------------------------------------------
+  TOTAL                                                                          19      24         2
+  (informational — this check never fails)
+  -> markers: ok (0 fail, 0 warn)
+
+=== code ===
+  scanned 2 fenced code block(s) in manuscript/.
+  -> code: ok (0 fail, 0 warn)
+
+check_book: PASS
