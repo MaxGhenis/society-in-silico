@@ -23,8 +23,8 @@ To execute and save every notebook cell, including both calculations:
 ```
 
 The executor runs the notebook's plain Python cells in order and checkpoints
-outputs after each cell. It opens no Jupyter ports (kernel startup is blocked in
-the sprint environment). It records that execution backend in notebook metadata;
+outputs after each cell. It opens no Jupyter ports (kernel startup was blocked in
+the original restricted sprint environment). It records that execution backend in notebook metadata;
 the same cells also run in an interactive Jupyter kernel. The notebook imports
 the computation module, so clone the repository rather than downloading only
 the notebook. Figures and numeric receipts are in `../results/pe-computed-numbers/`.

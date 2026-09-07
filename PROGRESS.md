@@ -22,12 +22,14 @@
 - Replaced unusable MicroSeries pickle checkpoints with weighted JSON aggregates. The final checkpoint totals reconcile to the saved deltas within $0.046; child counts and rates match exactly. Removed only this lane's two known unusable generated pickle files.
 - Updated chapters 6/13 and feedback items 21/33. Integrated five supported source-lane corrections, with primary-source locators and hashes: AHCA chronology, Finland control count and confounding reform, dated state EITC count, scoped recipient underreporting, and historical elderly SSI take-up.
 - Nine targeted tests, Ruff, `make check`, and the full HTML/PDF builds pass. The artifact validator checks final-source hashes, execution counts, derived chapter numbers, internal anchors, and byte-identical notebook/supporting downloads. Visual inspection covered both notebook figures and eight affected PDF pages. Fixed duplicate automatic chapter numbering.
-- `make check` now reports 19 citation, 24 verification, and 2 decision markers (from 23/25/2); unrelated markers and approval conditions remain.
-- One bounded semantic Subfleet review was requested on pinned `.codex-3`. DNS prevented connection to `chatgpt.com`, so no independent findings or approval exist. A stop request for its retrying process was denied by sandbox process permissions. Details are in `reviews/2026-09-07-reproducibility/semantic-review-status.md`.
+- `make check` now reports 19 citation, 25 verification, and 2 decision markers (from 23/25/2); unrelated markers and approval conditions remain.
+- One bounded semantic Subfleet review was requested on pinned `.codex-3`. DNS prevented connection to `chatgpt.com`, so no independent findings or approval exist. The coordinator subsequently killed the disconnected process; no further nested review will run. Details are in `reviews/2026-09-07-reproducibility/semantic-review-status.md`.
+
+- Reconciled the FINAL source recovery against the completed branch: Pennsylvania EITC omission, exact 2008–2011 New York table window, approximately 173,000 Finnish controls, activation-rule confounding, an explicit unresolved Finnish model-prediction marker, and historical SSI limits. Final recovery and cached-source hashes match their manifests. Computation code, notebook and receipts are unchanged.
+- Re-ran `make check` after recovery: pass, with 19 citation / 25 verification / 2 decision markers. The added Finnish marker intentionally restores an unresolved claim.
 
 ## Next
 
-1. Integrate the FINAL recovered source artifacts: Pennsylvania omission, exact New York table period, approximate Finnish control count, activation-rule confound, explicit unresolved Finnish forecast marker, and historical SSI limits.
-2. Commit a fixed computational/source revision and prepare `REVIEW-READY.md` with its exact head and evidence paths for the coordinator's independent review.
-3. Create a normal draft PR, validate notebook/JSON/chapter agreement and full HTML/PDF/links, and inspect affected pages using available loopback/browser access.
-4. Wait for actual independent findings, fix actionable issues with explicit revision updates, and finalize review claims only after that evidence arrives. Do not merge or publish.
+1. Commit a fixed computational/source revision and prepare `REVIEW-READY.md` with its exact head and evidence paths for the coordinator's independent review.
+2. Create a normal draft PR, validate notebook/JSON/chapter agreement and full HTML/PDF/links, and inspect affected pages using available loopback/browser access.
+3. Wait for actual independent findings, fix actionable issues with explicit revision updates, and finalize review claims only after that evidence arrives. Do not merge or publish.

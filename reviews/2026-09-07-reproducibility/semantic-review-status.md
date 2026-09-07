@@ -10,11 +10,12 @@ Axiom Codex lane (`/Users/maxghenis/.codex-3`) using the existing subscription.
 - Result: **blocked before review**. The subprocess could not resolve
   `chatgpt.com` and repeatedly failed to connect. No findings or independent
   approval were produced.
-- A `subfleet kill` request for this run returned `Operation not permitted`
-  for PID 56952 under the sandbox. Its retrying process may require cleanup by
-  the sprint coordinator if it remains active.
+- The sprint coordinator subsequently killed this disconnected run, as confirmed
+  in the continuation instructions. No further nested review may be launched.
 
 No usage reset, automatic reset, paid overflow, or new paid API/compute job was
 used. This status is not a review pass. The local tests, executed receipts,
 rendered-page inspection, and build checks are separate validation evidence.
-An independent semantic review remains a next step when connectivity returns.
+The coordinator's independent computational/source review remains pending.
+`/Users/maxghenis/capacity-sprint-20260907/society/REVIEW-READY.md` identifies
+the fixed revision and the artifacts to review.
