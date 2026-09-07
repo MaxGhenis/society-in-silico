@@ -72,6 +72,29 @@ assumptions held fixed, not forecasts or benefit determinations.
   model's federal and state health-cost variables once. Net household gains and
   federal income-tax revenue loss are distinct reported measures. The federal,
   state and unattributed accounting partition is preserved.
+- **Filing and health interactions:** fixed take-up assumptions do not mean
+  fixed filing status. In the pinned model, `eligible_for_refundable_credits`
+  depends on refundable CTC; `tax_unit_is_filer` combines that eligibility with
+  the dataset's filing propensities. Filing status feeds both ACA PTC and
+  Medicaid's filer/non-filer household rules. The saved run therefore reports
+  health-program changes as well as income-tax changes. This code path explains
+  why such an interaction is possible; it is not an independent validation of
+  each affected household or a behavioral forecast. Earnings remain fixed.
 - **Uncertainty:** no behavioral scenarios or confidence interval have been
   estimated. The old dense Enhanced CPS results are not reproduced by this
   different certified population. A new score must state its own data vintage.
+
+## Book and artifact validation
+
+After executing the notebook, build the book and check the complete artifact chain:
+
+```sh
+make check
+make build
+.venv-pe/bin/python scripts/check_pe_artifacts.py
+```
+
+The last command verifies that both receipts match the final computation source,
+the notebook cells executed without errors, chapters 6 and 13 contain the rounded
+results derived from those receipts, internal anchors resolve, and the downloadable
+notebook and bundled resources exactly match the repository files.

@@ -33,6 +33,8 @@
 - Integrated five supported source-lane findings after inspecting cached primary evidence: AHCA vote chronology, Finland control group and citation/activation-model caveat, dated state EITC count, recipient-level underreporting with population/vintage limits, and historical elderly SSI take-up. Added a source memo and cache hashes. The source lane stopped on authentication failure; unsupported or overly broad patch wording was not copied.
 - The one authorized semantic Subfleet review was dispatched on pinned `.codex-3`, but DNS prevented connection to `chatgpt.com`; it produced no findings. A stop request for its retrying process was denied by sandbox process permissions. No independent-review pass is claimed. The final local notebook execution is in progress.
 
+- Confirmed the fiscal helper matches the pinned managed package’s budget-accounting components and signs. Documented the endogenous filing path (refundable-credit eligibility → filing status → ACA/Medicaid rules) as a possible mechanism for observed health changes, without claiming an independent causal audit of each affected record.
+
 ## Next
 
 1. Request one bounded read-only semantic Subfleet review and fix actionable findings.
