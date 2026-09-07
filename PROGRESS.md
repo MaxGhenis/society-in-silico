@@ -19,6 +19,10 @@
 - Located and independently hash-checked the certified Build P dataset (57,240 households; SHA256 `48b9d479fb4fd1c3537f9383ce4697d130b6f618658409d74f6233c43b994c7e`) in the existing Hugging Face cache. A national rescore is feasible locally.
 - Baseline `UV_OFFLINE=1 make check` passed; its marker census reports 23 citation, 25 verification, and 2 decision markers. Saved log in the lane artifact directory.
 - Exploratory runs confirmed CTC entitlement must be distinguished from applied credits. Household validation is checking explicit parent and spouse roles before any manuscript numbers change.
+- Household milestone verified: explicit parent/SSI spouse roles; NC $38,000→$39,000 leaves $73 (92.7% MTR), NYC long-term gains 38.6%; CTC at $15,000 rises $1,875→$4,400; historical 2020/2021/2022 credits are $1,875/$7,200/$1,875. Seven targeted statistical, SSI-boundary, fiscal-accounting, and resource-reconciliation tests pass.
+- Updated chapter 6's household figures and notebook link, chapter 13's recap, and feedback items 21/33. The old national totals remain unchanged pending verification.
+- The first national run caught a ~$20m Medicaid interaction, invalidating the simplifying assumption of unchanged health costs. Revised fiscal accounting follows PolicyEngine 5.3.0's budget helper components on MicroSeries outputs, adding federal/state health costs once. A full notebook execution is now validating this, with local simulation checkpoints.
+- Jupyter kernel startup is blocked by local socket permissions; the notebook has a pure-Python executor that actually runs every code cell and records outputs/errors without ports. Local WebKit launch also aborts in this environment; plan HTML structural checks plus Quarto PDF visual inspection with the PDF skill.
 
 ## Next
 

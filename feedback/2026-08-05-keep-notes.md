@@ -119,11 +119,12 @@ flagged.
     chapter.
 
 21. **"80% more than double hedge fund - state local tax niit"** — FIXED
-    (`ccba406`), ch 6. Recomputed with the machinery named: carried interest at
-    long-term rates = 20% + 3.8% NIIT + state/local that the capped SALT deduction
-    no longer meaningfully offsets ≈ just under 40% all-in even in NYC; the parent's
-    ~80% stack is "roughly double" (was "more than double" against an unstated
-    base). The notebook (item 33) computes the parent side from the engine.
+    (`ccba406`), RECOMPUTED 2026-09-07 (item 33). Chapter 6 now specifies both
+    households and earnings increments. The NC parent gives up 92.7% of a
+    $38,000→$39,000 raise; the NYC long-term capital-gains comparison is 23.8%
+    federal plus 14.78% state/city, or 38.6% combined. These are illustrative
+    households, not population averages. The previous ~80%/~67% prose is replaced
+    by the checked notebook calculation.
 
 22. **"Asset tests estimates"** — FIXED (`ccba406`), ch 6. Verified in code: SNAP
     and SSI asset/resource tests are encoded (parameters + `meets_snap_asset_test`,
@@ -194,12 +195,18 @@ flagged.
     40–45% roundup figure, and the $105B cost to the JCT figure via CRS R46839.
 
 33. **"Numbers that can come straight from pe we should calculate, maybe link a
-    ipynb"** — IN PROGRESS this session via policyengine.py (the unified package,
-    never direct policyengine_us): household MTR curves for ch 6's stacked-rate
-    family and the CTC full-refundability rescore
-    (`gov.irs.credits.ctc.refundable.fully_refundable`, 2026, enhanced CPS). The
-    run script is committed as a notebook under `scripts/` when results land; ch 6
-    and ch 13's author-calculation comments will point at it.
+    ipynb"** — HOUSEHOLD CALCULATIONS VERIFIED (2026-09-07); national rescore in
+    verification. `scripts/notebooks/pe-computed-numbers.ipynb` now executes
+    `scripts/pe_computed_numbers.py` using managed PolicyEngine 5.3.0 / US 1.764.6.
+    The specified NC family's $38,000→$39,000 raise leaves $73 (92.7% withdrawn);
+    the NYC long-term-gains comparison is 38.6%. Explicit parental roles and no
+    SSI spouse replace the under-specified old curve. The notebook also verifies
+    $1,875→$4,400 for CTC full refundability at $15,000 in 2026, and the historical
+    $1,875/$7,200/$1,875 credits in 2020/2021/2022. Chapters 6 and 13's household
+    figures and chapter 6's notebook link are updated. National scoring uses the
+    locally cached, hash-verified certified Microcosm Build P bundle and
+    MicroSeries/map_to; the first run caught a health-cost interaction, so the old
+    national numbers remain pending until full fiscal accounting passes.
 
 34. **"Taxsin doesn't answer all three questions"** — FIXED (`ccba406`), ch 7:
     TAXSIM scoped to the rules question only, "by design … which is precisely what
