@@ -1,6 +1,14 @@
 project:
   type: book
   output-dir: _book
+  resources:
+    - scripts/notebooks/pe-computed-numbers.ipynb
+    - scripts/notebooks/README.md
+    - scripts/notebooks/requirements.txt
+    - scripts/pe_computed_numbers.py
+    - scripts/pe_numbers_report.py
+    - scripts/execute_pe_notebook.py
+    - scripts/results/pe-computed-numbers/
 
 book:
   title: Society in Silico
@@ -40,10 +48,14 @@ book:
 
 bibliography: references.bib
 lang: en-US
+# Chapter numbers are already part of the authored headings. Automatic book
+# numbering counted the preface/introduction and displayed “8 Chapter 6”.
+number-sections: false
 
 format:
   html:
     toc: true
+    css: book.css
   pdf:
     toc: true
     documentclass: book

@@ -401,12 +401,13 @@ concepts:
   - per-unit
   obsidian_note: null
 - id: microdata-commons
-  name: microdata commons (populace)
+  name: microdata commons (Microcosm)
   definition: The open, calibrated-microdata commons — synthesis, imputation, and calibration shipped
-    as versioned release bundles — that both poles of the stack stand on.
+    as versioned release bundles — that the whole stack stands on. Working name Microcosm
+    (successor to the populace working name, 2026-08); scope widening from households to firms.
   introduced_in: manuscript/part-2-open-engine/06-the-household-and-the-society.md
   aliases:
-  - populace
+  - Microcosm
   - calibrated-microdata commons
   - microdata commons
   - data commons
@@ -417,6 +418,17 @@ concepts:
   obsidian_note: null
   foreshadow_ok:
   - manuscript/part-2-open-engine/05-proof-of-concept.md
+- id: record-program
+  name: the record program (Chronicle)
+  definition: The witnessed record of official first prints — what number an agency published and
+    when, attested before revisions move it — that forecasts resolve against. Held apart from the
+    claimant by design; working name Chronicle (successor to the Ledger working name, 2026-08).
+  introduced_in: manuscript/part-3-agent-turn/12-the-decomposition.md
+  aliases:
+  - Chronicle
+  related:
+  - prediction-pole
+  obsidian_note: null
 - id: prediction-pole
   name: the prediction pole (forecast grading)
   definition: Publishing forecasts of government metrics with intervals in advance and grading each when

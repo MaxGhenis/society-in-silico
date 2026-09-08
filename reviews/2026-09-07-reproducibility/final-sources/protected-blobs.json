@@ -1,0 +1,231 @@
+{
+  "baseline": "ed1b26fbb1057edd40225704155ed46d703a4a32",
+  "source_head": "4d15eceeddd078cc27257835e5387d5a59432b58",
+  "authoritative_prior_list": "/Users/maxghenis/capacity-sprint-20260907/society/coordinator-source-fix-checks.json",
+  "prior_list_count": 44,
+  "unchanged": 43,
+  "authorized_changed_path": "references.bib",
+  "authorized_change": "Seven new unique entries and only the existing OpenFisca access note; explicitly required by final source assignment. All calculation/code/data/receipt paths remain identical.",
+  "paths": {
+    "_quarto.yml": {
+      "baseline_git_blob": "1d80e09e9f81a775019dffe8e9a33c4dfa7d4bcf",
+      "integrated_git_blob": "1d80e09e9f81a775019dffe8e9a33c4dfa7d4bcf",
+      "unchanged": true
+    },
+    "manuscript/part-2-open-engine/07-three-ingredients.md": {
+      "baseline_git_blob": "459e049156cbe8553e4e028f3ca9b775db79cb2d",
+      "integrated_git_blob": "459e049156cbe8553e4e028f3ca9b775db79cb2d",
+      "unchanged": true
+    },
+    "manuscript/part-4-prediction/13-the-uncertainty-gap.md": {
+      "baseline_git_blob": "01db4bbc8f26a5f39dbc0f3694ca3d2a3e0f2adb",
+      "integrated_git_blob": "01db4bbc8f26a5f39dbc0f3694ca3d2a3e0f2adb",
+      "unchanged": true
+    },
+    "references.bib": {
+      "baseline_git_blob": "adef78b8aa433b61dd1ebf1cb3c3b164bd1b05ee",
+      "integrated_git_blob": "87074c9cf8db3d3801040c68570786a7ed0438ec",
+      "unchanged": false
+    },
+    "scripts/book_dashboard.py": {
+      "baseline_git_blob": "90d5725ed0d8619f20464a089220b807a35f3efb",
+      "integrated_git_blob": "90d5725ed0d8619f20464a089220b807a35f3efb",
+      "unchanged": true
+    },
+    "scripts/book_toc.py": {
+      "baseline_git_blob": "bb47e7034290516d605b144fd2c85d5e1b533d0d",
+      "integrated_git_blob": "bb47e7034290516d605b144fd2c85d5e1b533d0d",
+      "unchanged": true
+    },
+    "scripts/build_listen_edition.py": {
+      "baseline_git_blob": "17ef374877b16d2bb6b71f8bb8428851cf399c90",
+      "integrated_git_blob": "17ef374877b16d2bb6b71f8bb8428851cf399c90",
+      "unchanged": true
+    },
+    "scripts/check_book.py": {
+      "baseline_git_blob": "56aefc7a7cda950aa8eb7949f03d5de0bf5a7e81",
+      "integrated_git_blob": "56aefc7a7cda950aa8eb7949f03d5de0bf5a7e81",
+      "unchanged": true
+    },
+    "scripts/check_pe_artifacts.py": {
+      "baseline_git_blob": "05f2d8bcb477a208c846bd99c4f3402d0729f85c",
+      "integrated_git_blob": "05f2d8bcb477a208c846bd99c4f3402d0729f85c",
+      "unchanged": true
+    },
+    "scripts/concept_tracker.py": {
+      "baseline_git_blob": "724cc09cc0a7a6d26146f1973451fe10564b4d37",
+      "integrated_git_blob": "724cc09cc0a7a6d26146f1973451fe10564b4d37",
+      "unchanged": true
+    },
+    "scripts/execute_pe_notebook.py": {
+      "baseline_git_blob": "17f338eff4eabb0c4d0b66e769330b0d8c26d478",
+      "integrated_git_blob": "17f338eff4eabb0c4d0b66e769330b0d8c26d478",
+      "unchanged": true
+    },
+    "scripts/notebooks/README.md": {
+      "baseline_git_blob": "629e913fd200cd687ffd5a92892f2277f2dbc3df",
+      "integrated_git_blob": "629e913fd200cd687ffd5a92892f2277f2dbc3df",
+      "unchanged": true
+    },
+    "scripts/notebooks/pe-computed-numbers.ipynb": {
+      "baseline_git_blob": "4b69f54e216cdc993e431e4d0cc9fc88cacb01f1",
+      "integrated_git_blob": "4b69f54e216cdc993e431e4d0cc9fc88cacb01f1",
+      "unchanged": true
+    },
+    "scripts/notebooks/requirements.txt": {
+      "baseline_git_blob": "3f9f6b17c75a65784f48d1289bb0252105a587a6",
+      "integrated_git_blob": "3f9f6b17c75a65784f48d1289bb0252105a587a6",
+      "unchanged": true
+    },
+    "scripts/pe_computed_numbers.py": {
+      "baseline_git_blob": "97517818e7918e654f19c2361a31bb1f0ac95f57",
+      "integrated_git_blob": "97517818e7918e654f19c2361a31bb1f0ac95f57",
+      "unchanged": true
+    },
+    "scripts/pe_numbers_report.py": {
+      "baseline_git_blob": "2c51757e199555e5ffb5f9c900a98131810d8ea7",
+      "integrated_git_blob": "2c51757e199555e5ffb5f9c900a98131810d8ea7",
+      "unchanged": true
+    },
+    "scripts/policyengine_uncertainty_demo.py": {
+      "baseline_git_blob": "ac25505e486a2b83e7d7ce88ace802f467557bf4",
+      "integrated_git_blob": "ac25505e486a2b83e7d7ce88ace802f467557bf4",
+      "unchanged": true
+    },
+    "scripts/results/pe-computed-numbers/ctc-full-refundability.png": {
+      "baseline_git_blob": "2d8cb310eea0adb1f0b50fff86e3cddbac8427cd",
+      "integrated_git_blob": "2d8cb310eea0adb1f0b50fff86e3cddbac8427cd",
+      "unchanged": true
+    },
+    "scripts/results/pe-computed-numbers/household-marginal-rates.png": {
+      "baseline_git_blob": "1416b7a68ea8890a5209b3336c6d68c9aec5f3ce",
+      "integrated_git_blob": "1416b7a68ea8890a5209b3336c6d68c9aec5f3ce",
+      "unchanged": true
+    },
+    "scripts/results/pe-computed-numbers/households.json": {
+      "baseline_git_blob": "4e4af6871b974ba853ccb26b68a4d4b598fe6336",
+      "integrated_git_blob": "4e4af6871b974ba853ccb26b68a4d4b598fe6336",
+      "unchanged": true
+    },
+    "scripts/results/pe-computed-numbers/national.json": {
+      "baseline_git_blob": "de4cea2c1028793a1dc81d3d7d8597905f6aaf95",
+      "integrated_git_blob": "de4cea2c1028793a1dc81d3d7d8597905f6aaf95",
+      "unchanged": true
+    },
+    "scripts/results/pe-computed-numbers/summary.json": {
+      "baseline_git_blob": "b3cb70d34e1a47e97b8d053a997d294120dcfd96",
+      "integrated_git_blob": "b3cb70d34e1a47e97b8d053a997d294120dcfd96",
+      "unchanged": true
+    },
+    "tests/__init__.py": {
+      "baseline_git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "integrated_git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "unchanged": true
+    },
+    "tests/test_pe_computed_numbers.py": {
+      "baseline_git_blob": "e708ead20a4c8c2c4d5cac530a9bf3c7b58dc0c7",
+      "integrated_git_blob": "e708ead20a4c8c2c4d5cac530a9bf3c7b58dc0c7",
+      "unchanged": true
+    },
+    "tests/test_tts_pipeline.py": {
+      "baseline_git_blob": "f14336c90ef663c200af2353b669d6539a532689",
+      "integrated_git_blob": "f14336c90ef663c200af2353b669d6539a532689",
+      "unchanged": true
+    },
+    "website/.gitignore": {
+      "baseline_git_blob": "16d54bb13c8a867268b45c22eb7794d2625a78f5",
+      "integrated_git_blob": "16d54bb13c8a867268b45c22eb7794d2625a78f5",
+      "unchanged": true
+    },
+    "website/.vscode/extensions.json": {
+      "baseline_git_blob": "22a15055d638988eb33bb61536d27f623df92e4a",
+      "integrated_git_blob": "22a15055d638988eb33bb61536d27f623df92e4a",
+      "unchanged": true
+    },
+    "website/.vscode/launch.json": {
+      "baseline_git_blob": "d6422097621fd7c1b1ccc6daa670c46aed7ef5b7",
+      "integrated_git_blob": "d6422097621fd7c1b1ccc6daa670c46aed7ef5b7",
+      "unchanged": true
+    },
+    "website/README.md": {
+      "baseline_git_blob": "48e169ee8683baeae475be39de5fbb5c84c67a66",
+      "integrated_git_blob": "48e169ee8683baeae475be39de5fbb5c84c67a66",
+      "unchanged": true
+    },
+    "website/astro.config.mjs": {
+      "baseline_git_blob": "f435cd7ad3577a9fdb234247f6a9230f5dde350d",
+      "integrated_git_blob": "f435cd7ad3577a9fdb234247f6a9230f5dde350d",
+      "unchanged": true
+    },
+    "website/bun.lock": {
+      "baseline_git_blob": "83f6d50551e85ac09667fab037c302b5e0773221",
+      "integrated_git_blob": "83f6d50551e85ac09667fab037c302b5e0773221",
+      "unchanged": true
+    },
+    "website/package.json": {
+      "baseline_git_blob": "9efe24ee8092df151effa208caa936a7500099dc",
+      "integrated_git_blob": "9efe24ee8092df151effa208caa936a7500099dc",
+      "unchanged": true
+    },
+    "website/public/.assetsignore": {
+      "baseline_git_blob": "1b006a0f9e986386b91dcab357d5d98fe35085c8",
+      "integrated_git_blob": "1b006a0f9e986386b91dcab357d5d98fe35085c8",
+      "unchanged": true
+    },
+    "website/public/favicon.svg": {
+      "baseline_git_blob": "f10073c42d7402ab9f744c86c995a16aab6099df",
+      "integrated_git_blob": "f10073c42d7402ab9f744c86c995a16aab6099df",
+      "unchanged": true
+    },
+    "website/public/headshot.png": {
+      "baseline_git_blob": "867df321150cd5a9049f8c42e038942e0ca83341",
+      "integrated_git_blob": "867df321150cd5a9049f8c42e038942e0ca83341",
+      "unchanged": true
+    },
+    "website/src/layouts/Layout.astro": {
+      "baseline_git_blob": "9b47b00c7cf14f4d0954130311d207f95bcac6c7",
+      "integrated_git_blob": "9b47b00c7cf14f4d0954130311d207f95bcac6c7",
+      "unchanged": true
+    },
+    "website/src/lib/book.ts": {
+      "baseline_git_blob": "99ac7612f2e17435314e2df61543375f62a69ff9",
+      "integrated_git_blob": "99ac7612f2e17435314e2df61543375f62a69ff9",
+      "unchanged": true
+    },
+    "website/src/lib/reader.ts": {
+      "baseline_git_blob": "325c383c5f1481a2559148226cd95eea50cd483c",
+      "integrated_git_blob": "325c383c5f1481a2559148226cd95eea50cd483c",
+      "unchanged": true
+    },
+    "website/src/pages/book/[slug].astro": {
+      "baseline_git_blob": "405ad99f32d58267d6d6ae8313cd93c7139d4499",
+      "integrated_git_blob": "405ad99f32d58267d6d6ae8313cd93c7139d4499",
+      "unchanged": true
+    },
+    "website/src/pages/book/index.astro": {
+      "baseline_git_blob": "8826026ee6334cb55b428fad85d3c07439375286",
+      "integrated_git_blob": "8826026ee6334cb55b428fad85d3c07439375286",
+      "unchanged": true
+    },
+    "website/src/pages/index.astro": {
+      "baseline_git_blob": "aeb2cbfb9ea0c1d6da940be725ecd9221119bdbe",
+      "integrated_git_blob": "aeb2cbfb9ea0c1d6da940be725ecd9221119bdbe",
+      "unchanged": true
+    },
+    "website/src/styles/global.css": {
+      "baseline_git_blob": "e5e0655123d0b1ab1f42593b54406829b313c690",
+      "integrated_git_blob": "e5e0655123d0b1ab1f42593b54406829b313c690",
+      "unchanged": true
+    },
+    "website/tsconfig.json": {
+      "baseline_git_blob": "69c16003b9f5148c9d049eddf3d5431a2d763fd9",
+      "integrated_git_blob": "69c16003b9f5148c9d049eddf3d5431a2d763fd9",
+      "unchanged": true
+    },
+    "website/wrangler.jsonc": {
+      "baseline_git_blob": "131ea9ac1a9ff7d5f368c92003244236376642b1",
+      "integrated_git_blob": "131ea9ac1a9ff7d5f368c92003244236376642b1",
+      "unchanged": true
+    }
+  }
+}

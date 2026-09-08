@@ -1,0 +1,16 @@
+Construct baseline
+baseline aca_ptc
+baseline assigned_aca_ptc
+baseline premium_tax_credit
+baseline basic_health_program
+Construct reform
+reform aca_ptc
+reform assigned_aca_ptc
+reform premium_tax_credit
+reform basic_health_program
+{
+  "aca_ptc": 156795505.1766565,
+  "assigned_aca_ptc": 0.0,
+  "premium_tax_credit": 0.0,
+  "basic_health_program": 0.0
+}

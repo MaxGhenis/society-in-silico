@@ -1,0 +1,29 @@
+{
+  "reviewed_commit": "61c5ce5ee55032419d1021bbde6bd9e62dc27884",
+  "sha256": {
+    "scripts/pe_computed_numbers.py": "9776b561a04d62feea227b55bb732b25ead823dde1b3c3063bf4696c8dc9051b",
+    "scripts/pe_numbers_report.py": "bd8f053fa6335c2569bba8a1115204fe0c778b53ad5437511b78cd2138186a80",
+    "scripts/notebooks/pe-computed-numbers.ipynb": "d8d35361233c4a4c98b3915270b1289f854c97c3c21ec27d9382265f8b356154",
+    "scripts/results/pe-computed-numbers/households.json": "30017cca1d8142d7b9ff01c5a60707107553ce523f336ccf77946d78cb7a43af",
+    "scripts/results/pe-computed-numbers/national.json": "4fde655d5edc36df4417f1fee082f1294b929e1b7053bd551d571ae4393af394",
+    "scripts/results/pe-computed-numbers/summary.json": "ce544f6bd733eedee4e19324a9b13102f9555569f5aa0305b68924e2d819b323",
+    "independent-household-results.json": "211c74275126e9bf4d9c43c82a8b67cd13f4f47bfcc35d71f67e86bc310a40e2",
+    "independent-artifact-arithmetic.json": "7f927f18f68e279394296dff2b80219ff36efcdf4f16bceb79d44200b9141fac",
+    "independent_health_accounting.py": "b5a44c411be4077723abcc0da017cdfdea82ac11d1ad08f7f3b9d058383ece41",
+    "independent-health-accounting-results.json": "b85d2330e7fe09eba472c86f614c151f6e522d05992f95d0017b6001642de416",
+    "independent-household-checks.log": "4c256f7a35c52f1f25d77ab49bce141e709c670f8117bd6f910acb0eea218b84",
+    "independent-health-accounting.log": "9f07332ba6573970e392daa412fb54381688cb83f208e2ae955aa5a9139e6037"
+  },
+  "commands": [
+    "owner-venv/bin/python -m pytest tests/test_pe_computed_numbers.py -q: 9 passed",
+    "owner-venv/bin/python independent_household_checks.py: 15 fresh scalar calls passed",
+    "owner-venv/bin/python independent_health_accounting.py: managed baseline/reform target check passed, assigned PTC/premium PTC/BHP deltas all zero"
+  ],
+  "skills_read": [
+    "/Users/maxghenis/.codex/skills/policyengine/SKILL.md",
+    "/Users/maxghenis/.codex/skills/policyengine-data/SKILL.md",
+    "/Users/maxghenis/.codex/skills/policyengine-us/SKILL.md",
+    "/Users/maxghenis/.codex/skills/policyengine-healthcare/SKILL.md",
+    "/Users/maxghenis/policyengine-skills/skills/tools-and-apis/policyengine-microsimulation-skill/SKILL.md"
+  ]
+}

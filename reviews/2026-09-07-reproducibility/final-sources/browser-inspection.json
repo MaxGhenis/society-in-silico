@@ -1,0 +1,121 @@
+{
+  "browser": "WebKit",
+  "executable": "/Users/maxghenis/Library/Caches/ms-playwright/webkit-2358/pw_run.sh",
+  "pages": [
+    {
+      "chapter": "ch2",
+      "viewport": "desktop",
+      "status": 200,
+      "dimensions": {
+        "width": 1440,
+        "scroll": 1440
+      },
+      "overflow": [],
+      "passages": [
+        {
+          "text": "Nuffield\u2019s 2020 annual report",
+          "visible": true
+        },
+        {
+          "text": "In May 2011",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "chapter": "ch12",
+      "viewport": "desktop",
+      "status": 200,
+      "dimensions": {
+        "width": 1440,
+        "scroll": 1440
+      },
+      "overflow": [],
+      "passages": [
+        {
+          "text": "IPCC\u2019s AR6 scenario assessment",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "chapter": "ch16",
+      "viewport": "desktop",
+      "status": 200,
+      "dimensions": {
+        "width": 1440,
+        "scroll": 1440
+      },
+      "overflow": [],
+      "passages": [
+        {
+          "text": "A possible test bed is taking shape",
+          "visible": true
+        },
+        {
+          "text": "June 2024 trend-file documentation",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "chapter": "ch2",
+      "viewport": "mobile",
+      "status": 200,
+      "dimensions": {
+        "width": 390,
+        "scroll": 390
+      },
+      "overflow": [],
+      "passages": [
+        {
+          "text": "Nuffield\u2019s 2020 annual report",
+          "visible": true
+        },
+        {
+          "text": "In May 2011",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "chapter": "ch12",
+      "viewport": "mobile",
+      "status": 200,
+      "dimensions": {
+        "width": 390,
+        "scroll": 390
+      },
+      "overflow": [],
+      "passages": [
+        {
+          "text": "IPCC\u2019s AR6 scenario assessment",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "chapter": "ch16",
+      "viewport": "mobile",
+      "status": 200,
+      "dimensions": {
+        "width": 390,
+        "scroll": 390
+      },
+      "overflow": [],
+      "passages": [
+        {
+          "text": "A possible test bed is taking shape",
+          "visible": true
+        },
+        {
+          "text": "June 2024 trend-file documentation",
+          "visible": true
+        }
+      ]
+    }
+  ],
+  "console_errors": [],
+  "http_errors": [],
+  "notebook_download_sha256": "d8d35361233c4a4c98b3915270b1289f854c97c3c21ec27d9382265f8b356154"
+}

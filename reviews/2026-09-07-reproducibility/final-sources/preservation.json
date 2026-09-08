@@ -1,0 +1,250 @@
+{
+  "baseline": "ed1b26fbb1057edd40225704155ed46d703a4a32",
+  "tracked_blob_count": 6949,
+  "changed_baseline_paths": [
+    "PROGRESS.md",
+    "manuscript/part-1-closed-stack/02-tax-model-wars.md",
+    "manuscript/part-3-agent-turn/12-the-decomposition.md",
+    "manuscript/part-5-horizon/16-simulating-values.md",
+    "references.bib"
+  ],
+  "unchanged_baseline_blobs": 6944,
+  "protected_computation_code_receipts": "Every tracked blob outside the five explicit allowed paths is byte-identical. The prior 44-file protection list includes references.bib: 43 remain identical; only its explicitly authorized seven entries/OpenFisca note changed. All computation/code/receipt blobs are unchanged.",
+  "markers_before": 46,
+  "markers_after": 41,
+  "removed_markers": [
+    {
+      "path": "manuscript/part-1-closed-stack/02-tax-model-wars.md",
+      "marker": "[NEEDS CITATION: UKMOD user list]",
+      "line": 65
+    },
+    {
+      "path": "manuscript/part-1-closed-stack/02-tax-model-wars.md",
+      "marker": "[VERIFY: OpenFisca release timing \u2014 catalog says released four months after the book; chapter says building began then, release later that year]",
+      "line": 75
+    },
+    {
+      "path": "manuscript/part-3-agent-turn/12-the-decomposition.md",
+      "marker": "[NEEDS CITATION: reduced-complexity climate emulators, FaIR-class]",
+      "line": 35
+    },
+    {
+      "path": "manuscript/part-5-horizon/16-simulating-values.md",
+      "marker": "[NEEDS CITATION: Talkie-1930, talkie-lm.com]",
+      "line": 51
+    },
+    {
+      "path": "manuscript/part-5-horizon/16-simulating-values.md",
+      "marker": "[NEEDS CITATION: WVS coverage and waves]",
+      "line": 73
+    }
+  ],
+  "remaining_markers": [
+    {
+      "path": "manuscript/front-matter/00-preface.md",
+      "marker": "[VERIFY with Nikhil: role wording]",
+      "line": 5
+    },
+    {
+      "path": "manuscript/front-matter/01-introduction.md",
+      "marker": "[NEEDS CITATION: tax-code length growth since 1985]",
+      "line": 33
+    },
+    {
+      "path": "manuscript/part-1-closed-stack/01-birth-of-microsimulation.md",
+      "marker": "[VERIFY: three-year degree + dissertation locus of the regression analyzer]",
+      "line": 9
+    },
+    {
+      "path": "manuscript/part-1-closed-stack/01-birth-of-microsimulation.md",
+      "marker": "[VERIFY: MASH authorship attribution against the cited source]",
+      "line": 51
+    },
+    {
+      "path": "manuscript/part-1-closed-stack/02-tax-model-wars.md",
+      "marker": "[VERIFY: no-prior-outside-body claim]",
+      "line": 3
+    },
+    {
+      "path": "manuscript/part-1-closed-stack/02-tax-model-wars.md",
+      "marker": "[NEEDS CITATION: Brewer quote]",
+      "line": 65
+    },
+    {
+      "path": "manuscript/part-1-closed-stack/02-tax-model-wars.md",
+      "marker": "[NEEDS CITATION: Reed quote]",
+      "line": 67
+    },
+    {
+      "path": "manuscript/part-1-closed-stack/02-tax-model-wars.md",
+      "marker": "[VERIFY: first-anywhere claim]",
+      "line": 73
+    },
+    {
+      "path": "manuscript/part-1-closed-stack/04-a-wall-of-frustration.md",
+      "marker": "[VERIFY with Nikhil: role wording]",
+      "line": 65
+    },
+    {
+      "path": "manuscript/part-2-open-engine/05-proof-of-concept.md",
+      "marker": "[VERIFY: real incident]",
+      "line": 39
+    },
+    {
+      "path": "manuscript/part-2-open-engine/05-proof-of-concept.md",
+      "marker": "[VERIFY: swap in a specific logged case]",
+      "line": 39
+    },
+    {
+      "path": "manuscript/part-2-open-engine/05-proof-of-concept.md",
+      "marker": "[VERIFY wording vs MOU at copyedit]",
+      "line": 49
+    },
+    {
+      "path": "manuscript/part-2-open-engine/05-proof-of-concept.md",
+      "marker": "[VERIFY with Nikhil: role wording]",
+      "line": 55
+    },
+    {
+      "path": "manuscript/part-2-open-engine/06-the-household-and-the-society.md",
+      "marker": "[VERIFY: publish or soften \u2014 the 9,168-target and 97% figures are author-internal; cite the August 2025 release notes or fall back to the public documentation]",
+      "line": 69
+    },
+    {
+      "path": "manuscript/part-2-open-engine/06-the-household-and-the-society.md",
+      "marker": "[VERIFY: date this estimate's vintage and reconcile with the Census official SPM of ~12.4% for 2022 [@census2023spm]",
+      "line": 83
+    },
+    {
+      "path": "manuscript/part-2-open-engine/06-the-household-and-the-society.md",
+      "marker": "[VERIFY: state the current aggregate-revenue gap on the calibrated stack at publication]",
+      "line": 93
+    },
+    {
+      "path": "manuscript/part-2-open-engine/06-the-household-and-the-society.md",
+      "marker": "[NEEDS CITATION: recompute the \u00a31,000 single-parent figure \u2014 not in the UC-taper post; nearest official comparator is ~\u00a31,200/yr for a different household spec]",
+      "line": 105
+    },
+    {
+      "path": "manuscript/part-2-open-engine/06-the-household-and-the-society.md",
+      "marker": "[NEEDS CITATION: per-pound poverty comparison, uplift vs taper]",
+      "line": 107
+    },
+    {
+      "path": "manuscript/part-2-open-engine/06-the-household-and-the-society.md",
+      "marker": "[NEEDS CITATION: recompute the 26\u21929 percent share]",
+      "line": 107
+    },
+    {
+      "path": "manuscript/part-2-open-engine/07-three-ingredients.md",
+      "marker": "[NEEDS CITATION: PolicyEngine US parameter count]",
+      "line": 13
+    },
+    {
+      "path": "manuscript/part-2-open-engine/07-three-ingredients.md",
+      "marker": "[NEEDS CITATION: EUROMOD UK component file size]",
+      "line": 19
+    },
+    {
+      "path": "manuscript/part-2-open-engine/07-three-ingredients.md",
+      "marker": "[VERIFY counts at publication]",
+      "line": 56
+    },
+    {
+      "path": "manuscript/part-3-agent-turn/09-encoding-the-law.md",
+      "marker": "[VERIFY: corpus concept-registry count]",
+      "line": 41
+    },
+    {
+      "path": "manuscript/part-3-agent-turn/09-encoding-the-law.md",
+      "marker": "[VERIFY: US rule-file and state counts]",
+      "line": 57
+    },
+    {
+      "path": "manuscript/part-3-agent-turn/09-encoding-the-law.md",
+      "marker": "[NEEDS CITATION: Accardi and Lumba authority doctrines]",
+      "line": 63
+    },
+    {
+      "path": "manuscript/part-3-agent-turn/09-encoding-the-law.md",
+      "marker": "[DECISION for author at publication: whether to name Cosilico PBC here]",
+      "line": 71
+    },
+    {
+      "path": "manuscript/part-3-agent-turn/11-microsimulation-anywhere.md",
+      "marker": "[NEEDS CITATION: Rwanda findings ledger URL]",
+      "line": 29
+    },
+    {
+      "path": "manuscript/part-3-agent-turn/11-microsimulation-anywhere.md",
+      "marker": "[NEEDS CITATION: UK transfer evaluation, pre-registered harness, July 2026]",
+      "line": 53
+    },
+    {
+      "path": "manuscript/part-3-agent-turn/11-microsimulation-anywhere.md",
+      "marker": "[NEEDS CITATION: Belgium calibration and EUROMOD per-record agreement]",
+      "line": 57
+    },
+    {
+      "path": "manuscript/part-3-agent-turn/12-the-decomposition.md",
+      "marker": "[VERIFY: docket grading-policy wording]",
+      "line": 25
+    },
+    {
+      "path": "manuscript/part-3-agent-turn/12-the-decomposition.md",
+      "marker": "[DECISION for author at publication: whether to name Cosilico PBC here]",
+      "line": 57
+    },
+    {
+      "path": "manuscript/part-4-prediction/13-the-uncertainty-gap.md",
+      "marker": "[VERIFY: keep in sync with chapter 6's gated 97% figure]",
+      "line": 15
+    },
+    {
+      "path": "manuscript/part-4-prediction/13-the-uncertainty-gap.md",
+      "marker": "[VERIFY: identify the Finland employment forecast and compare its uncertainty interval with the experimental estimate before claiming model overprediction]",
+      "line": 61
+    },
+    {
+      "path": "manuscript/part-5-horizon/15-simulating-democracy.md",
+      "marker": "[NEEDS CITATION: US voter-guide effects]",
+      "line": 35
+    },
+    {
+      "path": "manuscript/part-5-horizon/15-simulating-democracy.md",
+      "marker": "[NEEDS CITATION: Gibbard 1973; Satterthwaite 1975]",
+      "line": 45
+    },
+    {
+      "path": "manuscript/part-5-horizon/16-simulating-values.md",
+      "marker": "[VERIFY: exact survey-weighted HOMOSEX values are account-gated on the GSS Data Explorer; direction corroborated \u2014 pull at copyedit.]",
+      "line": 23
+    },
+    {
+      "path": "manuscript/part-5-horizon/16-simulating-values.md",
+      "marker": "[NEEDS CITATION: swap in the published essay when it ships.]",
+      "line": 89
+    },
+    {
+      "path": "manuscript/part-5-horizon/17-society-in-silico.md",
+      "marker": "[VERIFY: calibration-target count at publication]",
+      "line": 15
+    },
+    {
+      "path": "manuscript/part-5-horizon/17-society-in-silico.md",
+      "marker": "[VERIFY: partnership wording with both partners before print]",
+      "line": 15
+    },
+    {
+      "path": "manuscript/part-5-horizon/17-society-in-silico.md",
+      "marker": "[VERIFY: screener reach at publication]",
+      "line": 15
+    },
+    {
+      "path": "manuscript/part-5-horizon/17-society-in-silico.md",
+      "marker": "[VERIFY: rule-file and state counts at publication]",
+      "line": 17
+    }
+  ],
+  "bibliography_unique_keys": 230
+}

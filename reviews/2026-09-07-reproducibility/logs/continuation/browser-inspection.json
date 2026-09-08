@@ -1,0 +1,272 @@
+{
+  "browser": "WebKit",
+  "executable": "/Users/maxghenis/Library/Caches/ms-playwright/webkit-2358/pw_run.sh",
+  "pages": [
+    {
+      "chapter": "ch1",
+      "viewport": "desktop",
+      "status": 200,
+      "dimensions": {
+        "width": 1440,
+        "scroll": 1440
+      },
+      "overflow": [],
+      "passages": []
+    },
+    {
+      "chapter": "ch3",
+      "viewport": "desktop",
+      "status": 200,
+      "dimensions": {
+        "width": 1440,
+        "scroll": 1440
+      },
+      "overflow": [],
+      "passages": [
+        {
+          "text": "In their New York analysis sample",
+          "visible": true
+        },
+        {
+          "text": "historical studies of SSI",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "chapter": "ch6",
+      "viewport": "desktop",
+      "status": 200,
+      "dimensions": {
+        "width": 1440,
+        "scroll": 1440
+      },
+      "overflow": [],
+      "passages": [
+        {
+          "text": "92.7",
+          "visible": true
+        },
+        {
+          "text": "20.87",
+          "visible": true
+        },
+        {
+          "text": "2008\u20132011",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "chapter": "ch7",
+      "viewport": "desktop",
+      "status": 200,
+      "dimensions": {
+        "width": 1440,
+        "scroll": 1440
+      },
+      "overflow": [],
+      "passages": [
+        {
+          "text": "More than thirty states",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "chapter": "ch13",
+      "viewport": "desktop",
+      "status": 200,
+      "dimensions": {
+        "width": 1440,
+        "scroll": 1440
+      },
+      "overflow": [],
+      "passages": [
+        {
+          "text": "217\u2013213",
+          "visible": true
+        },
+        {
+          "text": "20.9",
+          "visible": true
+        },
+        {
+          "text": "approximately 173,000",
+          "visible": true
+        },
+        {
+          "text": "identify the Finland employment forecast",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "chapter": "ch1",
+      "viewport": "mobile",
+      "status": 200,
+      "dimensions": {
+        "width": 390,
+        "scroll": 390
+      },
+      "overflow": [],
+      "passages": []
+    },
+    {
+      "chapter": "ch3",
+      "viewport": "mobile",
+      "status": 200,
+      "dimensions": {
+        "width": 390,
+        "scroll": 390
+      },
+      "overflow": [],
+      "passages": [
+        {
+          "text": "In their New York analysis sample",
+          "visible": true
+        },
+        {
+          "text": "historical studies of SSI",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "chapter": "ch6",
+      "viewport": "mobile",
+      "status": 200,
+      "dimensions": {
+        "width": 390,
+        "scroll": 390
+      },
+      "overflow": [],
+      "passages": [
+        {
+          "text": "92.7",
+          "visible": true
+        },
+        {
+          "text": "20.87",
+          "visible": true
+        },
+        {
+          "text": "2008\u20132011",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "chapter": "ch7",
+      "viewport": "mobile",
+      "status": 200,
+      "dimensions": {
+        "width": 390,
+        "scroll": 390
+      },
+      "overflow": [
+        {
+          "tag": "SPAN",
+          "id": "cb1-1",
+          "class": "",
+          "right": 394.921875,
+          "left": 36.6875,
+          "text": "def formula(person, period, parameters):"
+        },
+        {
+          "tag": "SPAN",
+          "id": "cb1-2",
+          "class": "",
+          "right": 484.46875,
+          "left": 36.6875,
+          "text": "    earnings = person(\"employee_earnings\", period)"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "class": "st",
+          "right": 403.86322021484375,
+          "left": 233.7086181640625,
+          "text": "\"employee_earnings\""
+        },
+        {
+          "tag": "SPAN",
+          "id": "cb1-3",
+          "class": "",
+          "right": 529.25,
+          "left": 36.6875,
+          "text": "    ni = parameters(period).gov.hmrc.national_insurance"
+        },
+        {
+          "tag": "SPAN",
+          "id": "cb1-4",
+          "class": "",
+          "right": 466.5625,
+          "left": 36.6875,
+          "text": "    pt = ni.class_1.thresholds.primary_threshold"
+        },
+        {
+          "tag": "SPAN",
+          "id": "cb1-5",
+          "class": "",
+          "right": 502.375,
+          "left": 36.6875,
+          "text": "    uel = ni.class_1.thresholds.upper_earnings_limit"
+        },
+        {
+          "tag": "SPAN",
+          "id": "cb1-8",
+          "class": "",
+          "right": 520.296875,
+          "left": 36.6875,
+          "text": "    liable_at_main = max_(0, min_(earnings, uel) - pt)"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "class": "op",
+          "right": 484.4627685546875,
+          "left": 475.50726318359375,
+          "text": "-"
+        }
+      ],
+      "passages": [
+        {
+          "text": "More than thirty states",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "chapter": "ch13",
+      "viewport": "mobile",
+      "status": 200,
+      "dimensions": {
+        "width": 390,
+        "scroll": 390
+      },
+      "overflow": [],
+      "passages": [
+        {
+          "text": "217\u2013213",
+          "visible": true
+        },
+        {
+          "text": "20.9",
+          "visible": true
+        },
+        {
+          "text": "approximately 173,000",
+          "visible": true
+        },
+        {
+          "text": "identify the Finland employment forecast",
+          "visible": true
+        }
+      ]
+    }
+  ],
+  "console_errors": [],
+  "http_errors": [],
+  "notebook_download_sha256": "d8d35361233c4a4c98b3915270b1289f854c97c3c21ec27d9382265f8b356154"
+}

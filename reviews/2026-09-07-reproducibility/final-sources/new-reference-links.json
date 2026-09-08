@@ -1,0 +1,65 @@
+[
+  {
+    "url": "https://doi.org/10.1017/9781009157926.022",
+    "source_pages": [
+      "ipcc2022annexiii"
+    ],
+    "status": 200,
+    "final_url": "https://www.cambridge.org/core/books/climate-change-2022-mitigation-of-climate-change/annex-iii-scenarios-and-modelling-methods/B2515AFABF151580F96F4AFA2AF22C7D",
+    "elapsed_seconds": 0.59
+  },
+  {
+    "url": "https://doi.org/10.5194/gmd-11-2273-2018",
+    "source_pages": [
+      "smith2018fair"
+    ],
+    "status": 200,
+    "final_url": "https://gmd.copernicus.org/articles/11/2273/2018/",
+    "elapsed_seconds": 0.38
+  },
+  {
+    "url": "https://talkie-lm.com/introducing-talkie",
+    "source_pages": [
+      "levine2026talkie"
+    ],
+    "status": 200,
+    "final_url": "https://talkie-lm.com/introducing-talkie",
+    "elapsed_seconds": 0.07
+  },
+  {
+    "url": "https://huggingface.co/talkie-lm/talkie-1930-13b-base/blob/b7c97680791f7fca4262c3c80b36ff7d666faab0/README.md",
+    "source_pages": [
+      "talkie2026base"
+    ],
+    "status": 200,
+    "final_url": "https://huggingface.co/talkie-lm/talkie-1930-13b-base/blob/b7c97680791f7fca4262c3c80b36ff7d666faab0/README.md",
+    "elapsed_seconds": 0.33
+  },
+  {
+    "url": "https://huggingface.co/talkie-lm/talkie-1930-13b-it/blob/8033675be6360ae0127fa75f941c12d52064f1dc/README.md",
+    "source_pages": [
+      "talkie2026it"
+    ],
+    "status": 200,
+    "final_url": "https://huggingface.co/talkie-lm/talkie-1930-13b-it/blob/8033675be6360ae0127fa75f941c12d52064f1dc/README.md",
+    "elapsed_seconds": 0.3
+  },
+  {
+    "url": "https://www.worldvaluessurvey.org/WVSEVStrend.jsp",
+    "source_pages": [
+      "wvsa2024trend"
+    ],
+    "status": 200,
+    "final_url": "https://www.worldvaluessurvey.org/WVSEVStrend.jsp",
+    "elapsed_seconds": 1.2
+  },
+  {
+    "url": "https://www.nuffieldfoundation.org/wp-content/uploads/2021/07/Nuffield-Foundation-Annual-Report-2020.pdf",
+    "source_pages": [
+      "nuffield2021annualreport2020"
+    ],
+    "status": 200,
+    "final_url": "https://www.nuffieldfoundation.org/wp-content/uploads/2021/07/Nuffield-Foundation-Annual-Report-2020.pdf",
+    "elapsed_seconds": 0.15
+  }
+]

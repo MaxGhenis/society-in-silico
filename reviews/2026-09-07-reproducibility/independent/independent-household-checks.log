@@ -1,0 +1,16 @@
+nc_two_children 38000 {'net_income': 66684.15625, 'ssi': 8587.9990234375, 'income_tax': -7359.43359375, 'state_income_tax': 553.6124877929688}
+nc_two_children 39000 {'net_income': 66757.15625, 'ssi': 8088.0, 'income_tax': -7048.833984375, 'state_income_tax': 593.5125122070312}
+nc_two_children 55100 {'net_income': 67616.359375, 'ssi': 38.000244140625, 'income_tax': -1783.173828125, 'state_income_tax': 1275.802490234375}
+nc_two_children 55200 {'net_income': 51410.26171875, 'ssi': 0.0, 'income_tax': -1750.11376953125, 'state_income_tax': 1279.79248046875}
+ny_one_child 30000 {'net_income': 45320.6640625, 'ssi': 9606.0, 'income_tax': -5065.6220703125, 'state_income_tax': -814.8616333007812}
+ny_one_child 30100 {'net_income': 45315.859375, 'ssi': 9556.0, 'income_tax': -5039.64208984375, 'state_income_tax': -804.917724609375}
+2020 1875.0001220703125
+2021 7200.0
+2022 1875.0001220703125
+2026 1875.0001220703125
+refundability 0 4400.0
+refundability 15000 4400.0
+refundability 60000 4400.0
+capitalgains {'gains': 30000000, 'net_income': 18474396.0, 'federal_tax': 7097707.5, 'state_city_tax': 4431493.0}
+capitalgains {'gains': 30010000, 'net_income': 18480538.0, 'federal_tax': 7100087.5, 'state_city_tax': 4432971.0}
+PASS: 15 independently computed scalar household calls agree with frozen axis receipts

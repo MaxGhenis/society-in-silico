@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "source_head": "ed1b26fbb1057edd40225704155ed46d703a4a32",
+  "retrieved_at_utc": "2026-09-07T23:52:11.243967+00:00",
+  "scope": "Group A only: chapter 2 lines 65 and 75",
+  "sources": [
+    {
+      "path": "sources/openfisca-about.html",
+      "url": "https://openfisca.org/en/about/",
+      "sha256": "b7a7ba16f578a8cf0dc250e856dfaf955a7b7e9edf2dca908b049a618cb2dd3d",
+      "locator": "History section, paragraphs 1\u20132"
+    },
+    {
+      "path": "sources/nuffield-annual-report-2020.pdf",
+      "url": "https://www.nuffieldfoundation.org/wp-content/uploads/2021/07/Nuffield-Foundation-Annual-Report-2020.pdf",
+      "sha256": "3771e179ac4f6a6b857648a892f111dd81ab94bf42c87e901e5f03212acdf003",
+      "locator": "physical p. 28 / printed p. 26, right column UKMOD subsection"
+    }
+  ],
+  "derived_evidence": [
+    {
+      "path": "evidence/openfisca-about.txt",
+      "sha256": "ea9c99006f94a4a27edd28d1fcd927ad4899ca287de46d8954040881d0398ca4"
+    },
+    {
+      "path": "evidence/nuffield-page-28.txt",
+      "sha256": "59ae22328e5cf990f5b06827f74616465ffc3ebd3bce18e17f0c2e8b9ad1eba0"
+    },
+    {
+      "path": "evidence/nuffield-page-28.png",
+      "sha256": "006955c567facb8e2d74d4627de2198f640cb8deb95185905d0f60965b8fb9ef"
+    },
+    {
+      "path": "evidence/nuffield-full.txt",
+      "sha256": "43e39450568d21cb16ac70f9a979473e00c4047f2163fc1756905c8bb75eef0d"
+    }
+  ],
+  "original_blobs": {
+    "chapter_git_blob": "82e0766e001af5d5f89e756f93e66188dd41269b",
+    "chapter_sha256": "bed6f6fe331b4820ecd3a92d886c2f94088a9b1e6008d27078e7378bcad08f21",
+    "references_sha256": "899dceb887afd7e23369a2ded2f016c877ca7da02558797d67e48c93f8d12fbf"
+  },
+  "patch_sha256": "aab10c502d55dc3bb3a090fe13a2d90feab70bf6b497dd834c2f2532df149b0c",
+  "changed_chapter_lines": [
+    65,
+    75
+  ]
+}

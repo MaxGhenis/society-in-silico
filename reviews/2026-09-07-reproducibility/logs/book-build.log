@@ -1,0 +1,24 @@
+quarto render --to html
+[ 1/20] index.md
+[ 2/20] manuscript/front-matter/00-preface.md
+[ 3/20] manuscript/front-matter/01-introduction.md
+[ 4/20] manuscript/part-1-closed-stack/01-birth-of-microsimulation.md
+[ 5/20] manuscript/part-1-closed-stack/02-tax-model-wars.md
+[ 6/20] manuscript/part-1-closed-stack/03-the-accuracy-question.md
+[ 7/20] manuscript/part-1-closed-stack/04-a-wall-of-frustration.md
+[ 8/20] manuscript/part-2-open-engine/05-proof-of-concept.md
+[ 9/20] manuscript/part-2-open-engine/06-the-household-and-the-society.md
+[10/20] manuscript/part-2-open-engine/07-three-ingredients.md
+[11/20] manuscript/part-3-agent-turn/08-the-ai-cant-do-your-taxes.md
+[12/20] manuscript/part-3-agent-turn/09-encoding-the-law.md
+[13/20] manuscript/part-3-agent-turn/10-the-verification-problem.md
+[14/20] manuscript/part-3-agent-turn/11-microsimulation-anywhere.md
+[15/20] manuscript/part-3-agent-turn/12-the-decomposition.md
+[16/20] manuscript/part-4-prediction/13-the-uncertainty-gap.md
+[17/20] manuscript/part-4-prediction/14-simulating-opinion.md
+[18/20] manuscript/part-5-horizon/15-simulating-democracy.md
+[19/20] manuscript/part-5-horizon/16-simulating-values.md
+[20/20] manuscript/part-5-horizon/17-society-in-silico.md
+
+Output created: _book/index.html
+

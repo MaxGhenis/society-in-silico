@@ -1,0 +1,28 @@
+{
+  "summary_exact_match": true,
+  "notebook_code_cell_counts": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "child_count_arithmetic_errors": {
+    "baseline": 0.0,
+    "reform": 0.0
+  },
+  "entity_table_shapes": {
+    "household": [
+      57240
+    ],
+    "person": [
+      166321
+    ],
+    "tax_unit": [
+      79729
+    ],
+    "spm_unit": [
+      59900
+    ]
+  },
+  "fiscal_component_arithmetic_match": true
+}

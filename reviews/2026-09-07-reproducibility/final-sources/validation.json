@@ -1,0 +1,43 @@
+{
+  "source_head": "4d15eceeddd078cc27257835e5387d5a59432b58",
+  "make_check": "PASS",
+  "html_inputs": 20,
+  "pdf_pages": 160,
+  "pdf_sha256": "4adcb8b9583774fcd83b42a59ab15a1298b0b8f1aafa8b9d7a7067ebacc3c13e",
+  "pdf_visual_pages": [
+    29,
+    30,
+    101,
+    134,
+    136,
+    150,
+    151,
+    153,
+    156,
+    159
+  ],
+  "pdf_visual_result": "All five corrected passages and all seven added references inspected: readable, no clipping or overlap found.",
+  "html_browser": "WebKit via host loopback, 1440x1000 and 390x844; chapters 2/12/16; all cited anchors present; no overflow or page/HTTP errors.",
+  "html_visual_result": "Affected passages and reference entries visually inspected at desktop/mobile widths.",
+  "internal_links_and_assets": 1354,
+  "internal_failures": 0,
+  "new_unique_bibliography_entries": 7,
+  "total_unique_bibliography_entries": 230,
+  "markers": {
+    "citation": 15,
+    "verification": 24,
+    "decision": 2
+  },
+  "unchanged_national_pipeline_rerun": false,
+  "artifact_agreement": "PASS: executed receipts, source hashes, chapter numbers, anchors, notebook download, bundled resources",
+  "independent_group_b_verdict": "clean within the three assigned source corrections; no actionable source/claim finding",
+  "focused_combined_review": "pending coordinator",
+  "new_reference_link_statuses": {
+    "200": 7
+  },
+  "prior_44_file_protection_check": {
+    "unchanged": 43,
+    "authorized_bibliography_only": 1
+  },
+  "prior_source_repair_rereview": "Coordinator no remaining actionable findings at ed1b26f; report copied unchanged."
+}

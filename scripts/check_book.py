@@ -270,7 +270,7 @@ def _later_restatement(chapters, texts, intro_idx, terms):
 # names
 # --------------------------------------------------------------------------- #
 # Retired names that fail anywhere in the manuscript.
-RETIRED_ANYWHERE = ["Brier", "microplex", "AutoRAC", "Axiom Labs", "Farness"]
+RETIRED_ANYWHERE = ["Brier", "microplex", "AutoRAC", "Axiom Labs", "Farness", "populace"]
 # Cosilico is allowed only inside HTML comments (author DECISION notes).
 COSILICO = "Cosilico"
 

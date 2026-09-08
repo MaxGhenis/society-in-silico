@@ -1,0 +1,7 @@
+{
+  "source": "/Users/maxghenis/capacity-sprint-20260907/society/coordinator-source-fix-review.md",
+  "sha256": "35bdd47e2a0b635a7701323989da3f04a347d68a7bbb84ae02cee5fb20af3a83",
+  "reviewed_head": "ed1b26fbb1057edd40225704155ed46d703a4a32",
+  "verdict": "no remaining actionable findings in the two requested source repairs",
+  "scope": "Focused repair recheck; not whole manuscript or publication approval."
+}

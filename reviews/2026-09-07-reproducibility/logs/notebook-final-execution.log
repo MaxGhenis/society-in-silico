@@ -1,0 +1,87 @@
+Executing notebook cell 2 (1)
+Executing notebook cell 4 (2)
+Computing nc_two_children earnings curve
+Computing ny_one_child earnings curve
+Computing NYC long-term capital-gains increment
+Computing household CTC full refundability
+Computing the 2020–2022 household CTC comparison
+{
+  "nc_38000_to_39000": {
+    "earnings_from": 38000,
+    "earnings_to": 39000,
+    "mtr": 0.927,
+    "changes": {
+      "household_net_income": 73.0,
+      "household_tax": 426.99951171875,
+      "household_benefits": -500.0,
+      "household_health_costs": 0.0,
+      "household_health_benefits": 0.0,
+      "income_tax": 310.599609375,
+      "employee_payroll_tax": 76.5,
+      "state_income_tax": 39.9000244140625,
+      "eitc": -210.599609375,
+      "refundable_ctc": -100.0,
+      "income_tax_capped_non_refundable_credits": 100.0,
+      "snap": 0.0,
+      "ssi": -499.9990234375,
+      "spousal_deemed_income": 0.0
+    }
+  },
+  "ny_30000_to_30100": {
+    "earnings_from": 30000,
+    "earnings_to": 30100,
+    "mtr": 1.048046875,
+    "changes": {
+      "household_net_income": -4.8046875,
+      "household_tax": 44.005859375,
+      "household_benefits": -60.7998046875,
+      "household_health_costs": 0.0,
+      "household_health_benefits": 0.0,
+      "income_tax": 25.97998046875,
+      "employee_payroll_tax": 8.081787109375,
+      "state_income_tax": 9.94390869140625,
+      "eitc": -15.97998046875,
+      "refundable_ctc": -10.0,
+      "income_tax_capped_non_refundable_credits": 10.0,
+      "snap": -10.7998046875,
+      "ssi": -50.0,
+      "spousal_deemed_income": 0.0
+    }
+  },
+  "nyc_capital_gains_mtr": 0.38580000000000003,
+  "ctc_at_15000": {
+    "baseline": 1875.0001220703125,
+    "reform": 4400.0
+  },
+  "historical_ctc": {
+    "2020": 1875.0001220703125,
+    "2021": 7200.0,
+    "2022": 1875.0001220703125
+  }
+}
+Executing notebook cell 6 (3)
+scripts/results/pe-computed-numbers/household-marginal-rates.png
+scripts/results/pe-computed-numbers/ctc-full-refundability.png
+Executing notebook cell 9 (4)
+Computing national baseline using the certified local bundle
+Computing national reform using the certified local bundle
+{
+  "net_fiscal_cost": 20868288652.260105,
+  "federal_income_tax_revenue_loss": 20885352314.074776,
+  "poverty": {
+    "child_population": 77947677.24210365,
+    "baseline": {
+      "child_poverty_rate": 0.17017327290983747,
+      "children_in_poverty": 13264611.352008432
+    },
+    "reform": {
+      "child_poverty_rate": 0.15122069671750843,
+      "children_in_poverty": 11787302.06006239
+    },
+    "percentage_point_reduction": 1.895257619232904,
+    "children_lifted_out": 1477309.2919460423
+  }
+}
+Certified dataset: populace-us-2024-buildp-sparse-rmloss100-cae8640-20260728T011454Z
+Dataset SHA256: 48b9d479fb4fd1c3537f9383ce4697d130b6f618658409d74f6233c43b994c7e
+Executed 4 cells: /Users/maxghenis/capacity-sprint-20260907/society/worktree/scripts/notebooks/pe-computed-numbers.ipynb

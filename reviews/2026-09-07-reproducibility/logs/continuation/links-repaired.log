@@ -1,0 +1,16 @@
+Internal links/assets: 1346; failures: 0; external URLs: 167
+External checked: 25/167
+External checked: 50/167
+External checked: 75/167
+External checked: 100/167
+External checked: 125/167
+External checked: 150/167
+{
+  "internal_failures": [],
+  "external_status_counts": {
+    "network_error": 5,
+    "200": 110,
+    "403": 50,
+    "202": 2
+  }
+}

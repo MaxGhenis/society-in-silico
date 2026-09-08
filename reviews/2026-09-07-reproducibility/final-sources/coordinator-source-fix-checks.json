@@ -1,0 +1,198 @@
+{
+  "checked_at": "2026-09-07T19:28:40.584165-04:00",
+  "base": "755f75d741a5cd4aff8080c319b94d619f54a9b8",
+  "head": "ed1b26fbb1057edd40225704155ed46d703a4a32",
+  "protected_paths": {
+    "_quarto.yml": {
+      "base": "1d80e09e9f81a775019dffe8e9a33c4dfa7d4bcf",
+      "head": "1d80e09e9f81a775019dffe8e9a33c4dfa7d4bcf"
+    },
+    "manuscript/part-2-open-engine/07-three-ingredients.md": {
+      "base": "459e049156cbe8553e4e028f3ca9b775db79cb2d",
+      "head": "459e049156cbe8553e4e028f3ca9b775db79cb2d"
+    },
+    "manuscript/part-4-prediction/13-the-uncertainty-gap.md": {
+      "base": "01db4bbc8f26a5f39dbc0f3694ca3d2a3e0f2adb",
+      "head": "01db4bbc8f26a5f39dbc0f3694ca3d2a3e0f2adb"
+    },
+    "references.bib": {
+      "base": "adef78b8aa433b61dd1ebf1cb3c3b164bd1b05ee",
+      "head": "adef78b8aa433b61dd1ebf1cb3c3b164bd1b05ee"
+    },
+    "scripts/book_dashboard.py": {
+      "base": "90d5725ed0d8619f20464a089220b807a35f3efb",
+      "head": "90d5725ed0d8619f20464a089220b807a35f3efb"
+    },
+    "scripts/book_toc.py": {
+      "base": "bb47e7034290516d605b144fd2c85d5e1b533d0d",
+      "head": "bb47e7034290516d605b144fd2c85d5e1b533d0d"
+    },
+    "scripts/build_listen_edition.py": {
+      "base": "17ef374877b16d2bb6b71f8bb8428851cf399c90",
+      "head": "17ef374877b16d2bb6b71f8bb8428851cf399c90"
+    },
+    "scripts/check_book.py": {
+      "base": "56aefc7a7cda950aa8eb7949f03d5de0bf5a7e81",
+      "head": "56aefc7a7cda950aa8eb7949f03d5de0bf5a7e81"
+    },
+    "scripts/check_pe_artifacts.py": {
+      "base": "05f2d8bcb477a208c846bd99c4f3402d0729f85c",
+      "head": "05f2d8bcb477a208c846bd99c4f3402d0729f85c"
+    },
+    "scripts/concept_tracker.py": {
+      "base": "724cc09cc0a7a6d26146f1973451fe10564b4d37",
+      "head": "724cc09cc0a7a6d26146f1973451fe10564b4d37"
+    },
+    "scripts/execute_pe_notebook.py": {
+      "base": "17f338eff4eabb0c4d0b66e769330b0d8c26d478",
+      "head": "17f338eff4eabb0c4d0b66e769330b0d8c26d478"
+    },
+    "scripts/notebooks/README.md": {
+      "base": "629e913fd200cd687ffd5a92892f2277f2dbc3df",
+      "head": "629e913fd200cd687ffd5a92892f2277f2dbc3df"
+    },
+    "scripts/notebooks/pe-computed-numbers.ipynb": {
+      "base": "4b69f54e216cdc993e431e4d0cc9fc88cacb01f1",
+      "head": "4b69f54e216cdc993e431e4d0cc9fc88cacb01f1"
+    },
+    "scripts/notebooks/requirements.txt": {
+      "base": "3f9f6b17c75a65784f48d1289bb0252105a587a6",
+      "head": "3f9f6b17c75a65784f48d1289bb0252105a587a6"
+    },
+    "scripts/pe_computed_numbers.py": {
+      "base": "97517818e7918e654f19c2361a31bb1f0ac95f57",
+      "head": "97517818e7918e654f19c2361a31bb1f0ac95f57"
+    },
+    "scripts/pe_numbers_report.py": {
+      "base": "2c51757e199555e5ffb5f9c900a98131810d8ea7",
+      "head": "2c51757e199555e5ffb5f9c900a98131810d8ea7"
+    },
+    "scripts/policyengine_uncertainty_demo.py": {
+      "base": "ac25505e486a2b83e7d7ce88ace802f467557bf4",
+      "head": "ac25505e486a2b83e7d7ce88ace802f467557bf4"
+    },
+    "scripts/results/pe-computed-numbers/ctc-full-refundability.png": {
+      "base": "2d8cb310eea0adb1f0b50fff86e3cddbac8427cd",
+      "head": "2d8cb310eea0adb1f0b50fff86e3cddbac8427cd"
+    },
+    "scripts/results/pe-computed-numbers/household-marginal-rates.png": {
+      "base": "1416b7a68ea8890a5209b3336c6d68c9aec5f3ce",
+      "head": "1416b7a68ea8890a5209b3336c6d68c9aec5f3ce"
+    },
+    "scripts/results/pe-computed-numbers/households.json": {
+      "base": "4e4af6871b974ba853ccb26b68a4d4b598fe6336",
+      "head": "4e4af6871b974ba853ccb26b68a4d4b598fe6336"
+    },
+    "scripts/results/pe-computed-numbers/national.json": {
+      "base": "de4cea2c1028793a1dc81d3d7d8597905f6aaf95",
+      "head": "de4cea2c1028793a1dc81d3d7d8597905f6aaf95"
+    },
+    "scripts/results/pe-computed-numbers/summary.json": {
+      "base": "b3cb70d34e1a47e97b8d053a997d294120dcfd96",
+      "head": "b3cb70d34e1a47e97b8d053a997d294120dcfd96"
+    },
+    "tests/__init__.py": {
+      "base": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "head": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    "tests/test_pe_computed_numbers.py": {
+      "base": "e708ead20a4c8c2c4d5cac530a9bf3c7b58dc0c7",
+      "head": "e708ead20a4c8c2c4d5cac530a9bf3c7b58dc0c7"
+    },
+    "tests/test_tts_pipeline.py": {
+      "base": "f14336c90ef663c200af2353b669d6539a532689",
+      "head": "f14336c90ef663c200af2353b669d6539a532689"
+    },
+    "website/.gitignore": {
+      "base": "16d54bb13c8a867268b45c22eb7794d2625a78f5",
+      "head": "16d54bb13c8a867268b45c22eb7794d2625a78f5"
+    },
+    "website/.vscode/extensions.json": {
+      "base": "22a15055d638988eb33bb61536d27f623df92e4a",
+      "head": "22a15055d638988eb33bb61536d27f623df92e4a"
+    },
+    "website/.vscode/launch.json": {
+      "base": "d6422097621fd7c1b1ccc6daa670c46aed7ef5b7",
+      "head": "d6422097621fd7c1b1ccc6daa670c46aed7ef5b7"
+    },
+    "website/README.md": {
+      "base": "48e169ee8683baeae475be39de5fbb5c84c67a66",
+      "head": "48e169ee8683baeae475be39de5fbb5c84c67a66"
+    },
+    "website/astro.config.mjs": {
+      "base": "f435cd7ad3577a9fdb234247f6a9230f5dde350d",
+      "head": "f435cd7ad3577a9fdb234247f6a9230f5dde350d"
+    },
+    "website/bun.lock": {
+      "base": "83f6d50551e85ac09667fab037c302b5e0773221",
+      "head": "83f6d50551e85ac09667fab037c302b5e0773221"
+    },
+    "website/package.json": {
+      "base": "9efe24ee8092df151effa208caa936a7500099dc",
+      "head": "9efe24ee8092df151effa208caa936a7500099dc"
+    },
+    "website/public/.assetsignore": {
+      "base": "1b006a0f9e986386b91dcab357d5d98fe35085c8",
+      "head": "1b006a0f9e986386b91dcab357d5d98fe35085c8"
+    },
+    "website/public/favicon.svg": {
+      "base": "f10073c42d7402ab9f744c86c995a16aab6099df",
+      "head": "f10073c42d7402ab9f744c86c995a16aab6099df"
+    },
+    "website/public/headshot.png": {
+      "base": "867df321150cd5a9049f8c42e038942e0ca83341",
+      "head": "867df321150cd5a9049f8c42e038942e0ca83341"
+    },
+    "website/src/layouts/Layout.astro": {
+      "base": "9b47b00c7cf14f4d0954130311d207f95bcac6c7",
+      "head": "9b47b00c7cf14f4d0954130311d207f95bcac6c7"
+    },
+    "website/src/lib/book.ts": {
+      "base": "99ac7612f2e17435314e2df61543375f62a69ff9",
+      "head": "99ac7612f2e17435314e2df61543375f62a69ff9"
+    },
+    "website/src/lib/reader.ts": {
+      "base": "325c383c5f1481a2559148226cd95eea50cd483c",
+      "head": "325c383c5f1481a2559148226cd95eea50cd483c"
+    },
+    "website/src/pages/book/[slug].astro": {
+      "base": "405ad99f32d58267d6d6ae8313cd93c7139d4499",
+      "head": "405ad99f32d58267d6d6ae8313cd93c7139d4499"
+    },
+    "website/src/pages/book/index.astro": {
+      "base": "8826026ee6334cb55b428fad85d3c07439375286",
+      "head": "8826026ee6334cb55b428fad85d3c07439375286"
+    },
+    "website/src/pages/index.astro": {
+      "base": "aeb2cbfb9ea0c1d6da940be725ecd9221119bdbe",
+      "head": "aeb2cbfb9ea0c1d6da940be725ecd9221119bdbe"
+    },
+    "website/src/styles/global.css": {
+      "base": "e5e0655123d0b1ab1f42593b54406829b313c690",
+      "head": "e5e0655123d0b1ab1f42593b54406829b313c690"
+    },
+    "website/tsconfig.json": {
+      "base": "69c16003b9f5148c9d049eddf3d5431a2d763fd9",
+      "head": "69c16003b9f5148c9d049eddf3d5431a2d763fd9"
+    },
+    "website/wrangler.jsonc": {
+      "base": "131ea9ac1a9ff7d5f368c92003244236376642b1",
+      "head": "131ea9ac1a9ff7d5f368c92003244236376642b1"
+    }
+  },
+  "make_check": {
+    "command": "UV_OFFLINE=1 make check",
+    "exit_code": 0,
+    "failures": 0,
+    "concept_warnings": 7,
+    "citation_markers": 19,
+    "verification_markers": 25,
+    "decision_markers": 2
+  },
+  "independent_full_national_rerun": false,
+  "source_locator_evidence": [
+    "society-source-review/artifacts/evidence/meyer-mittag.txt:99",
+    "society-source-review/artifacts/evidence/meyer-mittag.txt:175",
+    "society-source-review/artifacts/evidence/pe-uk-validation-source.txt"
+  ]
+}

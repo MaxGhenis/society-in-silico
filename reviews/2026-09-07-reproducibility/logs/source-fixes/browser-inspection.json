@@ -1,0 +1,81 @@
+{
+  "browser": "WebKit",
+  "executable": "/Users/maxghenis/Library/Caches/ms-playwright/webkit-2358/pw_run.sh",
+  "pages": [
+    {
+      "chapter": "ch3",
+      "viewport": "desktop",
+      "status": 200,
+      "dimensions": {
+        "width": 1440,
+        "scroll": 1440
+      },
+      "overflow": [],
+      "passages": [
+        {
+          "text": "43 percent of households receiving SNAP",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "chapter": "ch6",
+      "viewport": "desktop",
+      "status": 200,
+      "dimensions": {
+        "width": 1440,
+        "scroll": 1440
+      },
+      "overflow": [],
+      "passages": [
+        {
+          "text": "The team publishes UK comparisons",
+          "visible": true
+        },
+        {
+          "text": "43 percent of actual SNAP recipient households",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "chapter": "ch3",
+      "viewport": "mobile",
+      "status": 200,
+      "dimensions": {
+        "width": 390,
+        "scroll": 390
+      },
+      "overflow": [],
+      "passages": [
+        {
+          "text": "43 percent of households receiving SNAP",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "chapter": "ch6",
+      "viewport": "mobile",
+      "status": 200,
+      "dimensions": {
+        "width": 390,
+        "scroll": 390
+      },
+      "overflow": [],
+      "passages": [
+        {
+          "text": "The team publishes UK comparisons",
+          "visible": true
+        },
+        {
+          "text": "43 percent of actual SNAP recipient households",
+          "visible": true
+        }
+      ]
+    }
+  ],
+  "console_errors": [],
+  "http_errors": [],
+  "notebook_download_sha256": "d8d35361233c4a4c98b3915270b1289f854c97c3c21ec27d9382265f8b356154"
+}
