@@ -2,10 +2,10 @@
 
 ## State
 
-- Focused continuation active from delivered draft PR #5 at `755f75d`: repair the two accepted P2 source findings, preserve the calculations and all other source caveats, and prepare a fixed revision for targeted coordinator rereview.
-- Branch: `codex/society-reproducibility-20260907`. The isolated continuation preserves all six authorized commits through `e8e034c10c220faac4a0eed727d00e8362cec56c`.
+- Final source continuation active from verified live draft PR #5 at `ed1b26fbb1057edd40225704155ed46d703a4a32`: integrate the bounded chapter 2/12/16 source packets and seven bibliography entries, with all calculations and other claims preserved.
+- Branch: `codex/society-final-sources-20260907`, in a new isolated worktree; normal pushes update the existing PR branch `codex/society-reproducibility-20260907`. The isolated continuation preserves all six authorized commits through `e8e034c10c220faac4a0eed727d00e8362cec56c`.
 - Original worktree and main checkout were clean at inspection and remain untouched. No reset or clean was used.
-- Full host network is now available. Fetched `origin/main` on September 7, 2026 at about 18:09 ET: `11dee8b5658c549f1a052cbdf506b013b36a7aa3`, still an ancestor. The clean continuation needs no base merge. The public GitHub repository has no open PRs; draft creation is authorized.
+- Full host network is now available. Fetched `origin/main` on September 7, 2026 at about 18:09 ET: `11dee8b5658c549f1a052cbdf506b013b36a7aa3`, still an ancestor. The clean continuation needs no base merge. Live PR #5 is open and remains a draft; its head and current base were fetched and verified again around 20:05 ET. No base integration is needed because current main remains an ancestor.
 - No publication or merge. No usage reset, automatic reset, paid overflow, or paid remote compute. `auto_reset.enabled=false` and the sprint no-reset marker remain intact.
 - Deadline: September 7, 2026, 21:00 America/New_York. No additional nested review will be launched. The coordinator has killed the disconnected review process; its attempt supplied no approval.
 
@@ -47,3 +47,9 @@
 1. Deliver `SOURCE-FIXES-REVIEW-READY.md` with the exact focused commit, diff and evidence; update existing draft PR #5 and verify its head/body.
 2. Await the coordinator's targeted rereview of the two P2 repairs. Keep the source revision fixed or explicitly disclose any further change. Do not launch a nested review.
 3. Preserve all 19 citation / 25 verification / 2 decision markers, external-access exceptions, computational-review limits and editorial/author/partner/publication gates. No merge, publication, reset or paid jobs.
+
+## Final source integration continuation — September 7, 20:14 ET
+
+- State: read both final source packets and pinned primary evidence. Full patch hashes match the coordinator-specified values. Group B independent host review is pending; no nested review will be launched.
+- Done: preserved the clean delivered worktree at `ed1b26f`, main at `11dee8b`, and the original six-commit editorial worktree; created this continuation from the live PR head. Saved all tracked baseline blobs and no-reset identity in the external `final-source-validation/` artifact directory.
+- Next: integrate split chapter patches, append seven unique bibliography entries and update only the OpenFisca access note; incorporate independent Group B findings, validate full HTML/PDF and protected hashes, and deliver `FINAL-SOURCE-INTEGRATION-READY.md` for focused coordinator review. No national computation will be rerun.
