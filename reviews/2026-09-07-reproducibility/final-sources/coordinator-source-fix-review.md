@@ -1,0 +1,9 @@
+# Targeted source-repair review
+
+Coordinator verdict: no remaining actionable findings in the two requested source repairs at exact `ed1b26fbb1057edd40225704155ed46d703a4a32`, relative to delivered `755f75d741a5cd4aff8080c319b94d619f54a9b8`. This is a focused repair recheck, not approval of the entire manuscript or its publication.
+
+Read the original independent review, exact three-paragraph diff, and retained primary-source evidence. Meyer–Mittag defines a household analysis unit after individual matching; the revised chapter 3 rates and chapter 6 repeat now explicitly name recipient households. The separate age-qualified, person-level Social Security sentence is unchanged. The revised UK validation clause describes national aggregate comparisons with official statistics and UKMOD, which the pinned notebook actually contains; it no longer claims continuous official-calculator checks or an unsupported discrepancy procedure.
+
+Compared exact Git blobs for 44 protected source, notebook, receipt, test, bibliography/config and relevant chapter paths: all unchanged. Independently ran `UV_OFFLINE=1 make check` at the repaired head: pass, zero failures; seven preexisting concept warnings; 19 citation, 25 verification and two decision markers remain. Reviewed the owner's focused HTML/PDF/browser validation receipts; those renders and visual checks were performed by the owner, not repeated by this coordinator. No national simulation was rerun. The earlier independent computational review retains its stated scope.
+
+Evidence: `coordinator-source-fix-checks.json`, `source-fixes.patch`, `SOURCE-FIXES-REVIEW-READY.md`, original `independent-source-delta-review.md`, and the retained primary extracts. All author, partner, source-access and publication/merge gates remain. PR5 stays draft. No owner-source changes, reset use, paid calls, merge or publication were performed by this review.

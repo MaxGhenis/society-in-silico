@@ -9,7 +9,7 @@
     "references.bib"
   ],
   "unchanged_baseline_blobs": 6944,
-  "protected_computation_code_receipts": "Every tracked blob outside the five explicit allowed paths is byte-identical, covering all 44 requested protected blobs.",
+  "protected_computation_code_receipts": "Every tracked blob outside the five explicit allowed paths is byte-identical. The prior 44-file protection list includes references.bib: 43 remain identical; only its explicitly authorized seven entries/OpenFisca note changed. All computation/code/receipt blobs are unchanged.",
   "markers_before": 46,
   "markers_after": 41,
   "removed_markers": [
