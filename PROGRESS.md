@@ -48,8 +48,10 @@
 2. Await the coordinator's targeted rereview of the two P2 repairs. Keep the source revision fixed or explicitly disclose any further change. Do not launch a nested review.
 3. Preserve all 19 citation / 25 verification / 2 decision markers, external-access exceptions, computational-review limits and editorial/author/partner/publication gates. No merge, publication, reset or paid jobs.
 
-## Final source integration continuation — September 7, 20:14 ET
+## Final source integration continuation — September 7, 20:10 ET
 
 - State: read both final source packets and pinned primary evidence. Full patch hashes match the coordinator-specified values. Group B independent host review is pending; no nested review will be launched.
 - Done: preserved the clean delivered worktree at `ed1b26f`, main at `11dee8b`, and the original six-commit editorial worktree; created this continuation from the live PR head. Saved all tracked baseline blobs and no-reset identity in the external `final-source-validation/` artifact directory.
 - Next: integrate split chapter patches, append seven unique bibliography entries and update only the OpenFisca access note; incorporate independent Group B findings, validate full HTML/PDF and protected hashes, and deliver `FINAL-SOURCE-INTEGRATION-READY.md` for focused coordinator review. No national computation will be rerun.
+
+- Integration checkpoint: applied only the three chapters and bibliography fragments. `make check` passes; 230 unique bibliography keys; markers 19/25/2 → 15/24/2, with all other markers preserved. Full baseline-tree comparison verifies all computation/code/receipt files unchanged. Next: full HTML/PDF, browser/PDF visuals and independent Group B findings.
