@@ -2,7 +2,7 @@
 
 ## State
 
-- Final source continuation active from verified live draft PR #5 at `ed1b26fbb1057edd40225704155ed46d703a4a32`: integrate the bounded chapter 2/12/16 source packets and seven bibliography entries, with all calculations and other claims preserved.
+- Final source integration complete and validated from live draft PR #5 at `ed1b26fbb1057edd40225704155ed46d703a4a32`. The bounded chapter 2/12/16 corrections and seven bibliography entries are frozen at `4d15ece`; scoped review and full-render evidence are committed at `37433b4`. Final focused coordinator review is pending.
 - Branch: `codex/society-final-sources-20260907`, in a new isolated worktree; normal pushes update the existing PR branch `codex/society-reproducibility-20260907`. The isolated continuation preserves all six authorized commits through `e8e034c10c220faac4a0eed727d00e8362cec56c`.
 - Original worktree and main checkout were clean at inspection and remain untouched. No reset or clean was used.
 - Full host network is now available. Fetched `origin/main` on September 7, 2026 at about 18:09 ET: `11dee8b5658c549f1a052cbdf506b013b36a7aa3`, still an ancestor. The clean continuation needs no base merge. Live PR #5 is open and remains a draft; its head and current base were fetched and verified again around 20:05 ET. No base integration is needed because current main remains an ancestor.
@@ -59,3 +59,9 @@
 - Validation checkpoint: full HTML (20 inputs) and PDF (160 pages) pass; 1,354 internal targets have no failures; executed notebook/JSON/chapter agreement passes. Visually inspected all five corrected passages and seven new references in PDF plus affected desktop/mobile HTML. Group B independent host review is clean within its three source corrections, copied unchanged with a hash receipt. Next: deliver exact-head final integration packet and update existing draft PR normally for coordinator focused review; no code/source changes after that freeze without explicit new receipt.
 
 - Read the coordinator’s completed targeted rereview at `ed1b26f`: no remaining actionable findings in the two earlier P2 repairs. Its 44-path protection list includes bibliography; the final integration preserves 43 exact blobs and changes only the explicitly authorized bibliography entries/note. All calculation/code/receipt blobs remain unchanged. All seven new rendered reference URLs returned HTTP 200.
+
+## Final source handoff
+
+- State: review-ready, draft only. Normal push and actual GitHub readback verified PR #5 at `37433b4`; this final tracking-only commit does not change the frozen manuscript, bibliography, calculation code or receipts.
+- Done: `FINAL-SOURCE-INTEGRATION-READY.md`, exact source/full delta patches and rendered artifacts are saved in `/Users/maxghenis/capacity-sprint-20260907/society/`. The external handoff records the final delivery head after this commit. All original checkouts remain clean and untouched.
+- Next: coordinator’s focused review of the combined final source delta. Repair only actionable findings with an explicit revision and relevant validation. All 41 residual markers, author/partner decisions, source-access exceptions, Fable/Sol and publication/merge gates remain; no full-national independent verification is claimed.
