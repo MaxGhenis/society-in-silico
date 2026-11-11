@@ -276,6 +276,14 @@ into the draft. Cite only BibTeX keys that exist in `references.bib` (read it).
 
 ## Values (chapter 16 corrections — mandatory)
 
+> **PR #6 (2026-11) supersedes this section.** Use the survey-weighted HOMOSEX
+> series 58.3 / 61.2 / 62.7 / 55.9 for 2018/2021/2022/2024 (value-forecasting
+> `results/gss_series.json`; NORC released the 2024 microdata in 2025). The
+> 17-item run's record holds no baseline scores, so never quote ≈4.8 / 7.2 /
+> 10.6 or "2.2×". Quote the pilot (12.5 vs. 30.2, 2.4×) only as a design
+> contrast. Say "no arm beat persistence," and call the 2026/2028 registration
+> planned.
+
 - **GSS same-sex-relations item (HOMOSEX, "not wrong at all"):** 2018 ≈ 57%,
   2021 ≈ 62%, **2022 ≈ 61%, 2024 ≈ 55%** — the reversal is ~6 points off the
   2022 reading, NOT 17. (The 72% figure in the old draft is Gallup's

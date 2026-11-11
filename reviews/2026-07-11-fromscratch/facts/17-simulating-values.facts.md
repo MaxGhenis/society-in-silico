@@ -1,6 +1,14 @@
 # Fact catalog — Chapter 16: Simulating values
 Source: `manuscript/part-5-horizon/16-simulating-values.md`. Target chapter number in rewrite: 17. Raw material for a from-scratch rewrite; paraphrased except where marked Quotes/Author-texture. The empirical numbers here must stay consistent with the value-forecasting paper/EA post [@ghenis2026valueforecasting] (repo `github.com/maxghenis/value-forecasting`, branch `ea-post-rewrite-2026-07`).
 
+> **PR #6 (2026-11) supersedes the numbers below.** Use the survey-weighted
+> HOMOSEX series 58.3 / 61.2 / 62.7 / 55.9 for 2018/2021/2022/2024
+> (value-forecasting `results/gss_series.json` — no longer account-gated; NORC
+> released the 2024 microdata in 2025). The 17-item run's record holds no
+> baseline scores: never quote ≈4.8 / 7.2 / 10.6 or "2.2×". Quote the pilot
+> (12.5 vs. 30.2, 2.4×) only as a design contrast. Say "no arm beat
+> persistence," and call the 2026/2028 registration planned.
+
 ## Facts
 
 ### Framing (horizon, not foundation)
