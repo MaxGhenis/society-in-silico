@@ -23,8 +23,9 @@ rather than a copyedit.
 
 ## Dated-source pulls (any session)
 
-- [ ] GSS 2024 HOMOSEX values from the GSS Data Explorer (ch 16 series is
-  gated; the working series uses ~55 for 2024).
+- [x] GSS 2024 HOMOSEX values — resolved (PR #6, 2026-11): the chapter uses
+  the survey-weighted series 58.3/61.2/62.7/55.9 from value-forecasting
+  `results/gss_series.json` (NORC released the 2024 microdata in 2025).
 - [ ] Swap `[NEEDS CITATION: swap in the published essay when it ships]`
   (ch 16) for the value-forecasting essay/paper once live.
 - [ ] PolicyBench figures at publication — re-pull the live board and refresh

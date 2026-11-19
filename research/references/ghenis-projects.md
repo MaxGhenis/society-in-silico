@@ -101,10 +101,10 @@
 **URL**: https://maxghenis.substack.com/p/elon-musks-ai-predicts-americans
 **Type**: Blog Post
 
-### AI Alignment as Value Forecasting (Unpublished)
+### Value forecasting for AI alignment (unpublished)
 
-**Citation**: Ghenis, M. (2024). AI Alignment as Value Forecasting: A Quantitative Approach. Unpublished EA Forum draft.
-**File**: `/Users/maxghenis/Downloads/ea-forum-post.md`
+**Citation**: Ghenis, M. (2026). Value forecasting for AI alignment: pre-registered tests and a missed reversal. Unpublished essay draft.
+**File**: `ea-rewrite-2026-07/post-draft.md` in github.com/maxghenis/value-forecasting (branch `ea-post-rewrite-2026-07`); supersedes the 2025 EA Forum draft, which was never posted.
 **Type**: Research Proposal (unpublished)
 
 **Key thesis**: Align AI to the probability distribution over heterogeneous values that would emerge from extended reflection, with uncertainty quantification, validated empirically against historical survey data.
